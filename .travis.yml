@@ -1,5 +1,8 @@
 language: go
 
+secure:
+  - "I4d6MZuCVB6/maqZVrUE5FC8GfJ0i7wPwkLw7p1hXmfr3QEXZ/SgXb9LT2fsMbF6bBPkKT/mE1qtOXrFawkor6V9k2gmjAQ9WssSKo7/D0CHqjo5fM20nviUvfr9MvmrLXa80N5ZtvxisCEp7t2ZyXwln91c3cyYbM37iv5Qo+bluwBI74EmhAR1iVkvnaj9YQgU+lZh2fPATCFCid4dss/XO+nuxEbRzkBEEzUjggMCMICrG0qiKMzGv57UWuGJG4VYQ8rzWXXhB47br1zJlDRBuqY+0uzod0Qb6d0N6iwvO/ziE90KSNI2GT4LWhNtde2gZAtdfGemZ4rGcUJ1Z2J/c/085U+wpVP0hDMwihNCNDYL3ZurnQfbVkNFOYBprNQ8LBzUPC6mzv06EVu7v9aZkTWsxCr+8SrUVJgEL9lSJ1UiGP89TyupRpV/ASn6RM+fMX6eROG54OB36rzD35ZGigEzziEfTVOgLe5A7//mDPTyWUMsCol8EuB6YKKmbsatabfX0heOVZF/Wl0TsdwFStGd5TaHdQmehk5DhbiPDqyg/4oBZZuh8Qbzhpo0Ks9CZcgGIvYk+h62shN/JimBnjtLeaVDxz8osFSZIiApLkyXepKhS2hGRYrPgzNmfBWdKh3c+jDWup3znpBT9WpeEubXV9zCiXr95p7iM6I="
+
 before_install:
   - gem install asciidoctor
 
@@ -9,3 +12,6 @@ install:
 script:
   - git clone https://github.com/jbub/ghostwriter ./themes/ghostwriter
   - hugo
+
+after_success:
+  - find public -type f -exec curl -u w0077e1b:$FTPPWD --ftp-create-dirs -T {} ftp://w0077e1b.kasserver.com/www/test/{} \;
