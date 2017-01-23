@@ -1,0 +1,121 @@
++++
+date = "2012-11-17T06:15:15+01:00"
+title = "Using and enhancing Hibernate Search"
+tags = ["Enterprise", "Modernization"]
+draft = false
++++
+
+http://www.hibernate.org/[www.hibernate.org] is a very cool and mature Java Object-Relational mapping tool. Using Hibernate we can easily persist or reconstitute Java Objects to or from a relational database like MySQL, PostgreSQL, SQLServer or Oracle.
+
+Hibernate supports us to query the database using the Criteria APIor HQL Statements(Or we can use Tools like QueryDSL). But Hibernate core lacks supporting us to do free style or even full text queries. For this purpose, Hibernate Search was created.
+
+Hibernate Search hooks into the Hibernate eventing system and creates a Apache Lucene Fulltext Index for every persisted entity. Hibernate Search uses Java annotations to mark full text search fields. This is quite convinient for some usecases. But i want to go deeper and show you how to create full text queries for data that is NOT part of the domain model!
+== Query data from outside of the domain model
+Data is sometimes not stored in Java objects, it is stored as Documents on the filesystem or network share, or even inside a Document Management System. But how can we implement a usecase like “Search all customers who did not by anything for the past three months and who send an email containing the word “disappointed”?
+
+Annotating the domain model is quite easy, we can also use FieldBridges to convert fields like Timestamps or Dates to a Lucene searchable format. This can be enhanced, there are also ClassBridges. A ClassBridge helps create Lucene indexable data for instances of a given class. This is our hook. ClassBridges are declared using the ClassBridge annotation at class level. See the FieldBridge APIfor more information. You get for every instance a Lucene Document object, and here you can add new Fields and do other stuff. Now we have the ability to enrich the Lucene data before it is written to the index.
+
+See the following code to see how it can be done:
+
+[source,java]
+----
+@Indexed
+@ClassBridge(name = "freelancer", impl = FreelancerFieldBridge.class)
+public class Freelancer  {
+}
+ 
+public class FreelancerFieldBridge implements FieldBridge {
+ 
+    private void addField(Document aDocument, String aFieldname, String aStringValue, Field.Store aStoreValue, Field.Index aIndexValue) {
+        if (!StringUtils.isEmpty(aStringValue)) {
+            aDocument.add(new Field(aFieldname, aStringValue, aStoreValue, aIndexValue));
+        }
+    }
+ 
+    @Override
+    public void set(String aName, Object aValue, Document aDocument, LuceneOptions aOptions) {
+        Freelancer theFreelancer = (Freelancer) aValue;
+ 
+        List<FreelancerProfile> theProfiles = DomainHelper.getInstance().getProfileSearchService().loadProfilesFor(theFreelancer);
+ 
+        DocumentReaderFactory theReaderFactory = DomainHelper.getInstance().getDocumentReaderFactory();
+        theReaderFactory.initialize();
+ 
+        StringBuilder theContent = new StringBuilder();
+ 
+        for (FreelancerProfile theProfile : theProfiles) {
+ 
+            DocumentReader theReader = theReaderFactory.getDocumentReaderForFile(theProfile.getFileOnserver());
+            if (theReader != null) {
+                try {
+                    ReadResult theResult = theReader.getContent(theProfile.getFileOnserver());
+                    String theResultString = theResult.getContent();
+ 
+                    theContent.append(theResultString).append(" ");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+ 
+            }
+        }
+ 
+        String theStringContent = theContent.toString();
+ 
+        aDocument.add(new Field(ProfileIndexerService.CONTENT, new StringReader(theStringContent)));
+        aDocument.add(new Field(ProfileIndexerService.ORIG_CONTENT, theStringContent, Field.Store.YES, Field.Index.NOT_ANALYZED));
+    }
+}
+----
+This is example is not complete, but i hope you get the point.
+
+But how can we retrieve the data? Our newly added Lucene fields are not part of the Hibernate metadata! This is quite easy. We can constuct a plain Lucene Query from hand and pass it to the Hibernate FullTextSession. And now we can combine Hibernate Core, Hibernate Search with our new added data. Quite easy:-)
+== Using Lucene MoreLikeThis
+Lucene has a build in facility to find similar documents or similar data. This feature is called http://lucene.apache.org/core/old_versioned_docs/versions/3_0_0/api/contrib-queries/org/apache/lucene/search/similar/MoreLikeThis.html[MoreLikeThis] , and it can be easily combined with Hibernate Search. We just need to get direct access to the Lucene IndexReader, create a MoreLikeThis Query and pass it to the FullTextSession. There it is. See the following
+
+See the following code to see how it can be done:
+
+[source,java]
+----
+FullTextSession theSession = Search.getFullTextSession(sessionFactory.getCurrentSession());
+SearchFactory theSearchFactory = theSession.getSearchFactory();
+ 
+Analyzer theAnalyzer = ProfileAnalyzerFactory.createAnalyzer();
+
+DirectoryProvider theFreeelancerProvider = theSearchFactory.getDirectoryProviders(Freelancer.class)[0];
+
+IndexReader theIndexReader = null;
+
+try {
+	theIndexReader = theSearchFactory.getReaderProvider().openReader(theFreeelancerProvider);
+
+	MoreLikeThis theMoreLikeThis = new MoreLikeThis(theIndexReader);
+
+	Query theQuery = new TermQuery(new Term(ProfileIndexerService.UNIQUE_ID, aFreelancer.getId().toString()));
+	FullTextQuery theHibernateQuery = theSession.createFullTextQuery(theQuery, Freelancer.class);
+	theHibernateQuery.setProjection(FullTextQuery.THIS, FullTextQuery.DOCUMENT);
+
+	for (Object theSingleEntity : theHibernateQuery.list()) {
+	    Object[] theRow = (Object[]) theSingleEntity;
+	    Freelancer theFreelancer = (Freelancer) theRow[0];
+	    Document theDocument = (Document) theRow[1];
+
+	    theMoreLikeThis.setMinDocFreq(1);
+	    theMoreLikeThis.setMinTermFreq(1);
+	    theMoreLikeThis.setAnalyzer(theAnalyzer);
+	    theMoreLikeThis.setFieldNames(new String[]{ProfileIndexerService.CONTENT});
+	    Query theMltQuery = theMoreLikeThis.like(new StringReader(theDocument.get(ProfileIndexerService.ORIG_CONTENT)));
+
+	    FullTextQuery theMoreLikeThisQuery = theSession.createFullTextQuery(theMltQuery, Freelancer.class);
+	    theMoreLikeThisQuery.setProjection(FullTextQuery.THIS, FullTextQuery.DOCUMENT, FullTextQuery.SCORE);
+
+	}
+} catch (Exception e) {
+	throw new RuntimeException(e);
+} finally {
+	if (theIndexReader != null) {
+	    theSearchFactory.getReaderProvider().closeReader(theIndexReader);
+	}
+}
+----
+I really love Hibernate Search and Lucene!
+

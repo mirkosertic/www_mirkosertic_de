@@ -1,0 +1,44 @@
++++
+date = "2013-03-30T05:27:21+01:00"
+title = "MVC revised or what are the alternatives?"
+tags = ["Modernization", "Web"]
+draft = false
++++
+
+== Pure MVC
+The http://en.wikipedia.org/wiki/Model_view_controller[Model View Controller] pattern became a de-facto standard for implementing user interfaces or other kind of interaction with complex systems. Basically it separates the user interface into the following components:
+
+|===
+| Component| ResponsibiliTy
+| Model| The model contains the data to be presented
+| View| The view renders the data and is the user interface. The view also reacts to model changes and updates on such an event
+| Controller| The controller reacts to user commands and invokes business logic, which itself can change the model
+|===
+
+See the following diagram taken from Wikipedia to make it clearer:
+
+image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/MVC-Process.png[320,350]
+
+However, pure MVC has some drawbacks. One drawback is that the model needs to contain both business object and user interface, so things like the name of a person and the disabled or enabled state of the corresponding user interface control. Another drawback is testability. Due to the complex databinding and the tight coupling between view, model and controller, such implementations can quickly become hard to test using plain unit testing frameworks.
+== Alternatives
+A good alternative to MVC is the http://en.wikipedia.org/wiki/Model_View_Presenter[Model View Presenter] pattern. It is build using the following components:
+
+|===
+| Component| Responsibility
+| Model| The model contains the data to be presented
+| View| The view renders the data and is the user interface.
+| Presenter| The presenter binds view and model together and syncs their state. It is a kind of mediator with build in data conversion.
+|===
+
+See this picture taken from Wikipedia:
+
+image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/Model_View_Presenter.png[507,394]
+
+Martin Fowler split this pattern into http://martinfowler.com/eaaDev/SupervisingPresenter.html[Supervising Controller] and http://martinfowler.com/eaaDev/PassiveScreen.html[Passive View] . See a discussion about this topic here: http://martinfowler.com/eaaDev/uiArchs.html[Fowler's User Interface Patterns] .
+
+A benefit of this pattern is that the implementation becomes more explicit and hence increased testability.
+
+There are also other patterns available. One is the http://en.wikipedia.org/wiki/Model_View_ViewModel[Model View ViewModel] pattern, which is a specialization of the original Model View Presenter pattern, but it might become to complex for simple user interfaces.
+
+It is up to which which pattern you prefer. Please note that you can make some big mistakes by using the wrong user interface architecture, so before you choose, check your alternatives.
+

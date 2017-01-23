@@ -1,0 +1,120 @@
++++
+date = "2013-04-26T08:29:50+02:00"
+title = "Google Style Query Parser for Apache Lucene"
+tags = ["Enterprise", "Interesting", "Search"]
+draft = false
++++
+
+I needed a query parser for Apache Lucene supporting Google style queries. Basically the following searches should be supported:
+
+mirko sertic → Should result in a BooleanQuery with “mirko” and “sertic”
++mirko+sertic → Should result in a BooleanQuery with “mirko” and “sertic”
++mirko +sertic → Should result in a BooleanQuery with “mirko” and “sertic”
+mirko sertic -klaus → Should result in a BooleanQuery with “mirko” and “sertic” but not “klaus”
+“mirko sertic” → Should result in a PhraeQuery with terms “mirko” and “sertic” in sequence
+mirko~ → Should result in a FuzzyQuery with “mirko”
+
+Unfortunately there is no default query parser implementation available, so i decided to implement my own one. Here is the code(for Lucene 4.2):
+
+[source,java]
+----
+import org.apache.lucene.index.Term;
+import org.apache.lucene.search.*;
+ 
+import java.util.StringTokenizer;
+ 
+public class QueryParser {
+ 
+    private void addSubQuery(BooleanQuery aQuery, String aTerm, boolean aNegated, String aSearchField) {
+        if (!aTerm.contains("*")) {
+            if (aTerm.contains(" ")) {
+                PhraseQuery thePhraseQuery = new PhraseQuery();
+                for (StringTokenizer theTokenizer = new StringTokenizer(aTerm, " "); theTokenizer.hasMoreTokens();) {
+                    String theToken = theTokenizer.nextToken();
+                    thePhraseQuery.add(new Term(aSearchField, theToken));
+                }
+                thePhraseQuery.setSlop(1);
+                if (aNegated) {
+                    aQuery.add(thePhraseQuery, BooleanClause.Occur.MUST_NOT);
+                } else {
+                    aQuery.add(thePhraseQuery, BooleanClause.Occur.MUST);
+                }
+            } else {
+                Query theQuery;
+                if (!aTerm.endsWith("~")) {
+                    theQuery = new TermQuery(new Term(aSearchField, aTerm));
+                } else {
+                    theQuery = new FuzzyQuery(new Term(aSearchField, aTerm.substring(0, aTerm.length() - 1)));
+                }
+                if (aNegated) {
+                    aQuery.add(theQuery, BooleanClause.Occur.MUST_NOT);
+                } else {
+                    aQuery.add(theQuery, BooleanClause.Occur.MUST);
+                }
+            }
+        } else {
+            WildcardQuery theWildcardQuery = new WildcardQuery(new Term(aSearchField, aTerm));
+            if (aNegated) {
+                aQuery.add(theWildcardQuery, BooleanClause.Occur.MUST_NOT);
+            } else {
+                aQuery.add(theWildcardQuery, BooleanClause.Occur.MUST);
+            }
+        }
+    }
+ 
+    public Query parse(String aQuery, String aSearchField) {
+ 
+        BooleanQuery theResult = new BooleanQuery();
+ 
+        boolean isStringMode = false;
+        boolean isNegated = false;
+        StringBuilder theCurrentTerm = new StringBuilder();
+ 
+        for (int i = 0; i < aQuery.length(); i++) {
+            char theCurrentChar = Character.toLowerCase(aQuery.charAt(i));
+            if (theCurrentChar == '\"') {
+                isStringMode = !isStringMode;
+            } else {
+                if (!isStringMode) {
+                    switch (theCurrentChar) {
+                        case '-': {
+                            if (theCurrentTerm.length() == 0) {
+                                isNegated = true;
+                            } else {
+                                theCurrentTerm.append(theCurrentChar);
+                            }
+                            break;
+                        }
+                        case '+':
+                            if (theCurrentTerm.length() == 0) {
+                                isNegated = false;
+                            } else {
+                                theCurrentTerm.append(theCurrentChar);
+                            }
+                            break;
+                        case ' ': {
+                            addSubQuery(theResult, theCurrentTerm.toString(), isNegated, aSearchField);
+                            theCurrentTerm = new StringBuilder();
+                            isNegated = false;
+                            break;
+                        }
+                        default: {
+                            theCurrentTerm.append(theCurrentChar);
+                            break;
+                        }
+                    }
+                } else {
+                    theCurrentTerm.append(theCurrentChar);
+                }
+            }
+        }
+ 
+        if (theCurrentTerm.length() > 0) {
+            addSubQuery(theResult, theCurrentTerm.toString(), isNegated, aSearchField);
+        }
+ 
+        return theResult;
+    }
+}
+----
+Stay tuned!

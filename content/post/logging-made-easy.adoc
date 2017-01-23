@@ -1,0 +1,28 @@
++++
+date = "2012-10-04T03:41:46+02:00"
+title = "Logging made easy"
+tags = ["Enterprise", "Logging", "User Interface"]
+draft = false
++++
+
+In modern, distributed applications logging is a key requirement. But the problem arises if we try to track down an error using different log files on different servers. This is often a problem, depending on the business organisation, access rights and other political forces.
+
+To avoid wasting time to find and get the logs, we need a good tool to support us. Fortunately the Open Source Community has an answer. Logstash!
+
+image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/logstash.png[166,265]
+
+According the the http://logstash.net/[Logstash] website:
+
+logstash is a tool for managing events and logs. You can use it to collect logs, parse them, and store them for later use (like, for searching). Speaking of searching, logstash comes with a web interface for searching and drilling into all of your logs.
+
+It is fully free and fully open source. The license is Apache 2.0, meaning you are pretty much free to use it however you want in whatever way.
+
+See the following screenshot for Logstash in action:
+
+image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/screenshotlogstash-300x144.png[577,277]
+
+The user interface is a little bit ugly, but there is also an alternative available. http://kibana.org/[Kibana] . Kibana has a nicer UI and also some cool analytic features. See the following screenshot for Kibana in action:
+
+image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/kibana-300x156.png[560,291]
+
+Using Logstash with Kibana rocks!

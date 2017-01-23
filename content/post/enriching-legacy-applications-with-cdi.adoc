@@ -1,0 +1,104 @@
++++
+date = "2012-08-15T09:45:09+02:00"
+title = "Enriching legacy applications with CDI"
+tags = ["Dependency Injection", "Enterprise", "Legacy", "Modernization"]
+draft = false
++++
+
+There are a lot of applications out there. Some of them are legacy, others are in their maintenance phase. While we are developing new applications, we can use the coolest new technologies, think about good design and other stuff. But what about the software maintenance phase? Often, due to lack of time and other constraints, we cannot do everything perfectly, we need to move some refactoring or even reengineering to the maintenance phase.
+
+While doing software maintenance, i have often seen some very strange object state management mechanisms. And i often thought: man, using CDI would make this pretty simple, why do it so hard? Wouln't it be cool do combine Swing or SWT for instance with CDI?
+
+Using CDI(more dependency than context injection) can greatly increase software quality and testability. There are a lot of books written about this topic and also Martin Fowler promotes dependency injection. But how can we embed CDI into a legacy application?
+
+	 * First of all, think twice. It is really worth the pain? If you still feel good about it, go to the next step.
+	 * Check, which objects could be managed by a container. DAO's or stateless Services are candidates for managed beans.
+	 * Finally, where are the joint points? Where is the place to combine unmanaged objects and managed objects?
+
+The key of all is object lifecycle management. You need to be able to handle lifecycle management from your application code to the CDI container. If you can't do this, stop.
+
+Check the joint points. Classic candidates are UI components. For instance a JFrame somenhow needs to know a business service, sometimes a DAO or a transaction manager. The tricky part is how can we mix Swing with CDI? I wrote a small helper class for this:
+
+[source,java]
+----
+import org.jboss.weld.environment.se.Weld;
+import org.jboss.weld.environment.se.WeldContainer;
+ 
+import javax.enterprise.context.spi.CreationalContext;
+import javax.enterprise.inject.spi.AnnotatedType;
+import javax.enterprise.inject.spi.BeanManager;
+import javax.enterprise.inject.spi.InjectionTarget;
+ 
+public class CDIHelper {
+ 
+    private static CDIHelper HELPER = new CDIHelper();
+ 
+    public static CDIHelper instance() {
+        return HELPER;
+    }
+ 
+    private Weld weld;
+    private WeldContainer weldContainer;
+ 
+    private CDIHelper() {
+        weld = new Weld();
+        weldContainer = weld.initialize();
+    }
+ 
+    public <T> T lookup(Class<T> aClazz) {
+        return weldContainer.instance().select(aClazz).get();
+    }
+ 
+    public void injectAndConstruct(Object aInstance) {
+ 
+        BeanManager theManager = weldContainer.getBeanManager();
+ 
+        AnnotatedType<Object> theType = (AnnotatedType<Object>) theManager.createAnnotatedType(aInstance.getClass());
+        InjectionTarget<Object> theTarget = theManager.createInjectionTarget(theType);
+ 
+        CreationalContext<Object> cc = theManager.createCreationalContext(null);
+ 
+        theTarget.inject(aInstance, cc);
+        theTarget.postConstruct(aInstance);
+    }
+}
+----
+Now, let's create a JFrame and do some dependency injection:
+
+[source,java]
+----
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+import javax.swing.JFrame;
+import javax.swing.WindowConstants;
+ 
+public class JFrameTest extends JFrame {
+ 
+    @Inject
+    Aggregator aggregator;
+ 
+    public JFrameTest() {
+        setSize(320,200);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }
+ 
+    @PostConstruct
+    public void init() {
+        setTitle("I got "+aggregator+" from CDI!");
+    }
+ 
+    public static void main(String[] args) {
+ 
+        // Init CDI Helper
+        CDIHelper theHelper = CDIHelper.instance();
+ 
+        // Inject dependencies and invoke PostConstruct
+        JFrameTest theTest = new JFrameTest();
+        theHelper.injectAndConstruct(theTest);
+ 
+        // Show our frame
+        theTest.setVisible(true);
+    }
+}
+----
+Quite easy! We can now combine our Swing code with CDI and all of it's features like Interceptors and so on. Great improvement!

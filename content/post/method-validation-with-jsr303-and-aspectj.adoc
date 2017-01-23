@@ -1,0 +1,105 @@
++++
+date = "2013-06-26T10:29:19+02:00"
+title = "Method validation with JSR303 and AspectJ"
+tags = ["AOP", "Interesting"]
+draft = false
++++
+
+Hibernate Validator since version 4.2 supports method validation. For instance consider the following Java code:
+
+[source,java]
+----
+package de.mirkosertic.aspectj;
+ 
+import javax.validation.constraints.NotNull;
+ 
+public class Example {
+ 
+    public void doNothing(String aValue) {
+    }
+ 
+    public String getString(String aValue) {
+        return aValue;
+    }
+ 
+    public @NotNull String getNullString(String aValue) {
+        return aValue;
+    }
+ 
+    public void doNothingSingleNotNull(@NotNull String aValue) {
+    }
+ 
+    public void doNothingMiddleNotNull(String aStart,@NotNull String aValue, String aEnd) {
+    }
+ 
+    public void doNothingEndNotNull(String aStart,String aValue, @NotNull String aEnd) {
+    }
+}
+----
+Wouldn't it be cool to validate the method pre- and postconditions without coding too much? Here comes method validation and AspectJ to play. Using the following Aspect, we can validate the conditions using JSR303. If an argument does not match or validation fails, a ConstraintViolationException is thrown.
+
+[source]
+----
+package de.mirkosertic.aspectj;
+ 
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.reflect.MethodSignature;
+ 
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+import javax.validation.Validation;
+ 
+import javax.validation.ValidatorFactory;
+import javax.validation.executable.ExecutableValidator;
+import java.util.Set;
+ 
+@Aspect
+public class ValidatorAspect {
+ 
+    private ValidatorFactory validatorFactory;
+
+    public ValidatorAspect() {
+        validatorFactory = Validation.buildDefaultValidatorFactory();
+    }
+ 
+    @Around("execution(@javax.validation.constraints.* public * * (..))")
+    public Object afterReturning(ProceedingJoinPoint aJoinPoint) throws Throwable {
+ 
+        Object theReturnValue = aJoinPoint.proceed();
+ 
+        MethodSignature theSignature = (MethodSignature) aJoinPoint.getSignature();
+        ExecutableValidator theValidator = validatorFactory.getValidator().forExecutables();
+        Set<ConstraintViolation<Object>> theViolations = theValidator.validateReturnValue(aJoinPoint.getTarget(), 
+          theSignature.getMethod(), theReturnValue);
+
+        if (theViolations.size()> 0) {
+            throw new ConstraintViolationException(theViolations);
+        }
+ 
+        return theReturnValue;
+    }
+ 
+    @Around("execution(public * * (.., @javax.validation.constraints..* (*), ..))")
+    public Object pointcutMethodArgument(ProceedingJoinPoint aJoinPoint) throws Throwable {
+        return validateInvocation(aJoinPoint);
+    }
+ 
+    private Object validateInvocation(ProceedingJoinPoint aJoinPoint) throws Throwable {
+ 
+        MethodSignature theSignature = (MethodSignature) aJoinPoint.getSignature();
+ 
+        ExecutableValidator theValidator = validatorFactory.getValidator().forExecutables();
+        Set<ConstraintViolation<Object>> theViolations = theValidator.validateParameters(aJoinPoint.getTarget(), 
+         theSignature.getMethod(), aJoinPoint.getArgs());
+
+        if (theViolations.size()> 0) {
+            throw new ConstraintViolationException(theViolations);
+        }
+ 
+        return aJoinPoint.proceed();
+    }
+}
+----
+Nice! For further reading, please check the Hibernate Validator documentation.

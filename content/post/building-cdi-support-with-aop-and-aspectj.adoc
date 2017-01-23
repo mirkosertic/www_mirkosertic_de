@@ -1,0 +1,97 @@
++++
+date = "2012-10-01T02:47:45+02:00"
+title = "Building CDI support with AOP and AspectJ"
+tags = ["AOP", "Dependency Injection", "Enterprise", "Modernization"]
+draft = false
++++
+
+CDI is a mighty enhancement to the Java programming language. But CDI has also some limitations that might be cumbersome:
+
+	 * CDI needs a CDI container
+	 * All dependency injected beans are also managed beans
+	 * Hibernate or JPA entities are not managed by the CDI container, so there is no CDI support for them
+
+So what can we doo to get around these limitations, for instance we really want dependency injection in our Entities? The solution is AOP and AspectJ!
+
+== Entities with CDI
+Entities sometimes need references to other domain services or subsystems. Of course we can argue what this functionality can be promoted to a domain service itself, but this also means that business logic will go to services where it probably does not belong. So what can be a solution? We use AOP and AspectJ do inject dependencies into Entities. But how does it work?
+
+Consider the following code:
+
+[source,java]
+----
+public class WovenBean {
+ 
+    @Inject
+    String random;
+}
+----
+Now we need to inject the dependency into the field. We can use an AspectJ Field-Access Pointcut in combination with an advice to inject the missing dependency when the field is read. But wait! What should happen if we inject the field during unit testing? In this case, there must not be any dependency injection for the field at all.
+
+Please note that Entity dependency injection can lead to very bad design. If you are really sure you need a service or other kind of resources inside of Entity logic, consider using a method argument to do so. The above described solution should be the last case, but sometimes not avoidable in legacy code.
+If we search the web, we can find many examples where a before advice is used to change the field value. But note that changing a field value is potential not thread safe! The solution is quite simple. We use an around advice for field get access. This works pretty smooth, and we do not have multithreading issues at all.
+
+Here is the aspect code for the final dependency injection aspect:
+
+[source,java]
+----
+public aspect InjectAspect {
+ 
+    Map<Class<?>, Provider> providerCache = new ConcurrentHashMap<Class<?>, Provider>();
+ 
+    ServiceLoader<InjectResolver> loader;
+ 
+    around(): get(@Inject * **) {
+ 
+        Field field = ((FieldSignature)thisJoinPointStaticPart.getSignature()).getField();
+ 
+        try {
+ 
+            Object theReturnValue = proceed();
+ 
+            if (theReturnValue == null) {
+                // No value, so do a lookup
+                Provider theProvider = getInstance(field);
+                theReturnValue = theProvider.get();
+            }
+            return theReturnValue;
+        } catch (RuntimeException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new RuntimeException("Injection failed", e);
+        } catch (Throwable e) {
+            throw new RuntimeException("Injection failed", e);
+        }
+ 
+    }
+ 
+    private Provider getInstance(Field field) {
+        // Is there already a provider cached?
+        Provider theProvider = providerCache.get(field.getType());
+        if (theProvider != null) {
+            return theProvider;
+        }
+ 
+        // Nope, use ServiceLoader to retrieve one
+        synchronized (this) {
+            if (loader == null) {
+                loader = ServiceLoader.load(InjectResolver.class);
+            }
+        }
+        Iterator<InjectResolver> theIterator = loader.iterator();
+        while (theIterator.hasNext()) {
+            InjectResolver resolver = theIterator.next();
+            Provider instance = resolver.resolve(field);
+            if (instance != null) {
+                providerCache.put(field.getType(), instance);
+                return instance;
+            }
+ 
+        }
+        throw new RuntimeException("Injection failed: no provider found for " + field.getType().getName());
+    }
+}
+----
+
+Note that we are using the Java6 ServiceLoader APIto retrieve all available InjectResolver from classpath. We can implement them by ourself out of the box or implement one that delegates to Weld or Spring. This is up to you.
+

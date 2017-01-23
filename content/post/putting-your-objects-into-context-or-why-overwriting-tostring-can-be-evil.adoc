@@ -1,0 +1,17 @@
++++
+date = "2012-08-06T03:32:14+02:00"
+title = "Putting your objects into context or why overwriting toString() can be evil"
+tags = ["Interesting"]
+draft = false
++++
+
+Often we need to display Java business objects in the user interface. The easiest way is to overwrite the toString() method and give back the String representation of the object. This seems to be easy, but it is an evil temptation.
+
+I'd consider this as a break of the single responsibility rule in object oriented design. The responsibility of the business object is to contain business logic. The responsibility of ui classes is to display something to the user. Mixing them can be a very bad idea.
+
+At first, it can seem as a good idea and is implemented very fast. But consider the following: what can happen if the object is used in different contexts, and it must be displayed in different ways? How can the object recognize in what context it is running? If you feel to implement switches in the toString() implementation, you will make the mess even worse. If you stay on this track, you will deliver a very unmaintainable solution, with a lot of possibly unwanted side-effects.
+
+Also, overwriting toString() in combination with Apache StringBuilder can make it very worse in combination with ORM tools like Hibernate and lazy-loading. You can detach the object from the current session, and you cannot predict when toString() is invoked. Possibly during UI rendering, sometimes just to build debug messages. In such a case, a LazyInitException can be fired by Hibernate at places you didn't think of.
+
+What can be the solution? The answer is simple. Don't mix presentation and business logic. This will make your life a lot easier.
+

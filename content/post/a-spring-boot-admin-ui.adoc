@@ -1,0 +1,33 @@
++++
+date = "2016-12-31T01:08:59+01:00"
+title = "A Spring Boot Admin UI"
+tags = ["Dependency Injection", "HTML5", "SpringBoot", "User Interface"]
+draft = false
++++
+
+Spring Boot is a very cool framework for building modern, cloud-ready software. It also comes with a set of production ready endpoints which allow to administrate and monitor running applications. Unfortunately there is no admin user interface included in Spring Boot.
+
+The good people at https://www.codecentric.de/[Codecentric] recently released a very nice one, which is also available at Github. Here is a screenshot:
+
+image:https://www.mirkosertic.de/wordpress/wp-content/uploads/2016/12/springbootadminui.png[1855,736]
+
+This user interface is basically a Spring Boot Starter, so you have to include it into your own application to make it runable. It comes with the following features:
+
+	 * Application overview with infos and automatic grouping by name
+	 * Desktop notifications for status changes
+	 * Application details with health check information
+	 * Logfile browsing
+	 * Environment and configuration overview including updates
+	 * Metrics
+	 * JMX Beans
+	 * Threads
+	 * Trace with latest requests running thru the application
+	 * Downloadable heap dumps
+
+The whole project is really cool! It exposes the Spring Boot Production Ready endopoints in a very userfriendly and comprehensive way. It enables us the monitor and manage a collection of Spring applications which can basically deployed anywhere. On local servers, a dedicated infrastructure or in the cloud. It doesn't matter.
+
+We can also extend the user interface by a build in plugin system. We can also plugin different notification listeners for application status changes, for instance notification by email, SMS or other services you might imagine.
+
+The application doesn't come with a build in security system, and there is a reason. Why? Because it can be easily extended by declarative security frameworks such as Spring Security and others. User authentication is not the primary domain of this tool, so it delegates this to other frameworks and hence comes with almost zero dependencies beside the Spring Boot application framework itself.
+
+To see more, just visit: https://github.com/codecentric/spring-boot-admin[https://github.com/codecentric/spring-boot-admin] . This very useful application really made my day!

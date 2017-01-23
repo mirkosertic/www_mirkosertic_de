@@ -1,0 +1,77 @@
++++
+date = "2013-04-08T01:06:42+02:00"
+title = "Implementing State Machines with Java Enums"
+tags = ["Domain-driven Design"]
+draft = false
++++
+
+Often we need to implement http://en.wikipedia.org/wiki/State_pattern[State Machines] to encapsulate object behavior depending on a given object state. This can be cumbersome as it often leads to a lot of interfaces and implementation classes, and persisting such an object state often leads to problems, as we would need to implement a Hibernate custom type for instance to solve it.
+
+Today i want you to show another approach. We model a State Machine using a Java Enum. The Enum concept fits better to the State Machine concept, and Java Enums are much more like an enumeration, they can also contain behavior!
+
+This is a simple State Machine implemented using plain Java Enums:
+
+[source]
+----
+package de.mirkosertic;
+ 
+public enum State {
+ 
+    INITIAL {
+        @Override
+        State doSomething(String aParameter) {
+            System.out.println("Doing Something in INITIAL state and jumping to NEXT_STEP, argument = " + aParameter);
+            return NEXT_STEP;
+        }
+    },
+    NEXT_STEP {
+        @Override
+        State doSomething(String aParameter) {
+            System.out.println("Doing Something in NEXT_STEP and jumping into FINAL, argument = " + aParameter);
+            return FINAL;
+        }
+    },
+    FINAL {
+        @Override
+        State doSomething(String aParameter) {
+            System.out.println("I am in FINAL state, argument = " + aParameter);
+            return this;
+        }
+    };
+ 
+    abstract State doSomething(String aParameter);
+}
+----
+The State Machine has three states, INITIAL, NEXT_STEP and FINAL, and every state has an Implementation of the doSomething() method. which takes an argument and depending on the argument it can jump to the next state.
+
+This is a small piece of code to show the usage of such a State Maching:
+
+[source]
+----
+package de.mirkosertic;
+ 
+public class StatefulObject {
+ 
+    private State state;
+ 
+    public StatefulObject() {
+        state = State.INITIAL;
+    }
+ 
+    public void performRequest(String aParameter) {
+        state = state.doSomething(aParameter);
+    }
+ 
+    public static void main(String[] args) {
+        StatefulObject theObject = new StatefulObject();
+        theObject.performRequest("Hello");
+        theObject.performRequest("Hello");
+        theObject.performRequest("Hello");
+        theObject.performRequest("Hello");
+        theObject.performRequest("Hello");
+    }
+}
+----
+Using Enums to model State Machines fits better than Interface/Implementation classes, and also an Enum can be easily persisted using Hibernate Enum types. Also, we have implemented the CQS principle and increased testability a lot.
+
+Stay tuned! If you want to see more of such cool guidelines, please consult Vaughn Vernon excellent book http://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/[Implementing Domain-Driven Design] .

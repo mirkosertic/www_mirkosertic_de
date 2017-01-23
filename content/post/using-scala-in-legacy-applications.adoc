@@ -1,0 +1,147 @@
++++
+date = "2013-03-18T06:09:22+01:00"
+title = "Using Scala in legacy applications"
+tags = ["Interesting", "Legacy", "Scala"]
+draft = false
++++
+
+Often we are enhancing and working on Java legacy applications. But time moves on, and new programming languages like Scala(http://www.scala-lang.org/[www.scala-lang.org] ) become popular. But one question arises: is it possible to use Scala in Java based legacy applications?
+
+The reason i prefer Scala over Groovy is that Scala is statically typed. So the compiler does a lot of syntax checking for us, things that are not possible with dynamically typed languages like Groovy or Clojure.
+
+The short answer is: yes, of course it is!This short tutorial explains how to do it. I am using IntelliJ as my favorite IDE and Maven as my build tool.
+
+Here is a short overview of the project structure:
+
+image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/javascalamixedproject.png[465,369]
+
+Here you see that the project contains a src/main/java and a src/main/scala directory. This is just for the sake of clarity. It is also possible to put the sources in the same directory and distinguish the source type by extension. I prefer the different directory, as it makes the separation clear.
+
+The Main Java class contains a main() method, which itself instantiates an instance of type TestScala(which is Scala, of course). The TestScala class instantiates TestJava(which is Java). The result is an output at System.out(). This demonstrates how to mix Java and Scala code in one Maven module. For this example, i am using Scala 2.10.1. Also note that i am using IntelliJ 12.0.4, as it offeres very good build in Scala support.
+
+Here is the Main Java class:
+
+[source,java]
+----
+ackage de.mirkosertic.java;
+ 
+import de.mirkosertic.scala.TestScala;
+ 
+public class Main {
+ 
+    public static void main(String[] args) {
+        TestScala theTest = new TestScala();
+        theTest.out("Hallo");
+    }
+}
+----
+Here is the TestScala Scala class:
+[source]
+----
+package de.mirkosertic.scala
+ 
+import de.mirkosertic.java.TestJava
+ 
+class TestScala {
+ 
+  def out(aValue: String) {
+    val theJava = new TestJava()
+    theJava.out(aValue)
+  }
+}
+----
+And finally the TestJava class:
+[source,java]
+----
+package de.mirkosertic.java;
+ 
+public class TestJava {
+ 
+    public void out(String aValue) {
+        System.out.println(aValue);
+    }
+}
+----
+Last but not least the Maven pom.xml:
+[source]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+ 
+    <groupId>MavenScalaMixed</groupId>
+    <artifactId>MavenScalaMixed</artifactId>
+    <version>1.0-SNAPSHOT</version>
+ 
+    <repositories>
+        <repository>
+            <id>scala-tools.org</id>
+            <name>Scala-tools Maven2 Repository</name>
+            <url>http://scala-tools.org/repo-releases</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>scala-tools.org</id>
+            <name>Scala-tools Maven2 Repository</name>
+            <url>http://scala-tools.org/repo-releases</url>
+        </pluginRepository>
+    </pluginRepositories>
+ 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.scala-tools</groupId>
+                <artifactId>maven-scala-plugin</artifactId>
+                <executions>
+ 
+                    <execution>
+                        <id>compile</id>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                        <phase>compile</phase>
+                    </execution>
+                    <execution>
+                        <id>test-compile</id>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                        <phase>test-compile</phase>
+                    </execution>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+ 
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+----
+Quite easy, right?

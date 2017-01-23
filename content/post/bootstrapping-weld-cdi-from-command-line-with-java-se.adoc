@@ -1,0 +1,52 @@
++++
+date = "2013-09-21T03:03:19+02:00"
+title = "Bootstrapping Weld CDI from command line with Java SE"
+tags = ["Dependency Injection"]
+draft = false
++++
+
+It is possible to use CDI and Weld in a Java command line program. There are several options to bootstrap the CDI container. Weld offers a special Main class that does the job for us. But sometimes we just want to shield the CDI dependencies and provide our own main method. Now comes the tricky part: how do we pass command line arguments to the container, or even boot managed beans by injecting command line argument?
+
+The answer is simple: use a static producer method! Here is an example:
+
+[source]
+----
+@Singleton
+public final class Main {
+    private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
+ 
+ 
+    private static Configuration CONFIGURATION;
+    @Produces
+    public static Configuration configuration() {
+        return CONFIGURATION;
+    }
+ 
+ 
+    @Inject
+    ProjectSpecificBean instance;
+    public void run() throws IOException {
+        // Use injected instace
+    }
+    public static void main(String[] args) throws IOException {
+        // Initialize the Configurtation instance by command line arguments
+        // and store it in a static field. Now it is available by the producer methid
+        CONFIGURATION = new Configuration(args);
+ 
+ 
+        // Initialize Weld
+        Weld theWeld = new Weld();
+        WeldContainer theContainer = theWeld.initialize();
+ 
+ 
+        // Execute the run method
+        theContainer.instance().select(Main.class).get().run();
+ 
+ 
+        // Shutting down Weld again
+        theWeld.shutdown();
+    }
+}
+----
+Note that ProjectSpecificBean requires a container managed Configuration instance. This is aquired by the configuration() static producer method.
+Quite simple. I really love CDI, even in a Java SE environment.

@@ -1,0 +1,95 @@
++++
+date = "2012-07-28T02:37:33+02:00"
+title = "XML Resourcebundles and how to make I18N refactoring safe"
+tags = ["I18N", "XML"]
+draft = false
++++
+
+Java Resourcebundles are cumbersome. Without good IDE support, you are lost. It is hard to maintain the different property files, keep them in sync and take care of correct character encoding. And even if you manage all this, you still have the resource keys hard coded in your source code. It is very hard to detect where your resource keys are used.
+
+But fortunatly you don't have to live with these limitations! So instead storing different property files for each resource key, just keep them together in one simple XML file? Instead of using hard coded String constants in your sourcecode, just use a generated Java constant interface to access the bundle?
+
+http://mogwai.sourceforge.net/[mogwai.sourceforge.net] provides a simple I18N framework to help you with this task. Given the following XML definition:
+
+[source]
+----
+<?xml version="1.0"?>
+<Resource>
+	<Bundle interface="de.mogwai.common.client.binding.BindingBundle">
+		<Entry id="MISSINGREQUIREDFIELD">
+			<Text lang="de">Pflichtfeld nicht ausgefüllt</Text>		
+			<Text lang="en">Missing required field</Text>					
+		</Entry>
+		<Entry id="VALUEISLONGERTHAN">
+			<Text lang="de">Wert ist länger als {0} Zeichen</Text>		
+			<Text lang="en">Value is longer than {0} characters</Text>					
+		</Entry>
+	</Bundle>
+</Resource>
+
+----
+and the following Maven POM addition:
+
+[source]
+----
+<plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <tasks>
+                                <taskdef name="XMLResourceBundle"
+                                         classname="de.mogwai.common.i18n.XMLResourceBundleTask"/>
+                                <XMLResourceBundle src="src/main/java" dest="src/main/resources" defaultLanguage="en"
+                                                   encoding="ISO8859_1" javaEncoding="ISO8859_1">
+                                    <fileset dir="src/main/resources">
+                                        <include name="*.xml"/>
+                                    </fileset>
+                                </XMLResourceBundle>
+                            </tasks>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>net.sourceforge.mogwai</groupId>
+                        <artifactId>mogwai-i18n</artifactId>
+                        <version>2.14.3</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+----
+Will generate the property files for you. It will also generate nice constant interfaces like this one to access the resource keys:
+
+[source,java]
+----
+public interface BindingBundle {
+ 
+ 
+	String BUNDLE_NAME = "de/mogwai/common/client/binding/BindingBundle";
+ 
+ 
+	String MISSINGREQUIREDFIELD = "MISSINGREQUIREDFIELD";
+ 
+ 
+	String VALUEISLONGERTHAN = "VALUEISLONGERTHAN";
+ 
+ 
+}
+----
+The resource bundles can be accessed the following way:
+
+[source,java]
+----
+// Create a ResourceHelper to access the bundles by Bundle name
+private static final ResourceHelper BINDINGHELPER = 
+   ResourceHelper.getResourceHelper(BindingBundle.BUNDLE_NAME);
+ 
+ 
+// Get a localized value from the bundle
+String theCurrentTypeName = helper.getText(ERDesignerBundle.CURRENTDATATYPE);
+----

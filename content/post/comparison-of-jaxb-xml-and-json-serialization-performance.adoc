@@ -1,0 +1,325 @@
++++
+date = "2013-05-23T07:33:05+02:00"
+title = "Comparison of JAXB XML and JSON Serialization Performance"
+tags = ["Performance", "Serialization"]
+draft = false
++++
+
+Once i tried to figure out the difference between JAXB XML and JSON Java Object serialization performance. I wanted to know which one has the better runtime performance and thus scales better. Here are the results!
+
+The test setup is a Windows 7 64bit machine with Intel Core2 Quad Q9450 CPU @2,66GHz. Java Runtime is 1.7.0_07(quite old, i know)
+
+The profiling test case is to serialize and deserialize a simple Java object with JSON and XML. I wanted to run the process 1000, 10000, 100000 and 1000000 times. In contrast i used JSON, XML, Java ObjectOutputStream and Google Kryo. The following table shows the measures:
+
+|===
+| Type| 1000 runs| 10000 runs| 100000 runs| 1000000 runs
+| Jettison/JSON Marshalling| 168ms| 863ms| 2537ms| 16659ms
+| Jettison/JSON Unmarshalling| 136ms| 764ms| 2229ms| 12303ms
+| SDK JAXB XML Marshalling| 109ms| 598ms| 2019ms| 10513ms
+| SDK JAXB XML Unmarshalling| 763ms| 5574ms| 29958ms| 249972ms
+| SDK ObjectOutputStream Marshalling| 71ms| 243ms| 470ms| 1873ms
+| Google Kryo Marshalling| 14ms| 85ms| 290ms| 2557ms
+|===
+
+I used Jettison 2.1.3 for the test. Surprisingly it seems that XML marshalling is quite fast, even faster than JSON, but it creates more redundant data! But XML unmarshalling is terribly slow compared to JSON! And it also getting worse under heavy load, probably due to the XML DOM creates a lot of small objects, and this causes heavy garbage collector load. The non human readable serialization like ObjectOutputStream or Google Kryo perform better than JSON or XML at serialization time.
+
+Funny, isn't it? It you want to know more about Java serialization performance, you can consult https://github.com/eishay/jvm-serializers/wiki[github.com/eishay/jvm-serializers/wiki] .
+
+JSON testcase source code:
+
+[source,java]
+----
+import org.codehaus.jettison.json.JSONException;
+import org.codehaus.jettison.json.JSONObject;
+import org.codehaus.jettison.mapped.Configuration;
+import org.codehaus.jettison.mapped.MappedNamespaceConvention;
+import org.codehaus.jettison.mapped.MappedXMLStreamReader;
+import org.codehaus.jettison.mapped.MappedXMLStreamWriter;
+ 
+ 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
+import javax.xml.stream.XMLStreamWriter;
+import java.io.StringWriter;
+ 
+ 
+public class JSONPerformance {
+ 
+ 
+    @XmlRootElement
+    @XmlAccessorType(XmlAccessType.FIELD)
+    public static class SimpleObject {
+ 
+ 
+        private String name1;
+        private String name2;
+ 
+ 
+        protected SimpleObject() {
+        }
+ 
+ 
+        public SimpleObject(String aName1, String aName2) {
+            name1 = aName1;
+            name2 = aName2;
+        }
+ 
+ 
+        public String getName1() {
+            return name1;
+        }
+ 
+ 
+        public String getName2() {
+            return name2;
+        }
+ 
+ 
+    }
+ 
+ 
+    public static void main(String[] args) throws JAXBException, JSONException, XMLStreamException {
+ 
+ 
+        JAXBContext theContext = JAXBContext.newInstance(SimpleObject.class);
+ 
+ 
+        Configuration theConfig = new Configuration();
+        MappedNamespaceConvention theConvention = new MappedNamespaceConvention(theConfig);
+ 
+ 
+        SimpleObject theObject = new SimpleObject("Mirko", "Sertic");
+ 
+ 
+        long theRuns = 1000000;
+ 
+ 
+        // Marshalling
+        System.out.println("Performance test runing");
+        long theCurrentTime = System.currentTimeMillis();
+        for (int i = 0; i <theRuns; i++) {
+            StringWriter theWriter = new StringWriter();
+            XMLStreamWriter theXMLWriter = new MappedXMLStreamWriter(theConvention, theWriter);
+            Marshaller theMarshaller = theContext.createMarshaller();
+            theMarshaller.marshal(theObject, theXMLWriter);
+        }
+        System.out.println(System.currentTimeMillis() - theCurrentTime + " ms processing time");
+ 
+ 
+        // Unmarshalling
+        String theJSON = "{\"simpleObject\":{\"name1\":\"Mirko\",\"name2\":\"Sertic\"}}";
+        theCurrentTime = System.currentTimeMillis();
+        for (int i = 0; i <theRuns; i++) {
+ 
+ 
+            XMLStreamReader theXMLReader = new MappedXMLStreamReader(new JSONObject(theJSON), theConvention);
+            Unmarshaller theUnmarshaller = theContext.createUnmarshaller();
+            SimpleObject theResult = (SimpleObject) theUnmarshaller.unmarshal(theXMLReader);
+        }
+        System.out.println(System.currentTimeMillis() - theCurrentTime + " ms processing time");
+ 
+ 
+        System.out.println("Done");
+    }
+}
+----
+XML testcase source code:
+
+[source,java]
+----
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.StringReader;
+import java.io.StringWriter;
+import java.io.Writer;
+ 
+ 
+public class XMLPerformance {
+ 
+ 
+    @XmlRootElement
+    @XmlAccessorType(XmlAccessType.FIELD)
+    public static class SimpleObject {
+ 
+ 
+        private String name1;
+        private String name2;
+ 
+ 
+        protected SimpleObject() {
+        }
+ 
+ 
+        public SimpleObject(String aName1, String aName2) {
+            name1 = aName1;
+            name2 = aName2;
+        }
+ 
+ 
+        public String getName1() {
+            return name1;
+        }
+ 
+ 
+        public String getName2() {
+            return name2;
+        }
+ 
+ 
+    }
+ 
+ 
+    public static void main(String[] args) throws JAXBException {
+ 
+ 
+        JAXBContext theContext = JAXBContext.newInstance(SimpleObject.class);
+ 
+ 
+        SimpleObject theObject = new SimpleObject("Mirko", "Sertic");
+ 
+ 
+        long theRuns = 1000000;
+ 
+ 
+        System.out.println("Performance test runing");
+        long theCurrentTime = System.currentTimeMillis();
+        for (int i = 0; i <theRuns; i++) {
+            Writer theWriter = new StringWriter();
+            Marshaller theMarshaller = theContext.createMarshaller();
+            theMarshaller.marshal(theObject, theWriter);
+        }
+        System.out.println(System.currentTimeMillis() - theCurrentTime + " ms processing time");
+ 
+ 
+        String theXML = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><simpleObject><name1>Mirko</name1>" +
+                           "<name2>Sertic</name2></simpleObject>";
+        theCurrentTime = System.currentTimeMillis();
+        for (int i = 0; i <theRuns; i++) {
+            Unmarshaller theUnmarshaller = theContext.createUnmarshaller();
+            SimpleObject theResult = (SimpleObject) theUnmarshaller.unmarshal(new StringReader(theXML));
+        }
+        System.out.println(System.currentTimeMillis() - theCurrentTime + " ms processing time");
+ 
+ 
+        System.out.println("Done");
+    }
+}
+----
+ObjectOutputStream testcase source code:
+
+[source,java]
+----
+import javax.xml.bind.JAXBException;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+ 
+public class ObjectStreamPerformance {
+ 
+    public static class SimpleObject implements Serializable {
+ 
+        private String name1;
+        private String name2;
+ 
+        protected SimpleObject() {
+        }
+ 
+        public SimpleObject(String aName1, String aName2) {
+            name1 = aName1;
+            name2 = aName2;
+        }
+ 
+        public String getName1() {
+            return name1;
+        }
+ 
+        public String getName2() {
+            return name2;
+        }
+ 
+    }
+ 
+    public static void main(String[] args) throws JAXBException, IOException {
+ 
+        SimpleObject theObject = new SimpleObject("Mirko", "Sertic");
+ 
+        long theRuns = 1000000;
+ 
+        System.out.println("Performance test runing");
+        long theCurrentTime = System.currentTimeMillis();
+        for (int i = 0; i < theRuns; i++) {
+            ObjectOutputStream theStream = new ObjectOutputStream(new ByteArrayOutputStream());
+            theStream.writeObject(theObject);
+        }
+        System.out.println(System.currentTimeMillis() - theCurrentTime + " ms processing time");
+        System.out.println("Done");
+    }
+}
+----
+Google Kryo testcase source code:
+
+[source,java]
+----
+import javax.xml.bind.JAXBException;
+import java.io.*;
+import java.nio.ByteBuffer;
+ 
+import com.esotericsoftware.kryo.*;
+ 
+public class KryoPerformance {
+ 
+    public static class SimpleObject implements Serializable {
+ 
+        private String name1;
+        private String name2;
+ 
+        protected SimpleObject() {
+        }
+ 
+        public SimpleObject(String aName1, String aName2) {
+            name1 = aName1;
+            name2 = aName2;
+        }
+ 
+        public String getName1() {
+            return name1;
+        }
+ 
+        public String getName2() {
+            return name2;
+        }
+ 
+    }
+ 
+    public static void main(String[] args) throws JAXBException, IOException {
+ 
+        SimpleObject theObject = new SimpleObject("Mirko", "Sertic");
+ 
+        Kryo theKryo = new Kryo();
+        theKryo.register(SimpleObject.class);
+ 
+        long theRuns = 1000000;
+ 
+        System.out.println("Performance test runing");
+        long theCurrentTime = System.currentTimeMillis();
+        for (int i = 0; i < theRuns; i++) {
+            theKryo.writeObject(ByteBuffer.allocate(5000), theObject);
+        }
+        System.out.println(System.currentTimeMillis() - theCurrentTime + " ms processing time");
+        System.out.println("Done");
+    }
+}
+----

@@ -1,0 +1,44 @@
++++
+date = "2015-03-25T07:33:48+01:00"
+title = "Tuning HTML5 Canvas.fillText()"
+tags = ["HTML5", "Performance", "Web"]
+draft = false
++++
+
+Two years ago I wrote a Java based http://www.mirkosertic.de/wordpress/blog-post/a-javafx-based-game-authoring-system/[GameEngine] . I used technologies such as GWT and TeaVM to transpile the Java source code to JavaScript. The Game Engine used the HTML5 Canvas to render the current game state representation to the user. For the past few weeks I had some time to implement new features for this cool engine. I also did some profiling to see if there are bottlenecks in the rendering code. During the profiling sessions already known facts became visible: some browsers perform better than others.
+
+I did expect this. What I did not expect was the identified bottleneck. Surprisingly the fillText() implementation of the HTML5 Canvas was terribly slow. I did expect something related to the JBox2D physics simulation. I did not expect the fillText() to be under the top CPU consumers.
+
+Here is a summary of my measurements:
+
+|===
+| Platform| Framerate| Comments
+| Chrome 39.0.2171(Linux Core I7 2.4GHz)| 5ms / frame| only 1 % is used by fillText()
+| Firefox 36.0.4(Linux Core I7 2.4GHz)| 10ms / frame| 41% is used by fillText()
+| Firefox 36.0.4(Windows Core I7 4GHz)| 3ms / frame| 10% is used by fillText()
+| Chrome 41.0.2272(Windows Core I7 4GHz)| 3ms / frame| only 1 % is used by fillText()
+| IE11.0.9600(Windows Core I7 4GHz)| ~3ms / frame| -
+|===
+
+Wow! Seemed like the Firefox fillText() implementation was terribly slow on some platforms! Only the Chrome implementation seemed to be very efficient.
+Well, how can we tune this? It turned out that the rendered text was almost static, and changed only from time to time, triggered by game events such as player score changes.
+
+Now, do we always have to call the slow fillText() method? Well no! We can cache the result, and just draw it as a bitmap! For every text to be rendered, we can create an Offscreen Canvas element, draw the text only once, and use the Canvas as a bitmap resource to render it using the drawImage() method. An Offscreen Canvas element is a Canvas element, but it is not added to the DOM, and hence it does not become visible at all. It is just used for caching and for performance improvements.
+
+After implementing this new HTML5 text drawing technique, my profiling results changed a bit to:
+
+|===
+| Platform| Framerate| Comments
+| Chrome 39.0.2171(Linux I7 2.4GHz)| 4ms / frame| only 1 % is used by fillText()
+| Firefox 36.0.4(Linux Core I7 2.4GHz)| 1ms / frame| <1% is used by fillText()
+| Firefox 36.0.4(Windows Core I7 4GHz)| <1ms / frame| <1% is used by fillText()
+| Chrome 41.0.2272(Windows Core I7 4GHz)| <1ms / frame| <1 % is used by fillText()
+| IE11.0.9600(Windows Core I7 4GHz)| ~1ms / frame| -
+|===
+
+Now this was fast! Rendering time decreased dramatically, and now JBox2D is my next bottleneck to tune :-) Surprisingly the Chrome 39 Linux performance did not change so extremely. This is due to the fact that on my Linux box the Canvas.clearRect() seemed to be a big performance problem. I will analyze this further.
+I hope that everyone else can use the above described technique to tune the HTML5 Canvas text rendering performance!
+
+Links:
+
+The source code is available for free on GitHub: https://github.com/mirkosertic/GameComposer[github.com/mirkosertic/GameComposer] Example Game backed by the TeaVM Renderer (tuned version): http://mirkosertic.github.io/GameComposer/games/teavm/platformer/index.html[mirkosertic.github.io/GameComposer/games/teavm/platformer/index.html] 

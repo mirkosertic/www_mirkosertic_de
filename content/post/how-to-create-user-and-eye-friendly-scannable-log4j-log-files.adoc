@@ -1,0 +1,52 @@
++++
+date = "2014-06-13T09:07:11+02:00"
+title = "How to create user and eye friendly scannable Log4J log files"
+tags = ["Logging"]
+draft = false
++++
+
+Often we are writing logs files for our program execution. The logs are sometimes hard to parse, we have to look twice at them to detect error patterns. But it is possible to create a log file layout that is very fast human scannable. Using such kind of logfile layout, we can easier scan for common error patterns.
+
+This can easily be achieved using Log4J and some custom configuration using the Log4J EnhancedPatternLayout. Here is an example:
+
+[source]
+----
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration debug="true">
+ 
+ 
+    <appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.EnhancedPatternLayout">
+            <param name="ConversionPattern" value="%d [%-15.15t] %-5.5p %-40.40C{1.} - %m%n"/>
+        </layout>
+    </appender>
+ 
+ 
+    <appender name="fileAppender" class="org.apache.log4j.FileAppender">
+        <param name="File" value="logfile.log" />
+        <param name="Append" value="true" />
+        <param name="encoding" value="UTF-8" />
+        <layout class="org.apache.log4j.EnhancedPatternLayout">
+            <param name="ConversionPattern" value="%d [%-15.15t] %-5.5p %-40.40C{1.} - %m%n"/>
+        </layout>
+    </appender>
+ 
+ 
+    <root>
+        <level value="INFO"/>
+        <appender-ref ref="consoleAppender"/>
+        <appender-ref ref="fileAppender"/>
+    </root>
+ 
+ 
+</log4j:configuration>
+----
+This will produce log files that have the following layout:
+
+2014-06-13 11:05:42,237 [Thread-1 ] INFO c.b.r.c.i.a.DataStream$1 - Loggingmessage1
+2014-06-13 11:06:42,237 [Thread-1 ] INFO c.b.r.c.i.a.DataStream$1 - Loggingmessage2
+2014-06-13 11:07:42,237 [Thread-1 ] INFO c.b.r.c.i.a.DataStream$1 - Loggingmessage3
+2014-06-13 11:08:42,237 [Thread-1 ] INFO c.b.r.c.i.a.DataStream$1 - Loggingmessage4
+
+The log file is now column oriented. Every column has a fixed with. Long package names are shortened. The only part with variable length is the log message, which comes at the end of the file. Now we can easily parse even very huge log files. Nice!

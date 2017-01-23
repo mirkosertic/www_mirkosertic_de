@@ -1,0 +1,99 @@
++++
+date = "2016-02-01T12:03:15+01:00"
+title = "A very simple Polymer Web Component"
+tags = ["HTML5", "Web", "WebComponents"]
+draft = false
++++
+
+Web Components are a very amazing new feature of HTML5. Google released its https://www.polymer-project.org/[Polymer] project which adds Web Components support to modern Web Browsers. Using Web Components, we can create very complex custom HTMLTags which are based on a very powerful templating engine, pretty cool JavaScript bindings, data model abstractions and also JavaScript and CSSencapsulation. Polymer comes with a set of already implemented components based on Googles Material Design which can be easily integrated into custom applications. Finally, Polymer has a https://developers.google.com/web/tools/polymer-starter-kit[Starter Kit] Projekt, which can bring you up in a minimum amount of time to development speed with Polymer, Web Components and Single Page Web Applications.
+
+For a project, I wrote a simple Web Component to display a list of Microservice Configuration Data. In my application HTML, I just have to use the following line:
+
+[source]
+----
+<config-stage-list></config-stage-list>
+----
+Thats all to use my own Web Component. Well, what is the magic behind this? To use a Web Component, we have to use a HTML5 Feature called HTMLImports. Just place the following line into your HTML:
+
+[source]
+----
+<link rel="import" href="config-stage-list/config-stage-list.html">
+----
+This imports the Web Component and makes it ready to use. And finally, here is the source code of the Web Component:
+
+[source]
+----
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../bower_components/iron-list/iron-list.html">
+<link rel="import" href="../../bower_components/iron-form/iron-form.html">
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-input/paper-textarea.html">
+<link rel="import" href="../../bower_components/paper-toast/paper-toast.html">
+ 
+<dom-module id="config-stage-list">
+  <template id="stagelist">
+    <style include="shared-styles"></style>
+ 
+    <h2>Available configuration Stages</h2>
+ 
+    <iron-ajax id="deleteAJAX" on-response="deleteComplete"></iron-ajax>
+ 
+    <paper-material>
+      <iron-ajax auto id="getStagesAJAX" url="/api/rest/stage/list" handle-as="json" last-response="{{data}}"></iron-ajax>
+      <iron-list items="[[data]]" as="item">
+        <template>
+          <paper-card heading="[[item.name]]">
+            <div class="card-content">
+              <p>[[item.description]]</p>
+            </div>
+            <div class="card-actions">
+              <a href$="{{baseUrl}}stage/[[item.id.id]]"><paper-button raised>Details</paper-button></a>
+              <paper-button on-tap="deleteStage">
+                <iron-icon icon="delete"></iron-icon>Delete
+              </paper-button>
+            </div>
+          </paper-card>
+        </template>
+      </iron-list>
+    </paper-material>
+ 
+    <paper-toast id="responseToast"></paper-toast>
+  </template>
+ 
+  <script>
+    Polymer({
+      is: 'config-stage-list',
+      properties: {
+      },
+      deleteStage: function(aElement) {
+        var theID = aElement.model.item.id.id;
+ 
+        this.$.deleteAJAX.body = {};
+        this.$.deleteAJAX.url = "/api/rest/stage/" + theID;
+        this.$.deleteAJAX.method = "DELETE";
+        this.$.deleteAJAX.contentType="application/json";
+        this.$.deleteAJAX.generateRequest();
+      },
+      deleteComplete: function() {
+        this.refreshData();
+        this.showToast(this.$.deleteAJAX.lastResponse.message);
+      },
+      showToast: function(aMessage) {
+        this.$.responseToast.text = aMessage;
+        this.$.responseToast.show();
+      },
+      refreshData: function() {
+        this.$.getStagesAJAX.generateRequest();
+      }
+    });
+  </script>
+</dom-module>
+----
+Thats all! The Web Component creates a AJAX request to get some data from the server and binds the result to a lsit. It also has a delete button to remove data, which will trigger another AJAX roundtrip. Finally, it has some user feedback based on Material Design Toasts.
+
+Yeah! Polymer and WebComponents just rock!

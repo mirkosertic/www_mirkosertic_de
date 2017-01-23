@@ -1,0 +1,312 @@
++++
+date = "2013-09-22T06:08:29+02:00"
+title = "Domain-driven Design with JSF, EJB and CDI"
+tags = ["Domain-driven Design", "Enterprise"]
+draft = false
++++
+
+Based on my previous post about http://www.mirkosertic.de/wordpress/blog-post/domain-driven-design-example/[Domain-driven Design Architecture] i want to offer some implementation details about how to build a DDD-style application based on JSF2, PrettyFaces, EJB and CDI. I will give some code samples to give you an idea about how to start with this topic. Everything else is up to you :-). Also please note that most of the ideas in this example is inspired by the CEC-ECB(CDI-EJB-CDI Entity-Control-Boundary) patterns as described by Oracle for the JEE6 design.
+== Presentation with JSF and Prettyfaces
+JSF is part of the core JEE stack. Together with Prettyfaces it offers a well defined and standarized framework for user interface components. Personally i like the Model-View-Presenter pattern, hence i apply it here to a JSF managed bean:
+
+[source,java]
+----
+package de.mirkosertic.powerstaff.freelancer.ui;
+ 
+ 
+import com.ocpsoft.pretty.faces.annotation.URLAction;
+import com.ocpsoft.pretty.faces.annotation.URLMapping;
+import de.mirkosertic.powerstaff.freelancer.application.FreelancerApplicationService;
+import de.mirkosertic.powerstaff.freelancer.domain.FreelancerPresentation;
+import de.mirkosertic.powerstaff.freelancer.domain.NothingFoundException;
+import de.mirkosertic.powerstaff.generic.ui.Presenter;
+ 
+ 
+import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+import java.io.Serializable;
+ 
+ 
+@Presenter
+@ManagedBean(name = "freelancerPresenter")
+@ViewScoped
+@URLMapping(id = "freelancermain", pattern = "/freelancer/#{freelancerPresenter.freelancerId}/main", viewId = "/de/mirkosertic/powerstaff/freelancer/ui/freelancer.xhtml")
+public class FreelancerPresenter implements Serializable {
+ 
+ 
+    static final String NEW_RECORD_ID = "new";
+ 
+ 
+    @EJB
+    FreelancerApplicationService freelancerApplicationService;
+ 
+ 
+    String freelancerId;
+ 
+ 
+    FreelancerPresentation currentPresentation;
+ 
+ 
+    public String getFreelancerId() {
+        return freelancerId;
+    }
+ 
+ 
+    public void setFreelancerId(String aFreelancerId) {
+        freelancerId = aFreelancerId;
+    }
+ 
+ 
+    public FreelancerPresentation getCurrentPresentation() {
+        return currentPresentation;
+    }
+ 
+ 
+    /**      * This is invoked by PrettyFaces for every page access, but not for callbacks!      */
+    @URLAction(onPostback = false)
+    public void loadData() {
+        if (NEW_RECORD_ID.equals(freelancerId)) {
+            currentPresentation = new FreelancerPresentation();
+        } else {
+            try {
+                currentPresentation = freelancerApplicationService.getFreelancerPresentationFor(freelancerId);
+            } catch (NothingFoundException e) {
+                // Better exception handling here is required
+                e.printStackTrace();
+            }
+        }
+    }
+ 
+ 
+    public void saveData() {
+        if (currentPresentation.isPersistent()) {
+            try {
+                currentPresentation = freelancerApplicationService.updateFreelancerFrom(currentPresentation);
+            } catch (NothingFoundException e) {
+                // Better exception handling here is required
+                e.printStackTrace();
+            }
+        } else {
+            currentPresentation = freelancerApplicationService.createNewFreelancerFrom(currentPresentation);
+        }
+    }
+}
+----
+Here is the corresponding XHTML view:
+
+[source]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="/maintemplate.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://java.sun.com/jsf/passthrough">
+  <ui:define name="headcontent">
+    <title>Freelancer Data</title>
+  </ui:define>
+  <ui:define name="content">
+ 
+ 
+      <h:form>
+          <h1>Freelancer Data</h1>
+          <fieldset class="login">
+              <legend>Freelancer Details</legend>
+              <div>
+                  <label>Freelancer Name</label> <h:inputText value="#{freelancerPresenter.currentPresentation.name}"
+                                                              size="50"
+                                                              p:placeholder="Enter freelancer name"/>
+              </div>
+          </fieldset>
+          <h:commandButton value="Save" action="#{freelancerPresenter.saveData}"/>
+      </h:form>
+ 
+ 
+  </ui:define>
+</ui:composition>
+----
+The JSF beans are managed my the CDI container. This is the first C of the CEC pattern.
+== Application Services with EJB
+Now we continue with the E part of the CEC pattern, the EJB's. This part fits perfectly together with the Domain-driven Design Application Services. See the following EJB to make the intention clear:
+
+[source,java]
+----
+package de.mirkosertic.powerstaff.freelancer.application;
+ 
+ 
+import de.mirkosertic.powerstaff.freelancer.domain.FreelancerDomainService;
+import de.mirkosertic.powerstaff.freelancer.domain.FreelancerPresentation;
+import de.mirkosertic.powerstaff.freelancer.domain.NothingFoundException;
+import de.mirkosertic.powerstaff.generic.application.ApplicationService;
+ 
+ 
+import javax.ejb.Stateless;
+import javax.inject.Inject;
+ 
+ 
+/**       
+ * The FreelancerApplicationServices is deployed as an EJB.       
+ *       
+ * ApplicationServices start transactions and apply security.     Hence using EJB technology  
+ * is a good choice as the entry point.     
+ */
+@ApplicationService
+@Stateless
+public class FreelancerApplicationService {
+ 
+ 
+    @Inject
+    FreelancerDomainService freelancerDomainService;
+ 
+ 
+    public FreelancerPresentation createNewFreelancerFrom(FreelancerPresentation aPresentation) {
+        return freelancerDomainService.createNewFreelancerFrom(aPresentation);
+    }
+ 
+ 
+    public FreelancerPresentation getFreelancerPresentationFor(String aFreelancerID) throws NothingFoundException {
+        return freelancerDomainService.getFreelancerPresentationFor(aFreelancerID);
+    }
+ 
+ 
+    public FreelancerPresentation updateFreelancerFrom(FreelancerPresentation aPresentation) throws NothingFoundException {
+        return freelancerDomainService.updateFreelancerPresentationFrom(aPresentation);
+    }
+}
+----
+EJB offer additional functionality like transaction, security and pooling. This makes them a perfect choice for the main application entry point, the DDD Application Service.
+== Domain Logic with CDI
+Now we come to the core domain logic. The main entry point is the domain service, as it is called by the application service. See the following domain service for instance:
+
+[source,java]
+----
+package de.mirkosertic.powerstaff.freelancer.domain;
+ 
+ 
+import de.mirkosertic.powerstaff.generic.domain.DomainService;
+ 
+ 
+import javax.inject.Inject;
+ 
+ 
+@DomainService
+public class FreelancerDomainService {
+ 
+ 
+    @Inject
+    FreelancerFactory freelancerFactory;
+ 
+ 
+    @Inject
+    FreelancerRepository freelancerRepository;
+ 
+ 
+    public FreelancerPresentation createNewFreelancerFrom(FreelancerPresentation aPresentation) {
+        Freelancer theNewFreelancer = freelancerFactory.create();
+        theNewFreelancer.fillFrom(aPresentation);
+        freelancerRepository.add(theNewFreelancer);
+        return theNewFreelancer.toPresentation();
+    }
+ 
+ 
+    public FreelancerPresentation getFreelancerPresentationFor(String aFreelancerID) throws NothingFoundException {
+        Freelancer theFreelancer = freelancerRepository.findById(aFreelancerID);
+        return theFreelancer.toPresentation();
+    }
+ 
+ 
+    public FreelancerPresentation updateFreelancerPresentationFrom(FreelancerPresentation aPresentation) throws NothingFoundException {
+        Freelancer theFreelancer = freelancerRepository.findById(aPresentation.getId());
+        theFreelancer.fillFrom(aPresentation);
+        return theFreelancer.toPresentation();
+    }
+}
+----
+The domain service delegates to factories or repositories to create or load data. Finally it invokes business logic on the domain objects, as seen by the following aggregate:
+
+[source,java]
+----
+package de.mirkosertic.powerstaff.freelancer.domain;
+ 
+ 
+import de.mirkosertic.powerstaff.generic.domain.Aggregate;
+import de.mirkosertic.powerstaff.generic.domain.FreelancerID;
+import de.mirkosertic.powerstaff.generic.domain.Name;
+ 
+ 
+@Aggregate
+public class Freelancer {
+ 
+ 
+    FreelancerID id;
+    Name name;
+ 
+ 
+    protected Freelancer(FreelancerID aID) {
+        id = aID;
+        name = new Name();
+    }
+ 
+ 
+    protected Freelancer() {
+        // Zero-Arg Constructor to make JPA happy
+    }
+ 
+ 
+    public FreelancerPresentation toPresentation() {
+        FreelancerPresentation thePresentation = new FreelancerPresentation();
+        thePresentation.setId(id.value());
+        thePresentation.setName(name.value());
+        thePresentation.setPersistent(false);
+        return thePresentation;
+    }
+ 
+ 
+    public void fillFrom(FreelancerPresentation aPresentation) {
+        name = new Name(aPresentation.getName());
+    }
+}
+----
+Here a presentation object comes to play. It is created and filled by the aggregate and used as an DTO which is finally rendered by the Presenter / View. Creating and filling presentation objects helps to keep aggregate encapsulation intact and avoid SessionClosed exceptions. Note that transaction and hence JPA session boundary is demarcated by the EJB, the ApplicationService.
+== Infrastructure with JPA
+Finally the infrastructure part, implementing the domain repositories based on some persistence technology, in our case JPA:
+
+[source,java]
+----
+package de.mirkosertic.powerstaff.freelancer.infrastructure;
+ 
+ 
+import de.mirkosertic.powerstaff.freelancer.domain.Freelancer;
+import de.mirkosertic.powerstaff.freelancer.domain.FreelancerRepository;
+import de.mirkosertic.powerstaff.freelancer.domain.NothingFoundException;
+import de.mirkosertic.powerstaff.generic.infrastructure.Repository;
+ 
+ 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+ 
+ 
+@Repository
+public class FreelancerJPARepository implements FreelancerRepository {
+ 
+ 
+    @PersistenceContext
+    EntityManager entityManager;
+ 
+ 
+    public void add(Freelancer aFreelancer) {
+        // do something
+    }
+ 
+ 
+    public Freelancer findById(String aFreelancerID) throws NothingFoundException {
+        // do something
+    }
+}
+----
+Note that frameworks like http://www.querydsl.com/[QueryDSL] can help you a lot to keep the repository implementation clean and maintainable.
+
+Stay tuned for the next examples :-)
+

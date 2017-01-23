@@ -1,0 +1,17 @@
++++
+date = "2016-11-24T06:14:41+01:00"
+title = "Compile Time Speed GWT 2.8.0 vs. TeaVM 0.4.3 vs. TeaVM 1.0.0-SNAPSHOT"
+tags = ["HTML5", "Performance", "Web"]
+draft = false
++++
+
+Some years ago I wrote a JavaFX based http://www.mirkosertic.de/wordpress/blog-post/a-javafx-based-game-authoring-system/[Game auhoring system] . It was also written to be ported to different runtime environments by using transpiler technologies such as GWT or TeaVM. While TeaVM was heavily improved over time, I haven't seen a new GWT release in the wild. Now, GWT 2.8.0 is released, and the question arises: Is the compiler still as slow as in 2.7? Well, lets take a look!
+
+|===
+| Measurement| GWT 2.8.0| TeaVM 0.4.3| TeaVM 1.0.0-SNAPSHOT
+| Compile time(OPTIMIZER ENABLED)| 43.777 ms| 10.383 ms| 12.244 ms
+| Size of JS in unoptimized mode| 3.700 kb| 2.890 kb| 2.650 kb
+| Size of JS in optimized mode| 1.540 kb| 955 kb| 1013 kb
+|===
+
+It is interesting and also a little bit weird. The GWT compiler became slower compared to its older 2.7.0 brother. You can see the GWT 2.7.0 performance charts in http://www.mirkosertic.de/wordpress/blog-post/gwt-vs-dragome-vs-teavm-for-game-programming/[GWT vs. Dragome vs. TeaVM for Game Programming] . While the JS size stayed almost constant, there were no further improvements from the external point of view. Hopefully the J2CL Project will keep improving. Till then, I will stay with TeaVM. Version 0.4.3 is stable and production ready. Version 1.0.0 is currently under development and will hopefully be soon available.  TeaVM really rocks!

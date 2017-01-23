@@ -1,0 +1,279 @@
++++
+date = "2015-04-03T05:32:40+02:00"
+title = "A JavaFX based LUA editor"
+tags = ["HTML5", "Interesting", "LUA", "User Interface", "Web"]
+draft = false
++++
+
+One of my favorite projects is my JavaFX based http://www.mirkosertic.de/wordpress/blog-post/a-javafx-based-game-authoring-system/[Gameengine] . It has a flexible entity component system, supports WYSIWYG game design and also has multiplayer network support. The entity component system is backed by a LUA based scripting system, the game designer can react freely on game events and script entity behaviors with the wonderful LUA scripting engine.
+Now, the game designer needs a visual tool with syntax highlighting, clipboard support and also some kind of testing mode to write bug free LUA scripts. Luckily I was able to build this with JavaFX, and here is a final screenshot:
+
+image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/luascripteditor.png[962,723]
+
+Now, how did I achieve this? Well, luckily I didn't have to reinvent everything by myself. There are a lot of cool scripting editors available today. One of them is the Ace editor. The Ace editor is HTML/ JavaScript based. And because of the wonderful JavaFX WebView I am able to integrate the rich text script editor with a JavaFX based user interface. For starters, we need to a editor.html page to the classpath. The whole Ace editor bootstrapping is done by this simple page:
+
+[source]
+----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+ 
+<div id="editor"></div>
+ 
+<script src="ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
+<script>
+ 
+    var editor;
+ 
+    function initeditor() {
+        ace.require("ace/ext/language_tools")
+        editor = ace.edit("editor");
+        editor.setOptions({
+            enableBasicAutocompletion: true,
+            enableSnippets: true,
+            enableLiveAutocompletion: false
+        });
+        editor.setTheme("ace/theme/monokai");
+        editor.getSession().setMode("ace/mode/lua");
+    }
+ 
+    function getvalue() {
+        return editor.getValue();
+    }
+ 
+    function copyselection() {
+        return editor.getCopyText();
+    }
+ 
+    function pastevalue(aValue) {
+        editor.insert(aValue);
+    }
+</script>
+</body>
+</html>
+----
+We also need a controller for the JavaFX part. The initialization is a bit tricky, because we have to bootstrap the Ace editor by some Java/JavaScript downcalls, but you will get the point while looking at the code:
+
+[source,java]
+----
+package de.mirkosertic.gamecomposer.contentarea.eventsheet.runscript;
+ 
+import de.mirkosertic.gamecomposer.PersistenceManager;
+import de.mirkosertic.gameengine.core.GameObject;
+import de.mirkosertic.gameengine.core.GameObjectInstance;
+import de.mirkosertic.gameengine.core.GameScene;
+import de.mirkosertic.gameengine.process.GameProcess;
+import de.mirkosertic.gameengine.script.RunScriptAction;
+import de.mirkosertic.gameengine.scriptengine.LUAScriptEngine;
+import de.mirkosertic.gameengine.type.Script;
+ 
+import javafx.concurrent.Worker;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextArea;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.DataFormat;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.KeyCombination;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.web.WebView;
+import javafx.stage.Stage;
+ 
+import netscape.javascript.JSObject;
+ 
+import java.io.PrintWriter;
+import java.io.StringWriter;
+ 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+ 
+import javax.inject.Inject;
+ 
+public class EditScriptDialog {
+ 
+    @Inject
+    PersistenceManager persistenceManager;
+ 
+    @FXML
+    WebView editorView;
+ 
+    @FXML
+    TextArea compileErrors;
+ 
+    private RunScriptAction action;
+    private Stage modalStage;
+    private GameScene gameScene;
+ 
+    public void initialize(GameScene aGameScene, RunScriptAction aAction, Stage aModalStage) {
+        action = aAction;
+        modalStage = aModalStage;
+        gameScene = aGameScene;
+ 
+        // We need JavaScript support
+        editorView.getEngine().setJavaScriptEnabled(true);
+        editorView.getEngine().getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -&amp;gt; {
+            if (newValue == Worker.State.SUCCEEDED) {
+                initializeHTML();
+            }
+        });
+        // The build in ACE context menu does not work because
+        // JavaScript Clipboard interaction is disabled by security.
+        // We have to do this by ourselfs.
+        editorView.setContextMenuEnabled(false);
+ 
+        // Load the bootstrap html
+        // It will trigger the initializeHTML() method by the above registered state change listener
+        // after the everything was loaded
+        editorView.getEngine().load(EditScriptDialog.class.getResource("/ace/editor.html").toExternalForm());
+ 
+        // Copy &amp; Paste Clipboard support
+        final KeyCombination theCombinationCopy = new KeyCodeCombination(KeyCode.C, KeyCombination.CONTROL_DOWN);
+        final KeyCombination theCombinationPaste = new KeyCodeCombination(KeyCode.V, KeyCombination.CONTROL_DOWN);
+        aModalStage.getScene().addEventFilter(KeyEvent.KEY_PRESSED, aEvent -&amp;gt; {
+            if (theCombinationCopy.match(aEvent)) {
+                onCopy();
+            }
+            if (theCombinationPaste.match(aEvent)) {
+                onPaste();
+            }
+        });
+    }
+ 
+    private void onCopy() {
+ 
+        // Get the selected content from the editor
+        // We to a Java2JavaScript downcall here
+        // For details, take a look at the function declaration in editor.html
+        String theContentAsText = (String) editorView.getEngine().executeScript("copyselection()");
+ 
+        // And put it to the clipboard
+        Clipboard theClipboard = Clipboard.getSystemClipboard();
+        ClipboardContent theContent = new ClipboardContent();
+        theContent.putString(theContentAsText);
+        theClipboard.setContent(theContent);
+    }
+ 
+    private void onPaste() {
+ 
+        // Get the content from the clipboard
+        Clipboard theClipboard = Clipboard.getSystemClipboard();
+        String theContent = (String) theClipboard.getContent(DataFormat.PLAIN_TEXT);
+        if (theContent != null) {
+            // And put it in the editor
+            // We do a Java2JavaScript downcall here
+            // For details, take a look at the function declaration in editor.html
+            JSObject theWindow = (JSObject) editorView.getEngine().executeScript("window");
+            theWindow.call("pastevalue", theContent);
+        }
+    }
+ 
+    private void initializeHTML() {
+        // Initialize the editor
+        // and fill it with the LUA script taken from our editing action
+        Document theDocument = editorView.getEngine().getDocument();
+        Element theEditorElement = theDocument.getElementById("editor");
+ 
+        theEditorElement.setTextContent(action.scriptProperty().get().script);
+ 
+        editorView.getEngine().executeScript("initeditor()");
+    }
+ 
+    private boolean test(Script aScript) {
+        LUAScriptEngine theEngine = null;
+        try {
+ 
+            // We only want to test on a clone
+            // so the test does not change enything
+            GameScene theClone = persistenceManager.cloneSceneForPreview(gameScene);
+ 
+            // Execute a single run for verification
+            GameObject theObject = new GameObject(theClone, "dummy");
+            GameObjectInstance theInstance = theClone.createFrom(theObject);
+            theEngine = theClone.getRuntime().getScriptEngineFactory().createNewEngine(theClone, aScript);
+            theEngine.registerObject("instance", theInstance);
+            theEngine.registerObject("scene", theClone);
+            theEngine.registerObject("game", theClone.getGame());
+ 
+            Object theResult = theEngine.proceedGame(100, 16);
+            if (theResult == null) {
+                throw new RuntimeException("Got NULL as a response, expected " + GameProcess.ProceedResult.STOPPED+" or " + GameProcess.ProceedResult.CONTINUE_RUNNING);
+            }
+ 
+            GameProcess.ProceedResult theResultAsEnum = GameProcess.ProceedResult.valueOf(theResult.toString());
+ 
+            theEngine.shutdown();
+ 
+            compileErrors.setText("Got response : " + theResultAsEnum);
+ 
+            return true;
+        } catch (Exception e) {
+ 
+            StringWriter theWriter = new StringWriter();
+            e.printStackTrace(new PrintWriter(theWriter));
+ 
+            compileErrors.setText("Exception : " + theWriter);
+        } finally {
+            if (theEngine != null) {
+                theEngine.shutdown();
+            }
+        }
+        return false;
+    }
+ 
+    @FXML
+    public void onOk() {
+        // We need to sace the edited script to the game model.
+        String theContent = (String) editorView.getEngine().executeScript("getvalue()");
+        Script theNewScript = new Script(theContent);
+ 
+        action.scriptProperty().set(theNewScript);
+        modalStage.close();
+    }
+ 
+    @FXML
+    public void onTest() {
+        String theContent = (String) editorView.getEngine().executeScript("getvalue()");
+        Script theNewScript = new Script(theContent);
+        test(theNewScript);
+    }
+ 
+    @FXML
+    public void onCancel() {
+        modalStage.close();
+    }
+ 
+    public void performEditing() {
+        modalStage.show();
+    }
+}
+----
+The last thing we have to consider is clipboard interaction. Because the Ace editor is backed by JavaScript, which runs in a WebView, the editor is limited by the default JavaScript security limitations while interacting with the clipboard. To get around this limitation, we have to disable the default Ace context menu by just disabling the WebView context menu, and add the copy / paste actions by registering custom key listeners. The interaction between the key listener and the Ace editor can be done by Java / JavaScript downcalls.
+
+Well, after some research and tweaking the clipboard problem, everything runs smooth and I was able to create a powerful LUA editor backed by Ace and JavaFX with a minimum amount of time. JavaFX definitely rocks!
+
+Links:
+
+The LUA language:
+
+http://www.lua.org/[www.lua.org] Ace editor, the high performance code editor for the web:
+
+http://ace.c9.io/[ace.c9.io] Communicating between JavaScript and JavaFX with WebEngine:
+
+https://blogs.oracle.com/javafx/entry/communicating_between_javascript_and_javafx[blogs.oracle.com/javafx/entry/communicating_between_javascript_and_javafx] The source code for the Game Engine is available for free on GitHub:
+
+https://github.com/mirkosertic/GameComposer[github.com/mirkosertic/GameComposer] Example Game backed by the TeaVM Renderer:
+
+http://mirkosertic.github.io/GameComposer/games/teavm/platformer/index.html[mirkosertic.github.io/GameComposer/games/teavm/platformer/index.html] 

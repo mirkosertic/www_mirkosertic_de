@@ -1,0 +1,99 @@
++++
+date = "2013-10-13T04:25:52+02:00"
+title = "Java Array Iterator Performance"
+tags = ["Interesting", "Performance"]
+draft = false
++++
+
+Lets check a very simple example: we want to fill a multi-dimensional array with values. What is the fastest way to do so? The following piece of code gives us surprising results:
+
+[source,java]
+----
+public class CacheTest {
+ 
+    final int SIZE = 256;
+ 
+    void rowOrderTest() {
+        int theArray[][][] = new int[SIZE][SIZE][SIZE];
+        long theTime = System.currentTimeMillis();
+        for (int i = 0; i <SIZE; i++) {
+            for (int j = 0; j <SIZE; j++) {
+                for (int k = 0; k <SIZE; k++) {
+                    theArray[i][j][k] = 1;
+                }
+            }
+        }
+        System.out.println("RowOrder : " + (System.currentTimeMillis() - theTime));
+    }
+ 
+    void columnOrderTest() {
+        int theArray[][][] = new int[SIZE][SIZE][SIZE];
+        long theTime = System.currentTimeMillis();
+        for (int k = 0; k <SIZE; k++) {
+            for (int j = 0; j <SIZE; j++) {
+                for (int i = 0; i <SIZE; i++) {
+                    theArray[i][j][k] = 1;
+                }
+            }
+        }
+        System.out.println("ColumnOrder : " + (System.currentTimeMillis() - theTime));
+    }
+ 
+     void arrayTest1() {
+  
+        long theCounter = 0;
+  
+        int theArray[] = new int[SIZE*SIZE*SIZE];
+        long theTime = System.currentTimeMillis();
+        for (int i = 0; i <SIZE; i++) {
+            for (int j = 0; j <SIZE; j++) {
+                for (int k = 0; k <SIZE; k++) {
+                    theArray[i*SIZE*SIZE+j*SIZE+k] = 1;
+                    theCounter++;
+                }
+            }
+        }
+        System.out.println("ArrayTest1 : " + (System.currentTimeMillis() - theTime) + " #" + theCounter);
+    }
+ 
+     void arrayTest2() {
+ 
+         int theArray[] = new int[SIZE*SIZE*SIZE];
+        long theTime = System.currentTimeMillis();
+        Arrays.fill(theArray, 0);
+        System.out.println("ArrayTest2 : " + (System.currentTimeMillis() - theTime));
+    }
+ 
+ 
+    void arrayTest3() {
+ 
+         int theCounter = 0;
+ 
+         int theArray[] = new int[SIZE*SIZE*SIZE];
+        long theTime = System.currentTimeMillis();
+        for (int i = 0; i <SIZE; i++) {
+            for (int j = 0; j <SIZE; j++) {
+                for (int k = 0; k <SIZE; k++) {
+                    theArray[theCounter] = 1;
+                    theCounter++;
+                }
+            }
+        }
+        System.out.println("ArrayTest3 : " + (System.currentTimeMillis() - theTime) + " #" + theCounter);
+    }
+ 
+     public static void main(String[] args) {
+        CacheTest theTest = new CacheTest();
+        theTest.rowOrderTest();
+        theTest.columnOrderTest();
+        theTest.arrayTest1();
+        theTest.arrayTest2();
+        theTest.arrayTest3();
+    }
+}
+----
+The rowOrderTest() Method finishes on my machine within 42ms, the columnOrderTest() Method takes about 2195ms to complete, so it is more than 50 times slower than rowOrderTest(), but it does exactly the same! The columnOrderTest() Method just trashes the VM and CPU read ahead caches, so this explains the deadly slow down. This effect can be reproduced with long and byte as datatypes also.
+
+Some unexpected results are coming from the arrayTest1(), arrayTest2() and arrayTest3() Methods. Here i do not use a three dimensional array, i use a one dimensional array and emulate the other dimensions by offset multiplication. The arrayTest1() Method includes some little math to compute the array index, but on my machine it takes about 33ms to complete, so almost as fast as the rowOrderTest() Method. The arrayTest2() Method uses the SDK Array.fill Method to complete the task, and it still takes about 33ms to complete. The manual array fill in arrayTest3() takes about 36ms to complete, which is almost as fast as Array.fill(). Under the hood, Arrays.fill() does nothing else, so this is not surprising.
+
+Always check for array indexes and iteration algorithms, there might be room for performance improvements. From a performance point of view the best would be to avoid multi dimensional arrays at all and use other data structures.

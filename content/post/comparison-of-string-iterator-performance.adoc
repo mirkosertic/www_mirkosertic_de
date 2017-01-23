@@ -1,0 +1,25 @@
++++
+date = "2013-09-05T08:35:15+02:00"
+title = "Comparison of String iterator performance"
+tags = ["Interesting", "Performance"]
+draft = false
++++
+
+Often we need to iterate over a String. Java gives use several options. We can either use a simple loop with an index using the following style:
+
+[source,java]
+----
+for (int i=0;i<theLine.length();i++) {
+   char theCurrentChar = theLine.charAt(i);
+   // Do something with the character
+}
+----
+Or we can use the advanced for style using a character array the following way:
+
+[source,java]
+----
+for (char theCurrentChar : theLine.toCharArray())  {
+  // Do something with the character 
+}
+----
+Checking both options for performance gives us surprising results: Under heavy stress the first syntax takes in an advanced usecase about 200 microseconds , the second syntax takes only 91 microseconds! It seems like the String.charAt() Method is the cause of our pain. The solution is also quite simple: always use the seconds syntax and you are safe!

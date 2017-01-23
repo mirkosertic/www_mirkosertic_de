@@ -1,0 +1,32 @@
++++
+date = "2012-08-02T03:42:12+02:00"
+title = "The law of leaky abstractions"
+tags = ["Interesting"]
+draft = false
++++
+
+Personally i really like Joel Spolsky's law of http://www.joelonsoftware.com/articles/LeakyAbstractions.html[Leaky abstractions] . Every architect should read and understand his article. Here is a summary of this law taken from Joel's Website and http://en.wikipedia.org/wiki/Leaky_abstraction[Wikipedia] :
+
+== History
+The term “leaky abstraction” appears to have been coined in 2002 by Joel Spolsky. However, an earlier paper by Kiczales clearly describes some of the issues with imperfect abstractions and presents a potential solution to the problem by allowing for the customization of the abstraction itself.
+
+== The Law of Leaky Abstractions
+As coined by Spolsky, the Law of Leaky Abstractions states:
+“ All non-trivial abstractions, to some degree, are leaky. ”In making this statement, Spolsky highlights a particularly problematic cause of software defects: the reliance of the software developer on the infallibility of an abstraction.
+
+In Spolsky's article, he calls attention to many examples of abstractions that work most of the time, but where a detail of the underlying complexity cannot be ignored, and thus drives complexity into the software that was supposed to be simplified by the abstraction itself.
+
+== Effect on software development
+As the systems we use become more and more complex, the number of abstractions that software developers must rely upon increases. Each abstraction attempts to hide complexity, allowing a software developer to create code that can “handle” all the variations in complexity that modern computing requires.
+
+However, if Spolsky's Law of Leaky Abstractions is true, then in order to create software that is reliable, software developers must learn many of the abstraction's underlying details anyway.
+
+== Examples
+Spolsky cites numerous examples of leaky abstractions that create problems for software development. The following examples are provided in his paper:
+
+	 * The TCP/IP protocol stack is the combination of the TCP protocol, which attempts to provide reliable delivery of information, running on top of the IP protocol, which provides only 'best-effort' service. When IP loses a packet TCP has to retransmit it, which takes additional time. Thus TCP provides the abstraction of a reliable connection, but the implementation details leak through in the form of potentially variable performance (throughput and latency both suffer when data has to be retransmitted).
+	 * Something as simple as iterating over a large two-dimensional array can have radically different performance if you do it horizontally rather than vertically, depending on the order in which elements are stored in memory – one direction may result in vastly more cache misses and page faults than the other direction; and both cache misses and page faults introduce large delays to service memory loads.
+	 * The SQL language is meant to abstract away the procedural steps that are needed to query a database, instead allowing you to define merely what you want and let the database figure out the procedural steps to query it. But in some cases, certain SQL queries are thousands of times slower than other logically equivalent queries. And on an even higher level of abstraction, ORM systems, which were created for the purpose of isolating object-oriented code from the implementation of object persistence using a relational database, still force the programmer to think in terms of databases, tables, and native SQL queries as soon as performance of ORM-generated queries becomes a concern.
+	 * Even though network libraries like NFS and SMB let you treat files on remote machines as if they were local, sometimes the connection becomes very slow or goes down, and the file stops acting like it was local, and the programmer has to write code to deal with this.
+	 * When writing software for the ASP.NET web programming platform, software developers may wish to rely on ASP.NET to abstract away the difference between writing HTMLcode to handle clicking on a hyperlink (<a>) and the code to handle clicking on a button. However, while the ASP.NET designers needed to hide the fact that in HTML, there is no way to submit a form from a hyperlink. They do this by generating a few lines of JavaScript and attaching an onclick handler to the hyperlink. However, if the end-user has JavaScript disabled, the ASP.NET application does not work correctly. Furthermore, one cannot naively think of event handlers in ASP.NET in the same way as in a desktop GUIframework such as Windows Forms; due to the fundamental limitations of the Web, processing event handlers in ASP.NET requires exchanging data with the server and reloading the form.
+

@@ -1,0 +1,107 @@
++++
+date = "2012-08-01T01:43:48+02:00"
+title = "A first touch with NoSQL, graph databases and OrientDB"
+tags = ["Enterprise", "NoSQL"]
+draft = false
++++
+
+== The experiment
+I was thinking about the current way we often store data in relational databases like MySQL, PostgreSQL or Oracle. We are using object-relational mapping frameworks like Hibernate, enriching Java classes with JPA annotations and are hoping that the mapping framework does everything for us the right way.
+
+But wait a minute. What are we storing here? Basically we are storing Java object graphs using our ORM framework. Object graphs. Ok, so why could be not use a graph database to store our objects directly? Shouldn't this make our life easier, no more database table definitions, indexes, foreign keys? Lets give it a try and test how we can migrate an existing JPA based application to a NoSQL graph database. Although i could implement a new persistence layer and use technologies like http://www.springsource.org/spring-data/neo4j[SpringData Neo4J] , i want to to check if there are JPA compatible solutions around.
+
+After some research, i discovered http://www.orientdb.org/orient-db.htm[OrientDB] . Basically it is a hybrid graph/document database and belongs to the NoSQL group. It has a very small footprint, supports inheritance, can run in schema, schemaless and hybrid mode and has also support for storing JPA annotated Java objects. Let's give t a try.
+
+We have three entities, a Partner has many PartnerHistory entities, which are associated with a HistoryType. Here is some code persisting a simple object graph:
+
+[source,java]
+----
+public class OrientTest1 {
+ 
+    public static void main(String args[]) {
+        // OPEN THE DATABASE
+        OObjectDatabaseTx db = new OObjectDatabaseTx("remote:localhost/mirko").open("admin", "admin");
+ 
+        // REGISTER THE CLASS ONLY ONCE AFTER THE DB IS OPEN/CREATED
+        db.getEntityManager().registerEntityClass(Partner.class);
+        db.getEntityManager().registerEntityClass(PartnerHistory.class);
+        db.getEntityManager().registerEntityClass(HistoryType.class);
+ 
+        HistoryType theType = new HistoryType();
+        theType.setDescription("History Type " + new Timestamp(System.currentTimeMillis()).toString());
+ 
+        Partner thePartner = new Partner();
+        thePartner.setName1("Luke");
+        thePartner.setName2("Skywalker");
+ 
+        for (int i = 0; i <3; i++) {
+            PartnerHistory theHistory = new PartnerHistory();
+            theHistory.setDescription("History " + i + new Timestamp(System.currentTimeMillis()).toString());
+            theHistory.setType(theType);
+            thePartner.getHistory().add(theHistory);
+        }
+
+        db.save(thePartner);
+    }
+}
+----
+This example opens a connection to the OrientDB server, and registers a set classes to persist. Using the Orient http://code.google.com/p/orient/wiki/ObjectDatabase[ObjectDatabase] feature, which is basically a JPA wrapper around the OrientDB core, it discovers JavaBean properties with getters and setters and also detects JPA annotations.
+
+Next it creates a simple object graph and stores it. The graph database can be explored with http://code.google.com/p/orient/wiki/OrientDB_Studio[OrientDB Studio] . Let´s check what was persisted:
+
+	 * One Partner entity
+	 * Three PartnerHistory entities
+	 * Three HistoryType entities
+
+Wait, this is wrong. There are three HistoryTypes entities, but there should be only one! At the time of writing, OrientDB release 1.1.0 was used. It has a very leaky implementation of JPA support. It has no such concept like sessions or first level cache. We have to provide some information to help the ObjectDatabase layer:
+
+[source,java]
+----
+public class OrientTest2 {
+ 
+ 
+    public static void main(String args[]) {
+        // OPEN THE DATABASE
+        OObjectDatabaseTx db = new OObjectDatabaseTx("remote:localhost/mirko").open("admin", "admin");
+ 
+ 
+        // REGISTER THE CLASS ONLY ONCE AFTER THE DB IS OPEN/CREATED
+        db.getEntityManager().registerEntityClass(Partner.class);
+        db.getEntityManager().registerEntityClass(PartnerHistory.class);
+        db.getEntityManager().registerEntityClass(HistoryType.class);
+ 
+ 
+        HistoryType theType = db.newInstance(HistoryType.class);
+        theType.setDescription("HistoryType " + new Timestamp(System.currentTimeMillis()).toString());
+ 
+ 
+        Partner thePartner = new Partner();
+        thePartner.setName1("Luke");
+        thePartner.setName2("Skywalker");
+ 
+ 
+        for (int i = 0; i <3; i++) {
+            PartnerHistory theHistory = new PartnerHistory();
+            theHistory.setDescription("History " + i + new Timestamp(System.currentTimeMillis()).toString());
+            theHistory.setType(theType);
+            thePartner.getHistory().add(theHistory);
+        }
+ 
+ 
+        db.save(thePartner);
+    }
+}
+----
+
+Here we create an ObjectDatabase proxy for the HistoryType entitiy, and reuse it for creating the object graph. Let's check what is persisted now:
+
+	 * One Partner entity
+	 * Three PartnerHistory entities
+	 * One HistoryType entity
+
+This is correct. We have migrated the first usecase from Hibernate/JPA to OrientDB.
+
+== Conclusion
+
+OrientDB's ObjectDatabase is a very promising candidate for migrating existing applications to a graph based storage approach. But it is missing some very important concepts like sessions or the first level cache. Creating proxies for reused objects is cumbersome, as detecting the same object in the graph can be easily done if the classes implement the equals() and hashCode() methods correctly. If this feature would be implemented, it would be a great enhancement to the API.
+

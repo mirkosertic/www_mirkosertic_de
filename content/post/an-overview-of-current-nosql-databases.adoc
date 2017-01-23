@@ -1,0 +1,29 @@
++++
+date = "2012-11-22T03:37:03+01:00"
+title = "An overview of current NoSQL databases"
+tags = ["Database", "Interesting", "NoSQL"]
+draft = false
++++
+
+This summary is taken from the book “Seven Databases in Seven Weeks”. See http://www.mirkosertic.de/wordpress/books-everyone-should-read/[the Books section] for details.
+
+|===
+| Database| Version| Genre| Data Types| Data Relations| Standard Object| Written in| Transactions| Triggers| Main Differentiator| Weaknesses
+| MongoDB| 2.0| Document| Typed| None| JSON| C++| No| No| Easily query Big Data| Embed-ability
+| CouchDB| 1.1| Document| Typed| None| JSON| Erlang| No| Update validation or Changes API| Durable and embeddable clusters| Query-ability
+| Riak| 1.0| Key-value| Blob| Ad hoc(Links)| Text| Erlang| No| Ore/post commits| High available| Query-ability
+| Redis| 2.4| Key-value| Semi-typed| None| String| C/C++| Multi operation queries| No| Very, very fast| Complex data
+| PostgreSQL| 9.1| Relational| Predefined and typed| Predefined| Table| C| ACID| Yes| Best of OSSRDBMS model| distributed availability
+| Neo4J| 1.7| Graph| Untyped| Ad hoc(Edges)| Hash| Java| ACID| Transaction event handlers| Flexible graph| BLOBs or terabyte scale
+| HBase| 0.90.3| Columnar| Predefined and typed| None| Columns| Java| Yes| No| Very large-scale, Hadoop infrastructure| Flexible growth, query-ability
+|===
+
+== The CAP Theorem and how it matters in distributed systems
+http://www.julianbrowne.com/article/viewer/brewers-cap-theorem[Brewer's CAP Theorem] proves that you can create a distributed database that is consistent(writes are atomic and all subsequent requests retrieve the new value), available(the database will always return a value as long as a single server is running), or partition tolerant(the system will still function even if server communication is temporarily lost), but you can only have two at one, so either CA, AP or CP.
+
+Redis, PostgreSQL and Neo4J are consistent and available(CA); they do not distribute data
+
+MongoDB and HBase are generally consistent and partition tolerant(CP)
+
+CouchDB is available and partition tolerant (AP), but it doesn't guarantee consistency between distributed nodes.
+

@@ -1,0 +1,215 @@
++++
+date = "2013-10-03T06:02:44+02:00"
+title = "Java SE Context and Dependency Injection with Java EE support"
+tags = ["Modernization"]
+draft = false
++++
+
+Java CDI(Context and Dependency Injection) JSR-299 is available on Java EE application servers, but CDI(Weld is the reference implementation) is also embeddable in Java SE standard edition. Unfortunately Java EE functionalities like security or transaction support are not available here, for instance the following code just does not work as expected when running on CDI SE:
+
+[source,java]
+----
+@Singleton
+public class WeldBean {
+ 
+    @Resource
+    Principal principal;
+ 
+    @RolesAllowed("securedrole")
+    public void run() {
+        System.out.println("Hello World : "+principal);
+    }
+}
+----
+he @Resource and @RolesAllowed annotations are not evaluated on Weld SE by default. Now, how can we enable these Java EE features?
+
+The @Resource annotation is a problem, but the biggest problem is the @RolesAllowed annotation. This security check can by done by using an CDI interceptor, but the @RolesAllowed annotation does not support @InterceptorBinding. How can be enable security check without introducing new annotations in our code?
+
+The answer is quite simple. We use the CDI Portable Extension API. This APIallows us to manipulate the CDI container metadata before it is processed by the CDI runtime. But how does this help?
+
+Well, with a CDI extension we can rewrite the given annotations from out code, and change it, for instance replace the @Resource annotation with @Inject, and this can be processed by the CDI SE runtime and will inject managed beans created from classes or producer methods for instance.
+
+The tricky part is the @RolesAllowed annotation. A custom annotation is added to such annotated methods, with @InterceptorBinding. Now, a security interceptor checks for permissions and will continue with execution. In our case, the @MySecurityAnnotation is added to the method, and the following interceptor will check the permissions:
+
+[source,java]
+----
+@Interceptor
+@MySecurityAnnotation
+public class MySecurityInterceptor {
+ 
+    @AroundInvoke
+    public Object aroundCheck(InvocationContext aContext) throws Exception {
+        RolesAllowed theRolesAllowed = aContext.getMethod().getAnnotation(RolesAllowed.class);
+        System.out.println("Secured Method check : Allowed roles : " + theRolesAllowed.value()[0]);
+        return aContext.proceed();
+    }
+}
+----
+The tricky thing is we have to extract the original @RolesAllowed annotation from the method signature. It is still there as we use the Java reflection APIto extract it. We just modified the CDI container metadata, not the bytecode.
+
+Simple but efficient. Using the same pattern, we can also implement transaction support with CDI running on Java SE. But how does the CDI extension work? The following code should show how this can be done. It can also be simplified using Weld Extensions APIor Seam Solder, but here is everything without third party dependencies:
+
+[source,java]
+----
+public class MyExtension implements Extension {
+ 
+    static class ResourceInjectAlias implements Annotation, Inject {
+        public Class&amp;lt;? extends Annotation&amp;gt; annotationType() {
+            return Inject.class;
+        }
+    }
+ 
+    static final ResourceInjectAlias INJECT_ALIAS = new ResourceInjectAlias();
+ 
+    static class SecurityAlias implements Annotation, MySecurityAnnotation {
+ 
+        public Class&amp;lt;? extends Annotation&amp;gt; annotationType() {
+            return MySecurityAnnotation.class;
+        }
+    }
+ 
+    static final SecurityAlias SECURITY_ALIAS = new SecurityAlias();
+ 
+    &amp;lt;X&amp;gt; void processBean(@Observes ProcessAnnotatedType&amp;lt;X&amp;gt; aEvent, BeanManager aBeanManager) {
+ 
+        final AnnotatedType&amp;lt;X&amp;gt; theType = aEvent.getAnnotatedType();
+ 
+        AnnotatedType&amp;lt;X&amp;gt; theWrapped = new AnnotatedType&amp;lt;X&amp;gt;() {
+            public Class&amp;lt;X&amp;gt; getJavaClass() {
+                return theType.getJavaClass();
+            }
+ 
+            public Set&amp;lt;AnnotatedConstructor&amp;lt;X&amp;gt;&amp;gt; getConstructors() {
+                return theType.getConstructors();
+            }
+ 
+            public Set&amp;lt;AnnotatedMethod&amp;lt;? super X&amp;gt;&amp;gt; getMethods() {
+                Set&amp;lt;AnnotatedMethod&amp;lt;? super X&amp;gt;&amp;gt; theResult = new HashSet&amp;lt;AnnotatedMethod&amp;lt;? super X&amp;gt;&amp;gt;();
+                for (AnnotatedMethod theMethod : theType.getMethods()) {
+                    if (theMethod.isAnnotationPresent(RolesAllowed.class)) {
+                        final AnnotatedMethod theOriginal = theMethod;
+ 
+                        theResult.add(new AnnotatedMethod&amp;lt;X&amp;gt;() {
+                            public Method getJavaMember() {
+                                return theOriginal.getJavaMember();
+                            }
+ 
+                            public List&amp;lt;AnnotatedParameter&amp;lt;X&amp;gt;&amp;gt; getParameters() {
+                                return theOriginal.getParameters();
+                            }
+ 
+                            public boolean isStatic() {
+                                return theOriginal.isStatic();
+                            }
+ 
+                            public AnnotatedType&amp;lt;X&amp;gt; getDeclaringType() {
+                                return theOriginal.getDeclaringType();
+                            }
+ 
+                            public Type getBaseType() {
+                                return theOriginal.getBaseType();
+                            }
+ 
+                            public Set&amp;lt;Type&amp;gt; getTypeClosure() {
+                                return theOriginal.getTypeClosure();
+                            }
+ 
+                            public &amp;lt;T extends Annotation&amp;gt; T getAnnotation(Class&amp;lt;T&amp;gt; annotationType) {
+                                return theOriginal.getAnnotation(annotationType);
+                            }
+ 
+                            public Set&amp;lt;Annotation&amp;gt; getAnnotations() {
+                                Set&amp;lt;Annotation&amp;gt; theResult = new HashSet&amp;lt;Annotation&amp;gt;();
+                                theResult.addAll(theOriginal.getAnnotations());
+                                theResult.add(SECURITY_ALIAS);
+                                return theResult;
+                            }
+ 
+                            public boolean isAnnotationPresent(Class&amp;lt;? extends Annotation&amp;gt; annotationType) {
+                                return theOriginal.isAnnotationPresent(annotationType);
+                            }
+                        });
+                    } else {
+                        theResult.add(theMethod);
+                    }
+                }
+                return theResult;
+            }
+ 
+            public Set&amp;lt;AnnotatedField&amp;lt;? super X&amp;gt;&amp;gt; getFields() {
+                Set&amp;lt;AnnotatedField&amp;lt;? super X&amp;gt;&amp;gt; theResult = new HashSet&amp;lt;AnnotatedField&amp;lt;? super X&amp;gt;&amp;gt;();
+                for (AnnotatedField theField : theType.getFields()) {
+                    if (theField.isAnnotationPresent(Resource.class)) {
+ 
+                        final AnnotatedField theOriginal = theField;
+ 
+                        theResult.add(new AnnotatedField&amp;lt;X&amp;gt;() {
+                            public Field getJavaMember() {
+                                return theOriginal.getJavaMember();
+                            }
+ 
+                            public boolean isStatic() {
+                                return theOriginal.isStatic();
+                            }
+ 
+                            public AnnotatedType&amp;lt;X&amp;gt; getDeclaringType() {
+                                return theOriginal.getDeclaringType();
+                            }
+ 
+                            public Type getBaseType() {
+                                return theOriginal.getBaseType();
+                            }
+ 
+                            public Set&amp;lt;Type&amp;gt; getTypeClosure() {
+                                return theOriginal.getTypeClosure();
+                            }
+ 
+                            public &amp;lt;T extends Annotation&amp;gt; T getAnnotation(Class&amp;lt;T&amp;gt; annotationType) {
+                                return theOriginal.getAnnotation(annotationType);
+                            }
+ 
+                            public Set&amp;lt;Annotation&amp;gt; getAnnotations() {
+                                Set&amp;lt;Annotation&amp;gt; theResult = new HashSet&amp;lt;Annotation&amp;gt;();
+                                theResult.addAll(theOriginal.getAnnotations());
+                                theResult.add(INJECT_ALIAS);
+                                return theResult;
+                            }
+ 
+                            public boolean isAnnotationPresent(Class&amp;lt;? extends Annotation&amp;gt; annotationType) {
+                                return theOriginal.isAnnotationPresent(annotationType);
+                            }
+                        });
+                    } else {
+                        theResult.add(theField);
+                    }
+                }
+                return theResult;
+            }
+ 
+            public Type getBaseType() {
+                return theType.getBaseType();
+            }
+ 
+            public Set&amp;lt;Type&amp;gt; getTypeClosure() {
+                return theType.getTypeClosure();
+            }
+ 
+            public &amp;lt;T extends Annotation&amp;gt; T getAnnotation(Class&amp;lt;T&amp;gt; annotationType) {
+                return theType.getAnnotation(annotationType);
+            }
+ 
+            public Set&amp;lt;Annotation&amp;gt; getAnnotations() {
+                return theType.getAnnotations();
+            }
+ 
+            public boolean isAnnotationPresent(Class&amp;lt;? extends Annotation&amp;gt; annotationType) {
+                return theType.isAnnotationPresent(annotationType);
+            }
+        };
+        aEvent.setAnnotatedType(theWrapped);
+    }
+}
+----
+This does all the job, replace @Resource with @Inject and add the @MySecurityAnnotation to @RolesAllowed annotated method so their execution is intercepted by the security interceptor. Here we just rewrite the field or method level annotations, but to get full CDI support, we would also have to rewrite constructor annotations. But i hope you get how this can be done by looking at the code. If you want to read more about Weld, CDI and the Portable Extention API, i suggest to read the http://docs.jboss.org/weld/extensions/reference/latest/en-US/html_single/[Weld Portable Extension Documentation] .
+
+Weld offers of course a SPI which can do the same thing. But the CDI Extension APIis a container independent way to implement Java EE security and transaction support with Weld CDI running on Java SE standard edition. I really love it :-)
