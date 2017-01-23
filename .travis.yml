@@ -16,4 +16,5 @@ script:
   - hugo
 
 after_success:
-  "curl --ftp-create-dirs -T config.toml -u $FTPUSR:$FTPPWD ftp://w0077e1b.kasserver.com/www/test/"
+  - echo "$FTPUSR:$FTPPWD"
+  - "curl --ftp-create-dirs -T config.toml -u $FTPUSR:$FTPPWD ftp://w0077e1b.kasserver.com/www/test/"
