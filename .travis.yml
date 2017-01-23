@@ -16,4 +16,4 @@ script:
   - hugo
 
 after_success:
-  "curl --ssl ftp://$FTPUSR:$FTPPWD@w0077e1b.kasserver.com"
+  "curl --ssl --trace - ftp://$FTPUSR:$FTPPWD@w0077e1b.kasserver.com"
