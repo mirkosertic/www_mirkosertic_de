@@ -29,6 +29,16 @@ canonifyURLs = true
     post = "blog/:year/:month/:filename/"
 
 [[menu.main]]
+    name = "About me"
+    url = "/page/me"
+    weight = 1
+
+[[menu.main]]
     name = "Blog"
     url = "/"
-    weight = 1
+    weight = 2
+
+[[menu.main]]
+    name = "Interesting Books"
+    url = "/page/interestingbooks"
+    weight = 3
