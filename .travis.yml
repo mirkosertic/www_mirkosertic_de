@@ -17,4 +17,4 @@ script:
   - hugo
 
 after_success:
-  "ftp-upload -h w0077e1b.kasserver.com -u $FTPUSR --password $FTPPWD -d /www/test config.toml"
+  "curl -T config.toml -u $FTPUSER:$FTPPWD ftp://w0077e1b.kasserver.com/www/"
