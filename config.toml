@@ -26,7 +26,7 @@ canonifyURLs = true
     shareTwitter = true
 
 [Permalinks]
-    post = "blog/:year/:month/:day/:filename/"
+    post = "blog/:year/:month/:filename/"
 
 [[menu.main]]
     name = "Blog"
