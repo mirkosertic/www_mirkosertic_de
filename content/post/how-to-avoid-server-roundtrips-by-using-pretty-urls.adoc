@@ -32,7 +32,7 @@ This is the standard request-response pattern known from HTTP protocol and the J
 
 5. A HTTP Request is fired to the server with the new URL6. Render response phases is invoked
 
-7. During render response phase, the new HTMLview is rendered and send to the browser
+6. During render response phase, the new HTMLview is rendered and send to the browser
 
 Here there are two server round trips, just to display one new page. This is not good as it slows down the application. But how to avoid?
 

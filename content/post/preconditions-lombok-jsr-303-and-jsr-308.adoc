@@ -6,24 +6,92 @@ draft = false
 +++
 
 A good method implementation validates all of its preconditions before it continues. Luckily there are different frameworks such as Projekt Lombok, JSR 303 Bean Validation API and JSR 308 Java Type Annotations available for this job.  All of them are based on Java Annotations at method arguments, but they differ in runtime and compile time behavior. Here are some examples.
-=== Project Lombok
+
+== Project Lombok
 Project Lombok adds language features for boilerplate free code to the Java ecosystem. It is based on the Java Annotation Processor facility of the Java compiler. One of the features is null check of method preconditions. This is basically done by annotating the method arguments with @lombok.NonNull as shown in the following example:
 
-https://gist.github.com/mirkosertic/a96e406fcc1ccc941a4592311e64445a
+[source,java]
+----
+import lombok.NonNull;
+import org.junit.Test;
+
+public class LombokNativeTest {
+
+    public class LombokNative {
+
+        private final String value;
+
+        public LombokNative(@NonNull String value) {
+            this.value = value;
+        }
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void testCreate() {
+        new LombokNative(null);
+    }
+}
+----
 
 Lombok adds the nullcheck boilerplate code at compile time. At runtime, a NullPointer Exception is thrown, as seen in the example above.
-=== Project Lombok and JSR 303
+
+== Project Lombok and JSR 303
 There are other options to mark a method argument as not nullable. One of them is JSR 303 or the Java Validation API. Let us see what happens if we use it with Lombok:
 
-https://gist.github.com/mirkosertic/a3b51167327f4bb484e070e1c950ede1
+[source,java]
+----
+import org.junit.Test;
+
+import javax.validation.constraints.NotNull;
+
+public class Lombok303Test {
+
+    public class Lombok303 {
+
+        private final String value;
+
+        public Lombok303(@NotNull String value) {
+            this.value = value;
+        }
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void testCreate() {
+        new Lombok303(null);
+    }
+}
+----
 
 Well, this test fails, no exception is thrown. This is due to the fact that Lombok parses "NonNull" annotations in a case insensitive manner. JSR 303 uses "NotNull", so Lombok ignores this annotation completely. To make it runnable, we have to run the JSR 303 Validator by hand. This can easily be done using https://www.mirkosertic.de/wordpress/blog-post/method-validation-with-jsr303-and-aspectj/[Method validation with JSR303 and AspectJ] .
 
 We can argue that JSR 303 is far more powerful than Lombok for validation. The Java Validator API even offers a method level validation, which can be greatly used with AOP to do all kind of validations. If you are using the Spring framework, you can also use the @Validated annotation for managed objects, which basically invokes the JSR 303 Validator in the background.
-=== JSR 308 to the rescue?
+
+== JSR 308 to the rescue?
 JSR 308 or Java Type Annotations were added with Java 8. It is basically an extension of the Java type system, and allows annotations almost everywhere in the code. And of course it comes with some @NonNull annotations. Here is an example:
 
-https://gist.github.com/mirkosertic/8c0509349daebf215ae0a25693520b1f
+[source,java]
+----
+import org.junit.Test;
+
+import javax.annotation.Nonnull;
+
+public class JSR308Test {
+
+    public class JSR308 {
+
+        private final String value;
+
+        public JSR308(@Nonnull String value) {
+            this.value = value;
+        }
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testInit() {
+        new JSR308(null);
+    }
+}
+----
 
 We get what we expected, an IllegalArgumentException.class. We get the same with Project Lombok. Where is the difference?
 
@@ -39,5 +107,6 @@ Error:(35, 20) java: [argument.type.incompatible] incompatible types in argument
   found   : null
   required: @Initialized @NonNull String
 ----
-=== Summary
+
+== Summary
 There are a number of options for compile time and runtime checking available. When it comes to method level precondition checking, JSR 303 with AOP is the most flexible and powerful option, but it offers only runtime type checking. JSR 308 brings back compile time checking by using a special compiler. Personally I think that we need both of them. Compile time  checking can save a lot of time, but there are a lot of conditions that can only be detected at runtime, and here we can use JSR 303 with AOP do to method level validation on managed and unmanaged instances. But every framework or language feature doesn't remove the need to write complete and useful unit tests.
