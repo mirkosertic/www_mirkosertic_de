@@ -6,6 +6,7 @@ env:
     - secure: "BIyzJQQ6e/lRdJY4obgKePRI2GeE/XoM9oBOUqFMVtxmLxmygoQ2kRL15ziVPiO9LbnvqImWHG6BCJdm2ZHMb/wZ6DrNl+qF7yroAouEe9pNI3krqWQ81tI2SruubhUmc4eoS/MF2mIBC8VRMxSeLl3ELBtxsDE5OmN41w2TudzpJoF4C6VuN2m7j2Bdv+cu6Te3nRTqZIy+6QS830+0v8KduVE9OZKPdmnRviNA363DVIS6Zt7pwenjFd/s0JjPRv9n+lryQ4CxiMdsydhx0Hct+cM+l/ghSWhzUd8GVXalwpK3pj4Kp7AeR0gmNoiDCctnrk/D3eWtfStZGnhtJqmP4sY4A7Ep1ruEVYXp4cuRVAdyKWad2SsY1kVlzKxDBux/QHYE34jyz2T0xBSArvlPceYCFyEDKErE0VPf7HwsrD2Map4Vd2NXOCc8OvBvqMZr8E2+dEZPk+3pQy46FznmnVD16+ymHwPVAZuDaYXEjkiTEhAI2UiUeOi+b0MKL6nBbYEtAcDZJsuXHxd8y7dww0GBNd0h8jm3qziz4RSWi9cLX7pYF9XaEpcLy/mBTSpODv3AW2FGBFc6I+5KxXyiI88DTyIdM5/fqmdNreAuuUz8qGoK3NofIzLiDHgQP1EF5PvfiAmdQq44pnMSkFhxVr6/Ul2aZDCFt11LRXI="
 
 before_install:
+  - sudo apt-get install ftp-upload
   - gem install asciidoctor
 
 install:
@@ -16,4 +17,4 @@ script:
   - hugo
 
 after_success:
-  "curl --ssl --trace - ftp://$FTPUSR:$FTPPWD@w0077e1b.kasserver.com"
+  "ftp-upload -h w0077e1b.kasserver.com -u $FTPUSR --password $FTPPWD -d /www/test config.toml"
