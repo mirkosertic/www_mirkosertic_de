@@ -30,7 +30,7 @@ canonifyURLs = true
 
 [[menu.main]]
     name = "About me"
-    url = "/page/me"
+    url = "/global/me"
     weight = 1
 
 [[menu.main]]
@@ -40,5 +40,5 @@ canonifyURLs = true
 
 [[menu.main]]
     name = "Interesting Books"
-    url = "/page/interestingbooks"
+    url = "/global/interestingbooks"
     weight = 3
