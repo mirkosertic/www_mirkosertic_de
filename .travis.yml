@@ -7,4 +7,5 @@ install:
   - go get -v github.com/spf13/hugo
 
 script:
+  - git clone https://github.com/jbub/ghostwriter ./themes/ghostwriter
   - hugo
