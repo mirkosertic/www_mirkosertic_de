@@ -16,4 +16,4 @@ script:
   - hugo
 
 after_success:
-  "find public -type f -exec curl --ftp-create-dirs -T {} -u $FTPUSR:$FTPPWD ftp://w0077e1b.kasserver.com/www/test{} \\;"
+  "find public -type f -exec curl --ftp-ssl --ftp-create-dirs -T {} -u $FTPUSR:$FTPPWD ftp://w0077e1b.kasserver.com/www/test{} \\;"
