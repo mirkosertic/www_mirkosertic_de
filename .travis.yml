@@ -16,4 +16,4 @@ script:
   - hugo
 
 after_success:
-  - find public -type f -exec curl -u $FTPUSR:$FTPPWD --ftp-create-dirs -T {} ftp://w0077e1b.kasserver.com/www/test/{} \;
+  "curl --ftp-create-dirs -T config.toml -u $FTPUSR:$FTPPWD ftp://w0077e1b.kasserver.com/www/test/config.toml"
