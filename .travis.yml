@@ -1,7 +1,7 @@
 language: go
 
 before_install:
-  - sudo apt-get install asciidoctor
+  - gem install asciidoctor
 
 before-script:
   - go get -u -v github.com/spf13/hugo
