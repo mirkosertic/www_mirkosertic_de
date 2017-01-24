@@ -5,7 +5,8 @@ tags = ["Domain-driven Design", "Modernization"]
 draft = false
 +++
 
-There are a lot of excellent blogs out where about Domain Driven Design and what it's all about. I prefer http://en.wikipedia.org/wiki/Domain-driven_design[Wikipedia] for a short introduction, but there is also an excellent article at http://www.infoq.com/articles/ddd-in-practice[InfoQ] about Domain Driven Design. If you want to know more about the principles behind DDD, you can also consult the http://en.wikipedia.org/wiki/GRASP_(object-oriented_design)[GRASP Patterns] or the http://en.wikipedia.org/wiki/SOLID_(object-oriented_design)[SOLID Patterns] . Here is a summary of DDD (also taken from Wikipedia):
+There are a lot of excellent blogs out where about Domain Driven Design and what it's all about. I prefer http://en.wikipedia.org/wiki/Domain-driven_design[Wikipedia] for a short introduction, but there is also an excellent article at http://www.infoq.com/articles/ddd-in-practice[InfoQ] about Domain Driven Design. If you want to know more about the principles behind DDD, you can also consult the http://en.wikipedia.org/wiki/GRASP_(object-oriented_design)[GRASP Patterns] or the http://en.wikipedia.org/wiki/SOLID_(object-oriented_design)[SOLID Patterns]. Here is a summary of DDD (also taken from Wikipedia):
+
 == Core definitions
 
 	 * Domain: A sphere of knowledge (ontology), influence, or activity. The subject area to which the user applies a program is the domain of the software.
@@ -21,7 +22,9 @@ There are a lot of excellent blogs out where about Domain Driven Design and what
 	 * You have an iterative process
 
 == Building blocks
+
 === Strategic patterns
+
 Domain, and Subdomains:As mentioned above, a Domain is a sphere of knowledge. A Domain can be split into Subdomains if it is too large. The Domain is usually known as the problem space.
 
 Bounded Context:A Bounded context should be aligned with a Domain or a Subdomain. There is one Ubiquitous Language applied within a Bounded Context. A Bounded Context is usually the solution space, where we design our software or business solution.
@@ -29,6 +32,7 @@ Bounded Context:A Bounded context should be aligned with a Domain or a Subdomain
 Context Map:A Context Map displays the alignment of Domains, Subdomains and their Bounded Contexts. A Context Map also shows dependencies between Bounded Contexts. Such dependencies can be upstream or downstream. Dependencies show where integration patterns should or must be applied.
 
 === Tactical patterns
+
 Entity: An object that is not defined by its attributes, but rather by a thread of continuity and its identity.
 
 Example: Most airlines distinguish each seat uniquely on every flight. Each seat is an entity in this context. However, Southwest Airlines (or EasyJet/RyanAir for Europeans) does not distinguish between every seat; all seats are the same. In this context, a seat is actually a value object.
@@ -41,9 +45,9 @@ Aggregate: A collection of objects that are bound together by a root entity, oth
 
 Example: When you drive a car, you do not have to worry about moving the wheels forward, making the engine combust with spark and fuel, etc.; you are simply driving the car. In this context, the car is an aggregate of several other objects and serves as the aggregate root to all of the other systems. A steering wheel can be rotated, this is it's context within the car aggregate. It can also be produced or recycled. This usually happens not within the driving car context, so this would be another aggregate, probably referencing the car as well.
 
-Domain Events:Domain events can be used to model distributed systems. The model will become more complex, but it can by more scalable. Domain Events are often used in an http://en.wikipedia.org/wiki/Event-driven_architecture[Event Driven Architecture] Service: When an operation does not conceptually belong to any object. Following the natural contours of the problem, you can implement these operations in services.
+Domain Events:Domain events can be used to model distributed systems. The model will become more complex, but it can be more scalable. Domain Events are often used in an http://en.wikipedia.org/wiki/Event-driven_architecture[Event Driven Architecture] Service: When an operation does not conceptually belong to any object. Following the natural contours of the problem, you can implement these operations in services.
 
-Repository: Repositories save and retrieve Entities or Aggregates to or from the underlying storage mechanism. Repositories are part of the domain model, so they should be database vendor independent. Repositories can use DAO's(Data Access Objects) for retrieving data and to encapsulate database specific logic from the domain. Note: http://de.wikipedia.org/wiki/Hibernate_(Framework)[Hibernate] is also a Data Access Object! Wrapping Hibernate inside a DAO can be an overkill. Repositories can use an http://martinfowler.com/bliki/AggregateOrientedDatabase.html[Aggregate Oriented Database] .
+Repository: Repositories save and retrieve Entities or Aggregates to or from the underlying storage mechanism. Repositories are part of the domain model, so they should be database vendor independent. Repositories can use DAOs(Data Access Objects) for retrieving data and to encapsulate database specific logic from the domain. Note: http://de.wikipedia.org/wiki/Hibernate_(Framework)[Hibernate] is also a Data Access Object! Wrapping Hibernate inside a DAO can be an overkill. Repositories can use an http://martinfowler.com/bliki/AggregateOrientedDatabase.html[Aggregate Oriented Database].
 
 Modules, also known as Packages:Components with high cohesion should be packaged together. Modules are defined by business dependencies, not by the technical architecture.
 

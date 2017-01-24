@@ -1,11 +1,12 @@
 languageCode = "en-us"
 title = "www.mirkosertic.de"
 theme= "ghostwriter"
-baseurl = "https://www.mirkosertic.de/test"
+baseurl = "https://test.mirkosertic.de"
 copyright = "Mirko Sertic"
 googleAnalytics = "UA-33614060-2"
 disqusShortname = "www-mirkosertic-de"
 canonifyURLs = true
+paginate = 40
 
 [Taxonomies]
     tag = "tags"

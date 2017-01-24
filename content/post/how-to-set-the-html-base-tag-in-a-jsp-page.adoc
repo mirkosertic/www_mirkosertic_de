@@ -5,9 +5,9 @@ tags = ["Web"]
 draft = false
 +++
 
-Sometimes we have to set the HTMLbase Tag from within a JSP page. For this purpose, we have to compute the correct URL, because the JSP APIdoes not fully expose it. The following shipped shows how it can be cone:
+Sometimes we have to set the HTML base Tag from within a JSP page. For this purpose, we have to compute the correct URL, because the JSP API does not fully expose it. The following shipped shows how it can be cone:
 
-[source]
+[source,jsp]
 ----
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>

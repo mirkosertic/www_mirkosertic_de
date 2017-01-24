@@ -5,7 +5,7 @@ tags = ["HTML5", "JavaFX", "Performance", "Web"]
 draft = false
 +++
 
-Last year I wrote a http://www.mirkosertic.de/wordpress/blog-post/a-javafx-based-game-authoring-system/[cross platform game engine] . It used a JavaFX based Game Auhoring System and had a Java based Game Runtime, which was transpiled to different platforms such as Android, JavaScript over GWT and JavaFX.
+Last year I wrote a http://www.mirkosertic.de/wordpress/blog-post/a-javafx-based-game-authoring-system/[cross platform game engine]. It used a JavaFX based Game Authoring System and had a Java based Game Runtime, which was transpiled to different platforms such as Android, JavaScript over GWT and JavaFX.
 
 Here is a screenshot of a simple platform game based on the GameEngine, some physics stuff and a lot of Java code:
 
@@ -19,7 +19,7 @@ The original Game Runtime was written in Java 7. Now Java 8 is available, and th
 
 Well, there is an ugly limitation: GWT does even in Version 2.7.0 not support Java 8.
 
-Now, how can we deal with this? In the last months I came across some GWT alternatives such as http://www.dragome.com/[Dragome] and https://github.com/konsoletyper/teavm[TeaVM] . Both of them are Java Bytecode to JavaScript transpiler frameworks. In contrast to GWT which uses Java source code to generate JavaScript, Dragome and TeaVM both use JVM Bytecode to generate JavaScript. So as long as it is valid Bytecode, the program can be translated to JavaScript, even if it is Java 7, Java 8 or other JVM languages.
+Now, how can we deal with this? In the last months I came across some GWT alternatives such as http://www.dragome.com/[Dragome] and https://github.com/konsoletyper/teavm[TeaVM]. Both of them are Java Bytecode to JavaScript transpiler frameworks. In contrast to GWT which uses Java source code to generate JavaScript, Dragome and TeaVM both use JVM Bytecode to generate JavaScript. So as long as it is valid Bytecode, the program can be translated to JavaScript, even if it is Java 7, Java 8 or other JVM languages.
 
 Thanks to the http://alistair.cockburn.us/Hexagonal+architecture[hexagonal] domain-driven Architecture of the Game Engine, I can just add a new GameView to the Engine which will deal with the JavaScript framework specific rendering stuff.
 
@@ -46,38 +46,36 @@ Beside the fact that Dragome supports reflections and GWT and TeaVM not, all thr
 |===
 | Measurement| GWT| Dragome| TeaVM
 | Compile time| 22822 ms| 12268 ms| 8226 ms
-| Size of JS in unoptimized mode| 2300 kb| 4984 kb| 2120 kb
+| Size of JS in epitomized mode| 2300 kb| 4984 kb| 2120 kb
 | Size of JS in optimized mode| 1012 kb| 4984 kb| 1096 kb
 |===
 
 Now let's take a look at runtime behavior. Are all three contenders equivalent in runtime behavior? Well, here are the profiling results(running in Chrome):
 
 |===
-| Measurement| GWT| Gragome /
-
-Dragome without cast check| TeaVM
+| Measurement| GWT| Gragome / Dragome without cast check| TeaVM
 | Frames / sec| 60| 60 / 60| 60
 | Average time for one game loop cycle| 8 ms| 10 ms / 8 ms| 8 ms
-| Time for physics and main game systems in the main loop| Obfuscation and inlining enabled. No results available.| 5 ms / 4 ms| 4 ms
-| Time for game view rendering in the main loop| Obfuscation and inlining enabled. No results available.| 5 ms / 4 ms| 4 ms
+| Time for physics and main game systems in the main loop| Obfuscation and in-lining enabled. No results available.| 5 ms / 4 ms| 4 ms
+| Time for game view rendering in the main loop| Obfuscation and in-lining enabled. No results available.| 5 ms / 4 ms| 4 ms
 |===
 
 GWT, Dragome and TeaVM are running at 60 frames per second in the browser, as this is the maximum speed for Window.requestAnimationFrame().
+
 == Conclusion
-Well, both Dragome and TeaVM are viable alternatives to GWT. From my point of view, the TeaVM JSO JavaScript integration feels more natural and encapsulates the JavaScript interaction better than the JNSI notation of Dragome and GWT. TeaVM and GWT have a better JavaScript size optimizing compiler than Dragome, as Dragome always compiles the whole classpath and JRE to JavaScript without dropping unreferenced code. This is due to the fact that Dragome supports reflection in contrast to GWT and TeaVM. When it comes to performance, TeaVM, Dragome and GWT produce very effective JavaScript. Dragome comes with some type cast checking, which is enabled by default. Disabling this feature saves some processing time, but might break existing code.
+
+Well, both Dragome and TeaVM are viable alternatives to GWT. From my point of view, the TeaVM JSO JavaScript integration feels more natural and encapsulates the JavaScript interaction better than the JNSI notation of Dragome and GWT. TeaVM and GWT have a better JavaScript size optimizing compiler than Dragome, as Dragome always compiles the whole classpath and JRE to JavaScript without dropping un referenced code. This is due to the fact that Dragome supports reflection in contrast to GWT and TeaVM. When it comes to performance, TeaVM, Dragome and GWT produce very effective JavaScript. Dragome comes with some type cast checking, which is enabled by default. Disabling this feature saves some processing time, but might break existing code.
 
 From my point of view, TeaVM is the clear winner for mobile game development. It is as fast as GWT and is not restricted to Java source code. The JavaScript size is very small and the compiler is the fastest one in my test. I really like the JSO syntax for JavaScript interaction as it feels natural and made me productive in a short time. Go TeaVM!
 
 Links:
 
-The source code is available for free on GitHub:
+The source code is available for free on GitHub: https://github.com/mirkosertic/GameComposer[github.com/mirkosertic/GameComposer]
 
-https://github.com/mirkosertic/GameComposer[github.com/mirkosertic/GameComposer] The Duke example game can be played here:
+The Duke example game can be played here:
 
-GWT version:
+GWT version: http://mirkosertic.github.io/GameComposer/games/gwt/platformer/index.html[mirkosertic.github.io/GameComposer/games/gwt/platformer/index.html]
 
-http://mirkosertic.github.io/GameComposer/games/gwt/platformer/index.html[mirkosertic.github.io/GameComposer/games/gwt/platformer/index.html] TeaVM version:
+TeaVM version: http://mirkosertic.github.io/GameComposer/games/teavm/platformer/index.html[mirkosertic.github.io/GameComposer/games/teavm/platformer/index.html]
 
-http://mirkosertic.github.io/GameComposer/games/teavm/platformer/index.html[mirkosertic.github.io/GameComposer/games/teavm/platformer/index.html] Dragome version:
-
-http://mirkosertic.github.io/GameComposer/games/dragome/platformer/index.html[mirkosertic.github.io/GameComposer/games/dragome/platformer/index.html] 
+Dragome version: http://mirkosertic.github.io/GameComposer/games/dragome/platformer/index.html[mirkosertic.github.io/GameComposer/games/dragome/platformer/index.html]

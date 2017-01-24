@@ -32,4 +32,5 @@ ServerConfig cfg = ConfigFactory
  
 System.out.println(cfg.hostname()); // And simply use them
 ----
+
 This is a really nice way to deal with property files:-)

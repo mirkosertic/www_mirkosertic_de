@@ -5,7 +5,7 @@ tags = ["Maven"]
 draft = false
 +++
 
-Starting with Maven 3.1, Sonatype Aether(https://github.com/sonatype/sonatype-aether[github.com/sonatype/sonatype-aether] ) was replaced with Eclipse Eather(http://www.eclipse.org/aether[www.eclipse.org/aether] ). Now, sometimes we need do download additional Artifacts from Maven repositories during execution time of custom Maven plugins. As the Maven and Aether dokumentation is not very handsome, here is a short example about how to programatically download and resolve Maven Artifacts using Maven 3.1 and later with the Eclipse Aether API:
+Starting with Maven 3.1, Sonatype Aether(https://github.com/sonatype/sonatype-aether[github.com/sonatype/sonatype-aether] ) was replaced with Eclipse Eather(http://www.eclipse.org/aether[www.eclipse.org/aether] ). Now, sometimes we need do download additional Artifacts from Maven repositories during execution time of custom Maven plugins. As the Maven and Aether documentation is not very handsome, here is a short example about how to programmatically download and resolve Maven Artifacts using Maven 3.1 and later with the Eclipse Aether API:
 
 [source,java]
 ----
@@ -56,11 +56,11 @@ public class DownloadMojo extends AbstractMojo {
     private RepositorySystemSession repositorySystemSession;
  
     @Parameter(defaultValue = "${project.remotePluginRepositories}", readonly = true)
-    private List&amp;lt;RemoteRepository&amp;gt; remoteRepositories;
+    private List<RemoteRepository> remoteRepositories;
  
     public void execute() throws MojoExecutionException {
               // We want to collect the files in our local repository here
-              List theResult = new ArrayList&amp;lt;&amp;gt;();
+              List theResult = new ArrayList<>();
  
               String theGroupId = ""; // Replace with your Artifact
               String theArtifactId = ""; // Replace with your Artifact
@@ -97,4 +97,5 @@ public class DownloadMojo extends AbstractMojo {
     }
 }
 ----
+
 Great :-) !

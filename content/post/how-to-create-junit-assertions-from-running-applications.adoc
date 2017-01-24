@@ -11,57 +11,52 @@ JUnit is a cool and powerful framework for unit test creation. But there is a dr
 ----
 public class BeanTest {
  
- 
     @Test
     public void testCreate() {
         ClassToTest theCandidate = new ClassToTest();
         TestBean theTestBean = theCandidate.create();
- 
  
         // Here we need to generate assertions?
         System.out.println(theTestBean);
     }
 }
 ----
+
 Wouldn't it be cool to just execute it and generate the unit test assertions from a running application instance, so we can get the following?
 
 [source,java]
 ----
 public class BeanTest {
  
- 
     @Test
     public void testCreate() {
         ClassToTest theCandidate = new ClassToTest();
         TestBean theTestBean = theCandidate.create();
  
- 
         // Here we need to generate assertions?
         System.out.println(theTestBean);
- 
  
         Assert.assertEquals("Name1", theTestBean.getName1());
         Assert.assertNull(theTestBean.getName2());
         Assert.assertEquals(Integer.valueOf(1), theTestBean.getValue1());
         Assert.assertEquals(Boolean.valueOf(true), theTestBean.getValue2());
         Assert.assertEquals(Double.valueOf(3.0d), theTestBean.getValue3());
- 
- 
     }
 }
 ----
+
 So how do we create the missing unit test assertions? Just step into the unit test using a debugger and evaluate the following expression in the shell:
 
-[source]
+[source,java]
 ----
 AssertGen.generate(theTestBean)
 ----
+
 And you will get the missing assertion statements. Now we can copy them to the original unit test source and rerun it again. Pretty cool, this can save a lot of time while writing unit test. But how does it work under the hood? The AssertGen class is quite simple, just check the source:
 
-[source]
+[source,java]
 ----
 public class AssertGen {
- 
  
     public static String generate(Object aObject) throws InvocationTargetException, IllegalAccessException {
         StringWriter theStringWriter = new StringWriter();
@@ -81,7 +76,6 @@ public class AssertGen {
         return theStringWriter.toString();
     }
  
- 
     private static void generate(PrintWriter aPW, String aPrefix, Object aObject) throws InvocationTargetException,
             IllegalAccessException {
         for (Method theMethod : aObject.getClass().getMethods()) {
@@ -99,7 +93,6 @@ public class AssertGen {
             }
         }
     }
- 
  
     private static String toAssertionText(Object aValue) {
         if (aValue instanceof String) {
@@ -122,9 +115,9 @@ public class AssertGen {
             return "new Timestamp(" + theTS.getTime() + "L)";
         }
  
- 
         return "don't know to convert : " + aValue;
     }
 }
 ----
+
 Nice, i really love JUnit!

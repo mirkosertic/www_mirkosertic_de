@@ -36,9 +36,10 @@ public class Example {
     }
 }
 ----
-Wouldn't it be cool to validate the method pre- and postconditions without coding too much? Here comes method validation and AspectJ to play. Using the following Aspect, we can validate the conditions using JSR303. If an argument does not match or validation fails, a ConstraintViolationException is thrown.
 
-[source]
+Wouldn't it be cool to validate the method pre- and post conditions without coding too much? Here comes method validation and AspectJ to play. Using the following Aspect, we can validate the conditions using JSR303. If an argument does not match or validation fails, a ConstraintViolationException is thrown.
+
+[source,java]
 ----
 package de.mirkosertic.aspectj;
  
@@ -102,4 +103,5 @@ public class ValidatorAspect {
     }
 }
 ----
+
 Nice! For further reading, please check the Hibernate Validator documentation.

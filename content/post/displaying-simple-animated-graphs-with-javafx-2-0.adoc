@@ -26,13 +26,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
  
- 
 import java.util.ArrayList;
 import java.util.List;
  
- 
 public class JXGraphApplication1 extends Application {
- 
  
     @Override
     public void start(Stage aStage) throws Exception {
@@ -40,10 +37,8 @@ public class JXGraphApplication1 extends Application {
         aStage.setMinHeight(600);
         aStage.setTitle(getClass().getSimpleName());
  
- 
         FXGraphBuilder theBuilder = FXGraphBuilder.create();
         FXGraph theGraph = theBuilder.build();
- 
  
         List<FXNode> theNodes = new ArrayList<FXNode>();
         int centerX = 400;
@@ -54,33 +49,28 @@ public class JXGraphApplication1 extends Application {
             Button button1 = new Button();
             button1.setText("Node " + i);
  
- 
             double positionX = centerX + Math.cos(Math.toRadians(360 / numNodes * i)) * radius;
             double positionY = centerY + Math.sin(Math.toRadians(360 / numNodes * i)) * radius;
- 
  
             FXNode theButtonNode = theGraph.createNodeFor(button1, positionX, positionY);
             theNodes.add(theButtonNode);
         }
  
- 
         for (int i = 0; i <theNodes.size() - 1; i++) {
             theGraph.createEdgeFor(theNodes.get(i), theNodes.get(i + 1));
         }
  
- 
         aStage.setScene(new Scene(theGraph));
- 
  
         aStage.show();
     }
- 
  
     public static void main(String[] args) {
         Application.launch(JXGraphApplication1.class, args);
     }
 }
 ----
-We can select nodes, aka. cells, by using the mouse, dragging them around and change the selection in an interactive way. The first prototype was written within two days, so you see how simple it can be to create custom Controls and nice looking UI's with JavaFX.
+
+We can select nodes, aka. cells, by using the mouse, dragging them around and change the selection in an interactive way. The first prototype was written within two days, so you see how simple it can be to create custom Controls and nice looking UIs with JavaFX.
 
 The project is hosted on GitHub, so please visit https://github.com/mirkosertic/javafxgraph/[JavaFX Graph] for more information.

@@ -15,26 +15,20 @@ Consider the following class:
 ----
 package de.mirkosertic;
  
- 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
  
- 
 import java.util.Random;
- 
  
 @Service
 @Scope("singleton")
 public class RandomBean {
  
- 
     private final Random random;
- 
  
     public RandomBean() {
         random = new Random();
     }
- 
  
     @CircuitBreaker
     public String random() {
@@ -42,30 +36,26 @@ public class RandomBean {
     }
 }
 ----
-The RandomBean can be a gateway to some remote service. Do you see the @CircuitBreaker annotation? This marks the method as to be “protected” and “monitored” by Hystrix. But what is going on under the hood? The @CircuitBreaker annotation works together with an AOP around advice, and this advice encapsules the whole Hystrix logic, as seen here:
 
-[source]
+The RandomBean can be a gateway to some remote service. Do you see the @CircuitBreaker annotation? This marks the method as to be “protected” and “monitored” by Hystrix. But what is going on under the hood? The @CircuitBreaker annotation works together with an AOP around advice, and this advice encapsulates the whole Hystrix logic, as seen here:
+
+[source,java]
 ----
 package de.mirkosertic.aspect;
- 
  
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.netflix.hystrix.HystrixCommandKey;
- 
- 
+
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
  
- 
 import org.springframework.stereotype.Component;
- 
  
 @Aspect
 @Component
 public class CircuitBreakerAspect {
- 
  
     @Around("@annotation(de.mirkosertic.CircuitBreaker)")
     public Object circuitBreakerAround(final ProceedingJoinPoint aJoinPoint) throws Throwable {
@@ -89,11 +79,12 @@ public class CircuitBreakerAspect {
     }
 }
 ----
+
 Nice! But how to we add Hystrix monitoring capabilities to our app? We just need to add a small Servlet to our web.xml, as seen here:
 
-[source]
+[source,xml]
 ----
-<servlet>
+    <servlet>
         <display-name>HystrixMetricsStreamServlet</display-name>
         <servlet-name>HystrixMetricsStreamServlet</servlet-name>
         <servlet-class>com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet</servlet-class>
@@ -103,8 +94,9 @@ Nice! But how to we add Hystrix monitoring capabilities to our app? We just need
         <url-pattern>/hystrix.stream</url-pattern>
     </servlet-mapping>
 ----
+
 And the monitoring can be done using the Hystrix Dashboard app, as seen here:
 
 image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/hystrixdashboard.png[976,300]
 
-Very nice! Using the Dashboard, we can monitor the throughput of the service interface and we can also see the status of the circuit breaker and other statistics. The sources and examples of this tutorial are available at https://github.com/mirkosertic/HystrixSpring[github.com/mirkosertic/HystrixSpring] . Yes, resilience, here we go!
+Very nice! Using the Dashboard, we can monitor the throughput of the service interface and we can also see the status of the circuit breaker and other statistics. The sources and examples of this tutorial are available at https://github.com/mirkosertic/HystrixSpring[github.com/mirkosertic/HystrixSpring]. Yes, resilience, here we go!

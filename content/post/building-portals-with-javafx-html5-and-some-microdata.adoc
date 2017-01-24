@@ -7,11 +7,12 @@ draft = false
 
 Often we need to integrate different applications. This can be done at different integration levels, like integration using the database, integration using services and sometimes integration at user interface level.
 
-Different solutions are available for user interface level application integration. The most famous are Portlets. A Portlet requires a Portlet Container to build a Portal. These containers are expensive, difficult to configure and maintain and the worst point is: the Portlet APIis very limited to model complex integration scenarios!
+Different solutions are available for user interface level application integration. The most famous are Portlets. A Portlet requires a Portlet Container to build a Portal. These containers are expensive, difficult to configure and maintain and the worst point is: the Portlet API is very limited to model complex integration scenarios!
 
-Now I want to show another approach. We can build our own Portal runtime using JavaFX to integrate different applications. And we can also model complex integration scenarios by adding some HTML5 Microdata to the target application. This integration is sometimes called a “http://en.wikipedia.org/wiki/Composite_application[Composite Application] ”, building new solutions by integrating existing applications.
+Now I want to show another approach. We can build our own Portal run time using JavaFX to integrate different applications. And we can also model complex integration scenarios by adding some HTML5 Microdata to the target application. This integration is sometimes called a “http://en.wikipedia.org/wiki/Composite_application[Composite Application] ”, building new solutions by integrating existing applications.
 
 Here are the results for building a client-side application composition framework.
+
 == Requirements
 
 	 * We have three different web applications, Product Catalog, Customer Management and Invoice Management.
@@ -19,6 +20,7 @@ Here are the results for building a client-side application composition framewor
 	 * We need to navigate from one application to another, for instance by clicking on a product in the Invoice Management application, the record in the Product Catalog must be displayed.
 
 == The JavaFX Portal solution
+
 The solution is quite simple. Basically it is a JavaFX web browser on steroids, so a Scene with a WebView and some buttons around it. In my example it looks like this:
 
 image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/fxportalmain.png[781,579]
@@ -29,7 +31,7 @@ image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/fxportalmai
 
 How is this done? The answer is: HTML5 Microdata! The source code is:
 
-[source]
+[source,html]
 ----
 <div class="mainmenuItem">
  <a itemscope itemtype="http://mirkosertic.de/fxportal/action" href="products/list"><img src="products.png"/>Product Catalog</a>
@@ -41,25 +43,27 @@ How is this done? The answer is: HTML5 Microdata! The source code is:
  <a itemscope itemtype="http://mirkosertic.de/fxportal/action" href="invoices/list"><img src="invoices.png"/>Invoice Management</a>
 </div>
 ----
-Note the <a> link elements. They contain new attributes like itemscope and itemtype. These attributes are part of the HTML5 Microdata API, and can be used to add invisible metadata to the HTMLcode. There are some http://www.schema.org/[standardized itemtypes by Schema.org] available, they are already used by search engines like Google or Yahoo!, but we can also define custom types as well. For the case of application integration, I created the itemtype “http://mirkosertic.de/fxportal/action[http://mirkosertic.de/fxportal/action] ”. This marks a link as an action, and once the HTMLcode is loaded by the JavaFX WebView, a Microdata parser is fired to crawl the page for available actions. For every action, a menuitem is created in the main menu.
 
-This is quite nice, as we can add RIA capabilities to simple web pages, providing icons for the common actions and move the uncommon ones to the main menu. This helps a lot to keep the user interface clean and straight. Also please note that the original HTMLproducer didn't know that there is a main menu. It just annotated the HTMLwith Microdata and that's it. This really reduces the technical complexity in this integration scenario.
+Note the <a> link elements. They contain new attributes like itemscope and itemtype. These attributes are part of the HTML5 Microdata API, and can be used to add invisible meta data to the HTML code. There are some http://www.schema.org/[standardized item types by Schema.org] available, they are already used by search engines like Google or Yahoo!, but we can also define custom types as well. For the case of application integration, I created the itemtype “http://mirkosertic.de/fxportal/action[http://mirkosertic.de/fxportal/action] ”. This marks a link as an action, and once the HTML code is loaded by the JavaFX WebView, a Microdata parser is fired to crawl the page for available actions. For every action, a menu item is created in the main menu.
 
-Let's go further. Consider the Invoice Management application, and we need to navigate from one invoice position to the right product in the Product Catalog application. This can also be archived by Microdata. Take a look at the following HTMLshowing an invoice list:
+This is quite nice, as we can add RIA capabilities to simple web pages, providing icons for the common actions and move the uncommon ones to the main menu. This helps a lot to keep the user interface clean and straight. Also please note that the original HTML producer didn't know that there is a main menu. It just annotated the HTML with Microdata and that's it. This really reduces the technical complexity in this integration scenario.
 
-[source]
+Let's go further. Consider the Invoice Management application, and we need to navigate from one invoice position to the right product in the Product Catalog application. This can also be archived by Microdata. Take a look at the following HTML showing an invoice list:
+
+[source,html]
 ----
 <tr>
 <td><a href="invoices/INV1">00001</a>
 </td>
 <td><span itemscope itemtype="http://mirkosertic.de/fxportal/customerid">00001</span></td>
 <td><span itemscope itemtype="http://mirkosertic.de/fxportal/productid>SDK160</span></td>
-<td>10 EUR</td><
+<td>10 EUR</td>
 </tr>
 ----
-There is no link at all. There is just a customer id and a product id, annotated with the Microdata itemtypes “http://mirkosertic.de/fxportal/customerid[http://mirkosertic.de/fxportal/customerid] ” and “http://mirkosertic.de/fxportal/productid[http://mirkosertic.de/fxportal/productid] ”. Why this? Because the Invoice Management does not really have to know if there should be a link or how the link must be generated. It just have to know: this is a customer id, or this is a product id. So we do not have to blow up application source code just to get application integration capabilities. Just add some Microdata, and we are done.
 
-The link generation is done by the FXPortal Microdata parser. It generates a RESTful link for every customer id or product id by modifying the DOM tree of the HTMLdocument. As the Portal already knows where to find the right applications, it also knows how to generate the right links, and so it can modify the HTMLbefore showing it to the user.
+There is no link at all. There is just a customer id and a product id, annotated with the Microdata item types “http://mirkosertic.de/fxportal/customerid[http://mirkosertic.de/fxportal/customerid] ” and “http://mirkosertic.de/fxportal/productid[http://mirkosertic.de/fxportal/productid] ”. Why this? Because the Invoice Management does not really have to know if there should be a link or how the link must be generated. It just have to know: this is a customer id, or this is a product id. So we do not have to blow up application source code just to get application integration capabilities. Just add some Microdata, and we are done.
+
+The link generation is done by the FXPortal Microdata parser. It generates a RESTful link for every customer id or product id by modifying the DOM tree of the HTML document. As the Portal already knows where to find the right applications, it also knows how to generate the right links, and so it can modify the HTML before showing it to the user.
 
 Quite nice! But this is just the beginning.
 

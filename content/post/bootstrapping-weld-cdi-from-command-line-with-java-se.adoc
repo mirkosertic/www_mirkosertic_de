@@ -9,7 +9,7 @@ It is possible to use CDI and Weld in a Java command line program. There are sev
 
 The answer is simple: use a static producer method! Here is an example:
 
-[source]
+[source,java]
 ----
 @Singleton
 public final class Main {
@@ -30,7 +30,7 @@ public final class Main {
     }
     public static void main(String[] args) throws IOException {
         // Initialize the Configurtation instance by command line arguments
-        // and store it in a static field. Now it is available by the producer methid
+        // and store it in a static field. Now it is available by the producer method
         CONFIGURATION = new Configuration(args);
  
  
@@ -48,5 +48,7 @@ public final class Main {
     }
 }
 ----
-Note that ProjectSpecificBean requires a container managed Configuration instance. This is aquired by the configuration() static producer method.
+
+Note that ProjectSpecificBean requires a container managed Configuration instance. This is acquired by the configuration() static producer method.
+
 Quite simple. I really love CDI, even in a Java SE environment.

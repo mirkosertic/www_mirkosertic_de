@@ -11,9 +11,10 @@ CDI is a mighty enhancement to the Java programming language. But CDI has also s
 	 * All dependency injected beans are also managed beans
 	 * Hibernate or JPA entities are not managed by the CDI container, so there is no CDI support for them
 
-So what can we doo to get around these limitations, for instance we really want dependency injection in our Entities? The solution is AOP and AspectJ!
+So what can we do to get around these limitations, for instance we really want dependency injection in our Entities? The solution is AOP and AspectJ!
 
 == Entities with CDI
+
 Entities sometimes need references to other domain services or subsystems. Of course we can argue what this functionality can be promoted to a domain service itself, but this also means that business logic will go to services where it probably does not belong. So what can be a solution? We use AOP and AspectJ do inject dependencies into Entities. But how does it work?
 
 Consider the following code:
@@ -26,10 +27,11 @@ public class WovenBean {
     String random;
 }
 ----
+
 Now we need to inject the dependency into the field. We can use an AspectJ Field-Access Pointcut in combination with an advice to inject the missing dependency when the field is read. But wait! What should happen if we inject the field during unit testing? In this case, there must not be any dependency injection for the field at all.
 
 Please note that Entity dependency injection can lead to very bad design. If you are really sure you need a service or other kind of resources inside of Entity logic, consider using a method argument to do so. The above described solution should be the last case, but sometimes not avoidable in legacy code.
-If we search the web, we can find many examples where a before advice is used to change the field value. But note that changing a field value is potential not thread safe! The solution is quite simple. We use an around advice for field get access. This works pretty smooth, and we do not have multithreading issues at all.
+If we search the web, we can find many examples where a before advice is used to change the field value. But note that changing a field value is potential not thread safe! The solution is quite simple. We use an around advice for field get access. This works pretty smooth, and we do not have multi threading issues at all.
 
 Here is the aspect code for the final dependency injection aspect:
 
@@ -93,5 +95,5 @@ public aspect InjectAspect {
 }
 ----
 
-Note that we are using the Java6 ServiceLoader APIto retrieve all available InjectResolver from classpath. We can implement them by ourself out of the box or implement one that delegates to Weld or Spring. This is up to you.
+Note that we are using the Java6 ServiceLoader API to retrieve all available InjectResolver from classpath. We can implement them by our self out of the box or implement one that delegates to Weld or Spring. This is up to you.
 
