@@ -17,4 +17,4 @@ script:
   - hugo
 
 after_success:
-  - lftp -c "mirror -v -R ./public /www/test && wait all" -u $FTPUSR,$FTPPWD w0077e1b.kasserver.com
+  - lftp -e "mirror -v -R ./public /www/test,quit" -u $FTPUSR,$FTPPWD w0077e1b.kasserver.com
