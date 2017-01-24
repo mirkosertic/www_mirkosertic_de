@@ -5,7 +5,7 @@ tags = ["HTML5", "Performance", "Web"]
 draft = false
 +++
 
-Two years ago I wrote a Java based http://www.mirkosertic.de/wordpress/blog-post/a-javafx-based-game-authoring-system/[GameEngine] . I used technologies such as GWT and TeaVM to transpile the Java source code to JavaScript. The Game Engine used the HTML5 Canvas to render the current game state representation to the user. For the past few weeks I had some time to implement new features for this cool engine. I also did some profiling to see if there are bottlenecks in the rendering code. During the profiling sessions already known facts became visible: some browsers perform better than others.
+Two years ago I wrote a Java based http://www.mirkosertic.de/wordpress/blog-post/a-javafx-based-game-authoring-system/[GameEngine]. I used technologies such as GWT and TeaVM to transpile the Java source code to JavaScript. The Game Engine used the HTML5 Canvas to render the current game state representation to the user. For the past few weeks I had some time to implement new features for this cool engine. I also did some profiling to see if there are bottlenecks in the rendering code. During the profiling sessions already known facts became visible: some browsers perform better than others.
 
 I did expect this. What I did not expect was the identified bottleneck. Surprisingly the fillText() implementation of the HTML5 Canvas was terribly slow. I did expect something related to the JBox2D physics simulation. I did not expect the fillText() to be under the top CPU consumers.
 

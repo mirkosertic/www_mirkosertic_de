@@ -98,9 +98,10 @@ public class ExampleModel {
     }
 }
 ----
+
 How we want to bind each of the properties to Swing widgets. Here is an example Swing UI with embedded DataBinding code:
 
-[source]
+[source,java]
 ----
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
@@ -114,12 +115,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
  
-/**  * @author msertic  */
+/**
+ * @author msertic
+ */
 public class DataBindingTest1 {
- 
- 
+
     public static void main(String args[]) {
- 
  
         // Setup the view
         JFrame frame = new JFrame("Test");
@@ -130,75 +131,56 @@ public class DataBindingTest1 {
         });
         frame.setSize(640, 480);
  
- 
         CellConstraints cons = new CellConstraints();
  
- 
         FormLayout layout = new FormLayout("90dlu,80dlu:grow",
- 
- 
                 "2dlu,p,2dlu,p,2dlu,p,2dlu,p,2dlu,p,2dlu,p,p,p,2dlu");
- 
- 
+
         JPanel content = new JPanel();
         content.setLayout(layout);
- 
- 
+
         frame.getContentPane().setLayout(new BorderLayout());
         frame.getContentPane().add(content, BorderLayout.CENTER);
- 
- 
+
         JLabel label1 = new JLabel("JTextField with value");
         JTextField textfield1 = new JTextField();
- 
- 
+
         content.add(label1, cons.xy(1, 2));
         content.add(textfield1, cons.xy(2, 2));
- 
- 
+
         JLabel label2 = new JLabel("JTextField without value");
         JTextField textfield2 = new JTextField();
- 
- 
+
         content.add(label2, cons.xy(1, 4));
         content.add(textfield2, cons.xy(2, 4));
- 
- 
+
         JLabel label3 = new JLabel("JCheckBox");
         JCheckBox box3 = new JCheckBox();
- 
- 
+
         content.add(label3, cons.xy(1, 6));
         content.add(box3, cons.xy(2, 6));
- 
- 
+
         JLabel label4 = new JLabel("JComboBox bound to Vector");
         JComboBox combo1 = new JComboBox();
- 
- 
+
         content.add(label4, cons.xy(1, 8));
         content.add(combo1, cons.xy(2, 8));
- 
- 
+
         JLabel label5 = new JLabel("JComboBox bound to Object[]");
         JComboBox combo2 = new JComboBox();
- 
- 
+
         content.add(label5, cons.xy(1, 10));
         content.add(combo2, cons.xy(2, 10));
- 
- 
+
         JLabel label6 = new JLabel("JRadioButton");
         JRadioButton radio1 = new JRadioButton("Radio 1");
         JRadioButton radio2 = new JRadioButton("Radio 2");
         JRadioButton radio3 = new JRadioButton("Radio 3");
- 
- 
+
         content.add(label6, cons.xy(1, 12));
         content.add(radio1, cons.xy(2, 12));
         content.add(radio2, cons.xy(2, 13));
         content.add(radio3, cons.xy(2, 14));
- 
  
         //
         //
@@ -206,14 +188,12 @@ public class DataBindingTest1 {
         //
         //
  
- 
         // Setup the model
         ExampleModel model = new ExampleModel();
         model.setString1("Wutzpu");
         model.setBool(true);
         model.setSelected("2");
- 
- 
+
         // Setup the binding
         final BindingInfo binding = new BindingInfo(ExampleModel.class);
         binding.addBinding("string1", textfield1);
@@ -223,45 +203,35 @@ public class DataBindingTest1 {
         binding.addBinding("entries", new ComboboxModelAdapter(combo1));
         binding.addBinding("entriesArray", new ComboboxModelAdapter(combo2));
  
- 
         RadioButtonAdapter adaptor = new RadioButtonAdapter();
         adaptor.addMapping("1", radio1);
         adaptor.addMapping("2", radio2);
         adaptor.addMapping("3", radio3);
         binding.addBinding("selected", adaptor);
  
- 
         binding.setDefaultModel(model);
- 
  
         // Initialize the view !
         // This also forces the collection to model mapping to be initialized !
         binding.model2view();
  
- 
         // Event listener
         JButton button = new JButton("View 2 Model");
- 
  
         //
         // This is an example event listener !
         //
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
- 
- 
                 // Transfer the data to the model
                 binding.view2model();
- 
- 
+
                 // Get the model
                 ExampleModel model = (ExampleModel) binding.getDefaultModel();
- 
  
                 // Modify the model
                 String test = model.getType() + " " + model.getSelected();
                 model.setString2(test);
- 
  
                 // Transfer the model to the view
                 binding.model2view();
@@ -269,52 +239,51 @@ public class DataBindingTest1 {
         });
         frame.getContentPane().add(button, BorderLayout.NORTH);
  
- 
         frame.show();
- 
- 
     }
- 
- 
 }
 ----
-This will generate a full functional Swing UI with bidirectional databinding between the model and the widgets. The tricky part is the initialization and usage of the Mogwai BindingInfo instance. The Initialiation works as following:
+
+This will generate a full functional Swing UI with bidirectional data binding between the model and the widgets. The tricky part is the initialization and usage of the Mogwai BindingInfo instance. The Initialization works as following:
 
 [source,java]
 ----
 final BindingInfo binding = new BindingInfo(ExampleModel.class);
-        binding.addBinding("string1", textfield1);
-        binding.addBinding("string2", textfield2);
-        binding.addBinding("bool", box3);
-        binding.addBinding("type", combo1);
-        binding.addBinding("entries", new ComboboxModelAdapter(combo1));
-        binding.addBinding("entriesArray", new ComboboxModelAdapter(combo2));
+
+binding.addBinding("string1", textfield1);
+binding.addBinding("string2", textfield2);
+binding.addBinding("bool", box3);
+binding.addBinding("type", combo1);
+binding.addBinding("entries", new ComboboxModelAdapter(combo1));
+binding.addBinding("entriesArray", new ComboboxModelAdapter(combo2));
  
- 
-        RadioButtonAdapter adaptor = new RadioButtonAdapter();
-        adaptor.addMapping("1", radio1);
-        adaptor.addMapping("2", radio2);
-        adaptor.addMapping("3", radio3);
-        binding.addBinding("selected", adaptor);
- 
- 
-        binding.setDefaultModel(model);
+RadioButtonAdapter adaptor = new RadioButtonAdapter();
+adaptor.addMapping("1", radio1);
+adaptor.addMapping("2", radio2);
+adaptor.addMapping("3", radio3);
+binding.addBinding("selected", adaptor);
+
+
+binding.setDefaultModel(model);
 ----
-This creates a BindingInfo instance for a model of Type ExampleModel. The property “string1” is bound to the JTextField instance textfield1. The values of the array property “entriesArray” and the collection property “entries” are bound to the JComboBox instances combo1 and combo2. The property “selected” is bound to three RadioButtons, which are boundled to a group. If radio1 is selected, the value “1” is stored in the “selected” property of the model and so forth.
+
+This creates a BindingInfo instance for a model of Type ExampleModel. The property “string1” is bound to the JTextField instance textfield1. The values of the array property “entriesArray” and the collection property “entries” are bound to the JComboBox instances combo1 and combo2. The property “selected” is bound to three RadioButtons, which are bundled to a group. If radio1 is selected, the value “1” is stored in the “selected” property of the model and so forth.
 
 The model is written to the UI with the following code:
 
-[source]
+[source,java]
 ----
 // Initialize the view !
-        // This also forces the collection to model mapping to be initialized !
-        binding.model2view();
+// This also forces the collection to model mapping to be initialized !
+binding.model2view();
 ----
+
 The state of the UI is written back to the model with the following code:
 
-[source]
+[source,java]
 ----
 // Transfer the data to the model
-        binding.view2model();
+binding.view2model();
 ----
-Using Mogwai Databinding, you can easily create user interfaces, bind them to POJO's and automate the time consuming and error prone task of copying and converting Java properties.
+
+Using Mogwai Databinding, you can easily create user interfaces, bind them to POJOs and automate the time consuming and error prone task of copying and converting Java properties.

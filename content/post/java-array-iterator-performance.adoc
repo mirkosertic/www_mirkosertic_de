@@ -39,7 +39,7 @@ public class CacheTest {
         System.out.println("ColumnOrder : " + (System.currentTimeMillis() - theTime));
     }
  
-     void arrayTest1() {
+    void arrayTest1() {
   
         long theCounter = 0;
   
@@ -56,20 +56,19 @@ public class CacheTest {
         System.out.println("ArrayTest1 : " + (System.currentTimeMillis() - theTime) + " #" + theCounter);
     }
  
-     void arrayTest2() {
+    void arrayTest2() {
  
-         int theArray[] = new int[SIZE*SIZE*SIZE];
+        int theArray[] = new int[SIZE*SIZE*SIZE];
         long theTime = System.currentTimeMillis();
         Arrays.fill(theArray, 0);
         System.out.println("ArrayTest2 : " + (System.currentTimeMillis() - theTime));
     }
  
- 
     void arrayTest3() {
  
-         int theCounter = 0;
+        int theCounter = 0;
  
-         int theArray[] = new int[SIZE*SIZE*SIZE];
+        int theArray[] = new int[SIZE*SIZE*SIZE];
         long theTime = System.currentTimeMillis();
         for (int i = 0; i <SIZE; i++) {
             for (int j = 0; j <SIZE; j++) {
@@ -92,7 +91,8 @@ public class CacheTest {
     }
 }
 ----
-The rowOrderTest() Method finishes on my machine within 42ms, the columnOrderTest() Method takes about 2195ms to complete, so it is more than 50 times slower than rowOrderTest(), but it does exactly the same! The columnOrderTest() Method just trashes the VM and CPU read ahead caches, so this explains the deadly slow down. This effect can be reproduced with long and byte as datatypes also.
+
+The rowOrderTest() Method finishes on my machine within 42ms, the columnOrderTest() Method takes about 2195ms to complete, so it is more than 50 times slower than rowOrderTest(), but it does exactly the same! The columnOrderTest() Method just trashes the VM and CPU read ahead caches, so this explains the deadly slow down. This effect can be reproduced with long and byte as data types also.
 
 Some unexpected results are coming from the arrayTest1(), arrayTest2() and arrayTest3() Methods. Here i do not use a three dimensional array, i use a one dimensional array and emulate the other dimensions by offset multiplication. The arrayTest1() Method includes some little math to compute the array index, but on my machine it takes about 33ms to complete, so almost as fast as the rowOrderTest() Method. The arrayTest2() Method uses the SDK Array.fill Method to complete the task, and it still takes about 33ms to complete. The manual array fill in arrayTest3() takes about 36ms to complete, which is almost as fast as Array.fill(). Under the hood, Arrays.fill() does nothing else, so this is not surprising.
 

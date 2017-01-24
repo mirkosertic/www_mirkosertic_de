@@ -17,7 +17,7 @@ image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/javascalami
 
 Here you see that the project contains a src/main/java and a src/main/scala directory. This is just for the sake of clarity. It is also possible to put the sources in the same directory and distinguish the source type by extension. I prefer the different directory, as it makes the separation clear.
 
-The Main Java class contains a main() method, which itself instantiates an instance of type TestScala(which is Scala, of course). The TestScala class instantiates TestJava(which is Java). The result is an output at System.out(). This demonstrates how to mix Java and Scala code in one Maven module. For this example, i am using Scala 2.10.1. Also note that i am using IntelliJ 12.0.4, as it offeres very good build in Scala support.
+The Main Java class contains a main() method, which itself instantiates an instance of type TestScala(which is Scala, of course). The TestScala class instantiates TestJava(which is Java). The result is an output at System.out(). This demonstrates how to mix Java and Scala code in one Maven module. For this example, i am using Scala 2.10.1. Also note that i am using IntelliJ 12.0.4, as it offers very good build in Scala support.
 
 Here is the Main Java class:
 
@@ -35,8 +35,10 @@ public class Main {
     }
 }
 ----
+
 Here is the TestScala Scala class:
-[source]
+
+[source,scala]
 ----
 package de.mirkosertic.scala
  
@@ -50,7 +52,9 @@ class TestScala {
   }
 }
 ----
+
 And finally the TestJava class:
+
 [source,java]
 ----
 package de.mirkosertic.java;
@@ -62,8 +66,10 @@ public class TestJava {
     }
 }
 ----
+
 Last but not least the Maven pom.xml:
-[source]
+
+[source,xml]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -144,4 +150,5 @@ Last but not least the Maven pom.xml:
     </dependencies>
 </project>
 ----
+
 Quite easy, right?

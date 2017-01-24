@@ -11,34 +11,29 @@ For this example, i am using Apache TomEE 1.5.1 as a JEE Web Profile certified s
 
 Here is the Scala code for the stateless session bean:
 
-[source]
+[source,scala]
 ----
 package de.mirkosertic.scala
- 
  
 import javax.ejb.Stateless
 import util.Random
  
- 
 @Stateless
 class StatelessBean {
  
+   val random = Random
  
-  val random = Random
- 
- 
-  def sayHello() = "Hello " + random.nextInt
+   def sayHello() = "Hello " + random.nextInt
 }
 ----
-I use the JEE @Stateless annotation to mark the Scala class as a stateless session bean. The bean has a public sayHello() method, which just returns the string “Hello ” concatenated with a randon number. Here is the JEE servlet which uses the JEE bean:
+
+I use the JEE @Stateless annotation to mark the Scala class as a stateless session bean. The bean has a public sayHello() method, which just returns the string “Hello ” concatenated with a random number. Here is the JEE servlet which uses the JEE bean:
 
 [source,java]
 ----
 package de.mirkosertic.java;
  
- 
 import de.mirkosertic.scala.StatelessBean;
- 
  
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -49,14 +44,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
  
- 
 @WebServlet("/servlet")
 public class TestServlet extends HttpServlet {
  
- 
     @EJB
     StatelessBean statelessBean;
- 
  
     @Override
     protected void doGet(HttpServletRequest aRequest, HttpServletResponse aResponse) throws ServletException, IOException {
@@ -67,4 +59,5 @@ public class TestServlet extends HttpServlet {
     }
 }
 ----
+
 After compiling it and invoking it from the browser, we see a “Hello” text with a random number. It is working! We can create Enterprise Java Beans with Scala, so we have Enterprise Scala Beans :-)

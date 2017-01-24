@@ -5,7 +5,7 @@ tags = ["Android", "Interesting", "OpenGL"]
 draft = false
 +++
 
-The last days i fiddled a bit with OpenGL 2 on Android. The Android OpenGL tutorials are a bit outdated, so i had to do some APIresearch by myself and copy and merge the provided examples together. Here is a screenshot of the running OpenGL App:
+The last days i fiddled a bit with OpenGL 2 on Android. The Android OpenGL tutorials are a bit outdated, so i had to do some API research by myself and copy and merge the provided examples together. Here is a screenshot of the running OpenGL App:
 
 image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/openglandroidapp.png[400,711]
 
@@ -15,68 +15,55 @@ To run OpenGL, we need the base Activity class as follows:
 
 [source,java]
 ----
-ackage com.example.opengltest;
- 
- 
+package com.example.opengltest;
+
 import android.app.Activity;
 import android.os.Bundle;
  
- 
 public class OpenGLTestActivity extends Activity {
  
- 
     private MyGLSurfaceView glSurfaceView;
- 
  
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
- 
  
         glSurfaceView = new MyGLSurfaceView(this);
         setContentView(glSurfaceView);
     }
 }
 ----
+
 Then we need the OpenGL view class:
 
 [source,java]
 ----
 package com.example.opengltest;
- 
- 
+
 import android.app.Activity;
 import android.opengl.GLSurfaceView;
 import android.view.MotionEvent;
- 
- 
+
 public class MyGLSurfaceView extends GLSurfaceView {
  
- 
     MyRenderer renderer;
- 
  
     private final float TOUCH_SCALE_FACTOR = 180.0f / 320;
     private float mPreviousX;
     private float mPreviousY;
  
- 
     public MyGLSurfaceView(Activity aActivity) {
         super(aActivity);
- 
  
         //OpenGL ES 2.0
         setEGLContextClientVersion(2);
  
- 
         renderer = new MyRenderer();
         setRenderer(renderer);
- 
  
         // Render the view only when there is a change in the drawing data
         setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
     }
- 
  
     @Override
     public boolean onTouchEvent(MotionEvent e) {
@@ -84,31 +71,25 @@ public class MyGLSurfaceView extends GLSurfaceView {
         // and other input controls. In this case, you are only
         // interested in events where the touch position changed.
  
- 
         float x = e.getX();
         float y = e.getY();
- 
- 
+
         switch (e.getAction()) {
             case MotionEvent.ACTION_MOVE:
  
- 
                 float dx = x - mPreviousX;
                 float dy = y - mPreviousY;
- 
  
                 // reverse direction of rotation above the mid-line
                 if (y> getHeight() / 2) {
                     dx = dx * -1 ;
                 }
- 
- 
+
                 // reverse direction of rotation to left of the mid-line
                 if (x <getWidth() / 2) {
                     dy = dy * -1 ;
                 }
- 
- 
+
                 renderer.mAngle += (dx + dy) * TOUCH_SCALE_FACTOR;  // = 180.0f / 320
                 requestRender();
         }
@@ -120,74 +101,60 @@ public class MyGLSurfaceView extends GLSurfaceView {
     }
 }
 ----
+
 Our OpenGL renderer:
 
 [source,java]
 ----
 package com.example.opengltest;
- 
- 
+
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
- 
- 
+
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
- 
- 
+
 public class MyRenderer implements GLSurfaceView.Renderer {
  
- 
     Triangle triangle;
- 
  
     private final float[] projectionMatrix = new float[16];
     private final float[] mMVPMatrix = new float[16];
     private final float[] mVMatrix = new float[16];
     private final float[] mRotationMatrix = new float[16];
  
- 
     // Declare as volatile because we are updating it from another thread
     public volatile float mAngle;
- 
  
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
         triangle = new Triangle();
     }
  
- 
     @Override
     public void onSurfaceChanged(GL10 gl, int width, int height) {
         GLES20.glViewport(0, 0, width, height);
  
- 
         float ratio = (float) width / height;
- 
  
         Matrix.frustumM(projectionMatrix, 0, -ratio, ratio, -1, 1, 3, 7);
     }
  
- 
     @Override
     public void onDrawFrame(GL10 gl) {
- 
  
         // Set the camera position (View matrix)
         Matrix.setLookAtM(mVMatrix, 0, 0, 0, -3, 0f, 0f, 0f, 0f, 1.0f, 0.0f);
  
- 
         // Calculate the projection and view transformation
         Matrix.multiplyMM(mMVPMatrix, 0, projectionMatrix, 0, mVMatrix, 0);
- 
  
         // Create a rotation transformation for the triangle
         // Create a rotation for the triangle
         // long time = SystemClock.uptimeMillis() % 4000L;
         // float angle = 0.090f * ((int) time);
         Matrix.setRotateM(mRotationMatrix, 0, mAngle, 0, 0, -1.0f);
- 
  
         // Combine the rotation matrix with the projection and camera view
         Matrix.multiplyMM(mMVPMatrix, 0, mRotationMatrix, 0, mMVPMatrix, 0);
@@ -197,52 +164,44 @@ public class MyRenderer implements GLSurfaceView.Renderer {
     }
 }
 ----
+
 The objects to be rendered:
 
 [source,java]
 ----
 package com.example.opengltest;
  
- 
 import android.opengl.GLES20;
- 
  
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
  
- 
 public class Triangle {
- 
  
     private final String vertexShaderCode =
             // This matrix member variable provides a hook to manipulate
             // the coordinates of the objects that use this vertex shader
             "uniform mat4 uMVPMatrix;" +
- 
- 
-                    "attribute vec4 vPosition;" +
-                    "void main() {" +
-                    // the matrix must be included as a modifier of gl_Position
-                    "  gl_Position = vPosition * uMVPMatrix;" +
-                    "}";
- 
+
+            "attribute vec4 vPosition;" +
+            "void main() {" +
+            // the matrix must be included as a modifier of gl_Position
+            "  gl_Position = vPosition * uMVPMatrix;" +
+            "}";
  
     private final String fragmentShaderCode =
             "precision mediump float;" +
-                    "uniform vec4 vColor;" +
-                    "void main() {" +
-                    "  gl_FragColor = vColor;" +
-                    "}";
- 
- 
+            "uniform vec4 vColor;" +
+            "void main() {" +
+            "  gl_FragColor = vColor;" +
+            "}";
+
     private FloatBuffer vertexBuffer;
- 
  
     // number of coordinates per vertex in this array
     static final int COORDS_PER_VERTEX = 3;
     static final int vertexStride = COORDS_PER_VERTEX * 4; // 4 bytes per vertex
- 
  
     static float triangleCoords[] = { // in counterclockwise order:
             0.0f, 0.622008459f, 0.0f,   // top
@@ -251,17 +210,14 @@ public class Triangle {
     };
     static final int vertexCount = triangleCoords.length / COORDS_PER_VERTEX;
  
- 
     // Set color with red, green, blue and alpha (opacity) values
     float color[] = {0.63671875f, 0.76953125f, 0.22265625f, 1.0f};
- 
  
     int renderProgram;
     int vPositionHandle;
     int vColorHandle;
     int mvpHandle;
- 
- 
+
     public Triangle() {
         // initialize vertex byte buffer for shape coordinates
         ByteBuffer bb = ByteBuffer.allocateDirect(
@@ -270,7 +226,6 @@ public class Triangle {
         // use the device hardware's native byte order
         bb.order(ByteOrder.nativeOrder());
  
- 
         // create a floating point buffer from the ByteBuffer
         vertexBuffer = bb.asFloatBuffer();
         // add the coordinates to the FloatBuffer
@@ -278,96 +233,77 @@ public class Triangle {
         // set the buffer to read the first coordinate
         vertexBuffer.position(0);
  
- 
         int vertexShader = OpenGLUtils.loadShader(GLES20.GL_VERTEX_SHADER, vertexShaderCode);
         int fragmentShader = OpenGLUtils.loadShader(GLES20.GL_FRAGMENT_SHADER, fragmentShaderCode);
- 
  
         renderProgram = GLES20.glCreateProgram();             // create empty OpenGL ES Program
         GLES20.glAttachShader(renderProgram, vertexShader);   // add the vertex shader to program
         GLES20.glAttachShader(renderProgram, fragmentShader); // add the fragment shader to program
         GLES20.glLinkProgram(renderProgram);
     }
- 
- 
+
     public void draw(float[] mvpMatrix) {
- 
  
         // Add program to OpenGL ES environment
         GLES20.glUseProgram(renderProgram);
  
- 
         // get handle to vertex shader's vPosition member
         vPositionHandle = GLES20.glGetAttribLocation(renderProgram, "vPosition");
  
- 
         // Enable a handle to the triangle vertices
         GLES20.glEnableVertexAttribArray(vPositionHandle);
- 
  
         // Prepare the triangle coordinate data
         GLES20.glVertexAttribPointer(vPositionHandle, COORDS_PER_VERTEX,
                 GLES20.GL_FLOAT, false,
                 vertexStride, vertexBuffer);
  
- 
         // get handle to fragment shader's vColor member
         vColorHandle = GLES20.glGetUniformLocation(renderProgram, "vColor");
  
- 
         // Set color for drawing the triangle
         GLES20.glUniform4fv(vColorHandle, 1, color, 0);
- 
  
         // get handle to shape's transformation matrix
         mvpHandle = GLES20.glGetUniformLocation(renderProgram, "uMVPMatrix");
         OpenGLUtils.checkGlError("glGetUniformLocation");
  
- 
         // Apply the projection and view transformation
         GLES20.glUniformMatrix4fv(mvpHandle, 1, false, mvpMatrix, 0);
         OpenGLUtils.checkGlError("glUniformMatrix4fv");
  
- 
         // Draw the triangle
         GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, vertexCount);
- 
  
         // Disable vertex array
         GLES20.glDisableVertexAttribArray(vPositionHandle);
     }
 }
 ----
+
 And finally some utilities.
 
 [source,java]
 ----
 package com.example.opengltest;
- 
- 
+
 import android.opengl.GLES20;
 import android.util.Log;
- 
- 
+
 public class OpenGLUtils {
  
- 
     public static int loadShader(int type, String shaderCode) {
- 
  
         // create a vertex shader type (GLES20.GL_VERTEX_SHADER)
         // or a fragment shader type (GLES20.GL_FRAGMENT_SHADER)
         int shader = GLES20.glCreateShader(type);
- 
- 
+
         // add the source code to the shader and compile it
         GLES20.glShaderSource(shader, shaderCode);
         GLES20.glCompileShader(shader);
  
- 
         return shader;
     }
- 
  
     public static void checkGlError(String glOperation) {
         int error;
@@ -378,4 +314,5 @@ public class OpenGLUtils {
     }
 }
 ----
+
 And OpenGL on Android is up and running :-)

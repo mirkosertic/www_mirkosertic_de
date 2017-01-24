@@ -5,23 +5,25 @@ tags = ["HTML5", "Web", "WebComponents"]
 draft = false
 +++
 
-Web Components are a very amazing new feature of HTML5. Google released its https://www.polymer-project.org/[Polymer] project which adds Web Components support to modern Web Browsers. Using Web Components, we can create very complex custom HTMLTags which are based on a very powerful templating engine, pretty cool JavaScript bindings, data model abstractions and also JavaScript and CSSencapsulation. Polymer comes with a set of already implemented components based on Googles Material Design which can be easily integrated into custom applications. Finally, Polymer has a https://developers.google.com/web/tools/polymer-starter-kit[Starter Kit] Projekt, which can bring you up in a minimum amount of time to development speed with Polymer, Web Components and Single Page Web Applications.
+Web Components are a very amazing new feature of HTML5. Google released its https://www.polymer-project.org/[Polymer] project which adds Web Components support to modern Web Browsers. Using Web Components, we can create very complex custom HTML Tags which are based on a very powerful templating engine, pretty cool JavaScript bindings, data model abstractions and also JavaScript and CSS encapsulation. Polymer comes with a set of already implemented components based on Googles Material Design which can be easily integrated into custom applications. Finally, Polymer has a https://developers.google.com/web/tools/polymer-starter-kit[Starter Kit] Project, which can bring you up in a minimum amount of time to development speed with Polymer, Web Components and Single Page Web Applications.
 
-For a project, I wrote a simple Web Component to display a list of Microservice Configuration Data. In my application HTML, I just have to use the following line:
+For a project, I wrote a simple Web Component to display a list of Micro-service Configuration Data. In my application HTML, I just have to use the following line:
 
-[source]
+[source,html]
 ----
 <config-stage-list></config-stage-list>
 ----
-Thats all to use my own Web Component. Well, what is the magic behind this? To use a Web Component, we have to use a HTML5 Feature called HTMLImports. Just place the following line into your HTML:
 
-[source]
+That's all to use my own Web Component. Well, what is the magic behind this? To use a Web Component, we have to use a HTML5 Feature called HTML Imports. Just place the following line into your HTML:
+
+[source,html]
 ----
 <link rel="import" href="config-stage-list/config-stage-list.html">
 ----
+
 This imports the Web Component and makes it ready to use. And finally, here is the source code of the Web Component:
 
-[source]
+[source,html]
 ----
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
@@ -94,6 +96,7 @@ This imports the Web Component and makes it ready to use. And finally, here is t
   </script>
 </dom-module>
 ----
-Thats all! The Web Component creates a AJAX request to get some data from the server and binds the result to a lsit. It also has a delete button to remove data, which will trigger another AJAX roundtrip. Finally, it has some user feedback based on Material Design Toasts.
+
+That's all! The Web Component creates a AJAX request to get some data from the server and binds the result to a list. It also has a delete button to remove data, which will trigger another AJAX round trip. Finally, it has some user feedback based on Material Design Toasts.
 
 Yeah! Polymer and WebComponents just rock!

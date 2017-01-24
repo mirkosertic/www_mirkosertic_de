@@ -7,11 +7,44 @@ draft = false
 
 Sometimes we use Maven “war” packaging and add the RPM Plugin to create a rpm which contains the project primary artifact. When this rpm needs to be published to the Maven repository, it can be added as a secondary artifact to the build. Here is an example of the plugin configuration in pom.xml:
 
-https://gist.github.com/mirkosertic/8e57306bad5bc1f3e593062e006f1675
+[source,xml]
+----
+<plugin>
+	<groupId>org.codehaus.mojo</groupId>
+	<artifactId>rpm-maven-plugin</artifactId>
+	<executions>
+	    <execution>
+		<goals>
+		    <goal>attached-rpm</goal>
+		</goals>
+		<phase>package</phase>
+	    </execution>
+	</executions>
+</plugin>
+----
 
 This configuration also installs the war and the rpm to the local and even remote repository. If you setup your Maven repository, for instance Nexus, as a yum repository, we are only interested in the rpm, so deploying the war to the repository is a waste of disk space.
 Of course we could change the Maven packaging to RPM, but then we would have to declare the war plugin configuration by hand. But there is also another solution to remove the primary artifact from install and deploy phase. With a little bit of Groovy, we can do the following:
 
-https://gist.github.com/mirkosertic/82cfa5e6e36cf9f5cc638d31a5a1bc2e
+[source,xml]
+----
+<plugin>
+	<groupId>org.codehaus.groovy.maven</groupId>
+	<artifactId>gmaven-plugin</artifactId>
+	<version>1.0</version>
+	<executions>
+	    <execution>
+		<id>remove-primary-artefact</id>
+		<phase>package</phase>
+		<goals>
+		    <goal>execute</goal>
+		</goals>
+		<configuration>
+		    <source>project.getArtifact().setFile(null)</source>
+		</configuration>
+	    </execution>
+	</executions>
+</plugin>
+----
 
 This will do the trick :-)

@@ -6,68 +6,75 @@ draft = false
 +++
 
 == Microdata overview
+
 HTML5 is the new standard for webpage markups. It comes with some pretty cool new features like media support etc. But one of the best things is the http://en.wikipedia.org/wiki/Microdata_%28HTML%29[Microdata] support!
 
-Now, what is Microdata exactly? Using Microdata we can classify HTMLelements or regions with metadata like “This is the name of a person” or “Here comes the copyright information”, so the real semantic Web 2.0. This greatly helps search engines to crawl the page content and also enables us to improve the display of the webpage in the search engine results.
+Now, what is Microdata exactly? Using Microdata we can classify HTML elements or regions with meta data like “This is the name of a person” or “Here comes the copyright information”, so the real semantic Web 2.0. This greatly helps search engines to crawl the page content and also enables us to improve the display of the webpage in the search engine results.
 
-HTML5 Microdata supersedes the RDF standard, and Google for instance advices page authors to use Microdata instead of RDF.
+HTML5 Microdata supersedes the RDF standard, and Google for instance advises page authors to use Microdata instead of RDF.
 
 So, now lets see some old HTML:
 
-[source]
+[source,html]
 ----
 Jane Doe
-    <img src="janedoe.jpg" />
- 
-    Professor
-    20341 Whitworth Institute
-    405 Whitworth
-    Seattle WA 98052
-    (425) 123-4567
-    <a href="mailto:jane-doe@xyz.edu">jane-doe@illinois.edu</a>
- 
-    Jane's home page:
-    <a href="http://www.janedoe.com">janedoe.com</a>
- 
-    Graduate students:
-    <a href="http://www.xyz.edu/students/alicejones.html">Alice Jones</a>
-    <a href="http://www.xyz.edu/students/bobsmith.html">Bob Smith</a>
-And here is the HTML with embedded microdata:
+<img src="janedoe.jpg" />
 
-    <div itemscope itemtype="http://schema.org/Person">
-      <span itemprop="name">Jane Doe</span>
-      <img src="janedoe.jpg" itemprop="image" />
- 
-      <span itemprop="jobTitle">Professor</span>
-      <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-        <span itemprop="streetAddress">
-          20341 Whitworth Institute
-          405 N. Whitworth
-        </span>
-        <span itemprop="addressLocality">Seattle</span>,
-        <span itemprop="addressRegion">WA</span>
-        <span itemprop="postalCode">98052</span>
-      </div>
-      <span itemprop="telephone">(425) 123-4567</span>
-      <a href="mailto:jane-doe@xyz.edu" itemprop="email">
-        jane-doe@xyz.edu</a>
- 
-      Jane's home page:
-      <a href="http://www.janedoe.com" itemprop="url">janedoe.com</a>
- 
-      Graduate students:
-      <a href="http://www.xyz.edu/students/alicejones.html" itemprop="colleague">
-        Alice Jones</a>
-      <a href="http://www.xyz.edu/students/bobsmith.html" itemprop="colleague">
-        Bob Smith</a>
-    </div>
+Professor
+20341 Whitworth Institute
+405 Whitworth
+Seattle WA 98052
+(425) 123-4567
+<a href="mailto:jane-doe@xyz.edu">jane-doe@illinois.edu</a>
+
+Jane's home page:
+<a href="http://www.janedoe.com">janedoe.com</a>
+
+Graduate students:
+<a href="http://www.xyz.edu/students/alicejones.html">Alice Jones</a>
+<a href="http://www.xyz.edu/students/bobsmith.html">Bob Smith</a>
 ----
-Basically it is the same markup, but with embedded Microdata. Cool!. If you want to read more about available Microdata tags, check http://www.schema.org/[www.schema.org] .
+
+And here is the HTML with embedded Microdata:
+
+[source,html]
+----
+<div itemscope itemtype="http://schema.org/Person">
+  <span itemprop="name">Jane Doe</span>
+  <img src="janedoe.jpg" itemprop="image" />
+
+  <span itemprop="jobTitle">Professor</span>
+  <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+    <span itemprop="streetAddress">
+      20341 Whitworth Institute
+      405 N. Whitworth
+    </span>
+    <span itemprop="addressLocality">Seattle</span>,
+    <span itemprop="addressRegion">WA</span>
+    <span itemprop="postalCode">98052</span>
+  </div>
+  <span itemprop="telephone">(425) 123-4567</span>
+  <a href="mailto:jane-doe@xyz.edu" itemprop="email">
+    jane-doe@xyz.edu</a>
+
+  Jane's home page:
+  <a href="http://www.janedoe.com" itemprop="url">janedoe.com</a>
+
+  Graduate students:
+  <a href="http://www.xyz.edu/students/alicejones.html" itemprop="colleague">
+    Alice Jones</a>
+  <a href="http://www.xyz.edu/students/bobsmith.html" itemprop="colleague">
+    Bob Smith</a>
+</div>
+----
+
+Basically it is the same markup, but with embedded Microdata. Cool!. If you want to read more about available Microdata tags, check http://www.schema.org/[www.schema.org].
 
 == Adding Microdata support to DokuWiki
+
 Adding Microdata tags to DokuWiki is quite simple. DokuWiki comes already with an embedded templating engine, so we can create a custom template and add the Microdata. Here is an example of this webpage, which is also backed by DokuWiki and Microdata(taken from main.php template):
 
-[source]
+[source,php]
 ----
 <?php
 // must be run from within DokuWiki
@@ -84,69 +91,69 @@ if (!defined('DOKU_INC')) die();
         ... Stripped ...
  
 	<div id="contentdetail">
-				<div itemprop="breadcrumb" 
-id="trace">
+        <div itemprop="breadcrumb" id="trace">
  
-... Stripped ...
+        ... Stripped ...
  
-<div itemscope itemtype="http://schema.org/TechArticle"><?php tpl_content(false)?>				
+        <div itemscope itemtype="http://schema.org/TechArticle"><?php tpl_content(false)?>
  
- 
-... Stripped ...
+         ... Stripped ...
  
 </body>
 </html>
 ----
-The tricky part is the generation of the Wiki content. Here we have to tweak the DokuWiki XHTML parsers, so the /inc/parser/xhtml.php file. Here i changed some to to embedd the Microdata:
 
-[source]
+The tricky part is the generation of the Wiki content. Here we have to tweak the DokuWiki XHTML parsers, so the /inc/parser/xhtml.php file. Here i changed some to to embed the Microdata:
+
+[source,php]
 ----
-unction header($text, $level, $pos) {
-        global $conf;
- 
-        if(!$text) return; //skip empty headlines
- 
-        $hid = $this->_headerToLink($text,true);
- 
-        //only add items within configured levels
-        $this->toc_additem($hid, $text, $level);
- 
-        // adjust $node to reflect hierarchy of levels
-        $this->node[$level-1]++;
-        if ($level < $this->lastlevel) {
-            for ($i = 0; $i < $this->lastlevel-$level; $i++) {
-                $this->node[$this->lastlevel-$i-1] = 0;
-            }
+function header($text, $level, $pos) {
+    global $conf;
+
+    if(!$text) return; //skip empty headlines
+
+    $hid = $this->_headerToLink($text,true);
+
+    //only add items within configured levels
+    $this->toc_additem($hid, $text, $level);
+
+    // adjust $node to reflect hierarchy of levels
+    $this->node[$level-1]++;
+    if ($level < $this->lastlevel) {
+        for ($i = 0; $i < $this->lastlevel-$level; $i++) {
+            $this->node[$this->lastlevel-$i-1] = 0;
         }
-        $this->lastlevel = $level;
- 
-        if ($level <= $conf['maxseclevel'] &amp;&amp;
-            count($this->sectionedits) > 0 &amp;&amp;
-            $this->sectionedits[count($this->sectionedits) - 1][2] === 'section') {
-            $this->finishSectionEdit($pos - 1);
-        }
- 
-        // write the header
-        $this->doc .= DOKU_LF.'<h'.$level;
-        if ($level <= $conf['maxseclevel']) {
-            $this->doc .= ' class="' . $this->startSectionEdit($pos, 'section', $text) . '"';
-        }
-		if ($level == 1) {
-			$this->doc .= ' itemprop="name"';
-		}
-        $this->doc .= ' id="'.$hid.'">';
-        $this->doc .= $this->_xmlEntities($text);
-        $this->doc .= "</h$level>".DOKU_LF;
     }
- 
- 
-    function section_open($level) {
-		if ($level == 1) {
-			$this->doc .= '<div itemprop="articleBody" class="level' . $level . '">' . DOKU_LF;
-		} else {
-			$this->doc .= '<div class="level' . $level . '">' . DOKU_LF;
-		}
+    $this->lastlevel = $level;
+
+    if ($level <= $conf['maxseclevel'] &amp;&amp;
+        count($this->sectionedits) > 0 &amp;&amp;
+        $this->sectionedits[count($this->sectionedits) - 1][2] === 'section') {
+        $this->finishSectionEdit($pos - 1);
     }
+
+    // write the header
+    $this->doc .= DOKU_LF.'<h'.$level;
+    if ($level <= $conf['maxseclevel']) {
+        $this->doc .= ' class="' . $this->startSectionEdit($pos, 'section', $text) . '"';
+    }
+    if ($level == 1) {
+        $this->doc .= ' itemprop="name"';
+    }
+    $this->doc .= ' id="'.$hid.'">';
+    $this->doc .= $this->_xmlEntities($text);
+    $this->doc .= "</h$level>".DOKU_LF;
+}
+
+
+function section_open($level) {
+    if ($level == 1) {
+        $this->doc .= '<div itemprop="articleBody" class="level' . $level . '">' . DOKU_LF;
+    } else {
+        $this->doc .= '<div class="level' . $level . '">' . DOKU_LF;
+    }
+}
 ----
-Now my Dokuwiki creates SEO friendly semantic Web 2.0 pages. Cool!
+
+Now my DokuWiki creates SEO friendly semantic Web 2.0 pages. Cool!
 

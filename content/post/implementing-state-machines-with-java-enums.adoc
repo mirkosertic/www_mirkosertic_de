@@ -11,7 +11,7 @@ Today i want you to show another approach. We model a State Machine using a Java
 
 This is a simple State Machine implemented using plain Java Enums:
 
-[source]
+[source,java]
 ----
 package de.mirkosertic;
  
@@ -42,11 +42,12 @@ public enum State {
     abstract State doSomething(String aParameter);
 }
 ----
+
 The State Machine has three states, INITIAL, NEXT_STEP and FINAL, and every state has an Implementation of the doSomething() method. which takes an argument and depending on the argument it can jump to the next state.
 
-This is a small piece of code to show the usage of such a State Maching:
+This is a small piece of code to show the usage of such a State Machine:
 
-[source]
+[source,java]
 ----
 package de.mirkosertic;
  
@@ -72,6 +73,7 @@ public class StatefulObject {
     }
 }
 ----
-Using Enums to model State Machines fits better than Interface/Implementation classes, and also an Enum can be easily persisted using Hibernate Enum types. Also, we have implemented the CQS principle and increased testability a lot.
 
-Stay tuned! If you want to see more of such cool guidelines, please consult Vaughn Vernon excellent book http://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/[Implementing Domain-Driven Design] .
+Using Enums to model State Machines fits better than Interface/Implementation classes, and also an Enum can be easily persisted using Hibernate Enum types. Also, we have implemented the CQS principle and increased test-ability a lot.
+
+Stay tuned! If you want to see more of such cool guidelines, please consult Vaughn Vernon excellent book http://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/[Implementing Domain-Driven Design].

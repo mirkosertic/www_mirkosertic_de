@@ -8,17 +8,17 @@ draft = false
 == Problem
 Often you need to create query specifications to retrieve data from persistent memory. One of the following patterns is most likely used:
 
-Bind Entity or Service with a distinct Query Object to the repositoryA Service creates a distinct query object, passes it to the repository. Here the query object is translated to a Hibernate or JPA Criteria or HQL Statement and finally executed against the database.
+Bind Entity or Service with a distinct Query Object to the repository. A Service creates a distinct query object, passes it to the repository. Here the query object is translated to a Hibernate or JPA Criteria or HQL Statement and finally executed against the database.
 
 Pros:
 
-	 * For every usecase a distinct http://martinfowler.com/eaaCatalog/queryObject.html[Query Object] can be created. This helps a lot to encapsulate domain logic.
+	 * For every use case a distinct http://martinfowler.com/eaaCatalog/queryObject.html[Query Object] can be created. This helps a lot to encapsulate domain logic.
 
 Cons:
 
-	 * The query object and the Entites or Aggregates can be quite redundant, if you use techniques like http://de.wikipedia.org/wiki/Query_by_Example[Query by example] . Also, those query objects cannot be reused for other usecases. This avoids a “Generic” Repository interface.
+	 * The query object and the Entites or Aggregates can be quite redundant, if you use techniques like http://de.wikipedia.org/wiki/Query_by_Example[Query by example]. Also, those query objects cannot be reused for other use cases. This avoids a “Generic” Repository interface.
 
-Bind Entity or Service with specification to the repositoryA Service creates a query http://martinfowler.com/apsupp/spec.pdf[Specification] and passes it to the repository. Here the query object is translated to a Hibernate or JPA Criteria or HQL Statement and finally executed against the database.
+Bind Entity or Service with specification to the repository. A Service creates a query http://martinfowler.com/apsupp/spec.pdf[Specification] and passes it to the repository. Here the query object is translated to a Hibernate or JPA Criteria or HQL Statement and finally executed against the database.
 
 Pros:
 
@@ -28,7 +28,7 @@ Cons:
 
 	 * Specifications can be tricky to implement.
 
-Use Hibernate Criteria or HQL directlyA Service creates a Hibernate Criteria, passes it as a Query Object to the Repository, and it is executed against the database,
+Use Hibernate Criteria or HQL directly. A Service creates a Hibernate Criteria, passes it as a Query Object to the Repository, and it is executed against the database,
 
 Pros:
 
@@ -36,18 +36,19 @@ Pros:
 
 Cons:
 
-	 * Criterias or HQL are referencing Classes or even properties directly. This makes it a possible problem for refactorings. You can use the http://docs.jboss.org/hibernate/jpamodelgen/1.0/reference/en-US/html_single/[JPA2 Meta Model] to avoid this problem, but this also introduces a new concept which is more likely just a workaround.
+	 * Criteria or HQL are referencing Classes or even properties directly. This makes it a possible problem for refactoring. You can use the http://docs.jboss.org/hibernate/jpamodelgen/1.0/reference/en-US/html_single/[JPA2 Meta Model] to avoid this problem, but this also introduces a new concept which is more likely just a workaround.
 
 == Solution
+
 Why not use reuse the domain objects to create a query specification or query object? I mean to reuse the structure and behavior. We are already doing something like this to create http://de.wikipedia.org/wiki/Mock-Objekt[Mock Objects] with EasyMock/PowerMock or Mockito. Why not do the same thing to create query specifications?
 
 Pros:
 
-	 * The Repository will become a lean interface, just accepting a general query specification and finder methods to retrieve Entites by identifier. A large amount of search usecases can be unified.
+	 * The Repository will become a lean interface, just accepting a general query specification and finder methods to retrieve Entites by identifier. A large amount of search use cases can be unified.
 
 Cons:
 
-	 * Some usecases cannot be modelled this way, for instance projection queries or count/aggregate functions.
+	 * Some use cases cannot be modeled this way, for instance projection queries or count/aggregate functions.
 
 Project Mogwai provides a library called http://sourceforge.net/projects/mogwai/files/Mogwai%20SpecificationBuilder/[Mogwai SpecificationBuilder] to do it just this way.
 
@@ -57,148 +58,133 @@ Example:Given are the following classes:
 ----
 public class Person {
  
- 
     private String name1;
     private String name2;
     private String name3;
     private long sallary;
  
- 
     private Address address;
- 
  
     public Person() {
         address = new Address();
     }
  
- 
     public String getName1() {
         return name1;
     }
- 
  
     public void setName1(String name1) {
         this.name1 = name1;
     }
  
- 
     public String getName2() {
         return name2;
     }
- 
  
     public void setName2(String name2) {
         this.name2 = name2;
     }
  
- 
     public Address getAddress() {
         return address;
     }
- 
  
     public void setAddress(Address address) {
         this.address = address;
     }
  
- 
     public String getName3() {
         return name3;
     }
  
- 
     public void setName3(String name3) {
         this.name3 = name3;
     }
- 
- 
+
     public long getSallary() {
         return sallary;
     }
- 
- 
+
     public void setSallary(long sallary) {
         this.sallary = sallary;
     }
 }
+
 public class Address {
- 
  
     private String zipCode;
     private City city;
- 
- 
+
     public Address() {
         city = new City();
     }
- 
  
     public String getZipCode() {
         return zipCode;
     }
  
- 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
- 
  
     public City getCity() {
         return city;
     }
  
- 
     public void setCity(City city) {
         this.city = city;
     }
 }
+
 public class City {
  
- 
     private String name;
- 
  
     public String getName() {
         return name;
     }
- 
- 
+
     public void setName(String name) {
         this.name = name;
     }
 }
 ----
-Usecase 1: a simple search for all Person entities with a given Name1 and Name2
+
+Use case 1: a simple search for all Person entities with a given Name1 and Name2
+
 [source,java]
 ----
 ConjunctionSpecification<Person> theSpecification = new ConjunctionSpecification<Person>(new Person());
- 
- 
+
 Person thePerson = theSpecification.root();
 thePerson.setName1("SuchString1");
 thePerson.setName2("SuchString2");
 ----
+
 will result in the following query string:
 
 [source]
 ----
 (name1 = {SuchString1}AND name2 = {SuchString2})
 ----
+
 Usecase 2: a simple search for all Person entities with a given Name1 and nor a given Name2
+
 [source,java]
 ----
 ConjunctionSpecification<Person> theSpecification = new ConjunctionSpecification<Person>(new Person());
- 
  
 Person thePerson = theSpecification.root();
 thePerson.setName1("SuchString1");
 theSpecification.notEquals().setName2("SuchString2");
 ----
+
 will result in the following query string:
 
 (name1 = {SuchString1} AND name2 != {SuchString2})
 
-Usecase 3: a like search for all Person enities
+Usecase 3: a like search for all Person entities
+
 [source,java]
 ----
 ConjunctionSpecification<Person> theSpecification = new ConjunctionSpecification<Person>(new Person());
@@ -207,25 +193,30 @@ Person thePerson = theSpecification.root();
 thePerson.setName1("SuchString1");
 theSpecification.like().setName2("%lala%");
 ----
+
 will result in the following query string:
 
 (name1 = {SuchString1} AND name2 LIKE {%lala%}
 
 Usecase 4: traversing aggregated Entities
+
 [source,java]
 ----
 ConjunctionSpecification<Person> theSpecification = new ConjunctionSpecification<Person>(new Person());
- 
- 
+
 Person thePerson = theSpecification.root();
 thePerson.getAddress().getCity().setName("Berne");
 ----
+
 will result in the following query string:
 
 (address.city.name = {Berne})
+
 == Under the hood
-Mogwai SpecificationBuilder creates CGLib proxies for domain objecs. These proxies capture the invoked behavior on the domain objects and creating a corresponding query specification. The proxies also handle object graph navigation.
+
+Mogwai SpecificationBuilder creates CGLib proxies for domain objects. These proxies capture the invoked behavior on the domain objects and creating a corresponding query specification. The proxies also handle object graph navigation.
 
 == Conclusion
-Mogwai SpecificationBuilder helps to create query specifications for a large amount of usecases without introducing additional concepts. Recorded query specifications can be converted into Hibernate Criteria or HQL statements in a very generic and reusable way. This helps to keep the Repository interface clean and is also very refactoring safe. For further investigations, you can also consult the http://www.querydsl.com/[Query DSL Project] . It combines a kind of JPA2 Metamodel with query specifications.
+
+Mogwai SpecificationBuilder helps to create query specifications for a large amount of use cases without introducing additional concepts. Recorded query specifications can be converted into Hibernate Criteria or HQL statements in a very generic and reusable way. This helps to keep the Repository interface clean and is also very refactoring safe. For further investigations, you can also consult the http://www.querydsl.com/[Query DSL Project]. It combines a kind of JPA2 Meta model with query specifications.
 

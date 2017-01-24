@@ -5,13 +5,13 @@ tags = ["AOP", "Logging", "Threading"]
 draft = false
 +++
 
-Often we are developing applications for multi-user environments. Classic examples are web applications or web services. This also means that technical or business exceptions can occour at the same time for different users. But how do we know you causes which exception?
+Often we are developing applications for multi-user environments. Classic examples are web applications or web services. This also means that technical or business exceptions can occur at the same time for different users. But how do we know you causes which exception?
 
 We can use logging frameworks like http://logging.apache.org/log4j/2.x/[Log4J] and write some meta-information like the id of the current user and session to the http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/MDC.html[Mapped Diagnostic Context] and finally use a special logging configuration to output the MDC to the log files. But this also means a lot of configuration work, which can also be error prone.
 
-Often we only have a stacktrace to analyze an exception. In case of OutOfMemory errors, we do have a HeapDump as well. The stacktrace and also the HeapDump include the name of the current thread. So why not use the name of the thread as our meta-information? This also means that we are independent from special logging frameworks and their features, and we can use standard Java to implement what we want.
+Often we only have a stack trace to analyze an exception. In case of OutOfMemory errors, we do have a HeapDump as well. The stack trace and also the HeapDump include the name of the current thread. So why not use the name of the thread as our meta-information? This also means that we are independent from special logging frameworks and their features, and we can use standard Java to implement what we want.
 
-Adam Bien posted his http://www.adam-bien.com/roller/abien/entry/server_independent_thread_tracking_utility[Thread Tracker Pattern] . This page is an adoption of his work. Changing the name of the current thread is not explicitly allowed by the JEE specification, but it is also not forbidden. Changing the name of the current thread is an example of either a ServletFilter, an EJB Interceptor or an AOP(AspectJ) aspect. Using one of those technologies can save a lot of time.
+Adam Bien posted his http://www.adam-bien.com/roller/abien/entry/server_independent_thread_tracking_utility[Thread Tracker Pattern]. This page is an adoption of his work. Changing the name of the current thread is not explicitly allowed by the JEE specification, but it is also not forbidden. Changing the name of the current thread is an example of either a ServletFilter, an EJB Interceptor or an AOP(AspectJ) aspect. Using one of those technologies can save a lot of time.
 
 Example:
 
@@ -22,11 +22,9 @@ import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
 import java.lang.reflect.Method;
  
- 
 @Interceptor
 @ThreadTracking
 public class ThreadTracker {
- 
  
     @AroundInvoke
     public Object handleInvocation(InvocationContext aContext) throws Exception {
@@ -41,6 +39,7 @@ public class ThreadTracker {
     }
 }
 ----
-Personally, i apply the Tread Tracker Pattern at application entrypoints. This means either WebService endpoints, Session Facades or other entrypoints. As a JEE application is not allowed to spawn multiple threads, the current thread and therefore it's name will stay the same for the current user's invocation context. If something goes wrong, a StackTrace or a HeapDump is produced, and we can analyze the problem. We can also use monitoring tools like JConsole, JVisualVM or even JMX to watch at the application and see the different threads and therefore the users around. We do not need to wrap every method and class available in our application, as we can produce a StackTrace using the above mentioned tools at every point in time for a Thread, so we can see what the user and the application do and in which execution context they are.
+
+Personally, i apply the Tread Tracker Pattern at application entrypoints. This means either WebService endpoints, Session Facades or other entrypoints. As a JEE application is not allowed to spawn multiple threads, the current thread and therefore it's name will stay the same for the current user's invocation context. If something goes wrong, a Stack Trace or a HeapDump is produced, and we can analyze the problem. We can also use monitoring tools like JConsole, JVisualVM or even JMX to watch at the application and see the different threads and therefore the users around. We do not need to wrap every method and class available in our application, as we can produce a Stack Trace using the above mentioned tools at every point in time for a Thread, so we can see what the user and the application do and in which execution context they are.
 
 Applying this pattern helped me a lot at work and saves me a lot of time while debugging and analyzing problems.

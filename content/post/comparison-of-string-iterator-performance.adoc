@@ -14,6 +14,7 @@ for (int i=0;i<theLine.length();i++) {
    // Do something with the character
 }
 ----
+
 Or we can use the advanced for style using a character array the following way:
 
 [source,java]
@@ -22,4 +23,5 @@ for (char theCurrentChar : theLine.toCharArray())  {
   // Do something with the character 
 }
 ----
-Checking both options for performance gives us surprising results: Under heavy stress the first syntax takes in an advanced usecase about 200 microseconds , the second syntax takes only 91 microseconds! It seems like the String.charAt() Method is the cause of our pain. The solution is also quite simple: always use the seconds syntax and you are safe!
+
+Checking both options for performance gives us surprising results: Under heavy stress the first syntax takes in an advanced use case about 200 microseconds , the second syntax takes only 91 microseconds! It seems like the String.charAt() Method is the cause of our pain. The solution is also quite simple: always use the seconds syntax and you are safe!

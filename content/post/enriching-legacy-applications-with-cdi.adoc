@@ -5,19 +5,19 @@ tags = ["Dependency Injection", "Enterprise", "Legacy", "Modernization"]
 draft = false
 +++
 
-There are a lot of applications out there. Some of them are legacy, others are in their maintenance phase. While we are developing new applications, we can use the coolest new technologies, think about good design and other stuff. But what about the software maintenance phase? Often, due to lack of time and other constraints, we cannot do everything perfectly, we need to move some refactoring or even reengineering to the maintenance phase.
+There are a lot of applications out there. Some of them are legacy, others are in their maintenance phase. While we are developing new applications, we can use the coolest new technologies, think about good design and other stuff. But what about the software maintenance phase? Often, due to lack of time and other constraints, we cannot do everything perfectly, we need to move some refactoring or even re-engineering to the maintenance phase.
 
-While doing software maintenance, i have often seen some very strange object state management mechanisms. And i often thought: man, using CDI would make this pretty simple, why do it so hard? Wouln't it be cool do combine Swing or SWT for instance with CDI?
+While doing software maintenance, i have often seen some very strange object state management mechanisms. And i often thought: man, using CDI would make this pretty simple, why do it so hard? Wouldn't it be cool do combine Swing or SWT for instance with CDI?
 
-Using CDI(more dependency than context injection) can greatly increase software quality and testability. There are a lot of books written about this topic and also Martin Fowler promotes dependency injection. But how can we embed CDI into a legacy application?
+Using CDI(more dependency than context injection) can greatly increase software quality and test-ability. There are a lot of books written about this topic and also Martin Fowler promotes dependency injection. But how can we embed CDI into a legacy application?
 
 	 * First of all, think twice. It is really worth the pain? If you still feel good about it, go to the next step.
-	 * Check, which objects could be managed by a container. DAO's or stateless Services are candidates for managed beans.
-	 * Finally, where are the joint points? Where is the place to combine unmanaged objects and managed objects?
+	 * Check, which objects could be managed by a container. DAOs or stateless Services are candidates for managed beans.
+	 * Finally, where are the joint points? Where is the place to combine un-managed objects and managed objects?
 
-The key of all is object lifecycle management. You need to be able to handle lifecycle management from your application code to the CDI container. If you can't do this, stop.
+The key of all is object life-cycle management. You need to be able to handle life-cycle management from your application code to the CDI container. If you can't do this, stop.
 
-Check the joint points. Classic candidates are UI components. For instance a JFrame somenhow needs to know a business service, sometimes a DAO or a transaction manager. The tricky part is how can we mix Swing with CDI? I wrote a small helper class for this:
+Check the joint points. Classic candidates are UI components. For instance a JFrame somehow needs to know a business service, sometimes a DAO or a transaction manager. The tricky part is how can we mix Swing with CDI? I wrote a small helper class for this:
 
 [source,java]
 ----
@@ -63,6 +63,7 @@ public class CDIHelper {
     }
 }
 ----
+
 Now, let's create a JFrame and do some dependency injection:
 
 [source,java]
@@ -101,4 +102,5 @@ public class JFrameTest extends JFrame {
     }
 }
 ----
+
 Quite easy! We can now combine our Swing code with CDI and all of it's features like Interceptors and so on. Great improvement!

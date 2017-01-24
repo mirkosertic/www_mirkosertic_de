@@ -11,12 +11,12 @@ image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/leaspaintin
 
 But on my way i had to tweak with Android to make the App responsive even on slower devices. Here are my findings about how to keep everything responsive and smooth:
 
-a) Track ALL Touch MotionEventsThe Android system caches MotionEvents detected by the hardware and delivers these events to the App. It would be wrong just to use the Event.getX() and Event.getY() to draw the line, because you only get the latest point. To detect previous cached motion events, we have to use Event.getHistorySize() and use the Event.getHistoricalX() and Event.getHistoricalY() to complete the line.
+a) Track ALL Touch MotionEvents. The Android system caches MotionEvents detected by the hardware and delivers these events to the App. It would be wrong just to use the Event.getX() and Event.getY() to draw the line, because you only get the latest point. To detect previous cached motion events, we have to use Event.getHistorySize() and use the Event.getHistoricalX() and Event.getHistoricalY() to complete the line.
 
-b) Do not redraw everything after a TouchEventDrawing is slow on devices previous to Android 3 because of no hardware acceleration. And even on newer devices it is an expensive operation. So i created a snapshot of the canvas and stored it in a Bitmap on ACTION_DOWN event and while the finger is down, i use the complete Bitmap to draw everything. After an ACTION_UP, i recycled the stored Bitmap and redraw everything. Doing so, we only need to draw the new Line while the finger is down. This really increased responsiveness.
+b) Do not redraw everything after a TouchEvent. Drawing is slow on devices previous to Android 3 because of no hardware acceleration. And even on newer devices it is an expensive operation. So i created a snapshot of the canvas and stored it in a Bitmap on ACTION_DOWN event and while the finger is down, i use the complete Bitmap to draw everything. After an ACTION_UP, i recycled the stored Bitmap and redraw everything. Doing so, we only need to draw the new Line while the finger is down. This really increased responsiveness.
 
-c) Do not invalidate the whole viewDoing View.invalidate() is a real performance killer. Just invalidate the region of the view that needs to be redrawn. Just call View.invalidate(Rect) instead.
+c) Do not invalidate the whole view. Doing View.invalidate() is a real performance killer. Just invalidate the region of the view that needs to be redrawn. Just call View.invalidate(Rect) instead.
 
-e) Cache Paint instancesCreating a Paint instance is an expensive operation. So make sure to use cached instances instead of creating new ones on every repaint.
+e) Cache Paint instances. Creating a Paint instance is an expensive operation. So make sure to use cached instances instead of creating new ones on every repaint.
 
 Keeping all this in mind, the App is smooth and responsive :-)

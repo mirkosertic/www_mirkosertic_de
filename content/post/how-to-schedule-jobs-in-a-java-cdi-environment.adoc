@@ -7,13 +7,13 @@ draft = false
 
 Often we need to schedule Jobs. Standard Java http://weld.cdi-spec.org/[CDI] does not have a build in Job Scheduler feature. But this functionality can be easily implemented by using the CDI extension mechanism.
 
-I wrote a simple CDI extension for Job scheduling backed by the https://quartz-scheduler.org/[Quartz] Framework. It is hosted at https://github.com/mirkosertic/cdicron[Github] .
+I wrote a simple CDI extension for Job scheduling backed by the https://quartz-scheduler.org/[Quartz] Framework. It is hosted at https://github.com/mirkosertic/cdicron[Github].
 
 To schedule a Job, we basically need to do the following things:
 
 a) add the following Maven dependency(available from Central Repository):
 
-[source]
+[source.xml]
 ----
 <dependency>
     <groupId>de.mirkosertic.cdicron</groupId>
@@ -21,6 +21,7 @@ a) add the following Maven dependency(available from Central Repository):
     <version>1.0</version>
 </dependency>
 ----
+
 b) implement a Bean with the Job implementation:
 
 [source,java]
@@ -38,6 +39,7 @@ public class DummyJob {
     }
 }
 ----
-Nothing else to do :-) The Job scheduler is bootet by the CDI extension and will schedule the annotated method as defined by the supplied cron expression.The cdicron project comes with a built in scheduler abstraction. So it is quite easy to support other scheduling frameworks without changing existing code. Take a look at the GitHub project for more information.
+
+Nothing else to do :-) The Job scheduler is booted by the CDI extension and will schedule the annotated method as defined by the supplied cron expression.The cdicron project comes with a built in scheduler abstraction. So it is quite easy to support other scheduling frameworks without changing existing code. Take a look at the GitHub project for more information.
 
 I really love CDI!
