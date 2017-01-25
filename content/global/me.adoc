@@ -37,12 +37,12 @@ I have worked with following technolgies(excerpt):
 
 Java (Oracle Java Certified), JEE, EJB, Android, Scala, GWT(Google Web Toolkit), JavaScript, HTML5 Polymer, SOA, XML, Spring, GIT, OOA/D/P, Java2D, Java3D, JavaFX 2.0, SWT, JPA, Hibernate, Spring, JSF, AOP(AspectJ), SOAP, WSDL, CruiseControl / Hudson / Jenkins, Maven, PostgreSQL, Domain-Driven Design, NoSQL, Docker,Windows 3.1 to Windows 8, JBoss AS, Tomcat, TomEE, WebLogic WLS, IBM Websphere, Apache Lucene, Apache Solr, Hibernate Search, Bean Validation, JAXB, StAX, TRaX, V-Modell, HERMES(Swiss), XP, SCRUM, Eclipse, JBuilder, Netbeans, IntelliJ, Canoo ULC, JUnit, Mockito, PowerMock, EasyMock, JSFUnit, DBUnit, Apache OJB, Objektpark, Case Tools, Apache CXF, MyFaces, Tomahawk, Richfaces, Primefaces, PrettyFaces, JasperReports, Informix, MDSD, MDA, XSL:FO, OrientDB, Enterprise Architect, WebGL/OpenGL, C / C++, Selenium, XSLT, JDBC, JSP, Subversion, AWT/SwingJSF, SOAP, REST, Hibernate, Oracle PL-SQL, DB2, MS-SQL, MySQL, UML
 
-I aquired the following certificate:
+I aquired the following certificates:
 
 Technical:
 
     * 2014 Functional Programming Principles in Scala, EPFL Lausanne
-    * 2012 Oracle Java Enterprise Edition 5 Enterprise Architect Certified Master
+    * 2012 Oracle Java Enterprise Edition 5 Enterprise Architect Certified Master
     * 2009 Sun Certified Developer for Java Web Services (SCDJWS)
     * 2007 Sun Certified Enterprise Architect (SCEA)
     * 2004 Sun Certified Web Component Developer for the Java2 Platform (SCWCD)
