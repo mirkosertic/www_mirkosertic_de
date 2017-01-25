@@ -9,12 +9,12 @@ Often we need to visualize complex data in a fancy way. The core JavaFX controls
 
 The answer is: depends! Since JavaFX supports the famous WebView, we can also use some embedded HTML5 with JavaScript libraries like http://d3js.org/[D3.js] to visualize data driven documents.
 
-To show how this works i used the http://www.mirkosertic.de/wordpress/blog-post/a-javafx-based-desktop-search-engine/[JavaFX Desktop Search] example and added an animated sunburst chart with D3.js support to show the document distribution by author, last modification time stamp and document type. This is how it looks:
+To show how this works i used the link:/blog/2013/04/a-javafx-based-desktop-search-engine/[JavaFX Desktop Search] example and added an animated sunburst chart with D3.js support to show the document distribution by author, last modification time stamp and document type. This is how it looks:
 
 image:/media/fxd3js.png[]
 
 The zoom-able sunburst code was taken from this blog: http://bl.ocks.org/metmajer/5480307[http://bl.ocks.org/metmajer/5480307]. Thanks a lot for this great work!
 
-D3.js is a very powerful JavaScript library supporting a lot of display formats. The sources of JavaFX Desktop Search are available at Google Code http://www.mirkosertic.de/wordpress/blog-post/javafx-custom-controls-or-webview-with-d3-js/[here].
+D3.js is a very powerful JavaScript library supporting a lot of display formats. The sources of JavaFX Desktop Search are available at Google Code link:/blog/2013/05/javafx-custom-controls-or-webview-with-d3-js/[here].
 
 So often we can use existing JavaScript libraries to visualize complex data, no more need to write a custom control. Cool!
