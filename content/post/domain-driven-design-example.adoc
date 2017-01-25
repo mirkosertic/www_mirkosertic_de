@@ -64,7 +64,7 @@ Now we need to align the Subdomain aka problem space to our solution design, we 
 
 == Building blocks
 
-The building blocks of Domain-driven Design are split into tactical and strategical patterns. I wrote http://www.mirkosertic.de/wordpress/blog-post/domain-driven-design-overview-and-building-blocks/[an Article about DDD building blocks] so if you want to dive deeper please visit this article.
+The building blocks of Domain-driven Design are split into tactical and strategical patterns. I wrote link:/blog/2012/07/domain-driven-design-overview-and-building-blocks/[an Article about DDD building blocks] so if you want to dive deeper please visit this article.
 
 Please note that the following architecture patterns and class diagrams are not technology dependent. This solution can be implemented using Java SE/EE, C# or even JavaScript. It does not matter, we can archive the same benefit with every target technology.
 

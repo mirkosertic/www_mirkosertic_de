@@ -5,7 +5,7 @@ tags = ["Database", "Interesting", "NoSQL"]
 draft = false
 +++
 
-This summary is taken from the book “Seven Databases in Seven Weeks”. See http://www.mirkosertic.de/wordpress/books-everyone-should-read/[the Books section] for details.
+This summary is taken from the book “Seven Databases in Seven Weeks”. See link:/global/interestingbooks/[the Books section] for details.
 
 |===
 | Database| Version| Genre| Data Types| Data Relations| Standard Object| Written in| Transactions| Triggers| Main Differentiator| Weaknesses
