@@ -9,11 +9,11 @@ Last year I wrote a http://www.mirkosertic.de/wordpress/blog-post/a-javafx-based
 
 Here is a screenshot of a simple platform game based on the GameEngine, some physics stuff and a lot of Java code:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/dukejumprunchrome.png[1678,1048]
+image:/media/dukejumprunchrome.png[]
 
 Here is also a screenshot of the JavaFX based game authoring system while editing the example game:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/dukejumpruncomposer2014.png[1677,1020]
+image:/media/dukejumpruncomposer2014.png[]
 
 The original Game Runtime was written in Java 7. Now Java 8 is available, and the question arises: Can I use cool new Java 8 language features such as Lambdas for the Game Engine?
 

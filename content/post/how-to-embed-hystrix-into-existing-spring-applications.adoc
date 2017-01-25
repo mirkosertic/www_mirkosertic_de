@@ -97,6 +97,6 @@ Nice! But how to we add Hystrix monitoring capabilities to our app? We just need
 
 And the monitoring can be done using the Hystrix Dashboard app, as seen here:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/hystrixdashboard.png[976,300]
+image:/media/hystrixdashboard.png[]
 
 Very nice! Using the Dashboard, we can monitor the throughput of the service interface and we can also see the status of the circuit breaker and other statistics. The sources and examples of this tutorial are available at https://github.com/mirkosertic/HystrixSpring[github.com/mirkosertic/HystrixSpring]. Yes, resilience, here we go!

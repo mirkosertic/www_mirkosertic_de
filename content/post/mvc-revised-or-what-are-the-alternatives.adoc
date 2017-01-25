@@ -18,7 +18,7 @@ The http://en.wikipedia.org/wiki/Model_view_controller[Model View Controller] pa
 
 See the following diagram taken from Wikipedia to make it clearer:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/MVC-Process.png[320,350]
+image:/media/MVC-Process.png[]
 
 However, pure MVC has some drawbacks. One drawback is that the model needs to contain both business object and user interface, so things like the name of a person and the disabled or enabled state of the corresponding user interface control. Another drawback is test-ability. Due to the complex data binding and the tight coupling between view, model and controller, such implementations can quickly become hard to test using plain unit testing frameworks.
 
@@ -35,7 +35,7 @@ A good alternative to MVC is the http://en.wikipedia.org/wiki/Model_View_Present
 
 See this picture taken from Wikipedia:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/Model_View_Presenter.png[507,394]
+image:/media/Model_View_Presenter.png[]
 
 Martin Fowler split this pattern into http://martinfowler.com/eaaDev/SupervisingPresenter.html[Supervising Controller] and http://martinfowler.com/eaaDev/PassiveScreen.html[Passive View]. See a discussion about this topic here: http://martinfowler.com/eaaDev/uiArchs.html[Fowler's User Interface Patterns] .
 

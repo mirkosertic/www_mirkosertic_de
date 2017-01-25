@@ -15,7 +15,7 @@ I wanted to create a custom JavaFX control for displaying simple, generic, inter
 
 Here is a screenshot how it is looking:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/mogwaifxgraph.png[800,600]
+image:/media/mogwaifxgraph.png[]
 
 The graph is created using the following example JavaFX application:
 

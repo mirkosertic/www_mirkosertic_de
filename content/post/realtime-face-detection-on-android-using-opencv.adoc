@@ -9,7 +9,7 @@ There is a cool computer vision library called http://opencv.org/[OpenCV] availa
 
 For the beginning, i want to implement real time face detection on my Samsung Galaxy S3 with OpenCV and some Java code. Here is a screenshot of the final result:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/opencvfacedetector.png[600,338]
+image:/media/opencvfacedetector.png[]
 
 The OpenCV Android SDK comes with some handy Camera interface classes converting Android Bitmaps to OpenCV Mat instances. We can apply all computer vision tasks on such Mat instances and finally render the results. The following Android Activity shows all you need to do face detection on Android:
 

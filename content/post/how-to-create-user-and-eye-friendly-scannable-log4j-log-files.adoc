@@ -40,9 +40,9 @@ This can easily be achieved using Log4J and some custom configuration using the 
 
 This will produce log files that have the following layout:
 
-2014-06-13 11:05:42,237 [Thread-1 ] INFO c.b.r.c.i.a.DataStream$1 - Loggingmessage1
-2014-06-13 11:06:42,237 [Thread-1 ] INFO c.b.r.c.i.a.DataStream$1 - Loggingmessage2
-2014-06-13 11:07:42,237 [Thread-1 ] INFO c.b.r.c.i.a.DataStream$1 - Loggingmessage3
-2014-06-13 11:08:42,237 [Thread-1 ] INFO c.b.r.c.i.a.DataStream$1 - Loggingmessage4
+ 2014-06-13 11:05:42,237 [Thread-1 ] INFO c.b.r.c.i.a.DataStream$1 - Loggingmessage1
+ 2014-06-13 11:06:42,237 [Thread-1 ] INFO c.b.r.c.i.a.DataStream$1 - Loggingmessage2
+ 2014-06-13 11:07:42,237 [Thread-1 ] INFO c.b.r.c.i.a.DataStream$1 - Loggingmessage3
+ 2014-06-13 11:08:42,237 [Thread-1 ] INFO c.b.r.c.i.a.DataStream$1 - Loggingmessage4
 
 The log file is now column oriented. Every column has a fixed with. Long package names are shortened. The only part with variable length is the log message, which comes at the end of the file. Now we can easily parse even very huge log files. Nice!

@@ -8,7 +8,7 @@ draft = false
 One of my favorite projects is my JavaFX based http://www.mirkosertic.de/wordpress/blog-post/a-javafx-based-game-authoring-system/[Gameengine]. It has a flexible entity component system, supports WYSIWYG game design and also has multiplayer network support. The entity component system is backed by a LUA based scripting system, the game designer can react freely on game events and script entity behaviors with the wonderful LUA scripting engine.
 Now, the game designer needs a visual tool with syntax highlighting, clipboard support and also some kind of testing mode to write bug free LUA scripts. Luckily I was able to build this with JavaFX, and here is a final screenshot:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/luascripteditor.png[962,723]
+image:/media/luascripteditor.png[]
 
 Now, how did I achieve this? Well, luckily I didn't have to reinvent everything by myself. There are a lot of cool scripting editors available today. One of them is the Ace editor. The Ace editor is HTML/ JavaScript based. And because of the wonderful JavaFX WebView I am able to integrate the rich text script editor with a JavaFX based user interface. For starters, we need to a editor.html page to the classpath. The whole Ace editor bootstrapping is done by this simple page:
 

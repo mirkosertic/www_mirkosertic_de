@@ -25,7 +25,7 @@ Based on these requirements the development team decided to model everything usi
 
 Ok, here is what they designed in the first run:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/dddfirstrun.png[798,661]
+image:/media/dddfirstrun.png[]
 
 This is pretty straight forward. There are Customers, Freelancers, Projects and Timesheets. There is also a kind of user management to support role based security. But wait, something is wrong here. There are some well hidden design flaws. Can you see them? Here they are:
 
@@ -58,7 +58,7 @@ Ahh! We can split the big problem into smaller ones. This can help us to design 
 
 The separated Domain can easily be visualized. In DDD terms this is called a Context Map, and it is the starting point for any further modeling.
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/dddcontextmap.png[681,508]
+image:/media/dddcontextmap.png[]
 
 Now we need to align the Subdomain aka problem space to our solution design, we need to form a solution space. A solution space in DDD lingo is also called a Bounded Context, and it is the best to align one problem space/Subdomain with one solution space/Bounded Context.
 
@@ -72,7 +72,7 @@ Please note that the following architecture patterns and class diagrams are not 
 
 Ok, now let's see the new big picture of the domain model:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/dddrevised.png[800,521]
+image:/media/dddrevised.png[]
 
 Okay, what happened here? There are now Bounded Contexts for every identified Subdomain. The Bounded Contexts are isolated, they know nothing of each other. They are only glued together by a set of common types, like UserId, ProjectId and CustomerId. In DDD this is called a “Generic Subdomain”
 
@@ -86,13 +86,13 @@ Aggregates and Entites are things with an unique id in our model. Value Objects 
 
 Let's design some behavior, the “Freelancer moved to new location” use case. Without DDD in mind, we could create a simple POJO as follows:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/dddbehavior.png[666,312]
+image:/media/dddbehavior.png[]
 
 We can change the name of the Freelancer by calling the setter of the instance. But wait! Where is our use case? The setter might be called from other places. And implementing role based security might become cumbersome. as we do not have the invocation context when a setter is invoked. Also, there is a missing concept in this model, the Address. It is modeled in a very implicit way, just by simple properties of the Freelancer class.
 
 By applying Domain-driven Design, we get the following:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/dddbehaviorrevised.png[662,352]
+image:/media/dddbehaviorrevised.png[]
 
 This is much better. There is now an explicit Address class, which encapsulates the whole address state. The address change use case is now explicitly modeled as a moveTo() method provided by the Freelancer aggregate. We can only change the Freelancer state by using this method. And of course this method can easily be secured by some kind of security model.
 
@@ -102,7 +102,7 @@ Ok, we continue to model the “freelancer moved to new location” use case. Fi
 
 The following diagram shows the modeled use case. You will see some new artifacts. First of all the user interface, the client of our domain model. A client can be everything, from JSF 2.0 front end to SOAP web services or a REST resource. So please think about the client in a general way. The client sends a command to the ApplicationService. The ApplicationService translates the command to a Domain Model use case invocation. So the FreelancerApplicationService will load the Freelancer Aggregate from the FreelancerRepository and invoke the moveTo() operation on the Freelancer Aggregate. The FreelancerApplicationService forms also the transaction boundary. Every invocation results in a new transaction. Role based security can also be implemented using the FreelancerApplicationService. It is always a good choice to keep transaction control out of the domain model. Transaction control is more a technical issue than a business thing, so it should not be implemented in the domain model.
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/dddusecasepersistence.png[839,710]
+image:/media/dddusecasepersistence.png[]
 
 == Application Architecture
 
@@ -116,7 +116,7 @@ Every Deployment Unit contains the following parts:
 
 The Domain Layer contains the infrastructure independent domain logic as we modeled before in this example. The Infrastructure Layer provides the technology dependent artifacts, like the Hibernate based FreelancerRepository implementation. The Application Layer acts as a gateway to business logic with integrated transaction control.
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/dddlayeredarchitecture.png[1034,1027]
+image:/media/dddlayeredarchitecture.png[]
 
 Using this style of architecture, the Domain Layer of our business logic does not depend on anything. We can change the Repository implementations from Hibernate to JPA or even NoSQL ones like Riak or MongoDB for instance without affecting any business logic.
 
@@ -151,7 +151,7 @@ Let's start with the first one. In this case, the Customer Management Bounded Co
 
 There are a lot of opportunities. First of all, we want to keep the context independent of each other. So how can we deal with that? Here is a design for the customer Bounded Context to interact with the Project Management Bounded Context:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/dddsyncexample1.png[665,480]
+image:/media/dddsyncexample1.png[]
 
 There is a new term: a Domain Service. What is a Domain Service? A Domain Service implements business logic which cannot be implemented by an Entity, Aggregate or ValueObject, because it does not belong there. For instance if the business logic invocation includes operation across multiple Domain Objects or in this case integration with another Bounded Context.
 
@@ -161,7 +161,7 @@ There are two implementations of ProjectManagementAdapter available, a SOAP and 
 
 At the Project Management Bounded Context side, there is an ApplicationWebService exposed as a REST resource or SOAP service implementing the server part of the communication. This service or resource delegates to the ProjectApplication Service, which delegates to ProjectDomainService asking if there is a Project registered for a given CustomerId.
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/dddsyncexample2.png[550,616]
+image:/media/dddsyncexample2.png[]
 
 In any case we have to take care of transaction boundaries. Web Service or REST resource invocation do not promote transactions out of the box, and using XA/two-phase-commit would increase complexity and reduce scalability. It would be the best to not delete a customer physically and instead mark it as logically deleted. In case of transaction failure or concurrency issues it would be easy to restore the customer to its original state.
 
@@ -181,13 +181,13 @@ So why do we need the local EventStore? Well, the messaging infrastructure might
 
 Here is how the Freelancer Management Bounded Context is modeled:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/dddasyncexample1.png[852,744]
+image:/media/dddasyncexample1.png[]
 
 The FreelancerService creates a TimesheetEntered Domain Event and forwards it to the EventStore, which is basically another Repository. Then, the JMSMessagingAdapter takes the pending Events from the EventStore and tries to forward them to the target messaging infrastructure till delivery succeeds. But this forwarding is handled in another transaction, and can be triggered by a timer, for instance.
 
 Ok, how does the Customer Management Context handle the Events? This is modeled as follows:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/dddasyncexample2.png[409,734]
+image:/media/dddasyncexample2.png[]
 
 Again, the Infrastructure Layer must be located all other layers as it must in case of context integration invoke the application service.
 

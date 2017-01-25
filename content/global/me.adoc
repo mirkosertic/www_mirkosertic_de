@@ -1,5 +1,5 @@
 +++
-date = "2017-01-01T01:43:48+02:00"
+date = "2016-01-01T01:43:48+02:00"
 title = "About me"
 tags = []
 draft = false
@@ -57,18 +57,14 @@ Methodical:
 
 Don't hesitate to contact me. I am always glad to help and assist you.
 
-Mirko Sertic
-Josefine-Mauser-Str. 66
-48157 Münster
-Germany
+Mirko Sertic +
+Josefine-Mauser-Str. 66 +
+48157 Münster +
+Germany +
 
-mirko@mirkosertic.de
-GitHub : githubiconGithub
-Twitter:
-Xing:
-LinkedIn:
-Google+:
-
-
-
-
+Mail: mirko@mirkosertic.de +
+GitHub : https://github.com/mirkosertic +
+Twitter: https://twitter.com/mirkosertic +
+Xing: https://www.xing.com/profile/Mirko_Sertic +
+LinkedIn: https://de.linkedin.com/in/mirko-sertic-98882397 +
+Google+: https://plus.google.com/112732493059943659026 +
