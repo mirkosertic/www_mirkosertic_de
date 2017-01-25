@@ -9,7 +9,7 @@ Spring Boot is a very cool framework for building modern, cloud-ready software. 
 
 The good people at https://www.codecentric.de/[Codecentric] recently released a very nice one, which is also available at GitHub. Here is a screenshot:
 
-image:https://www.mirkosertic.de/wordpress/wp-content/uploads/2016/12/springbootadminui.png[1855,736]
+image:/media/springbootadminui.png[]
 
 This user interface is basically a Spring Boot Starter, so you have to include it into your own application to make it runnable. It comes with the following features:
 

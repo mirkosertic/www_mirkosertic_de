@@ -23,11 +23,11 @@ Here are the results for building a client-side application composition framewor
 
 The solution is quite simple. Basically it is a JavaFX web browser on steroids, so a Scene with a WebView and some buttons around it. In my example it looks like this:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/fxportalmain.png[781,579]
+image:/media/fxportalmain.png[]
 
 This is the entry screen of FXPortal. It contains some links to navigate into one of the three applications. This is simple, it is just a bookmark screen. But wait: what about the Actions main menu? By clicking on it, we see:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/fxportalmainmenu.png[777,577]
+image:/media/fxportalmainmenu.png[]
 
 How is this done? The answer is: HTML5 Microdata! The source code is:
 

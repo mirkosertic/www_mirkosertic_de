@@ -9,11 +9,11 @@ Microsoft Windows search is not fast, and it also does not give us good search r
 
 I also wanted to test some new technologies like JavaFX with embedded HTML5, Apache Lucene as a full text search engine, Apache Tika as the content extraction framework and other stuff. But before we dive deep into internals, lets take a look at the frontend:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/searchscreenshot3.png[1059,698]
+image:/media/searchscreenshot3.png[]
 
 JavaFXDesktopSearch also comes with a visualization of the current full text index. It provides a clickable Sunburst diagram for this purpose. Basically it looks as follows:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/fxdesktopsunburst.png[1006,724]
+image:/media/fxdesktopsunburst.png[]
 
 
 Under the hood it uses http://d3js.org/[d3js.org] to visualize the Lucene index. Quite nice and fast, just try it out. The project is hosted at https://github.com/mirkosertic/FXDesktopSearch[github.com/mirkosertic/FXDesktopSearch]. FXDesktopSearch is deployed by JavaFX based native installers. The original version was deployed by WebStart, but WebStart support was dropped due to Oracles changes on security policies. Now JavaFXDesktopSearch can be installed by using native installers, and the right Java run-time is also bundled. Checkout the released at https://drive.google.com/folderview?id=0BxZHTEICpbwASzNhS2JYclFTUmc&amp;usp=sharing[Google Drive] .

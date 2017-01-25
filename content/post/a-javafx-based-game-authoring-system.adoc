@@ -23,15 +23,15 @@ Secondary Goals
 
 Well, I have to say that I achieved all of these goals. Here is a screenshot of the JavaFX based authoring tool:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/game_auhoring_system.png[800,433]
+image:/media//game_auhoring_system.png[]
 
 And the running game in Firefox deployed as a plain HTML website:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/game_firefox.png[800,641]
+image:/media/game_firefox.png[]
 
 and the game also running in Internet Explorer:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/game_internetexplorer.png[800,435]
+image:/media/game_internetexplorer.png[]
 
 Nice! Of course the game engine has some very cool features, like a flexible rule engine, physics support and sound!
 
@@ -43,7 +43,9 @@ The authoring system is a JavaFX application. I used Java CDI(Context and Depend
 
 The game engine is the heart of the system. Basically it is structured the following way:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/game_architecture.png[800,470]There are different game systems and game views. A game system for instance is the sound system or the physics system. A game view is the presentation of the game state for a user. The game systems and the game views are tied together in the game loop. For every frame rendered, the game loop is executed, every game system gets a chance to do something and finally the presentation is rendered by a game view.
+image:/media//game_architecture.png[]
+
+There are different game systems and game views. A game system for instance is the sound system or the physics system. A game view is the presentation of the game state for a user. The game systems and the game views are tied together in the game loop. For every frame rendered, the game loop is executed, every game system gets a chance to do something and finally the presentation is rendered by a game view.
 
 The different game systems are decoupled by an event dispatching system. Every object or game system can create or consume events. So pressing a key by a user creates a key pressed event, which is consumed by the duke object, knowing that it must jump now(This behavior is defined by a rule engine). So another event is created to inform the physics engine that a force must be applied to a given object. Now the physics system is called during the main loop, and it can run the physics simulation for a given amount of time. After that, update position events are fired by the physics game system informing the game domain model to update an object. Now the game view are called to render the game state to a device. All this happens during one step of the main game loop. What I have learned is that computer games are also a great appliance for event driven architecture!
 

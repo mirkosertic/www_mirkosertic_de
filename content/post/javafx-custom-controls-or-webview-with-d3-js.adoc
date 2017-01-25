@@ -11,7 +11,7 @@ The answer is: depends! Since JavaFX supports the famous WebView, we can also us
 
 To show how this works i used the http://www.mirkosertic.de/wordpress/blog-post/a-javafx-based-desktop-search-engine/[JavaFX Desktop Search] example and added an animated sunburst chart with D3.js support to show the document distribution by author, last modification time stamp and document type. This is how it looks:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/fxd3js.png[779,580]
+image:/media/fxd3js.png[]
 
 The zoom-able sunburst code was taken from this blog: http://bl.ocks.org/metmajer/5480307[http://bl.ocks.org/metmajer/5480307]. Thanks a lot for this great work!
 

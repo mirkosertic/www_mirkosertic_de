@@ -7,7 +7,7 @@ draft = false
 
 The last days i fiddled a bit with OpenGL 2 on Android. The Android OpenGL tutorials are a bit outdated, so i had to do some API research by myself and copy and merge the provided examples together. Here is a screenshot of the running OpenGL App:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/openglandroidapp.png[400,711]
+image:/media/openglandroidapp.png[]
 
 It supports touch events to rotate a triangle around and render the animation.
 

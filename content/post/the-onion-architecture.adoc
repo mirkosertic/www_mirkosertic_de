@@ -9,7 +9,7 @@ draft = false
 
 Often we develop complex business driven applications. While we design our application, it's architecture and it's layers, we often feel to use a traditional approach to define the layers. Here is a short structure of what i mean:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/traditionalpackaging.png[501,275]
+image:/media/traditionalpackaging.png[]
 
 The problem with this structure is that the packaging is infrastructure driven. We have a user interface which uses the business logic. The business logic uses the data access layer to access data. There are also some cross cutting concerns like transaction control or security. This packaging was often motivated by classic J2EE patterns. But the problems are the dependencies.
 
@@ -18,7 +18,7 @@ Our ui depends on business logic. And the business logic depends on infrastructu
 This is probably not what we want to design.== The Onion Architecture
 So what could be a solution? Jeffrey Palermo posted his approach of an Onion Architecture. Instead of putting the database and the data access logic into the middle, it put's the business logic into the middle. Everything else adds more functionality like a Decorator around the business logic, like transaction support, security or logging. This packaging greatly fits together with http://www.mirkosertic.de/wordpress/blog-post/domain-driven-design-overview-and-building-blocks/[Domain driven design]. The onion architecture would look like this:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/onionarchitecture-300x246.png[452,371]
+image:/media/onionarchitecture.png[]
 
 Maven module dependencies can be directly derived from the Onion Architecture. There is a core “Domain Model” module. There is also a “Domain Services” module which depends on the “Domain Model” and so on. This structure can be greatly verified by compile time dependencies.Fur further reading i suggest the http://www.mirkosertic.de/wordpress/blog-post/domain-driven-design-example/[Domain-driven Design Example Architecture].
 

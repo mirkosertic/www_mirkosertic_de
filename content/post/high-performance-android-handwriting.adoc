@@ -7,7 +7,7 @@ draft = false
 
 For one of my Android Apps https://play.google.com/store/apps/details?id=de.mirkosertic.easypaint[Leas Painting App] i needed to implement a sketching and handwriting functionality. The user must be able to draw with his fingers on the canvas and sketch something. This is a screenshot of my App:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/leaspaintingapp.png[800,500]
+image:/media/leaspaintingapp.png[]
 
 But on my way i had to tweak with Android to make the App responsive even on slower devices. Here are my findings about how to keep everything responsive and smooth:
 

@@ -25,6 +25,11 @@ paginate = 40
     opengraph = true
     shareTwitter = true
 
+[sitemap]
+  changefreq = "daily"
+  priority = 0.5
+  filename = "sitemap.xml"
+
 [Permalinks]
     post = "blog/:year/:month/:filename/"
 

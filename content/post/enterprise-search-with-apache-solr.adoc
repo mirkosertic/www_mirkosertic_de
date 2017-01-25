@@ -268,5 +268,5 @@ Die Suche wurde in <%=theResponse.getElapsedTime()%>ms ausgef&amp;uuml;hrt.<br/>
 
 Here is an example of our crawler and the ui in action. Looks quite nice, right? You will get a list of found documents. You will also see the Solr MoreLikeThis Feature in action. For every found result, a set of documents which are “similar” to this one are also displayed. Using MoreLikeThis, you can also detect duplicate files.
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/solrui-300x95.png[594,188]
+image:/media/solrui.png[]
 

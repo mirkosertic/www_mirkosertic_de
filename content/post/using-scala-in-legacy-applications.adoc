@@ -13,7 +13,7 @@ The short answer is: yes, of course it is!This short tutorial explains how to do
 
 Here is a short overview of the project structure:
 
-image:http://www.mirkosertic.de/wordpress/wp-content/uploads/2016/11/javascalamixedproject.png[465,369]
+image:/media/javascalamixedproject.png[]
 
 Here you see that the project contains a src/main/java and a src/main/scala directory. This is just for the sake of clarity. It is also possible to put the sources in the same directory and distinguish the source type by extension. I prefer the different directory, as it makes the separation clear.
 
