@@ -49,3 +49,8 @@ disableHugoGeneratorInject = true
     name = "Interesting Books"
     url = "/global/interestingbooks"
     weight = 3
+
+[[menu.main]]
+    name = "Tools & Goodies"
+    url = "/global/toolsgoodies"
+    weight = 3

@@ -6,3 +6,64 @@ Header set Cache-Control "max-age=1209600, private, proxy-revalidate"
 Header set Cache-Control "max-age=1209600, private, proxy-revalidate"
 </FilesMatch>
 
+RedirectPermanent /wordpress/welcome/books-everyone-should-read https://www.mirkosertic.de/global/interestingbooks
+RedirectPermanent /wordpress/2012/07/reusing-domain-objects-to-create-query-specifications https://www.mirkosertic.de/blog/2012/07/reusing-domain-objects-to-create-query-specifications
+RedirectPermanent /wordpress/2012/07/domain-driven-design-overview-and-building-blocks https://www.mirkosertic.de/blog/2012/07/domain-driven-design-overview-and-building-blocks
+RedirectPermanent /wordpress/2012/07/xml-resourcebundles-and-how-to-make-i18n-refactoring-safe https://www.mirkosertic.de/blog/2012/07/xml-resourcebundles-and-how-to-make-i18n-refactoring-safe
+RedirectPermanent /wordpress/2012/06/swing-databinding-with-mogwai-databinding https://www.mirkosertic.de/blog/2012/06/swing-databinding-with-mogwai-databinding
+RedirectPermanent /wordpress/2012/07/software-defect-detection-with-aop-and-jsr-303-jsr-305-jsr-308 https://www.mirkosertic.de/blog/2012/07/software-defect-detection-with-aop-and-jsr-303-jsr-305-jsr-308
+RedirectPermanent /wordpress/welcome/blog-content https://www.mirkosertic.de
+RedirectPermanent /wordpress/2012/07/thread-tracking-or-how-to-know-who-causes-an-error https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error
+RedirectPermanent /wordpress/2012/07/enterprise-search-with-apache-solr https://www.mirkosertic.de/blog/2012/07/enterprise-search-with-apache-solr
+RedirectPermanent /wordpress/2012/11/how-to-avoid-server-roundtrips-by-using-pretty-urls https://www.mirkosertic.de/blog/2012/11/how-to-avoid-server-roundtrips-by-using-pretty-urls
+RedirectPermanent /wordpress/2012/08/the-law-of-leaky-abstractions https://www.mirkosertic.de/blog/2012/08/the-law-of-leaky-abstractions
+RedirectPermanent /wordpress/2012/10/logging-made-easy https://www.mirkosertic.de/blog/2012/10/logging-made-easy
+RedirectPermanent /wordpress/2012/08/a-first-touch-with-nosql-graph-databases-and-orientdb https://www.mirkosertic.de/blog/2012/08/a-first-touch-with-nosql-graph-databases-and-orientdb
+RedirectPermanent /wordpress/2012/08/enriching-legacy-applications-with-cdi https://www.mirkosertic.de/blog/2012/08/enriching-legacy-applications-with-cdi
+RedirectPermanent /wordpress/2012/10/building-cdi-support-with-aop-and-aspectj https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj
+RedirectPermanent /wordpress/2012/09/the-onion-architecture https://www.mirkosertic.de/blog/2012/09/the-onion-architecture
+RedirectPermanent /wordpress/2012/07/how-to-embed-hystrix-into-existing-spring-applications https://www.mirkosertic.de/2012/07/how-to-embed-hystrix-into-existing-spring-applications
+RedirectPermanent /wordpress/2012/11/an-overview-of-current-nosql-databases https://www.mirkosertic.de/blog/2012/11/an-overview-of-current-nosql-databases
+RedirectPermanent /wordpress/2012/11/using-and-enhancing-hibernate-search https://www.mirkosertic.de/blog/2012/11/using-and-enhancing-hibernate-search
+RedirectPermanent /wordpress/2013/03/mvc-revised-or-what-are-the-alternatives https://www.mirkosertic.de/blog/2013/03/mvc-revised-or-what-are-the-alternatives
+RedirectPermanent /wordpress/2013/03/using-scala-with-jpa-2-0 https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0
+RedirectPermanent /wordpress/2013/03/using-scala-in-legacy-applications https://www.mirkosertic.de/blog/2013/03/using-scala-in-legacy-applications
+RedirectPermanent /wordpress/2013/03/maven-scala-and-aspectjaop https://www.mirkosertic.de/blog/2013/03/maven-scala-and-aspectjaop
+RedirectPermanent /wordpress/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server
+RedirectPermanent /wordpress/2013/04/implementing-state-machines-with-java-enums https://www.mirkosertic.de/blog/2013/04/implementing-state-machines-with-java-enums
+RedirectPermanent /wordpress/2012/08/putting-your-objects-into-context-or-why-overwriting-tostring-can-be-evil https://www.mirkosertic.de/blog/2012/08/putting-your-objects-into-context-or-why-overwriting-tostring-can-be-evil
+RedirectPermanent /wordpress/2012/10/displaying-simple-animated-graphs-with-javafx-2-0 https://www.mirkosertic.de/blog/2012/10/displaying-simple-animated-graphs-with-javafx-2-0
+RedirectPermanent /wordpress/2013/04/adding-html5-microdata-to-dokuwiki https://www.mirkosertic.de/blog/2013/04/adding-html5-microdata-to-dokuwiki
+RedirectPermanent /wordpress/2013/10/java-se-context-and-dependency-injection-with-java-ee-support https://www.mirkosertic.de/blog/2013/10/java-se-context-and-dependency-injection-with-java-ee-support
+RedirectPermanent /wordpress/2013/09/domain-driven-design-with-jsf-ejb-and-cdi https://www.mirkosertic.de/blog/2013/09/domain-driven-design-with-jsf-ejb-and-cdi
+RedirectPermanent /wordpress/2013/05/javafx-custom-controls-or-webview-with-d3-js https://www.mirkosertic.de/blog/2013/05/javafx-custom-controls-or-webview-with-d3-js
+RedirectPermanent /wordpress/2013/05/comparison-of-jaxb-xml-and-json-serialization-performance https://www.mirkosertic.de/blog/2013/05/comparison-of-jaxb-xml-and-json-serialization-performance
+RedirectPermanent /wordpress/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
+RedirectPermanent /wordpress/2014/06/how-to-create-user-and-eye-friendly-scannable-log4j-log-files https://www.mirkosertic.de/blog/2014/06/how-to-create-user-and-eye-friendly-scannable-log4j-log-files
+RedirectPermanent /wordpress/2013/11/java-properties-reinvented https://www.mirkosertic.de/blog/2013/11/java-properties-reinvented
+RedirectPermanent /wordpress/2013/10/java-array-iterator-performance https://www.mirkosertic.de/blog/2013/10/java-array-iterator-performance
+RedirectPermanent /wordpress/2013/09/comparison-of-string-iterator-performance https://www.mirkosertic.de/blog/2013/09/comparison-of-string-iterator-performance
+RedirectPermanent /wordpress/2013/10/how-to-create-junit-assertions-from-running-applications https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications
+RedirectPermanent /wordpress/2013/06/method-validation-with-jsr303-and-aspectj https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj
+RedirectPermanent /wordpress/2013/09/opengl2-on-android-example https://www.mirkosertic.de/blog/2013/09/opengl2-on-android-example
+RedirectPermanent /wordpress/2013/07/high-performance-android-handwriting https://www.mirkosertic.de/blog/2013/07/high-performance-android-handwriting
+RedirectPermanent /wordpress/2013/07/realtime-face-detection-on-android-using-opencv https://www.mirkosertic.de/blog/2013/07/realtime-face-detection-on-android-using-opencv
+RedirectPermanent /wordpress/2013/04/a-javafx-based-desktop-search-engine https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine
+RedirectPermanent /wordpress/2013/05/building-portals-with-javafx-html5-and-some-microdata https://www.mirkosertic.de/blog/2013/05/building-portals-with-javafx-html5-and-some-microdata
+RedirectPermanent /wordpress/2013/04/domain-driven-design-example https://www.mirkosertic.de/blog/2013/04/domain-driven-design-example
+RedirectPermanent /wordpress/2013/04/google-style-query-parser-for-apache-lucene https://www.mirkosertic.de/blog/2013/04/google-style-query-parser-for-apache-lucene
+RedirectPermanent /wordpress/2013/11/a-javafx-based-game-authoring-system https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system
+RedirectPermanent /wordpress/2016/02/a-very-simple-polymer-web-component https://www.mirkosertic.de/blog/2016/02/a-very-simple-polymer-web-component
+RedirectPermanent /wordpress/2014/10/how-to-set-the-html-base-tag-in-a-jsp-page https://www.mirkosertic.de/blog/2014/10/how-to-set-the-html-base-tag-in-a-jsp-page
+RedirectPermanent /wordpress/2015/04/a-javafx-based-lua-editor https://www.mirkosertic.de/blog/2015/04/a-javafx-based-lua-editor
+RedirectPermanent /wordpress/2016/01/how-to-schedule-jobs-in-a-java-cdi-environment https://www.mirkosertic.de/blog/2016/01/how-to-schedule-jobs-in-a-java-cdi-environment
+RedirectPermanent /wordpress/2016/06/how-to-remove-the-maven-primary-artifact-during-install-and-deploy-phase https://www.mirkosertic.de/blog/2016/06/how-to-remove-the-maven-primary-artifact-during-install-and-deploy-phase
+RedirectPermanent /wordpress/2015/03/tuning-html5-canvas-filltext https://www.mirkosertic.de/blog/2015/03/tuning-html5-canvas-filltext
+RedirectPermanent /wordpress/2015/12/how-to-download-maven-artifacts-with-maven-3-1-and-eclipse-aether https://www.mirkosertic.de/blog/2015/12/how-to-download-maven-artifacts-with-maven-3-1-and-eclipse-aether
+RedirectPermanent /wordpress/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming
+RedirectPermanent /wordpress/2016/11/compile-time-speed-gwt-2-8-0-vs-teavm-0-4-3 https://www.mirkosertic.de/blog/2016/11/compile-time-speed-gwt-2-8-0-vs-teavm-0-4-3
+RedirectPermanent /wordpress/2016/12/preconditions-lombok-jsr-303-and-jsr-308 https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308
+RedirectPermanent /wordpress/2016/12/a-spring-boot-admin-ui https://www.mirkosertic.de/blog/2016/12/a-spring-boot-admin-ui
+RedirectPermanent /wordpress https://www.mirkosertic.de
+
+https://www.mirkosertic.de/wordpress/welcome/tools-goodies/

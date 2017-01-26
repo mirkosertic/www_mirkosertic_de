@@ -9,7 +9,7 @@ Recently i was thinking about combining AspectJ and Scala in one project. Of cou
 
 The good news are that Maven, Scala and AspectJ fit pretty smooth together. The bad news are that support for Scala together with AspectJ is not very good in Eclipse and even IntelliJ. There are some workarounds available, but this only works with annotation-style aspects, and not the more powerful .aj syntax. The AspectJ compiler currently only works together with the Java compiler, basically it is a wrapper around it. The Scala compiler itself only supports Java and Scala code, but no .aj AspectJ files. The only common language is Java, so we also need to write our Aspects in Java using AspectJs annotation style syntax.
 
-To make it working, we have to setup the project as described link:/blog/2013/03/using-scala-in-legacy-applications/[in this article]. Finally, we have to write our aspects using Java annotation style, this will create the following compilation order:
+To make it working, we have to setup the project as described link:{{< ref "using-scala-in-legacy-applications.adoc">}}[in this article]. Finally, we have to write our aspects using Java annotation style, this will create the following compilation order:
 
 1) compile Scala code and Java code with annotation style aspects
 

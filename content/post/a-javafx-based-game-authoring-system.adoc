@@ -68,7 +68,7 @@ Reacting on user input can be tricky on the web. We can of course use plain old 
 
 Well, we can use APIs like PhoneGap/Apache Cordova to react on touch events, or we can even use the device accelerometer as a kind of user feedback. This is something I will implement in a future version of the renderer. For now, I will just react on plain old key events.
 
-Update 02/2015 : In the meanwhile there are different Java2JavaScript transpiler frameworks such as Dragome or TeaVM available. You can see a comparison in the context of a this game engine here: link:/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming[GWT vs. TeaVM vs. Dragome].
+Update 02/2015 : In the meanwhile there are different Java2JavaScript transpiler frameworks such as Dragome or TeaVM available. You can see a comparison in the context of a this game engine here: link:{{<ref "gwt-vs-dragome-vs-teavm-for-game-programming.adoc">}}[GWT vs. TeaVM vs. Dragome].
 
 == Conclusion
 

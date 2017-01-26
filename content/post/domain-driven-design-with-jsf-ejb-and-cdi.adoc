@@ -5,9 +5,10 @@ tags = ["Domain-driven Design", "Enterprise"]
 draft = false
 +++
 
-Based on my previous post about link:/blog/2013/04/domain-driven-design-example/[Domain-driven Design Architecture] i want to offer some implementation details about how to build a DDD-style application based on JSF2, PrettyFaces, EJB and CDI. I will give some code samples to give you an idea about how to start with this topic. Everything else is up to you :-). Also please note that most of the ideas in this example is inspired by the CEC-ECB(CDI-EJB-CDI Entity-Control-Boundary) patterns as described by Oracle for the JEE6 design.
+Based on my previous post about link:{{< ref "domain-driven-design-example.adoc" >}}[Domain-driven Design Architecture] i want to offer some implementation details about how to build a DDD-style application based on JSF2, PrettyFaces, EJB and CDI. I will give some code samples to give you an idea about how to start with this topic. Everything else is up to you :-). Also please note that most of the ideas in this example is inspired by the CEC-ECB(CDI-EJB-CDI Entity-Control-Boundary) patterns as described by Oracle for the JEE6 design.
 
 == Presentation with JSF and Prettyfaces
+
 JSF is part of the core JEE stack. Together with Prettyfaces it offers a well defined and standardized framework for user interface components. Personally i like the Model-View-Presenter pattern, hence i apply it here to a JSF managed bean:
 
 [source,java]
