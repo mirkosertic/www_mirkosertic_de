@@ -14,7 +14,7 @@ Before you continue, you should read the books “Domain-driven Design” by Eri
 A company provides IT Body Leasing. They have some Employees, and also a lot of Freelancers as Subcontractors. Currently, they use Excel sheets to manage their Customers, Freelancers, Timesheets and so on. The Excel solution does not scale well. It is not multi-user ready and also does not provide security and audit logs. So they decided to build a new web based solution. Here are the core requirements:
 
 	 * A searchable catalog of Freelancer must be provided
-	 * The new solution must allow do store the different Communication Channels available to contact a Freelancer
+	 * The new solution must allow to store the different Communication Channels available to contact a Freelancer
 	 * A searchable catalog of Projects must be provided
 	 * A searchable catalog of Customers must be provided
 	 * The Timesheets for the Freelancers under contract must be maintained
