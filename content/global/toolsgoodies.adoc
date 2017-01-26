@@ -1,0 +1,301 @@
++++
+date = "2017-01-26T02:18:14+01:00"
+title = "Tools & Goodies"
+tags = []
+draft = false
++++
+
+== Technical stuff
+
+http://www.redblobgames.com/[www.redblobgames.com]
+
+A wonderful resource about computer algorithms involved in game programming.
+
+https://jakearchibald.com/2014/offline-cookbook[jakearchibald.com/2014/offline-cookbook]
+
+Jake Archibald writes about offline Web Applications.
+
+https://xebialabs.com/periodic-table-of-devops-tools[xebialabs.com/periodic-table-of-devops-tools]
+
+An interesting compilation of common tools used by the DevOps movement.
+
+http://scs-architecture.org/[scs-architecture.org]
+
+The Self-contained System (SCS) approach is an architecture that focuses on a separation of the functionality into many independent systems, making the complete logical system a collaboration of many smaller software systems. This avoids the problem of large monoliths that grow constantly and eventually become unmaintainable.
+
+https://www.varnish-cache.org/[www.varnish-cache.org]
+
+Varnish is an HTTP accelerator designed for content-heavy dynamic web sites as well as heavily consumed APIs. In contrast to other web accelerators, such as Squid, which began life as a client-side cache, or Apache and nginx, which are primarily origin servers, Varnish was designed as an HTTP accelerator. Varnish is focused exclusively on HTTP, unlike other proxy servers that often support FTP, SMTP and other network protocols.
+
+http://hazelcast.org/[hazelcast.org]
+
+The Leading Open Source In-Memory Data Grid: Distributed Computing, Simplified.
+
+http://www.thymeleaf.org/[www.thymeleaf.org]
+
+Thymeleaf is a Java library. It is an XML / XHTML / HTML5 template engine (extensible to other formats) that can work both in web and non-web environments. It is better suited for serving XHTML/HTML5 at the view layerof web applications, but it can process any XML file even in offline environments.
+
+http://raml.org/projects.html[raml.org/projects.html]
+
+The RESTful APIModeling Language (RAML) is a concise, expressive language for describing RESTful APIs. Built on broadly used standards such as YAML and JSON, RAML is a non-proprietary, vendor-neutral open spec.
+
+http://asciidoctor.org/[asciidoctor.org]
+
+Asciidoctor is a fast text processor and publishing toolchain for converting AsciiDoc content to HTML5, DocBook 5 (or 4.5) and other formats.
+
+http://sqlfiddle.com/[sqlfiddle.com]
+
+SQLFiddle is a tool to quickly test sql statements on different databases such as MySQL, PostgreSQL or MSSQL.
+
+http://pitest.org/[pitest.org]
+
+PIT is a state of the art mutation testing system, providing gold standard test coverage for Java and the jvm. Its fast, scalable and integrates with modern test and build tooling.
+
+http://infinitest.github.io/[infinitest.github.io]
+
+Infinitest is a Continuous Testing plugin for Eclipse and IntelliJ. Each time a change is made on the source code, Infinitest runs all the tests that might fail because of these changes.
+
+http://hexraystudios.com/hexels[hexraystudios.com/hexels]
+
+Hexels is a brand new, grid-based art program for Mac and PC that lets you paint with shapes.
+
+http://www.gnu.org/software/octave[www.gnu.org/software/octave]
+
+GNU Octave is a high-level interpreted language, primarily intended for numerical computations. It provides capabilities for the numerical solution of linear and nonlinear problems, and for performing other numerical experiments. It also provides extensive graphics capabilities for data visualization and manipulation. Octave is normally used through its interactive command line interface, but it can also be used to write non-interactive programs. The Octave language is quite similar to Matlab so that most programs are easily portable.
+
+http://picketlink.org/[picketlink.org]
+
+PicketLink is an umbrella project for security and identity management for Java Applications. PicketLink is an important project under the security offerings from JBoss.
+
+http://getbarkeep.org/[getbarkeep.org]
+
+Barkeep is “the friendly code review system” — a fast, fun way to review code. Engineering organizations can use it to keep the quality bar high. With it you can watch commits made to any Git repository, see diffs, write comments, and have those comments emailed to your fellow committers.
+
+http://www.togglz.org/[www.togglz.org]
+
+Togglz is an implementation of the http://martinfowler.com/bliki/FeatureToggle.html[Feature Toggle Pattern] for Java. Feature Toggles are a very common agile development practices in the context of continuous deployment and delivery. The basic idea is to associate a toggle with each new feature you are working on. This allows you to enable or disable these features at application runtime, even for individual users.
+
+https://www.gitlab.com/[www.gitlab.com]
+
+GitLab offers git repository management, code reviews, issue tracking, activity feeds and wiki’s. Enterprises install GitLab on-premise and connect it with LDAP and Active Directory servers for secure authentication and authorization. A single GitLab server can handle more than 25,000 users but it is also possible to create a high availability setup with a multiple active servers
+
+http://facebook.github.io/react/index.html[facebook.github.io/react/index.html]
+
+React is a JavaScript library created by Facebook to create reactive client side user interfaces.
+
+https://cfengine.com/[cfengine.com]
+
+CFEngine Enterprise is an IT automation platform that uses a model-based approach to manage your infrastructure, and applications at WebScale while providing best-in-class scalability, security, enterprise-wide visibility and control.
+
+http://masonry.desandro.com/[masonry.desandro.com]
+
+Masonry is a JavaScript grid layout library. It works by placing elements in optimal position based on available vertical space, sort of like a mason fitting stones in a wall. You’ve probably seen it in use all over the Internet.
+
+https://github.com/Netflix/Hystrix[github.com/Netflix/Hystrix]
+
+Hystrix is a latency and fault tolerance library designed to isolate points of access to remote systems, services and 3rd party libraries, stop cascading failure and enable resilience in complex distributed systems where failure is inevitable.
+
+http://windup.jboss.org/index.html[windup.jboss.org/index.html]
+
+JBoss Windup is a tool to simplify JEE application migration from one container to another.
+
+http://unsemantic.com/[unsemantic.com]
+
+The successor to the http://960.gs/[960.gs ] grid system. Columns are defined by percentage instead of absolute width.
+
+http://addyosmani.com/resources/essentialjsdesignpatterns/book/[addyosmani.com/resources/essentialjsdesignpatterns/book]
+
+An eBook about Design Patterns with JavaScript.
+
+http://stephaneginier.com/sculptgl[stephaneginier.com/sculptgl]
+
+A browser based WebGL sculpting tool. Cool!
+
+http://www.oracle.com/technetwork/java/javafx/community/3rd-party-1844355.html[www.oracle.com/technetwork/java/javafx/community/3rd-party-1844355.html]
+
+JavaFX 3rd party tools & utilities.
+
+http://www.javafxdata.org/[www.javafxdata.org/]
+
+Databinding for JavaFX.
+
+http://msdn.microsoft.com/en-gb/library/fp160953.aspx[msdn.microsoft.com/en-gb/library/fp160953.aspx]
+
+JavaScript APIfor Microsoft Office.
+
+http://www.dokuwiki.org/dokuwiki[www.dokuwiki.org/dokuwiki]
+
+DokuWiki is a very powerful and easy to install Wiki. It has a large set of cool templates and also a lot of plugins for syntax highlighting, content embedding and form generation. This site is powered by DokuWiki.
+
+http://www.jetbrains.com/idea[www.jetbrains.com/idea]
+
+IntelliJ IDEA, the one and only IDE you will ever need!
+
+http://modeling-languages.com/[modeling-languages.com]
+
+All you wanted to know about software modeling and model-driven engineering
+
+http://www.gradle.org/[www.gradle.org]
+
+Gradle is build automation evolved. Gradle can automate the building, testing, publishing and deployment of software packages.
+
+http://www.scalatest.org/[www.scalatest.org]
+
+ScalaTest is a Scala based DSL to create any kind of test.
+
+http://caminao.wordpress.com/[caminao.wordpress.com]
+
+Caminao's way. Do systems know how symbolic they are?
+
+http://uniformjs.com/[uniformjs.com]
+
+Create sexy forms with JQuery and Uniform.js
+
+http://stan4j.com/[stan4j.com]
+
+Stan4J is a free structure analysis tool for Java applications
+
+http://structure101.com/[structure101.com]
+
+Structure101 and Restructure101 are commecial tools for strucure analysis and refactorings of complex Java applications.
+
+http://www.ragic.com/intl/en/home[www.ragic.com/intl/en/home]
+
+Ragic is a cool DabbleDB replacement. Using Ragic you can quickly create simple web applications based on Excel spreadsheets.
+
+http://quickbase.intuit.com/[quickbase.intuit.com]
+
+Quickbase is also like Ragic a web based application development tool.
+
+http://www.arc42.de/[www.arc42.de]
+
+Resources for software developers and architects.
+
+http://arquillian.org/[arquillian.org]
+
+Arquillian is framework to write tests for JEE applications.
+
+http://d3js.org/[d3js.org]
+
+D3Js is a JavaScript library for visualisation of data driven documents. It provides some very cool layouts and animation effects.
+
+http://de.wikipedia.org/wiki/Efficient_XML_Interchange[de.wikipedia.org/wiki/Efficient_XML_Interchange]
+
+Efficient XML(EXI) is a W3Cstandard for optimizing XML processing in terms of bandwith usage and processing speed. It was proposed in 2011 by W3Cand can be very interesting for projects with heavy xml processing requirements.
+
+http://de.wikipedia.org/wiki/SoaML[de.wikipedia.org/wiki/SoaML]
+
+SoaML is an OMGUML extension for (SOA)Service modelling.
+
+http://pragprog.com/[pragprog.com]
+
+The Pragmatic Bookshelf, the source of knowledge
+
+http://www.talend.com/[www.talend.com]
+
+Talend offers some pretty cool visual ETL, Master Data Management and database migration tools. See also http://www.altova.com/mapforce.html[MapForce] http://en.wikipedia.org/wiki/Edge_Side_Includes[en.wikipedia.org/wiki/Edge_Side_Includes] Edge Side Includes(ESI) is a W3Cstandard for server side web content integration. ESI is a great alternative to the Java JSR168/268 Portlet specification as it is more lightweight and also supports technologies like CDN(content delivery networks) and true SOA in web applications.
+
+http://mogwai.sourceforge.net/[mogwai.sourceforge.net]
+
+Mogwai ERDesignerNG is a free Java based entity relationship modeling tool. It is my Open Source Project and hosted on SourceForge.net. I am working on it since 2002.
+
+http://www.balsamiq.com/[Balsamiq mockups]
+
+Using Balsamiq we can create nice looking user interface mockups and storyboards.
+
+http://logstash.net/[Logstash]
+
+Logstash in an open source log management tool
+
+http://kibana.org/[Kibana]
+
+Kibana is a nicer UI for Logstash and offers some cool functionalities for log file analysis.
+
+http://lesscss.org/[lesscss.org]
+
+LessCSS is a tool to generate dynamic CSSon server &amp; client side
+
+http://myfaces.apache.org/extensions/cdi/[myfaces.apache.org/extensions/cdi]
+
+Apache MyFaces CODI provides some very cool extensions for CDI(JSR 299). Check out the slides at http://de.slideshare.net/os890/myfaces-codi-conversations[MyFaces CODI Slides] . CODI and JBoss Seam will become the http://incubator.apache.org/deltaspike/[DeltaSpike] project, which is currently in incubation status.
+
+http://www.querydsl.com/[QueryDSL]
+
+QueryDSL is a framework to create domain specific languages for querying data with JPA, Hibernate, SQL or even Lucene.
+
+http://www.mashzone.com/[www.mashzone.com]
+
+ARIS MashZone is a cool too to generate interactive web based dashboards. It provides an IDE to generate the website and also has the ability to access datasources like XML, Excel or even HTTP/Web based datasources.
+
+http://ocpsoft.org/prettyfaces/[ocpsoft.org/prettyfaces]
+
+PrettyFaces is a JSF extension creating RESTful URLs or page actions for JSF based applications.
+
+http://www.openxava.org/[www.openxava.org]
+
+This is a Domain Driven Design Scaffolding Framework like Rails/Grails and others.
+
+http://juel.sourceforge.net/[juel.sourceforge.net]
+
+Project JUEL offers a high performance implementation of the Java Unified Expression Language. It can be a drop-in replacement for JSF applications to tune their performance.
+
+http://flywaydb.org/[flywaydb.org]
+
+Flyway is an agile database migration framework for Java
+
+http://www.liquibase.org/[www.liquibase.org]
+
+Liquibase supports database change management and refactorings.
+
+http://www.eclipse.org/aspectj/[www.eclipse.org/aspectj]
+
+AspectJ is a leading Aspect Oriented Programing framework.
+
+http://www.easymock.org/[www.easymock.org]
+
+Java Mock Framework
+
+http://code.google.com/p/powermock/[code.google.com/p/powermock]
+
+PowerMock is a framework extending EasyMock functionalities with other features like mocking of static classes
+
+http://angularjs.org/[angularjs.org]
+
+AngularJS is a toolset for building the framework most suited to your application development(taken from project website).
+
+http://seleniumhq.org/[seleniumhq.org]
+
+Selenium is a capture-replay testing tool for browser based applications
+
+http://www.guigarage.com/[www.guigarage.com]
+
+A useful JavaFX ressource
+
+http://www.inf.usi.ch/phd/wettel/codecity.html[www.inf.usi.ch/phd/wettel/codecity.html]
+
+CodeCity is an integrated environment for software analysis, in which software systems are visualized as interactive, navigable 3D cities.
+
+http://www.tomjewett.com/dbdesign/dbdesign.php[www.tomjewett.com/dbdesign/dbdesign.php]
+
+A cool summary about database design with UML and SQL.
+
+== Geeky but cool
+
+http://www.dilbert.com/[www.dilbert.com]
+
+Dilbert is our hero!
+
+http://www.userfriendly.org/[www.userfriendly.org]
+
+Funny cartoons about the Columbia Internet ISP
+
+== Web Design
+
+http://www.csszengarden.com/[www.csszengarden.com]
+
+A demonstration of what can be accomplished through CSS-based design.
+
+http://www.hongkiat.com/blog/cheatsheet-graphic-designers/[www.hongkiat.com/blog/cheatsheet-graphic-designers/]
+
+Cheat Sheets for Graphic Designers
+

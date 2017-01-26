@@ -64,7 +64,7 @@ public class Lombok303Test {
 }
 ----
 
-Well, this test fails, no exception is thrown. This is due to the fact that Lombok parses "NonNull" annotations in a case insensitive manner. JSR 303 uses "NotNull", so Lombok ignores this annotation completely. To make it runnable, we have to run the JSR 303 Validator by hand. This can easily be done using link:/blog/2013/06/method-validation-with-jsr303-and-aspectj/[Method validation with JSR303 and AspectJ].
+Well, this test fails, no exception is thrown. This is due to the fact that Lombok parses "NonNull" annotations in a case insensitive manner. JSR 303 uses "NotNull", so Lombok ignores this annotation completely. To make it runnable, we have to run the JSR 303 Validator by hand. This can easily be done using link:{{< ref "method-validation-with-jsr303-and-aspectj.adoc">}}[Method validation with JSR303 and AspectJ].
 
 We can argue that JSR 303 is far more powerful than Lombok for validation. The Java Validator API even offers a method level validation, which can be greatly used with AOP to do all kind of validations. If you are using the Spring framework, you can also use the @Validated annotation for managed objects, which basically invokes the JSR 303 Validator in the background.
 

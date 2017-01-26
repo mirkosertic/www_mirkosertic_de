@@ -15,12 +15,15 @@ The problem with this structure is that the packaging is infrastructure driven. 
 
 Our ui depends on business logic. And the business logic depends on infrastructure code. Transitive dependencies are still dependencies, therefore the user interface depends on infrastructure, and the business logic as well. Those structures are often hard to validate. Due to the nature of tools like http://maven.apache.org/[Maven] we cannot express something like “business logic depends indirectly on data access”, and we don't want any Hibernate classes used there. We have to use test frameworks like http://clarkware.com/software/JDepend.html[JDepend] to check for unwanted imports. No compile time check.
 
-This is probably not what we want to design.== The Onion Architecture
-So what could be a solution? Jeffrey Palermo posted his approach of an Onion Architecture. Instead of putting the database and the data access logic into the middle, it put's the business logic into the middle. Everything else adds more functionality like a Decorator around the business logic, like transaction support, security or logging. This packaging greatly fits together with link:/blog/2012/07/domain-driven-design-overview-and-building-blocks/[Domain driven design]. The onion architecture would look like this:
+This is probably not what we want to design.
+
+== The Onion Architecture
+
+So what could be a solution? Jeffrey Palermo posted his approach of an Onion Architecture. Instead of putting the database and the data access logic into the middle, it put's the business logic into the middle. Everything else adds more functionality like a Decorator around the business logic, like transaction support, security or logging. This packaging greatly fits together with link:{{< ref "domain-driven-design-overview-and-building-blocks.adoc">}}[Domain driven design]. The onion architecture would look like this:
 
 image:/media/onionarchitecture.png[]
 
-Maven module dependencies can be directly derived from the Onion Architecture. There is a core “Domain Model” module. There is also a “Domain Services” module which depends on the “Domain Model” and so on. This structure can be greatly verified by compile time dependencies.Fur further reading i suggest the link:/blog/2013/04/domain-driven-design-example/[Domain-driven Design Example Architecture].
+Maven module dependencies can be directly derived from the Onion Architecture. There is a core “Domain Model” module. There is also a “Domain Services” module which depends on the “Domain Model” and so on. This structure can be greatly verified by compile time dependencies.Fur further reading i suggest the link:{{< ref "domain-driven-design-example.adoc">}}[Domain-driven Design Example Architecture].
 
 The Onion Architecture is also known as http://alistair.cockburn.us/Hexagonal+architecture[Hexagonal Architecture] coined by Alistair Cockburn. Visit his site to see this concept from a different point of view.
 
