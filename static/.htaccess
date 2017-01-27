@@ -22,7 +22,7 @@ RedirectPermanent /wordpress/2012/08/a-first-touch-with-nosql-graph-databases-an
 RedirectPermanent /wordpress/2012/08/enriching-legacy-applications-with-cdi https://www.mirkosertic.de/blog/2012/08/enriching-legacy-applications-with-cdi
 RedirectPermanent /wordpress/2012/10/building-cdi-support-with-aop-and-aspectj https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj
 RedirectPermanent /wordpress/2012/09/the-onion-architecture https://www.mirkosertic.de/blog/2012/09/the-onion-architecture
-RedirectPermanent /wordpress/2012/07/how-to-embed-hystrix-into-existing-spring-applications https://www.mirkosertic.de/2012/07/how-to-embed-hystrix-into-existing-spring-applications
+RedirectPermanent /wordpress/2012/07/how-to-embed-hystrix-into-existing-spring-applications https://www.mirkosertic.de/blog/2012/07/how-to-embed-hystrix-into-existing-spring-applications
 RedirectPermanent /wordpress/2012/11/an-overview-of-current-nosql-databases https://www.mirkosertic.de/blog/2012/11/an-overview-of-current-nosql-databases
 RedirectPermanent /wordpress/2012/11/using-and-enhancing-hibernate-search https://www.mirkosertic.de/blog/2012/11/using-and-enhancing-hibernate-search
 RedirectPermanent /wordpress/2013/03/mvc-revised-or-what-are-the-alternatives https://www.mirkosertic.de/blog/2013/03/mvc-revised-or-what-are-the-alternatives
@@ -104,4 +104,14 @@ RedirectPermanent /javastuff/basetagjsp https://www.mirkosertic.de/blog/2014/10/
 RedirectPermanent /javastuff/javafxd3js https://www.mirkosertic.de/blog/2013/05/javafx-custom-controls-or-webview-with-d3-js
 RedirectPermanent /architecturedesign/mvcrevised https://www.mirkosertic.de/blog/2013/03/mvc-revised-or-what-are-the-alternatives
 RedirectPermanent /erdesignerng/content https://www.mirkosertic.de/media/MogwaiERDesignerNG.pdf
+RedirectPermanent /wordpress/blog-post/implementing-state-machines-with-java-enums https://www.mirkosertic.de/blog/2013/04/implementing-state-machines-with-java-enums
+RedirectPermanent /wordpress/blog-post/the-law-of-leaky-abstractions https://www.mirkosertic.de/blog/2012/08/the-law-of-leaky-abstractions
+RedirectPermanent /wordpress/blog-post/a-first-touch-with-nosql-graph-databases-and-orientdb https://www.mirkosertic.de/blog/2012/08/a-first-touch-with-nosql-graph-databases-and-orientdb/
+RedirectPermanent /wordpress/a-javafx-based-game-authoring-system https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system
+RedirectPermanent /wordpress/welcome/blog-content/comparison-of-string-iterator-performance https://www.mirkosertic.de/blog/2013/09/comparison-of-string-iterator-performance
+RedirectPermanent /wordpress/tools-goodies https://www.mirkosertic.de/global/toolsgoodies/
+RedirectPermanent /wordpress/tag/domain-driven-design https://www.mirkosertic.de/tags/domain-driven-design
+RedirectPermanent /wordpress/tag/interesting https://www.mirkosertic.de/tags/interesting
+RedirectPermanent /wordpress/tag/aop https://www.mirkosertic.de/tags/aop
+RedirectPermanent /wordpress/tag/modernization https://www.mirkosertic.de/tags/modernization
 RedirectPermanent /wordpress https://www.mirkosertic.de
