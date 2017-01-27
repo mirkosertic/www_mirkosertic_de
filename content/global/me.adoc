@@ -35,7 +35,7 @@ Software Development, Architecture, Management and Modernization of “Legacy”
 
 I have worked with following technolgies(excerpt):
 
-Java (Oracle Java Certified), JEE, EJB, Android, Scala, GWT(Google Web Toolkit), JavaScript, HTML5 Polymer, SOA, XML, Spring, GIT, OOA/D/P, Java2D, Java3D, JavaFX 2.0, SWT, JPA, Hibernate, Spring, JSF, AOP(AspectJ), SOAP, WSDL, CruiseControl / Hudson / Jenkins, Maven, PostgreSQL, Domain-Driven Design, NoSQL, Docker,Windows 3.1 to Windows 8, JBoss AS, Tomcat, TomEE, WebLogic WLS, IBM Websphere, Apache Lucene, Apache Solr, Hibernate Search, Bean Validation, JAXB, StAX, TRaX, V-Modell, HERMES(Swiss), XP, SCRUM, Eclipse, JBuilder, Netbeans, IntelliJ, Canoo ULC, JUnit, Mockito, PowerMock, EasyMock, JSFUnit, DBUnit, Apache OJB, Objektpark, Case Tools, Apache CXF, MyFaces, Tomahawk, Richfaces, Primefaces, PrettyFaces, JasperReports, Informix, MDSD, MDA, XSL:FO, OrientDB, Enterprise Architect, WebGL/OpenGL, C / C++, Selenium, XSLT, JDBC, JSP, Subversion, AWT/SwingJSF, SOAP, REST, Hibernate, Oracle PL-SQL, DB2, MS-SQL, MySQL, UML
+Java (Oracle Java Certified), JEE, EJB, Android, Scala, GWT(Google Web Toolkit), JavaScript, HTML5 Polymer, SOA, XML, Spring, GIT, OOA/D/P, Java2D, Java3D, JavaFX 2.0, SWT, JPA, Hibernate, Spring, JSF, AOP(AspectJ), SOAP, WSDL, CruiseControl / Hudson / Jenkins, Maven, PostgreSQL, Domain-Driven Design, NoSQL, Docker,Windows 3.1 to Windows 10, JBoss AS, Tomcat, TomEE, WebLogic WLS, IBM Websphere, Apache Lucene, Apache Solr, Hibernate Search, Bean Validation, JAXB, StAX, TRaX, V-Modell, HERMES(Swiss), XP, SCRUM, Eclipse, JBuilder, Netbeans, IntelliJ, Canoo ULC, JUnit, Mockito, PowerMock, EasyMock, JSFUnit, DBUnit, Apache OJB, Objektpark, Case Tools, Apache CXF, MyFaces, Tomahawk, Richfaces, Primefaces, PrettyFaces, JasperReports, Informix, MDSD, MDA, XSL:FO, OrientDB, Enterprise Architect, WebGL/OpenGL, C / C++, Selenium, XSLT, JDBC, JSP, Subversion, AWT/SwingJSF, SOAP, REST, Hibernate, Oracle PL-SQL, DB2, MS-SQL, MySQL, UML
 
 I aquired the following certificates:
 
@@ -62,9 +62,10 @@ Josefine-Mauser-Str. 66 +
 48157 Münster +
 Germany +
 
-Mail: mirko@mirkosertic.de +
-GitHub : https://github.com/mirkosertic +
-Twitter: https://twitter.com/mirkosertic +
-Xing: https://www.xing.com/profile/Mirko_Sertic +
-LinkedIn: https://de.linkedin.com/in/mirko-sertic-98882397 +
-Google+: https://plus.google.com/112732493059943659026 +
+:icons: font
+icon:envelope[] mirko@mirkosertic.de +
+icon:github[] https://github.com/mirkosertic +
+icon:twitter[] https://twitter.com/mirkosertic +
+icon:xing[] https://www.xing.com/profile/Mirko_Sertic +
+icon:linkedin[] https://de.linkedin.com/in/mirko-sertic-98882397 +
+icon:google-plus[] https://plus.google.com/112732493059943659026 +
