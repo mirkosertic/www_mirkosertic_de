@@ -119,6 +119,7 @@ RedirectPermanent /wordpress/tools-goodies https://www.mirkosertic.de/global/too
 RedirectPermanent /wordpress/maven-scala-and-aspectjaop https://www.mirkosertic.de/blog/2013/03/maven-scala-and-aspectjaop/
 RedirectPermanent /wordpress/welcome/blog-content/method-validation-with-jsr303-and-aspectj https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj
 RedirectPermanent /wordpress/architecturedesign/weldsewithee https://www.mirkosertic.de/blog/2013/10/java-se-context-and-dependency-injection-with-java-ee-support
+RedirectPermanent /wordpress https://www.mirkosertic.de
 
 RedirectPermanent /doku.php/javastuff/bootstrappingweld https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
 
