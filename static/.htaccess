@@ -109,11 +109,18 @@ RedirectPermanent /wordpress/welcome/books-everyone-should-read https://www.mirk
 
 RedirectPermanent /wordpress/architecturedesign/onionarchitecture https://www.mirkosertic.de/blog/2012/09/the-onion-architecture
 RedirectPermanent /wordpress/javastuff/xmljsonperformance https://www.mirkosertic.de/blog/2013/05/comparison-of-jaxb-xml-and-json-serialization-performance
+RedirectPermanent /wordpress/javastuff/tunehtmlcanvas https://www.mirkosertic.de/blog/2015/03/tuning-html5-canvas-filltext
+RedirectPermanent /wordpress/architecturedesign/threadtracking https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error
+RedirectPermanent /wordpress/architecturedesign/legacycdi https://www.mirkosertic.de/blog/2012/08/enriching-legacy-applications-with-cdi
 RedirectPermanent /wordpress/a-javafx-based-game-authoring-system https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system
 RedirectPermanent /wordpress/welcome/blog-content/comparison-of-string-iterator-performance https://www.mirkosertic.de/blog/2013/09/comparison-of-string-iterator-performance
+RedirectPermanent /wordpress/toolsgoodies/content  https://www.mirkosertic.de/global/toolsgoodies/
 RedirectPermanent /wordpress/tools-goodies https://www.mirkosertic.de/global/toolsgoodies/
 RedirectPermanent /wordpress/maven-scala-and-aspectjaop https://www.mirkosertic.de/blog/2013/03/maven-scala-and-aspectjaop/
 RedirectPermanent /wordpress/welcome/blog-content/method-validation-with-jsr303-and-aspectj https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj
+RedirectPermanent /wordpress/architecturedesign/weldsewithee https://www.mirkosertic.de/blog/2013/10/java-se-context-and-dependency-injection-with-java-ee-support
+
+RedirectPermanent /doku.php/javastuff/bootstrappingweld https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
 
 RedirectPermanent /scalastuff/scalawithjpa https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0
 RedirectPermanent /scalastuff/enterprisescalabeans https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server
