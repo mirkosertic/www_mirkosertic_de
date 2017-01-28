@@ -17,4 +17,4 @@ script:
   - hugo
 
 after_success:
-  - lftp -f "mirror -v -R ./public /www bye" -u $FTPUSR,$FTPPWD w0077e1b.kasserver.com
+  - lftp -f "lcd ./public mirror -v -R ./public /www bye" -u $FTPUSR,$FTPPWD w0077e1b.kasserver.com
