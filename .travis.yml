@@ -14,8 +14,7 @@ install:
 
 script:
   - git clone https://github.com/jbub/ghostwriter ./themes/ghostwriter
-  - npm install
-  - npm run build
+  - hugo
 
 after_success:
   - lftp -e "mirror -v -R ./public /www" -u $FTPUSR,$FTPPWD w0077e1b.kasserver.com
