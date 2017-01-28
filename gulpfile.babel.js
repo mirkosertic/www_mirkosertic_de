@@ -8,7 +8,7 @@ gulp.task('hugo-build', shell.task(['hugo']))
 gulp.task('minify-html', () => {
     return gulp.src('public/**/*.html')
         .pipe(htmlmin({
-            collapseWhitespace: false,
+            collapseWhitespace: true,
             minifyCSS: false,
             minifyJS: false,
             removeComments: false,
