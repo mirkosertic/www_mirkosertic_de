@@ -4,7 +4,7 @@ title = "High performance Android handwriting"
 tags = ["Android", "Interesting", "Performance"]
 draft = false
 +++
-
+:icons: font
 For one of my Android Apps https://play.google.com/store/apps/details?id=de.mirkosertic.easypaint[Leas Painting App] i needed to implement a sketching and handwriting functionality. The user must be able to draw with his fingers on the canvas and sketch something. This is a screenshot of my App:
 
 image:/media/leaspaintingapp.png[]

@@ -4,7 +4,7 @@ title = "A JavaFX based Desktop Search Engine"
 tags = ["Enterprise", "Interesting", "JavaFX", "Search", "User Interface"]
 draft = false
 +++
-
+:icons: font
 Microsoft Windows search is not fast, and it also does not give us good search results. So i thought about writing my own Search Engine for the Desktop. It should crawl the file system, extract the content and meta data and finally should give the same results as Google.
 
 I also wanted to test some new technologies like JavaFX with embedded HTML5, Apache Lucene as a full text search engine, Apache Tika as the content extraction framework and other stuff. But before we dive deep into internals, lets take a look at the frontend:

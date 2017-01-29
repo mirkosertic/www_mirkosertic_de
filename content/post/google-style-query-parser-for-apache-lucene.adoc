@@ -4,7 +4,7 @@ title = "Google Style Query Parser for Apache Lucene"
 tags = ["Enterprise", "Interesting", "Search"]
 draft = false
 +++
-
+:icons: font
 I needed a query parser for Apache Lucene supporting Google style queries. Basically the following searches should be supported:
 
 mirko sertic → Should result in a BooleanQuery with “mirko” and “sertic”

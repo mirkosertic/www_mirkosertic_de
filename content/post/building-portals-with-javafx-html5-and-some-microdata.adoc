@@ -4,7 +4,7 @@ title = "Building Portals with JavaFX, HTML5 and some Microdata"
 tags = ["Enterprise", "HTML5", "Interesting", "User Interface"]
 draft = false
 +++
-
+:icons: font
 Often we need to integrate different applications. This can be done at different integration levels, like integration using the database, integration using services and sometimes integration at user interface level.
 
 Different solutions are available for user interface level application integration. The most famous are Portlets. A Portlet requires a Portlet Container to build a Portal. These containers are expensive, difficult to configure and maintain and the worst point is: the Portlet API is very limited to model complex integration scenarios!

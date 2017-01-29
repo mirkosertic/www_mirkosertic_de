@@ -4,7 +4,7 @@ title = "How to remove the Maven primary artifact during install and deploy phas
 tags = ["Maven"]
 draft = false
 +++
-
+:icons: font
 Sometimes we use Maven “war” packaging and add the RPM Plugin to create a rpm which contains the project primary artifact. When this rpm needs to be published to the Maven repository, it can be added as a secondary artifact to the build. Here is an example of the plugin configuration in pom.xml:
 
 [source,xml]

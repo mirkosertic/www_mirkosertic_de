@@ -4,7 +4,7 @@ title = "Using and enhancing Hibernate Search"
 tags = ["Enterprise", "Modernization"]
 draft = false
 +++
-
+:icons: font
 http://www.hibernate.org/[www.hibernate.org] is a very cool and mature Java Object-Relational mapping tool. Using Hibernate we can easily persist or reconstitute Java Objects to or from a relational database like MySQL, PostgreSQL, SQLServer or Oracle.
 
 Hibernate supports us to query the database using the Criteria API or HQL Statements(Or we can use Tools like QueryDSL). But Hibernate core lacks supporting us to do free style or even full text queries. For this purpose, Hibernate Search was created.

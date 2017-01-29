@@ -4,7 +4,7 @@ title = "Implementing State Machines with Java Enums"
 tags = ["Domain-driven Design"]
 draft = false
 +++
-
+:icons: font
 Often we need to implement http://en.wikipedia.org/wiki/State_pattern[State Machines] to encapsulate object behavior depending on a given object state. This can be cumbersome as it often leads to a lot of interfaces and implementation classes, and persisting such an object state often leads to problems, as we would need to implement a Hibernate custom type for instance to solve it.
 
 Today i want you to show another approach. We model a State Machine using a Java Enum. The Enum concept fits better to the State Machine concept, and Java Enums are much more like an enumeration, they can also contain behavior!

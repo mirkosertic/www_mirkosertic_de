@@ -4,7 +4,7 @@ title = "Displaying simple animated graphs with JavaFX 2.0"
 tags = ["Interesting", "JavaFX", "User Interface"]
 draft = false
 +++
-
+:icons: font
 JavaFX is quite cool. The scene graph concept is quite powerful, combined with visual effects like animation, shadows or motion blurring can create very nice looking user interfaces.
 
 At the moment, JavaFX comes with a set of predefined Form elements(called Controls), and other primitive objects(called Shapes). This is enough to create most of user interface currently needed for business purposes.

@@ -4,7 +4,7 @@ title = "How to create user and eye friendly scannable Log4J log files"
 tags = ["Logging"]
 draft = false
 +++
-
+:icons: font
 Often we are writing logs files for our program execution. The logs are sometimes hard to parse, we have to look twice at them to detect error patterns. But it is possible to create a log file layout that is very fast human scannable. Using such kind of log file layout, we can easier scan for common error patterns.
 
 This can easily be achieved using Log4J and some custom configuration using the Log4J EnhancedPatternLayout. Here is an example:

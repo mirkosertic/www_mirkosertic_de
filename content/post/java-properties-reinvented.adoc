@@ -4,7 +4,7 @@ title = "Java Properties reinvented"
 tags = ["Configuration Management"]
 draft = false
 +++
-
+:icons: font
 Recently i stumbled across the Owner Library(http://owner.aeonbits.org[owner.aeonbits.org] ). Using this small piece of technology, usage of Java property files can be reinvented! Now we can access properties using a refactoring safe interface the following way:
 
 [source,java]

@@ -4,7 +4,7 @@ title = "How to avoid server round trips by using pretty URLs"
 tags = ["JavaServerFaces(JSF)", "Performance", "Web"]
 draft = false
 +++
-
+:icons: font
 == Problem
 
 Unnecessary server round trips are a common cause for slow application performance. Unfortunately application frameworks like JSF(Java Server Faces) are forcing developers to do so. For instance given the following URL processed by a JSF Implementation:

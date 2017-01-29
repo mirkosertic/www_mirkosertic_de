@@ -4,7 +4,7 @@ title = "Thread tracking or how to know who causes an error"
 tags = ["AOP", "Logging", "Threading"]
 draft = false
 +++
-
+:icons: font
 Often we are developing applications for multi-user environments. Classic examples are web applications or web services. This also means that technical or business exceptions can occur at the same time for different users. But how do we know you causes which exception?
 
 We can use logging frameworks like http://logging.apache.org/log4j/2.x/[Log4J] and write some meta-information like the id of the current user and session to the http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/MDC.html[Mapped Diagnostic Context] and finally use a special logging configuration to output the MDC to the log files. But this also means a lot of configuration work, which can also be error prone.

@@ -4,7 +4,7 @@ title = "Domain-driven Design - Overview and building blocks"
 tags = ["Domain-driven Design", "Modernization"]
 draft = false
 +++
-
+:icons: font
 There are a lot of excellent blogs out where about Domain Driven Design and what it's all about. I prefer http://en.wikipedia.org/wiki/Domain-driven_design[Wikipedia] for a short introduction, but there is also an excellent article at http://www.infoq.com/articles/ddd-in-practice[InfoQ] about Domain Driven Design. If you want to know more about the principles behind DDD, you can also consult the http://en.wikipedia.org/wiki/GRASP_(object-oriented_design)[GRASP Patterns] or the http://en.wikipedia.org/wiki/SOLID_(object-oriented_design)[SOLID Patterns]. Here is a summary of DDD (also taken from Wikipedia):
 
 == Core definitions

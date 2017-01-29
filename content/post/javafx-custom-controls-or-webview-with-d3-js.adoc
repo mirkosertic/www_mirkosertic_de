@@ -4,7 +4,7 @@ title = "JavaFX Custom Controls or WebView with D3.js?"
 tags = ["HTML5", "JavaFX"]
 draft = false
 +++
-
+:icons: font
 Often we need to visualize complex data in a fancy way. The core JavaFX controls are sometimes capable to do it, but most of the time they are not. So the question is: do we need to write a custom control?
 
 The answer is: depends! Since JavaFX supports the famous WebView, we can also use some embedded HTML5 with JavaScript libraries like http://d3js.org/[D3.js] to visualize data driven documents.

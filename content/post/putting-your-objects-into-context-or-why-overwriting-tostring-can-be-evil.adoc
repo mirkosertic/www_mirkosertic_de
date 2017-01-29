@@ -4,7 +4,7 @@ title = "Putting your objects into context or why overwriting toString() can be 
 tags = ["Interesting"]
 draft = false
 +++
-
+:icons: font
 Often we need to display Java business objects in the user interface. The easiest way is to overwrite the toString() method and give back the String representation of the object. This seems to be easy, but it is an evil temptation.
 
 I'd consider this as a break of the single responsibility rule in object oriented design. The responsibility of the business object is to contain business logic. The responsibility of ui classes is to display something to the user. Mixing them can be a very bad idea.
