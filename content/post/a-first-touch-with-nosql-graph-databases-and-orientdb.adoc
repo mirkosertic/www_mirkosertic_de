@@ -4,7 +4,7 @@ title = "A first touch with NoSQL, graph databases and OrientDB"
 tags = ["Enterprise", "NoSQL"]
 draft = false
 +++
-
+:icons: font
 == The experiment
 
 I was thinking about the current way we often store data in relational databases like MySQL, PostgreSQL or Oracle. We are using object-relational mapping frameworks like Hibernate, enriching Java classes with JPA annotations and are hoping that the mapping framework does everything for us the right way.

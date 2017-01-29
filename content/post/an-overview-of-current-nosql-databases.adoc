@@ -4,7 +4,7 @@ title = "An overview of current NoSQL databases"
 tags = ["Database", "Interesting", "NoSQL"]
 draft = false
 +++
-
+:icons: font
 This summary is taken from the book “Seven Databases in Seven Weeks”. See link:{{< ref "global/interestingbooks.adoc">}}[the Books section] for details.
 
 |===

@@ -4,7 +4,7 @@ title = "Swing Databinding with Mogwai DataBinding"
 tags = ["Databinding", "Swing"]
 draft = false
 +++
-
+:icons: font
 While you are developing Java Swing based applications, you need a mechanism to bind Java objects to Swing widgets. Project http://mogwai.sourceforge.net/[mogwai.sourceforge.net] provides a very simple but powerful framework called DataBinding to help you with this task. Here is an example.
 
 Given the following piece of code(the model you want to bind):

@@ -4,7 +4,7 @@ title = "Logging made easy"
 tags = ["Enterprise", "Logging", "User Interface"]
 draft = false
 +++
-
+:icons: font
 In modern, distributed applications logging is a key requirement. But the problem arises if we try to track down an error using different log files on different servers. This is often a problem, depending on the business organization, access rights and other political forces.
 
 To avoid wasting time to find and get the logs, we need a good tool to support us. Fortunately the Open Source Community has an answer. Logstash!

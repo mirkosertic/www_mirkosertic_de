@@ -4,7 +4,7 @@ title = "GWT vs. Dragome vs. TeaVM for Game Programming"
 tags = ["HTML5", "JavaFX", "Performance", "Web"]
 draft = false
 +++
-
+:icons: font
 Last year I wrote a link:{{< ref "a-javafx-based-game-authoring-system.adoc" >}}[cross platform game engine]. It used a JavaFX based Game Authoring System and had a Java based Game Runtime, which was transpiled to different platforms such as Android, JavaScript over GWT and JavaFX.
 
 Here is a screenshot of a simple platform game based on the GameEngine, some physics stuff and a lot of Java code:

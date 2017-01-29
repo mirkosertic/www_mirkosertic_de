@@ -4,7 +4,7 @@ title = "How to schedule Jobs in a Java CDI Environment"
 tags = ["Dependency Injection"]
 draft = false
 +++
-
+:icons: font
 Often we need to schedule Jobs. Standard Java http://weld.cdi-spec.org/[CDI] does not have a build in Job Scheduler feature. But this functionality can be easily implemented by using the CDI extension mechanism.
 
 I wrote a simple CDI extension for Job scheduling backed by the https://quartz-scheduler.org/[Quartz] Framework. It is hosted at https://github.com/mirkosertic/cdicron[Github].

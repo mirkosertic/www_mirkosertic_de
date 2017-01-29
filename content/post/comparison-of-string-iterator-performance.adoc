@@ -4,7 +4,7 @@ title = "Comparison of String iterator performance"
 tags = ["Interesting", "Performance"]
 draft = false
 +++
-
+:icons: font
 Often we need to iterate over a String. Java gives use several options. We can either use a simple loop with an index using the following style:
 
 [source,java]
