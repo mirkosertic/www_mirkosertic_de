@@ -6,6 +6,38 @@ draft = false
 +++
 include::globals.adoc[]
 
+[plantuml]
+----
+skinparam handwritten true
+skinparam monochrome true
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+----
+
+
+[ditaa]
+----
+                   +-------------+
+                   | Asciidoctor |-------+
+                   |  Diagram    |       |
+                   +-------------+       | PNG out
+                       ^                 |
+                       | ditaa in        |
+                       |                 v
+ +--------+   +--------+----+    /----------------\
+ |        | --+ Asciidoctor +--> |                |
+ |  Text  |   +-------------+    |Beautiful output|
+ |Document|   |   !magic!   |    |                |
+ |     {d}|   |             |    |                |
+ +---+----+   +-------------+    \----------------/
+     :                                   ^
+     |          Lots of work             |
+     +-----------------------------------+
+----
+
 A good method implementation validates all of its preconditions before it continues. Luckily there are different frameworks such as Project Lombok, JSR 303 Bean Validation API and JSR 308 Java Type Annotations available for this job.  All of them are based on Java Annotations at method arguments, but they differ in runtime and compile time behavior. Here are some examples.
 
 == Project Lombok

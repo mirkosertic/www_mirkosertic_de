@@ -4,7 +4,7 @@ title = "About me"
 tags = []
 draft = false
 +++
-:icons: font
+include::globals.adoc[]
 == Who am I
 
 I provide Software and Support in the field of electronic data processing. As a consultant and software craftsman I have supported a number of major players in projects of all sizes in Germany and Switzerland. My experience as a developer and architect makes informed decisions, sustainable architectures and sound operation of all kinds of software.

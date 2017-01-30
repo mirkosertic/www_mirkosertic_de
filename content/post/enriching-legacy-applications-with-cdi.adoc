@@ -4,7 +4,7 @@ title = "Enriching legacy applications with CDI"
 tags = ["Dependency Injection", "Enterprise", "Legacy", "Modernization"]
 draft = false
 +++
-:icons: font
+include::globals.adoc[]
 There are a lot of applications out there. Some of them are legacy, others are in their maintenance phase. While we are developing new applications, we can use the coolest new technologies, think about good design and other stuff. But what about the software maintenance phase? Often, due to lack of time and other constraints, we cannot do everything perfectly, we need to move some refactoring or even re-engineering to the maintenance phase.
 
 While doing software maintenance, i have often seen some very strange object state management mechanisms. And i often thought: man, using CDI would make this pretty simple, why do it so hard? Wouldn't it be cool do combine Swing or SWT for instance with CDI?

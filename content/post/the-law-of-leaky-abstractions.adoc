@@ -4,7 +4,7 @@ title = "The law of leaky abstractions"
 tags = ["Interesting"]
 draft = false
 +++
-:icons: font
+include::globals.adoc[]
 Personally i really like Joel Spolskys law of http://www.joelonsoftware.com/articles/LeakyAbstractions.html[Leaky abstractions]. Every architect should read and understand his article. Here is a summary of this law taken from Joel's Website and http://en.wikipedia.org/wiki/Leaky_abstraction[Wikipedia] :
 
 == History

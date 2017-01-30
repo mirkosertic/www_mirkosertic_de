@@ -4,7 +4,7 @@ title = "My personal list of interesting books"
 tags = []
 draft = false
 +++
-:icons: font
+include::globals.adoc[]
 == General software engineering & project management
 
     * The Mythical Man-Month. Essays on Software Engineering. Frederick P. Brooks

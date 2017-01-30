@@ -4,7 +4,7 @@ title = "Java Array Iterator Performance"
 tags = ["Interesting", "Performance"]
 draft = false
 +++
-:icons: font
+include::globals.adoc[]
 Lets check a very simple example: we want to fill a multi-dimensional array with values. What is the fastest way to do so? The following piece of code gives us surprising results:
 
 [source,java]

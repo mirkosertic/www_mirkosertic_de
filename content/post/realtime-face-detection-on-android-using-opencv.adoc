@@ -4,7 +4,7 @@ title = "Realtime face detection on Android using OpenCV"
 tags = ["Android", "Interesting"]
 draft = false
 +++
-:icons: font
+include::globals.adoc[]
 There is a cool computer vision library called http://opencv.org/[OpenCV] available. Using OpenCV, we can do stuff like object detection, feature extraction and other computer vision tasks. OpenCV is a native library, but it also comes with JNI Wrappers for Java and the Android platform.
 
 For the beginning, i want to implement real time face detection on my Samsung Galaxy S3 with OpenCV and some Java code. Here is a screenshot of the final result:

@@ -4,7 +4,7 @@ title = "Adding HTML5 Microdata to DokuWiki"
 tags = ["HTML5", "Microdata"]
 draft = false
 +++
-:icons: font
+include::globals.adoc[]
 == Microdata overview
 
 HTML5 is the new standard for webpage markups. It comes with some pretty cool new features like media support etc. But one of the best things is the http://en.wikipedia.org/wiki/Microdata_%28HTML%29[Microdata] support!
