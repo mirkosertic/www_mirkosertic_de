@@ -18,4 +18,4 @@ script:
   - npm run build
 
 after_success:
-  - lftp -c "mirror -v -R ./public /www ;quit" -u $FTPUSR,$FTPPWD w0077e1b.kasserver.com
+  - ./upload.sh
