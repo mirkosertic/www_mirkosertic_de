@@ -8,7 +8,7 @@ env:
 before_install:
   - sudo apt-get install lftp
   - gem install asciidoctor
-  - gem install asciidoctor-diagrams
+  - gem install asciidoctor-diagram
 
 install:
   - go get -v github.com/spf13/hugo
