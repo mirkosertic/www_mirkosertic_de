@@ -208,4 +208,6 @@ RedirectPermanent /domain-driven-design-example https://www.mirkosertic.de/blog/
 
 RedirectPermanent /doku.php/javastuff/bootstrappingweld https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
 
+RedirectPermanent /feed.php https://www.mirkosertic.de/index.xml
+
 ErrorDocument 404 /404.html
