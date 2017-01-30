@@ -82,7 +82,6 @@ RedirectPermanent /wordpress/tag/modernization https://www.mirkosertic.de/tags/m
 RedirectPermanent /wordpress/tag/opengl https://www.mirkosertic.de/tags/opengl
 RedirectPermanent /wordpress/tag/i18n https://www.mirkosertic.de/tags/i18n
 
-RedirectPermanent /wordpress/blog-post/a-javafx-based-game-authoring-system https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system
 RedirectPermanent /wordpress/blog-post/an-overview-of-current-nosql-databases https://www.mirkosertic.de/blog/2012/11/an-overview-of-current-nosql-databases/
 RedirectPermanent /wordpress/blog-post/adding-html5-microdata-to-dokuwiki https://www.mirkosertic.de/blog/2013/04/adding-html5-microdata-to-dokuwiki
 RedirectPermanent /wordpress/blog-post/implementing-state-machines-with-java-enums https://www.mirkosertic.de/blog/2013/04/implementing-state-machines-with-java-enums
@@ -142,7 +141,6 @@ RedirectPermanent /architecturedesign/dddbuildingblocks https://www.mirkosertic.
 RedirectPermanent /architecturedesign/loggingmadeeasy https://www.mirkosertic.de/blog/2012/10/logging-made-easy
 RedirectPermanent /architecturedesign/mvcrevised https://www.mirkosertic.de/blog/2013/03/mvc-revised-or-what-are-the-alternatives
 RedirectPermanent /architecturedesign/dokuwikihtml5 https://www.mirkosertic.de/blog/2013/04/adding-html5-microdata-to-dokuwiki
-RedirectPermanent /architecturedesign/weldsewithee https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj
 
 RedirectPermanent /javastuff/swingdatabinding https://www.mirkosertic.de/blog/2012/06/swing-databinding-with-mogwai-databinding
 RedirectPermanent /javastuff/bootstrappingweld https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
@@ -171,16 +169,5 @@ RedirectPermanent /tools-goodies https://www.mirkosertic.de/global/toolsgoodies
 RedirectPermanent /erdesignermanual https://www.mirkosertic.de/media/MogwaiERDesignerNG.pdf
 RedirectPermanent /books/content https://www.mirkosertic.de/global/interestingbooks
 RedirectPermanent /books-everyone-should-read https://www.mirkosertic.de/global/interestingbooks
-RedirectPermanent /a-very-simple-polymer-web-component https://www.mirkosertic.de/blog/2016/02/a-very-simple-polymer-web-component
-RedirectPermanent /the-onion-architecture https://www.mirkosertic.de/blog/2012/09/the-onion-architecture
-RedirectPermanent /how-to-create-junit-assertions-from-running-applications https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications
-RedirectPermament /building-cdi-support-with-aop-and-aspectj https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj
-RedirectPermanent /mvc-revised-or-what-are-the-alternatives https://www.mirkosertic.de/blog/2013/03/mvc-revised-or-what-are-the-alternatives
-RedirectPermanent /building-portals-with-javafx-html5-and-some-microdata https://www.mirkosertic.de/blog/2013/05/building-portals-with-javafx-html5-and-some-microdata
-RedirectPermanent /reusing-domain-objects-to-create-query-specifications https://www.mirkosertic.de/blog/2012/07/reusing-domain-objects-to-create-query-specifications
-RedirectPermanent /a-first-touch-with-nosql-graph-databases-and-orientdb https://www.mirkosertic.de/blog/2012/08/a-first-touch-with-nosql-graph-databases-and-orientdb
-RedirectPermanent /enterprise-scala-beans-or-scala-on-a-jee-application-server https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server
-RedirectPermanent /a-javafx-based-lua-editor https://www.mirkosertic.de/blog/2015/04/a-javafx-based-lua-editor
-RedirectPermanent /a-spring-boot-admin-ui https://www.mirkosertic.de/blog/2016/12/a-spring-boot-admin-ui
 
 ErrorDocument 404 /404.html
