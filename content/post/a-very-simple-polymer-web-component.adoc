@@ -4,7 +4,7 @@ title = "A very simple Polymer Web Component"
 tags = ["HTML5", "Web", "WebComponents"]
 draft = false
 +++
-:icons: font
+include::globals.adoc[]
 Web Components are a very amazing new feature of HTML5. Google released its https://www.polymer-project.org/[Polymer] project which adds Web Components support to modern Web Browsers. Using Web Components, we can create very complex custom HTML Tags which are based on a very powerful templating engine, pretty cool JavaScript bindings, data model abstractions and also JavaScript and CSS encapsulation. Polymer comes with a set of already implemented components based on Googles Material Design which can be easily integrated into custom applications. Finally, Polymer has a https://developers.google.com/web/tools/polymer-starter-kit[Starter Kit] Project, which can bring you up in a minimum amount of time to development speed with Polymer, Web Components and Single Page Web Applications.
 
 For a project, I wrote a simple Web Component to display a list of Micro-service Configuration Data. In my application HTML, I just have to use the following line:

@@ -4,7 +4,7 @@ title = "Tools & Goodies"
 tags = []
 draft = false
 +++
-:icons: font
+include::globals.adoc[]
 == Technical stuff
 
 http://www.redblobgames.com/[www.redblobgames.com]

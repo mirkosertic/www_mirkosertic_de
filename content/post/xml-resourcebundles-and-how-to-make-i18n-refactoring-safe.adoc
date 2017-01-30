@@ -4,7 +4,7 @@ title = "XML Resourcebundles and how to make I18N refactoring safe"
 tags = ["I18N", "XML"]
 draft = false
 +++
-:icons: font
+include::globals.adoc[]
 
 Java Resourcebundles are cumbersome. Without good IDE support, you are lost. It is hard to maintain the different property files, keep them in sync and take care of correct character encoding. And even if you manage all this, you still have the resource keys hard coded in your source code. It is very hard to detect where your resource keys are used.
 

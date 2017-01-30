@@ -4,7 +4,7 @@ title = "Method validation with JSR303 and AspectJ"
 tags = ["AOP", "Interesting"]
 draft = false
 +++
-:icons: font
+include::globals.adoc[]
 Hibernate Validator since version 4.2 supports method validation. For instance consider the following Java code:
 
 [source,java]

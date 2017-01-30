@@ -4,7 +4,7 @@ title = "Compile Time Speed GWT 2.8.0 vs. TeaVM 0.4.3 vs. TeaVM 1.0.0-SNAPSHOT"
 tags = ["HTML5", "Performance", "Web"]
 draft = false
 +++
-:icons: font
+include::globals.adoc[]
 Some years ago I wrote a JavaFX based link:{{< ref "a-javafx-based-game-authoring-system.adoc">}}[Game authoring system]. It was also written to be ported to different run time environments by using transpiler technologies such as GWT or TeaVM. While TeaVM was heavily improved over time, I haven't seen a new GWT release in the wild. Now, GWT 2.8.0 is released, and the question arises: Is the compiler still as slow as in 2.7? Well, lets take a look!
 
 |===

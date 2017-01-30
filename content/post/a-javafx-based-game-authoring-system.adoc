@@ -4,7 +4,7 @@ title = "A JavaFX based Game Authoring System"
 tags = ["HTML5", "Interesting", "JavaFX", "User Interface", "Web"]
 draft = false
 +++
-:icons: font
+include::globals.adoc[]
 A few weeks ago I decided to enhance my knowledge in game coding, so I bought two very interesting books: “Real-Time Rendering, Third Edition by Thomas Akenine-Möller, Eric Haines and Nety Hoffmann” and “Game Coding Complete, Fourth Edition by Mike McShaffry and David “Rez” Graham”. After some insightful moments, hundreds of pages read and sleepless nights, I wanted to create my own game. So this project was born.
 
 Primary Goals

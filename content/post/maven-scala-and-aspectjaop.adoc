@@ -4,7 +4,7 @@ title = "Maven, Scala and AspectJ(AOP)"
 tags = ["AOP", "Interesting", "Scala"]
 draft = false
 +++
-:icons: font
+include::globals.adoc[]
 Recently i was thinking about combining AspectJ and Scala in one project. Of course we can argue that functional programming addresses a lot of issues we are trying to solve with AspectJ, but that is not the point. AspectJ is a Bytecode manipulation framework, not a Java code manipulation thing. So why not implement cross cutting concerns like security or transaction handling with AOP/AspectJ in a Scala project? For this short example, i am using AspectJ 1.6.11 and Scala 2.10.1.
 
 The good news are that Maven, Scala and AspectJ fit pretty smooth together. The bad news are that support for Scala together with AspectJ is not very good in Eclipse and even IntelliJ. There are some workarounds available, but this only works with annotation-style aspects, and not the more powerful .aj syntax. The AspectJ compiler currently only works together with the Java compiler, basically it is a wrapper around it. The Scala compiler itself only supports Java and Scala code, but no .aj AspectJ files. The only common language is Java, so we also need to write our Aspects in Java using AspectJs annotation style syntax.

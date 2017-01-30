@@ -4,7 +4,7 @@ title = "Reusing domain objects to create query specifications"
 tags = ["Database", "Enterprise"]
 draft = false
 +++
-:icons: font
+include::globals.adoc[]
 == Problem
 Often you need to create query specifications to retrieve data from persistent memory. One of the following patterns is most likely used:
 

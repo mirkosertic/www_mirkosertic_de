@@ -4,7 +4,7 @@ title = "Using Scala with JPA 2.0"
 tags = ["Enterprise", "Interesting", "Scala"]
 draft = false
 +++
-:icons: font
+include::globals.adoc[]
 Recently i was thinking about persisting Scala classes with JPA. I tried to set up a mixed Java/Scala project as described link:{{< ref "using-scala-in-legacy-applications.adoc" >}}[here] , using Java code to do the JPA stuff and using Scala to create the entities. For a more complex example, i decided to persist a master/detail association to test if the Scala collections can be persisted, too. For the test i am using Scala 2.10.1 and the Hibernate 4.1.10.Final EntityManager as the JPA 2.0 vendor.
 
 Here is the Java code to create and persist two instances of type Parent, one with no childs at all and one with one child attached:

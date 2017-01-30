@@ -4,7 +4,7 @@ title = "Enterprise search with Apache Solr"
 tags = ["Enterprise", "Search", "User Interface"]
 draft = false
 +++
-:icons: font
+include::globals.adoc[]
 It you want to build a enterprise search engine, you don't have to reinvent the wheel. You can use open source engines like http://lucene.apache.org/core/[Apache Lucene] or if you have just one day to implement it http://lucene.apache.org/solr/[Apache Solr]. Solr is a full blown enterprise search server, which comes with a lot of bundled plugins like meta-data and content extraction from a very common set of document types with http://tika.apache.org/[Apache Tika] , search highlighting, fragmented search and also similarity search for search results. This is a short tutorial how to create a search application within one day.
 
 == Install Apache Solr

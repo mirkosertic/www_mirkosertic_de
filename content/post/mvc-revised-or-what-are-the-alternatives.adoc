@@ -4,7 +4,7 @@ title = "MVC revised or what are the alternatives?"
 tags = ["Modernization", "Web"]
 draft = false
 +++
-:icons: font
+include::globals.adoc[]
 == Pure MVC
 
 The http://en.wikipedia.org/wiki/Model_view_controller[Model View Controller] pattern became a de-facto standard for implementing user interfaces or other kind of interaction with complex systems. Basically it separates the user interface into the following components:
