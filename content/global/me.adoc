@@ -68,15 +68,3 @@ icon:twitter[] https://twitter.com/mirkosertic +
 icon:xing[] https://www.xing.com/profile/Mirko_Sertic +
 icon:linkedin[] https://de.linkedin.com/in/mirko-sertic-98882397 +
 icon:google-plus[] https://plus.google.com/112732493059943659026 +
-
-[plantuml]
-----
-skinparam handwritten true
-skinparam monochrome true
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
-
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
-----
-
