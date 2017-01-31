@@ -1,0 +1,134 @@
++++
+date = "2016-01-30T01:43:48+02:00"
+title = "Why I switched to static HTML generators"
+tags = ["HTML5", "Performance", "Web"]
+draft = false
++++
+include::globals.adoc[]
+
+== The Beginning
+
+This Blog started its life a few years ago. At the beginning, I was using https://www.dokuwiki.org[DokuWiki] for writing
+and editing. This was good, but I was very limited by the provided editors and markup. So I came to the point that I needed
+something else. And you will of course ask "what else"? Well, for a Blog, there is a very popular answer: Use https://wordpress.org[Wordpress]!
+
+So I installed Wordpress on my web host, and migrated the whole content. The migration task was easy. But I spent a lot of
+time with decisions like "Which theme? Which plugin? What about SEO? I really spent to much time with this.
+
+Wordpress was and is a really good content management system. Its WYSIWYG editor is useful for writing Blog content, and I could produce
+content very comfortable. Maybe Wordpress is the best Web CMS.
+
+But, do I really need it?
+
+== The Retrospective
+
+Well, do I really need a full blown CMS for my blog? Do I need fancy themes? Do I need the full complexity of Wordpress?
+
+I sat down and thought about this. And here is what I really needed for this Blog:
+
+ * An easy way to write and provide content
+ * Support for all kinds of technical documentations like UML diagrams and code highlighting
+ * A version control system for the content
+ * Super fast content delivery to my readers
+
+From a technical point of view, I realized that my whole content is static. It changes only if I add or modify a Blog posting.
+For this, I really did not need a dynamic CMS. I needed fast content delivery.
+
+== What I came up with
+
+I realized that I do not need a CMS. I needed a more user friendly way of writing content. And I needed a tool to create
+my static content in a transparent way. And here comes a set of tools to play called "Static HTML Generators".
+
+But before I could answer the question about the right tooling, I had to decide which format is best suited for writing
+my content. A very popular format was and is https://en.wikipedia.org/wiki/Markdown[Markdown]. But was this the right tool for me?
+Well, at work I used http://asciidoctor.org[Asciidoctor] a lot. And it turned out to be the right tool for me for writing Blog postings, as it
+
+ * Is plain text
+ * Has a clear focus on content
+ * Supports syntax highlighting
+ * Can generate all kinds of diagrams
+ * Can be transformed to all kind of document formats, such as HTML, PDF and others
+
+So I decided to use Asciidoctor.
+
+Now, which tools support Asciidoctor as a content source? It turned out that most static HTML generator Tools support
+Asciidoctor in some way. So had to narrow down my list of candidates. And the final candidate I came up with was https://gohugo.io[Hugo].
+
+== Why Hugo?
+
+There are other very popular static HTML generators available. The far most popular is https://jekyllrb.com[Jekyll]. I decided to
+use Hugo as it is fast and comes as a zero dependencies Go binary. Another point is that the way Hugo organizes the content source fits
+really well with by style of writing.
+
+Hugo is fast. It is really fast. It is maybe the fastest static HTML generator available. But does this really matter
+for my use case? It turned out: not really. I use https://travis-ci.org[Travis CI] to build my Blog every time I publish
+content to my GitHub repository. And from my point the generation speed does not really matter. If it is 5 seconds
+or 20 seconds, it doesn't make a difference. It would make a difference if the generation would take minutes to complete,
+as this might trigger timeouts in Travis CI. The complexity of my setup matters more. And from my point of view is Hugo here a
+clear winner.
+
+== Benefits of Asciidoctor
+
+Asciidoctor is a great tool for writing all kinds of technical and non technical documentations.
+
+=== I have Syntax highlighting
+
+[source,java]
+----
+public class Test {
+    public static void main(String[] args) { // <1>
+        // <2>
+    }
+}
+----
+<1> This is the main method
+<2> Here goes my complex logic
+
+=== I have Asciiart for diagrams
+
+I can use http://ditaa.sourceforge.net[ditaa] for diagram generation:
+
+[ditaa,ditaadiagram,png]
+----
+    +--------+   +-------+    +-------+
+    |        | --+ ditaa +--> |       |
+    |  Text  |   +-------+    |diagram|
+    |Document|   |!magic!|    |       |
+    |     {d}|   |       |    |       |
+    +---+----+   +-------+    +-------+
+        :                         ^
+        |       Lots of work      |
+        +-------------------------+
+----
+
+=== I have UML
+
+And I can use http://plantuml.com[PlantUML] for UML drawings:
+
+[plantuml,plantuml,png]
+----
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+----
+
+And even in "hand-drawn" mode:
+
+[plantuml,plantumlhandrawn,png]
+----
+skinparam handwritten true
+skinparam monochrome true
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+----
+
+== Final thoughts
+
+I really love the Asciidoctor / Hugo combination. Now I can better focus on content. The whole dynamic CMS process is replaced
+by static HTML generation, which speeds up content delivery to the max. If you need advice to setup a Blog for yourself, Asciidoctor and
+Hugo are worth a try!
