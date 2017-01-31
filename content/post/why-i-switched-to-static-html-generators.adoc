@@ -1,5 +1,5 @@
 +++
-date = "2016-01-30T01:43:48+02:00"
+date = "2017-01-30T01:43:48+02:00"
 title = "Why I switched to static HTML generators"
 tags = ["HTML5", "Performance", "Web"]
 draft = false
