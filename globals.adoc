@@ -1,3 +1,3 @@
 :icons: font
 :imagesoutdir: public/media
-:imagesdir: /media/
+:imagesdir: /media
