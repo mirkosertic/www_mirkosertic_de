@@ -7,7 +7,7 @@ env:
 
 before_install:
   - sudo apt-get install lftp
-  - gem update --system
+  - gem install bundler
   - gem install asciidoctor
   - gem install asciidoctor-diagram
 
