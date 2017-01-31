@@ -88,7 +88,7 @@ public class Test {
 
 I can use http://ditaa.sourceforge.net[ditaa] for diagram generation:
 
-[ditaa,ditaadiagram,png]
+[ditaa,ditaadiagram,svg]
 ----
     +--------+   +-------+    +-------+
     |        | --+ ditaa +--> |       |
@@ -105,7 +105,7 @@ I can use http://ditaa.sourceforge.net[ditaa] for diagram generation:
 
 And I can use http://plantuml.com[PlantUML] for UML drawings:
 
-[plantuml,plantuml,png]
+[plantuml,plantuml,svg]
 ----
 Alice -> Bob: Authentication Request
 Bob --> Alice: Authentication Response
@@ -116,7 +116,7 @@ Alice <-- Bob: another authentication Response
 
 And even in "hand-drawn" mode:
 
-[plantuml,plantumlhandrawn,png]
+[plantuml,plantumlhandrawn,svg]
 ----
 skinparam handwritten true
 skinparam monochrome true
