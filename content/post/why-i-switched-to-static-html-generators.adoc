@@ -88,7 +88,7 @@ public class Test {
 
 I can use http://ditaa.sourceforge.net[ditaa] for diagram generation:
 
-[ditaa,ditaadiagram,svg]
+[ditaa,ditaadiagram,png]
 ----
     +--------+   +-------+    +-------+
     |        | --+ ditaa +--> |       |
