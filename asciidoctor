@@ -1,11 +1,22 @@
-#!/usr/bin/env ruby
+#!/usr/bin/ruby
+#
+# A patched AsciiDoctor binary with enabled diagrams extension.
+#
 
-require 'asciidoctor'
-require 'asciidoctor/cli/options'
-require 'asciidoctor/cli/invoker'
+require 'rubygems'
+
+version = ">= 0.a"
+
+if ARGV.first
+  str = ARGV.first
+  str = str.dup.force_encoding("BINARY") if str.respond_to? :force_encoding
+  if str =~ /\A_(.*)_\z/ and Gem::Version.correct?($1) then
+    version = $1
+    ARGV.shift
+  end
+end
 
 require 'asciidoctor-diagram'
 
-invoker = Asciidoctor::Cli::Invoker.new ARGV
-invoker.invoke!
-exit invoker.code
+gem 'asciidoctor', version
+load Gem.bin_path('asciidoctor', 'asciidoctor', version)
