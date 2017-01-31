@@ -3,6 +3,8 @@
 # A patched AsciiDoctor binary with enabled diagrams extension.
 #
 
+require 'rubygems'
+
 version = ">= 0.a"
 
 if ARGV.first
