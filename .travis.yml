@@ -1,5 +1,8 @@
 language: go
 
+rvm:
+  - 2.3.3
+
 env:
   global:
     - secure: "v2vQcu1XxmDt924qkjE4cb8uFxdEFhZ7qRx6q3HpGN5sOuEcVm6SBeXn0UWdgZhD4G9GxeOUIsKmFKr7AQTXDPyFP4hKU6+so53bvIq/LWdJI0dGybyeryO3T59Dft9S+c1vIcusifnRLRhCX9x4p3W6whesVPrVvww//68VVnMo34Ib7ITgZT1Qm+P+A2lqlAgVZfR/35yvKcUqklbrwSoQ3CA2oJuoNh2MxssVqaN3znklPEYCrsD+bb9Rh3YEhXn6zex6C3ldE1SsLO7BDrdtNFncIBTPBZP2d+TbjAlFMvFcqOw/ZNPClhdKugyjpKFA+PzNhIdWX5RPtSlJ5yj+qVi+aZLWTK7GXoZcSGxjuCME4hun/pcHQZYIIUdbNpAU6xWq/Kjii7jNigU7I3ai+5X+PpEulna39O1nI/edGCRiAkl1ntkJWHiLn2L2kMBQqz0yaonNzyVBKTnLld0ob7ym4LPciPIk+bhNX2poTkN5tAXtckToZL5S/hNHuv1MWiu0RAwrTUr4j6gdurty+kiE6b83WJKoXaLbuYwodD0U1EAn0YzBTZI2kSCWY0KV4/C/HkkxccoK2QZs+se6tZbbGRcwy2l5aW5apCHBKyyj6emgY6WKuZ0do37llNKxxbdGjCu4U4xSLpV1eWjRDuur92ahAQOVtbQzrnA="
@@ -7,7 +10,6 @@ env:
 
 before_install:
   - sudo apt-get install lftp
-  - gem install bundler
   - gem install asciidoctor
   - gem install asciidoctor-diagram
 
