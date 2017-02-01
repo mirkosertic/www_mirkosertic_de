@@ -1,7 +1,7 @@
 +++
 date = "2016-12-31T01:08:59+01:00"
 title = "A Spring Boot Admin UI"
-tags = ["Dependency Injection", "HTML5", "SpringBoot", "User Interface"]
+tags = ["HTML5", "SpringBoot", "User Interface"]
 draft = false
 +++
 include::globals.adoc[]
