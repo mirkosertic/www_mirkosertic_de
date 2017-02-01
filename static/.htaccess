@@ -110,7 +110,7 @@ RedirectPermanent /blog-post/using-scala-with-jpa-2-0 https://www.mirkosertic.de
 RedirectPermanent /blog-post/google-style-query-parser-for-apache-lucene https://www.mirkosertic.de/blog/2013/04/google-style-query-parser-for-apache-lucene
 RedirectPermanent /blog-post/java-se-context-and-dependency-injection-with-java-ee-support https://www.mirkosertic.de/blog/2013/10/java-se-context-and-dependency-injection-with-java-ee-support
 RedirectPermanent /blog-post/how-to-remove-the-maven-primary-artifact-during-install-and-deploy-phase https://www.mirkosertic.de/blog/2016/06/how-to-remove-the-maven-primary-artifact-during-install-and-deploy-phase
-RedirectPermament /blog-post/how-to-set-the-html-base-tag-in-a-jsp-page https://www.mirkosertic.de/blog/2014/10/how-to-set-the-html-base-tag-in-a-jsp-page
+RedirectPermanent /blog-post/how-to-set-the-html-base-tag-in-a-jsp-page https://www.mirkosertic.de/blog/2014/10/how-to-set-the-html-base-tag-in-a-jsp-page
 RedirectPermanent /blog-post/a-javafx-based-desktop-search-engine https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine
 RedirectPermanent /blog-post/method-validation-with-jsr303-and-aspectj https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj
 RedirectPermanent /blog-post/software-defect-detection-with-aop-and-jsr-303-jsr-305-jsr-308 https://www.mirkosertic.de/blog/2012/07/software-defect-detection-with-aop-and-jsr-303-jsr-305-jsr-308
@@ -121,7 +121,7 @@ RedirectPermanent /blog-post/domain-driven-design-example https://www.mirkoserti
 RedirectPermanent /blog-post/maven-scala-and-aspectjaop https://www.mirkosertic.de/blog/2013/03/maven-scala-and-aspectjaop
 RedirectPermanent /blog-post/using-and-enhancing-hibernate-search https://www.mirkosertic.de/blog/2012/11/using-and-enhancing-hibernate-search
 RedirectPermanent /blog-post/the-onion-architecture https://www.mirkosertic.de/blog/2012/09/the-onion-architecture
-RedirectPermament /blog-post/how-to-embed-hystrix-into-existing-spring-applications https://www.mirkosertic.de/blog/2012/07/how-to-embed-hystrix-into-existing-spring-applications
+RedirectPermanent /blog-post/how-to-embed-hystrix-into-existing-spring-applications https://www.mirkosertic.de/blog/2012/07/how-to-embed-hystrix-into-existing-spring-applications
 
 RedirectPermanent /wordpress/welcome/blog-content/bootstrapping-weld-cdi-from-command-line-with-java-se https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
 RedirectPermanent /wordpress/welcome/tools-goodies https://www.mirkosertic.de/global/toolsgoodies/
@@ -131,7 +131,7 @@ RedirectPermanent /welcome/blog-content/a-very-simple-polymer-web-component http
 RedirectPermanent /welcome/blog-content/implementing-state-machines-with-java-enums https://www.mirkosertic.de/blog/2013/04/implementing-state-machines-with-java-enums
 RedirectPermanent /welcome/blog-content/domain-driven-design-example https://www.mirkosertic.de/blog/2013/04/domain-driven-design-example
 RedirectPermanent /welcome/blog-content/google-style-query-parser-for-apache-lucene https://www.mirkosertic.de/blog/2013/04/google-style-query-parser-for-apache-lucene
-RedirectPermament /welcome/blog-content/using-scala-in-legacy-applications https://www.mirkosertic.de/blog/2013/03/using-scala-in-legacy-applications
+RedirectPermanent /welcome/blog-content/using-scala-in-legacy-applications https://www.mirkosertic.de/blog/2013/03/using-scala-in-legacy-applications
 
 RedirectPermanent /wordpress/architecturedesign/onionarchitecture https://www.mirkosertic.de/blog/2012/09/the-onion-architecture
 RedirectPermanent /wordpress/javastuff/xmljsonperformance https://www.mirkosertic.de/blog/2013/05/comparison-of-jaxb-xml-and-json-serialization-performance
@@ -192,7 +192,7 @@ RedirectPermanent /javastuff/fxdesktopsearch https://www.mirkosertic.de/blog/201
 RedirectPermanent /toolsgoodies/content https://www.mirkosertic.de/global/toolsgoodies/
 
 RedirectPermanent /tag/springboot https://www.mirkosertic.de/tags/springboot
-RedirectPermament /tag/dependency-injection https://www.mirkosertic.de/tags/dependency-injection
+RedirectPermanent /tag/dependency-injection https://www.mirkosertic.de/tags/dependency-injection
 
 RedirectPermanent /enterprisescalabeans https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server
 RedirectPermanent /dddbuildingblocks https://www.mirkosertic.de/blog/2012/07/domain-driven-design-overview-and-building-blocks
@@ -233,7 +233,7 @@ RedirectPermanent /adding-html5-microdata-to-dokuwiki https://www.mirkosertic.de
 RedirectPermanent /domain-driven-design-example https://www.mirkosertic.de/blog/2013/04/domain-driven-design-example
 RedirectPermanent /enterprise-search-with-apache-solr https://www.mirkosertic.de/blog/2012/07/enterprise-search-with-apache-solr
 RedirectPermanent /a-javafx-based-desktop-search-engine https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine
-RedirectPermament /an-overview-of-current-nosql-databases https://www.mirkosertic.de/blog/2012/11/an-overview-of-current-nosql-databases
+RedirectPermanent /an-overview-of-current-nosql-databases https://www.mirkosertic.de/blog/2012/11/an-overview-of-current-nosql-databases
 
 RedirectPermanent /doku.php/javastuff/bootstrappingweld https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
 RedirectPermanent /doku.php/xmlresourcebundles https://www.mirkosertic.de/blog/2012/07/xml-resourcebundles-and-how-to-make-i18n-refactoring-safe
