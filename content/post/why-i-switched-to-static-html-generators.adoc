@@ -13,16 +13,16 @@ and editing. This was good, but I was very limited by the provided editors and m
 something else. And you will of course ask "what else"? Well, for a Blog, there is a very popular answer: Use https://wordpress.org[Wordpress]!
 
 So I installed Wordpress on my web host, and migrated the whole content. The migration task was easy. But I spent a lot of
-time with decisions like "Which theme? Which plugin? What about SEO? I really spent to much time with this.
+time with decisions like "Which theme? Which plugin? What about SEO? I really spent too much time with this.
 
 Wordpress was and is a really good content management system. Its WYSIWYG editor is useful for writing Blog content, and I could produce
 content very comfortable. Maybe Wordpress is the best Web CMS.
 
-But, do I really need it?
+But, did I really need it?
 
 == The Retrospective
 
-Well, do I really need a full blown CMS for my blog? Do I need fancy themes? Do I need the full complexity of Wordpress?
+Well, did I really need a full blown CMS for my blog? Do I need fancy themes? Did I need the full complexity of Wordpress?
 
 I sat down and thought about this. And here is what I really needed for this Blog:
 
