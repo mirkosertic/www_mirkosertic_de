@@ -152,7 +152,7 @@ RedirectPermanent /wordpress https://www.mirkosertic.de
 
 RedirectPermanent /doku.php/javastuff/bootstrappingweld https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
 RedirectPermanent /doku.php/javastuff/gwtdragometeavmgame https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming
-RedirectPermament /doku.php/erdesignerng/content https://www.mirkosertic.de/media/MogwaiERDesignerNG.pdf
+RedirectPermanent /doku.php/erdesignerng/content https://www.mirkosertic.de/media/MogwaiERDesignerNG.pdf
 
 RedirectPermanent /scalastuff/scalawithjpa https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0
 RedirectPermanent /scalastuff/enterprisescalabeans https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server
