@@ -1,3 +1,4 @@
 :icons: font
 :imagesoutdir: public/media
 :imagesdir: /media
+:source-highlighter: pygments
