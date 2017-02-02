@@ -197,7 +197,7 @@ Talend offers some pretty cool visual ETL, Master Data Management and database m
 
 http://en.wikipedia.org/wiki/Edge_Side_Includes[en.wikipedia.org/wiki/Edge_Side_Includes]
 
-Edge Side Includes(ESI) is a W3Cstandard for server side web content integration. ESI is a great alternative to the Java JSR168/268 Portlet specification as it is more lightweight and also supports technologies like CDN(content delivery networks) and true SOA in web applications.
+Edge Side Includes(ESI) is a W3C standard for server side web content integration. ESI is a great alternative to the Java JSR168/268 Portlet specification as it is more lightweight and also supports technologies like CDN(content delivery networks) and true SOA in web applications.
 
 http://mogwai.sourceforge.net/[mogwai.sourceforge.net]
 
