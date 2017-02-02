@@ -11,7 +11,7 @@ before_install:
   - gem install asciidoctor
   - gem install coderay
   - gem install asciidoctor-diagram
-  - "`\which apt-get || \which yum || \which brew`" install python
+  - sudo apt-get install python
   - gem install pygments.rb
 
 install:
