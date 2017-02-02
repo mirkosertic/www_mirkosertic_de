@@ -132,6 +132,7 @@ RedirectPermanent /welcome/blog-content/implementing-state-machines-with-java-en
 RedirectPermanent /welcome/blog-content/domain-driven-design-example https://www.mirkosertic.de/blog/2013/04/domain-driven-design-example
 RedirectPermanent /welcome/blog-content/google-style-query-parser-for-apache-lucene https://www.mirkosertic.de/blog/2013/04/google-style-query-parser-for-apache-lucene
 RedirectPermanent /welcome/blog-content/using-scala-in-legacy-applications https://www.mirkosertic.de/blog/2013/03/using-scala-in-legacy-applications
+RedirectPermanent /welcome https://www.mirkosertic.de
 
 RedirectPermanent /wordpress/architecturedesign/onionarchitecture https://www.mirkosertic.de/blog/2012/09/the-onion-architecture
 RedirectPermanent /wordpress/javastuff/xmljsonperformance https://www.mirkosertic.de/blog/2013/05/comparison-of-jaxb-xml-and-json-serialization-performance
@@ -150,6 +151,8 @@ RedirectPermanent /wordpress/high-performance-android-handwriting https://www.mi
 RedirectPermanent /wordpress https://www.mirkosertic.de
 
 RedirectPermanent /doku.php/javastuff/bootstrappingweld https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
+RedirectPermanent /doku.php/javastuff/gwtdragometeavmgame https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming
+RedirectPermament /doku.php/erdesignerng/content https://www.mirkosertic.de/media/MogwaiERDesignerNG.pdf
 
 RedirectPermanent /scalastuff/scalawithjpa https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0
 RedirectPermanent /scalastuff/enterprisescalabeans https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server
@@ -193,6 +196,7 @@ RedirectPermanent /toolsgoodies/content https://www.mirkosertic.de/global/toolsg
 
 RedirectPermanent /tag/springboot https://www.mirkosertic.de/tags/springboot
 RedirectPermanent /tag/dependency-injection https://www.mirkosertic.de/tags/dependency-injection
+RedirectPermanent /tag/user-interface https://www.mirkosertic.de/tags/user-interface
 
 RedirectPermanent /enterprisescalabeans https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server
 RedirectPermanent /dddbuildingblocks https://www.mirkosertic.de/blog/2012/07/domain-driven-design-overview-and-building-blocks
