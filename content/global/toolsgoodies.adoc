@@ -193,7 +193,11 @@ The Pragmatic Bookshelf, the source of knowledge
 
 http://www.talend.com/[www.talend.com]
 
-Talend offers some pretty cool visual ETL, Master Data Management and database migration tools. See also http://www.altova.com/mapforce.html[MapForce] http://en.wikipedia.org/wiki/Edge_Side_Includes[en.wikipedia.org/wiki/Edge_Side_Includes] Edge Side Includes(ESI) is a W3Cstandard for server side web content integration. ESI is a great alternative to the Java JSR168/268 Portlet specification as it is more lightweight and also supports technologies like CDN(content delivery networks) and true SOA in web applications.
+Talend offers some pretty cool visual ETL, Master Data Management and database migration tools. See also http://www.altova.com/mapforce.html[MapForce]
+
+http://en.wikipedia.org/wiki/Edge_Side_Includes[en.wikipedia.org/wiki/Edge_Side_Includes]
+
+Edge Side Includes(ESI) is a W3Cstandard for server side web content integration. ESI is a great alternative to the Java JSR168/268 Portlet specification as it is more lightweight and also supports technologies like CDN(content delivery networks) and true SOA in web applications.
 
 http://mogwai.sourceforge.net/[mogwai.sourceforge.net]
 
@@ -298,4 +302,3 @@ A demonstration of what can be accomplished through CSS-based design.
 http://www.hongkiat.com/blog/cheatsheet-graphic-designers/[www.hongkiat.com/blog/cheatsheet-graphic-designers/]
 
 Cheat Sheets for Graphic Designers
-
