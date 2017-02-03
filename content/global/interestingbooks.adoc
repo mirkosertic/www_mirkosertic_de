@@ -1,5 +1,5 @@
 +++
-date = "2016-01-01T01:43:48+02:00"
+date = "2017-02-03T01:43:48+02:00"
 title = "My personal list of interesting books"
 tags = []
 draft = false
@@ -30,7 +30,6 @@ include::globals.adoc[]
     * Die UML-Kurzreferenz 2.3 für die Praxis. Bernd Oestereich
     * ReleaseIt!: Design and Deploy Production-Ready Software. Michael T. Nygard
     * Reactive Messaging Patterns with the Actor Model. Vaughn Vernon
-    * Elegant Objects. Yegor Bugayenko
 
 == Technology
 
