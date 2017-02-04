@@ -1,0 +1,150 @@
++++
+date = "2017-02-04T00:00:00+01:00"
+title = "Improve Test Quality with Mutation Testing"
+tags = ["JUnit", "Testing"]
+draft = true
++++
+include::globals.adoc[]
+
+== A very common problem
+
+Unit testing is a today must have. Together with https://en.wikipedia.org/wiki/Test-driven_development[Test-driven Development]
+and Frameworks such as http://junit.org/junit4[JUnit] we can easily prove that our code fulfills a set of requirements and business invariants. We use metrics
+like "Test coverage" to get insight about the completeness of our tests. A very common asumption taken from a test coverage of 80%
+is that 80% of our code is tested and working correctly.
+
+This code coverage thinking can be a big problem. In fact, the code coverage doesn't say anything about the quality of our tests.
+It just proves that 80 percent of the example above were executed by our unit tests. It doesn't say that the 80% are working
+correctly, and it doesn't say that the unit test is able to detect defects of any kind in our code. The most extreme
+example is a unit test without assertions. It may give a high test coverage, but it doesn't test anything at all. Therefore
+a test coverage of 80% only proves for sure that 20% of our code is definitely not tested at all.
+
+== What to do?
+
+Well, we need another metric to measure the effectiveness of our tests, so we know that the 80% test coverage is indeed able to
+detect any kind of defect. And here comes a technique called https://en.wikipedia.org/wiki/Mutation_testing[Mutation testing] to play.
+
+Mutation testing basically adds mutation(errors) to the code and checks if the unit tests fail if a mutation was inserted.
+
+This is also called fault seeding.
+
+Every detected mutation is marked as "killed", all other mutations are marked as "survived".
+
+The effectiveness of our tests can then be gauged as the ratio of survived and killed mutations.
+
+== How to apply this technique?
+
+Prior mutation testing systems required complex setups and special language compiler. But fortunately there is a bright shining star
+available to the Java world. Say hello to http://pitest.org[PITest]!
+
+PITest is basically a Maven plugin that can easily be added to existing projects. It runs the unit tests with a configured set
+of mutation operations and reports the killed and survived mutations as XML reports for machine processing and fancy HTML reports
+fur human eyes. It can also easily be integrated with source code quality tools such as https://www.sonarqube.org[SonarQube].
+
+[source,xml]
+----
+<plugin>
+    <groupId>org.pitest</groupId>
+    <artifactId>pitest-maven</artifactId>
+    <version>1.1.9</version>
+</plugin>
+----
+
+== A simple example
+
+Let me show you how PITest can help us to improve unit test quality.
+
+Given the following source code:
+
+[source,java]
+----
+package de.mirkosertic.pitest;
+
+public class Customer {
+
+    public int discountFor(int aNumberOfOrders) {
+        if (aNumberOfOrders > 10) {
+            return 20;
+        }
+        return 0;
+    }
+}
+----
+
+We run the following test:
+
+[source,java]
+----
+package de.mirkosertic.pitest;
+
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+public class CustomerTest {
+
+    @Test
+    public void testDiscount() {
+        Customer theCustomer = new Customer();
+        assertEquals(0, theCustomer.discountFor(5));
+        assertEquals(20, theCustomer.discountFor(20));
+    }
+}
+----
+
+We get a very high test coverage for this test:
+
+image:/media/goodtestcoverage.png[]
+
+Now, let us see what happens if the apply some mutation testing. We get the following report:
+
+image:/media/mutationcoveragebad.png[]
+
+Indeed, this is bad. It seems the unit test is missing some boundary conditions. We have to improve the test as seen here:
+
+[source,java]
+----
+package de.mirkosertic.pitest;
+
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+public class CustomerTest {
+
+    @Test
+    public void testDiscount() {
+        Customer theCustomer = new Customer();
+        assertEquals(0, theCustomer.discountFor(5));
+        assertEquals(0, theCustomer.discountFor(9));
+        assertEquals(0, theCustomer.discountFor(10));
+        assertEquals(20, theCustomer.discountFor(11));
+        assertEquals(20, theCustomer.discountFor(20));
+    }
+}
+----
+
+Now, let us check with mutation testing again:
+
+image:/media/mutationcoveragegood.png[]
+
+Ahh, this is much better. Now, we have a very good test for our code.
+
+== Where are the limitations
+
+Well, every tool has its limitations. PITest works fast and transparent for all kind of unit tests. When it comes
+to more complex test scenarios such as integration tests with in-process databases, PITest will still give results, but
+it might take hours to complete. So a good strategy is so run the real unit test with PITest, and try to archive a test
+and mutation coverage as high as we get. Then we use integration test to test complete use cases, but here the orchestration
+of already tested code is the focus and we test only the orchestration logic.
+
+Also, it is not good to insist on a 100% mutation coverage, as this misses the same point as insisting on a 100%
+test coverage. There a certain conditions(logging for instance) that are very hard to test and are highly dependent on the
+configuration of the underlying system(logging configuration), In such situations it would definitely make more sense
+to spend your time with writing more integration tests instead of trying to get the last remaining percent of the test metric.
+
+== Conclusion
+
+Mutation testing can help us to identify leakages in our tests. It gives us a simple metric that can help us to improve
+the quality of our unit tests. Frameworks such as PITest can easily be added to existing projects and can do things in minutes
+that prior system took days to complete. I really love mutation testing!
