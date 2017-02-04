@@ -99,7 +99,7 @@ public class JSR308Test {
 
 We get what we expected, an IllegalArgumentException.class. We get the same with Project Lombok. Where is the difference?
 
-Well, as mentioned above, JSR 303 is an extension of the type system. So wouldn't it be nice if the type system could help us to detect potential precondition violation at compile time? This is the case in the example above, this shouldn't even compile, as it clearly violates the contract. And here comes the true power of JSR 308 to play. By enabling a special compiler, we can transform the runtime exception into a compile time error. We just have to add the compiler to the pom.xml as seen here:
+Well, as mentioned above, JSR 308 is an extension of the type system. So wouldn't it be nice if the type system could help us to detect potential precondition violation at compile time? This is the case in the example above, this shouldn't even compile, as it clearly violates the contract. And here comes the true power of JSR 308 to play. By enabling a special compiler, we can transform the runtime exception into a compile time error. We just have to add the compiler to the pom.xml as seen here:
 
 [source,xml]
 ----
