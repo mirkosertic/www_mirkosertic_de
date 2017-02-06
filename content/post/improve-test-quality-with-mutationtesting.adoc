@@ -10,7 +10,7 @@ include::globals.adoc[]
 
 Unit testing is a today must have. Together with https://en.wikipedia.org/wiki/Test-driven_development[Test-driven Development]
 and Frameworks such as http://junit.org/junit4[JUnit] we can easily prove that our code fulfills a set of requirements and business invariants. We use metrics
-like "Test coverage" to get insight about the completeness of our tests. A very common asumption taken from a test coverage of 80%
+like "Test coverage" to get insight about the completeness of our tests. A very common assumption taken from a test coverage of 80%
 is that 80% of our code is tested and working correctly.
 
 This code coverage thinking can be a big problem. In fact, the code coverage doesn't say anything about the quality of our tests.
