@@ -122,6 +122,11 @@ RedirectPermanent /blog-post/maven-scala-and-aspectjaop https://www.mirkosertic.
 RedirectPermanent /blog-post/using-and-enhancing-hibernate-search https://www.mirkosertic.de/blog/2012/11/using-and-enhancing-hibernate-search
 RedirectPermanent /blog-post/the-onion-architecture https://www.mirkosertic.de/blog/2012/09/the-onion-architecture
 RedirectPermanent /blog-post/how-to-embed-hystrix-into-existing-spring-applications https://www.mirkosertic.de/blog/2012/07/how-to-embed-hystrix-into-existing-spring-applications
+RedirectPermanent /blog-post/how-to-download-maven-artifacts-with-maven-3-1-and-eclipse-aether https://www.mirkosertic.de/blog/2015/12/how-to-download-maven-artifacts-with-maven-3-1-and-eclipse-aether
+RedirectPermanent /blog-post/domain-driven-design-with-jsf-ejb-and-cdi https://www.mirkosertic.de/blog/2013/09/domain-driven-design-with-jsf-ejb-and-cdi
+RedirectPermanent /blog-post/javafx-custom-controls-or-webview-with-d3-js https://www.mirkosertic.de/blog/2013/05/javafx-custom-controls-or-webview-with-d3-js
+RedirectPermanent /blog-post/displaying-simple-animated-graphs-with-javafx-2-0 https://www.mirkosertic.de/blog/2012/10/displaying-simple-animated-graphs-with-javafx-2-0
+RedirectPermanent /blog-post/mvc-revised-or-what-are-the-alternatives https://www.mirkosertic.de/blog/2013/03/mvc-revised-or-what-are-the-alternatives
 
 RedirectPermanent /wordpress/welcome/blog-content/bootstrapping-weld-cdi-from-command-line-with-java-se https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
 RedirectPermanent /wordpress/welcome/tools-goodies https://www.mirkosertic.de/global/toolsgoodies/
@@ -150,6 +155,7 @@ RedirectPermanent /wordpress/high-performance-android-handwriting https://www.mi
 RedirectPermanent /wordpress https://www.mirkosertic.de
 
 RedirectPermanent /doku.php/javastuff/bootstrappingweld https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
+RedirectPermanent /doku.php/architecturedesign/dddbuildingblocks https://www.mirkosertic.de/blog/2012/07/domain-driven-design-overview-and-building-blocks
 
 RedirectPermanent /scalastuff/scalawithjpa https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0
 RedirectPermanent /scalastuff/enterprisescalabeans https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server
@@ -189,10 +195,16 @@ RedirectPermanent /javastuff/arrayiteratorperformance https://www.mirkosertic.de
 RedirectPermanent /javastuff/tunehtmlcanvas https://www.mirkosertic.de/blog/2015/03/tuning-html5-canvas-filltext
 RedirectPermanent /javastuff/fxdesktopsearch https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine
 
+RedirectPermanent /webstuff/simplepolymercomponent https://www.mirkosertic.de/blog/2016/02/a-very-simple-polymer-web-component
+
 RedirectPermanent /toolsgoodies/content https://www.mirkosertic.de/global/toolsgoodies/
 
 RedirectPermanent /tag/springboot https://www.mirkosertic.de/tags/springboot
+RedirectPermanent /tag/swing https://www.mirkosertic.de/tags/swing
 RedirectPermanent /tag/dependency-injection https://www.mirkosertic.de/tags/dependency-injection
+RedirectPermanent /tag/webcomponents https://www.mirkosertic.de/tags/webcomponents
+RedirectPermanent /tag/android https://www.mirkosertic.de/tags/android
+RedirectPermanent /tag/lua https://www.mirkosertic.de/tags/lua
 
 RedirectPermanent /enterprisescalabeans https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server
 RedirectPermanent /dddbuildingblocks https://www.mirkosertic.de/blog/2012/07/domain-driven-design-overview-and-building-blocks
