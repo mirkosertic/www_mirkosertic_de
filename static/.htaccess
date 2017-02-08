@@ -209,6 +209,16 @@ RedirectPermanent /tag/dependency-injection https://www.mirkosertic.de/tags/depe
 RedirectPermanent /tag/webcomponents https://www.mirkosertic.de/tags/webcomponents
 RedirectPermanent /tag/android https://www.mirkosertic.de/tags/android
 RedirectPermanent /tag/lua https://www.mirkosertic.de/tags/lua
+RedirectPermanent /tag/legacy https://www.mirkosertic.de/tags/legacy
+RedirectPermanent /tag/search https://www.mirkosertic.de/tags/search
+RedirectPermanent /tag/serialization https://www.mirkosertic.de/tags/serialization
+RedirectPermanent /tag/html5 https://www.mirkosertic.de/tags/html5
+RedirectPermanent /tag/junit https://www.mirkosertic.de/tags/junit
+RedirectPermanent /tag/javafx https://www.mirkosertic.de/tags/javafx
+RedirectPermanent /tag/threading https://www.mirkosertic.de/tags/threading
+RedirectPermanent /tag/testing https://www.mirkosertic.de/tags/testing
+RedirectPermanent /tag/logging https://www.mirkosertic.de/tags/logging
+RedirectPermanent /tag/configuration-management https://www.mirkosertic.de/tags/configuration-management
 
 RedirectPermanent /enterprisescalabeans https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server
 RedirectPermanent /dddbuildingblocks https://www.mirkosertic.de/blog/2012/07/domain-driven-design-overview-and-building-blocks
