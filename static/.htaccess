@@ -156,6 +156,9 @@ RedirectPermanent /wordpress https://www.mirkosertic.de
 
 RedirectPermanent /doku.php/javastuff/bootstrappingweld https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
 RedirectPermanent /doku.php/architecturedesign/dddbuildingblocks https://www.mirkosertic.de/blog/2012/07/domain-driven-design-overview-and-building-blocks
+RedirectPermanent /doku.php/architecturedesign/dddexample https://www.mirkosertic.de/blog/2013/04/domain-driven-design-example
+RedirectPermanent /doku.php/javastuff/gwtdragometeavmgame https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming
+RedirectPermanent /doku.php/erdesignerng/content https://www.mirkosertic.de/media/MogwaiERDesignerNG.pdf
 
 RedirectPermanent /scalastuff/scalawithjpa https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0
 RedirectPermanent /scalastuff/enterprisescalabeans https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server
@@ -194,6 +197,7 @@ RedirectPermanent /javastuff/javafxd3js https://www.mirkosertic.de/blog/2013/05/
 RedirectPermanent /javastuff/arrayiteratorperformance https://www.mirkosertic.de/blog/2013/10/java-array-iterator-performance
 RedirectPermanent /javastuff/tunehtmlcanvas https://www.mirkosertic.de/blog/2015/03/tuning-html5-canvas-filltext
 RedirectPermanent /javastuff/fxdesktopsearch https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine
+RedirectPermanent /javastuff/gwtdragometeavmgame https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming
 
 RedirectPermanent /webstuff/simplepolymercomponent https://www.mirkosertic.de/blog/2016/02/a-very-simple-polymer-web-component
 
@@ -251,5 +255,6 @@ RedirectPermanent /doku.php/javastuff/bootstrappingweld https://www.mirkosertic.
 RedirectPermanent /doku.php/xmlresourcebundles https://www.mirkosertic.de/blog/2012/07/xml-resourcebundles-and-how-to-make-i18n-refactoring-safe
 
 RedirectPermanent /feed.php https://www.mirkosertic.de/index.xml
+RedirectPermanent /feed https://www.mirkosertic.de/index.xml
 
 ErrorDocument 404 /404.html
