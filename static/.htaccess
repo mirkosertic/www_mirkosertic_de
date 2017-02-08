@@ -127,6 +127,10 @@ RedirectPermanent /blog-post/domain-driven-design-with-jsf-ejb-and-cdi https://w
 RedirectPermanent /blog-post/javafx-custom-controls-or-webview-with-d3-js https://www.mirkosertic.de/blog/2013/05/javafx-custom-controls-or-webview-with-d3-js
 RedirectPermanent /blog-post/displaying-simple-animated-graphs-with-javafx-2-0 https://www.mirkosertic.de/blog/2012/10/displaying-simple-animated-graphs-with-javafx-2-0
 RedirectPermanent /blog-post/mvc-revised-or-what-are-the-alternatives https://www.mirkosertic.de/blog/2013/03/mvc-revised-or-what-are-the-alternatives
+RedirectPermanent /blog-post/preconditions-lombok-jsr-303-and-jsr-308 https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308
+RedirectPermanent /blog-post/opengl2-on-android-example https://www.mirkosertic.de/blog/2013/09/opengl2-on-android-example
+RedirectPermanent /blog-post/swing-databinding-with-mogwai-databinding https://www.mirkosertic.de/blog/2012/06/swing-databinding-with-mogwai-databinding
+RedirectPermanent /blog-post/java-properties-reinvented https://www.mirkosertic.de/blog/2013/11/java-properties-reinvented
 
 RedirectPermanent /wordpress/welcome/blog-content/bootstrapping-weld-cdi-from-command-line-with-java-se https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
 RedirectPermanent /wordpress/welcome/tools-goodies https://www.mirkosertic.de/global/toolsgoodies/
@@ -137,6 +141,8 @@ RedirectPermanent /welcome/blog-content/implementing-state-machines-with-java-en
 RedirectPermanent /welcome/blog-content/domain-driven-design-example https://www.mirkosertic.de/blog/2013/04/domain-driven-design-example
 RedirectPermanent /welcome/blog-content/google-style-query-parser-for-apache-lucene https://www.mirkosertic.de/blog/2013/04/google-style-query-parser-for-apache-lucene
 RedirectPermanent /welcome/blog-content/using-scala-in-legacy-applications https://www.mirkosertic.de/blog/2013/03/using-scala-in-legacy-applications
+RedirectPermanent /welcome/blog-content/adding-html5-microdata-to-dokuwiki https://www.mirkosertic.de/blog/2013/04/adding-html5-microdata-to-dokuwiki
+RedirectPermanent /welcome/blog-content/high-performance-android-handwriting https://www.mirkosertic.de/blog/2013/07/high-performance-android-handwriting
 
 RedirectPermanent /wordpress/architecturedesign/onionarchitecture https://www.mirkosertic.de/blog/2012/09/the-onion-architecture
 RedirectPermanent /wordpress/javastuff/xmljsonperformance https://www.mirkosertic.de/blog/2013/05/comparison-of-jaxb-xml-and-json-serialization-performance
@@ -198,6 +204,8 @@ RedirectPermanent /javastuff/arrayiteratorperformance https://www.mirkosertic.de
 RedirectPermanent /javastuff/tunehtmlcanvas https://www.mirkosertic.de/blog/2015/03/tuning-html5-canvas-filltext
 RedirectPermanent /javastuff/fxdesktopsearch https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine
 RedirectPermanent /javastuff/gwtdragometeavmgame https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming
+RedirectPermanent /javastuff/openglandroidexample https://www.mirkosertic.de/blog/2013/09/opengl2-on-android-example
+RedirectPermanent /javastuff/eclipse32pluginwitheather https://www.mirkosertic.de/blog/2015/12/how-to-download-maven-artifacts-with-maven-3-1-and-eclipse-aether
 
 RedirectPermanent /webstuff/simplepolymercomponent https://www.mirkosertic.de/blog/2016/02/a-very-simple-polymer-web-component
 
@@ -260,6 +268,7 @@ RedirectPermanent /domain-driven-design-example https://www.mirkosertic.de/blog/
 RedirectPermanent /enterprise-search-with-apache-solr https://www.mirkosertic.de/blog/2012/07/enterprise-search-with-apache-solr
 RedirectPermanent /a-javafx-based-desktop-search-engine https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine
 RedirectPermanent /an-overview-of-current-nosql-databases https://www.mirkosertic.de/blog/2012/11/an-overview-of-current-nosql-databases
+RedirectPermanent /gwt-vs-dragome-vs-teavm-for-game-programming https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming
 
 RedirectPermanent /doku.php/javastuff/bootstrappingweld https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
 RedirectPermanent /doku.php/xmlresourcebundles https://www.mirkosertic.de/blog/2012/07/xml-resourcebundles-and-how-to-make-i18n-refactoring-safe
