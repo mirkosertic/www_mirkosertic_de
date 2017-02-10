@@ -43,7 +43,7 @@ But before I could answer the question about the right tooling, I had to decide 
 my content. A very popular format was and is https://en.wikipedia.org/wiki/Markdown[Markdown]. But was this the right tool for me?
 Well, at work I used http://asciidoctor.org[Asciidoctor] a lot. And it turned out to be the right tool for me for writing Blog postings, as it
 
- * Is plain text
+ * Is plain text with no vendor lock in
  * Has a clear focus on content
  * Supports syntax highlighting
  * Can generate all kinds of diagrams
@@ -62,7 +62,7 @@ really well with by style of writing.
 
 Hugo is fast. It is really fast. It is maybe the fastest static HTML generator available. But does this really matter
 for my use case? It turned out: not really. I use https://travis-ci.org[Travis CI] to build my Blog every time I publish
-content to my GitHub repository. And from my point the generation speed does not really matter. If it is 5 seconds
+content to my GitHub repository. And from my point of view the generation speed does not really matter. If it is 5 seconds
 or 20 seconds, it doesn't make a difference. It would make a difference if the generation would take minutes to complete,
 as this might trigger timeouts in Travis CI. The complexity of my setup matters more. And from my point of view is Hugo here a
 clear winner.

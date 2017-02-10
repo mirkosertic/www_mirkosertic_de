@@ -10,18 +10,18 @@ include::globals.adoc[]
 
 Unit testing is a today must have. Together with https://en.wikipedia.org/wiki/Test-driven_development[Test-driven Development]
 and Frameworks such as http://junit.org/junit4[JUnit] we can easily prove that our code fulfills a set of requirements and business invariants. We use metrics
-like "Test coverage" to get insight about the completeness of our tests. A very common assumption taken from a test coverage of 80%
-is that 80% of our code is tested and working correctly.
+like "Test coverage" to get insight about the completeness of our tests. A very common assumption taken from a test coverage of 80 percent
+is that 80 percent of our code is tested and working correctly.
 
 This code coverage thinking can be a big problem. In fact, the code coverage doesn't say anything about the quality of our tests.
-It just proves that 80 percent of the example above were executed by our unit tests. It doesn't say that the 80% are working
+It just proves that 80 percent of the example above were executed by our unit tests. It doesn't say that the 80 percent are working
 correctly, and it doesn't say that the unit test is able to detect defects of any kind in our code. The most extreme
 example is a unit test without assertions. It may give a high test coverage, but it doesn't test anything at all. Therefore
-a test coverage of 80% only proves for sure that 20% of our code is definitely not tested at all.
+a test coverage of 80 percent only proves for sure that 20 percent of our code is definitely not tested at all.
 
 == What to do?
 
-Well, we need another metric to measure the effectiveness of our tests, so we know that the 80% test coverage is indeed able to
+Well, we need another metric to measure the effectiveness of our tests, so we know that the 80 percent test coverage is indeed able to
 detect any kind of defect. And here comes a technique called https://en.wikipedia.org/wiki/Mutation_testing[Mutation testing] to play.
 
 Mutation testing basically adds mutation(errors) to the code and checks if the unit tests fail if a mutation was inserted.
@@ -138,7 +138,7 @@ it might take hours to complete. So a good strategy is so run the real unit test
 and mutation coverage as high as we get. Then we use integration test to test complete use cases, but here the orchestration
 of already tested code is the focus and we test only the orchestration logic.
 
-Also, it is not good to insist on a 100% mutation coverage, as this misses the same point as insisting on a 100%
+Also, it is not good to insist on a 100 percent mutation coverage, as this misses the same point as insisting on a 100 percent
 test coverage. There a certain conditions(logging for instance) that are very hard to test and are highly dependent on the
 configuration of the underlying system(logging configuration), In such situations it would definitely make more sense
 to spend your time with writing more integration tests instead of trying to get the last remaining percent of the test metric.
