@@ -71,7 +71,7 @@ clear winner.
 
 Asciidoctor is a great tool for writing all kinds of technical and non technical documentations.
 
-=== I have Syntax highlighting
+=== I have Syntax highlighting with callouts
 
 [source,java]
 ----
