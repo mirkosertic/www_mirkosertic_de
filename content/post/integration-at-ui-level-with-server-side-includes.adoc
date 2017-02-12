@@ -1,0 +1,29 @@
++++
+date = "2017-02-12T00:00:00+01:00"
+title = "Service integration at UI level with server side includes(SSI)"
+tags = ["Domain-driven Design", "Integration", ""User Interface", "Enterprise"]
+draft = true
++++
+include::globals.adoc[]
+
+== Microservices everywhere
+
+Today, https://en.wikipedia.org/wiki/Microservices[Microservices] are a common software modeling technique. This style is based on the principles behind
+https://en.wikipedia.org/wiki/Domain-driven_design[Domain-driven Design], where every bounded context is equivalent to
+a service. If we also take the https://12factor.net[Twelve-Factor App] manifesto into consideration, we able to create scalable
+and cloud ready systems.
+
+But this design can also lead to problems. If we take the Microservice design too far(https://en.wikipedia.org/wiki/Microservices[Nanoservices]), we are quickly getting way to
+much services we can handle and maintain. There is also the risk that we are somehow violating the original bounded context
+for our services, leading to lack of responsibility and functional encapsulation. Maybe the Microservices could degenerate to some
+kind of remote data access object. If we do not respect the principle of independently deployable units, we are quickly creating
+a distributed and very slow monolith.
+
+== Possible solutions
+
+== Patterns for UI Integration
+
+== Common caveats
+
+== Conclusion
+
