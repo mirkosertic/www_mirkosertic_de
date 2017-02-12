@@ -130,7 +130,19 @@ image:/media/mutationcoveragegood.png[]
 
 Ahh, this is much better. Now, we have a very good test for our code.
 
-== Where are the limitations
+== Code review system integration
+
+It would be very cool to integrate mutation testing as an automated quality control into our code review system.
+The problem might be that mutation testing is very CPU demanding, and a full mutation testing run for every single,
+maybe small, commit might be an overkill and slow down the review lifecycle.
+
+PITest has an integrated feature for code review system integration. It can be started with a special option to analyze
+the changes of the last SCM commit only. Please take a look at the `scmMutationCoverage` goal in the http://pitest.org/quickstart/maven[PITest Maven Documentation]. This feature greatly increases review round trip time.
+
+If you want so see this feature in action, please visit https://github.com/mirkosertic/mavensonarsputnik[Maven-Sonar-Sputnik Plugin].
+This small tool helps to integrate PITest with https://www.sonarqube.org[Sonar] and https://www.gerritcodereview.com[Gerrit].
+
+== Where are the limitations?
 
 Well, every tool has its limitations. PITest works fast and transparent for all kind of unit tests. When it comes
 to more complex test scenarios such as integration tests with in-process databases, PITest will still give results, but

@@ -190,6 +190,7 @@ RedirectPermanent /architecturedesign/weldsewithee https://www.mirkosertic.de/bl
 RedirectPermanent /architecturedesign/avoidroundtripswithprettyurls https://www.mirkosertic.de/blog/2012/11/how-to-avoid-server-roundtrips-by-using-pretty-urls
 RedirectPermanent /architecturedesign/enterprisesearchwithsolr https://www.mirkosertic.de/blog/2012/07/enterprise-search-with-apache-solr
 RedirectPermanent /architecturedesign/aopcdi https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj
+RedirectPermanent /architecturedesign/dddwithjsfejbandcdi https://www.mirkosertic.de/blog/2013/09/domain-driven-design-with-jsf-ejb-and-cdi
 
 RedirectPermanent /javastuff/swingdatabinding https://www.mirkosertic.de/blog/2012/06/swing-databinding-with-mogwai-databinding
 RedirectPermanent /javastuff/bootstrappingweld https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
