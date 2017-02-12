@@ -9,7 +9,7 @@ Often we need to integrate different applications. This can be done at different
 
 Different solutions are available for user interface level application integration. The most famous are Portlets. A Portlet requires a Portlet Container to build a Portal. These containers are expensive, difficult to configure and maintain and the worst point is: the Portlet API is very limited to model complex integration scenarios!
 
-Now I want to show another approach. We can build our own Portal run time using JavaFX to integrate different applications. And we can also model complex integration scenarios by adding some HTML5 Microdata to the target application. This integration is sometimes called a “http://en.wikipedia.org/wiki/Composite_application[Composite Application] ”, building new solutions by integrating existing applications.
+Now I want to show another approach. We can build our own Portal run time using JavaFX to integrate different applications. And we can also model complex integration scenarios by adding some HTML5 Microdata to the target application. This integration is sometimes called a http://en.wikipedia.org/wiki/Composite_application[Composite Application], building new solutions by integrating existing applications.
 
 Here are the results for building a client-side application composition framework.
 
@@ -69,7 +69,11 @@ Quite nice! But this is just the beginning.
 
 HTML5 Microdata can help a lot to archive even complex integration scenarios. Just check out for yourself. This application integration approach is also now limited to Java applications, we can also combine Java, .NET and other technologies in one Portal. Also note that the same Microdata parsing can be done in a non-invasive way on the server, by either adding a filter to the application or a valve to the Tomcat config or a transparent proxy server. We can also do the same thing on client side with JQuery. This is up to you, the key concepts are the same.
 
-The sources are available at Google code here: http://code.google.com/p/fxportal/[code.google.com/p/fxportal/] The example Portal can be launched by Java WebStart using this link: http://mogwai.sourceforge.net/fxportal/fxportal.jnlp[mogwai.sourceforge.net/fxportal/fxportal.jnlp] Please note that Java7 is required.
+The sources are available at https://github.com/mirkosertic/fxportal[Github].
+
+The example Portal can be launched by Java WebStart using this link: http://mogwai.sourceforge.net/fxportal/fxportal.jnlp[mogwai.sourceforge.net/fxportal/fxportal.jnlp]
+
+Please note that Java7 is required.
 
 Stay tuned!
 
