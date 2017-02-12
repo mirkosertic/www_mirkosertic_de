@@ -167,6 +167,7 @@ RedirectPermanent /doku.php/architecturedesign/dddexample https://www.mirkoserti
 RedirectPermanent /doku.php/javastuff/gwtdragometeavmgame https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming
 RedirectPermanent /doku.php/erdesignerng/content https://www.mirkosertic.de/media/MogwaiERDesignerNG.pdf
 RedirectPermanent /doku.php/onionarchitecture https://www.mirkosertic.de/blog/2012/09/the-onion-architecture
+RedirectPermanent /doku.php/javastuff/fxportals https://www.mirkosertic.de/blog/2013/05/building-portals-with-javafx-html5-and-some-microdata
 
 RedirectPermanent /scalastuff/scalawithjpa https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0
 RedirectPermanent /scalastuff/enterprisescalabeans https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server
