@@ -1,7 +1,7 @@
 +++
 date = "2017-02-12T00:00:00+01:00"
 title = "Service integration at UI level with server side includes(SSI)"
-tags = ["Domain-driven Design", "Integration", ""User Interface", "Enterprise"]
+tags = ["Domain-driven Design", "Integration", "User Interface", "Enterprise"]
 draft = true
 +++
 include::globals.adoc[]
