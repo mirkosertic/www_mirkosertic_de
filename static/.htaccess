@@ -132,6 +132,7 @@ RedirectPermanent /blog-post/opengl2-on-android-example https://www.mirkosertic.
 RedirectPermanent /blog-post/swing-databinding-with-mogwai-databinding https://www.mirkosertic.de/blog/2012/06/swing-databinding-with-mogwai-databinding
 RedirectPermanent /blog-post/java-properties-reinvented https://www.mirkosertic.de/blog/2013/11/java-properties-reinvented
 RedirectPermanent /blog-post/a-javafx-based-lua-editor https://www.mirkosertic.de/blog/2015/04/a-javafx-based-lua-editor
+RedirectPermanent /blog-post/realtime-face-detection-on-android-using-opencv https://www.mirkosertic.de/blog/2013/07/realtime-face-detection-on-android-using-opencv
 
 RedirectPermanent /wordpress/welcome/blog-content/bootstrapping-weld-cdi-from-command-line-with-java-se https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
 RedirectPermanent /wordpress/welcome/tools-goodies https://www.mirkosertic.de/global/toolsgoodies/
@@ -168,6 +169,7 @@ RedirectPermanent /doku.php/javastuff/gwtdragometeavmgame https://www.mirkoserti
 RedirectPermanent /doku.php/erdesignerng/content https://www.mirkosertic.de/media/MogwaiERDesignerNG.pdf
 RedirectPermanent /doku.php/onionarchitecture https://www.mirkosertic.de/blog/2012/09/the-onion-architecture
 RedirectPermanent /doku.php/javastuff/fxportals https://www.mirkosertic.de/blog/2013/05/building-portals-with-javafx-html5-and-some-microdata
+RedirectPermanent /doku.php/javastuff/xmljsonperformance https://www.mirkosertic.de/blog/2013/05/comparison-of-jaxb-xml-and-json-serialization-performance
 
 RedirectPermanent /scalastuff/scalawithjpa https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0
 RedirectPermanent /scalastuff/enterprisescalabeans https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server
@@ -222,6 +224,8 @@ RedirectPermanent /javastuff/cdicron https://www.mirkosertic.de/blog/2016/01/how
 RedirectPermanent /webstuff/simplepolymercomponent https://www.mirkosertic.de/blog/2016/02/a-very-simple-polymer-web-component
 
 RedirectPermanent /toolsgoodies/content https://www.mirkosertic.de/global/toolsgoodies/
+
+RedirectPermanent /blog/2012/09/the-onion-architecture/onionarchitecture https://www.mirkosertic.de/blog/2012/09/the-onion-architecture
 
 RedirectPermanent /tag/springboot https://www.mirkosertic.de/tags/springboot
 RedirectPermanent /tag/swing https://www.mirkosertic.de/tags/swing
@@ -290,5 +294,7 @@ RedirectPermanent /author/mirkosertic https://twitter.com/mirkosertic
 
 RedirectPermanent /feed.php https://www.mirkosertic.de/index.xml
 RedirectPermanent /feed https://www.mirkosertic.de/index.xml
+
+RedirectPermanent /erdesignerng/erdesignermanual https://www.mirkosertic.de/media/MogwaiERDesignerNG.pdf
 
 ErrorDocument 404 /404.html

@@ -1,8 +1,8 @@
 +++
-date = "2017-02-04T00:00:00+01:00"
+date = "2017-02-14T00:00:00+01:00"
 title = "Improve Test Quality with Mutation Testing"
 tags = ["JUnit", "Testing"]
-draft = true
+draft = false
 +++
 include::globals.adoc[]
 
@@ -134,7 +134,7 @@ Ahh, this is much better. Now, we have a very good test for our code.
 
 It would be very cool to integrate mutation testing as an automated quality control into our code review system.
 The problem might be that mutation testing is very CPU demanding, and a full mutation testing run for every single,
-maybe small, commit might be an overkill and slow down the review lifecycle.
+maybe small, commit might be an overkill and slow down the review life cycle.
 
 PITest has an integrated feature for code review system integration. It can be started with a special option to analyze
 the changes of the last SCM commit only. Please take a look at the `scmMutationCoverage` goal in the http://pitest.org/quickstart/maven[PITest Maven Documentation]. This feature greatly increases review round trip time.
