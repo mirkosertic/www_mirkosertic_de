@@ -289,6 +289,7 @@ RedirectPermanent /gwt-vs-dragome-vs-teavm-for-game-programming https://www.mirk
 
 RedirectPermanent /doku.php/javastuff/bootstrappingweld https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
 RedirectPermanent /doku.php/xmlresourcebundles https://www.mirkosertic.de/blog/2012/07/xml-resourcebundles-and-how-to-make-i18n-refactoring-safe
+RedirectPermanent /doku.php/scalastuff/scalawithjpa https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0
 
 RedirectPermanent /author/mirkosertic https://twitter.com/mirkosertic
 

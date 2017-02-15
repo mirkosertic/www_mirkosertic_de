@@ -16,7 +16,7 @@ and cloud ready systems.
 But this design can also lead to problems. If we take the Microservice design too far(https://en.wikipedia.org/wiki/Microservices[Nanoservices]), we are quickly getting way to
 much services we can handle and maintain. There is also the risk that we are somehow violating the original bounded context
 for our services, leading to lack of responsibility and functional encapsulation. Maybe the Microservices could degenerate to some
-kind of remote data access object. If we do not respect the principle of independently deployable units, we are quickly creating
+kind of remote data access object. If we do not respect the principle of independently deployable units, we would quickly creating
 a distributed and very slow monolith.
 
 == Possible solutions
