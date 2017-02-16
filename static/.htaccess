@@ -170,6 +170,8 @@ RedirectPermanent /doku.php/erdesignerng/content https://www.mirkosertic.de/medi
 RedirectPermanent /doku.php/onionarchitecture https://www.mirkosertic.de/blog/2012/09/the-onion-architecture
 RedirectPermanent /doku.php/javastuff/fxportals https://www.mirkosertic.de/blog/2013/05/building-portals-with-javafx-html5-and-some-microdata
 RedirectPermanent /doku.php/javastuff/xmljsonperformance https://www.mirkosertic.de/blog/2013/05/comparison-of-jaxb-xml-and-json-serialization-performance
+RedirectPermanent /doku.php/javastuff/javafxgameauthoring https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system
+RedirectPermanent /doku.php/erdesignerng/erdesignermanual https://www.mirkosertic.de/media/MogwaiERDesignerNG.pdf
 
 RedirectPermanent /scalastuff/scalawithjpa https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0
 RedirectPermanent /scalastuff/enterprisescalabeans https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server
@@ -194,6 +196,7 @@ RedirectPermanent /architecturedesign/avoidroundtripswithprettyurls https://www.
 RedirectPermanent /architecturedesign/enterprisesearchwithsolr https://www.mirkosertic.de/blog/2012/07/enterprise-search-with-apache-solr
 RedirectPermanent /architecturedesign/aopcdi https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj
 RedirectPermanent /architecturedesign/dddwithjsfejbandcdi https://www.mirkosertic.de/blog/2013/09/domain-driven-design-with-jsf-ejb-and-cdi
+RedirectPermanent /architecturedesign/usingdomainobjectsforqueryspecification https://www.mirkosertic.de/blog/2012/07/reusing-domain-objects-to-create-query-specifications
 
 RedirectPermanent /javastuff/swingdatabinding https://www.mirkosertic.de/blog/2012/06/swing-databinding-with-mogwai-databinding
 RedirectPermanent /javastuff/bootstrappingweld https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
