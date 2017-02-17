@@ -1,0 +1,27 @@
++++
+date = "2017-02-17T00:00:00+02:00"
+title = "My favorite postings"
+tags = []
+draft = false
++++
+include::globals.adoc[]
+
+== My favorite postings
+
+Here is a list of my favorite and evergreen postings so far:
+
+* link:{{< ref "domain-driven-design-example.adoc" >}}[A Domain-driven Design Example]
+
+* link:{{< ref "improve-test-quality-with-mutationtesting.adoc" >}}[Improve Test Quality with Mutation Testing]
+
+* link:{{< ref "a-javafx-based-game-authoring-system.adoc" >}}[A JavaFX based Game Authoring System]
+
+* link:{{< ref "why-i-switched-to-static-html-generators.adoc" >}}[Why I switched to static HTML generators]
+
+* link:{{< ref "a-javafx-based-desktop-search-engine.adoc" >}}[A JavaFX based Desktop Search Engine]
+
+* link:{{< ref "gwt-vs-dragome-vs-teavm-for-game-programming.adoc" >}}[GWT vs. Dragome vs. TeaVM for Game Programming]
+
+* link:{{< ref "a-javafx-based-lua-editor.adoc" >}}[A JavaFX based LUA editor]
+
+More to come...
