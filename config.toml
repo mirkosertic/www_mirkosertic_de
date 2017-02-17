@@ -42,16 +42,21 @@ disableHugoGeneratorInject = true
     weight = 1
 
 [[menu.main]]
+    name = "My favorite postings"
+    url = "/global/favorites"
+    weight = 2
+
+[[menu.main]]
     name = "Blog"
     url = "/"
-    weight = 2
+    weight = 3
 
 [[menu.main]]
     name = "Interesting Books"
     url = "/global/interestingbooks"
-    weight = 3
+    weight = 4
 
 [[menu.main]]
     name = "Tools & Goodies"
     url = "/global/toolsgoodies"
-    weight = 3
+    weight = 5
