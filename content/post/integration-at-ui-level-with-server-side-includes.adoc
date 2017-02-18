@@ -16,12 +16,40 @@ and cloud ready systems.
 But this design can also lead to problems. If we take the Microservice design too far(https://en.wikipedia.org/wiki/Microservices[Nanoservices]), we are quickly getting way to
 much services we can handle and maintain. There is also the risk that we are somehow violating the original bounded context
 for our services, leading to lack of responsibility and functional encapsulation. Maybe the Microservices could degenerate to some
-kind of remote data access object. If we do not respect the principle of independently deployable units, we would quickly creating
-a distributed and very slow monolith.
+kind of remote data access object. If we do not respect the principle of independently deployable units, we would be quickly creating
+a distributed, complex and very slow monolith.
 
-== Possible solutions
+== Rethinking the architecture
 
-== Patterns for UI Integration
+Well, what can we do? The problem can be the vast amount of services in our architecture, which also increases the number of interfaces we have
+to support and maintain. So the solution might be to create fewer services, and not more! We create a system for every bounded context, and include
+everything in this system, from database to application logic and even the user interface. This architecture style is called a
+http://scs-architecture.org[Self-Contained System], and it is in fact the oposite of Nanoservices. SCS means Self-Contained System, not
+Self-Contained Service. So it can include one-to-many services, but as as argued above, it is a good idea to keep the number of services small,
+even inside a SCS. Every SCS provices a user interface, which can be anything, from RESTful APIs to a full blown HTML frontend(i will come to this later).
+
+Now, what is a SCS-Architecture? Basically it looks as follows:
+
+[ditaa,scsarchitecture]
+----
++---------------------------------+  +---------------------------------+
+| SCS for Bounded Context 1       |  | SCS for Bounded Context 2..n    |
+|                                 |  |                                 |
+|  +----------------+----------+  |  |  +----------------+----------+  |
+|  | User-Interface | API      |  |  |  | User-Interface | API      |  |
+|  +----------------+----------+  |  |  +----------------+----------+  |
+|  | Service(s)                |  |  |  | Service(s)                |  |
+|  +--------------+------------+  |  |  +--------------+------------+  |
+|                 |               |  |                 |               |
+|           +-----+-----+         |  |           +-----+-----+         |
+|           | Database  |         |  |           | Database  |         |
+|           | {s}       |         |  |           | {s}       |         |
+|           +-----------+         |  |           +-----------+         |
++---------------------------------+  +---------------------------------+
+----
+
+
+== Integration patterns and data management
 
 == Common caveats
 
