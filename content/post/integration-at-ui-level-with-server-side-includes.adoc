@@ -22,7 +22,7 @@ a distributed, complex and very slow monolith.
 == Rethinking the architecture
 
 Well, what can we do? The problem can be the vast amount of services in our architecture, which also increases the number of interfaces we have
-to support and maintain. So the solution might be to create fewer services, and not more! We create a system for every bounded context, and include
+to support and maintain. So the solution might be to create fewer services, and not more! We create a system for every bounded context(see my link:{{< ref "domain-driven-design-example.adoc" >}}[A Domain-driven Design Example] to get in touch with Domain-driven Design), and include
 everything in this system, from database to application logic and even the user interface. This architecture style is called a
 http://scs-architecture.org[Self-Contained System], and it is in fact the oposite of Nanoservices. SCS means Self-Contained System, not
 Self-Contained Service. So it can include one-to-many services, but as as argued above, it is a good idea to keep the number of services small,
@@ -32,26 +32,36 @@ Now, what is a SCS-Architecture? Basically it looks as follows:
 
 [ditaa,scsarchitecture]
 ----
-+---------------------------------+  +---------------------------------+
-| SCS for Bounded Context 1       |  | SCS for Bounded Context 2..n    |
-|                                 |  |                                 |
-|  +----------------+----------+  |  |  +----------------+----------+  |
-|  | User-Interface | API      |  |  |  | User-Interface | API      |  |
-|  +----------------+----------+  |  |  +----------------+----------+  |
-|  | Service(s)                |  |  |  | Service(s)                |  |
-|  +--------------+------------+  |  |  +--------------+------------+  |
-|                 |               |  |                 |               |
-|           +-----+-----+         |  |           +-----+-----+         |
-|           | Database  |         |  |           | Database  |         |
-|           | {s}       |         |  |           | {s}       |         |
-|           +-----------+         |  |           +-----------+         |
-+---------------------------------+  +---------------------------------+
++---------------------------------+            +---------------------------------+
+| SCS for Bounded Context 1       |            | SCS for Bounded Context 2..n    |
+|                                 |            |                                 |
+|  +----------------+----------+  |            |  +----------------+----------+  |
+|  | User-Interface | API      |  |            |  | User-Interface | API      |  |
+|  +----------------+----------+  |            |  +----------------+----------+  |
+|  | Service(s)                |  +<- Events ->+  | Service(s)                |  |
+|  +--------------+------------+  |            |  +--------------+------------+  |
+|                 |               |            |                 |               |
+|           +-----+-----+         |            |           +-----+-----+         |
+|           | Database  |         |            |           | Database  |         |
+|           | {s}       |         |            |           | {s}       |         |
+|           +-----------+         |            |           +-----------+         |
++---------------------------------+            +---------------------------------+
 ----
 
+Every SCS represents a bounded context with its own ubiquitous language. The main goal
+is to keep the SCS independent of each other to reduce deployment complexity and make them
+exchangeable. Every SCS is developed and maintained by exactly one team to reduce development
+and project management friction.
 
-== Integration patterns and data management
+The interesting point here is that a SCS is in fact a standalone application. It contains
+everything, from user interface to database, just everything that is needed to fulfill the
+requirements of its bounded context.
 
-== Common caveats
+== User interface integration patterns
+
+
+
+== Common issues
 
 == Conclusion
 
