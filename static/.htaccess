@@ -300,6 +300,8 @@ RedirectPermanent /author/mirkosertic https://twitter.com/mirkosertic
 RedirectPermanent /feed.php https://www.mirkosertic.de/index.xml
 RedirectPermanent /feed https://www.mirkosertic.de/index.xml
 
+RedirectPermanent /index.php https://www.mirkosertic.de
+
 RedirectPermanent /erdesignerng/erdesignermanual https://www.mirkosertic.de/media/MogwaiERDesignerNG.pdf
 
 ErrorDocument 404 /404.html
