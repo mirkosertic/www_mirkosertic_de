@@ -96,7 +96,7 @@ We get a very high test coverage for this test:
 
 image:/media/goodtestcoverage.png[]
 
-Now, let us see what happens if the apply some mutation testing. We get the following report:
+Now, let us see what happens if we apply some mutation testing. We get the following report:
 
 image:/media/mutationcoveragebad.png[]
 
