@@ -134,6 +134,7 @@ RedirectPermanent /blog-post/java-properties-reinvented https://www.mirkosertic.
 RedirectPermanent /blog-post/a-javafx-based-lua-editor https://www.mirkosertic.de/blog/2015/04/a-javafx-based-lua-editor
 RedirectPermanent /blog-post/realtime-face-detection-on-android-using-opencv https://www.mirkosertic.de/blog/2013/07/realtime-face-detection-on-android-using-opencv
 RedirectPermanent /blog-post/bootstrapping-weld-cdi-from-command-line-with-java-se https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
+RedirectPermanent /blog-post/a-spring-boot-admin-ui https://www.mirkosertic.de/blog/2016/12/a-spring-boot-admin-ui
 
 RedirectPermanent /wordpress/welcome/blog-content/bootstrapping-weld-cdi-from-command-line-with-java-se https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
 RedirectPermanent /wordpress/welcome/tools-goodies https://www.mirkosertic.de/global/toolsgoodies/
@@ -173,6 +174,7 @@ RedirectPermanent /doku.php/javastuff/fxportals https://www.mirkosertic.de/blog/
 RedirectPermanent /doku.php/javastuff/xmljsonperformance https://www.mirkosertic.de/blog/2013/05/comparison-of-jaxb-xml-and-json-serialization-performance
 RedirectPermanent /doku.php/javastuff/javafxgameauthoring https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system
 RedirectPermanent /doku.php/erdesignerng/erdesignermanual https://www.mirkosertic.de/media/MogwaiERDesignerNG.pdf
+RedirectPermanent /doku.php/javastuff/androidfacedetection https://www.mirkosertic.de/blog/2013/07/realtime-face-detection-on-android-using-opencv
 
 RedirectPermanent /scalastuff/scalawithjpa https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0
 RedirectPermanent /scalastuff/enterprisescalabeans https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server
