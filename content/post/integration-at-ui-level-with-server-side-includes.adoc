@@ -35,15 +35,15 @@ Now, what is a SCS-Architecture? Basically it looks as follows:
 +---------------------------------+            +---------------------------------+
 | SCS for Bounded Context 1       |            | SCS for Bounded Context 2..n    |
 |                                 |            |                                 |
-|  +----------------+----------+  |            |  +----------------+----------+  |
-|  | User-Interface | API      |  |            |  | User-Interface | API      |  |
-|  +----------------+----------+  |            |  +----------------+----------+  |
+|  +----------------------+----+  |            |  +----------------------+----+  |
+|  | User-Interface       | API|  |            |  | User-Interface       | API|  |
+|  +----------------------+----+  |            |  +----------------------+----+  |
 |  | Service(s)                |  +<- Events ->+  | Service(s)                |  |
 |  +--------------+------------+  |            |  +--------------+------------+  |
 |                 |               |            |                 |               |
 |           +-----+-----+         |            |           +-----+-----+         |
 |           | Database  |         |            |           | Database  |         |
-|           | {s}       |         |            |           | {s}       |         |
+|           |           |         |            |           |           |         |
 |           +-----------+         |            |           +-----------+         |
 +---------------------------------+            +---------------------------------+
 ----
@@ -53,15 +53,67 @@ is to keep the SCS independent of each other to reduce deployment complexity and
 exchangeable. Every SCS is developed and maintained by exactly one team to reduce development
 and project management friction.
 
+Every SCS needs some kind of interface for its clients. It can be either some kind of machine
+readable API, maybe REST and Hypermedia driven, or it can be a real user interface, perhaps
+based on HTML5 and JavaScript.
+
 The interesting point here is that a SCS is in fact a standalone application. It contains
 everything, from user interface to database, just everything that is needed to fulfill the
 requirements of its bounded context.
 
 == User interface integration patterns
 
+Now, we have a small set of SCS that form our solution. How can a real user work with these
+components? How does he login? How does he navigate? How does he perform some use cases? The answer
+is simple. Instead of composing the systems at API level, we compose them at user interface
+level. We need to build a Portal!
 
+[ditaa,userinterfaceaggregation]
+----
++------------------------------------------------------------------------------+
+| Portal HTML Page                                                             |
+|                                                                              |
+|    +-------------------------------+    +-------------------------------+    |
+|    | Part of SCS #1                |    | Other Part of SCS #1          |    |
+|    +-------------------------------+    +-------------------------------+    |
+|                                                                              |
+|    +--------------------------------------------------------------------+    |
+|    | Part of SCS #2                                                     |    |
+|    |                                                                    |    |
+|    |                                                                    |    |
+|    |                                                                    |    |
+|    |                                                                    |    |
+|    +--------------------------------------------------------------------+    |
+|                                                                              |
++------------------------------------------------------------------------------+
+----
+
+But how to we build a portal? Years ago we had a thing called Java Portlet API. Java Portlets became not
+very popular, mostly due to the fact that they required a heavy weight Portal Server and most of the
+time they became a user interface nightmare, as the Portlet API was very limited in its abilities.
+
+Today, I wouldn't use a Portal Server. The portal for our SCS would be a simple application, delivering
+some HTML templates and adding the composition logic. User interface composition can basically be done at two points:
+
+ * Server side (HTTPd, NGINX)
+ * Client side (Browser, JavaScript)
+
+In the example above, we would use https://en.wikipedia.org/wiki/Server_Side_Includes[Server Side Includes] or SSI
+to perform page composition. SSI is available for Apache HTTPd and NGINX. The Portal HTML templates comes with the
+layout framework and special SSI directives for the parts that need to he included from our SCS. The SSI processor
+now processes the SSI directives before the final HTML code is sent to the client.
+
+After the final HTML is rendered in the browser, we might decide to update some parts of the site. This can be done
+by using client side composition with some plain old AJAX. Using this technique, we can save server bandwith and greatly
+increase user experience. Even if the user has disabled JavaScript in the browser, this wouldn't be an issue. In this case
+we can always switch back to server side page composition.
 
 == Common issues
+
+ * State Management with and without Cookies
+ * Global stylesheets
+ * Search
+ * Other display technologies (Android, IOS)
 
 == Conclusion
 
