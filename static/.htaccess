@@ -1,8 +1,5 @@
 AddHandler php70-cgi .php
-<FilesMatch "\.(js|css|png|jpg)$">
-Header set Cache-Control "max-age=1209600, private, proxy-revalidate"
-</FilesMatch>
-<FilesMatch "js.php$">
+<FilesMatch "\.(js|css|png|jpg|ico)$">
 Header set Cache-Control "max-age=1209600, private, proxy-revalidate"
 </FilesMatch>
 
