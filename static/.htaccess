@@ -132,6 +132,11 @@ RedirectPermanent /blog-post/a-javafx-based-lua-editor https://www.mirkosertic.d
 RedirectPermanent /blog-post/realtime-face-detection-on-android-using-opencv https://www.mirkosertic.de/blog/2013/07/realtime-face-detection-on-android-using-opencv
 RedirectPermanent /blog-post/bootstrapping-weld-cdi-from-command-line-with-java-se https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
 RedirectPermanent /blog-post/a-spring-boot-admin-ui https://www.mirkosertic.de/blog/2016/12/a-spring-boot-admin-ui
+RedirectPermanent /blog-post/putting-your-objects-into-context-or-why-overwriting-tostring-can-be-evil https://www.mirkosertic.de/blog/2012/08/putting-your-objects-into-context-or-why-overwriting-tostring-can-be-evil
+RedirectPermanent /blog-post/thread-tracking-or-how-to-know-who-causes-an-error https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error
+RedirectPermanent /blog-post/logging-made-easy https://www.mirkosertic.de/blog/2012/10/logging-made-easy
+RedirectPermanent /blog-post/how-to-create-junit-assertions-from-running-applications https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications
+RedirectPermanent /blog-post/xml-resourcebundles-and-how-to-make-i18n-refactoring-safe https://www.mirkosertic.de/blog/2012/07/xml-resourcebundles-and-how-to-make-i18n-refactoring-safe
 
 RedirectPermanent /wordpress/welcome/blog-content/bootstrapping-weld-cdi-from-command-line-with-java-se https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
 RedirectPermanent /wordpress/welcome/tools-goodies https://www.mirkosertic.de/global/toolsgoodies/
@@ -173,11 +178,21 @@ RedirectPermanent /doku.php/javastuff/javafxgameauthoring https://www.mirkoserti
 RedirectPermanent /doku.php/erdesignerng/erdesignermanual https://www.mirkosertic.de/media/MogwaiERDesignerNG.pdf
 RedirectPermanent /doku.php/javastuff/androidfacedetection https://www.mirkosertic.de/blog/2013/07/realtime-face-detection-on-android-using-opencv
 RedirectPermanent /doku.php/erdesignermanual https://www.mirkosertic.de/media/MogwaiERDesignerNG.pdf
+RedirectPermanent /doku.php/architecturedesign/dddwithjsfejbandcdi https://www.mirkosertic.de/blog/2013/09/domain-driven-design-with-jsf-ejb-and-cdi
+RedirectPermanent /doku.php/javafxgraph https://www.mirkosertic.de/blog/2012/10/displaying-simple-animated-graphs-with-javafx-2-0
+RedirectPermanent /doku.php/javastuff/bootstrappingweld https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
+RedirectPermanent /doku.php/xmlresourcebundles https://www.mirkosertic.de/blog/2012/07/xml-resourcebundles-and-how-to-make-i18n-refactoring-safe
+RedirectPermanent /doku.php/scalastuff/scalawithjpa https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0
+RedirectPermanent /doku.php/architecturedesign/dokuwikimicrodata https://www.mirkosertic.de/blog/2013/04/adding-html5-microdata-to-dokuwiki
+RedirectPermanent /doku.php/aboutme/aboutme https://www.mirkosertic.de/global/me/
+RedirectPermanent /doku.php/javastuff/fxdesktopsearch https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine
+RedirectPermanent /doku.php/scalastuff/mavenscalaaspectj https://www.mirkosertic.de/blog/2013/03/maven-scala-and-aspectjaop
 
 RedirectPermanent /scalastuff/scalawithjpa https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0
 RedirectPermanent /scalastuff/enterprisescalabeans https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server
 RedirectPermanent /scalastuff/content https://www.mirkosertic.de/tags/scala
 RedirectPermanent /scalastuff/mavenscalaaspectj https://www.mirkosertic.de/blog/2013/03/maven-scala-and-aspectjaop
+RedirectPermanent /scalastuff/scalainlegacyapps https://www.mirkosertic.de/blog/2013/03/using-scala-in-legacy-applications
 
 RedirectPermanent /architecturedesign/leakyabstractions https://www.mirkosertic.de/blog/2012/08/the-law-of-leaky-abstractions
 RedirectPermanent /architecturedesign/threadtracking https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error
@@ -198,6 +213,7 @@ RedirectPermanent /architecturedesign/enterprisesearchwithsolr https://www.mirko
 RedirectPermanent /architecturedesign/aopcdi https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj
 RedirectPermanent /architecturedesign/dddwithjsfejbandcdi https://www.mirkosertic.de/blog/2013/09/domain-driven-design-with-jsf-ejb-and-cdi
 RedirectPermanent /architecturedesign/usingdomainobjectsforqueryspecification https://www.mirkosertic.de/blog/2012/07/reusing-domain-objects-to-create-query-specifications
+RedirectPermanent /architecturedesign/nosqldatabases https://www.mirkosertic.de/blog/2012/11/an-overview-of-current-nosql-databases
 
 RedirectPermanent /javastuff/swingdatabinding https://www.mirkosertic.de/blog/2012/06/swing-databinding-with-mogwai-databinding
 RedirectPermanent /javastuff/bootstrappingweld https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
@@ -224,6 +240,9 @@ RedirectPermanent /javastuff/javafxluaeditor https://www.mirkosertic.de/blog/201
 RedirectPermanent /javastuff/softwaredefectdetection https://www.mirkosertic.de/blog/2012/07/software-defect-detection-with-aop-and-jsr-303-jsr-305-jsr-308
 RedirectPermanent /javastuff/removemavenprimaryartifact https://www.mirkosertic.de/blog/2016/06/how-to-remove-the-maven-primary-artifact-during-install-and-deploy-phase
 RedirectPermanent /javastuff/cdicron https://www.mirkosertic.de/blog/2016/01/how-to-schedule-jobs-in-a-java-cdi-environment
+RedirectPermanent /javastuff/androidhandwriting https://www.mirkosertic.de/blog/2013/07/high-performance-android-handwriting
+RedirectPermanent /javastuff/putobjectsincontext https://www.mirkosertic.de/blog/2012/08/putting-your-objects-into-context-or-why-overwriting-tostring-can-be-evil
+RedirectPermanent /javastuff/stringiteratorperformance https://www.mirkosertic.de/blog/2013/09/comparison-of-string-iterator-performance
 
 RedirectPermanent /webstuff/simplepolymercomponent https://www.mirkosertic.de/blog/2016/02/a-very-simple-polymer-web-component
 
@@ -291,10 +310,6 @@ RedirectPermanent /a-javafx-based-desktop-search-engine https://www.mirkosertic.
 RedirectPermanent /an-overview-of-current-nosql-databases https://www.mirkosertic.de/blog/2012/11/an-overview-of-current-nosql-databases
 RedirectPermanent /gwt-vs-dragome-vs-teavm-for-game-programming https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming
 
-RedirectPermanent /doku.php/javastuff/bootstrappingweld https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
-RedirectPermanent /doku.php/xmlresourcebundles https://www.mirkosertic.de/blog/2012/07/xml-resourcebundles-and-how-to-make-i18n-refactoring-safe
-RedirectPermanent /doku.php/scalastuff/scalawithjpa https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0
-
 RedirectPermanent /author/mirkosertic https://twitter.com/mirkosertic
 
 RedirectPermanent /feed.php https://www.mirkosertic.de/index.xml
@@ -303,5 +318,9 @@ RedirectPermanent /feed https://www.mirkosertic.de/index.xml
 RedirectPermanent /index.php https://www.mirkosertic.de
 
 RedirectPermanent /erdesignerng/erdesignermanual https://www.mirkosertic.de/media/MogwaiERDesignerNG.pdf
+RedirectPermanent /erdesignerng https://www.mirkosertic.de/media/MogwaiERDesignerNG.pdf
+
+RedirectPermanent /aboutme/aboutme https://www.mirkosertic.de/global/me/
+RedirectPermanent /books https://www.mirkosertic.de/global/interestingbooks/
 
 ErrorDocument 404 /404.html
