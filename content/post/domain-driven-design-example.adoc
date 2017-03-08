@@ -74,7 +74,11 @@ Ok, now let's see the new big picture of the domain model:
 
 image:/media/dddrevised.png[]
 
-Okay, what happened here? There are now Bounded Contexts for every identified Subdomain. The Bounded Contexts are isolated, they know nothing of each other. They are only glued together by a set of common types, like UserId, ProjectId and CustomerId. In DDD this is called a “Generic Subdomain”
+Okay, what happened here? There are now Bounded Contexts for every identified Subdomain. The Bounded Contexts are isolated, they know nothing of each other. They are only glued together by a set of common types, like UserId, ProjectId and CustomerId.
+In DDD this set of common types is called a “Shared Kernel”. We can also see what is part of the "Core domain" and what is not. If a bounded context
+is part of the problem we are trying to solve and cannot be replaced by another system, it is part of the "Core domain". If it can be replaced by
+another system, it is a "Generic Subdomain". The "Identity and access management" context is a "Generic Subdomain", as it could be replaced by
+an existing IAM solution, such as Active Directory or something else.
 
 We applied a set of tactical and strategical patterns to the model. These patterns help us to build a better model, improve fault tolerance and also to increase maintainability.
 
@@ -137,6 +141,8 @@ The Infrastructure Layer provides the infrastructure dependent parts for all oth
 The Client Layer consumes Application Services and invokes business logic on these services. Every invocation is a new transaction.
 
 The Client Layer can be almost anything, starting from an JSF 2.0 Backing Bean as the view controller to a SOAP web service endpoint or a RESTful web resource. Even Swing, AWT or OpenDolphin/JavaFX can be used to create the user interface.
+
+Please take a look at link:{{< ref "integration-at-ui-level-with-server-side-includes.adoc" >}}[Service integration at UI level with server side includes(SSI)] to get an idea.
 
 == Context Integration
 
