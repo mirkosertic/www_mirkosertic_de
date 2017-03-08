@@ -14,21 +14,27 @@ I provide Software and Support in the field of electronic data processing. As a 
 In addition to modern application development I am concerned with development and modernization of legacy systems. Here I offer support and advice in the field of architecture, change management and modernization.
 
 *Areas of Activity and Industry Experience*
+
 Consulting, Engineering, Administration, Tourism, eCommerce, Telecommunications
 
 *Programming*
+
 J2EE, JEE & SE, Android, Scala, SQL, XML / XSL, HTML / CSS, Javascript and other
 
 *Databases*
+
 Various relational and non-relational Databases, Embedded Databases
 
 *Operating Systems*
+
 Linux / UNIX derivatives, Windows, Android
 
 *Software Development*
+
 Innovative Applications, UI Prototyping, Test-Driven Development, Domain-Driven Design, QA
 
 *Architecture*
+
 Software Development, Architecture, Management and Modernization of “Legacy” Systems
 
 == My Technology Experience
