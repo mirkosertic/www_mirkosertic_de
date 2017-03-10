@@ -1,7 +1,4 @@
 AddHandler php70-cgi .php
-<FilesMatch "\.(js|css|png|jpg|ico)$">
-Header set Cache-Control "max-age=1209600, private, proxy-revalidate"
-</FilesMatch>
 
 RedirectPermanent /wordpress/2012/07/how-to-embed-hystrix-into-existing-spring-applications https://www.mirkosertic.de/blog/2012/07/how-to-embed-hystrix-into-existing-spring-applications
 RedirectPermanent /wordpress/2012/07/reusing-domain-objects-to-create-query-specifications https://www.mirkosertic.de/blog/2012/07/reusing-domain-objects-to-create-query-specifications
