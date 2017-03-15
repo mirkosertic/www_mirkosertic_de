@@ -26,11 +26,6 @@
         <script src="{{ .Site.BaseURL }}js/highlight-9.9.0.min.js"></script>
         <script>
             jQuery(function($) {
-
-                /* ============================================================ */
-                /* Scroll To Top */
-                /* ============================================================ */
-
                 $('.js-jump-top').on('click', function(e) {
                     e.preventDefault();
 
@@ -40,5 +35,6 @@
 
             hljs.initHighlightingOnLoad();
         </script>
+        {{ template "_internal/google_analytics_async.html" . }}
     </body>
 </html>
