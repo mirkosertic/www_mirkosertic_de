@@ -23,7 +23,6 @@
         </footer>
 
         <script src="{{ .Site.BaseURL }}js/jquery-1.11.3.min.js"></script>
-        <script src="{{ .Site.BaseURL }}js/highlight-9.9.0.min.js"></script>
         <script>
             jQuery(function($) {
                 $('.js-jump-top').on('click', function(e) {
@@ -33,7 +32,42 @@
                 });
             });
 
-            hljs.initHighlightingOnLoad();
+            var Loader = function () { }
+            Loader.prototype = {
+                require: function (scripts, callback) {
+                    this.loadCount      = 0;
+                    this.totalRequired  = scripts.length;
+                    this.callback       = callback;
+
+                    for (var i = 0; i < scripts.length; i++) {
+                        this.writeScript(scripts[i]);
+                    }
+                },
+                loaded: function (evt) {
+                    this.loadCount++;
+
+                    if (this.loadCount == this.totalRequired && typeof this.callback == 'function') this.callback.call();
+                },
+                writeScript: function (src) {
+                    var self = this;
+                    var s = document.createElement('script');
+                    s.type = "text/javascript";
+                    s.async = true;
+                    s.src = src;
+                    s.addEventListener('load', function (e) { self.loaded(e); }, false);
+                    var head = document.getElementsByTagName('head')[0];
+                    head.appendChild(s);
+                }
+            }
+
+            jQuery(function($) {
+                if ($('pre.highlight code').length > 0) {
+                    var loader = new Loader();
+                    loader.require(["{{ .Site.BaseURL }}js/highlight-9.9.0.min.js"], function() {
+                        hljs.initHighlightingOnLoad();
+                    });
+                }
+            })
         </script>
         {{ template "_internal/google_analytics_async.html" . }}
     </body>
