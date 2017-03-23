@@ -185,6 +185,7 @@ RedirectPermanent /doku.php/aboutme/aboutme https://www.mirkosertic.de/global/me
 RedirectPermanent /doku.php/javastuff/fxdesktopsearch https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine
 RedirectPermanent /doku.php/scalastuff/mavenscalaaspectj https://www.mirkosertic.de/blog/2013/03/maven-scala-and-aspectjaop
 RedirectPermanent /doku.php/architecturedesign/dokuwikihtml5 https://www.mirkosertic.de/blog/2013/04/adding-html5-microdata-to-dokuwiki
+RedirectPermanent /doku.php/javastuff/createjunitassertions https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications
 
 RedirectPermanent /scalastuff/scalawithjpa https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0
 RedirectPermanent /scalastuff/enterprisescalabeans https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server
