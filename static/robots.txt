@@ -2,3 +2,6 @@ Sitemap: https://www.mirkosertic.de/sitemap.xml
 User-agent: *
 Disallow: /tags/
 Disallow: /page/
+Disallow: /wp-login.php
+Disallow: /xmlrpc.php
+Disallow: /doku.php/wiki/syntax
