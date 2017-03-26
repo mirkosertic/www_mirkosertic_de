@@ -7,7 +7,7 @@
                     <h1 class="site-title">
                         <a title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
                     </h1>
-                    <a class="button-square button-jump-top js-jump-top" href="#">
+                    <a class="button-square button-jump-top js-jump-top" href="#top">
                         <i class="fa fa-angle-up"></i>
                     </a>
                 </div>
@@ -22,31 +22,31 @@
             </div>
         </footer>
 
-        <script src="{{ .Site.BaseURL }}js/jquery-1.11.3.min.js"></script>
         <script>
-            jQuery(function($) {
-                $('.js-jump-top').on('click', function(e) {
-                    e.preventDefault();
 
-                    $('html, body').animate({'scrollTop': 0});
-                });
-            });
+            function existsByCSSSelector(aSelector) {
+                var element = document.querySelector(aSelector)
+                if (element) {
+                    return true;
+                }
+                return false;
+            }
 
             var Loader = function () { }
             Loader.prototype = {
                 require: function (scripts, callback) {
-                    this.loadCount      = 0;
-                    this.totalRequired  = scripts.length;
-                    this.callback       = callback;
+                    this.loadCount = 0;
+                    this.totalRequired = scripts.length;
+                    this.callback = callback;
 
-                    for (var i = 0; i < scripts.length; i++) {
+                    for (var i=0;i<scripts.length;i++) {
                         this.writeScript(scripts[i]);
                     }
                 },
                 loaded: function (evt) {
                     this.loadCount++;
 
-                    if (this.loadCount == this.totalRequired && typeof this.callback == 'function') this.callback.call();
+                    if (this.loadCount==this.totalRequired && typeof this.callback=='function') this.callback.call();
                 },
                 writeScript: function (src) {
                     var self = this;
@@ -60,14 +60,12 @@
                 }
             }
 
-            jQuery(function($) {
-                if ($('pre.highlight code').length > 0) {
-                    var loader = new Loader();
-                    loader.require(["{{ .Site.BaseURL }}js/highlight-9.9.0.min.js"], function() {
-                        hljs.initHighlightingOnLoad();
-                    });
-                }
-            })
+            if (existsByCSSSelector("pre.highlight code") > 0) {
+                var loader = new Loader();
+                loader.require(["{{ .Site.BaseURL }}js/highlight-9.9.0.min.js"], function() {
+                    hljs.initHighlightingOnLoad();
+                });
+            }
         </script>
         {{ template "_internal/google_analytics_async.html" . }}
     </body>
