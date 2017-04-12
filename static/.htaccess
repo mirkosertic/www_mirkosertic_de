@@ -134,6 +134,7 @@ RedirectPermanent /blog-post/thread-tracking-or-how-to-know-who-causes-an-error 
 RedirectPermanent /blog-post/logging-made-easy https://www.mirkosertic.de/blog/2012/10/logging-made-easy
 RedirectPermanent /blog-post/how-to-create-junit-assertions-from-running-applications https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications
 RedirectPermanent /blog-post/xml-resourcebundles-and-how-to-make-i18n-refactoring-safe https://www.mirkosertic.de/blog/2012/07/xml-resourcebundles-and-how-to-make-i18n-refactoring-safe
+RedirectPermanent /blog-post/implementing-state-machines-with-java-enums https://www.mirkosertic.de/blog/2013/04/implementing-state-machines-with-java-enums
 
 RedirectPermanent /wordpress/welcome/blog-content/bootstrapping-weld-cdi-from-command-line-with-java-se https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
 RedirectPermanent /wordpress/welcome/tools-goodies https://www.mirkosertic.de/global/toolsgoodies/
@@ -146,6 +147,7 @@ RedirectPermanent /welcome/blog-content/google-style-query-parser-for-apache-luc
 RedirectPermanent /welcome/blog-content/using-scala-in-legacy-applications https://www.mirkosertic.de/blog/2013/03/using-scala-in-legacy-applications
 RedirectPermanent /welcome/blog-content/adding-html5-microdata-to-dokuwiki https://www.mirkosertic.de/blog/2013/04/adding-html5-microdata-to-dokuwiki
 RedirectPermanent /welcome/blog-content/high-performance-android-handwriting https://www.mirkosertic.de/blog/2013/07/high-performance-android-handwriting
+RedirectPermanent /welcome/blog-content/tuning-html5-canvas-filltext https://www.mirkosertic.de/blog/2015/03/tuning-html5-canvas-filltext
 
 RedirectPermanent /wordpress/architecturedesign/onionarchitecture https://www.mirkosertic.de/blog/2012/09/the-onion-architecture
 RedirectPermanent /wordpress/javastuff/xmljsonperformance https://www.mirkosertic.de/blog/2013/05/comparison-of-jaxb-xml-and-json-serialization-performance
@@ -186,6 +188,24 @@ RedirectPermanent /doku.php/javastuff/fxdesktopsearch https://www.mirkosertic.de
 RedirectPermanent /doku.php/scalastuff/mavenscalaaspectj https://www.mirkosertic.de/blog/2013/03/maven-scala-and-aspectjaop
 RedirectPermanent /doku.php/architecturedesign/dokuwikihtml5 https://www.mirkosertic.de/blog/2013/04/adding-html5-microdata-to-dokuwiki
 RedirectPermanent /doku.php/javastuff/createjunitassertions https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications
+RedirectPermanent /doku.php/architecturedesign/springhystrix https://www.mirkosertic.de/blog/2012/07/how-to-embed-hystrix-into-existing-spring-applications
+RedirectPermanent /doku.php/javastuff/openglandroidexample https://www.mirkosertic.de/blog/2013/09/opengl2-on-android-example
+RedirectPermanent /doku.php/javastuff/swingdatabinding https://www.mirkosertic.de/blog/2012/06/swing-databinding-with-mogwai-databinding
+RedirectPermanent /doku.php/javastuff/softwaredefectdetection https://www.mirkosertic.de/blog/2012/07/software-defect-detection-with-aop-and-jsr-303-jsr-305-jsr-308
+RedirectPermanent /doku.php/javastuff/enumstatemachine https://www.mirkosertic.de/blog/2013/04/implementing-state-machines-with-java-enums
+RedirectPermanent /doku.php/aboutme https://www.mirkosertic.de/global/me/
+RedirectPermanent /doku.php/architecturedesign/onionarchitecture https://www.mirkosertic.de/blog/2012/09/the-onion-architecture
+RedirectPermanent /doku.php/architecturedesign/orientdbjpanosqlfirsttouch https://www.mirkosertic.de/blog/2012/08/a-first-touch-with-nosql-graph-databases-and-orientdb
+RedirectPermanent /doku.php/javastuff/javafxgraph https://www.mirkosertic.de/blog/2012/10/displaying-simple-animated-graphs-with-javafx-2-0
+RedirectPermanent /doku.php/javastuff/javafxd3js https://www.mirkosertic.de/blog/2013/05/javafx-custom-controls-or-webview-with-d3-js
+RedirectPermanent /doku.php/architecturedesign/threadtracking https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error
+RedirectPermanent /doku.php/architecturedesign/loggingmadeeasy https://www.mirkosertic.de/blog/2012/10/logging-made-easy
+RedirectPermanent /doku.php/javastuff/beanvalidationaspectj https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj
+RedirectPermanent /doku.php/architecturedesign/enterprisesearchwithsolr https://www.mirkosertic.de/blog/2012/07/enterprise-search-with-apache-solr
+RedirectPermanent /doku.php/javastuff/androidhandwriting https://www.mirkosertic.de/blog/2013/07/high-performance-android-handwriting
+RedirectPermanent /doku.php/architecturedesign/hibernatesearch https://www.mirkosertic.de/blog/2012/11/using-and-enhancing-hibernate-search
+RedirectPermanent /doku.php/erdesignerng/erdesigignermaual https://www.mirkosertic.de/media/MogwaiERDesignerNG.pdf
+RedirectPermanent /doku.php/erdesignerng/erdesignermaual https://www.mirkosertic.de/media/MogwaiERDesignerNG.pdf
 
 RedirectPermanent /scalastuff/scalawithjpa https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0
 RedirectPermanent /scalastuff/enterprisescalabeans https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server
@@ -242,6 +262,7 @@ RedirectPermanent /javastuff/cdicron https://www.mirkosertic.de/blog/2016/01/how
 RedirectPermanent /javastuff/androidhandwriting https://www.mirkosertic.de/blog/2013/07/high-performance-android-handwriting
 RedirectPermanent /javastuff/putobjectsincontext https://www.mirkosertic.de/blog/2012/08/putting-your-objects-into-context-or-why-overwriting-tostring-can-be-evil
 RedirectPermanent /javastuff/stringiteratorperformance https://www.mirkosertic.de/blog/2013/09/comparison-of-string-iterator-performance
+RedirectPermanent /javastuff/createjunitassertions https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications
 
 RedirectPermanent /webstuff/simplepolymercomponent https://www.mirkosertic.de/blog/2016/02/a-very-simple-polymer-web-component
 
