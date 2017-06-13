@@ -135,6 +135,8 @@ RedirectPermanent /blog-post/logging-made-easy https://www.mirkosertic.de/blog/2
 RedirectPermanent /blog-post/how-to-create-junit-assertions-from-running-applications https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications
 RedirectPermanent /blog-post/xml-resourcebundles-and-how-to-make-i18n-refactoring-safe https://www.mirkosertic.de/blog/2012/07/xml-resourcebundles-and-how-to-make-i18n-refactoring-safe
 RedirectPermanent /blog-post/implementing-state-machines-with-java-enums https://www.mirkosertic.de/blog/2013/04/implementing-state-machines-with-java-enums
+RedirectPermanent /blog-post/java-array-iterator-performance https://www.mirkosertic.de/blog/2013/10/java-array-iterator-performance
+RedirectPermanent /blog-post/using-scala-in-legacy-applications https://www.mirkosertic.de/blog/2013/03/using-scala-in-legacy-applications
 
 RedirectPermanent /wordpress/welcome/blog-content/bootstrapping-weld-cdi-from-command-line-with-java-se https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se
 RedirectPermanent /wordpress/welcome/tools-goodies https://www.mirkosertic.de/global/toolsgoodies/
@@ -206,6 +208,19 @@ RedirectPermanent /doku.php/javastuff/androidhandwriting https://www.mirkosertic
 RedirectPermanent /doku.php/architecturedesign/hibernatesearch https://www.mirkosertic.de/blog/2012/11/using-and-enhancing-hibernate-search
 RedirectPermanent /doku.php/erdesignerng/erdesigignermaual https://www.mirkosertic.de/media/MogwaiERDesignerNG.pdf
 RedirectPermanent /doku.php/erdesignerng/erdesignermaual https://www.mirkosertic.de/media/MogwaiERDesignerNG.pdf
+RedirectPermanent /doku.php/architecturedesign/weldsewithee https://www.mirkosertic.de/blog/2013/10/java-se-context-and-dependency-injection-with-java-ee-support
+RedirectPermanent /doku.php/scalastuff/enterprisescalabeans https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server
+RedirectPermanent /doku.php/javastuff/googlestylelucene https://www.mirkosertic.de/blog/2013/04/google-style-query-parser-for-apache-lucene
+RedirectPermanent /doku.php/javastuff/xmlresourcebundles https://www.mirkosertic.de/blog/2012/07/xml-resourcebundles-and-how-to-make-i18n-refactoring-safe
+RedirectPermanent /doku.php/orientdbjpanosqlfirsttouch https://www.mirkosertic.de/blog/2012/08/a-first-touch-with-nosql-graph-databases-and-orientdb
+RedirectPermanent /doku.php/javastuff/scannablelog4jfiles https://www.mirkosertic.de/blog/2014/06/how-to-create-user-and-eye-friendly-scannable-log4j-log-files
+RedirectPermanent /doku.php/scalastuff/scalainlegacyapps https://www.mirkosertic.de/blog/2013/03/using-scala-in-legacy-applications
+RedirectPermanent /doku.php/architecturedesign/aopcdi https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj
+RedirectPermanent /doku.php/architecturedesign/legacycdi https://www.mirkosertic.de/blog/2012/08/enriching-legacy-applications-with-cdi
+RedirectPermanent /doku.php/javastuff/putobjectsincontext https://www.mirkosertic.de/blog/2012/08/putting-your-objects-into-context-or-why-overwriting-tostring-can-be-evil
+RedirectPermanent /doku.php/architecturedesign/mvcrevised https://www.mirkosertic.de/blog/2013/03/mvc-revised-or-what-are-the-alternatives
+RedirectPermanent /doku.php/javastuff/basetagjsp https://www.mirkosertic.de/blog/2014/10/how-to-set-the-html-base-tag-in-a-jsp-page
+RedirectPermanent /doku.php/books/content https://www.mirkosertic.de/global/interestingbooks
 
 RedirectPermanent /scalastuff/scalawithjpa https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0
 RedirectPermanent /scalastuff/enterprisescalabeans https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server
@@ -269,6 +284,7 @@ RedirectPermanent /webstuff/simplepolymercomponent https://www.mirkosertic.de/bl
 RedirectPermanent /toolsgoodies/content https://www.mirkosertic.de/global/toolsgoodies/
 
 RedirectPermanent /blog/2012/09/the-onion-architecture/onionarchitecture https://www.mirkosertic.de/blog/2012/09/the-onion-architecture
+RedirectPermanent /blog/architecturedesign/dddexample https://www.mirkosertic.de/blog/2013/04/domain-driven-design-example
 
 RedirectPermanent /tag/springboot https://www.mirkosertic.de/tags/springboot
 RedirectPermanent /tag/swing https://www.mirkosertic.de/tags/swing

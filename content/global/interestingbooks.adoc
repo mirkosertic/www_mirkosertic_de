@@ -1,5 +1,5 @@
 +++
-date = "2017-02-03T01:43:48+02:00"
+date = "2017-06-13T01:43:48+02:00"
 title = "My personal list of interesting books"
 tags = []
 draft = false
@@ -20,6 +20,7 @@ include::globals.adoc[]
     * Clean Code: A Handbook of Agile Software Craftsmanship. Robert C. Martin
     * Specification by Example. How successful teams deliver the right software. Gojko Adzik
     * Infrastructure as Code. Kief Morris
+    * Engineering a Compiler. Linda Torczon, Keith Cooper
 
 == Object-oriented design
 
