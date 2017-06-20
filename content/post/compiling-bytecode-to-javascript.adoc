@@ -59,7 +59,7 @@ Doing this all at once is far too complex. We have to split this complex problem
                v
  +------------------------------+
  | Optimizations and method     |
- | devirtualization            |
+ | devirtualization             |
  +------------------------------+
   (Middleware Pass 3)
                |
