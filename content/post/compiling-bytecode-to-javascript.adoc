@@ -153,7 +153,7 @@ Now we introduce a new concept: the PHI function. A PHI can be used as an assign
 const loopcounter = PHI(B -> initialValue, D -> loopCounter)
 ----
 
-This means that if we are coming from block0, loopCounter is assigned to initialValue. If we are coming from block1, loopCounter is assigned to itself.
+This means that if we are coming from B, loopCounter is assigned to initialValue. If we are coming from D, loopCounter is assigned to itself.
 
 PHI functions looks a little bit weird. But they are a nice trick to keep the single declaration and single assignment rule hold true. Don‘t get confused by the name „PHI Function“. A PHI Function is not compiled to any function code at all. It is basically used as a placeholder for a register or memory location which is accessed from multiple basic blocks, nothing more.
 
