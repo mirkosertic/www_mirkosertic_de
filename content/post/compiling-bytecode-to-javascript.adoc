@@ -32,8 +32,9 @@ Writing a compiler is a science and also an art. Compiler include almost every c
 
 Doing this all at once is far too complex. We have to split this complex problems into smaller ones. And we start with a very small one: parsing JVM class files.
 
-[ditaa,ditaadiagram,png]
+[ditaa,compilerpipeline,png]
 ----
+
  +------------------------------+
  | Read .class files            |
  | and dependency analysis      |
@@ -69,6 +70,7 @@ Doing this all at once is far too complex. We have to split this complex problem
  | Generate JavaScript          |
  +------------------------------+
   (Backend)
+
 ----
 
 Class files are very good documented, and reading them is a simple task. The interesting point is here: what do we read, and where do we start? A JVM program itself has some dependencies, as it will of course use code and classes presented by the class lib. This library contains thousands of classes and even more methods. It would be a waste of memory and computing time if we would parse the whole class lib. So we start at a given entry point such as a „main“ method, and only include used classes and methods that are required to be linked. We continue to resolve dependencies until we have everything required to run the program. This will help us in two ways: we get a class and method dependency tree which is needed in other steps in our compilation pipeline, and the dependency tree only includes required classes and methods. Downside of this static code and dependency analysis is that it cannot support the Java Reflection API properly. Since we only know what classes are instantiated and used by the new operator, we cannot catch usages of the Class.forName().newInstance() API and other Java Reflection use cases. This is OK as most of the source code I want to compile to JavaScript does not use reflections.
@@ -117,33 +119,35 @@ Some naming trickery must be done for control flow constructs such as loop. The 
 
 [ditaa,loopcfg,png]
 ----
+
 +-----------------+
 | A) Code         |
 +-----------------+
-		|
-		v
+        |
+        v
 +-----------------+
 | B) Loop-Header  |
 | loopCounter = 0 |<----+
 +-----------------+     |
-		|               |
-		v               |
+        |               |
+        v               |
 +-----------------+     |
 | C) Loop Body    |     |
 +-----------------+     |
-		|               |
-		v               |
+        |               |
+        v               |
 +-----------------+     |
 | D) Loop-Footer  |     |
 | loopCounter++   |-----+
 | Loop-Back or    |
 | continue        |
 +-----------------+
-		|
-		v
+        |
+        v
 +-----------------+
 | E) Code         |
 +-----------------+
+
 ----
 
 Now we introduce a new concept: the PHI function. A PHI function can be used as an assignment for a variable, and PHIs value depends on the predecessor of the current basic block in the control flow. The PHI functions are placed at the very beginning of each basic block. So for the above control flow graph, the assignment of the loop counter basically looks like
