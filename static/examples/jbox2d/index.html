@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <title>Bytecoder JBox2D Performance Test</title>
+    </head>
+    <body>
+        <canvas id="benchmark-canvas" width="600" height="600"></canvas>
+        <script type="text/javascript" src="bytecoder.js"></script>
+        <script type="text/javascript">
+            var theCanvas = document.getElementById("benchmark-canvas");
+            var theCanvasContext = theCanvas.getContext("2d");
+
+            // Our module for dynamic linking
+            var canvas = {
+
+                canvasClear : function() {
+                    theCanvasContext.fillStyle = "white";
+                    theCanvasContext.strokeStyke = "grey";
+                    theCanvasContext.fillRect(0, 0, 600, 600);
+                },
+
+                contextSave : function() {
+                    theCanvasContext.save();
+                },
+
+                contextRestore : function() {
+                    theCanvasContext.restore();
+                },
+
+                contextTranslate : function(aX, aY) {
+                    theCanvasContext.translate(aX, aY);
+                },
+
+                contextScale : function(aX, aY) {
+                    theCanvasContext.scale(aX, aY);
+                },
+
+                contextLineWidth : function(aWidth) {
+                    theCanvasContext.lineWidth = aWidth;
+                },
+
+                contextRotate : function(aAngleInRadians) {
+                    theCanvasContext.rotate(aAngleInRadians);
+                },
+
+                contextBeginPath : function() {
+                    theCanvasContext.beginPath();
+                },
+
+                contextClosePath : function() {
+                    theCanvasContext.closePath();
+                },
+
+                contextMoveTo: function(aX, aY) {
+                    theCanvasContext.moveTo(aX, aY);
+                },
+
+                contextLineTo : function(aX, aY) {
+                    theCanvasContext.lineTo(aX, aY);
+                },
+
+                contextArc : function(x, y, radius, startAngle, endAngle, anticlockwise) {
+                    if (anticlockwise == 0) {
+                        theCanvasContext.arc(x, y, radius, startAngle, endAngle, false);
+                    } else {
+                        theCanvasContext.arc(x, y, radius, startAngle, endAngle, true);
+                    }
+                },
+
+                contextStroke : function() {
+                    theCanvasContext.stroke();
+                }
+            };
+
+            var debug = {
+                logRuntime : function(a) {
+                    console.log("Runtime was " + a + " ms");
+
+                    var theBenchmarkBody = document.getElementById("results");
+
+                    var theRow = document.createElement("tr");
+                    theBenchmarkBody.appendChild(theRow);
+
+                    var theSecondCell = document.createElement("td");
+                    theRow.appendChild(theSecondCell);
+                    theSecondCell.appendChild(document.createTextNode("" + Date.now()));
+
+                    var theTimeCell = document.createElement("td");
+                    theRow.appendChild(theTimeCell);
+                    theTimeCell.appendChild(document.createTextNode("" + a));
+                }
+            };
+
+            console.log("Init");
+            JBox2DSimulation.VOIDmainA1TString();
+            console.log("Ready");
+
+            var stepFunction = function(timestamp) {
+                console.log("Running simulation step");
+                JBox2DSimulation.VOIDproceedSimulation();
+
+                console.log("done");
+
+                window.requestAnimationFrame(stepFunction);
+            };
+
+        </script>
+        <button onclick="stepFunction()" value="Click me">Click Me</button>
+        <table >
+            <thead>
+                <tr>
+                    <th>Second</th>
+                    <th>Simulation run in ms</th>
+                </tr>
+            </thead>
+            <tbody id="results">
+
+            </tbody>
+        </table>
+    </body>
+</html>
