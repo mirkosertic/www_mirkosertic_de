@@ -228,7 +228,7 @@ FLOATabsFLOAT : function(p1) {
 }
 ----
 
-The control flow re-creator is in an early stage of development. It works well for easy cases. If it cannot recreate the control flow properly, it performs a fallback to toe un optimized code.
+The control flow re-creator is in an early stage of development. It works well for easy cases. If it cannot recreate the control flow properly, it performs a fallback to optimized code.
 
 == Targeting the compiler to JavaScript
 
