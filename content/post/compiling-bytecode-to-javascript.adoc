@@ -146,7 +146,7 @@ Some naming trickery must be done for control flow constructs such as loop. The 
 +-----------------+
 ----
 
-Now we introduce a new concept: the PHI function. A PHI can be used as an assignment for a variable, and PHIs value depends on the predecessor of the current basic block in the control flow. The PHI functions are placed at the very beginning of each basic block. So for the above control flow graph, the assignment of the loop counter basically looks like
+Now we introduce a new concept: the PHI function. A PHI function can be used as an assignment for a variable, and PHIs value depends on the predecessor of the current basic block in the control flow. The PHI functions are placed at the very beginning of each basic block. So for the above control flow graph, the assignment of the loop counter basically looks like
 
 [source]
 ----
@@ -155,7 +155,7 @@ const loopcounter = PHI(B -> initialValue, D -> loopCounter)
 
 This means that if we are coming from B, loopCounter is assigned to initialValue. If we are coming from D, loopCounter is assigned to itself.
 
-PHI functions looks a little bit weird. But they are a nice trick to keep the single declaration and single assignment rule hold true. Don‘t get confused by the name „PHI Function“. A PHI Function is not compiled to any function code at all. It is basically used as a placeholder for a register or memory location which is accessed from multiple basic blocks, nothing more.
+PHI functions look a little bit weird. But they are a nice trick to keep the single declaration and single assignment rule hold true. Don‘t get confused by the name „PHI Function“. A PHI Function is not compiled to any function code at all. It is basically used as a placeholder for a register or memory location which is accessed from multiple basic blocks, nothing more.
 
 == Optimizations
 
