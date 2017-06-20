@@ -1,5 +1,5 @@
 +++
-date = "2017-02-17T00:00:00+02:00"
+date = "2017-06-20T00:00:00+02:00"
 title = "My favorite postings"
 tags = []
 draft = false
@@ -9,6 +9,8 @@ include::globals.adoc[]
 == My favorite postings
 
 Here is a list of my favorite and evergreen postings so far:
+
+* link:{{< ref "compiling-bytecode-to-javascript.adoc" >}}[Bytecoder : A Low Level Bytecode to JavaScript Transpiler]
 
 * link:{{< ref "domain-driven-design-example.adoc" >}}[A Domain-driven Design Example]
 
