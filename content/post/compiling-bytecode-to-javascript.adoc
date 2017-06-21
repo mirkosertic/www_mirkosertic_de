@@ -203,7 +203,7 @@ FLOATabsFLOAT : function(p1) {
 }
 ----
 
-Most JavaScript runtimes cannot handle such code in a performant way, as they are optimized for „normal“ JavaScript loops using for and while statements. This can be done by doing some pattern patching on the control flow graph. We are searching for common patterns such as IFs, FOR and WHILE blocks and try to recreate the original control flow from the byte code in the intermediate representation. The result of this process looks as follows:
+Most JavaScript runtimes cannot handle such code in a performant way, as they are optimized for „normal“ JavaScript loops using for and while statements. This can be fixed by doing some pattern matching on the control flow graph. We are searching for common patterns such as IFs, FOR and WHILE blocks and try to recreate the original control flow from the byte code in the intermediate representation. The result of this process looks as follows:
 
 [source,JavaScript]
 ----
@@ -228,7 +228,7 @@ FLOATabsFLOAT : function(p1) {
 }
 ----
 
-The control flow re-creator is in an early stage of development. It works well for easy cases. If it cannot recreate the control flow properly, it performs a fallback to optimized code.
+The control flow re-creator is in an early stage of development. It works well for easy cases. If it cannot recreate the control flow properly, it performs a fallback to unoptimized code.
 
 == Targeting the compiler to JavaScript
 
