@@ -333,6 +333,6 @@ From my point, this is a viable solution to do further optimizations of the gene
 
 == Final words
 
-Writing this compiler was an interesting challenge and a lot of fun. It gave me a deeper understanding of JVM, JavaScript performance characteristics and opportunities for code re-usage. I would be really glad if the results are in the same way to someone else as they were to me. Thanks for reading!
+Writing this compiler was an interesting challenge and a lot of fun. It gave me a deeper understanding of JVM, JavaScript performance characteristics and opportunities for code re-usage. I would be really glad if the results are in the same way useful to someone else as they were to me. Thanks for reading!
 
 Links: https://github.com/mirkosertic/Bytecoder
