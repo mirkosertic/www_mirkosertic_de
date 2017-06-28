@@ -1,5 +1,5 @@
 +++
-date = "2017-06-13T01:43:48+02:00"
+date = "2017-06-28T00:00:00+02:00"
 title = "My personal list of interesting books"
 tags = []
 draft = false
@@ -22,7 +22,7 @@ include::globals.adoc[]
     * Infrastructure as Code. Kief Morris
     * Engineering a Compiler. Linda Torczon, Keith Cooper
 
-== Object-oriented design
+== (Object-oriented) design
 
     * Domain-Driven Design Distilled. Vaugn Vernon
     * Domain-Driven Design: Tackling Complexity in the Heart of Software. Eric J. Evans
@@ -31,6 +31,7 @@ include::globals.adoc[]
     * Die UML-Kurzreferenz 2.3 für die Praxis. Bernd Oestereich
     * ReleaseIt!: Design and Deploy Production-Ready Software. Michael T. Nygard
     * Reactive Messaging Patterns with the Actor Model. Vaughn Vernon
+    * Reactive Design Patterns. Roland Kuhn, Jamie Allen
 
 == Technology
 
