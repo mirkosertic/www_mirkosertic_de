@@ -1,5 +1,5 @@
 +++
-date = "2016-01-01T01:43:48+02:00"
+date = "2017-08-11T00:00:00+02:00"
 title = "About me"
 tags = []
 draft = false
@@ -58,6 +58,12 @@ Methodical:
 
     * 2010 International Project Management Association IPMA Level D
     * 2008 Certified Professional for Requirements Engineering
+
+== Where to find me
+
+I am a member of Java User Group Münster and Dortmund, so you will find at one of their sessions related to (Java)technology and software development in general.
+
+Beside my user group activities and this blog, I publish my work as a conference speaker, for instance JavaLand / Cologne.
 
 == Contact me
 
