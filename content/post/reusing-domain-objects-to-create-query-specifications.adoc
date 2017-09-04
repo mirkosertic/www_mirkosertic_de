@@ -3,6 +3,7 @@ date = "2012-07-20T02:18:59+02:00"
 title = "Reusing domain objects to create query specifications"
 tags = ["Database", "Enterprise"]
 draft = false
+description = "How to reuse domain objects to create query specifications"
 +++
 include::globals.adoc[]
 == Problem

@@ -3,6 +3,7 @@ date = "2016-12-31T01:08:59+01:00"
 title = "A Spring Boot Admin UI"
 tags = ["HTML5", "SpringBoot", "User Interface"]
 draft = false
+description = "Spring Boot is a very cool framework for building modern, cloud-ready software. It also comes with a set of production ready endpoints which allow to administrate and monitor running applications. Unfortunately there is no admin user interface included in Spring Boot."
 +++
 include::globals.adoc[]
 Spring Boot is a very cool framework for building modern, cloud-ready software. It also comes with a set of production ready endpoints which allow to administrate and monitor running applications. Unfortunately there is no admin user interface included in Spring Boot.

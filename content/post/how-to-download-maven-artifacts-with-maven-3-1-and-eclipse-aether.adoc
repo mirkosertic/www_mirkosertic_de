@@ -3,6 +3,7 @@ date = "2015-12-29T11:50:42+01:00"
 title = "How to download Maven artifacts with Maven >=3.1 and Eclipse Aether"
 tags = ["Maven"]
 draft = false
+description = "Starting with Maven 3.1, Sonatype Aether was replaced with Eclipse Eather. Now, sometimes we need do download additional Artifacts from Maven repositories during execution time of custom Maven plugins. As the Maven and Aether documentation is not very handsome, here is a short example about how to programmatically download and resolve Maven Artifacts using Maven 3.1 and later with the Eclipse Aether API."
 +++
 include::globals.adoc[]
 Starting with Maven 3.1, Sonatype Aether(https://github.com/sonatype/sonatype-aether[github.com/sonatype/sonatype-aether] ) was replaced with Eclipse Eather(http://www.eclipse.org/aether[www.eclipse.org/aether] ). Now, sometimes we need do download additional Artifacts from Maven repositories during execution time of custom Maven plugins. As the Maven and Aether documentation is not very handsome, here is a short example about how to programmatically download and resolve Maven Artifacts using Maven 3.1 and later with the Eclipse Aether API:

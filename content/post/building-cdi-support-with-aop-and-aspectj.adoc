@@ -3,6 +3,7 @@ date = "2012-10-01T02:47:45+02:00"
 title = "Building CDI support with AOP and AspectJ"
 tags = ["AOP", "Dependency Injection", "Enterprise", "Modernization"]
 draft = false
+description = "This explains how to use emulare CDI with AOP and AspectJ"
 +++
 include::globals.adoc[]
 CDI is a mighty enhancement to the Java programming language. But CDI has also some limitations that might be cumbersome:

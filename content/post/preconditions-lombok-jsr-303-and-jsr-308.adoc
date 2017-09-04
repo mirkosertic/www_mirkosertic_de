@@ -3,6 +3,7 @@ date = "2016-12-14T12:33:44+01:00"
 title = "Preconditions, Project Lombok, JSR 303 and JSR 308"
 tags = ["AOP", "Domain-driven Design", "Interesting", "JUnit", "Modernization"]
 draft = false
+description = "A good method implementation validates all of its preconditions before it continues. Luckily there are different frameworks such as Project Lombok, JSR 303 Bean Validation API and JSR 308 Java Type Annotations available for this job.  All of them are based on Java Annotations at method arguments, but they differ in runtime and compile time behavior. Here are some examples."
 +++
 include::globals.adoc[]
 

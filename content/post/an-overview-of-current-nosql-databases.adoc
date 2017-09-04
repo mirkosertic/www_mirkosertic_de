@@ -3,6 +3,7 @@ date = "2012-11-22T03:37:03+01:00"
 title = "An overview of current NoSQL databases"
 tags = ["Database", "Interesting", "NoSQL"]
 draft = false
+description = "This summary is taken from the book 'Seven Databases in Seven Weeks'"
 +++
 include::globals.adoc[]
 This summary is taken from the book “Seven Databases in Seven Weeks”. See link:{{< ref "global/interestingbooks.adoc">}}[the Books section] for details.

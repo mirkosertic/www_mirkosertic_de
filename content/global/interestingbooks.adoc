@@ -3,6 +3,7 @@ date = "2017-06-28T00:00:00+02:00"
 title = "My personal list of interesting books"
 tags = []
 draft = false
+description = "A list of maybe interesting books related to technology, software engineering and management"
 +++
 include::globals.adoc[]
 == General software engineering & project management

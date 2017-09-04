@@ -3,6 +3,7 @@ date = "2013-03-18T06:09:22+01:00"
 title = "Using Scala in legacy applications"
 tags = ["Interesting", "Legacy", "Scala"]
 draft = false
+description = "Often we are enhancing and working on Java legacy applications. But time moves on, and new programming languages like Scala become popular. But one question arises: is it possible to use Scala in Java based legacy applications?"
 +++
 include::globals.adoc[]
 Often we are enhancing and working on Java legacy applications. But time moves on, and new programming languages like Scala(http://www.scala-lang.org/[www.scala-lang.org] ) become popular. But one question arises: is it possible to use Scala in Java based legacy applications?

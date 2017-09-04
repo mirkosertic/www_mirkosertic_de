@@ -3,6 +3,7 @@ date = "2013-10-13T04:25:52+02:00"
 title = "Java Array Iterator Performance"
 tags = ["Interesting", "Performance"]
 draft = false
+description = "Lets check a very simple example: we want to fill a multi-dimensional array with values. What is the fastest way to do so?"
 +++
 include::globals.adoc[]
 Lets check a very simple example: we want to fill a multi-dimensional array with values. What is the fastest way to do so? The following piece of code gives us surprising results:

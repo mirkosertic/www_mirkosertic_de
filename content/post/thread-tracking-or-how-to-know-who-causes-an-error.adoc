@@ -3,6 +3,7 @@ date = "2012-07-31T08:01:03+02:00"
 title = "Thread tracking or how to know who causes an error"
 tags = ["AOP", "Logging", "Threading"]
 draft = false
+description = "Often we are developing applications for multi-user environments. Classic examples are web applications or web services. This also means that technical or business exceptions can occur at the same time for different users. But how do we know you causes which exception?"
 +++
 include::globals.adoc[]
 Often we are developing applications for multi-user environments. Classic examples are web applications or web services. This also means that technical or business exceptions can occur at the same time for different users. But how do we know you causes which exception?

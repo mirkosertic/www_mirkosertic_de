@@ -3,10 +3,9 @@ date = "2017-06-20T00:00:00+02:00"
 title = "My favorite postings"
 tags = []
 draft = false
+description = "Here is a list of my favorite and evergreen postings so far"
 +++
 include::globals.adoc[]
-
-== My favorite postings
 
 Here is a list of my favorite and evergreen postings so far:
 

@@ -3,6 +3,7 @@ date = "2012-08-01T01:43:48+02:00"
 title = "A first touch with NoSQL, graph databases and OrientDB"
 tags = ["Enterprise", "NoSQL"]
 draft = false
+description = "I was thinking about the current way we often store data in relational databases like MySQL, PostgreSQL or Oracle. We are using object-relational mapping frameworks like Hibernate, enriching Java classes with JPA annotations and are hoping that the mapping framework does everything for us the right way."
 +++
 include::globals.adoc[]
 == The experiment

@@ -3,6 +3,7 @@ date = "2013-05-07T09:37:10+02:00"
 title = "Building Portals with JavaFX, HTML5 and some Microdata"
 tags = ["Enterprise", "HTML5", "Interesting", "User Interface"]
 draft = false
+description = "Often we need to integrate different applications. This can be done at different integration levels, like integration using the database, integration using services and sometimes integration at user interface level."
 +++
 include::globals.adoc[]
 Often we need to integrate different applications. This can be done at different integration levels, like integration using the database, integration using services and sometimes integration at user interface level.

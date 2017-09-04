@@ -3,6 +3,7 @@ date = "2013-03-26T08:50:41+01:00"
 title = "Enterprise Scala Beans or Scala on a JEE application server"
 tags = ["Enterprise", "Interesting", "Scala"]
 draft = false
+description = "Once i was thinking about writing Enterprise Java Beans(EJBs) with the Scala programming language. This should be easy as Scala greatly incorporates with existing Java code bases. But let's create a small test to verify this!"
 +++
 include::globals.adoc[]
 Once i was thinking about writing Enterprise Java Beans(EJBs) with the Scala programming language. This should be easy as Scala greatly incorporates with existing Java code bases. But let's create a small test to verify this!

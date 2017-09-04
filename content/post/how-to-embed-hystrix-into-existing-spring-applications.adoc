@@ -3,6 +3,7 @@ date = "2012-07-31T06:01:53+02:00"
 title = "How to embed Hystrix into existing Spring applications"
 tags = ["Modernization", "SpringBoot", "Web"]
 draft = false
+description = "Netflix Hystrix is a very powerful framework to build fault tolerant and resilient applications. It provides common implementations for patterns like Timeout, http://martinfowler.com/bliki/CircuitBreaker.html[CircuitBreaker] and others. It also comes with nice monitoring capabilities using the Hystrix Dashboard or even JMX."
 +++
 include::globals.adoc[]
 Netflix https://github.com/Netflix/Hystrix[Hystrix] is a very powerful framework to build fault tolerant and resilient applications. It provides common implementations for patterns like Timeout, http://martinfowler.com/bliki/CircuitBreaker.html[CircuitBreaker] and others. It also comes with nice monitoring capabilities using the Hystrix Dashboard or even JMX.

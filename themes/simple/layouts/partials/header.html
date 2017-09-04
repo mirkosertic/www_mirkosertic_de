@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" {{ if .Site.Params.opengraph }} prefix="og: http://ogp.me/ns#"{{ end }}>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{ .Title }} &middot; {{ .Site.Author.name }}</title>
+        <meta name="description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        {{ .Hugo.Generator }}
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {{ if .Site.Params.opengraph }}{{ partial "opengraph.html" . }}{{ end }}
+        {{ if .RSSLink }}
+        <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml">
+        {{ end }}
+
+        <link rel="stylesheet" href="{{ .Site.BaseURL }}css/site.css">
+        {{ template "_internal/google_analytics_async.html" . }}
+    </head>
+    <body>
+        <header>
+            <nav role="navigation">
+                <div class="title">
+                    <label class="mobilenav" for="navtoggle"></label>
+                    <span class="main">MIRKOSERTIC.DE</span>
+                    <span class="sub">Talk. Code. Test. Repeat.</span>
+                </div>
+                <div id="particles-js"></div>
+                <input type="checkbox" id="navtoggle" class="navtrigger">
+                <ul class="menu">
+                    {{ range .Site.Menus.main.ByWeight }}
+                    <li class="content">
+                        <a title="{{ .Name }}" href="{{ .URL }}">{{ .Name }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </nav>
+        </header>
+        <section role="main">

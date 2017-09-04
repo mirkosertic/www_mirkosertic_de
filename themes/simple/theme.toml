@@ -1,0 +1,12 @@
+name = "simple"
+license = "MIT"
+licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE.md"
+description = ""
+homepage = "http://example.com/"
+tags = []
+features = []
+min_version = "0.26"
+
+[author]
+  name = "Mirko Sertic"
+  homepage = "https://www.mirkosertic.de"

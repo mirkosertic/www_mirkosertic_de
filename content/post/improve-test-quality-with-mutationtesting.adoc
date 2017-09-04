@@ -3,6 +3,7 @@ date = "2017-02-14T00:00:00+01:00"
 title = "Improve Test Quality with Mutation Testing"
 tags = ["JUnit", "Testing"]
 draft = false
+description = "Unit testing is a today must have. Together with Test-driven Development and Frameworks such as JUnit we can easily prove that our code fulfills a set of requirements and business invariants. We use metrics like Test coverage to get insight about the completeness of our tests. A very common assumption taken from a test coverage of 80 percent is that 80 percent of our code is tested and working correctly."
 +++
 include::globals.adoc[]
 

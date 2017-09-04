@@ -1,6 +1,6 @@
 languageCode = "en-us"
 title = "www.mirkosertic.de"
-theme= "ghostwriter"
+theme= "simple"
 baseurl = "https://www.mirkosertic.de/"
 copyright = "Mirko Sertic"
 googleAnalytics = "UA-33614060-2"
@@ -17,16 +17,8 @@ disableHugoGeneratorInject = true
     profile = "https://twitter.com/mirkosertic"
 
 [Params]
-    intro = true
-    headline = "Welcome to the Blog of Mirko Sertic"
-    description = "The personal Blog of a software engineer"
-    github = "https://github.com/mirkosertic"
-    linkedin = "https://de.linkedin.com/in/mirko-sertic-98882397"
-    gplus = "https://plus.google.com/112732493059943659026"
-    twitter = "https://twitter.com/mirkosertic"
-    email = "mirko@mirkosertic.de"
+    description = "The digital Home of Mirko Sertic"
     opengraph = true
-    shareTwitter = true
 
 [sitemap]
   changefreq = "daily"
@@ -37,24 +29,19 @@ disableHugoGeneratorInject = true
     post = "blog/:year/:month/:filename/"
 
 [[menu.main]]
-    name = "About me"
-    url = "/global/me"
-    weight = 1
-
-[[menu.main]]
     name = "My favorite postings"
     url = "/global/favorites"
-    weight = 2
+    weight = 20
 
 [[menu.main]]
     name = "Blog"
-    url = "/"
-    weight = 3
+    url = "/post/"
+    weight = 50
 
 [[menu.main]]
     name = "Interesting Books"
     url = "/global/interestingbooks"
-    weight = 4
+    weight = 10
 
 [[menu.main]]
     name = "Tools & Goodies"
