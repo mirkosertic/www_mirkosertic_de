@@ -3,6 +3,7 @@ date = "2013-10-01T07:20:37+02:00"
 title = "How to create JUnit assertions from running applications"
 tags = ["Interesting", "JUnit", "Testing"]
 draft = false
+description = "JUnit is a cool and powerful framework for unit test creation. But there is a drawback: we need to create a lot of assertions! Without assertions, we can create a very good path coverage, but it is not guaranteed that the code works correctly. This can be really cumbersome while we are working with big JavaBeans or Entities. Check for instance the following piece of code:"
 +++
 include::globals.adoc[]
 JUnit is a cool and powerful framework for unit test creation. But there is a drawback: we need to create a lot of assertions! Without assertions, we can create a very good path coverage, but it is not guaranteed that the code works correctly. This can be really cumbersome while we are working with big JavaBeans or Entities. Check for instance the following piece of code:

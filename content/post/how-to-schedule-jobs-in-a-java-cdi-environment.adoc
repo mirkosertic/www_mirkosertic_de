@@ -3,6 +3,7 @@ date = "2016-01-24T04:01:55+01:00"
 title = "How to schedule Jobs in a Java CDI Environment"
 tags = ["Dependency Injection"]
 draft = false
+description = "Often we need to schedule Jobs. Standard Java http://weld.cdi-spec.org/[CDI] does not have a build in Job Scheduler feature. But this functionality can be easily implemented by using the CDI extension mechanism."
 +++
 include::globals.adoc[]
 Often we need to schedule Jobs. Standard Java http://weld.cdi-spec.org/[CDI] does not have a build in Job Scheduler feature. But this functionality can be easily implemented by using the CDI extension mechanism.

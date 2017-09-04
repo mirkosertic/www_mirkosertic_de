@@ -1,8 +1,9 @@
 +++
 date = "2017-01-30T01:43:48+02:00"
 title = "Why I switched to static HTML generators"
-tags = ["HTML5", "Performance", "Web"]
+tags = ["HTML5", "Performance", "Web", "JavaScript"]
 draft = false
+description = "This Blog started its life a few years ago. At the beginning, I was using DokuWiki for writing and editing. This was good, but I was very limited by the provided editors and markup. So I came to the point that I needed something else. And you will of course ask what else?"
 +++
 include::globals.adoc[]
 

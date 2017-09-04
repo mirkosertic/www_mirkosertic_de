@@ -3,6 +3,7 @@ date = "2013-11-05T04:28:08+01:00"
 title = "Java Properties reinvented"
 tags = ["Configuration Management"]
 draft = false
+description = "Recently i stumbled across the Owner Library. Using this small piece of technology, usage of Java property files can be reinvented! Now we can access properties using a refactoring safe interface the following way..."
 +++
 include::globals.adoc[]
 Recently i stumbled across the Owner Library(http://owner.aeonbits.org[owner.aeonbits.org] ). Using this small piece of technology, usage of Java property files can be reinvented! Now we can access properties using a refactoring safe interface the following way:

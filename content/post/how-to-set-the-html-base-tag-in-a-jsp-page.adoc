@@ -3,6 +3,7 @@ date = "2014-10-31T03:57:50+01:00"
 title = "How to set the HTML base Tag in a JSP page"
 tags = ["Web"]
 draft = false
+description = "Sometimes we have to set the HTML base Tag from within a JSP page. For this purpose, we have to compute the correct URL, because the JSP API does not fully expose it. The following shipped shows how it can be cone:"
 +++
 include::globals.adoc[]
 Sometimes we have to set the HTML base Tag from within a JSP page. For this purpose, we have to compute the correct URL, because the JSP API does not fully expose it. The following shipped shows how it can be cone:

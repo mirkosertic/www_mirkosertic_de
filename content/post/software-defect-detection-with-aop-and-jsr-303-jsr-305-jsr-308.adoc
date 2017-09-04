@@ -3,6 +3,7 @@ date = "2012-07-30T09:49:00+02:00"
 title = "Software defect detection with AOP and JSR-303 / JSR-305 / JSR-308"
 tags = ["AOP", "Interesting"]
 draft = false
+description = "For many years common runtime exceptions like NullPointerException or ClassCastException are haunting poor Java programmers. This often leads to repetitions in the source code for checking method arguments for nullness. This is violating the DRY(Don't repeat yourself) principle. The Java Community Process created JSR-305 to address this issue. Unfortunately this JSR didn't become part of the official Java languages, but tools like FindBugs or IDEs like IntelliJ are offering static code analysis to find such NullPointerExceptions at compile time."
 +++
 include::globals.adoc[]
 == Summary

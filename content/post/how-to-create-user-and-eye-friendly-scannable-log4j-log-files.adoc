@@ -3,6 +3,7 @@ date = "2014-06-13T09:07:11+02:00"
 title = "How to create user and eye friendly scannable Log4J log files"
 tags = ["Logging"]
 draft = false
+description = "Often we are writing logs files for our program execution. The logs are sometimes hard to parse, we have to look twice at them to detect error patterns. But it is possible to create a log file layout that is very fast human scannable. Using such kind of log file layout, we can easier scan for common error patterns."
 +++
 include::globals.adoc[]
 Often we are writing logs files for our program execution. The logs are sometimes hard to parse, we have to look twice at them to detect error patterns. But it is possible to create a log file layout that is very fast human scannable. Using such kind of log file layout, we can easier scan for common error patterns.

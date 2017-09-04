@@ -3,6 +3,7 @@ date = "2013-05-02T04:27:47+02:00"
 title = "JavaFX Custom Controls or WebView with D3.js?"
 tags = ["HTML5", "JavaFX"]
 draft = false
+description = "Often we need to visualize complex data in a fancy way. The core JavaFX controls are sometimes capable to do it, but most of the time they are not. So the question is: do we need to write a custom control?"
 +++
 include::globals.adoc[]
 Often we need to visualize complex data in a fancy way. The core JavaFX controls are sometimes capable to do it, but most of the time they are not. So the question is: do we need to write a custom control?

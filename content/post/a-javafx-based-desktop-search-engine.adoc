@@ -3,6 +3,7 @@ date = "2013-04-26T09:17:13+02:00"
 title = "A JavaFX based Desktop Search Engine"
 tags = ["Enterprise", "Interesting", "JavaFX", "Search", "User Interface"]
 draft = false
+description = "Microsoft Windows search is not fast, and it also does not give us good search results. So i thought about writing my own Search Engine for the Desktop. It should crawl the file system, extract the content and meta data and finally should give the same results as Google."
 +++
 include::globals.adoc[]
 Microsoft Windows search is not fast, and it also does not give us good search results. So i thought about writing my own Search Engine for the Desktop. It should crawl the file system, extract the content and meta data and finally should give the same results as Google.

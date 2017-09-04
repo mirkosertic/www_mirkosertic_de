@@ -3,6 +3,7 @@ date = "2017-08-11T00:00:00+02:00"
 title = "Tools & Goodies"
 tags = []
 draft = false
+description = "A collection of tools and goodies"
 +++
 include::globals.adoc[]
 == Technical stuff

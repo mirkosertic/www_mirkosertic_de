@@ -3,6 +3,7 @@ date = "2013-03-30T05:27:21+01:00"
 title = "MVC revised or what are the alternatives?"
 tags = ["Modernization", "Web"]
 draft = false
+description = "A simple overview about the MVC pattern and its alternatives"
 +++
 include::globals.adoc[]
 == Pure MVC

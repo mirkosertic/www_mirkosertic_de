@@ -3,6 +3,7 @@ date = "2013-04-22T07:09:11+02:00"
 title = "Domain-driven Design Example"
 tags = ["Domain-driven Design", "Interesting"]
 draft = false
+description = "I saw a lot of IT projects in the past. Some of them were pretty good designed, others were really bad. Based on these experiences, I want to write a bit about an example project, and I also want to show how an example project can be modeled with UML and what would happen if we apply Domain-driven Design principles to the model."
 +++
 include::globals.adoc[]
 I saw a lot of IT projects in the past. Some of them were pretty good designed, others were really bad. Based on these experiences, I want to write a bit about an example project, and I also want to show how an example project can be modeled with UML and what would happen if we apply Domain-driven Design principles to the model.

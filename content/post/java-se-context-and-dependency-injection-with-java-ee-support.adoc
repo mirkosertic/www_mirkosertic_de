@@ -3,6 +3,7 @@ date = "2013-10-03T06:02:44+02:00"
 title = "Java SE Context and Dependency Injection with Java EE support"
 tags = ["Modernization"]
 draft = false
+description = "Java CDI(Context and Dependency Injection) JSR-299 is available on Java EE application servers, but CDI(Weld is the reference implementation) is also embeddable in Java SE standard edition. Unfortunately Java EE functionalities like security or transaction support are not available here, for instance the following code just does not work as expected when running on CDI SE:"
 +++
 include::globals.adoc[]
 Java CDI(Context and Dependency Injection) JSR-299 is available on Java EE application servers, but CDI(Weld is the reference implementation) is also embeddable in Java SE standard edition. Unfortunately Java EE functionalities like security or transaction support are not available here, for instance the following code just does not work as expected when running on CDI SE:

@@ -3,6 +3,7 @@ date = "2012-06-27T07:50:07+02:00"
 title = "Swing Databinding with Mogwai DataBinding"
 tags = ["Databinding", "Swing"]
 draft = false
+description = "While you are developing Java Swing based applications, you need a mechanism to bind Java objects to Swing widgets. Project mogwai.sourceforge.net provides a very simple but powerful framework called DataBinding to help you with this task. Here is an example."
 +++
 include::globals.adoc[]
 While you are developing Java Swing based applications, you need a mechanism to bind Java objects to Swing widgets. Project http://mogwai.sourceforge.net/[mogwai.sourceforge.net] provides a very simple but powerful framework called DataBinding to help you with this task. Here is an example.

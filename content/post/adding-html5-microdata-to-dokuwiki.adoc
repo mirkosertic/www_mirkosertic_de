@@ -3,6 +3,7 @@ date = "2013-04-13T12:45:14+02:00"
 title = "Adding HTML5 Microdata to DokuWiki"
 tags = ["HTML5", "Microdata"]
 draft = false
+description = "HTML5 is the new standard for webpage markups. It comes with some pretty cool new features like media support etc. But one of the best things is the Microdata support!"
 +++
 include::globals.adoc[]
 == Microdata overview

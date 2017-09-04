@@ -3,6 +3,7 @@ date = "2012-10-04T03:41:46+02:00"
 title = "Logging made easy"
 tags = ["Enterprise", "Logging", "User Interface"]
 draft = false
+description = "In modern, distributed applications logging is a key requirement. But the problem arises if we try to track down an error using different log files on different servers. This is often a problem, depending on the business organization, access rights and other political forces."
 +++
 include::globals.adoc[]
 In modern, distributed applications logging is a key requirement. But the problem arises if we try to track down an error using different log files on different servers. This is often a problem, depending on the business organization, access rights and other political forces.

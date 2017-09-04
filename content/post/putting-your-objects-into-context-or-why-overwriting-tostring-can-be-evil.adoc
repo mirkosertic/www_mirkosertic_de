@@ -3,6 +3,7 @@ date = "2012-08-06T03:32:14+02:00"
 title = "Putting your objects into context or why overwriting toString() can be evil"
 tags = ["Interesting"]
 draft = false
+description = "Often we need to display Java business objects in the user interface. The easiest way is to overwrite the toString() method and give back the String representation of the object. This seems to be easy, but it is an evil temptation."
 +++
 include::globals.adoc[]
 Often we need to display Java business objects in the user interface. The easiest way is to overwrite the toString() method and give back the String representation of the object. This seems to be easy, but it is an evil temptation.

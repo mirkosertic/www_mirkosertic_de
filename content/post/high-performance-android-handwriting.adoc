@@ -3,6 +3,7 @@ date = "2013-07-09T07:56:21+02:00"
 title = "High performance Android handwriting"
 tags = ["Android", "Interesting", "Performance"]
 draft = false
+description = "For one of my Android Apps Leas Painting App i needed to implement a sketching and handwriting functionality. The user must be able to draw with his fingers on the canvas and sketch something. This is a screenshot of my App:"
 +++
 include::globals.adoc[]
 For one of my Android Apps https://play.google.com/store/apps/details?id=de.mirkosertic.easypaint[Leas Painting App] i needed to implement a sketching and handwriting functionality. The user must be able to draw with his fingers on the canvas and sketch something. This is a screenshot of my App:

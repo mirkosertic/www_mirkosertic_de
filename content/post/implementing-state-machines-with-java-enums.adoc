@@ -3,6 +3,7 @@ date = "2013-04-08T01:06:42+02:00"
 title = "Implementing State Machines with Java Enums"
 tags = ["Domain-driven Design"]
 draft = false
+description = "Often we need to implement State Machines to encapsulate object behavior depending on a given object state. This can be cumbersome as it often leads to a lot of interfaces and implementation classes, and persisting such an object state often leads to problems, as we would need to implement a Hibernate custom type for instance to solve it."
 +++
 include::globals.adoc[]
 Often we need to implement http://en.wikipedia.org/wiki/State_pattern[State Machines] to encapsulate object behavior depending on a given object state. This can be cumbersome as it often leads to a lot of interfaces and implementation classes, and persisting such an object state often leads to problems, as we would need to implement a Hibernate custom type for instance to solve it.

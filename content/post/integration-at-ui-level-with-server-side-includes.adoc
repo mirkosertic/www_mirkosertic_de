@@ -3,6 +3,7 @@ date = "2017-03-06T00:00:00+01:00"
 title = "Service integration at UI level with server side includes(SSI)"
 tags = ["Domain-driven Design", "Integration", "User Interface", "Enterprise"]
 draft = false
+description = "Today, Microservices are a common software modeling technique. This style is based on the principles behind Domain-driven Design, where every bounded context is equivalent to a service. If we also take the Twelve-Factor App manifesto intoconsideration, we able to create scalable and cloud ready systems."
 +++
 include::globals.adoc[]
 
