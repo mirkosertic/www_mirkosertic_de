@@ -590,6 +590,9 @@ nav[role=navigation] ul.menu li a {
   text-decoration: none;
   color: #ecf0f1;
 }
+.tag {
+  white-space: pre !important;
+}
 nav[role=postinglist] {
   padding-left: 1em;
   padding-right: 1em;
