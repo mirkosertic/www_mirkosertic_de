@@ -1,15 +1,15 @@
-<div class="landingpage">
-    <div class="wrapper">
+<div class="landingpage" itemscope itemtype="http://schema.org/Blog">
+    <div class="wrapper" itemprop="author" itemscope itemtype="http://schema.org/Person">
         <div class="phrase1">Hello, my name is Mirko Sertic.</div>
-        <div class="phrase2">Software Engineer.</div>
+        <div class="phrase2" itemprop="jobTitle">Software Engineer.</div>
         <div class="sociallinks">
-            <a class="icon" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope"></i></a>
-            <a class="icon" target="_blank" href="{{ .Site.BaseURL }}index.xml"><i class="fa fa-rss"></i></a>
-            <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic"><i class="fa fa-xing"></i></a>
-            <a class="icon" target="_blank" href="https://twitter.com/mirkosertic"><i class="fa fa-twitter"></i></a>
-            <a class="icon" target="_blank" href="https://github.com/mirkosertic"><i class="fa fa-github"></i></a>
-            <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397"><i class="fa fa-linkedin"></i></a>
-            <a class="icon" target="_blank" href="https://plus.google.com/112732493059943659026"><i class="fa fa-google-plus"></i></a>
+            <a class="icon" href="mailto:mirko@mirkosertic.de" itemprop="email"><i class="fa fa-envelope"></i></a>
+            <a class="icon" target="_blank" href="{{ .Site.BaseURL }}index.xml" itemprop="url"><i class="fa fa-rss"></i></a>
+            <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing"></i></a>
+            <a class="icon" target="_blank" href="https://twitter.com/mirkosertic" itemprop="url"><i class="fa fa-twitter"></i></a>
+            <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github"></i></a>
+            <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin"></i></a>
+            <a class="icon" target="_blank" href="https://plus.google.com/112732493059943659026" itemprop="url"><i class="fa fa-google-plus"></i></a>
         </div>
         <div class="profile">
             <div class="item">
@@ -67,10 +67,12 @@
             </div>
             <div class="item">
                 <span class="icon" ><i class="fa fa-map-marker"></i>Contact:</span>
-                <div>Mirko Sertic</div>
-                <div>Josefine-Mauser-Str. 66</div>
-                <div>48157 Münster</div>
-                <div>Germany</div>
+                <div itemprop="name">Mirko Sertic</div>
+                <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <div itemprop="streedAddress">Josefine-Mauser-Str. 66</div>
+                    <div itemprop="postalCode">48157 Münster</div>
+                    <div itemprop="addressCountry">Germany</div>
+                </div>
             </div>
         </div>
     </div>
