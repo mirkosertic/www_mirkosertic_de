@@ -110,6 +110,15 @@ nav[role=navigation] {
       display: inline-block;
       background-color: @title-background;
       padding-left: 0.5em;
+
+      a {
+        text-decoration: none;
+        color: @title-color;
+
+        &:hover {
+          color: @menu-text;
+        }
+      }
     }
 
     .sub {
