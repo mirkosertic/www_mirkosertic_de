@@ -273,8 +273,6 @@ The LUA language: http://www.lua.org/[www.lua.org]
 
 Ace editor, the high performance code editor for the web: http://ace.c9.io/[ace.c9.io]
 
-Communicating between JavaScript and JavaFX with WebEngine: https://blogs.oracle.com/javafx/entry/communicating_between_javascript_and_javafx[Oracle Blog JavaFX JavaScript interaction]
-
 The source code for the Game Engine is available for free on GitHub: https://github.com/mirkosertic/GameComposer[github.com/mirkosertic/GameComposer]
 
 Example Game backed by the TeaVM Renderer: http://mirkosertic.github.io/GameComposer/games/teavm/platformer/index.html[TeaVM Example]
