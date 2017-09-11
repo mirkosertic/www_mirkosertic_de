@@ -27,6 +27,7 @@ script:
   - npm install
   - chmod 755 ./asciidoctor
   - export PATH=.:$PATH
+  - unset "_JAVA_OPTIONS"
   - npm run build
 
 after_success:
