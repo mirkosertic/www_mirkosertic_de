@@ -27,6 +27,7 @@ script:
   - npm install
   - chmod 755 ./asciidoctor
   - export PATH=.:$PATH
+  - hugo
   - npm run build
 
 after_success:
