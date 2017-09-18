@@ -5,7 +5,7 @@
     {{ partial "taglist.html" . }}
 
     {{ if .Description }}
-        <p class="post-stub-description" itemprop="description">{{ .Description }}&nbsp;<a href="{{ .Permalink }}" itemprop="url" class="readmore">Read more...</a></p>
+        <p class="post-stub-description" itemprop="description">{{ .Description }}&nbsp;<a href="{{ .Permalink }}" itemprop="url mainEntityOfPage" class="readmore">Read more...</a></p>
     {{ end }}
     {{ with .Params.featured }}
         <span class="post-stub-tag">Featured</span>
