@@ -15,7 +15,7 @@
 
 @link-color: @base-color1;
 
-@desktop: 1280px;
+@desktop: 1380px;
 @tablet: 550px;
 
 @import (inline) "normalize.css";
@@ -363,6 +363,11 @@ section[role=main] {
       }
 
       .certifications {
+        li {
+          text-wrap: avoid;
+          white-space: nowrap;
+        }
+
         span {
 
           display: block;
