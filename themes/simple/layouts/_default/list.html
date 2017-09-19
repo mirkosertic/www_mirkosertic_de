@@ -1,6 +1,6 @@
 {{ partial "header.html" . }}
 
-<nav role="postinglist" itemscope itemtype="http://schema.org/Blog">
+<nav role="postinglist" itemprop="mainEntity" itemscope itemtype="http://schema.org/Blog">
     {{ $pag := .Paginate .Data.Pages }}
     {{ range $pag.Pages.GroupByDate "2006" }}
     <div class="yeargroup">{{ .Key }}</div>

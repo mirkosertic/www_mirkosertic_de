@@ -1,11 +1,13 @@
-<li itemprop="blogPost" class="post-stub" itemscope itemtype="http://schema.org/BlogPosting" date-is="{{ .Date.Format "2006-01-02" }}" >
+<li class="post-stub" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" date-is="{{ .Date.Format "2006-01-02" }}" >
     <div class="content">
     <h4 class="post-stub-title" itemprop="name headline">{{ .Title }}</h4>
+    <meta itemprop="url" content="{{ .Permalink }}" />
+    <meta itemprop="mainEntityOfPage" content="{{ .Permalink }}" />
 
     {{ partial "taglist.html" . }}
 
     {{ if .Description }}
-        <p class="post-stub-description" itemprop="description">{{ .Description }}&nbsp;<a href="{{ .Permalink }}" itemprop="url mainEntityOfPage" class="readmore">Read more...</a></p>
+        <p class="post-stub-description" itemprop="description">{{ .Description }}&nbsp;<a href="{{ .Permalink }}" class="readmore">Read more...</a></p>
     {{ end }}
     {{ with .Params.featured }}
         <span class="post-stub-tag">Featured</span>
