@@ -37,10 +37,10 @@
                 </div>
                 <div id="particles-js"></div>
                 <input type="checkbox" id="navtoggle" class="navtrigger">
-                <ul class="menu">
+                <ul class="menu" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
                     {{ range .Site.Menus.main.ByWeight }}
-                    <li class="content">
-                        <a title="{{ .Name }}" href="{{ .URL }}">{{ .Name }}</a>
+                    <li itemprop="name" class="content">
+                        <a itemprop="url" title="{{ .Name }}" href="{{ .URL }}">{{ .Name }}</a>
                     </li>
                     {{ end }}
                 </ul>
