@@ -1,5 +1,5 @@
 +++
-date = "2017-08-11T00:00:00+02:00"
+date = "2017-09-24T00:00:00+02:00"
 title = "Tools & Goodies"
 tags = []
 draft = false
@@ -19,10 +19,6 @@ A wonderful resource about computer algorithms involved in game programming.
 https://jakearchibald.com/2014/offline-cookbook[jakearchibald.com/2014/offline-cookbook]
 
 Jake Archibald writes about offline Web Applications.
-
-https://xebialabs.com/periodic-table-of-devops-tools[xebialabs.com/periodic-table-of-devops-tools]
-
-An interesting compilation of common tools used by the DevOps movement.
 
 http://scs-architecture.org/[scs-architecture.org]
 
@@ -68,14 +64,6 @@ http://www.togglz.org/[www.togglz.org]
 
 Togglz is an implementation of the http://martinfowler.com/bliki/FeatureToggle.html[Feature Toggle Pattern] for Java. Feature Toggles are a very common agile development practices in the context of continuous deployment and delivery. The basic idea is to associate a toggle with each new feature you are working on. This allows you to enable or disable these features at application runtime, even for individual users.
 
-https://www.gitlab.com/[www.gitlab.com]
-
-GitLab offers git repository management, code reviews, issue tracking, activity feeds and wiki’s. Enterprises install GitLab on-premise and connect it with LDAP and Active Directory servers for secure authentication and authorization. A single GitLab server can handle more than 25,000 users but it is also possible to create a high availability setup with a multiple active servers
-
-http://facebook.github.io/react/index.html[facebook.github.io/react/index.html]
-
-React is a JavaScript library created by Facebook to create reactive client side user interfaces.
-
 http://masonry.desandro.com/[masonry.desandro.com]
 
 Masonry is a JavaScript grid layout library. It works by placing elements in optimal position based on available vertical space, sort of like a mason fitting stones in a wall. You’ve probably seen it in use all over the Internet.
@@ -87,10 +75,6 @@ Hystrix is a latency and fault tolerance library designed to isolate points of a
 http://windup.jboss.org/index.html[windup.jboss.org/index.html]
 
 JBoss Windup is a tool to simplify JEE application migration from one container to another.
-
-http://unsemantic.com/[unsemantic.com]
-
-The successor to the http://960.gs/[960.gs ] grid system. Columns are defined by percentage instead of absolute width.
 
 http://addyosmani.com/resources/essentialjsdesignpatterns/book/[addyosmani.com/resources/essentialjsdesignpatterns/book]
 
@@ -152,10 +136,6 @@ http://pragprog.com/[pragprog.com]
 
 The Pragmatic Bookshelf, the source of knowledge
 
-http://www.talend.com/[www.talend.com]
-
-Talend offers some pretty cool visual ETL, Master Data Management and database migration tools. See also http://www.altova.com/mapforce.html[MapForce]
-
 http://en.wikipedia.org/wiki/Edge_Side_Includes[en.wikipedia.org/wiki/Edge_Side_Includes]
 
 Edge Side Includes(ESI) is a W3C standard for server side web content integration. ESI is a great alternative to the Java JSR168/268 Portlet specification as it is more lightweight and also supports technologies like CDN(content delivery networks) and true SOA in web applications.
@@ -212,10 +192,6 @@ http://www.eclipse.org/aspectj/[www.eclipse.org/aspectj]
 
 AspectJ is a leading Aspect Oriented Programing framework.
 
-http://www.easymock.org/[www.easymock.org]
-
-Java Mock Framework
-
 http://code.google.com/p/powermock/[code.google.com/p/powermock]
 
 PowerMock is a framework extending EasyMock functionalities with other features like mocking of static classes
@@ -255,7 +231,3 @@ Funny cartoons about the Columbia Internet ISP
 http://www.csszengarden.com/[www.csszengarden.com]
 
 A demonstration of what can be accomplished through CSS-based design.
-
-http://www.hongkiat.com/blog/cheatsheet-graphic-designers/[www.hongkiat.com/blog/cheatsheet-graphic-designers/]
-
-Cheat Sheets for Graphic Designers
