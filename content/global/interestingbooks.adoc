@@ -1,5 +1,5 @@
 +++
-date = "2017-06-28T00:00:00+02:00"
+date = "2017-09-24T00:00:00+02:00"
 title = "My personal list of interesting books"
 tags = []
 draft = false
@@ -32,7 +32,7 @@ include::globals.adoc[]
     * Die UML-Kurzreferenz 2.3 für die Praxis. Bernd Oestereich
     * ReleaseIt!: Design and Deploy Production-Ready Software. Michael T. Nygard
     * Reactive Messaging Patterns with the Actor Model. Vaughn Vernon
-    * Reactive Design Patterns. Roland Kuhn, Jamie Allen
+    * Reactive Design Patterns. Roland Kuhn, Jamie Allen, Brian Hanafee
 
 == Technology
 
@@ -56,5 +56,6 @@ include::globals.adoc[]
     * Creating Games, Mechanics, Content and Technology. Morgan McGuire, Odest Chadwicke Jenkins
     * Real-Time Rendering, Third Edition. Tomas Akenine-Möller, Eric Haines, Naty Hoffmann
     * Game Coding Complete, Fourth Edition. Mike McShaffry, David Graham
+    * Game Engine Black Book: Wolfenstein 3D. Fabien Sanglard
     * What If?: Serious Scientific Answers to Absurd Hypothetical Questions. Randall Munroe.
 

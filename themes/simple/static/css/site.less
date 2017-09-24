@@ -6,6 +6,8 @@
 @base-color4: #47484f;
 @base-color5: #6b6e70;
 
+@base-color6: #d35400;
+
 @theme-background: #1A222C;
 @title-background: #1A222C;
 @title-color: white;
@@ -29,7 +31,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Tahoma, Geneva, sans-serif;
+  font-family: "Whitney SSm A", "Whitney SSm B", "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
 
   footer {
     margin-top: 1em;
@@ -98,8 +100,10 @@ nav[role=navigation] {
     color: @title-color;
     background-color: @title-background;
     height: 3em;
+    border-bottom: 0.3em solid @base-color6;
 
     .responsive(@desktop, {
+      border-bottom: none !important;
       background-color: transparent !important;
     });
 
@@ -144,6 +148,7 @@ nav[role=navigation] {
     padding-left: 1em;
 
     .responsive(@desktop, {
+      border-bottom: 0.3em solid @base-color6;
       position: relative !important;
       display: block !important;
       height: 3em !important;
@@ -264,6 +269,20 @@ section[role=main] {
   }
 
   .post-header {
+
+    margin-top: 0.3em;
+    background-color: #7f7f7f;
+    padding-bottom: 0.1em;
+    color: white;
+
+    a {
+      color: @base-color2;
+
+      &:hover {
+        color: darken(@base-color2, 10%);
+      }
+    }
+
     .post-title {
       font-size: xx-large;
       margin-top: 0;
@@ -362,10 +381,6 @@ section[role=main] {
       }
 
       .certifications {
-        li {
-          text-wrap: avoid;
-          white-space: nowrap;
-        }
 
         span {
 
