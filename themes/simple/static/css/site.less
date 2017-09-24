@@ -114,6 +114,10 @@ nav[role=navigation] {
       background-color: @title-background;
       padding-left: 0.5em;
 
+      .responsive(@desktop, {
+        background-color: transparent !important;
+      });
+
       a {
         text-decoration: none;
         color: @title-color;
