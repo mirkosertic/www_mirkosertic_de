@@ -1,0 +1,110 @@
++++
+date = "2017-10-26T00:00:00+02:00"
+title = "Implementing a custom Query Parser for Apache Solr"
+tags = ["Enterprise", "Interesting", "Search"]
+draft = false
+description = "Apache Solr is a very powerful and mature enterprise search server. It comes with a lot of handy and useful features. One of its features is the query API. This posting shows the hole process of implementing a custom query parser for Apache Solr."
++++
+include::globals.adoc[]
+
+Apache Solr is a very powerful and mature enterprise search server. It comes with a lot of handy
+and useful features. One of its features is the query API.
+
+Now, what is the query API? This API is used to search thru the indexed documents, as the name suggests.
+But how are the documents searched? Well, the search is based on a search query. Basically the search query
+is a string, and this string is passed to a so called query parser. The query parser then transforms the query
+string to a Lucene query instance, which is then used by Solr to crawl the index and return found documents.
+
+Apache Solr comes with a default query parser which supports the Lucene query syntax. There are also some more
+advanced query parser available, and a plugin API so implement a custom query parser. Now I want to take a look at the
+plugin API to implement a custom query parser and configure Solr to use it.
+
+== Solr plugin implementation
+
+What should the new query parser do? Well, it should transform a simple user entered phrase to a more advanced
+Lucene query, which does the following:
+
+Search string is : domain driven design
+
+Generated Lucene query in prose would be:
+
+Highest raking::
+exact match of terms "domain" and "driven" and "design" is this order
+A little bit lower ranking::
+terms "domain" and "driven" and "design" with a slop of one and in any order
+Even lower ranking::
+terms "domain" and "driven" and "design" with a slop of two and in any order
+Lowest ranking::
+existence of the terms "domain" and "driven" and "design" at any place in the document in any order
+
+Where would we start to implement such a query parser? Well, we start with the Solr query parser plugin. And for starters,
+here is the annotated source code for our new plugin:
+
+[source,java]
+----
+package de.mirkosertic.desktopsearch;
+
+import org.apache.lucene.search.Query;
+import org.apache.solr.common.params.SolrParams;
+import org.apache.solr.common.util.NamedList;
+import org.apache.solr.request.SolrQueryRequest;
+import org.apache.solr.schema.IndexSchema;
+import org.apache.solr.search.QParser;
+import org.apache.solr.search.QParserPlugin;
+import org.apache.solr.search.SyntaxError;
+
+public class QueryParserPlugin extends QParserPlugin { // <1>
+
+    @Override
+    public void init(NamedList args) { // <2>
+        super.init(args);
+    }
+
+    @Override
+    public QParser createParser(String aQueryString, SolrParams aLocalParams, SolrParams aParams, SolrQueryRequest aRequest) { // <3>
+        return new QParser(aQueryString, aLocalParams, aParams, aRequest) {
+            @Override
+            public Query parse() throws SyntaxError { // <4>
+                IndexSchema theSchema = aRequest.getSchema();
+
+                return ... // <5>
+            }
+        };
+    }
+}
+----
+<1> Every custom query parser must extend the org.apache.solr.search.QParserPlugin class
+<2> The init method is called one after Solr has instantiated the class
+<3> This method is called for every search request to retrieve a new org.apache.solr.search.QParser instance
+<4> The parse Method is invoked by Solr for every search request
+<5> Here happens the magic to transform a query string into a Lucene org.apache.lucene.search.Query instance
+
+== Solr configuration
+
+Now we need to configure Solr to make the plugin available. Part of the configuration is to build a JAR file with all of
+the plugin dependencies and add it to the Solr Core classpath. Then we need to register the plugin in the solrconfig.xml
+file as follows:
+
+[source,xml]
+----
+<queryParser
+    name="customqueryparser"  // <1>
+    class="de.mirkosertic.desktopsearch.QueryParserPlugin" // <2>
+    />
+----
+<1> A unique name for the query parser plugin
+<2> The full qualified classname of the query parser plugin
+
+== It is query time!
+
+Finally we can fire a search query to Solr. To use our new query parser for this query, we have to add a
+*defType=customqueryparser* to the search request. The passed value matches the name attribute of the
+added queryParser element in solrconfig.xml.
+
+== Details I've missed
+
+You will have noticed that I've left out the complete query parser implementation. Under the hood I am using
+a Lucene Boolean Query with a lot of nesting SpanNear and TermQueries. Showing the hole process would be too much at
+this point, as I am focusing on the Solr plugin API here. If you want to dive deeper into the Lucene query
+construction process, I'd suggest to take a look at my JavaFX Desktop Search Project hosted at
+https://github.com/mirkosertic/FXDesktopSearch.
