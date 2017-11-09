@@ -54,8 +54,12 @@ nav[role=navigation] {
     position: absolute;
     clip: rect(0,0,0,0);
 
-    &:checked + ul.menu {
+    &:checked ~ ul.menu {
       display: table;
+    }
+
+    &:checked ~ div label.mobilenav {
+      background-image: data-uri('image/svg+xml;charset=UTF-8', '../assets/close.svg') !important;
     }
   }
 
@@ -470,6 +474,22 @@ section[role=main] {
     padding-top: 0.5em;
     font-size: 1.8em;
     text-align: center;
+  }
+}
+
+.comments {
+
+  #disqus-placeholder {
+    border: 1px dashed black;
+    padding: 1em;
+  }
+
+  .disqus_thread {
+  }
+
+  .is-hidden {
+    display: none;
+    visibility: hidden;
   }
 }
 
