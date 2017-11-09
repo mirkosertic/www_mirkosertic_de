@@ -30,13 +30,13 @@
     <body itemscope itemtype="http://schema.org/WebPage">
         <header>
             <nav role="navigation">
+                <input type="checkbox" id="navtoggle" class="navtrigger">
                 <div class="title">
                     <label class="mobilenav" for="navtoggle"></label>
                     <span class="main"><a href="{{ .Site.BaseURL }}index.html">MIRKOSERTIC.DE</a></span>
                     <span class="sub">Talk. Code. Test. Repeat.</span>
                 </div>
                 <div id="particles-js"></div>
-                <input type="checkbox" id="navtoggle" class="navtrigger">
                 <ul class="menu" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
                     {{ range .Site.Menus.main.ByWeight }}
                     <li itemprop="name" class="content">
