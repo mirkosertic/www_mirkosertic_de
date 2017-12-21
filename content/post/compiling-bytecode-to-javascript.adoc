@@ -1,7 +1,7 @@
 +++
 date = "2017-06-20T00:00:00+02:00"
 title = "Bytecoder : A Low Level Bytecode to JavaScript Transpiler"
-tags = ["Interesting", "Performance", "JavaScript", "HTML5", "Web"]
+tags = ["Compiler", "Interesting", "Performance", "JavaScript", "HTML5", "Web"]
 draft = false
 description = "JavaScript is everywhere! Almost every device we use today is connected to the Internet and supports JavaScript by its runtime environment. But in the same way new devices arrive on the market, old software written in plain old Java is still alive and useful. The idea is now to bridge the gap between this shiny new JavaScript world and our old but still useful legacy software written in Java."
 +++
