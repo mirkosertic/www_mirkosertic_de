@@ -1,7 +1,7 @@
 +++
 date = "2014-12-18T11:43:01+01:00"
 title = "GWT vs. Dragome vs. TeaVM for Game Programming"
-tags = ["HTML5", "JavaFX", "Performance", "Web", "JavaScript"]
+tags = ["Compiler", "HTML5", "JavaFX", "Performance", "Web", "JavaScript"]
 draft = false
 description = "Last year I wrote a cross platform game engine. It used a JavaFX based Game Authoring System and had a Java based Game Runtime, which was transpiled to different platforms such as Android, JavaScript over GWT and JavaFX."
 +++
