@@ -319,7 +319,7 @@ variables. Also the stack cannot fragment, as it is a FILO stack.
 
 [ditaa,memorylayout,png]
 ----
- Offset 0                                  Max memory
+ Offset 0                                       Max memory
  +----------+----------------+----+----------------------+
  | Reserved | Heap, grows -> |Free| <- Stack, grows this |
  +----------+----------------+----+----------------------+
