@@ -8,9 +8,9 @@ description = "More to come"
 include::globals.adoc[]
 
 Today, I want to write a little bit about object orientation and WebAssembly. For starters, what is WebAssembly?
-WebAssembly is a new portatle, size and load-time efficient format suitable for compilation to the web. It is an open
+WebAssembly is a new portable, size and load-time efficient format suitable for compilation to the web. It is an open
 standard by a W3C community group and is currently integrated into all major browsers such as Firefox, Chrome, Edge and
-WebKit. WebAssembly aims to keep download speed and parsing time of programm code low and execute at native speed by
+WebKit. WebAssembly aims to keep download speed and parsing time of program code low and execute at native speed by
 taking advance of common hardware capabilities available on a wide range of platforms. WebAssembly is basically bytecode
 for the Web.
 
@@ -19,8 +19,8 @@ compile target for high level languages such as C++ or Java. You can if course w
 purpose, WebAssembly comes in two flavours of code, a binary representation which is meant to be distributed, and a
 textual representation, which is meant for debugging in a human readable form.
 
-WebAssembly has a very reduced set of datatypes available. Version 1.0 as it is currently implemented in all browsers
-supports four! datatypes, which are:
+WebAssembly has a very reduced set of data types available. Version 1.0 as it is currently implemented in all browsers
+supports four! data types, which are:
 
 i32 and i64 classify 32 and 64 bit integers, respectively. Integers are not inherently signed or unsigned, their
 interpretation is determined by individual operations.
@@ -29,7 +29,7 @@ f32 and f64 classify 32 and 64 bit floating-point data, respectively. They corre
 floating-point representations, also known as single and double precision, as defined by the
 IEEE 754-2008 standard (Section 3.3).
 
-Beside the limited set of datatypes available, WebAssembly also does not have support high level language structures
+Beside the limited set of data types available, WebAssembly also does not have support high level language structures
 such as arrays, structs and classes.
 
 Given all these limitations, how could a compiler translate a high level language into such a efficient, but low level
@@ -94,7 +94,7 @@ How, lets take a look at the compile result in its WebAssembly textual represent
    )
 ----
 <1> This is an example how static methods are translated into WebAssembly functions. Function names are derived from
-the class name and the function name including the full method signature to avoid naming conflics in case of method
+the class name and the function name including the full method signature to avoid naming conflicts in case of method
 overloading. Every method and also constructors or class initializers are compiled into such functions.
 <2> Here we see some local variables needed for computation. Every variable must be declared at the beginning.
 WebAssembly does not have scoping rules for variables. They are visible for the whole function body.
@@ -103,7 +103,7 @@ WebAssembly does not have scoping rules for variables. They are visible for the 
 
 == Diving deeper into the rabbit hole
 
-That seems to be qiuite easy, We can clearly see the low-level nature of WebAssembly, but we can also see that it is
+That seems to be quite easy, We can clearly see the low-level nature of WebAssembly, but we can also see that it is
 possible to compile high level language code into this format. But there is some subtle magic used to make this possible.
 Lets take a look!
 
@@ -115,7 +115,7 @@ Lets take a look!
 <1> There is an $UNUSED function argument! Basically, every function needs a context, its owning object. As static
 methods do not have an owning context, this argument is unused, as the name suggests. Of course we could leave this out,
 but I will show you why this is needed to implement high level structures such as lambdas later.
-<2> The original main method take an array reference as an input, but this is mapped to an int32 datatype? Why? Because
+<2> The original main method take an array reference as an input, but this is mapped to an int32 data type? Why? Because
 references are basically pointers to an allocated memory area. All references are mapped to an int32 pointer in
 WebAssembly output!
 
@@ -216,7 +216,7 @@ and constructor invocation are different steps.
 == Virtual function tables
 
 So far, we have seen classes, instances and methods. Now, what happens if we override methods in a subclass? How can we
-handle something like this in WebAssemly? Compilers build so called virtual function tables to perform a lookup to find
+handle something like this in WebAssembly? Compilers build so called virtual function tables to perform a lookup to find
 the right method for a given object instance. WebAssembly itself has the concept of tables, where we can assign an index
 with a function pointer. Ok, but how do we do the method lookup? Lets take a look at the WebAssembly code:
 
@@ -244,9 +244,9 @@ So what does our $HelloWorld__resolvevtableindex method do? We dive deeper:
    )
 ----
 <1> We have as inputs $thisRef as the object reference and $p1, which is the id of the method to be resolved.
-<2> if method id is 3, we return index 52, which is the pointer to the $HelloWorld_INTcompute method as seen in the
+<2> If method id is 3, we return index 52, which is the pointer to the $HelloWorld_INTcompute method as seen in the
 virtual function table. The method ids are assigned at compile time. Every method with the same name and signature gets the same
-id for itself and all its overriden variants.
+id for itself and all its overridden variants.
 <3> 52 is the index to $HelloWorld_INTcompute.
 
 Ok, we can now lookup for a method implementation. How is this combined with a method call? We take a look at the
@@ -281,14 +281,14 @@ main method in out HelloWorld example, but now we do an indirect call using the 
    )
 ----
 <1> For the WebAssembly call indirect functionality, we need typed function signatures. They are declared here. We
-basically need two types, one for the virtual function table reolve function and a second one for the implementation method itself.
+basically need two types, one for the virtual function table resolve function and a second one for the implementation method itself.
 <2> Our memory allocation
 <3> Constructor invocation as usual
 <4> Now it is getting interesting, we are calling a method of type $t_INT_THISREF, which takes $var0 as an argument(thisref), But
-we beed also an index into the table to get the right function pointer. This index is resolved using the second call_indirect
+we need also an index into the table to get the right function pointer. This index is resolved using the second call_indirect
 <5> Here we are resolving the function index by calling the resolvevtableindex function for our newly created object
 <6> We are trying to find the implementation for method id 3
-<7> Whe resolvevtableindex for a given object is stored in the allocated object for this object. Here it is stored at offset=4
+<7> The resolvevtableindex for a given object is stored in the allocated object for this object. Here it is stored at offset=4
 
 Interestingly, we are storing the index of the resolvevtableindex function for every object inside of the allocated memory
 for this object. So we have to pass in the right index at allocation time. We take a look at the memory allocation:
@@ -308,7 +308,7 @@ for this object. So we have to pass in the right index at allocation time. We ta
 
 == Memory management
 
-WebAssembly has a linear memory, which is sandboxed and can be freely accessed from WebWebAssembly as long as we
+WebAssembly has a linear memory, which is sandboxed and can be freely accessed from WebAssembly as long as we
 keep the memory limits in mind. For our HelloWorld example, we need some kind of memory layout for the generated
 objects and other data that must be store during computation. We have to divide the linear memory into areas,
 which are basically a reserved area used by the memory manager and other runtime code, a Heap which hosts all allocated
@@ -325,16 +325,16 @@ variables. Also the stack cannot fragment, as it is a FILO stack.
  +--------+---------------+----+--------------------+
 ----
 
-Now comes a limitation of the current WebaAssembly specification: there is no memory manager! We have to do everything
+Now comes a limitation of the current WebAssembly specification: there is no memory manager! We have to do everything
 by hand. Even the garbage collector! Adding garbage collection is planned by the community group, but for now we have
 to implement a memory manager including a simple Mark-And-Sweep garbage collector. This is done by runtime classes
 which are included in the {{< ref "compiling-bytecode-to-javascript.adoc">}}[Bytecoder] project. There are some tiny
 difficult bits here. First of all, why do we need a stack? There are local variables, why do I need an additional
 area in the linear memory? Well, for efficient garbage collection, the GC must crawl the Heap for dead objects, but
 this would also include newly created objects which are stored in local variables what are not used elsewhere.
-For security reasons, where is no way to introspect all life local variables in WebAssembly. To get arouhd this issue,
+For security reasons, where is no way to introspect all life local variables in WebAssembly. To get around this issue,
 Bytecoder keeps primitive data types such as int and long in local variables, and but all variables of type
-reference on the stack and are visible to the garbage collector. Maybe I will write asecond post about this topic later.
+reference on the stack and are visible to the garbage collector. Maybe I will write a second post about this topic later.
 
 == Finalization and things I have left out
 
