@@ -320,9 +320,9 @@ variables. Also the stack cannot fragment, as it is a FILO stack.
 [ditaa,memorylayout,png]
 ----
  Offset 0                                  Max memory
- +--------+---------------+----+--------------------+
- |Reserved|Heap, grows -> |Free|<- Stack, grows this|
- +--------+---------------+----+--------------------+
+ +----------+----------------+----+----------------------+
+ | Reserved | Heap, grows -> |Free| <- Stack, grows this |
+ +----------+----------------+----+----------------------+
 ----
 
 Now comes a limitation of the current WebAssembly specification: there is no memory manager! We have to do everything
