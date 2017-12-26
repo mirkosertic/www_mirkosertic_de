@@ -1,9 +1,9 @@
 +++
-date = "2017-12-21T12:00:00+01:00"
+date = "2018-01-01T12:00:00+01:00"
 title = "Object-Oriented WebAssembly"
 tags = ["Compiler", "Interesting", "Performance", "JavaScript", "HTML5", "Web"]
 draft = true
-description = "More to come"
+description = "Today, I want to write a little bit about object orientation and WebAssembly. For starters, what is WebAssembly? WebAssembly is a new portable, size and load-time efficient format suitable for compilation to the web. It is an open standard by a W3C community group and is currently integrated into all major browsers such as Firefox, Chrome, Edge and WebKit. WebAssembly aims to keep download speed and parsing time of program code low and execute at native speed by taking advance of common hardware capabilities available on a wide range of platforms. WebAssembly is basically bytecode for the Web."
 +++
 include::globals.adoc[]
 
@@ -34,7 +34,7 @@ such as arrays, structs and classes.
 
 Given all these limitations, how could a compiler translate a high level language into such a efficient, but low level
 format? Now I want to show you an example how I did this in my
-{{< ref "compiling-bytecode-to-javascript.adoc">}}[Bytecoder]  transpiler!
+link:{{< ref "compiling-bytecode-to-javascript.adoc" >}}[Bytecoder]  transpiler!
 
 == Say hello world by doing some calculus
 
@@ -328,7 +328,7 @@ variables. Also the stack cannot fragment, as it is a FILO stack.
 Now comes a limitation of the current WebAssembly specification: there is no memory manager! We have to do everything
 by hand. Even the garbage collector! Adding garbage collection is planned by the community group, but for now we have
 to implement a memory manager including a simple Mark-And-Sweep garbage collector. This is done by runtime classes
-which are included in the {{< ref "compiling-bytecode-to-javascript.adoc">}}[Bytecoder] project. There are some tiny
+which are included in the link:{{< ref "compiling-bytecode-to-javascript.adoc">}}[Bytecoder] project. There are some tiny
 difficult bits here. First of all, why do we need a stack? There are local variables, why do I need an additional
 area in the linear memory? Well, for efficient garbage collection, the GC must crawl the Heap for dead objects, but
 this would also include newly created objects which are stored in local variables what are not used elsewhere.
@@ -336,6 +336,82 @@ For security reasons, where is no way to introspect all life local variables in 
 Bytecoder keeps primitive data types such as int and long in local variables, and but all variables of type
 reference on the stack and are visible to the garbage collector. Maybe I will write a second post about this topic later.
 
+== Accessing objects
+
+Now, we can create new objects by allocating memory from the WebAssembly linear memory. How can we access those objects?
+Reading and writing to object fields is just simple memory access. We know the reference of the object, so we have a
+pointer to its allocated linear memory segment. We just need to assign a memory offset to every field of the object. This
+assignment can be done at compile time. Every instance field gets its own offset.
+
+But what about static fields? Well, static fields are mapped as fields of a RuntimeClass. RuntimeClasses are global
+singletons, so they are a great place to store static data!
+
+Arrays are a different beast. They are basically instances, but their length cannot determined at compile time in every
+case. This dynamic nature is mapped to two components. A member attribute storing the actual length of the array instance,
+and a data attribute which stores the data for every array element. Since we can determine the exact size of a single typed
+array element at compile time, we just have to consider the variable length at runtime.
+
+Here is an annotated example of a simple field access:
+
+[source,java]
+----
+public class InstanceAccessTest {
+
+    public static class StaticClassWithStuffInside {
+
+        public int member;
+    }
+
+    @Test
+    public void testInstanceGetAndSet() {
+        StaticClassWithStuffInside theInstance = new StaticClassWithStuffInside();
+        theInstance.member = 12;
+    }
+}
+----
+
+Written in WebAssembly:
+
+[source]
+----
+(func $InstanceAccessTest_VOIDtestInstanceGetAndSet (param $thisRef i32)
+     (local $SP i32)
+     (local $OLD_SP i32)
+     (set_local $OLD_SP (get_global $STACKTOP))
+     (set_global $STACKTOP (i32.sub (get_global $STACKTOP) (i32.const 4))) <1>
+     (set_local $SP (get_global $STACKTOP))
+
+     (i32.store offset=0 (get_local $SP)
+         (call $MemoryManager_AddressnewObjectINTINTINT
+            (i32.const 0)
+            (i32.const 12)
+            (get_global $InstanceAccessTest$StaticClassWithStuffInside__runtimeClass)
+            (i32.const 33))   <2>
+     )
+     (call $InstanceAccessTest$StaticClassWithStuffInside_VOIDinit
+        (i32.load offset=0 (get_local $SP))) <3>
+
+     (i32.store offset=8 <4>
+         (i32.load offset=0 (get_local $SP)) <5>
+         (i32.const 12) <6>
+     )
+
+     (set_global $STACKTOP (get_local $OLD_SP))
+     (return)
+)
+----
+<1> This reserves a place on the stack for a local object reference.
+<2> Memory allocation as seen before.
+<3> Constructor invocation, also nothing new now.
+<4> offset=8 is computed at compile time referencing the field offset.
+<5> We reference the instance using the stack.
+<6> We store the integer constant 12 in the instance field.
+
 == Finalization and things I have left out
 
-Field Access, Lamndas, Exception handling, Optimization
+There are a lot of other features in modern high level programming languages available such as Enums, Exception
+handling, Lambda expressions or reflections. Their implementation is far beyond the scope of this short WebAssembly
+introduction. If you want to dive deeper into how they can or cannot be implemented in WebAssembly, I suggest to
+take a look at my link:{{< ref "compiling-bytecode-to-javascript.adoc" >}}[Bytecoder] transpiler.
+
+For now, I just have to say: thank your for reading!
