@@ -74,7 +74,7 @@ public class QueryParserPlugin extends QParserPlugin { // <1>
 }
 ----
 <1> Every custom query parser must extend the org.apache.solr.search.QParserPlugin class
-<2> The init method is called one after Solr has instantiated the class
+<2> The init method is called once after Solr has instantiated the class
 <3> This method is called for every search request to retrieve a new org.apache.solr.search.QParser instance
 <4> The parse Method is invoked by Solr for every search request
 <5> Here happens the magic to transform a query string into a Lucene org.apache.lucene.search.Query instance
@@ -107,4 +107,4 @@ You will have noticed that I've left out the complete query parser implementatio
 a Lucene Boolean Query with a lot of nesting SpanNear and TermQueries. Showing the hole process would be too much at
 this point, as I am focusing on the Solr plugin API here. If you want to dive deeper into the Lucene query
 construction process, I'd suggest to take a look at my JavaFX Desktop Search Project hosted at
-https://github.com/mirkosertic/FXDesktopSearch.
+link:https://github.com/mirkosertic/FXDesktopSearch[GitHub].
