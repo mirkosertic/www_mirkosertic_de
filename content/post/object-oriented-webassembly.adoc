@@ -262,7 +262,11 @@ main method in out HelloWorld example, but now we do an indirect call using the 
          (local $var1 i32) ;; INT
 
          (set_local $var0 <2>
-             (call $MemoryManager_AddressnewObjectINTINTINT (i32.const 0)  (i32.const 8) (get_global $HelloWorld__runtimeClass) (i32.const 48))
+             (call $MemoryManager_AddressnewObjectINTINTINT
+                (i32.const 0)
+                (i32.const 8)
+                (get_global $HelloWorld__runtimeClass)
+                (i32.const 48))
          )
 
          (call $HelloWorld_VOIDinit (get_local $var0)) <3>
@@ -410,7 +414,7 @@ Written in WebAssembly:
 == Finalization and things I have left out
 
 There are a lot of other features in modern high level programming languages available such as Enums, Exception
-handling, Lambda expressions or reflections. Their implementation is far beyond the scope of this short WebAssembly
+handling, Lambda expressions or Reflections. Their implementation is far beyond the scope of this short WebAssembly
 introduction. If you want to dive deeper into how they can or cannot be implemented in WebAssembly, I suggest to
 take a look at my link:{{< ref "compiling-bytecode-to-javascript.adoc" >}}[Bytecoder] transpiler.
 
