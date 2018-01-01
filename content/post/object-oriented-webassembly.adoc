@@ -336,7 +336,7 @@ which are included in the link:{{< ref "compiling-bytecode-to-javascript.adoc">}
 difficult bits here. First of all, why do we need a stack? There are local variables, why do I need an additional
 area in the linear memory? Well, for efficient garbage collection, the GC must crawl the Heap for dead objects, but
 this would also include newly created objects which are stored in local variables what are not used elsewhere.
-For security reasons, where is no way to introspect all life local variables in WebAssembly. To get around this issue,
+For security reasons, where is no way to introspect all live local variables in WebAssembly. To get around this issue,
 Bytecoder keeps primitive data types such as int and long in local variables, and but all variables of type
 reference on the stack and are visible to the garbage collector. Maybe I will write a second post about this topic later.
 
