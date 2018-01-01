@@ -99,7 +99,7 @@ overloading. Every method and also constructors or class initializers are compil
 <2> Here we see some local variables needed for computation. Every variable must be declared at the beginning.
 WebAssembly does not have scoping rules for variables. They are visible for the whole function body.
 <3> This shows a simple add operation and returning its value.
-<4> Another static method. I will come to the exact rules a later in this post.
+<4> Another static method. I will come to the exact rules later in this post.
 
 == Diving deeper into the rabbit hole
 
