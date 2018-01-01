@@ -1,5 +1,5 @@
 +++
-date = "2017-06-20T00:00:00+02:00"
+date = "2018-01-01T00:00:00+02:00"
 title = "My favorite postings"
 tags = []
 draft = false
