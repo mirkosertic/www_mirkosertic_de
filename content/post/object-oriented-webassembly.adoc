@@ -2,7 +2,7 @@
 date = "2018-01-01T12:00:00+01:00"
 title = "Object-Oriented WebAssembly"
 tags = ["Compiler", "Interesting", "Performance", "JavaScript", "HTML5", "Web"]
-draft = true
+draft = false
 description = "Today, I want to write a little bit about object orientation and WebAssembly. For starters, what is WebAssembly? WebAssembly is a new portable, size and load-time efficient format suitable for compilation to the web. It is an open standard by a W3C community group and is currently integrated into all major browsers such as Firefox, Chrome, Edge and WebKit. WebAssembly aims to keep download speed and parsing time of program code low and execute at native speed by taking advance of common hardware capabilities available on a wide range of platforms. WebAssembly is basically bytecode for the Web."
 +++
 include::globals.adoc[]
@@ -22,10 +22,10 @@ textual representation, which is meant for debugging in a human readable form.
 WebAssembly has a very reduced set of data types available. Version 1.0 as it is currently implemented in all browsers
 supports four! data types, which are:
 
-i32 and i64 classify 32 and 64 bit integers, respectively. Integers are not inherently signed or unsigned, their
+* i32 and i64 classify 32 and 64 bit integers, respectively. Integers are not inherently signed or unsigned, their
 interpretation is determined by individual operations.
 
-f32 and f64 classify 32 and 64 bit floating-point data, respectively. They correspond to the respective binary
+* f32 and f64 classify 32 and 64 bit floating-point data, respectively. They correspond to the respective binary
 floating-point representations, also known as single and double precision, as defined by the
 IEEE 754-2008 standard (Section 3.3).
 
@@ -109,7 +109,7 @@ Lets take a look!
 
 [source]
 ----
-(func $HelloWorld_INTcompute (param $UNUSED i32)(result i32) <1>
+(func $HelloWorld_INTcompute (param $UNUSED i32) (result i32) <1>
 (func $HelloWorld_VOIDmainA1TString (param $UNUSED i32) (param $p1 i32) <2>
 ----
 <1> There is an $UNUSED function argument! Basically, every function needs a context, its owning object. As static
@@ -350,7 +350,7 @@ assignment can be done at compile time. Every instance field gets its own offset
 But what about static fields? Well, static fields are mapped as fields of a RuntimeClass. RuntimeClasses are global
 singletons, so they are a great place to store static data!
 
-Arrays are a different beast. They are basically instances, but their length cannot determined at compile time in every
+Arrays are a different beast. They are basically object instances, but their length cannot determined at compile time in every
 case. This dynamic nature is mapped to two components. A member attribute storing the actual length of the array instance,
 and a data attribute which stores the data for every array element. Since we can determine the exact size of a single typed
 array element at compile time, we just have to consider the variable length at runtime.
