@@ -9,6 +9,8 @@ include::globals.adoc[]
 
 Here is a list of my favorite and evergreen postings so far:
 
+* link:{{< ref "object-oriented-webassembly.adoc" >}}[Object-Oriented WebAssembly]
+
 * link:{{< ref "compiling-bytecode-to-javascript.adoc" >}}[Bytecoder : A Low Level Bytecode to JavaScript Transpiler]
 
 * link:{{< ref "domain-driven-design-example.adoc" >}}[A Domain-driven Design Example]
