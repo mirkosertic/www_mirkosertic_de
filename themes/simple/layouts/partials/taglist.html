@@ -1,7 +1,7 @@
 {{if .Params.tags}}
 <p class="post-tags">
-    {{ range .Params.tags }}
-    <span class="tag"><span class="icon"><i class="fa fa-tag"></i></span><a href="/tags/{{ replace . " " "-" | strings.ToLower}}">{{.}}</a></span>
+    {{ range $key, $value := .Params.tags }}
+    {{if eq $key 0}}<span class="tag"><span class="icon"><i class="fa fa-tag"></i></span>{{else}},&nbsp;{{end}}<a href="/tags/{{ replace $value " " "-" | strings.ToLower}}">{{$value}}</a></span>
     {{ end }}
 </p>
 {{end}}
