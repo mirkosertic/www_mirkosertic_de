@@ -1,0 +1,110 @@
++++
+date = "2018-01-31T00:00:00+02:00"
+title = "Alice, Bob, Carol and Dave OpenCL Edition"
+tags = ["Performance", "Interesting", "OpenCL", "Compiler"]
+draft = true
+description = "TODO"
++++
+include::globals.adoc[]
+
+Once upon a time in an office far far away worked four very nice IT people very hard
+in their office cubicles. Their names were Alice, Bob, Carol and Dave.
+
+== Working too hard
+
+They worked very hard each day. They started work at 9 o'clock, and finished often
+after sunset. They were very happy in their business, but they were very lonely
+in their private life due to the amount of work they did every day.
+
+Time passed. And some day, they sat together having a break and drinking some coffee.
+Suddenly, Alice stand up and said "We need to do something! Look at us, we are lonely,
+we need to change this!". Bob, Carol and Dave silently agreed. After a few minutes,
+Carol asked : "Yes, but how can we change something, where should we start?".
+
+== Math can really help you
+
+And here began a very interesting journey of our four friends. After some discussion,
+they came to the point where they collected some information about them self and their
+interests. Maybe they could find a mate matching their interests this way? Everyone in IT
+likes to make tables, so our friends. They created a table, showing their interests and
+how much they liked it. A score of 0 meant "I really dislike this", a score of 10 meant
+"I cannot live without this!". So this is the table our friends created:
+
+|Interest|Alice|Bob|Carol|Dave|
+|--------|-----|---|-----|----|
+|Hiking  | 5   | 7 | 0   | 2  |
+|Swimming| 1   | 2 | 10  | 6  |
+|Cinema  | 0   | 1 | 3   | 3  |
+|Dancing | 6   | 8 | 0   | 2  |
+
+After gathering this information, Bob asked "What now? What can we do with this kind
+of data?" Dave, the data scientist, came up with a simple idea: Why not express every
+person as a vector, and map the interests to vector elements? If we have vectors
+for other persons, we could use a cosine similarity to match the vectors, and the
+person with the highest similarity might be a possible mate! "Great idea!" said Alice,
+"but we do not have data from other persons". Silence. Finally, Carol came up with
+an option : "Well, why not try this similarity matching with ourselfs, before we
+collect masses of data?". That was a viable option, so our friends started to boot their
+development machines. Dave came up with another great idea. As they are doing some
+interesting math here, why not learn cool new tech while trying to find a mate? At
+this point, our friends met OpenCL.
+
+== Behind the scenes of OpenCL
+
+OpenCL is a cross platform language for heavy data processing. Using OpenCL, we can
+write data processing algorithms and run them on any kind of OpenCL-enabled devices.
+Interestingly, OpenCL algorithms can run on the CPU utilizing maybe 4 or 8 CPU cores,
+but it can also run on the GPU(Graphics card)m utilizing maybe 512 or 1024 of its
+shader units. Using the GPU, heavy math can be greatly accelerated!.
+
+In OpenCL, data processing algorithms are called kernels. The amount of data is split
+into so called work items, and every work item is processed independently. So if we
+have for instance 300 work items, and our GPU has 300 shader units, OpenCL can compute
+every single work item completely parallel!
+
+So, what kind of input and output generates the kernel for the mate-matching problem
+of our four friends?
+
+Well, we need a list of all potential mates, which is a list of vectors with four
+elements. One vector for every mate, and the elements of every vector describe their
+score for a given interest, such as hiking, swimming, cinema or dancing. This is
+one input for the kernel.
+
+We want to compute the similarity for a single mate with all the others. This
+computation can be done independently, so every single mate is a work item. The kernel
+gets another input, which is the current work item id. Now, what is the output? The kernel
+needs to calculate all the similarities, and for every work item, it needs to output the
+id of the most matching mate. So the output for a single work item is the id of its
+most matching mate based on the cosine similarity of their vectors.
+
+== Developer productivity
+
+OpenCL kernels are written in a C99 based language. It is not hard to learn, but it
+is different from languages such as Java. Our four friends are Java specialists, so what
+can they do? Well, there is a framework to the rescue. With Bytecoder, we can write
+OpenCL kernels in Java. The Java bytecode is translated into C99 in the background and
+executed on the OpenCL device. As our friends wanted to keep their productivity up, they
+decided to use Bytecoder.
+
+== Putting it all together
+
+== We have a match
+
+== Up to 11
+
+== What we have learned
+
+Of course this is a fairy tale. And of course it is total overkill to compute four cosine
+similarities on the GPU. What I want to show you is a simple use case that might be extended
+to eventually become a full blown recommender system for all kind of matching problems. I also
+want to show you that we can easily use our favorite programming language and cross compiler
+technology such as Bytecoder to accelerate data processing problems by running them on the GPU.
+I also want to to note that Bytecoder is not the only available Java OpenCL toolkit. Aparapi
+is another great tool for this kind of problem, so maybe you want to take a look at this.
+I really hope that this short story was interesting and a little bit helpful. Thank you for
+reading, and happy processing!
+
+
+
+
+

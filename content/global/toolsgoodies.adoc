@@ -1,5 +1,5 @@
 +++
-date = "2017-09-24T00:00:00+02:00"
+date = "2018-01-23T00:00:00+02:00"
 title = "Tools & Goodies"
 tags = []
 draft = false
@@ -116,10 +116,6 @@ http://caminao.wordpress.com/[caminao.wordpress.com]
 
 Caminao's way. Do systems know how symbolic they are?
 
-http://uniformjs.com/[uniformjs.com]
-
-Create sexy forms with JQuery and Uniform.js
-
 http://www.arc42.de/[www.arc42.de]
 
 Resources for software developers and architects.
@@ -148,14 +144,6 @@ http://www.balsamiq.com/[Balsamiq mockups]
 
 Using Balsamiq we can create nice looking user interface mockups and storyboards.
 
-http://logstash.net/[Logstash]
-
-Logstash in an open source log management tool
-
-http://kibana.org/[Kibana]
-
-Kibana is a nicer UI for Logstash and offers some cool functionalities for log file analysis.
-
 http://lesscss.org/[lesscss.org]
 
 LessCSS is a tool to generate dynamic CSSon server &amp; client side
@@ -167,10 +155,6 @@ Apache MyFaces CODI provides some very cool extensions for CDI(JSR 299). Check o
 http://www.querydsl.com/[QueryDSL]
 
 QueryDSL is a framework to create domain specific languages for querying data with JPA, Hibernate, SQL or even Lucene.
-
-http://www.mashzone.com/[www.mashzone.com]
-
-ARIS MashZone is a cool too to generate interactive web based dashboards. It provides an IDE to generate the website and also has the ability to access datasources like XML, Excel or even HTTP/Web based datasources.
 
 http://ocpsoft.org/prettyfaces/[ocpsoft.org/prettyfaces]
 
