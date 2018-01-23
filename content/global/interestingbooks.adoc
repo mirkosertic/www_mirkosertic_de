@@ -1,5 +1,5 @@
 +++
-date = "2017-09-24T00:00:00+02:00"
+date = "2018-01-23T00:00:00+02:00"
 title = "My personal list of interesting books"
 tags = []
 draft = false
@@ -49,6 +49,8 @@ include::globals.adoc[]
     * Java EE7 Essentials. Arun Gupta
     * Functional Programming in Java: Harnessing the Power of Java 8 Lambda Expressions. Venkat Subramaniam
     * Version Control with Git: Powerful tools and techniques for collaborative software development. Jon Loeliger und Matthew McCullough
+    * JavaScript: The Good Parts: Working with the Shallow Grain of JavaScript. Douglas Crockford
+
 
 == Others
 
