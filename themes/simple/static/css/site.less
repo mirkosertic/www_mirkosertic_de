@@ -1,21 +1,18 @@
 @page-padding: 1em;
 
-@base-color1: #61892f;
-@base-color2: #86c232;
-@base-color3: #222629;
-@base-color4: #47484f;
-@base-color5: #6b6e70;
+// http://www.colorhunt.co/c/2763
+@theme-color1: #222831;
+@theme-color2: #393e46;
+@theme-color3: #00adb5;
+@theme-color4: #eeeeee;
 
-@base-color6: #ff9800;
-
-@theme-background: #1A222C;
-@title-background: #1A222C;
-@title-color: white;
-
-@menu-background: @base-color3;
-@menu-text: @base-color2;
-
-@link-color: @base-color1;
+@separator-color: @theme-color3;
+@theme-background: @theme-color1;
+@menu-background: @theme-color1;
+@title-color: @theme-color4;
+@history-color: @theme-color3;
+@menu-text: @theme-color3;
+@link-color: @theme-color3;
 
 @desktop: 1380px;
 @tablet: 550px;
@@ -87,7 +84,7 @@ nav[role=navigation] {
     width: 100%;
     height: 6em;
     z-index: -1;
-    background-color: @title-background;
+    background-color: @theme-background;
 
     canvas {
       background-color: transparent;
@@ -102,9 +99,9 @@ nav[role=navigation] {
 
   .title {
     color: @title-color;
-    background-color: @title-background;
+    background-color: @theme-background;
     height: 3em;
-    border-bottom: 0.3em solid @base-color6;
+    border-bottom: 0.3em solid @separator-color;
 
     .responsive(@desktop, {
       border-bottom: none !important;
@@ -115,7 +112,7 @@ nav[role=navigation] {
       font-size: larger;
       float: left;
       display: inline-block;
-      background-color: @title-background;
+      background-color: @theme-background;
       padding-left: 0.5em;
 
       .responsive(@desktop, {
@@ -135,7 +132,7 @@ nav[role=navigation] {
     .sub {
       padding-right: 0.5em;
       font-size: smaller;
-      color: white;
+      color: @title-color;
       display: none;
 
       .responsive(@desktop, { display: inline-block; float: right; });
@@ -149,14 +146,14 @@ nav[role=navigation] {
     display: none;
     width: 10em;
     height: 100%;
-    background-color: @title-background;
+    background-color: @theme-background;
     position: relative;
     margin-top: 0;
     z-index: 10;
     padding-left: 1em;
 
     .responsive(@desktop, {
-      border-bottom: 0.3em solid @base-color6;
+      border-bottom: 0.3em solid @separator-color;
       position: relative !important;
       display: block !important;
       height: 3em !important;
@@ -170,7 +167,7 @@ nav[role=navigation] {
     li {
 
       display: inline-block;
-      background-color: @title-background;
+      background-color: @theme-background;
 
       .responsive(@desktop, {
         display: inline-block !important;
@@ -216,8 +213,8 @@ nav[role=postinglist] {
     padding-left: 0.8em;
     padding-bottom: 0.2em;
     font-weight: bold;
-    color: @base-color5;
-    border-left: 2px solid @base-color1;
+    color: @history-color;
+    border-left: 2px solid @history-color;
     position: relative;
 
     &:after {
@@ -229,7 +226,7 @@ nav[role=postinglist] {
       left: -7px;
       border-radius: 10px;
       content: '';
-      border: 2px solid @base-color1;
+      border: 2px solid @history-color;
       background: white;
     }
   }
@@ -257,6 +254,7 @@ section[role=main] {
 
     text-decoration: none;
     color: @link-color;
+    font-weight: bolder;
 
     &:hover {
       color: lighten(@link-color, 10%);
@@ -280,15 +278,16 @@ section[role=main] {
   .post-header {
 
     margin-top: 0.3em;
-    background-color: #7f7f7f;
+    background-color: @theme-color2;
     padding-bottom: 0.1em;
-    color: white;
+    color: @theme-color4;
 
     a {
-      color: #c8d6e5;
+      color: @theme-color3;
+      font-weight: bolder;
 
       &:hover {
-        color: darken(#c3fffa, 10%);
+        color: lighten(@theme-color3, 20%);
       }
     }
 
@@ -312,11 +311,11 @@ section[role=main] {
     padding-top: 2.5em;
     padding-bottom: 0.5em;
     position: relative;
-    border-left: 2px solid @base-color1;
+    border-left: 2px solid @history-color;
 
     .content {
       display: block;
-      border: 1px solid lightgrey;
+      border: 1px solid @theme-color2;
       padding: 0.5em;
     }
 
@@ -328,6 +327,7 @@ section[role=main] {
       display: block;
     }
 
+
     &:after {
       width: 10px;
       height: 10px;
@@ -337,7 +337,7 @@ section[role=main] {
       left: -7px;
       border-radius: 10px;
       content: '';
-      border: 2px solid @base-color1;
+      border: 2px solid @history-color;
       background: white;
     }
 
@@ -411,8 +411,8 @@ section[role=main] {
 }
 
 .skillcontainer {
-  border: 1px solid lightgrey;
-  background-color: lightgrey;
+  border: 1px solid @theme-color4;
+  background-color: @theme-color4;
   position: relative;
   border-radius: 1em;
   display: block;
@@ -434,8 +434,8 @@ section[role=main] {
     color: white;
     font-weight: bolder;
 
-    background-color: @title-background;
-    border: 1px solid @title-background;
+    background-color: @theme-background;
+    border: 1px solid @theme-background;
   }
 
   .caption {
