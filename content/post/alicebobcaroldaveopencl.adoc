@@ -65,7 +65,7 @@ person as a vector, and map the interests to vector elements? If we have vectors
 for other persons, we could use a https://en.wikipedia.org/wiki/Cosine_similarity[cosine similarity]
  to match the vectors, and the person with the highest similarity might be a possible mate!
 
-"What is a cosine similarity" asked Alice? Can you please explain this? And Bob did.
+"What is a cosine similarity" asked Alice? Can you please explain this? And Dave did.
 A cosine similarity basically measures the delta of the angle of two vectors. If
 the vectors show in exactly the same direction, they have a similarity of 1. If they show
 in the opposite direction, the similarity is -1. We can use the cosine similarity to
@@ -85,12 +85,12 @@ this point, our friends met https://www.khronos.org/opencl[OpenCL].
 OpenCL is a cross platform language for heavy data processing. Using OpenCL, we can
 write data processing algorithms and run them on any kind of OpenCL-enabled devices.
 Interestingly, OpenCL algorithms can run on the CPU utilizing maybe 4 or 8 CPU cores,
-but it can also run on the GPU(Graphics card) utilizing maybe 512 or 1024 of its
-compute units. Using the GPU, heavy math can be greatly accelerated!.
+but it can also run on the GPU(Graphics card) utilizing maybe thousands of threads in
+parallel. Using the GPU, heavy math can be greatly accelerated!.
 
 In OpenCL, data processing algorithms are called kernels. The amount of data is split
 into so called work items, and every work item is processed independently. So if we
-have for instance 300 work items, and our GPU has 300 compute units, OpenCL can compute
+have for instance 300 work items, and our GPU can 300 threads, OpenCL can compute
 every single work item completely parallel!
 
 So, what kind of input and output generates the kernel for the mate-matching problem
