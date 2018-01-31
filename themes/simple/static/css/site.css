@@ -473,7 +473,7 @@ nav[role=navigation] .navtrigger:checked ~ ul.menu {
   display: table;
 }
 nav[role=navigation] .navtrigger:checked ~ div label.mobilenav {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20viewBox%3D%220%200%201792%201792%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m1490%201322q0%2040-28%2068l-136%20136q-28%2028-68%2028t-68-28l-294-294-294%20294q-28%2028-68%2028t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28%2068-28t68%2028l294%20294%20294-294q28-28%2068-28t68%2028l136%20136q28%2028%2028%2068t-28%2068l-294%20294%20294%20294q28%2028%2028%2068z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E%0A") !important;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20viewBox%3D%220%200%201792%201792%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m1490%201322q0%2040-28%2068l-136%20136q-28%2028-68%2028t-68-28l-294-294-294%20294q-28%2028-68%2028t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28%2068-28t68%2028l294%20294%20294-294q28-28%2068-28t68%2028l136%20136q28%2028%2028%2068t-28%2068l-294%20294%20294%20294q28%2028%2028%2068z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E%0D%0A") !important;
 }
 nav[role=navigation] .mobilenav {
   float: left;
@@ -513,7 +513,7 @@ nav[role=navigation] .title {
   color: #eeeeee;
   background-color: #222831;
   height: 3em;
-  border-bottom: 0.3em solid #00adb5;
+  border-bottom: 0.3em solid #068B80;
 }
 @media only screen and (min-width: 1380px) {
   nav[role=navigation] .title {
@@ -538,7 +538,7 @@ nav[role=navigation] .title .main a {
   color: #eeeeee;
 }
 nav[role=navigation] .title .main a:hover {
-  color: #00adb5;
+  color: #068B80;
 }
 nav[role=navigation] .title .sub {
   padding-right: 0.5em;
@@ -571,7 +571,7 @@ nav[role=navigation] ul.menu {
 }
 @media only screen and (min-width: 1380px) {
   nav[role=navigation] ul.menu {
-    border-bottom: 0.3em solid #00adb5;
+    border-bottom: 0.3em solid #068B80;
     position: relative !important;
     display: block !important;
     height: 3em !important;
@@ -600,10 +600,10 @@ nav[role=navigation] ul.menu li {
   }
 }
 nav[role=navigation] ul.menu li.content a {
-  color: #00adb5;
+  color: #068B80;
 }
 nav[role=navigation] ul.menu li.content a:hover {
-  color: #1cf5ff;
+  color: #0aedda;
 }
 nav[role=navigation] ul.menu li a {
   text-decoration: none;
@@ -622,8 +622,8 @@ nav[role=postinglist] .yeargroup {
   padding-left: 0.8em;
   padding-bottom: 0.2em;
   font-weight: bold;
-  color: #00adb5;
-  border-left: 2px solid #00adb5;
+  color: #068B80;
+  border-left: 2px solid #068B80;
   position: relative;
 }
 nav[role=postinglist] .yeargroup:after {
@@ -635,7 +635,7 @@ nav[role=postinglist] .yeargroup:after {
   left: -7px;
   border-radius: 10px;
   content: '';
-  border: 2px solid #00adb5;
+  border: 2px solid #068B80;
   background: white;
 }
 nav[role=pagination] {
@@ -656,11 +656,11 @@ section[role=main] header {
 }
 section[role=main] a {
   text-decoration: none;
-  color: #00adb5;
+  color: #068B80;
   font-weight: bolder;
 }
 section[role=main] a:hover {
-  color: #00dee8;
+  color: #08bcad;
 }
 section[role=main] span.image img {
   max-width: 100%;
@@ -680,11 +680,11 @@ section[role=main] .post-header {
   color: #eeeeee;
 }
 section[role=main] .post-header a {
-  color: #00adb5;
+  color: #068B80;
   font-weight: bolder;
 }
 section[role=main] .post-header a:hover {
-  color: #1cf5ff;
+  color: #0aedda;
 }
 section[role=main] .post-header .post-title {
   font-size: xx-large;
@@ -702,7 +702,7 @@ section[role=main] .post-header .post-title {
   padding-top: 2.5em;
   padding-bottom: 0.5em;
   position: relative;
-  border-left: 2px solid #00adb5;
+  border-left: 2px solid #068B80;
 }
 .post-list .post-stub .content {
   display: block;
@@ -725,7 +725,7 @@ section[role=main] .post-header .post-title {
   left: -7px;
   border-radius: 10px;
   content: '';
-  border: 2px solid #00adb5;
+  border: 2px solid #068B80;
   background: white;
 }
 .post-list .post-stub .readmore {
@@ -888,10 +888,10 @@ section[role=main] .post-header .post-title {
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221792%22%20height%3D%221792%22%20viewBox%3D%220%200%201792%201792%22%3E%3Cpath%20d%3D%22M1152%20640q0-106-75-181t-181-75-181%2075-75%20181%2075%20181%20181%2075%20181-75%2075-181zm256%200q0%20109-33%20179l-364%20774q-16%2033-47.5%2052t-67.5%2019-67.5-19-46.5-52l-365-774q-33-70-33-179%200-212%20150-362t362-150%20362%20150%20150%20362z%22%2F%3E%3C%2Fsvg%3E");
 }
 .fa.fa-address-card-o {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3Csvg%20width%3D%222048%22%20height%3D%221792%22%20viewBox%3D%220%200%202048%201792%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M1024%201131q0%2064-37%20106.5t-91%2042.5h-512q-54%200-91-42.5t-37-106.5%209-117.5%2029.5-103%2060.5-78%2097-28.5q6%204%2030%2018t37.5%2021.5%2035.5%2017.5%2043%2014.5%2042%204.5%2042-4.5%2043-14.5%2035.5-17.5%2037.5-21.5%2030-18q57%200%2097%2028.5t60.5%2078%2029.5%20103%209%20117.5zm-157-520q0%2094-66.5%20160.5t-160.5%2066.5-160.5-66.5-66.5-160.5%2066.5-160.5%20160.5-66.5%20160.5%2066.5%2066.5%20160.5zm925%20445v64q0%2014-9%2023t-23%209h-576q-14%200-23-9t-9-23v-64q0-14%209-23t23-9h576q14%200%2023%209t9%2023zm0-252v56q0%2015-10.5%2025.5t-25.5%2010.5h-568q-15%200-25.5-10.5t-10.5-25.5v-56q0-15%2010.5-25.5t25.5-10.5h568q15%200%2025.5%2010.5t10.5%2025.5zm0-260v64q0%2014-9%2023t-23%209h-576q-14%200-23-9t-9-23v-64q0-14%209-23t23-9h576q14%200%2023%209t9%2023zm128%20960v-1216q0-13-9.5-22.5t-22.5-9.5h-1728q-13%200-22.5%209.5t-9.5%2022.5v1216q0%2013%209.5%2022.5t22.5%209.5h352v-96q0-14%209-23t23-9h64q14%200%2023%209t9%2023v96h768v-96q0-14%209-23t23-9h64q14%200%2023%209t9%2023v96h352q13%200%2022.5-9.5t9.5-22.5zm128-1216v1216q0%2066-47%20113t-113%2047h-1728q-66%200-113-47t-47-113v-1216q0-66%2047-113t113-47h1728q66%200%20113%2047t47%20113z%22%2F%3E%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3Csvg%20width%3D%222048%22%20height%3D%221792%22%20viewBox%3D%220%200%202048%201792%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M1024%201131q0%2064-37%20106.5t-91%2042.5h-512q-54%200-91-42.5t-37-106.5%209-117.5%2029.5-103%2060.5-78%2097-28.5q6%204%2030%2018t37.5%2021.5%2035.5%2017.5%2043%2014.5%2042%204.5%2042-4.5%2043-14.5%2035.5-17.5%2037.5-21.5%2030-18q57%200%2097%2028.5t60.5%2078%2029.5%20103%209%20117.5zm-157-520q0%2094-66.5%20160.5t-160.5%2066.5-160.5-66.5-66.5-160.5%2066.5-160.5%20160.5-66.5%20160.5%2066.5%2066.5%20160.5zm925%20445v64q0%2014-9%2023t-23%209h-576q-14%200-23-9t-9-23v-64q0-14%209-23t23-9h576q14%200%2023%209t9%2023zm0-252v56q0%2015-10.5%2025.5t-25.5%2010.5h-568q-15%200-25.5-10.5t-10.5-25.5v-56q0-15%2010.5-25.5t25.5-10.5h568q15%200%2025.5%2010.5t10.5%2025.5zm0-260v64q0%2014-9%2023t-23%209h-576q-14%200-23-9t-9-23v-64q0-14%209-23t23-9h576q14%200%2023%209t9%2023zm128%20960v-1216q0-13-9.5-22.5t-22.5-9.5h-1728q-13%200-22.5%209.5t-9.5%2022.5v1216q0%2013%209.5%2022.5t22.5%209.5h352v-96q0-14%209-23t23-9h64q14%200%2023%209t9%2023v96h768v-96q0-14%209-23t23-9h64q14%200%2023%209t9%2023v96h352q13%200%2022.5-9.5t9.5-22.5zm128-1216v1216q0%2066-47%20113t-113%2047h-1728q-66%200-113-47t-47-113v-1216q0-66%2047-113t113-47h1728q66%200%20113%2047t47%20113z%22%2F%3E%3C%2Fsvg%3E");
 }
 .fa.fa-rss {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3Csvg%20width%3D%221792%22%20height%3D%221792%22%20viewBox%3D%220%200%201792%201792%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M576%201344q0%2080-56%20136t-136%2056-136-56-56-136%2056-136%20136-56%20136%2056%2056%20136zm512%20123q2%2028-17%2048-18%2021-47%2021h-135q-25%200-43-16.5t-20-41.5q-22-229-184.5-391.5t-391.5-184.5q-25-2-41.5-20t-16.5-43v-135q0-29%2021-47%2017-17%2043-17h5q160%2013%20306%2080.5t259%20181.5q114%20113%20181.5%20259t80.5%20306zm512%202q2%2027-18%2047-18%2020-46%2020h-143q-26%200-44.5-17.5t-19.5-42.5q-12-215-101-408.5t-231.5-336-336-231.5-408.5-102q-25-1-42.5-19.5t-17.5-43.5v-143q0-28%2020-46%2018-18%2044-18h3q262%2013%20501.5%20120t425.5%20294q187%20186%20294%20425.5t120%20501.5z%22%2F%3E%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3Csvg%20width%3D%221792%22%20height%3D%221792%22%20viewBox%3D%220%200%201792%201792%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M576%201344q0%2080-56%20136t-136%2056-136-56-56-136%2056-136%20136-56%20136%2056%2056%20136zm512%20123q2%2028-17%2048-18%2021-47%2021h-135q-25%200-43-16.5t-20-41.5q-22-229-184.5-391.5t-391.5-184.5q-25-2-41.5-20t-16.5-43v-135q0-29%2021-47%2017-17%2043-17h5q160%2013%20306%2080.5t259%20181.5q114%20113%20181.5%20259t80.5%20306zm512%202q2%2027-18%2047-18%2020-46%2020h-143q-26%200-44.5-17.5t-19.5-42.5q-12-215-101-408.5t-231.5-336-336-231.5-408.5-102q-25-1-42.5-19.5t-17.5-43.5v-143q0-28%2020-46%2018-18%2044-18h3q262%2013%20501.5%20120t425.5%20294q187%20186%20294%20425.5t120%20501.5z%22%2F%3E%3C%2Fsvg%3E");
 }
 /* Ocean Dark Theme */
 /* https://github.com/gavsiu */
