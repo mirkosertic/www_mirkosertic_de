@@ -2,7 +2,7 @@
 date = "2018-02-01T00:00:00+02:00"
 title = "Alice, Bob, Carol and Dave OpenCL Edition"
 tags = ["Performance", "Interesting", "OpenCL", "Compiler"]
-draft = true
+draft = false
 description = "Once upon a time in an office far far away worked four very nice IT people very hard in their office cubicles. Their names were Alice, Bob, Carol and Dave, and this is an OpenCL story."
 +++
 include::globals.adoc[]
