@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" {{ if .Site.Params.opengraph }} prefix="og: http://ogp.me/ns#"{{ end }}>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ .Title }} &middot; {{ .Site.Author.name }}</title>
+    <meta name="description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    {{ .Hugo.Generator }}
+    <meta name="robots" content="index,follow">
+    {{ if .Site.Params.opengraph }}{{ partial "opengraph.html" . }}{{ end }}
+    {{ if .RSSLink }}
+    <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml">
+    {{ end }}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ .Site.BaseURL }}css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.BaseURL }}favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.BaseURL }}apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.BaseURL }}favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.BaseURL }}favicon-16x16.png">
+    <link rel="manifest" href="{{ .Site.BaseURL }}manifest.json">
+    <link rel="mask-icon" href="{{ .Site.BaseURL }}safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    {{ template "_internal/google_analytics_async.html" . }}
+</head>
+<body itemscope itemtype="http://schema.org/WebPage">
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+        <a class="navbar-brand" href="#">www.mirkosertic.de</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+
+                {{ $currentNode := . }}
+                {{ range .Site.Menus.main.ByWeight }}
+                <li class="nav-item">
+                    <a itemprop="url" class="nav-link {{if $currentNode.IsMenuCurrent .}}active{{end}}" href="{{ .URL }}" title="{{ .Name }}">{{ .Name }}</a>
+                </li>
+                {{ end }}
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">About me<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Interesting Books</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Tools &amp; Goodies</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main role="main">
