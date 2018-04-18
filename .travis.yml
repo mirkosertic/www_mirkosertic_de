@@ -8,7 +8,6 @@ env:
 before_install:
   - rvm install 2.3.3
   - sudo apt-get update
-  - sudo apt-get install lftp
   - gem install asciidoctor
   - gem install coderay
   - gem install asciidoctor-diagram
