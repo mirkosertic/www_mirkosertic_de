@@ -1,0 +1,147 @@
+@import (inline) "bootstrap.min.css";
+@import (less) "fa.less";
+@import (inline) "ocean.css";
+@import (less) "asciidoc.less";
+
+@history-color: #6c757d;
+@stub-color: #6c757d;
+
+main {
+
+  a {
+    color: black;
+    font-weight: bold;
+    &:hover {
+      color: black;
+    }
+  }
+
+
+  header.business-header {
+    padding: 5rem 0rem 2rem 0rem;
+  }
+
+  header.post-header {
+    margin: 0;
+    padding: 0rem 1rem 0.1rem 1rem;
+    color: white;
+
+    h1 {
+      padding-top: 4rem;
+    }
+
+    a {
+      color: white;
+      &:hover {
+        color: #343a40;
+        text-decoration: none;
+      }
+    }
+
+    p.post-date {
+
+    }
+
+    border-bottom: 1px solid silver;
+  }
+
+  article {
+    padding: 0rem 1rem 1rem 1rem;
+
+    p {
+      margin-top: 1em;
+    }
+  }
+
+  nav[role=postinglist] {
+    padding: 2rem 1rem 1rem 1rem;
+
+    .yeargroup {
+      font-size: xx-large;
+      padding-top: 1em;
+      padding-left: 0.8em;
+      padding-bottom: 0.2em;
+      font-weight: bold;
+      color: @history-color;
+      border-left: 2px solid @history-color;
+      position: relative;
+
+      &:after {
+        width: 10px;
+        height: 10px;
+        display: block;
+        top: 1.5em;
+        position: absolute;
+        left: -7px;
+        border-radius: 10px;
+        content: '';
+        border: 2px solid @history-color;
+        background: white;
+      }
+    }
+
+    .post-list {
+
+      padding: 0;
+      margin: 0;
+
+      .post-stub {
+        display: block;
+        margin: 0;
+        padding: 0;
+        padding-left: 2em;
+        padding-top: 2.5em;
+        padding-bottom: 0.5em;
+        position: relative;
+        border-left: 2px solid @history-color;
+
+        .content {
+          display: block;
+          border: 1px solid @stub-color;
+          padding: 0.5em;
+        }
+
+        &:before {
+          content: attr(date-is);
+          position: absolute;
+          left: 1.8em;
+          top: 0.6em;
+          display: block;
+        }
+
+
+        &:after {
+          width: 10px;
+          height: 10px;
+          display: block;
+          top: 1em;
+          position: absolute;
+          left: -7px;
+          border-radius: 10px;
+          content: '';
+          border: 2px solid @stub-color;
+          background: white;
+        }
+
+        .readmore {
+          padding-left: 1em;
+          padding-right: 1em;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  border-top: 1px solid silver;
+  padding: 1rem 1rem 1rem 1rem;
+
+  a {
+    color: black;
+    font-weight: bold;
+    &:hover {
+      color: black;
+    }
+  }
+}
