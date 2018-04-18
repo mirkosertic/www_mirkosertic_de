@@ -32,7 +32,7 @@ gulp.task('deploy', function() {
         host: 'w0077e1b.kasserver.com',
         user: args.user,
         password: args.password,
-        parallel: 10,
+        parallel: 1,
         log: gutil.log
     });
     gulp.src('public/**', {base: '.', buffer: false})
