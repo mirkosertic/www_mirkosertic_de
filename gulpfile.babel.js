@@ -34,7 +34,7 @@ gulp.task('deploy', function() {
         password: args.password,
         log: gutil.log
     });
-    gulp.src(['**/*.*'], {cwd: 'public', buffer: false})
+    gulp.src(['./**'], {cwd: './public', buffer: false})
         .pipe(conn.newer(remotePath))
         .pipe(conn.dest(remotePath));
 });
