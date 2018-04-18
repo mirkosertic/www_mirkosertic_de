@@ -27,7 +27,7 @@ gulp.task('build', ['hugo-build'], (callback) => {
 });
 
 gulp.task('deploy', function() {
-    var remotePath = '/www/testsite';
+    var remotePath = '/www/testsite/';
     var conn = ftp.create({
         host: 'w0077e1b.kasserver.com',
         user: args.user,
@@ -35,6 +35,6 @@ gulp.task('deploy', function() {
         parallel: 10,
         log: gutil.log
     });
-    gulp.src('public/**/*', {cwd: '/public/', buffer: false})
+    gulp.src('public/**/*', {base: '/', buffer: false})
         .pipe(conn.dest(remotePath));
 });
