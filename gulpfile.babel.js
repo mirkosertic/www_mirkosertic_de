@@ -35,6 +35,6 @@ gulp.task('deploy', function() {
         parallel: 10,
         log: gutil.log
     });
-    gulp.src('public/**/*', {base: '.', buffer: false})
+    gulp.src('public/**', {base: '.', buffer: false})
         .pipe(conn.dest(remotePath));
 });
