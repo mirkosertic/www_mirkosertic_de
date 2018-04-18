@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "build": "gulp build",
-    "deploy": "cross-var gulp deploy --user $FTPUSR --password $FTPPWD"
+    "deploy": "gulp deploy --user $FTPUSR --password $FTPPWD"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.5.0",
