@@ -30,6 +30,6 @@ script:
   - npm run build
 
 after_success:
-  - gulp deploy --user $FTPUSR --password $FTPPWD
+  - npm run deploy
   - curl http://www.google.com/webmasters/sitemaps/ping?sitemap=https://www.mirkosertic.de/sitemap.xml
   - curl http://www.bing.com/ping?sitemap=https://www.mirkosertic.de/sitemap.xml
