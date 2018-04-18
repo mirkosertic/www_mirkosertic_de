@@ -32,9 +32,10 @@ gulp.task('deploy', function() {
         host: 'w0077e1b.kasserver.com',
         user: args.user,
         password: args.password,
+        parallel: 10,
         log: gutil.log
     });
-    gulp.src(['./public/**/*.*'])
+    gulp.src(['**/*.*'], {base: 'public', buffer: false})
         .pipe(conn.newer(remotePath))
         .pipe(conn.dest(remotePath));
 });
