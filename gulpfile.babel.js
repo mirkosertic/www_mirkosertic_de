@@ -33,6 +33,7 @@ gulp.task('deploy', function() {
         user: args.user,
         password: args.password,
         parallel: 1,
+        secure: true,
         debug: function(d) {console.log(d);},
         log: gutil.log
     });
