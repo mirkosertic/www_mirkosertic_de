@@ -3,7 +3,7 @@ import htmlmin from 'gulp-htmlmin'
 import runSequence from 'run-sequence'
 import shell from 'gulp-shell'
 
-var FtpDeploy = require('ftp-deploy');
+var ftp = require('vinyl-ftp');
 var gutil = require('gulp-util');
 var minimist = require('minimist');
 var args = minimist(process.argv.slice(2));
@@ -27,26 +27,16 @@ gulp.task('build', ['hugo-build'], (callback) => {
 });
 
 gulp.task('deploy', function() {
-
-    var ftpDeploy = new FtpDeploy();
-
-    var config = {
-        username: args.user,
-        password: args.password,
+    var remotePath = '/www/testsite/';
+    var conn = ftp.create({
         host: 'w0077e1b.kasserver.com',
-        port: 21,
-        localRoot: __dirname + "/public",
-        remoteRoot: "/www/testsite/",
-        include: ['**/*'],
-        exclude: ['.git', '.idea', 'tmp/*', 'build/*']
-    };
-
-    ftpDeploy.on('uploaded', function(data) {
-        console.log(data);
+        user: args.user,
+        password: args.password,
+        parallel: 1,
+        secure: true,
+        debug: function(d) {console.log(d);},
+        log: gutil.log
     });
-
-    ftpDeploy.deploy(config, function(err) {
-        if (err) console.log(err)
-        else console.log('finished');
-    });
+    return gulp.src('public/**/*', {base: '.', buffer: false})
+        .pipe(conn.dest(remotePath));
 });
