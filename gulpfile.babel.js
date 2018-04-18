@@ -37,6 +37,6 @@ gulp.task('deploy', function() {
         debug: function(d) {console.log(d);},
         log: gutil.log
     });
-    return gulp.src('public/**/*', {base: '.', buffer: false})
-        .pipe(conn.dest(remotePath));
+    return gulp.src('**/*', {cwd: './public', buffer: false})
+            .pipe(conn.dest(remotePath));
 });
