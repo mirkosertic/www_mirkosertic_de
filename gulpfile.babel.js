@@ -32,11 +32,12 @@ gulp.task('deploy', function() {
         host: 'w0077e1b.kasserver.com',
         user: args.user,
         password: args.password,
-        parallel: 1,
+        parallel: 3,
         secure: true,
         debug: function(d) {console.log(d);},
         log: gutil.log
     });
     return gulp.src('**/*', {cwd: './public', buffer: false})
+            .pipe(conn.newerOrDifferentSize(remotePath))
             .pipe(conn.dest(remotePath));
 });
