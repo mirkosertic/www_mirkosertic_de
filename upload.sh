@@ -3,5 +3,8 @@
 pwd
 ls -la
 
-lftp -u $FTPUSR,$FTPPWD w0077e1b.kasserver.com \
- -e 'mirror -c -e -R --parallel=10 ./public /www/testsite ; exit'
+lftp -f "
+open w0077e1b.kasserver.com
+user $FTPUSR $FTPPWD
+mirror -v -R ./public /www/testsite
+bye"
