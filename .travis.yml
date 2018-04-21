@@ -34,7 +34,6 @@ script:
   - npm run build
 
 after_success:
-  - chmod 755 ./upload.sh
-  - ./upload.sh
+  - npm run deploy
   - curl http://www.google.com/webmasters/sitemaps/ping?sitemap=https://www.mirkosertic.de/sitemap.xml
   - curl http://www.bing.com/ping?sitemap=https://www.mirkosertic.de/sitemap.xml
