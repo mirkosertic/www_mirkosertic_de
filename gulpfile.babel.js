@@ -34,6 +34,7 @@ gulp.task('deploy', function() {
         password: args.password,
         parallel: 1,
         maxConnections: 1,
+        idleTimeout: 1000,
         secure: true,
         debug: function(d) {console.log(d);},
         log: gutil.log

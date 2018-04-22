@@ -1,6 +1,6 @@
 languageCode = "en-us"
 title = "www.mirkosertic.de"
-theme= "simple"
+theme= "boot"
 baseurl = "https://www.mirkosertic.de/"
 copyright = "Mirko Sertic"
 googleAnalytics = "UA-33614060-2"
