@@ -40,8 +40,8 @@ script:
   - export PATH=.:$PATH
   - unset "_JAVA_OPTIONS"
   - npm run build
+  - npm run deploy
 
 after_success:
-  - npm run deploy
   - curl http://www.google.com/webmasters/sitemaps/ping?sitemap=https://www.mirkosertic.de/sitemap.xml
   - curl http://www.bing.com/ping?sitemap=https://www.mirkosertic.de/sitemap.xml
