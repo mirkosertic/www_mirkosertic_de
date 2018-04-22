@@ -32,10 +32,10 @@ gulp.task('deploy', function() {
         host: 'w0077e1b.kasserver.com',
         user: args.user,
         password: args.password,
-        parallel: 1,
-        maxConnections: 1,
+        parallel: 5,
+        maxConnections: 5,
         idleTimeout: 1000,
-        secure: true,
+        secure: false,
         debug: function(d) {console.log(d);},
         log: gutil.log
     });
