@@ -40,9 +40,8 @@ script:
   - export PATH=.:$PATH
   - unset "_JAVA_OPTIONS"
   - npm run build
-  - chmod 755 ./upload.sh
-  - . ./upload.sh
 
 after_success:
+  - npm run deploy
   - curl http://www.google.com/webmasters/sitemaps/ping?sitemap=https://www.mirkosertic.de/sitemap.xml
   - curl http://www.bing.com/ping?sitemap=https://www.mirkosertic.de/sitemap.xml
