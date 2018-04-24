@@ -25,21 +25,3 @@ gulp.task('minify-html', () => {
 gulp.task('build', ['hugo-build'], (callback) => {
     runSequence('minify-html', callback)
 });
-
-gulp.task('deploy', function() {
-    var remotePath = '/www';
-    var conn = ftp.create({
-        host: 'w0077e1b.kasserver.com',
-        user: args.user,
-        password: args.password,
-        parallel: 5,
-        maxConnections: 5,
-        idleTimeout: 1000,
-        secure: false,
-        debug: function(d) {console.log(d);},
-        log: gutil.log
-    });
-    return gulp.src('**/*', {cwd: './public', buffer: false})
-            .pipe(conn.newerOrDifferentSize(remotePath))
-            .pipe(conn.dest(remotePath));
-});

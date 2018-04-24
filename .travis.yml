@@ -1,16 +1,5 @@
 language: go
 
-env:
-  global:
-    - secure: "v2vQcu1XxmDt924qkjE4cb8uFxdEFhZ7qRx6q3HpGN5sOuEcVm6SBeXn0UWdgZhD4G9GxeOUIsKmFKr7AQTXDPyFP4hKU6+so53bvIq/LWdJI0dGybyeryO3T59Dft9S+c1vIcusifnRLRhCX9x4p3W6whesVPrVvww//68VVnMo34Ib7ITgZT1Qm+P+A2lqlAgVZfR/35yvKcUqklbrwSoQ3CA2oJuoNh2MxssVqaN3znklPEYCrsD+bb9Rh3YEhXn6zex6C3ldE1SsLO7BDrdtNFncIBTPBZP2d+TbjAlFMvFcqOw/ZNPClhdKugyjpKFA+PzNhIdWX5RPtSlJ5yj+qVi+aZLWTK7GXoZcSGxjuCME4hun/pcHQZYIIUdbNpAU6xWq/Kjii7jNigU7I3ai+5X+PpEulna39O1nI/edGCRiAkl1ntkJWHiLn2L2kMBQqz0yaonNzyVBKTnLld0ob7ym4LPciPIk+bhNX2poTkN5tAXtckToZL5S/hNHuv1MWiu0RAwrTUr4j6gdurty+kiE6b83WJKoXaLbuYwodD0U1EAn0YzBTZI2kSCWY0KV4/C/HkkxccoK2QZs+se6tZbbGRcwy2l5aW5apCHBKyyj6emgY6WKuZ0do37llNKxxbdGjCu4U4xSLpV1eWjRDuur92ahAQOVtbQzrnA="
-    - secure: "BIyzJQQ6e/lRdJY4obgKePRI2GeE/XoM9oBOUqFMVtxmLxmygoQ2kRL15ziVPiO9LbnvqImWHG6BCJdm2ZHMb/wZ6DrNl+qF7yroAouEe9pNI3krqWQ81tI2SruubhUmc4eoS/MF2mIBC8VRMxSeLl3ELBtxsDE5OmN41w2TudzpJoF4C6VuN2m7j2Bdv+cu6Te3nRTqZIy+6QS830+0v8KduVE9OZKPdmnRviNA363DVIS6Zt7pwenjFd/s0JjPRv9n+lryQ4CxiMdsydhx0Hct+cM+l/ghSWhzUd8GVXalwpK3pj4Kp7AeR0gmNoiDCctnrk/D3eWtfStZGnhtJqmP4sY4A7Ep1ruEVYXp4cuRVAdyKWad2SsY1kVlzKxDBux/QHYE34jyz2T0xBSArvlPceYCFyEDKErE0VPf7HwsrD2Map4Vd2NXOCc8OvBvqMZr8E2+dEZPk+3pQy46FznmnVD16+ymHwPVAZuDaYXEjkiTEhAI2UiUeOi+b0MKL6nBbYEtAcDZJsuXHxd8y7dww0GBNd0h8jm3qziz4RSWi9cLX7pYF9XaEpcLy/mBTSpODv3AW2FGBFc6I+5KxXyiI88DTyIdM5/fqmdNreAuuUz8qGoK3NofIzLiDHgQP1EF5PvfiAmdQq44pnMSkFhxVr6/Ul2aZDCFt11LRXI="
-
-addons:
-  apt:
-    packages:
-    - lftp
-    - ncftp
-
 notifications:
   email:
     recipients:
@@ -41,8 +30,15 @@ script:
   - unset "_JAVA_OPTIONS"
   - npm run build
 
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
+  keep-history: false
+  local-dir: public
+  on:
+    branch: master
+
 after_success:
-  - chmod 755 ./upload_old.sh
-  - ./upload_old.sh
   - curl http://www.google.com/webmasters/sitemaps/ping?sitemap=https://www.mirkosertic.de/sitemap.xml
   - curl http://www.bing.com/ping?sitemap=https://www.mirkosertic.de/sitemap.xml
