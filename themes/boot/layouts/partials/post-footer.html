@@ -1,10 +1,54 @@
 </main>
 <footer>
-    <p>&copy; Mirko Sertic &middot; <a href="{{ .Site.BaseURL }}impressum.html">Impressum</a></p>
+    <p>&copy; Mirko Sertic &middot; <a href="{{ .Site.BaseURL }}global/impressum/index.html">Impressum</a></p>
     {{ partial "address.html" . }}
     <p class="float-right"><a href="#">Back to top</a></p>
 </footer>
-<script src="http://code.jquery.com/jquery.js"></script>
+<script src="{{ .Site.BaseURL }}js/jquery-3.3.1.min.js"></script>
 <script src="{{ .Site.BaseURL }}js/bootstrap.min.js"></script>
+<script>
+    function existsByCSSSelector(aSelector) {
+        var element = document.querySelector(aSelector);
+        if (element) {
+            return true;
+        }
+        return false;
+    }
+
+    var Loader = function () { };
+    Loader.prototype = {
+        require: function (scripts, callback) {
+            this.loadCount = 0;
+            this.totalRequired = scripts.length;
+            this.callback = callback;
+
+            for (var i=0;i<scripts.length;i++) {
+                this.writeScript(scripts[i]);
+            }
+        },
+        loaded: function (evt) {
+            this.loadCount++;
+
+            if (this.loadCount==this.totalRequired && typeof this.callback=='function') this.callback.call();
+        },
+        writeScript: function (src) {
+            var self = this;
+            var s = document.createElement('script');
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = src;
+            s.addEventListener('load', function (e) { self.loaded(e); }, false);
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(s);
+        }
+    };
+
+    if (existsByCSSSelector("pre.highlight code") > 0) {
+        var loader = new Loader();
+        loader.require(["{{ .Site.BaseURL }}js/highlight-9.9.0.min.js"], function() {
+            hljs.initHighlightingOnLoad();
+        });
+    }
+</script>
 </body>
 </html>
