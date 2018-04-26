@@ -1,5 +1,5 @@
 +++
-date = "2018-01-23T00:00:00+02:00"
+date = "2018-04-26T00:00:00+02:00"
 title = "Tools & Goodies"
 tags = []
 draft = false
@@ -7,6 +7,18 @@ description = "A collection of tools and goodies"
 +++
 include::globals.adoc[]
 == Technical stuff
+
+https://grafana.com/[Grafana]
+
+The open platform for beautiful analytics and monitoring
+
+https://kafka.apache.org/[Apache Kafka]
+
+Kafka is used for building real-time data pipelines and streaming apps. It is horizontally scalable, fault-tolerant, wicked fast, and runs in production in thousands of companies.
+
+https://www.keycloak.org/[Keycloak]
+
+Keycloak is an open source Identity and Access Management solution aimed at modern applications and services. It makes it easy to secure applications and services with little to no code.
 
 http://cbor.io/
 
@@ -55,10 +67,6 @@ Hexels is a brand new, grid-based art program for Mac and PC that lets you paint
 http://www.gnu.org/software/octave[www.gnu.org/software/octave]
 
 GNU Octave is a high-level interpreted language, primarily intended for numerical computations. It provides capabilities for the numerical solution of linear and nonlinear problems, and for performing other numerical experiments. It also provides extensive graphics capabilities for data visualization and manipulation. Octave is normally used through its interactive command line interface, but it can also be used to write non-interactive programs. The Octave language is quite similar to Matlab so that most programs are easily portable.
-
-http://picketlink.org/[picketlink.org]
-
-PicketLink is an umbrella project for security and identity management for Java Applications. PicketLink is an important project under the security offerings from JBoss.
 
 http://www.togglz.org/[www.togglz.org]
 
