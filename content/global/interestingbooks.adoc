@@ -51,7 +51,6 @@ include::globals.adoc[]
     * Version Control with Git: Powerful tools and techniques for collaborative software development. Jon Loeliger und Matthew McCullough
     * JavaScript: The Good Parts: Working with the Shallow Grain of JavaScript. Douglas Crockford
 
-
 == Others
 
     * The Back of the Napkin. Solving problems and selling ideas with pictures. Dan Roam
