@@ -3,10 +3,10 @@
     <nav class="pagination" role="pagination">
         <span class="page-number">Page {{ $pag.PageNumber }} of {{ $pag.TotalPages }}</span>
         {{ if $pag.HasPrev }}
-            <a class="newer-posts" rel="prev" href="{{ $pag.Prev.URL }}">Newer Posts</a>
+            <a class="newer-posts" rel="prev" href="{{ $pag.Prev.URL }}">&nbsp;Newer Posts</a>
         {{ end }}
         {{ if $pag.HasNext }}
-            <a class="older-posts" rel="next" href="{{ $pag.Next.URL }}">Older Posts</a>
+            <a class="older-posts" rel="next" href="{{ $pag.Next.URL }}">&nbsp;Older Posts</a>
         {{ end }}
     </nav>
 {{ end }}
