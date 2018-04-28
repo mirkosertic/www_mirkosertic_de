@@ -6,6 +6,10 @@
 @history-color: #6c757d;
 @stub-color: #6c757d;
 
+body {
+  background-color: #323232
+}
+
 header {
 
   nav.navbar {
@@ -14,6 +18,9 @@ header {
 }
 
 main {
+
+  background-color: white;
+  padding-bottom: 2rem;
 
   a {
     color: black;
@@ -149,14 +156,20 @@ div.comments {
 }
 
 footer {
-  border-top: 1px solid silver;
-  padding: 1rem 1rem 1rem 1rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: #7b7b7b;
+
+  strong {
+    color: white;
+  }
 
   a {
     font-weight: bold;
-    color: black;
+    color: white;
     &:hover {
-      color: black;
+      color: white;
     }
   }
 }
