@@ -20,6 +20,10 @@ https://www.keycloak.org/[Keycloak]
 
 Keycloak is an open source Identity and Access Management solution aimed at modern applications and services. It makes it easy to secure applications and services with little to no code.
 
+https://gohugo.io/[Hugo]
+
+Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.
+
 http://cbor.io/
 
 The Concise Binary Object Representation (CBOR) is a data format whose design goals include the possibility of extremely small code size, fairly small message size, and extensibility without the need for version negotiation.
