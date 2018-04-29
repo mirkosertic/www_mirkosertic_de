@@ -4,6 +4,7 @@ import runSequence from 'run-sequence'
 import shell from 'gulp-shell'
 
 var imagemin = require('gulp-imagemin');
+var uncss = require('gulp-uncss');
 
 gulp.task('hugo-build', shell.task(['hugo']));
 
@@ -28,6 +29,14 @@ gulp.task('minify-html', () => {
         .pipe(gulp.dest('./public'))
 });
 
+gulp.task('cssmin', function () {
+    return gulp.src(['public/css/site.css', 'public/css/bootstrap.css'])
+        .pipe(uncss({
+            html: ['public/*.html', 'public/post/*.html', 'public/tags/*.html', 'public/global/*.html', 'public/blog/*.html']
+        }))
+        .pipe(gulp.dest('./public/css'));
+});
+
 gulp.task('build', ['hugo-build',], (callback) => {
-    runSequence('minify-html', 'imagemin', callback)
+    runSequence('minify-html', 'imagemin', 'cssmin', callback)
 });
