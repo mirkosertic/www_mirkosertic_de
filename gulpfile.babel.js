@@ -38,5 +38,5 @@ gulp.task('cssmin', function () {
 });
 
 gulp.task('build', ['hugo-build',], (callback) => {
-    runSequence('minify-html', 'imagemin', 'cssmin', callback)
+    runSequence('minify-html', 'imagemin', callback)
 });
