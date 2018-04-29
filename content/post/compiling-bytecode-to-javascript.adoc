@@ -314,7 +314,7 @@ And that is it.
 
 Ok, now let’s see if the compiler is working and check the correctness of the compilation process. I chose a simple JBox2D simulation, written in Java. This is a nice example, as it includes complex control flow, complex computation logic and also some nice visual feedback.
 
-And here it is, the running JBox2D Java Program transpiled to JavaScript: https://www.mirkosertic.de/examples/jbox2d/index.html
+And here it is, the running https://www.mirkosertic.de/examples/jbox2d/index.html[JBox2D Java Program] transpiled to JavaScript:
 
 image:/media/jbox2dsimulation.png[]
 

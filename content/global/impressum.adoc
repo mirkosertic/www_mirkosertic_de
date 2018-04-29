@@ -19,9 +19,9 @@ Josefine-Mauser-Strasse 66 +
 Telefon: 01575-1337193 +
 E-Mail: mirko@mirkosertic.de
 
-*Haftungsausschluss*
+=== Haftungsausschluss
 
-*Haftung für Inhalte*
+==== Haftung für Inhalte
 
 Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der
 Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß &sect; 7 Abs.1 TMG für eigene Inhalte auf
@@ -32,7 +32,7 @@ den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftun
 Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir
 diese Inhalte umgehend entfernen.
 
-*Haftung für Links*
+==== Haftung für Links
 
 Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir
 für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige
@@ -41,7 +41,7 @@ Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verl
 inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar.
 Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
 
-*Google Analytics*
+==== Google Analytics
 
 Diese Website benutzt Google Analytics, einen Webanalysedienst der Google Inc. (''Google''). Google Analytics verwendet
 sog. ''Cookies'', Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website
