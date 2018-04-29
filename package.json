@@ -1,22 +1,19 @@
 {
   "private": true,
   "scripts": {
-    "build": "gulp build",
-    "deploy": "gulp deploy --user $FTPUSR --password $FTPPWD"
+    "build": "gulp build"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.5.0",
     "babel-register": "^6.5.2",
-    "ftp-deploy": "^1.2.2",
     "gulp": "^3.9.1",
     "gulp-cli": "^1.2.1",
-    "gulp-deploy-ftp": "^1.0.1",
     "gulp-htmlmin": "^1.3.0",
+    "gulp-imagemin": "^4.1.0",
     "gulp-shell": "^0.5.2",
     "gulp-util": "^3.0.8",
     "minimist": "^1.2.0",
-    "run-sequence": "^1.1.5",
-    "vinyl-ftp": "^0.6.1"
+    "run-sequence": "^1.1.5"
   },
   "babel": {
     "presets": [
