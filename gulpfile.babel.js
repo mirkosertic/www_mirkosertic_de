@@ -32,11 +32,11 @@ gulp.task('minify-html', () => {
 gulp.task('cssmin', function () {
     return gulp.src(['public/css/site.css', 'public/css/bootstrap.css'])
         .pipe(uncss({
-            html: ['public/*.html', 'public/post/*.html', 'public/tags/*.html', 'public/global/*.html', 'public/blog/*.html']
+            html: ['public/*.html', 'public/post/**/*.html', 'public/tags/**/*.html', 'public/global/**/*.html', 'public/blog/**/*.html']
         }))
         .pipe(gulp.dest('./public/css'));
 });
 
 gulp.task('build', ['hugo-build',], (callback) => {
-    runSequence('minify-html', 'imagemin', callback)
+    runSequence('minify-html', 'imagemin', 'cssmin', callback)
 });
