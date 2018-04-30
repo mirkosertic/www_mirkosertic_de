@@ -376,5 +376,5 @@ ErrorDocument 404 /404.html
     AddOutputFilterByType DEFLATE application/xml application/xhtml+xml
     AddOutputFilterByType DEFLATE application/rss+xml
     AddOutputFilterByType DEFLATE application/javascript application/x-javascript
-    AddOutputFilterByType DEFLATE image/x-icon
+    AddOutputFilterByType DEFLATE image/x-icon image/vnd.microsoft.icon
 </IfModule>
