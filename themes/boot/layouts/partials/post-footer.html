@@ -46,6 +46,16 @@
     if (existsByCSSSelector("pre.highlight code") > 0) {
         var loader = new Loader();
         loader.require(["{{ .Site.BaseURL }}js/highlight-9.9.0.min.js"], function() {
+
+            var additionalStylesheet = document.createElement('link');
+            additionalStylesheet.rel = "stylesheet";
+            additionalStylesheet.type = 'text/css';
+            additionalStylesheet.media = "screen";
+            additionalStylesheet.href = "{{ .Site.BaseURL }}css/highlight.css";
+
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(additionalStylesheet);
+
             hljs.initHighlightingOnLoad();
         });
     }
