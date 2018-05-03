@@ -1,5 +1,5 @@
 +++
-date = "2018-01-23T00:00:00+02:00"
+date = "2018-05-03T00:00:00+02:00"
 title = "My personal list of interesting books"
 tags = []
 draft = false
@@ -50,9 +50,12 @@ include::globals.adoc[]
     * Functional Programming in Java: Harnessing the Power of Java 8 Lambda Expressions. Venkat Subramaniam
     * Version Control with Git: Powerful tools and techniques for collaborative software development. Jon Loeliger und Matthew McCullough
     * JavaScript: The Good Parts: Working with the Shallow Grain of JavaScript. Douglas Crockford
+    * Effective Java : Third Edition. Joshua Bloch
 
 == Others
 
+    * QualityLand. Marc-Uwe Kling
+    * The Science of Why: Answers to Questions about the World Around Us. Jay Ingram
     * The Back of the Napkin. Solving problems and selling ideas with pictures. Dan Roam
     * Creating Games, Mechanics, Content and Technology. Morgan McGuire, Odest Chadwicke Jenkins
     * Real-Time Rendering, Third Edition. Tomas Akenine-Möller, Eric Haines, Naty Hoffmann
