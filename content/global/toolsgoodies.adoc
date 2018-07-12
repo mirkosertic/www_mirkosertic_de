@@ -72,7 +72,7 @@ http://www.gnu.org/software/octave[GNU Octave]
 
 GNU Octave is a high-level interpreted language, primarily intended for numerical computations. It provides capabilities for the numerical solution of linear and nonlinear problems, and for performing other numerical experiments. It also provides extensive graphics capabilities for data visualization and manipulation. Octave is normally used through its interactive command line interface, but it can also be used to write non-interactive programs. The Octave language is quite similar to Matlab so that most programs are easily portable.
 
-http://www.togglz.org/Togglz]
+http://www.togglz.org/Togglz[Togglz]
 
 Togglz is an implementation of the http://martinfowler.com/bliki/FeatureToggle.html[Feature Toggle Pattern] for Java. Feature Toggles are a very common agile development practices in the context of continuous deployment and delivery. The basic idea is to associate a toggle with each new feature you are working on. This allows you to enable or disable these features at application runtime, even for individual users.
 
