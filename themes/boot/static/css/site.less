@@ -32,7 +32,13 @@ main {
   header.business-header {
     padding: 5rem 0rem 2rem 0rem;
     background: rgb(23,159,133);
-    background: linear-gradient(48deg, rgba(23,159,133,1) 0%, rgba(41,128,185,1) 100%);
+    background: -moz-linear-gradient(66deg, rgba(0,0,0,1) 29%, rgba(0,39,39,1) 41%, rgba(0,212,212,1) 94%, rgba(0,232,232,1) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(29%, rgba(0,0,0,1)), color-stop(41%, rgba(0,39,39,1)), color-stop(94%, rgba(0,212,212,1)), color-stop(100%, rgba(0,232,232,1))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(66deg, rgba(0,0,0,1) 29%, rgba(0,39,39,1) 41%, rgba(0,212,212,1) 94%, rgba(0,232,232,1) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(66deg, rgba(0,0,0,1) 29%, rgba(0,39,39,1) 41%, rgba(0,212,212,1) 94%, rgba(0,232,232,1) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(66deg, rgba(0,0,0,1) 29%, rgba(0,39,39,1) 41%, rgba(0,212,212,1) 94%, rgba(0,232,232,1) 100%); /* ie10+ */
+    background: linear-gradient(24deg, rgba(0,0,0,1) 29%, rgba(0,39,39,1) 41%, rgba(0,212,212,1) 94%, rgba(0,232,232,1) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00E8E8', endColorstr='#000000',GradientType=0 ); /* ie6-9 */
   }
 
   header.post-header {
