@@ -19,9 +19,10 @@ install:
   - . $HOME/.nvm/nvm.sh
   - nvm install stable
   - nvm use stable
-  - go get -v github.com/spf13/hugo
   - ruby -v
   - which ruby
+  - wget https://github.com/gohugoio/hugo/releases/download/v0.49/hugo_0.49_Linux-64bit.tar.gz
+  - tar xzf hugo_0.49_Linux-64bit.tar.gz
 
 script:
   - npm install
