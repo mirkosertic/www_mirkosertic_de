@@ -6,7 +6,7 @@ draft = false
 description = "This summary is taken from the book 'Seven Databases in Seven Weeks'"
 +++
 include::globals.adoc[]
-This summary is taken from the book “Seven Databases in Seven Weeks”. See link:{{< ref "global/interestingbooks.adoc">}}[the Books section] for details.
+This summary is taken from the book “Seven Databases in Seven Weeks”. See link:{{< ref "/global/interestingbooks.adoc">}}[the Books section] for details.
 
 |===
 | Database| Version| Genre| Data Types| Data Relations| Standard Object| Written in| Transactions| Triggers| Main Differentiator| Weaknesses
