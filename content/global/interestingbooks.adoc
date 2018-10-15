@@ -1,5 +1,5 @@
 +++
-date = "2018-05-03T00:00:00+02:00"
+date = "2018-10-15T00:00:00+02:00"
 title = "My personal list of interesting books"
 tags = []
 draft = false
@@ -51,7 +51,8 @@ include::globals.adoc[]
     * Version Control with Git: Powerful tools and techniques for collaborative software development. Jon Loeliger und Matthew McCullough
     * JavaScript: The Good Parts: Working with the Shallow Grain of JavaScript. Douglas Crockford
     * Effective Java : Third Edition. Joshua Bloch
-
+    * Deep Learning (Adaptive Computation and Machine Learning). Ian Goodfellow, Yoshua Bengio, Aaron Courville
+    
 == Others
 
     * QualityLand. Marc-Uwe Kling
