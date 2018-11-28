@@ -5,6 +5,27 @@
     <body>
         <canvas id="benchmark-canvas" width="600" height="600"></canvas>
         <script type="text/javascript" src="stats.min.js"></script>
+        <button id="button" onclick="stepFunction()" value="Click me" style="display: none">Click Me</button>
+        <table border="1">
+            <tr>
+                <td>Avg ms / Frame</td>
+                <td>50%</td>
+                <td>75%</td>
+                <td>95%</td>
+                <td>98%</td>
+                <td>99%</td>
+            </tr>
+            <tr>
+                <td id="stats_avg"></td>
+                <td id="stats_50"></td>
+                <td id="stats_75"></td>
+                <td id="stats_95"></td>
+                <td id="stats_98"></td>
+                <td id="stats_99"></td>
+            </tr>
+        </table>
+        <a href="https://github.com/mirkosertic/Bytecoder">Go to Bytecoder @ Github</a>
+
         <script type="text/javascript">
 
             function sortNumber(a,b) {
@@ -64,7 +85,10 @@
                     currentTimeMillis: function(aCaller) {return (Date.now() - 1514628979781);},
                     nanoTime: function(aCaller) {return (Date.now() - 1514628979781) * 1000000;},
                     logDebug: bytecoder_logDebug,
-                    logByteArrayAsString: bytecoder_logByteArrayAsString,
+                    writeByteArrayToConsole: bytecoder_logByteArrayAsString,
+                },
+                printstream: {
+                    logDebug: bytecoder_logDebug,
                 },
                 math: {
                     floor: function (thisref, p1) {return Math.floor(p1);},
@@ -72,9 +96,18 @@
                     sin: function (thisref, p1) {return Math.sin(p1);},
                     cos: function  (thisref, p1) {return Math.cos(p1);},
                     round: function  (thisref, p1) {return Math.round(p1);},
-                    float_rem: function(a, b) {return a % b;},
                     sqrt: function(thisref, p1) {return Math.sqrt(p1);},
                     add: function(thisref, p1, p2) {return p1 + p2;},
+                    max: function(p1, p2) { return Math.max(p1, p2);},
+                    min: function(p1, p2) { return Math.min(p1, p2);},
+                },
+                strictmath: {
+                    floor: function (thisref, p1) {return Math.floor(p1);},
+                    ceil: function (thisref, p1) {return Math.ceil(p1);},
+                    sin: function (thisref, p1) {return Math.sin(p1);},
+                    cos: function  (thisref, p1) {return Math.cos(p1);},
+                    round: function  (thisref, p1) {return Math.round(p1);},
+                    sqrt: function(thisref, p1) {return Math.sqrt(p1);},
                 },
                 debug: {
                     logRuntime : function(acaller, a) {
@@ -179,6 +212,8 @@
                 console.log("Bootstrapped");
                 runningInstance.exports.main(0);
                 console.log("Ready for action!");
+
+                document.getElementById("button").style.display = "block";
             };
 
             request.onload = function() {
@@ -195,24 +230,5 @@
             };
 
         </script>
-        <button onclick="stepFunction()" value="Click me">Click Me</button>
-        <table border="1">
-            <tr>
-                <td>Avg ms / Frame</td>
-                <td>50%</td>
-                <td>75%</td>
-                <td>95%</td>
-                <td>98%</td>
-                <td>99%</td>
-            </tr>
-            <tr>
-                <td id="stats_avg"></td>
-                <td id="stats_50"></td>
-                <td id="stats_75"></td>
-                <td id="stats_95"></td>
-                <td id="stats_98"></td>
-                <td id="stats_99"></td>
-            </tr>
-        </table>
     </body>
 </html>
