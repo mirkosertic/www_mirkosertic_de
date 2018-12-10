@@ -44,9 +44,13 @@ var bytecoder = {
 
      toJSEventListener: function(value) {
          return function(event) {
-             var eventIndex = bytecoder.toBytecoderReference(event);
-             bytecoder.exports.summonCallback(0,value,theIndex);
-             delete bytecoder.referenceTable[eventIndex];
+             try {
+                 var eventIndex = bytecoder.toBytecoderReference(event);
+                 bytecoder.exports.summonCallback(0,value,eventIndex);
+                 delete bytecoder.referenceTable[eventIndex];
+             } catch (e) {
+                 console.log(e);
+             }
          };
      },
 
@@ -163,14 +167,14 @@ var bytecoder = {
                return bytecoder.toBytecoderReference(bytecoder.referenceTable[target].getContext(bytecoder.toJSString(arg0)));
              },
          },
+         parentnode: {
+             getElementById: function(target,arg0) {
+               return bytecoder.toBytecoderReference(bytecoder.referenceTable[target].getElementById(bytecoder.toJSString(arg0)));
+             },
+         },
          window: {
              document: function(target) {
                return bytecoder.toBytecoderReference(bytecoder.referenceTable[target].document);
-             },
-         },
-         element: {
-             getElementById: function(target,arg0) {
-               return bytecoder.toBytecoderReference(bytecoder.referenceTable[target].getElementById(bytecoder.toJSString(arg0)));
              },
          },
      },

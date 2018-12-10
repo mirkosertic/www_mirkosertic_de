@@ -44,9 +44,13 @@ var bytecoder = {
 
      toJSEventListener: function(value) {
          return function(event) {
-             var eventIndex = bytecoder.toBytecoderReference(event);
-             bytecoder.exports.summonCallback(0,value,theIndex);
-             delete bytecoder.referenceTable[eventIndex];
+             try {
+                 var eventIndex = bytecoder.toBytecoderReference(event);
+                 bytecoder.exports.summonCallback(0,value,eventIndex);
+                 delete bytecoder.referenceTable[eventIndex];
+             } catch (e) {
+                 console.log(e);
+             }
          };
      },
 
@@ -163,14 +167,32 @@ var bytecoder = {
                return bytecoder.toBytecoderReference(bytecoder.referenceTable[target].getContext(bytecoder.toJSString(arg0)));
              },
          },
+         htmlelement: {
+             style: function(target) {
+               return bytecoder.toBytecoderReference(bytecoder.referenceTable[target].style);
+             },
+         },
+         cssstyledeclaration: {
+             setProperty: function(target,arg0,arg1) {
+               bytecoder.referenceTable[target].setProperty(bytecoder.toJSString(arg0),bytecoder.toJSString(arg1));
+             },
+         },
+         parentnode: {
+             getElementById: function(target,arg0) {
+               return bytecoder.toBytecoderReference(bytecoder.referenceTable[target].getElementById(bytecoder.toJSString(arg0)));
+             },
+         },
          window: {
              document: function(target) {
                return bytecoder.toBytecoderReference(bytecoder.referenceTable[target].document);
              },
+             requestAnimationFrame: function(target,arg0) {
+               bytecoder.referenceTable[target].requestAnimationFrame(bytecoder.toJSEventListener(arg0));
+             },
          },
-         element: {
-             getElementById: function(target,arg0) {
-               return bytecoder.toBytecoderReference(bytecoder.referenceTable[target].getElementById(bytecoder.toJSString(arg0)));
+         eventtarget: {
+             addEventListener: function(target,arg0,arg1) {
+               bytecoder.referenceTable[target].addEventListener(bytecoder.toJSString(arg0),bytecoder.toJSEventListener(arg1));
              },
          },
      },
