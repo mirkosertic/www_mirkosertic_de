@@ -3,7 +3,7 @@ var bytecoder = {
      runningInstance: undefined,
      runningInstanceMemory: undefined,
      exports: undefined,
-     referenceTable: [],
+     referenceTable: ['EMPTY'],
 
      init: function(instance) {
          bytecoder.runningInstance = instance;
@@ -55,6 +55,10 @@ var bytecoder = {
      },
 
      toBytecoderReference: function(value) {
+         var index = bytecoder.referenceTable.indexOf(value);
+         if (index>=0) {
+             return index;
+         }
          bytecoder.referenceTable.push(value);
          return bytecoder.referenceTable.length - 1;
      },
@@ -75,34 +79,44 @@ var bytecoder = {
          system: {
              currentTimeMillis: function() {return Date.now();},
              nanoTime: function() {return Date.now() * 1000000;},
-             logDebug: function(caller, value) {bytecoder.logDebug(caller, value);},
+             logDebugObject: function(caller, value) {bytecoder.logDebug(caller, value);},
              writeByteArrayToConsole: function(caller, value) {bytecoder.byteArraytoJSString(caller, value);},
          },
+         vm: {
+             newRuntimeGeneratedTypeMethodTypeMethodHandleObject: function() {},
+         },
          tsystem: {
-             logDebug: function(caller, value) {bytecoder.logDebug(caller, value);},
+             logDebugObject: function(caller, value) {bytecoder.logDebug(caller, value);},
          },
          printstream: {
              logDebug: function(caller, value) {bytecoder.logDebug(caller,value);},
          },
          math: {
-             floor: function (thisref, p1) {return Math.floor(p1);},
-             ceil: function (thisref, p1) {return Math.ceil(p1);},
-             sin: function (thisref, p1) {return Math.sin(p1);},
-             cos: function  (thisref, p1) {return Math.cos(p1);},
-             round: function  (thisref, p1) {return Math.round(p1);},
-             sqrt: function(thisref, p1) {return Math.sqrt(p1);},
+             floorDOUBLE: function (thisref, p1) {return Math.floor(p1);},
+             ceilDOUBLE: function (thisref, p1) {return Math.ceil(p1);},
+             sinDOUBLE: function (thisref, p1) {return Math.sin(p1);},
+             cosDOUBLE: function  (thisref, p1) {return Math.cos(p1);},
+             roundDOUBLE: function  (thisref, p1) {return Math.round(p1);},
+             sqrtDOUBLE: function(thisref, p1) {return Math.sqrt(p1);},
              add: function(thisref, p1, p2) {return p1 + p2;},
-             max: function(p1, p2) { return Math.max(p1, p2);},
-             min: function(p1, p2) { return Math.min(p1, p2);},
+             maxLONGLONG: function(thisref, p1, p2) { return Math.max(p1, p2);},
+             maxINTINT: function(thisref, p1, p2) { return Math.max(p1, p2);},
+             minINTINT: function(thisref, p1, p2) { return Math.min(p1, p2);},
+             toRadiansDOUBLE: function(thisref, p1) {
+                 return Math.toRadians(p1);
+             },
+             toDegreesDOUBLE: function(thisref, p1) {
+                 return Math.toDegrees(p1);
+             },
          },
          strictmath: {
-             floor: function (thisref, p1) {return Math.floor(p1);},
-             ceil: function (thisref, p1) {return Math.ceil(p1);},
-             sin: function (thisref, p1) {return Math.sin(p1);},
-             cos: function  (thisref, p1) {return Math.cos(p1);},
-             round: function  (thisref, p1) {return Math.round(p1);},
-             sqrt: function(thisref, p1) {return Math.sqrt(p1);},
-             add: function(thisref, p1, p2) {return p1 + p2;},
+             floorDOUBLE: function (thisref, p1) {return Math.floor(p1);},
+             ceilDOUBLE: function (thisref, p1) {return Math.ceil(p1);},
+             sinDOUBLE: function (thisref, p1) {return Math.sin(p1);},
+             cosDOUBLE: function  (thisref, p1) {return Math.cos(p1);},
+             roundFLOAT: function  (thisref, p1) {return Math.round(p1);},
+             sqrtDOUBLE: function(thisref, p1) {return Math.sqrt(p1);},
+             atan2DOUBLEDOUBLE: function(thisref, p1) {return Math.sqrt(p1);},
          },
          profiler: {
              logMemoryLayoutBlock: function(aCaller, aStart, aUsed, aNext) {
@@ -116,34 +130,34 @@ var bytecoder = {
              nativewindow: function(caller) {return bytecoder.toBytecoderReference(window);},
          },
          canvasrenderingcontext2d: {
-             setFillStyle: function(target,arg0) {
+             setFillStyleString: function(target,arg0) {
                bytecoder.referenceTable[target].fillStyle=bytecoder.toJSString(arg0);
              },
-             setStrokeStyle: function(target,arg0) {
+             setStrokeStyleString: function(target,arg0) {
                bytecoder.referenceTable[target].strokeStyle=bytecoder.toJSString(arg0);
              },
-             fillRect: function(target,arg0,arg1,arg2,arg3) {
+             fillRectFLOATFLOATFLOATFLOAT: function(target,arg0,arg1,arg2,arg3) {
                bytecoder.referenceTable[target].fillRect(arg0,arg1,arg2,arg3);
              },
              save: function(target) {
                bytecoder.referenceTable[target].save();
              },
-             translate: function(target,arg0,arg1) {
+             translateFLOATFLOAT: function(target,arg0,arg1) {
                bytecoder.referenceTable[target].translate(arg0,arg1);
              },
-             scale: function(target,arg0,arg1) {
+             scaleFLOATFLOAT: function(target,arg0,arg1) {
                bytecoder.referenceTable[target].scale(arg0,arg1);
              },
-             setLineWidth: function(target,arg0) {
+             setLineWidthFLOAT: function(target,arg0) {
                bytecoder.referenceTable[target].lineWidth=arg0;
              },
-             rotate: function(target,arg0) {
+             rotateFLOAT: function(target,arg0) {
                bytecoder.referenceTable[target].rotate(arg0);
              },
              beginPath: function(target) {
                bytecoder.referenceTable[target].beginPath();
              },
-             arc: function(target,arg0,arg1,arg2,arg3,arg4,arg5) {
+             arcDOUBLEDOUBLEDOUBLEDOUBLEDOUBLEBOOLEAN: function(target,arg0,arg1,arg2,arg3,arg4,arg5) {
                bytecoder.referenceTable[target].arc(arg0,arg1,arg2,arg3,arg4,arg5);
              },
              closePath: function(target) {
@@ -152,10 +166,10 @@ var bytecoder = {
              stroke: function(target) {
                bytecoder.referenceTable[target].stroke();
              },
-             moveTo: function(target,arg0,arg1) {
+             moveToFLOATFLOAT: function(target,arg0,arg1) {
                bytecoder.referenceTable[target].moveTo(arg0,arg1);
              },
-             lineTo: function(target,arg0,arg1) {
+             lineToFLOATFLOAT: function(target,arg0,arg1) {
                bytecoder.referenceTable[target].lineTo(arg0,arg1);
              },
              restore: function(target) {
@@ -163,7 +177,7 @@ var bytecoder = {
              },
          },
          htmlcanvaselement: {
-             getContext: function(target,arg0) {
+             getContextString: function(target,arg0) {
                return bytecoder.toBytecoderReference(bytecoder.referenceTable[target].getContext(bytecoder.toJSString(arg0)));
              },
          },
@@ -173,12 +187,12 @@ var bytecoder = {
              },
          },
          cssstyledeclaration: {
-             setProperty: function(target,arg0,arg1) {
+             setPropertyStringString: function(target,arg0,arg1) {
                bytecoder.referenceTable[target].setProperty(bytecoder.toJSString(arg0),bytecoder.toJSString(arg1));
              },
          },
          parentnode: {
-             getElementById: function(target,arg0) {
+             getElementByIdString: function(target,arg0) {
                return bytecoder.toBytecoderReference(bytecoder.referenceTable[target].getElementById(bytecoder.toJSString(arg0)));
              },
          },
@@ -186,12 +200,12 @@ var bytecoder = {
              document: function(target) {
                return bytecoder.toBytecoderReference(bytecoder.referenceTable[target].document);
              },
-             requestAnimationFrame: function(target,arg0) {
+             requestAnimationFrameCallback: function(target,arg0) {
                bytecoder.referenceTable[target].requestAnimationFrame(bytecoder.toJSEventListener(arg0));
              },
          },
          eventtarget: {
-             addEventListener: function(target,arg0,arg1) {
+             addEventListenerStringCallback: function(target,arg0,arg1) {
                bytecoder.referenceTable[target].addEventListener(bytecoder.toJSString(arg0),bytecoder.toJSEventListener(arg1));
              },
          },
