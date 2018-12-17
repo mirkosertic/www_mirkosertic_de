@@ -41,19 +41,6 @@ var bytecoder = {
          return theData;
      },
 
-
-     toJSEventListener: function(value) {
-         return function(event) {
-             try {
-                 var eventIndex = bytecoder.toBytecoderReference(event);
-                 bytecoder.exports.summonCallback(0,value,eventIndex);
-                 delete bytecoder.referenceTable[eventIndex];
-             } catch (e) {
-                 console.log(e);
-             }
-         };
-     },
-
      toBytecoderReference: function(value) {
          var index = bytecoder.referenceTable.indexOf(value);
          if (index>=0) {
@@ -200,13 +187,13 @@ var bytecoder = {
              document: function(target) {
                return bytecoder.toBytecoderReference(bytecoder.referenceTable[target].document);
              },
-             requestAnimationFrameCallback: function(target,arg0) {
-               bytecoder.referenceTable[target].requestAnimationFrame(bytecoder.toJSEventListener(arg0));
+             requestAnimationFrameAnimationFrameCallback: function(target,arg0) {
+               bytecoder.referenceTable[target].requestAnimationFrame(function (farg0) {var marg0=farg0;bytecoder.exports.dmbawAnimationFrameCallback_VOIDrunINT(arg0,marg0);;});
              },
          },
          eventtarget: {
-             addEventListenerStringCallback: function(target,arg0,arg1) {
-               bytecoder.referenceTable[target].addEventListener(bytecoder.toJSString(arg0),bytecoder.toJSEventListener(arg1));
+             addEventListenerStringEventListener: function(target,arg0,arg1) {
+               bytecoder.referenceTable[target].addEventListener(bytecoder.toJSString(arg0),function (farg0) {var marg0=bytecoder.toBytecoderReference(farg0);bytecoder.exports.dmbawEventListener_VOIDrundmbawEvent(arg1,marg0);delete bytecoder.referenceTable[marg0];;});
              },
          },
      },
