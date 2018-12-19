@@ -188,12 +188,12 @@ var bytecoder = {
                return bytecoder.toBytecoderReference(bytecoder.referenceTable[target].document);
              },
              requestAnimationFrameAnimationFrameCallback: function(target,arg0) {
-               bytecoder.referenceTable[target].requestAnimationFrame(function (farg0) {var marg0=farg0;bytecoder.exports.dmbawAnimationFrameCallback_VOIDrunINT(arg0,marg0);;});
+               bytecoder.referenceTable[target].requestAnimationFrame(function (farg0) {var marg0=farg0;bytecoder.exports.dmbawAnimationFrameCallback_VOIDrunINT(arg0,marg0);});
              },
          },
          eventtarget: {
              addEventListenerStringEventListener: function(target,arg0,arg1) {
-               bytecoder.referenceTable[target].addEventListener(bytecoder.toJSString(arg0),function (farg0) {var marg0=bytecoder.toBytecoderReference(farg0);bytecoder.exports.dmbawEventListener_VOIDrundmbawEvent(arg1,marg0);delete bytecoder.referenceTable[marg0];;});
+               bytecoder.referenceTable[target].addEventListener(bytecoder.toJSString(arg0),function (farg0) {var marg0=bytecoder.toBytecoderReference(farg0);bytecoder.exports.dmbawEventListener_VOIDrundmbawEvent(arg1,marg0);delete bytecoder.referenceTable[marg0];});
              },
          },
      },
