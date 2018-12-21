@@ -1,5 +1,5 @@
 +++
-date = "2018-02-01T00:00:00+02:00"
+date = "2018-12-20T00:00:00+02:00"
 title = "My favorite postings"
 tags = []
 draft = false
@@ -8,6 +8,8 @@ description = "Here is a list of my favorite and evergreen postings so far"
 include::globals.adoc[]
 
 Here is a list of my favorite and evergreen postings so far:
+
+* link:{{< ref "webassembly-and-vuejs.adoc" >}}[WebAssembly with vue.js]
 
 * link:{{< ref "alicebobcaroldaveopencl.adoc" >}}[Alice, Bob, Carol and Dave OpenCL Edition]
 
