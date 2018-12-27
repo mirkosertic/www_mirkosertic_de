@@ -183,14 +183,9 @@ var bytecoder = {
                return bytecoder.toBytecoderReference(bytecoder.referenceTable[target].getContext(bytecoder.toJSString(arg0)));
              },
          },
-         htmlelement: {
-             style: function(target) {
-               return bytecoder.toBytecoderReference(bytecoder.referenceTable[target].style);
-             },
-         },
-         cssstyledeclaration: {
-             setPropertyStringString: function(target,arg0,arg1) {
-               bytecoder.referenceTable[target].setProperty(bytecoder.toJSString(arg0),bytecoder.toJSString(arg1));
+         htmlbutton: {
+             disabledBOOLEAN: function(target,arg0) {
+               bytecoder.referenceTable[target].disabled=arg0;
              },
          },
          parentnode: {
