@@ -361,6 +361,8 @@ RedirectPermanent /books https://www.mirkosertic.de/global/interestingbooks/
 
 ErrorDocument 404 /404.html
 
+AddType application/wasm .wasm
+
 <IfModule mod_expires.c>
     ExpiresActive On
     ExpiresDefault "access plus 1 day"
