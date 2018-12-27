@@ -50,6 +50,10 @@ var bytecoder = {
          return bytecoder.referenceTable.length - 1;
      },
 
+     toJSReference: function(value) {
+         return bytecoder.referenceTable[value];
+     },
+
      toBytecoderString: function(value) {
          var newArray = bytecoder.exports.newByteArray(0, value.length);
          for (var i=0;i<value.length;i++) {
@@ -77,6 +81,17 @@ var bytecoder = {
          },
          printstream: {
              logDebug: function(caller, value) {bytecoder.logDebug(caller,value);},
+         },
+         opaquearrays : {
+             createIntArrayINT: function(thisref, p1) {
+                 return bytecoder.toBytecoderReference(new Int32Array(p1));
+             },
+             createFloatArrayINT: function(thisref, p1) {
+                 return bytecoder.toBytecoderReference(new Float32Array(p1));
+             },
+             createObjectArray: function(thisref) {
+                 return bytecoder.toBytecoderReference([]);
+             },
          },
          math: {
              floorDOUBLE: function (thisref, p1) {return Math.floor(p1);},
