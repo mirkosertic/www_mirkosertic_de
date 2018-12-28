@@ -1,5 +1,5 @@
 +++
-date = "2018-10-15T00:00:00+02:00"
+date = "2018-12-28T00:00:00+02:00"
 title = "My personal list of interesting books"
 tags = []
 draft = false
@@ -52,6 +52,7 @@ include::globals.adoc[]
     * JavaScript: The Good Parts: Working with the Shallow Grain of JavaScript. Douglas Crockford
     * Effective Java : Third Edition. Joshua Bloch
     * Deep Learning (Adaptive Computation and Machine Learning). Ian Goodfellow, Yoshua Bengio, Aaron Courville
+    * Reinforcement Learning: An Introduction (Adaptive Computation and Machine Learning). Richard S. Sutton, Andrew G. Barto
     
 == Others
 
@@ -63,4 +64,4 @@ include::globals.adoc[]
     * Game Coding Complete, Fourth Edition. Mike McShaffry, David Graham
     * Game Engine Black Book: Wolfenstein 3D. Fabien Sanglard
     * What If?: Serious Scientific Answers to Absurd Hypothetical Questions. Randall Munroe.
-
+    * Game Engine Black Book: Doom. Fabien Sanglard
