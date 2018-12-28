@@ -4,6 +4,7 @@
 
 @history-color: #6c757d;
 @stub-color: #6c757d;
+@visual-width: 60rem;
 
 body {
   background-color: #323232
@@ -16,10 +17,16 @@ header {
   }
 }
 
+.landingpage {
+  text-align: left;
+}
+
 main {
 
   background-color: white;
   padding-bottom: 2rem;
+  text-align: center;
+  line-height: 1.8rem;
 
   a {
     color: black;
@@ -69,6 +76,9 @@ main {
 
   article {
     padding: 0rem 1rem 1rem 1rem;
+    max-width: @visual-width;
+    text-align: left;
+    display: inline-block;
 
     p {
       margin-top: 1em;
@@ -77,6 +87,9 @@ main {
 
   nav[role=postinglist] {
     padding: 2rem 1rem 1rem 1rem;
+    max-width: @visual-width;
+    text-align: left;
+    display: inline-block;
 
     .yeargroup {
       font-size: xx-large;
@@ -161,6 +174,7 @@ div.post-navigation {
 }
 
 div.comments {
+  text-align: left;
   padding-left: 1em;
   padding-right: 1em;
 }
