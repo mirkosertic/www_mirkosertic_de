@@ -127,14 +127,9 @@ body {
 header nav.navbar {
   background: black !important;
 }
-.landingpage {
-  text-align: left;
-}
 main {
   background-color: white;
   padding-bottom: 2rem;
-  text-align: center;
-  line-height: 1.8rem;
 }
 main a {
   color: black;
@@ -181,18 +176,12 @@ main header.post-header a:hover {
 }
 main article {
   padding: 0rem 1rem 1rem 1rem;
-  max-width: 60rem;
-  text-align: left;
-  display: inline-block;
 }
 main article p {
   margin-top: 1em;
 }
 main nav[role=postinglist] {
   padding: 2rem 1rem 1rem 1rem;
-  max-width: 60rem;
-  text-align: left;
-  display: inline-block;
 }
 main nav[role=postinglist] .yeargroup {
   font-size: xx-large;
@@ -264,7 +253,6 @@ div.post-navigation {
   padding-right: 1em;
 }
 div.comments {
-  text-align: left;
   padding-left: 1em;
   padding-right: 1em;
 }
