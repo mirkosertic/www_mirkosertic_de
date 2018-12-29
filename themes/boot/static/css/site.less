@@ -4,6 +4,7 @@
 
 @history-color: #6c757d;
 @stub-color: #6c757d;
+@visual-width: 70rem;
 
 body {
   background-color: #323232
@@ -13,6 +14,33 @@ header {
 
   nav.navbar {
     background: black !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .landingpage {
+    text-align: left;
+  }
+
+  main {
+    text-align: center;
+    line-height: 1.8rem;
+
+    article {
+      max-width: @visual-width;
+      text-align: left;
+      display: inline-block;
+    }
+
+    nav[role=postinglist] {
+      max-width: @visual-width;
+      text-align: left;
+      display: inline-block;
+    }
+
+    div.comments {
+      text-align: left;
+    }
   }
 }
 
