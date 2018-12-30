@@ -143,6 +143,12 @@ header nav.navbar {
     text-align: left;
     display: inline-block;
   }
+  main article .metainfo {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
   main nav[role=postinglist] {
     max-width: 70rem;
     text-align: left;
