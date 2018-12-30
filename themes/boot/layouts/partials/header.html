@@ -28,29 +28,31 @@
 <body itemscope itemtype="http://schema.org/WebPage">
 <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
-        <a class="navbar-brand" href="{{ .Site.BaseURL }}">www.mirkosertic.de</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
+        <div class="container">
+            <a class="navbar-brand" href="{{ .Site.BaseURL }}">www.mirkosertic.de</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
 
-                <li class="nav-item">
-                    <a itemprop="url" class="nav-link{{ if in (print .URL) "global/toolsgoodies"}} active{{end}}" href="/global/toolsgoodies" title="Tools &amp; Goodies">Tools &amp; Goodies</a>
-                </li>
+                    <li class="nav-item">
+                        <a itemprop="url" class="nav-link{{ if in (print .URL) "global/toolsgoodies"}} active{{end}}" href="/global/toolsgoodies" title="Tools &amp; Goodies">Tools &amp; Goodies</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a itemprop="url" class="nav-link{{ if in (print .URL) "lobal/interestingbooks"}} active{{end}}" href="/global/interestingbooks" title="Interesting Books">Interesting Books</a>
-                </li>
+                    <li class="nav-item">
+                        <a itemprop="url" class="nav-link{{ if in (print .URL) "lobal/interestingbooks"}} active{{end}}" href="/global/interestingbooks" title="Interesting Books">Interesting Books</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a itemprop="url" class="nav-link{{if in (print .URL) "global/favorites"}} active{{end}}" href="/global/favorites" title="My favorite postings">My favorite postings</a>
-                </li>
+                    <li class="nav-item">
+                        <a itemprop="url" class="nav-link{{if in (print .URL) "global/favorites"}} active{{end}}" href="/global/favorites" title="My favorite postings">My favorite postings</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a itemprop="url" class="nav-link{{if or (in (print .URL) "blog/") (in (print .URL) "post/")}} active{{end}}" href="/post/" title="Blog">Blog</a>
-                </li>
-            </ul>
+                    <li class="nav-item">
+                        <a itemprop="url" class="nav-link{{if or (in (print .URL) "blog/") (in (print .URL) "post/")}} active{{end}}" href="/post/" title="Blog">Blog</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 </header>

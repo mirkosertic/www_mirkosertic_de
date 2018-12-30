@@ -4,4 +4,5 @@
     {{ end }}
 
     {{ .Content }}
+    <p><i class="fa fa-github"></i>Last Git commit: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/{{.GitInfo.Hash}}" target="_blank">{{.GitInfo.AbbreviatedHash}}</a></p>
 </article>
