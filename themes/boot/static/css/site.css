@@ -151,6 +151,9 @@ header nav.navbar {
   main div.comments {
     text-align: left;
   }
+  header nav.navbar .container {
+    width: 70rem;
+  }
 }
 main {
   background-color: white;
@@ -276,6 +279,7 @@ main nav[role=postinglist] .post-list .post-stub .readmore {
 div.post-navigation {
   padding-left: 1em;
   padding-right: 1em;
+  max-width: 70rem;
 }
 div.comments {
   padding-left: 1em;
