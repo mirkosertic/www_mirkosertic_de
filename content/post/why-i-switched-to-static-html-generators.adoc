@@ -37,7 +37,7 @@ For this, I really did not need a dynamic CMS. I needed fast content delivery.
 
 == What I came up with
 
-I realized that I do not need a CMS. I needed a more user friendly way of writing content. And I needed a tool to create
+I realized that I did not need a CMS. I needed a more user friendly way of writing content. And I needed a tool to create
 my static content in a transparent way. And here comes a set of tools to play called "Static HTML Generators".
 
 But before I could answer the question about the right tooling, I had to decide which format is best suited for writing
@@ -59,7 +59,7 @@ Asciidoctor in some way. So had to narrow down my list of candidates. And the fi
 
 There are other very popular static HTML generators available. The far most popular is https://jekyllrb.com[Jekyll]. I decided to
 use Hugo as it is fast and comes as a zero dependencies Go binary. Another point was the way Hugo organized the content source fit
-really well with by style of writing.
+really well with my style of writing.
 
 Hugo is fast. It is really fast. It is maybe the fastest static HTML generator available. But does this really matter
 for my use case? It turned out: not really. I use https://travis-ci.org[Travis CI] to build my Blog every time I publish
