@@ -98,18 +98,28 @@ var bytecoder = {
              ceilDOUBLE: function (thisref, p1) {return Math.ceil(p1);},
              sinDOUBLE: function (thisref, p1) {return Math.sin(p1);},
              cosDOUBLE: function  (thisref, p1) {return Math.cos(p1);},
+             tanDOUBLE: function  (thisref, p1) {return Math.tan(p1);},
              roundDOUBLE: function  (thisref, p1) {return Math.round(p1);},
              sqrtDOUBLE: function(thisref, p1) {return Math.sqrt(p1);},
              add: function(thisref, p1, p2) {return p1 + p2;},
+             getNaN: function(thisref, p1, p2) { return NaN;},
              maxLONGLONG: function(thisref, p1, p2) { return Math.max(p1, p2);},
+             maxDOUBLEDOUBLE: function(thisref, p1, p2) { return Math.max(p1, p2);},
              maxINTINT: function(thisref, p1, p2) { return Math.max(p1, p2);},
+             maxFLOATFLOAT: function(thisref, p1, p2) { return Math.max(p1, p2);},
+             minFLOATFLOAT: function(thisref, p1, p2) { return Math.min(p1, p2);},
              minINTINT: function(thisref, p1, p2) { return Math.min(p1, p2);},
+             minDOUBLEDOUBLE: function(thisref, p1, p2) { return Math.min(p1, p2);},
              toRadiansDOUBLE: function(thisref, p1) {
-                 return Math.toRadians(p1);
+                 return p1 * (Math.PI / 180);
              },
              toDegreesDOUBLE: function(thisref, p1) {
-                 return Math.toDegrees(p1);
+                 return p1 * (180 / Math.PI);
              },
+             random: function(thisref) { return Math.random();},
+         },
+         tmath: {
+             getNaN: function(thisref, p1, p2) { return NaN;},
          },
          strictmath: {
              floorDOUBLE: function (thisref, p1) {return Math.floor(p1);},
@@ -130,6 +140,7 @@ var bytecoder = {
          },
          runtime: {
              nativewindow: function(caller) {return bytecoder.toBytecoderReference(window);},
+             nativeconsole: function(caller) {return bytecoder.toBytecoderReference(console);},
          },
          canvasrenderingcontext2d: {
              setFillStyleString: function(target,arg0) {
