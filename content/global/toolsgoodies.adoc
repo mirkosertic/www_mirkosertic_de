@@ -1,5 +1,5 @@
 +++
-date = "2018-05-26T00:00:00+02:00"
+date = "2019-01-18T00:00:00+02:00"
 title = "Tools & Goodies"
 tags = []
 draft = false
@@ -7,6 +7,10 @@ description = "A collection of tools and goodies"
 +++
 include::globals.adoc[]
 == Technical stuff
+
+https://www.testcontainers.org/[Testcontainers]
+
+Testcontainers is a Java library that supports JUnit tests, providing lightweight, throwaway instances of common databases, Selenium web browsers, or anything else that can run in a Docker container.
 
 https://grafana.com/[Grafana]
 
