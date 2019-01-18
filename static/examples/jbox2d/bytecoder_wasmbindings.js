@@ -98,18 +98,28 @@ var bytecoder = {
              ceilDOUBLE: function (thisref, p1) {return Math.ceil(p1);},
              sinDOUBLE: function (thisref, p1) {return Math.sin(p1);},
              cosDOUBLE: function  (thisref, p1) {return Math.cos(p1);},
+             tanDOUBLE: function  (thisref, p1) {return Math.tan(p1);},
              roundDOUBLE: function  (thisref, p1) {return Math.round(p1);},
              sqrtDOUBLE: function(thisref, p1) {return Math.sqrt(p1);},
              add: function(thisref, p1, p2) {return p1 + p2;},
+             getNaN: function(thisref, p1, p2) { return NaN;},
              maxLONGLONG: function(thisref, p1, p2) { return Math.max(p1, p2);},
+             maxDOUBLEDOUBLE: function(thisref, p1, p2) { return Math.max(p1, p2);},
              maxINTINT: function(thisref, p1, p2) { return Math.max(p1, p2);},
+             maxFLOATFLOAT: function(thisref, p1, p2) { return Math.max(p1, p2);},
+             minFLOATFLOAT: function(thisref, p1, p2) { return Math.min(p1, p2);},
              minINTINT: function(thisref, p1, p2) { return Math.min(p1, p2);},
+             minDOUBLEDOUBLE: function(thisref, p1, p2) { return Math.min(p1, p2);},
              toRadiansDOUBLE: function(thisref, p1) {
-                 return Math.toRadians(p1);
+                 return p1 * (Math.PI / 180);
              },
              toDegreesDOUBLE: function(thisref, p1) {
-                 return Math.toDegrees(p1);
+                 return p1 * (180 / Math.PI);
              },
+             random: function(thisref) { return Math.random();},
+         },
+         tmath: {
+             getNaN: function(thisref, p1, p2) { return NaN;},
          },
          strictmath: {
              floorDOUBLE: function (thisref, p1) {return Math.floor(p1);},
@@ -130,6 +140,7 @@ var bytecoder = {
          },
          runtime: {
              nativewindow: function(caller) {return bytecoder.toBytecoderReference(window);},
+             nativeconsole: function(caller) {return bytecoder.toBytecoderReference(console);},
          },
          canvasrenderingcontext2d: {
              setFillStyleString: function(target,arg0) {
@@ -188,6 +199,11 @@ var bytecoder = {
                bytecoder.referenceTable[target].disabled=arg0;
              },
          },
+         promise: {
+             thenPromise$Handler: function(target,arg0) {
+               bytecoder.referenceTable[target].then(function (farg0) {var marg0=bytecoder.toBytecoderReference(farg0);bytecoder.exports.dmbawPromise$Handler_VOIDhandleObjectdmbaOpaqueReferenceType(arg0,marg0);});
+             },
+         },
          parentnode: {
              getElementByIdString: function(target,arg0) {
                return bytecoder.toBytecoderReference(bytecoder.referenceTable[target].getElementById(bytecoder.toJSString(arg0)));
@@ -201,9 +217,29 @@ var bytecoder = {
                bytecoder.referenceTable[target].requestAnimationFrame(function (farg0) {var marg0=farg0;bytecoder.exports.dmbawAnimationFrameCallback_VOIDrunINT(arg0,marg0);});
              },
          },
+         body: {
+             text: function(target) {
+               return bytecoder.toBytecoderReference(bytecoder.referenceTable[target].text());
+             },
+         },
          eventtarget: {
              addEventListenerStringEventListener: function(target,arg0,arg1) {
                bytecoder.referenceTable[target].addEventListener(bytecoder.toJSString(arg0),function (farg0) {var marg0=bytecoder.toBytecoderReference(farg0);bytecoder.exports.dmbawEventListener_VOIDrundmbawEvent(arg1,marg0);delete bytecoder.referenceTable[marg0];});
+             },
+         },
+         windoworworkerglobalscope: {
+             fetchString: function(target,arg0) {
+               return bytecoder.toBytecoderReference(bytecoder.referenceTable[target].fetch(bytecoder.toJSString(arg0)));
+             },
+         },
+         stringpromise: {
+             thenStringPromise$Handler: function(target,arg0) {
+               bytecoder.referenceTable[target].then(function (farg0) {var marg0=bytecoder.toBytecoderString(farg0);bytecoder.exports.dmbawStringPromise$Handler_VOIDhandleStringjlString(arg0,marg0);});
+             },
+         },
+         element: {
+             innerHTMLString: function(target,arg0) {
+               bytecoder.referenceTable[target].innerHTML=bytecoder.toJSString(arg0);
              },
          },
      },
