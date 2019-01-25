@@ -82,6 +82,11 @@ var bytecoder = {
          printstream: {
              logDebug: function(caller, value) {bytecoder.logDebug(caller,value);},
          },
+         memorymanager: {
+             logExceptionTextString : function(thisref, p1) {
+                 console.log('Exception with message : ' + bytecoder.toJSString(p1));
+             }
+         },
          opaquearrays : {
              createIntArrayINT: function(thisref, p1) {
                  return bytecoder.toBytecoderReference(new Int32Array(p1));
@@ -102,7 +107,6 @@ var bytecoder = {
              roundDOUBLE: function  (thisref, p1) {return Math.round(p1);},
              sqrtDOUBLE: function(thisref, p1) {return Math.sqrt(p1);},
              add: function(thisref, p1, p2) {return p1 + p2;},
-             getNaN: function(thisref, p1, p2) { return NaN;},
              maxLONGLONG: function(thisref, p1, p2) { return Math.max(p1, p2);},
              maxDOUBLEDOUBLE: function(thisref, p1, p2) { return Math.max(p1, p2);},
              maxINTINT: function(thisref, p1, p2) { return Math.max(p1, p2);},
@@ -117,9 +121,6 @@ var bytecoder = {
                  return p1 * (180 / Math.PI);
              },
              random: function(thisref) { return Math.random();},
-         },
-         tmath: {
-             getNaN: function(thisref, p1, p2) { return NaN;},
          },
          strictmath: {
              floorDOUBLE: function (thisref, p1) {return Math.floor(p1);},
