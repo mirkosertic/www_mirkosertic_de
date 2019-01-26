@@ -16,7 +16,7 @@
     "gulp-util": "^3.0.8",
     "minimist": "^1.2.0",
     "postcss-uncss": "^0.16.1",
-    "run-sequence": "^1.1.5",
+    "run-sequence": "^2.2.1",
     "uncss": "^0.16.2"
   },
   "babel": {
