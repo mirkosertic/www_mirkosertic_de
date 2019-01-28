@@ -10,7 +10,7 @@
     "gulp-cli": "^2.0.1",
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^4.1.0",
-    "gulp-postcss": "^7.0.1",
+    "gulp-postcss": "^8.0.0",
     "gulp-shell": "^0.6.5",
     "gulp-uncss": "^1.0.6",
     "gulp-util": "^3.0.8",
