@@ -97,6 +97,9 @@ var bytecoder = {
              createObjectArray: function(thisref) {
                  return bytecoder.toBytecoderReference([]);
              },
+             createInt8ArrayINT: function(thisref, p1) {
+                 return bytecoder.toBytecoderReference(new Int8Array(p1));
+             },
          },
          math: {
              floorDOUBLE: function (thisref, p1) {return Math.floor(p1);},
