@@ -8,7 +8,7 @@ description = "A collection of tools and goodies"
 include::globals.adoc[]
 == Technical stuff
 
-https://github.com/marcotcr/lime[LIME]
+https://github.com/marcotcr/lime[Lime]
 
 Lime: Explaining the predictions of any machine learning classifier.
 
