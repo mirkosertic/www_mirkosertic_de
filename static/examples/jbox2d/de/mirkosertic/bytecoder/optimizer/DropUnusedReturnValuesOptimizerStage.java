@@ -30,7 +30,7 @@ import de.mirkosertic.bytecoder.ssa.VariableAssignmentExpression;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class DropUnusedReturnValuesOptimizerStage implements OptimizerStage{
+public class DropUnusedReturnValuesOptimizerStage implements OptimizerStage {
 
     @Override
     public Expression optimize(final ControlFlowGraph aGraph, final BytecodeLinkerContext aLinkerContext, final RegionNode aCurrentNode,

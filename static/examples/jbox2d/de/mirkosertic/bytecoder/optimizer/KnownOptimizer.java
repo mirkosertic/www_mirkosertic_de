@@ -39,6 +39,8 @@ public enum KnownOptimizer implements Optimizer {
                     new InefficientCompareOptimizerStage(),
                     new RedundantVariablesOptimizerStage(),
                     new InvokeVirtualOptimizerStage(),
+                    new DirectAssignmentOptimizerStage(),
+                    new RedundantVariablesForIfOptimizerStage(),
             }));
             run(aGraph, aLinkerContext, theOptimizer);
         }
