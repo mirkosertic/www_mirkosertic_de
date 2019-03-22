@@ -75,6 +75,8 @@ var bytecoder = {
          },
          vm: {
              newRuntimeGeneratedTypeMethodTypeMethodHandleObject: function() {},
+             initialize: function() {},
+             initializeFromArchiveClass: function() {},
          },
          tsystem: {
              logDebugObject: function(caller, value) {bytecoder.logDebug(caller, value);},
