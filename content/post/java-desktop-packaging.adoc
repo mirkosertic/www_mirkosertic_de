@@ -1,0 +1,206 @@
++++
+date = "2019-04-23T00:00:00+02:00"
+title = "Packaging JavaFX Applications for the Desktop"
+tags = ["Java", "JavaFX", "Packaging", "Native", "GraalVM"]
+draft = false
+description = "Packaging Java applications for the Desktop has never been an easy task. In this blog post I want to look at the past to show where we are coming from, look at the present to see what we have now and finally try to take a look into the future to get a glimpse of what might be coming."
++++
+include::globals.adoc[]
+
+Packaging Java applications for the Desktop has never been an easy task. In this blog post I want to look at the past
+to show where we are coming from, look at the present to see what we have now and finally try to take a look into the
+future to get a glimpse of what might be coming.
+
+## The Past of Java Packaging
+
+Before Java 5.0 there was no built-in support in Java for application distribution, as far as what we would consider
+an application. But there was hope. We had https://www.oracle.com/technetwork/java/applets-137637.html[Java Applets].
+Applets used to be Java programs executed by a special plugin installed in our browser. This plugin downloaded the jar
+files of the applet, and executed the code in an isolated, restricted sandbox. We used signed applets to escape this
+sandbox and get full access to system resources. One problem remained: there was no built-in update mechanism. We only
+had the browser cache to prevent jar files from being downloaded every time.
+
+The world changed a bit with Java 1.4.2. This major release introduced https://www.oracle.com/technetwork/java/javase/archive-download-142935.html[Java WebStart].
+Java WebStart was meant to fill the gap applets had left open. It introduced the same isolated sandboxes we had with
+Applets, but we also got a managed cache for downloaded application artifacts, We also got a new file format, the JNLP
+file, to describe the application and its system requirements. Everything was well, beside the fact that we still needed
+a browser plugin to interpret the JNLP file and to launch it in the browser context. Yet we could handle the JNLP file
+as a simple download, and launch the WebStart binary after downloading it. This was not very common, as security issues
+started to arise. Downloading files from the internet without checking their content is evil right?
+
+Starting with Java 8, developers got another tool for software distribution: https://docs.oracle.com/javase/8/docs/technotes/guides/deploy/packager.html[Java Packager].
+JavaPackager created platform specific binaries, including the Java runtime and the application itself. Creating this
+kind of installer was always possible in the world of Java, but now there was a built-in tool supporting this.
+
+Things started to get complicated. Browser plugins became very unpopular, including the required Java plugin. Browser
+vendors started to https://java.com/en/download/faq/firefox_java.xml[remove required APIs] for the plugins, and WebStart
+could only be used in special LTS versions of common browsers. Finally, Oracle decided to no longer support WebStart.
+All APIs became deprecated with Java 9, and will be removed in the future. It is even getting more confusing as javapackager
+is no longer part of Java 11 and Java 12. Some people https://mail.openjdk.java.net/pipermail/openjfx-dev/2018-September/022500.html[ported javapackager]
+to Java 11, but with Java 12 it is gone.
+
+## The Presence of Java Packaging
+
+Currently, we have Java 12 without any build-in packaging tool. But there is hope! https://openjdk.java.net/jeps/343[JPackage]
+is the new tool for packaging self-contained Java applications.
+
+Now, what is JPackage? JPackage is a command line tool. It takes an application and a JVM image and creates platform
+specific bundles from then. It creates exe and msi files on Windows for example, and deb and rpms for Linux. The problem
+is: ts is currently only available as an early-access build for Java 13! What to do now? Must be build our application
+with this early access thing? It turns out: no!
+
+As mentioned, JPackage takes an application and an jvm image as inputs. We can use the early access JPackage binary and
+use it to create a native bundle from an application and an Java 12 runtime image! Pretty cool, right?
+
+To create an installer for an application, we have to
+
+* Download https://adoptopenjdk.net/[OpenJDK 12]
+* Download https://jdk.java.net/jpackage/[JPackage]
+* Point JAVA_HOME to the OpenJDK 12 installation
+* Point JPACKAGE_HOME to the JPackage installation
+* Install fakeroot and rpm packages if we are on Linux
+* Install http://www.jrsoftware.org/isinfo.php[Inno Setup] and http://wixtoolset.org/[Wix Toolset] if we are on Windows
+
+Now we can invoke the JPackage tool in a very general way:
+
+.package.sh
+----
+$JPACKAGE_HOME/bin/jpackage <1>
+    create-installer
+    --runtime-image $JAVA_HOME <2>
+    ..rest of required arguments
+----
+<1> Invoking the jpackage binary
+<2> Passing in the OpenJDK 12 installation as runtime image
+
+I've left out all other required command line arguments for clarification. Please take a look at the JEP documentation
+or just checkout https://github.com/mirkosertic/FXDesktopSearch[FXDesktopSearch], which includes a working Maven pom to
+see the whole packaging process in action. The tricky part are the cross platform builds. We have to invoke JPackage for
+Windows builds in a different way than Linux builds. This is encapsulated in my example by Maven Profiles.
+
+There are other subtle issues around. JPackage does not support cross platform builds. We have to invoke the
+tool on a Windows box to get Windows binaries, on a Linux box to get Linux binaries and so on. If we have a Windows 10
+64bit machine, there is a neat trick available. Say hello to the Microsoft Windows Subsystem for Linux!
+
+The Windows Subsystem for Linux is a cool thing. It is basically a running Linux shell (Ubuntu for instance) on our
+Windows desktop. We can do all the cool Linux stuff, and use all the Linux tools, but on a running Windows machine,
+without installing VirtualBox or VMWare. We can also access the whole Windows file systems from Linux shell side by
+using special mount points.
+
+This introduces a pretty cool way to create true cross platform builds without having multiple build servers! We can
+create the Windows binaries by invoking JPackage on Windows, then switch to the Windows Linux Subsystem and invoke it
+to create the Linux binaries! Now, how long does my FXDesktopSearch example build take on Windows? Well...
+
+.windowsbuild
+----
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 02:45 min
+[INFO] Finished at: 2019-04-23T13:34:18+02:00
+[INFO] Final Memory: 59M/207M
+[INFO] ------------------------------------------------------------------------
+----
+
+.linuxbuild
+----
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  02:35 min
+[INFO] Finished at: 2019-04-23T11:39:17Z
+[INFO] ------------------------------------------------------------------------
+----
+
+The Subsystem for Linux needs some configuration to make it work properly with JPackage. First, JPackage relies on
+fakeroot. Fakeroot does not work property, we have to use https://github.com/Microsoft/WSL/issues/2132[fakeroot-tcp]. This can be easily configured by:
+
+.configurefakeroot.sh
+----
+sudo update-alternatives --set fakeroot /usr/bin/fakeroot-tcp
+----
+
+Then we have to configure file permissions. Add the following configuration section to the wsl.conf inside of the Linux
+shell:
+
+./etc/wsl.conf
+----
+[automount]
+enabled = true
+root = /mnt/
+options = "metadata,umask=22,fmask=11"
+----
+
+and we have to set the right umask:
+
+.~/.bashrc
+----
+umask 0022
+----
+
+Oh, and by the way: to launch graphical user interfaces from the Linux subsystem, we have to install an
+https://sourceforge.net/projects/xming/[X11 server] on our Windows machine and set the DISPLAY variable on Linux
+side accordingly:
+
+.~/.bashrc
+----
+export DISPLAY=:0
+----
+
+We now have a working cross platform build environment. The last open point is software package
+distribution. App stores are very popular today. So why not distribute our Java applications using an App Store?
+
+We already have platform specific packages available. How would be publish a Windows build into the
+Microsoft Office Store? It turns out, this is pretty straightforward. We just have to convert the msi files to
+msix files by using the MSIX Packaging Tool, which can also be downloaded from the Microsoft App Store.
+The result of the conversion can then be https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter[published].
+
+## The Future of Java Packaging
+
+This part is tricky. From my point of view the trend seems to create platform specific bundles
+for cross-platform Java applications. This can even be taken a step further by using a complete
+new way of packaging, we just get rid of the whole JVM and application images and create platform specific binaries
+by using an ahead-of-time compiler. We enter the world of the holy https://www.graalvm.org/[Graal]. Sorry about this bad joke!
+
+GraalVM is a cool new system based on Oracle's Substrate VM. It might replace the whole JVM one day, but before this can happen
+a lot of things need to be adapted to make them compatible with native ahead of time compilation. Lets check this
+out. GraalVM only works on Windows and Mac systems, so let's start by running it with FXDesktopSearch in the Windows Linux Subsystem:
+
+.GraalVM.sh
+----
+~/graalvm-ce-1.0.0-rc15/bin/native-image -cp ./lib:FXDesktopSearch.jar de.mirkosertic.desktopsearch.DesktopSearch
+Build on Server(pid: 3139, port: 54204)
+[de.mirkosertic.desktopsearch.desktopsearch:3139]    classlist:     337.20 ms
+Fatal error: java.lang.UnsupportedClassVersionError: de/mirkosertic/desktopsearch/DesktopSearch has been compiled by a more recent version of the Java Runtime (class file version 56.0), this version of the Java Runtime only recognizes class file versions up to 52.0
+        at java.lang.ClassLoader.defineClass1(Native Method)
+        at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+        at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+        at java.net.URLClassLoader.defineClass(URLClassLoader.java:468)
+        at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+        at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+        at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+        at java.lang.Class.forName0(Native Method)
+        at java.lang.Class.forName(Class.java:348)
+        at com.oracle.svm.hosted.NativeImageGeneratorRunner.buildImage(NativeImageGeneratorRunner.java:238)
+        at com.oracle.svm.hosted.NativeImageGeneratorRunner.build(NativeImageGeneratorRunner.java:422)
+        at com.oracle.svm.hosted.server.NativeImageBuildServer.executeCompilation(NativeImageBuildServer.java:390)
+        at com.oracle.svm.hosted.server.NativeImageBuildServer.lambda$processCommand$8(NativeImageBuildServer.java:327)
+        at com.oracle.svm.hosted.server.NativeImageBuildServer.withJVMContext(NativeImageBuildServer.java:408)
+        at com.oracle.svm.hosted.server.NativeImageBuildServer.processCommand(NativeImageBuildServer.java:324)
+        at com.oracle.svm.hosted.server.NativeImageBuildServer.processRequest(NativeImageBuildServer.java:268)
+        at com.oracle.svm.hosted.server.NativeImageBuildServer.lambda$serve$7(NativeImageBuildServer.java:228)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+        at java.lang.Thread.run(Thread.java:748)
+Error: Image build request failed with exit status 1
+----
+
+Oops. GraalVM currently does not support Java 12. It currently can only read Java class files with byte code version
+up to Java 8. So unfortunately GraalVM is no option (yet) for packaging, but I will stay up
+to date and give it a try when new versions become available.
+
+So, thank you for reading! Feel free to leave a comment, I am always glad to help!
