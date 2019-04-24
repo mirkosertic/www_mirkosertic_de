@@ -17,8 +17,8 @@ before_install:
 
 install:
   - . $HOME/.nvm/nvm.sh
-  - nvm install stable
-  - nvm use stable
+  - nvm install v6.10.0
+  - nvm use v6.10.0
   - ruby -v
   - which ruby
   - wget https://github.com/gohugoio/hugo/releases/download/v0.49/hugo_0.49_Linux-64bit.tar.gz
