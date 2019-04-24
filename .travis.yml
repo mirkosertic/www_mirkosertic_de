@@ -26,6 +26,7 @@ install:
 
 script:
   - npm install
+  - npm update
   - chmod 755 ./asciidoctor
   - export PATH=.:$PATH
   - unset "_JAVA_OPTIONS"
