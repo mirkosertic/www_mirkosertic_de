@@ -155,6 +155,11 @@ Microsoft Office Store? It turns out, this is pretty straightforward. We just ha
 msix files by using the MSIX Packaging Tool, which can also be downloaded from the Microsoft App Store.
 The result of the conversion can then be https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter[published].
 
+It might not be possible for some applications to publish them into a public store. The Microsoft world also has a
+solution for this. Microsoft introduced a feature called https://docs.microsoft.com/en-us/windows/msix/app-installer/app-installer-root[AppInstaller], which is a similar concept we had with Java WebStart and JNLP files. With a major differece: there is no
+need for browser plugins or third party tools anymore, the AppInstaller protocol and infrastructure is linked into the
+Windows 10 operating system!
+
 ## The Future of Java Packaging
 
 This part is tricky. From my point of view the trend seems to create platform specific bundles
@@ -164,7 +169,7 @@ by using an ahead-of-time compiler. We enter the world of the holy https://www.g
 
 GraalVM is a cool new system based on Oracle's Substrate VM. It might replace the whole JVM one day, but before this can happen
 a lot of things need to be adapted to make them compatible with native ahead of time compilation. Lets check this
-out. GraalVM only works on Windows and Mac systems, so let's start by running it with FXDesktopSearch in the Windows Linux Subsystem:
+out. GraalVM only works on Linux and Mac systems, so let's start by running it with FXDesktopSearch in the Windows Linux Subsystem:
 
 .GraalVM.sh
 ----
