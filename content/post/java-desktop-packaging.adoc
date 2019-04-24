@@ -80,7 +80,7 @@ Windows builds in a different way than Linux builds. This is encapsulated in my 
 
 There are other subtle issues around. JPackage does not support cross platform builds. We have to invoke the
 tool on a Windows box to get Windows binaries, on a Linux box to get Linux binaries and so on. If we have a Windows 10
-64bit machine, there is a neat trick available. Say hello to the Microsoft Windows Subsystem for Linux!
+64bit machine, there is a neat trick available. Say hello to the https://docs.microsoft.com/en-us/windows/wsl/install-win10[Microsoft Windows Subsystem for Linux]!
 
 The Windows Subsystem for Linux is a cool thing. It is basically a running Linux shell (Ubuntu for instance) on our
 Windows desktop. We can do all the cool Linux stuff, and use all the Linux tools, but on a running Windows machine,
