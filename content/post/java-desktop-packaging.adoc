@@ -46,7 +46,7 @@ is the new tool for packaging self-contained Java applications.
 
 Now, what is JPackage? JPackage is a command line tool. It takes an application and a JVM image and creates platform
 specific bundles from then. It creates exe and msi files on Windows for example, and deb and rpms for Linux. The problem
-is: it is currently only available as an early-access build for Java 13! What to do now? Must be build our application
+is: it is currently only available as an early-access build for Java 14! What to do now? Must be build our application
 with this early access thing? It turns out: no!
 
 As mentioned, JPackage takes an application and an jvm image as inputs. We can use the early access JPackage binary and
@@ -66,7 +66,7 @@ Now we can invoke the JPackage tool in a very general way:
 .package.sh
 ----
 $JPACKAGE_HOME/bin/jpackage <1>
-    create-installer
+    --package-type rpm
     --runtime-image $JAVA_HOME <2>
     ..rest of required arguments
 ----
