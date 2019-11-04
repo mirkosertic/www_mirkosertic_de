@@ -53,6 +53,7 @@ include::globals.adoc[]
     * Effective Java : Third Edition. Joshua Bloch
     * Deep Learning (Adaptive Computation and Machine Learning). Ian Goodfellow, Yoshua Bengio, Aaron Courville
     * Reinforcement Learning: An Introduction (Adaptive Computation and Machine Learning). Richard S. Sutton, Andrew G. Barto
+    * Deep Learning for Search. Tommaso Teofili
     
 == Others
 
