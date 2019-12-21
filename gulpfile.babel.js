@@ -1,6 +1,5 @@
 import gulp from 'gulp'
 import htmlmin from 'gulp-htmlmin'
-import runSequence from 'run-sequence'
 import shell from 'gulp-shell'
 
 var imagemin = require('gulp-imagemin');
