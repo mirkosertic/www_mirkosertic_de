@@ -13,10 +13,8 @@
     "gulp-postcss": "^8.0.0",
     "gulp-shell": "^0.7.0",
     "gulp-uncss": "^1.0.6",
-    "gulp-util": "^3.0.8",
     "minimist": "^1.2.0",
     "postcss-uncss": "^0.16.1",
-    "run-sequence": "^2.2.1",
     "uncss": "^0.16.2"
   },
   "babel": {
