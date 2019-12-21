@@ -12,7 +12,6 @@
     "gulp-imagemin": "^5.0.3",
     "gulp-postcss": "^8.0.0",
     "gulp-shell": "^0.7.0",
-    "gulp-uncss": "^1.0.6",
     "minimist": "^1.2.0",
     "postcss-uncss": "^0.16.1",
     "uncss": "^0.16.2"

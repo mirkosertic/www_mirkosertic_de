@@ -3,7 +3,8 @@ import htmlmin from 'gulp-htmlmin'
 import shell from 'gulp-shell'
 
 var imagemin = require('gulp-imagemin');
-var uncss = require('gulp-uncss');
+var postcss = require('gulp-postcss');
+var uncss = require('postcss-uncss');
 
 gulp.task('hugo-build', shell.task(['hugo']));
 
@@ -51,9 +52,9 @@ gulp.task('minify-html', () => {
 
 gulp.task('cssmin', function () {
     return gulp.src(['public/css/site.css'])
-        .pipe(uncss({
+        .pipe(postcss(uncss({
             html: ['public/*.html', 'public/post/**/*.html', 'public/tags/**/*.html', 'public/global/**/*.html', 'public/blog/**/*.html']
-        }))
+        })))
         .pipe(gulp.dest('public/css'));
 });
 
