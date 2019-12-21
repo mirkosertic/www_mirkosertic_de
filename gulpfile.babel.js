@@ -58,5 +58,4 @@ gulp.task('cssmin', function () {
         .pipe(gulp.dest('public/css'));
 });
 
-gulp.task('build', gulp.series(['hugo-build', 'minify-html', 'imagemin', 'cssmin'], () => {
-}));
+gulp.task('build', gulp.series(['hugo-build', 'minify-html', 'imagemin', 'cssmin']));
