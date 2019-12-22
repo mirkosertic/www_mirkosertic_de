@@ -1,6 +1,5 @@
 import gulp from 'gulp'
 import htmlmin from 'gulp-htmlmin'
-import runSequence from 'run-sequence'
 import shell from 'gulp-shell'
 
 var imagemin = require('gulp-imagemin');
@@ -58,6 +57,4 @@ gulp.task('cssmin', function () {
         .pipe(gulp.dest('public/css'));
 });
 
-gulp.task('build', ['hugo-build',], (callback) => {
-    runSequence('minify-html', 'imagemin', 'cssmin', callback)
-});
+gulp.task('build', gulp.series(['hugo-build', 'minify-html', 'imagemin', 'cssmin']));
