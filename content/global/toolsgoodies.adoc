@@ -8,6 +8,10 @@ description = "A collection of tools and goodies"
 include::globals.adoc[]
 == Technical stuff
 
+https://insomnia.rest/[Insomnia]
+
+Design and debug APIs like a human, not a robot.
+
 https://camunda.com/[Camunda BPMN / DMN]
 
 The Camunda Workflow Engine is the right choice for both (micro-)service orchestration and human task management.
