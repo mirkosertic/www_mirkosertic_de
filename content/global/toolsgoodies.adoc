@@ -1,5 +1,5 @@
 +++
-date = "2020-07-10T00:00:00+02:00"
+date = "2020-09-25T00:00:00+02:00"
 title = "Tools & Goodies"
 tags = []
 draft = false
@@ -7,6 +7,10 @@ description = "A collection of tools and goodies"
 +++
 include::globals.adoc[]
 == Technical stuff
+
+https://www.cypress.io/[Cypress]
+
+The web has evolved. Finally, testing has too. Fast, easy and reliable testing for anything that runs in a browser.
 
 https://insomnia.rest/[Insomnia]
 
