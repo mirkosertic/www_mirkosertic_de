@@ -1,5 +1,5 @@
 +++
-date = "2020-09-25T00:00:00+02:00"
+date = "2020-11-18T00:00:00+02:00"
 title = "Tools & Goodies"
 tags = []
 draft = false
@@ -32,9 +32,9 @@ https://postcss.org[PostCSS]
 
 A tool for transforming CSS with JavaScript.
 
-https://fractal.build[Fractal]
+https://storybook.js.org/[Storybook]
 
-Powerful component libraries & styleguides that fit the way you work.
+Storybook is an open source tool for developing UI components in isolation for React, Vue, Angular, and more. It makes building stunning UIs organized and efficient.
 
 https://www.testcontainers.org/[Testcontainers]
 
