@@ -28,6 +28,6 @@ jobs:
           npm install
           npm update
           chmod 755 ./asciidoctor
-          echo "." >> $GITHUB_PATH
+          echo ".:$GITHUB_PATH" >> $GITHUB_PATH
           unset "_JAVA_OPTIONS"
           npm run build
