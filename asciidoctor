@@ -1,4 +1,4 @@
-#!/home/travis/.rvm/rubies/ruby-2.3.3/bin/ruby
+#!/usr/bin/env ruby
 #
 # A patched AsciiDoctor binary with enabled diagrams extension.
 #
