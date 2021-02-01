@@ -30,9 +30,3 @@ jobs:
           echo "." >> $GITHUB_PATH
           unset "_JAVA_OPTIONS"
           npm run build
-      - uses: JamesIves/github-pages-deploy-action@3.7.1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: ./public
-          CLEAN: true
