@@ -11,8 +11,10 @@ jobs:
           wget https://github.com/gohugoio/hugo/releases/download/v0.49/hugo_0.49_Linux-64bit.tar.gz
           tar xzf hugo_0.49_Linux-64bit.tar.gz
           sudo chmod +x hugo
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.3.3'
       - run: |
-          rvm install 2.3.3
           gem install asciidoctor
           gem install coderay
           gem install asciidoctor-diagram
