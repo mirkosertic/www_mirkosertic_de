@@ -13,7 +13,7 @@ jobs:
           sudo chmod +x hugo
       - uses: actions/setup-ruby@v1
         with:
-          ruby-version: '2.3.3'
+          ruby-version: '2.6'
       - run: |
           gem install asciidoctor
           gem install coderay
