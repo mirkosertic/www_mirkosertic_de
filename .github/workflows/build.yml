@@ -20,11 +20,10 @@ jobs:
           gem install asciidoctor-diagram
           sudo apt-get install python
           gem install pygments.rb
-      - run: |
-          chmod 755 ./.nvm/nvm.sh
-          ./.nvm/nvm.sh
-          nvm install v6.10.0
-          nvm use v6.10.0
+      - uses: actions/setup-node@v2
+        with:
+            node-version: '10'
+            check-latest: true
       - run: |
           npm install
           npm update
