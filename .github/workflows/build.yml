@@ -10,7 +10,7 @@ jobs:
       - run: |
           wget https://github.com/gohugoio/hugo/releases/download/v0.49/hugo_0.49_Linux-64bit.tar.gz
           tar xzf hugo_0.49_Linux-64bit.tar.gz
-          sudo chmod +x hugo
+          chmod +x hugo
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: '2.6'
@@ -28,6 +28,6 @@ jobs:
           npm install
           npm update
           chmod 755 ./asciidoctor
-          echo ".:$GITHUB_PATH" >> $GITHUB_PATH
+          echo "$HOME/." >> $GITHUB_PATH
           unset "_JAVA_OPTIONS"
           npm run build
