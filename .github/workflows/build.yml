@@ -7,10 +7,9 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
       - uses: actions/checkout@v1
-      - run: |
-          wget https://github.com/gohugoio/hugo/releases/download/v0.49/hugo_0.49_Linux-64bit.tar.gz
-          tar xzf hugo_0.49_Linux-64bit.tar.gz
-          chmod +x hugo
+      - uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.49'
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: '2.6'
