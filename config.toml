@@ -48,3 +48,6 @@ enableGitInfo = true
     name = "Tools & Goodies"
     url = "/global/toolsgoodies"
     weight = 5
+
+[markup.asciidocExt]
+    extensions = ["asciidoctor-diagram"]
