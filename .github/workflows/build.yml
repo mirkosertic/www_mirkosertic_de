@@ -21,7 +21,8 @@ jobs:
           sudo apt-get install python
           gem install pygments.rb
       - run: |
-          .nvm/nvm.sh
+          chmod 755 ./.nvm/nvm.sh
+          ./.nvm/nvm.sh
           nvm install v6.10.0
           nvm use v6.10.0
       - run: |
