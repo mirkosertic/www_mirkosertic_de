@@ -1,0 +1,31 @@
+name: Build Workflow
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: actions/checkout@v1
+      - run: |
+          wget https://github.com/gohugoio/hugo/releases/download/v0.49/hugo_0.49_Linux-64bit.tar.gz
+          tar xzf hugo_0.49_Linux-64bit.tar.gz
+          sudo chmod +x hugo
+      - run: |
+          rvm install 2.3.3
+          gem install asciidoctor
+          gem install coderay
+          gem install asciidoctor-diagram
+          sudo apt-get install python
+          gem install pygments.rb
+      - run: |
+          .nvm/nvm.sh
+          nvm install v6.10.0
+          nvm use v6.10.0
+      - run: |
+          npm install
+          npm update
+          chmod 755 ./asciidoctor
+          export PATH=.:$PATH
+          unset "_JAVA_OPTIONS"
+          npm run build
