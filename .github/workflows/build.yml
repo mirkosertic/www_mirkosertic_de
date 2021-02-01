@@ -19,6 +19,7 @@ jobs:
           gem install asciidoctor-diagram
           sudo apt-get install python
           gem install pygments.rb
+          which asciidoctor
       - uses: actions/setup-node@v2
         with:
             node-version: '10'
