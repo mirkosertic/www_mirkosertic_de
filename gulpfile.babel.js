@@ -5,7 +5,7 @@ import shell from 'gulp-shell'
 var imagemin = require('gulp-imagemin');
 var uncss = require('gulp-uncss');
 
-gulp.task('hugo-build', shell.task(['hugo']));
+gulp.task('hugo-build', shell.task(['hugo -v']));
 
 gulp.task('imagemin', () => {
     return gulp.src('static/media/*')
