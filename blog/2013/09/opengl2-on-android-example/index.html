@@ -1,0 +1,356 @@
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>OpenGL2 on Android example &middot; Mirko Sertic</title><meta name="description" content="The last days i fiddled a bit with OpenGL 2 on Android. The Android OpenGL tutorials are a bit outdated, so i had to do some API research by myself and copy and merge the provided examples together. Here is a screenshot of the running OpenGL App:"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.49"><meta name="robots" content="index,follow"><meta property="og:title" content="OpenGL2 on Android example"><meta property="og:description" content="The last days i fiddled a bit with OpenGL 2 on Android. The Android OpenGL tutorials are a bit outdated, so i had to do some API research by myself and copy and merge the provided examples together. Here is a screenshot of the running OpenGL App:"><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2013/09/opengl2-on-android-example/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-33614060-2', 'auto');
+	
+	ga('send', 'pageview');
+}</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="Tools &amp; Goodies">Tools &amp; Goodies</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Interesting Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link active" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><div itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"><header class="post-header"><h1 class="post-title" itemprop="name headline">OpenGL2 on Android example</h1><p class="post-date"><span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="2013-09-05" itemprop="datePublished">Thu, Sep 5, 2013</time> <span>by</span> <span itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name"><a href="https://twitter.com/mirkosertic" itemprop="url" rel="author">Mirko Sertic</a></span></span></p><p><span class="icon"><i class="fa fa-clock-white"></i></span><span>5 Minutes reading time</span></p><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags-white"></i></span><a href="/tags/android">Android</a></span> ,&nbsp;<a href="/tags/interesting">Interesting</a> ,&nbsp;<a href="/tags/opengl">OpenGL</a></p></header><article class="post-content clearfix" itemprop="articleBody"><div class="paragraph"><p>The last days i fiddled a bit with OpenGL 2 on Android. The Android OpenGL tutorials are a bit outdated, so i had to do some API research by myself and copy and merge the provided examples together. Here is a screenshot of the running OpenGL App:</p></div><div class="paragraph"><p><span class="image"><img src="/media/openglandroidapp.png" alt="openglandroidapp"></span></p></div><div class="paragraph"><p>It supports touch events to rotate a triangle around and render the animation.</p></div><div class="paragraph"><p>To run OpenGL, we need the base Activity class as follows:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">package com.example.opengltest;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class OpenGLTestActivity extends Activity {
+
+    private MyGLSurfaceView glSurfaceView;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        glSurfaceView = new MyGLSurfaceView(this);
+        setContentView(glSurfaceView);
+    }
+}</code></pre></div></div><div class="paragraph"><p>Then we need the OpenGL view class:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">package com.example.opengltest;
+
+import android.app.Activity;
+import android.opengl.GLSurfaceView;
+import android.view.MotionEvent;
+
+public class MyGLSurfaceView extends GLSurfaceView {
+
+    MyRenderer renderer;
+
+    private final float TOUCH_SCALE_FACTOR = 180.0f / 320;
+    private float mPreviousX;
+    private float mPreviousY;
+
+    public MyGLSurfaceView(Activity aActivity) {
+        super(aActivity);
+
+        //OpenGL ES 2.0
+        setEGLContextClientVersion(2);
+
+        renderer = new MyRenderer();
+        setRenderer(renderer);
+
+        // Render the view only when there is a change in the drawing data
+        setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent e) {
+        // MotionEvent reports input details from the touch screen
+        // and other input controls. In this case, you are only
+        // interested in events where the touch position changed.
+
+        float x = e.getX();
+        float y = e.getY();
+
+        switch (e.getAction()) {
+            case MotionEvent.ACTION_MOVE:
+
+                float dx = x - mPreviousX;
+                float dy = y - mPreviousY;
+
+                // reverse direction of rotation above the mid-line
+                if (y&gt; getHeight() / 2) {
+                    dx = dx * -1 ;
+                }
+
+                // reverse direction of rotation to left of the mid-line
+                if (x &lt;getWidth() / 2) {
+                    dy = dy * -1 ;
+                }
+
+                renderer.mAngle += (dx + dy) * TOUCH_SCALE_FACTOR;  // = 180.0f / 320
+                requestRender();
+        }
+
+
+        mPreviousX = x;
+        mPreviousY = y;
+        return true;
+    }
+}</code></pre></div></div><div class="paragraph"><p>Our OpenGL renderer:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">package com.example.opengltest;
+
+import android.opengl.GLES20;
+import android.opengl.GLSurfaceView;
+import android.opengl.Matrix;
+
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.opengles.GL10;
+
+public class MyRenderer implements GLSurfaceView.Renderer {
+
+    Triangle triangle;
+
+    private final float[] projectionMatrix = new float[16];
+    private final float[] mMVPMatrix = new float[16];
+    private final float[] mVMatrix = new float[16];
+    private final float[] mRotationMatrix = new float[16];
+
+    // Declare as volatile because we are updating it from another thread
+    public volatile float mAngle;
+
+    @Override
+    public void onSurfaceCreated(GL10 gl, EGLConfig config) {
+        triangle = new Triangle();
+    }
+
+    @Override
+    public void onSurfaceChanged(GL10 gl, int width, int height) {
+        GLES20.glViewport(0, 0, width, height);
+
+        float ratio = (float) width / height;
+
+        Matrix.frustumM(projectionMatrix, 0, -ratio, ratio, -1, 1, 3, 7);
+    }
+
+    @Override
+    public void onDrawFrame(GL10 gl) {
+
+        // Set the camera position (View matrix)
+        Matrix.setLookAtM(mVMatrix, 0, 0, 0, -3, 0f, 0f, 0f, 0f, 1.0f, 0.0f);
+
+        // Calculate the projection and view transformation
+        Matrix.multiplyMM(mMVPMatrix, 0, projectionMatrix, 0, mVMatrix, 0);
+
+        // Create a rotation transformation for the triangle
+        // Create a rotation for the triangle
+        // long time = SystemClock.uptimeMillis() % 4000L;
+        // float angle = 0.090f * ((int) time);
+        Matrix.setRotateM(mRotationMatrix, 0, mAngle, 0, 0, -1.0f);
+
+        // Combine the rotation matrix with the projection and camera view
+        Matrix.multiplyMM(mMVPMatrix, 0, mRotationMatrix, 0, mMVPMatrix, 0);
+
+
+        triangle.draw(mMVPMatrix);
+    }
+}</code></pre></div></div><div class="paragraph"><p>The objects to be rendered:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">package com.example.opengltest;
+
+import android.opengl.GLES20;
+
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.FloatBuffer;
+
+public class Triangle {
+
+    private final String vertexShaderCode =
+            // This matrix member variable provides a hook to manipulate
+            // the coordinates of the objects that use this vertex shader
+            "uniform mat4 uMVPMatrix;" +
+
+            "attribute vec4 vPosition;" +
+            "void main() {" +
+            // the matrix must be included as a modifier of gl_Position
+            "  gl_Position = vPosition * uMVPMatrix;" +
+            "}";
+
+    private final String fragmentShaderCode =
+            "precision mediump float;" +
+            "uniform vec4 vColor;" +
+            "void main() {" +
+            "  gl_FragColor = vColor;" +
+            "}";
+
+    private FloatBuffer vertexBuffer;
+
+    // number of coordinates per vertex in this array
+    static final int COORDS_PER_VERTEX = 3;
+    static final int vertexStride = COORDS_PER_VERTEX * 4; // 4 bytes per vertex
+
+    static float triangleCoords[] = { // in counterclockwise order:
+            0.0f, 0.622008459f, 0.0f,   // top
+            -0.5f, -0.311004243f, 0.0f,   // bottom left
+            0.5f, -0.311004243f, 0.0f    // bottom right
+    };
+    static final int vertexCount = triangleCoords.length / COORDS_PER_VERTEX;
+
+    // Set color with red, green, blue and alpha (opacity) values
+    float color[] = {0.63671875f, 0.76953125f, 0.22265625f, 1.0f};
+
+    int renderProgram;
+    int vPositionHandle;
+    int vColorHandle;
+    int mvpHandle;
+
+    public Triangle() {
+        // initialize vertex byte buffer for shape coordinates
+        ByteBuffer bb = ByteBuffer.allocateDirect(
+                // (number of coordinate values * 4 bytes per float)
+                triangleCoords.length * 4);
+        // use the device hardware's native byte order
+        bb.order(ByteOrder.nativeOrder());
+
+        // create a floating point buffer from the ByteBuffer
+        vertexBuffer = bb.asFloatBuffer();
+        // add the coordinates to the FloatBuffer
+        vertexBuffer.put(triangleCoords);
+        // set the buffer to read the first coordinate
+        vertexBuffer.position(0);
+
+        int vertexShader = OpenGLUtils.loadShader(GLES20.GL_VERTEX_SHADER, vertexShaderCode);
+        int fragmentShader = OpenGLUtils.loadShader(GLES20.GL_FRAGMENT_SHADER, fragmentShaderCode);
+
+        renderProgram = GLES20.glCreateProgram();             // create empty OpenGL ES Program
+        GLES20.glAttachShader(renderProgram, vertexShader);   // add the vertex shader to program
+        GLES20.glAttachShader(renderProgram, fragmentShader); // add the fragment shader to program
+        GLES20.glLinkProgram(renderProgram);
+    }
+
+    public void draw(float[] mvpMatrix) {
+
+        // Add program to OpenGL ES environment
+        GLES20.glUseProgram(renderProgram);
+
+        // get handle to vertex shader's vPosition member
+        vPositionHandle = GLES20.glGetAttribLocation(renderProgram, "vPosition");
+
+        // Enable a handle to the triangle vertices
+        GLES20.glEnableVertexAttribArray(vPositionHandle);
+
+        // Prepare the triangle coordinate data
+        GLES20.glVertexAttribPointer(vPositionHandle, COORDS_PER_VERTEX,
+                GLES20.GL_FLOAT, false,
+                vertexStride, vertexBuffer);
+
+        // get handle to fragment shader's vColor member
+        vColorHandle = GLES20.glGetUniformLocation(renderProgram, "vColor");
+
+        // Set color for drawing the triangle
+        GLES20.glUniform4fv(vColorHandle, 1, color, 0);
+
+        // get handle to shape's transformation matrix
+        mvpHandle = GLES20.glGetUniformLocation(renderProgram, "uMVPMatrix");
+        OpenGLUtils.checkGlError("glGetUniformLocation");
+
+        // Apply the projection and view transformation
+        GLES20.glUniformMatrix4fv(mvpHandle, 1, false, mvpMatrix, 0);
+        OpenGLUtils.checkGlError("glUniformMatrix4fv");
+
+        // Draw the triangle
+        GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, vertexCount);
+
+        // Disable vertex array
+        GLES20.glDisableVertexAttribArray(vPositionHandle);
+    }
+}</code></pre></div></div><div class="paragraph"><p>And finally some utilities.</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">package com.example.opengltest;
+
+import android.opengl.GLES20;
+import android.util.Log;
+
+public class OpenGLUtils {
+
+    public static int loadShader(int type, String shaderCode) {
+
+        // create a vertex shader type (GLES20.GL_VERTEX_SHADER)
+        // or a fragment shader type (GLES20.GL_FRAGMENT_SHADER)
+        int shader = GLES20.glCreateShader(type);
+
+        // add the source code to the shader and compile it
+        GLES20.glShaderSource(shader, shaderCode);
+        GLES20.glCompileShader(shader);
+
+        return shader;
+    }
+
+    public static void checkGlError(String glOperation) {
+        int error;
+        while ((error = GLES20.glGetError()) != GLES20.GL_NO_ERROR) {
+            Log.e("OpenGLUtils", glOperation + ": glError " + error);
+            throw new RuntimeException(glOperation + ": glError " + error);
+        }
+    }
+}</code></pre></div></div><div class="paragraph"><p>And OpenGL on Android is up and running :-)</p></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2013/09/comparison-of-string-iterator-performance/">Comparison of String iterator performance</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se/">Bootstrapping Weld CDI from command line with Java SE</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/3ed1d0078678954b6e563504c944c6772231ab69" target="_blank">3ed1d00</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
+        window.addEventListener("load", function(event) {
+            var disqusLoaded = false;
+            var disqusObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (!disqusLoaded && entry.isIntersecting) {
+                        console.log("Loading Disqus");
+                        disqusLoaded = true;
+
+                        document.getElementById('disqus-placeholder').remove();
+
+                        
+                        var script = document.createElement('script');
+                        script.src = '//www-mirkosertic-de.disqus.com/embed.js';
+                        script.async = true;
+                        script.setAttribute('data-timestamp', +new Date());
+                        script.addEventListener('load', function () {
+                            
+                            DISQUS.reset({reload: true, config: false});
+                        });
+                        (document.head || document.body).appendChild(script);
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: "0px",
+                threshold: [0]
+            });
+            disqusObserver.observe(document.querySelector(".comments"));
+        }, false);</script></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.mirkosertic.de/index.xml" itemprop="url"><i class="fa fa-rss-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://twitter.com/mirkosertic" itemprop="url"><i class="fa fa-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
+        var element = document.querySelector(aSelector);
+        if (element) {
+            return true;
+        }
+        return false;
+    }
+
+    var Loader = function () { };
+    Loader.prototype = {
+        require: function (scripts, callback) {
+            this.loadCount = 0;
+            this.totalRequired = scripts.length;
+            this.callback = callback;
+
+            for (var i=0;i<scripts.length;i++) {
+                this.writeScript(scripts[i]);
+            }
+        },
+        loaded: function (evt) {
+            this.loadCount++;
+
+            if (this.loadCount==this.totalRequired && typeof this.callback=='function') this.callback.call();
+        },
+        writeScript: function (src) {
+            var self = this;
+            var s = document.createElement('script');
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = src;
+            s.addEventListener('load', function (e) { self.loaded(e); }, false);
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(s);
+        }
+    };
+
+    if (existsByCSSSelector("pre.highlight code") > 0) {
+        var loader = new Loader();
+        loader.require(["https:\/\/www.mirkosertic.de\/js/highlight-9.9.0.min.js"], function() {
+
+            var additionalStylesheet = document.createElement('link');
+            additionalStylesheet.rel = "stylesheet";
+            additionalStylesheet.type = 'text/css';
+            additionalStylesheet.media = "screen";
+            additionalStylesheet.href = "https:\/\/www.mirkosertic.de\/css/highlight.css";
+
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(additionalStylesheet);
+
+            hljs.initHighlightingOnLoad();
+        });
+    }</script></body></html>

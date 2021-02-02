@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Integration on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/integration/</link>
+    <description>Recent content in Integration on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Mon, 06 Mar 2017 00:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/integration/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Service integration at UI level with server side includes(SSI)</title>
+      <link>https://www.mirkosertic.de/blog/2017/03/integration-at-ui-level-with-server-side-includes/</link>
+      <pubDate>Mon, 06 Mar 2017 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2017/03/integration-at-ui-level-with-server-side-includes/</guid>
+      <description>Microservices everywhere Today, Microservices are a common software modeling technique. This style is based on the principles behind Domain-driven Design, where every bounded context is equivalent to a service. If we also take the Twelve-Factor App manifesto into consideration, we able to create scalable and cloud ready systems.
+ But this design can also lead to problems. If we take the Microservice design too far(Nanoservices), we are quickly getting way to much services we can handle and maintain.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,197 @@
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Adding HTML5 Microdata to DokuWiki &middot; Mirko Sertic</title><meta name="description" content="HTML5 is the new standard for webpage markups. It comes with some pretty cool new features like media support etc. But one of the best things is the Microdata support!"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.49"><meta name="robots" content="index,follow"><meta property="og:title" content="Adding HTML5 Microdata to DokuWiki"><meta property="og:description" content="HTML5 is the new standard for webpage markups. It comes with some pretty cool new features like media support etc. But one of the best things is the Microdata support!"><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2013/04/adding-html5-microdata-to-dokuwiki/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-33614060-2', 'auto');
+	
+	ga('send', 'pageview');
+}</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="Tools &amp; Goodies">Tools &amp; Goodies</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Interesting Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link active" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><div itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"><header class="post-header"><h1 class="post-title" itemprop="name headline">Adding HTML5 Microdata to DokuWiki</h1><p class="post-date"><span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="2013-04-13" itemprop="datePublished">Sat, Apr 13, 2013</time> <span>by</span> <span itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name"><a href="https://twitter.com/mirkosertic" itemprop="url" rel="author">Mirko Sertic</a></span></span></p><p><span class="icon"><i class="fa fa-clock-white"></i></span><span>3 Minutes reading time</span></p><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags-white"></i></span><a href="/tags/html5">HTML5</a></span> ,&nbsp;<a href="/tags/microdata">Microdata</a></p></header><article class="post-content clearfix" itemprop="articleBody"><div class="sect1"><h2 id="_microdata_overview">Microdata overview</h2><div class="sectionbody"><div class="paragraph"><p>HTML5 is the new standard for webpage markups. It comes with some pretty cool new features like media support etc. But one of the best things is the <a href="http://en.wikipedia.org/wiki/Microdata_%28HTML%29">Microdata</a> support!</p></div><div class="paragraph"><p>Now, what is Microdata exactly? Using Microdata we can classify HTML elements or regions with meta data like “This is the name of a person” or “Here comes the copyright information”, so the real semantic Web 2.0. This greatly helps search engines to crawl the page content and also enables us to improve the display of the webpage in the search engine results.</p></div><div class="paragraph"><p>HTML5 Microdata supersedes the RDF standard, and Google for instance advises page authors to use Microdata instead of RDF.</p></div><div class="paragraph"><p>So, now lets see some old HTML:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-html" data-lang="html">Jane Doe
+&lt;img src="janedoe.jpg" /&gt;
+
+Professor
+20341 Whitworth Institute
+405 Whitworth
+Seattle WA 98052
+(425) 123-4567
+&lt;a href="mailto:jane-doe@xyz.edu"&gt;jane-doe@illinois.edu&lt;/a&gt;
+
+Jane's home page:
+&lt;a href="http://www.janedoe.com"&gt;janedoe.com&lt;/a&gt;
+
+Graduate students:
+&lt;a href="http://www.xyz.edu/students/alicejones.html"&gt;Alice Jones&lt;/a&gt;
+&lt;a href="http://www.xyz.edu/students/bobsmith.html"&gt;Bob Smith&lt;/a&gt;</code></pre></div></div><div class="paragraph"><p>And here is the HTML with embedded Microdata:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-html" data-lang="html">&lt;div itemscope itemtype="http://schema.org/Person"&gt;
+  &lt;span itemprop="name"&gt;Jane Doe&lt;/span&gt;
+  &lt;img src="janedoe.jpg" itemprop="image" /&gt;
+
+  &lt;span itemprop="jobTitle"&gt;Professor&lt;/span&gt;
+  &lt;div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"&gt;
+    &lt;span itemprop="streetAddress"&gt;
+      20341 Whitworth Institute
+      405 N. Whitworth
+    &lt;/span&gt;
+    &lt;span itemprop="addressLocality"&gt;Seattle&lt;/span&gt;,
+    &lt;span itemprop="addressRegion"&gt;WA&lt;/span&gt;
+    &lt;span itemprop="postalCode"&gt;98052&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;span itemprop="telephone"&gt;(425) 123-4567&lt;/span&gt;
+  &lt;a href="mailto:jane-doe@xyz.edu" itemprop="email"&gt;
+    jane-doe@xyz.edu&lt;/a&gt;
+
+  Jane's home page:
+  &lt;a href="http://www.janedoe.com" itemprop="url"&gt;janedoe.com&lt;/a&gt;
+
+  Graduate students:
+  &lt;a href="http://www.xyz.edu/students/alicejones.html" itemprop="colleague"&gt;
+    Alice Jones&lt;/a&gt;
+  &lt;a href="http://www.xyz.edu/students/bobsmith.html" itemprop="colleague"&gt;
+    Bob Smith&lt;/a&gt;
+&lt;/div&gt;</code></pre></div></div><div class="paragraph"><p>Basically it is the same markup, but with embedded Microdata. Cool!. If you want to read more about available Microdata tags, check <a href="http://www.schema.org/">www.schema.org</a>.</p></div></div></div><div class="sect1"><h2 id="_adding_microdata_support_to_dokuwiki">Adding Microdata support to DokuWiki</h2><div class="sectionbody"><div class="paragraph"><p>Adding Microdata tags to DokuWiki is quite simple. DokuWiki comes already with an embedded templating engine, so we can create a custom template and add the Microdata. Here is an example of this webpage, which is also backed by DokuWiki and Microdata(taken from main.php template):</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-php" data-lang="php">&lt;?php
+// must be run from within DokuWiki
+if (!defined('DOKU_INC')) die();
+
+?&gt;
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;head&gt;
+  .. Stripped ...
+&lt;/head&gt;
+&lt;body itemscope itemtype="http://schema.org/WebPage"&gt;
+
+        ... Stripped ...
+
+	&lt;div id="contentdetail"&gt;
+        &lt;div itemprop="breadcrumb" id="trace"&gt;
+
+        ... Stripped ...
+
+        &lt;div itemscope itemtype="http://schema.org/TechArticle"&gt;&lt;?php tpl_content(false)?&gt;
+
+         ... Stripped ...
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div></div><div class="paragraph"><p>The tricky part is the generation of the Wiki content. Here we have to tweak the DokuWiki XHTML parsers, so the /inc/parser/xhtml.php file. Here i changed some to to embed the Microdata:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-php" data-lang="php">function header($text, $level, $pos) {
+    global $conf;
+
+    if(!$text) return; //skip empty headlines
+
+    $hid = $this-&gt;_headerToLink($text,true);
+
+    //only add items within configured levels
+    $this-&gt;toc_additem($hid, $text, $level);
+
+    // adjust $node to reflect hierarchy of levels
+    $this-&gt;node[$level-1]++;
+    if ($level &lt; $this-&gt;lastlevel) {
+        for ($i = 0; $i &lt; $this-&gt;lastlevel-$level; $i++) {
+            $this-&gt;node[$this-&gt;lastlevel-$i-1] = 0;
+        }
+    }
+    $this-&gt;lastlevel = $level;
+
+    if ($level &lt;= $conf['maxseclevel'] &amp;amp;&amp;amp;
+        count($this-&gt;sectionedits) &gt; 0 &amp;amp;&amp;amp;
+        $this-&gt;sectionedits[count($this-&gt;sectionedits) - 1][2] === 'section') {
+        $this-&gt;finishSectionEdit($pos - 1);
+    }
+
+    // write the header
+    $this-&gt;doc .= DOKU_LF.'&lt;h'.$level;
+    if ($level &lt;= $conf['maxseclevel']) {
+        $this-&gt;doc .= ' class="' . $this-&gt;startSectionEdit($pos, 'section', $text) . '"';
+    }
+    if ($level == 1) {
+        $this-&gt;doc .= ' itemprop="name"';
+    }
+    $this-&gt;doc .= ' id="'.$hid.'"&gt;';
+    $this-&gt;doc .= $this-&gt;_xmlEntities($text);
+    $this-&gt;doc .= "&lt;/h$level&gt;".DOKU_LF;
+}
+
+
+function section_open($level) {
+    if ($level == 1) {
+        $this-&gt;doc .= '&lt;div itemprop="articleBody" class="level' . $level . '"&gt;' . DOKU_LF;
+    } else {
+        $this-&gt;doc .= '&lt;div class="level' . $level . '"&gt;' . DOKU_LF;
+    }
+}</code></pre></div></div><div class="paragraph"><p>Now my DokuWiki creates SEO friendly semantic Web 2.0 pages. Cool!</p></div></div></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2013/04/implementing-state-machines-with-java-enums/">Implementing State Machines with Java Enums</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2013/04/domain-driven-design-example/">Domain-driven Design Example</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/3ed1d0078678954b6e563504c944c6772231ab69" target="_blank">3ed1d00</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
+        window.addEventListener("load", function(event) {
+            var disqusLoaded = false;
+            var disqusObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (!disqusLoaded && entry.isIntersecting) {
+                        console.log("Loading Disqus");
+                        disqusLoaded = true;
+
+                        document.getElementById('disqus-placeholder').remove();
+
+                        
+                        var script = document.createElement('script');
+                        script.src = '//www-mirkosertic-de.disqus.com/embed.js';
+                        script.async = true;
+                        script.setAttribute('data-timestamp', +new Date());
+                        script.addEventListener('load', function () {
+                            
+                            DISQUS.reset({reload: true, config: false});
+                        });
+                        (document.head || document.body).appendChild(script);
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: "0px",
+                threshold: [0]
+            });
+            disqusObserver.observe(document.querySelector(".comments"));
+        }, false);</script></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.mirkosertic.de/index.xml" itemprop="url"><i class="fa fa-rss-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://twitter.com/mirkosertic" itemprop="url"><i class="fa fa-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
+        var element = document.querySelector(aSelector);
+        if (element) {
+            return true;
+        }
+        return false;
+    }
+
+    var Loader = function () { };
+    Loader.prototype = {
+        require: function (scripts, callback) {
+            this.loadCount = 0;
+            this.totalRequired = scripts.length;
+            this.callback = callback;
+
+            for (var i=0;i<scripts.length;i++) {
+                this.writeScript(scripts[i]);
+            }
+        },
+        loaded: function (evt) {
+            this.loadCount++;
+
+            if (this.loadCount==this.totalRequired && typeof this.callback=='function') this.callback.call();
+        },
+        writeScript: function (src) {
+            var self = this;
+            var s = document.createElement('script');
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = src;
+            s.addEventListener('load', function (e) { self.loaded(e); }, false);
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(s);
+        }
+    };
+
+    if (existsByCSSSelector("pre.highlight code") > 0) {
+        var loader = new Loader();
+        loader.require(["https:\/\/www.mirkosertic.de\/js/highlight-9.9.0.min.js"], function() {
+
+            var additionalStylesheet = document.createElement('link');
+            additionalStylesheet.rel = "stylesheet";
+            additionalStylesheet.type = 'text/css';
+            additionalStylesheet.media = "screen";
+            additionalStylesheet.href = "https:\/\/www.mirkosertic.de\/css/highlight.css";
+
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(additionalStylesheet);
+
+            hljs.initHighlightingOnLoad();
+        });
+    }</script></body></html>

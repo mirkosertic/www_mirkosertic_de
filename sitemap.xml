@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://www.mirkosertic.de/global/toolsgoodies/</loc>
+    <lastmod>2020-11-18T21:50:30+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/global/interestingbooks/</loc>
+    <lastmod>2019-11-04T23:09:49+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2019/04/java-desktop-packaging/</loc>
+    <lastmod>2019-09-24T19:10:40+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/global/favorites/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2018/02/alicebobcaroldaveopencl/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2018/01/object-oriented-webassembly/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2017/10/custom-query-parser-for-solr/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2017/06/compiling-bytecode-to-javascript/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2017/03/integration-at-ui-level-with-server-side-includes/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2017/02/improve-test-quality-with-mutationtesting/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2017/01/why-i-switched-to-static-html-generators/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/global/impressum/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2016/12/a-spring-boot-admin-ui/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2016/11/compile-time-speed-gwt-2-8-0-vs-teavm-0-4-3/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2016/06/how-to-remove-the-maven-primary-artifact-during-install-and-deploy-phase/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2016/02/a-very-simple-polymer-web-component/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2016/01/how-to-schedule-jobs-in-a-java-cdi-environment/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2015/12/how-to-download-maven-artifacts-with-maven-3-1-and-eclipse-aether/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2015/04/a-javafx-based-lua-editor/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2015/03/tuning-html5-canvas-filltext/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2014/10/how-to-set-the-html-base-tag-in-a-jsp-page/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2014/06/how-to-create-user-and-eye-friendly-scannable-log4j-log-files/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/11/java-properties-reinvented/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/10/java-array-iterator-performance/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/10/java-se-context-and-dependency-injection-with-java-ee-support/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/09/domain-driven-design-with-jsf-ejb-and-cdi/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/09/opengl2-on-android-example/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/09/comparison-of-string-iterator-performance/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/07/realtime-face-detection-on-android-using-opencv/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/07/high-performance-android-handwriting/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/05/comparison-of-jaxb-xml-and-json-serialization-performance/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/05/building-portals-with-javafx-html5-and-some-microdata/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/05/javafx-custom-controls-or-webview-with-d3-js/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/04/google-style-query-parser-for-apache-lucene/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/04/domain-driven-design-example/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/04/adding-html5-microdata-to-dokuwiki/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/04/implementing-state-machines-with-java-enums/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/03/mvc-revised-or-what-are-the-alternatives/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/03/maven-scala-and-aspectjaop/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2013/03/using-scala-in-legacy-applications/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2012/11/an-overview-of-current-nosql-databases/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2012/11/how-to-avoid-server-roundtrips-by-using-pretty-urls/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2012/11/using-and-enhancing-hibernate-search/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2012/10/displaying-simple-animated-graphs-with-javafx-2-0/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2012/10/logging-made-easy/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2012/09/the-onion-architecture/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2012/08/enriching-legacy-applications-with-cdi/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2012/08/putting-your-objects-into-context-or-why-overwriting-tostring-can-be-evil/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2012/08/the-law-of-leaky-abstractions/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2012/08/a-first-touch-with-nosql-graph-databases-and-orientdb/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2012/07/how-to-embed-hystrix-into-existing-spring-applications/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2012/07/enterprise-search-with-apache-solr/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2012/07/software-defect-detection-with-aop-and-jsr-303-jsr-305-jsr-308/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2012/07/domain-driven-design-overview-and-building-blocks/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2012/07/xml-resourcebundles-and-how-to-make-i18n-refactoring-safe/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2012/07/reusing-domain-objects-to-create-query-specifications/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2012/06/swing-databinding-with-mogwai-databinding/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/android/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/aop/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/compiler/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/configuration-management/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/database/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/databinding/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/dependency-injection/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/domain-driven-design/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/enterprise/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/global/</loc>
+    <lastmod>2020-11-18T21:50:30+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/graalvm/</loc>
+    <lastmod>2019-09-24T19:10:40+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/html5/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/i18n/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/integration/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/interesting/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/java/</loc>
+    <lastmod>2019-09-24T19:10:40+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/javafx/</loc>
+    <lastmod>2019-09-24T19:10:40+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/javascript/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/javaserverfacesjsf/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/junit/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/legacy/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/logging/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/lua/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/maven/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/microdata/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/modernization/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/native/</loc>
+    <lastmod>2019-09-24T19:10:40+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/nosql/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/opencl/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/opengl/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/packaging/</loc>
+    <lastmod>2019-09-24T19:10:40+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/performance/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/post/</loc>
+    <lastmod>2019-09-24T19:10:40+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/scala/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/search/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/serialization/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/springboot/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/swing/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/testing/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/threading/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/user-interface/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/web/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/webassembly/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/webcomponents/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/xml/</loc>
+    <lastmod>2019-01-27T10:28:53+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/</loc>
+    <lastmod>2020-11-18T21:50:30+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

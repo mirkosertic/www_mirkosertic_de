@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Search on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/search/</link>
+    <description>Recent content in Search on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Thu, 26 Oct 2017 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/search/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Implementing a custom Query Parser for Apache Solr</title>
+      <link>https://www.mirkosertic.de/blog/2017/10/custom-query-parser-for-solr/</link>
+      <pubDate>Thu, 26 Oct 2017 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2017/10/custom-query-parser-for-solr/</guid>
+      <description>Apache Solr is a very powerful and mature enterprise search server. It comes with a lot of handy and useful features. One of its features is the query API.
+ Now, what is the query API? This API is used to search thru the indexed documents, as the name suggests. But how are the documents searched? Well, the search is based on a search query. Basically the search query is a string, and this string is passed to a so called query parser.</description>
+    </item>
+    
+    <item>
+      <title>A JavaFX based Desktop Search Engine</title>
+      <link>https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine/</link>
+      <pubDate>Fri, 26 Apr 2013 09:17:13 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine/</guid>
+      <description>Microsoft Windows search is not fast, and it also does not give us good search results. So i thought about writing my own Search Engine for the Desktop. It should crawl the file system, extract the content and meta data and finally should give the same results as Google.
+ I also wanted to test some new technologies like JavaFX with embedded HTML5, Apache Lucene as a full text search engine, Apache Tika as the content extraction framework and other stuff.</description>
+    </item>
+    
+    <item>
+      <title>Google Style Query Parser for Apache Lucene</title>
+      <link>https://www.mirkosertic.de/blog/2013/04/google-style-query-parser-for-apache-lucene/</link>
+      <pubDate>Fri, 26 Apr 2013 08:29:50 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/04/google-style-query-parser-for-apache-lucene/</guid>
+      <description>I needed a query parser for Apache Lucene supporting Google style queries. Basically the following searches should be supported:
+ mirko sertic → Should result in a BooleanQuery with “mirko” and “sertic” +mirko+sertic → Should result in a BooleanQuery with “mirko” and “sertic” +mirko +sertic → Should result in a BooleanQuery with “mirko” and “sertic” mirko sertic -klaus → Should result in a BooleanQuery with “mirko” and “sertic” but not “klaus” “mirko sertic” → Should result in a PhraeQuery with terms “mirko” and “sertic” in sequence mirko~ → Should result in a FuzzyQuery with “mirko”</description>
+    </item>
+    
+    <item>
+      <title>Enterprise search with Apache Solr</title>
+      <link>https://www.mirkosertic.de/blog/2012/07/enterprise-search-with-apache-solr/</link>
+      <pubDate>Mon, 30 Jul 2012 10:30:07 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/07/enterprise-search-with-apache-solr/</guid>
+      <description>It you want to build a enterprise search engine, you don&amp;#8217;t have to reinvent the wheel. You can use open source engines like Apache Lucene or if you have just one day to implement it Apache Solr. Solr is a full blown enterprise search server, which comes with a lot of bundled plugins like meta-data and content extraction from a very common set of document types with Apache Tika , search highlighting, fragmented search and also similarity search for search results.</description>
+    </item>
+    
+  </channel>
+</rss>

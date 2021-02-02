@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Preconditions, Project Lombok, JSR 303 and JSR 308 &middot; Mirko Sertic</title><meta name="description" content="A good method implementation validates all of its preconditions before it continues. Luckily there are different frameworks such as Project Lombok, JSR 303 Bean Validation API and JSR 308 Java Type Annotations available for this job.  All of them are based on Java Annotations at method arguments, but they differ in runtime and compile time behavior. Here are some examples."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.49"><meta name="robots" content="index,follow"><meta property="og:title" content="Preconditions, Project Lombok, JSR 303 and JSR 308"><meta property="og:description" content="A good method implementation validates all of its preconditions before it continues. Luckily there are different frameworks such as Project Lombok, JSR 303 Bean Validation API and JSR 308 Java Type Annotations available for this job.  All of them are based on Java Annotations at method arguments, but they differ in runtime and compile time behavior. Here are some examples."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-33614060-2', 'auto');
+	
+	ga('send', 'pageview');
+}</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="Tools &amp; Goodies">Tools &amp; Goodies</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Interesting Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link active" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><div itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"><header class="post-header"><h1 class="post-title" itemprop="name headline">Preconditions, Project Lombok, JSR 303 and JSR 308</h1><p class="post-date"><span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="2016-12-14" itemprop="datePublished">Wed, Dec 14, 2016</time> <span>by</span> <span itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name"><a href="https://twitter.com/mirkosertic" itemprop="url" rel="author">Mirko Sertic</a></span></span></p><p><span class="icon"><i class="fa fa-clock-white"></i></span><span>4 Minutes reading time</span></p><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags-white"></i></span><a href="/tags/aop">AOP</a></span> ,&nbsp;<a href="/tags/domain-driven-design">Domain-driven Design</a> ,&nbsp;<a href="/tags/interesting">Interesting</a> ,&nbsp;<a href="/tags/junit">JUnit</a> ,&nbsp;<a href="/tags/modernization">Modernization</a></p></header><article class="post-content clearfix" itemprop="articleBody"><div class="paragraph"><p>A good method implementation validates all of its preconditions before it continues. Luckily there are different frameworks such as Project Lombok, JSR 303 Bean Validation API and JSR 308 Java Type Annotations available for this job.  All of them are based on Java Annotations at method arguments, but they differ in runtime and compile time behavior. Here are some examples.</p></div><div class="sect1"><h2 id="_project_lombok">Project Lombok</h2><div class="sectionbody"><div class="paragraph"><p>Project Lombok adds language features for boilerplate free code to the Java ecosystem. It is based on the Java Annotation Processor facility of the Java compiler. One of the features is null check of method preconditions. This is basically done by annotating the method arguments with @lombok.NonNull as shown in the following example:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">import lombok.NonNull;
+import org.junit.Test;
+
+public class LombokNativeTest {
+
+    public class LombokNative {
+
+        private final String value;
+
+        public LombokNative(@NonNull String value) {
+            this.value = value;
+        }
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void testCreate() {
+        new LombokNative(null);
+    }
+}</code></pre></div></div><div class="paragraph"><p>Lombok adds the null check boilerplate code at compile time. At runtime, a NullPointer Exception is thrown, as seen in the example above.</p></div></div></div><div class="sect1"><h2 id="_project_lombok_and_jsr_303">Project Lombok and JSR 303</h2><div class="sectionbody"><div class="paragraph"><p>There are other options to mark a method argument as not null-able. One of them is JSR 303 or the Java Validation API. Let us see what happens if we use it with Lombok:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">import org.junit.Test;
+
+import javax.validation.constraints.NotNull;
+
+public class Lombok303Test {
+
+    public class Lombok303 {
+
+        private final String value;
+
+        public Lombok303(@NotNull String value) {
+            this.value = value;
+        }
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void testCreate() {
+        new Lombok303(null);
+    }
+}</code></pre></div></div><div class="paragraph"><p>Well, this test fails, no exception is thrown. This is due to the fact that Lombok parses "NonNull" annotations in a case insensitive manner. JSR 303 uses "NotNull", so Lombok ignores this annotation completely. To make it runnable, we have to run the JSR 303 Validator by hand. This can easily be done using <a href="https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj/">Method validation with JSR303 and AspectJ</a>.</p></div><div class="paragraph"><p>We can argue that JSR 303 is far more powerful than Lombok for validation. The Java Validator API even offers a method level validation, which can be greatly used with AOP to do all kind of validations. If you are using the Spring framework, you can also use the @Validated annotation for managed objects, which basically invokes the JSR 303 Validator in the background.</p></div></div></div><div class="sect1"><h2 id="_jsr_308_to_the_rescue">JSR 308 to the rescue?</h2><div class="sectionbody"><div class="paragraph"><p>JSR 308 or Java Type Annotations were added with Java 8. It is basically an extension of the Java type system, and allows annotations almost everywhere in the code. And of course it comes with some @NonNull annotations. Here is an example:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">import org.junit.Test;
+
+import javax.annotation.Nonnull;
+
+public class JSR308Test {
+
+    public class JSR308 {
+
+        private final String value;
+
+        public JSR308(@Nonnull String value) {
+            this.value = value;
+        }
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testInit() {
+        new JSR308(null);
+    }
+}</code></pre></div></div><div class="paragraph"><p>We get what we expected, an IllegalArgumentException.class. We get the same with Project Lombok. Where is the difference?</p></div><div class="paragraph"><p>Well, as mentioned above, JSR 308 is an extension of the type system. So wouldn&#8217;t it be nice if the type system could help us to detect potential precondition violation at compile time? This is the case in the example above, this shouldn&#8217;t even compile, as it clearly violates the contract. And here comes the true power of JSR 308 to play. By enabling a special compiler, we can transform the runtime exception into a compile time error. We just have to add the compiler to the pom.xml as seen here:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-xml" data-lang="xml">&lt;plugin&gt;
+    &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+    &lt;version&gt;3.3&lt;/version&gt;
+    &lt;configuration&gt;
+        &lt;source&gt;1.8&lt;/source&gt;
+        &lt;target&gt;1.8&lt;/target&gt;
+        &lt;fork&gt;true&lt;/fork&gt;
+        &lt;annotationProcessors&gt;
+            &lt;annotationProcessor&gt;
+                org.checkerframework.checker.nullness.NullnessChecker
+            &lt;/annotationProcessor&gt;
+        &lt;/annotationProcessors&gt;
+    &lt;/configuration&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.checkerframework&lt;/groupId&gt;
+            &lt;artifactId&gt;compiler&lt;/artifactId&gt;
+            &lt;version&gt;2.1.6&lt;/version&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+&lt;/plugin&gt;</code></pre></div></div><div class="paragraph"><p>and we get a compile time error if we try to compile the example above:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code>Error:(35, 20) java: [argument.type.incompatible] incompatible types in argument.
+  found   : null
+  required: @Initialized @NonNull String</code></pre></div></div></div></div><div class="sect1"><h2 id="_summary">Summary</h2><div class="sectionbody"><div class="paragraph"><p>There are a number of options for compile time and runtime checking available. When it comes to method level precondition checking, JSR 303 with AOP is the most flexible and powerful option, but it offers only runtime type checking. JSR 308 brings back compile time checking by using a special compiler. Personally I think that we need both of them. Compile time  checking can save a lot of time, but there are a lot of conditions that can only be detected at runtime, and here we can use JSR 303 with AOP do to method level validation on managed and un-managed instances. But every framework or language feature doesn&#8217;t remove the need to write complete and useful unit tests.</p></div></div></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2016/11/compile-time-speed-gwt-2-8-0-vs-teavm-0-4-3/">Compile Time Speed GWT 2.8.0 vs. TeaVM 0.4.3 vs. TeaVM 1.0.0-SNAPSHOT</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2016/12/a-spring-boot-admin-ui/">A Spring Boot Admin UI</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/3ed1d0078678954b6e563504c944c6772231ab69" target="_blank">3ed1d00</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
+        window.addEventListener("load", function(event) {
+            var disqusLoaded = false;
+            var disqusObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (!disqusLoaded && entry.isIntersecting) {
+                        console.log("Loading Disqus");
+                        disqusLoaded = true;
+
+                        document.getElementById('disqus-placeholder').remove();
+
+                        
+                        var script = document.createElement('script');
+                        script.src = '//www-mirkosertic-de.disqus.com/embed.js';
+                        script.async = true;
+                        script.setAttribute('data-timestamp', +new Date());
+                        script.addEventListener('load', function () {
+                            
+                            DISQUS.reset({reload: true, config: false});
+                        });
+                        (document.head || document.body).appendChild(script);
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: "0px",
+                threshold: [0]
+            });
+            disqusObserver.observe(document.querySelector(".comments"));
+        }, false);</script></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.mirkosertic.de/index.xml" itemprop="url"><i class="fa fa-rss-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://twitter.com/mirkosertic" itemprop="url"><i class="fa fa-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
+        var element = document.querySelector(aSelector);
+        if (element) {
+            return true;
+        }
+        return false;
+    }
+
+    var Loader = function () { };
+    Loader.prototype = {
+        require: function (scripts, callback) {
+            this.loadCount = 0;
+            this.totalRequired = scripts.length;
+            this.callback = callback;
+
+            for (var i=0;i<scripts.length;i++) {
+                this.writeScript(scripts[i]);
+            }
+        },
+        loaded: function (evt) {
+            this.loadCount++;
+
+            if (this.loadCount==this.totalRequired && typeof this.callback=='function') this.callback.call();
+        },
+        writeScript: function (src) {
+            var self = this;
+            var s = document.createElement('script');
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = src;
+            s.addEventListener('load', function (e) { self.loaded(e); }, false);
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(s);
+        }
+    };
+
+    if (existsByCSSSelector("pre.highlight code") > 0) {
+        var loader = new Loader();
+        loader.require(["https:\/\/www.mirkosertic.de\/js/highlight-9.9.0.min.js"], function() {
+
+            var additionalStylesheet = document.createElement('link');
+            additionalStylesheet.rel = "stylesheet";
+            additionalStylesheet.type = 'text/css';
+            additionalStylesheet.media = "screen";
+            additionalStylesheet.href = "https:\/\/www.mirkosertic.de\/css/highlight.css";
+
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(additionalStylesheet);
+
+            hljs.initHighlightingOnLoad();
+        });
+    }</script></body></html>

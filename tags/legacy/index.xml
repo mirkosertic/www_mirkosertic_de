@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Legacy on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/legacy/</link>
+    <description>Recent content in Legacy on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Mon, 18 Mar 2013 06:09:22 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/legacy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using Scala in legacy applications</title>
+      <link>https://www.mirkosertic.de/blog/2013/03/using-scala-in-legacy-applications/</link>
+      <pubDate>Mon, 18 Mar 2013 06:09:22 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/03/using-scala-in-legacy-applications/</guid>
+      <description>Often we are enhancing and working on Java legacy applications. But time moves on, and new programming languages like Scala(www.scala-lang.org ) become popular. But one question arises: is it possible to use Scala in Java based legacy applications?
+ The reason i prefer Scala over Groovy is that Scala is statically typed. So the compiler does a lot of syntax checking for us, things that are not possible with dynamically typed languages like Groovy or Clojure.</description>
+    </item>
+    
+    <item>
+      <title>Enriching legacy applications with CDI</title>
+      <link>https://www.mirkosertic.de/blog/2012/08/enriching-legacy-applications-with-cdi/</link>
+      <pubDate>Wed, 15 Aug 2012 09:45:09 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/08/enriching-legacy-applications-with-cdi/</guid>
+      <description>There are a lot of applications out there. Some of them are legacy, others are in their maintenance phase. While we are developing new applications, we can use the coolest new technologies, think about good design and other stuff. But what about the software maintenance phase? Often, due to lack of time and other constraints, we cannot do everything perfectly, we need to move some refactoring or even re-engineering to the maintenance phase.</description>
+    </item>
+    
+  </channel>
+</rss>

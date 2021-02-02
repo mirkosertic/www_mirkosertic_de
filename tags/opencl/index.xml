@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Opencl on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/opencl/</link>
+    <description>Recent content in Opencl on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Thu, 01 Feb 2018 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/opencl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Alice, Bob, Carol and Dave OpenCL Edition</title>
+      <link>https://www.mirkosertic.de/blog/2018/02/alicebobcaroldaveopencl/</link>
+      <pubDate>Thu, 01 Feb 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2018/02/alicebobcaroldaveopencl/</guid>
+      <description>An office fairy tale Once upon a time in an office far far away worked four very nice IT people very hard in their office cubicles. Their names were Alice, Bob, Carol and Dave.
+ They worked very hard each day. They started work at 9 o&amp;#8217;clock, and finished often after sunset. They were very happy in their business, but they were very lonely in their private life due to the amount of work they did every day.</description>
+    </item>
+    
+  </channel>
+</rss>

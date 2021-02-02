@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/android/</link>
+    <description>Recent content in Android on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Thu, 05 Sep 2013 08:46:56 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OpenGL2 on Android example</title>
+      <link>https://www.mirkosertic.de/blog/2013/09/opengl2-on-android-example/</link>
+      <pubDate>Thu, 05 Sep 2013 08:46:56 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/09/opengl2-on-android-example/</guid>
+      <description>The last days i fiddled a bit with OpenGL 2 on Android. The Android OpenGL tutorials are a bit outdated, so i had to do some API research by myself and copy and merge the provided examples together. Here is a screenshot of the running OpenGL App:
+ 
+ It supports touch events to rotate a triangle around and render the animation.
+ To run OpenGL, we need the base Activity class as follows:</description>
+    </item>
+    
+    <item>
+      <title>Realtime face detection on Android using OpenCV</title>
+      <link>https://www.mirkosertic.de/blog/2013/07/realtime-face-detection-on-android-using-opencv/</link>
+      <pubDate>Sat, 27 Jul 2013 06:20:34 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/07/realtime-face-detection-on-android-using-opencv/</guid>
+      <description>There is a cool computer vision library called OpenCV available. Using OpenCV, we can do stuff like object detection, feature extraction and other computer vision tasks. OpenCV is a native library, but it also comes with JNI Wrappers for Java and the Android platform.
+ For the beginning, i want to implement real time face detection on my Samsung Galaxy S3 with OpenCV and some Java code. Here is a screenshot of the final result:</description>
+    </item>
+    
+    <item>
+      <title>High performance Android handwriting</title>
+      <link>https://www.mirkosertic.de/blog/2013/07/high-performance-android-handwriting/</link>
+      <pubDate>Tue, 09 Jul 2013 07:56:21 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/07/high-performance-android-handwriting/</guid>
+      <description>For one of my Android Apps Leas Painting App i needed to implement a sketching and handwriting functionality. The user must be able to draw with his fingers on the canvas and sketch something. This is a screenshot of my App:
+ 
+ But on my way i had to tweak with Android to make the App responsive even on slower devices. Here are my findings about how to keep everything responsive and smooth:</description>
+    </item>
+    
+  </channel>
+</rss>

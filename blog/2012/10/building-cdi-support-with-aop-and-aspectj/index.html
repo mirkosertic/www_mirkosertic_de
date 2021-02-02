@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Building CDI support with AOP and AspectJ &middot; Mirko Sertic</title><meta name="description" content="This explains how to use emulare CDI with AOP and AspectJ"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.49"><meta name="robots" content="index,follow"><meta property="og:title" content="Building CDI support with AOP and AspectJ"><meta property="og:description" content="This explains how to use emulare CDI with AOP and AspectJ"><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-33614060-2', 'auto');
+	
+	ga('send', 'pageview');
+}</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="Tools &amp; Goodies">Tools &amp; Goodies</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Interesting Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link active" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><div itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"><header class="post-header"><h1 class="post-title" itemprop="name headline">Building CDI support with AOP and AspectJ</h1><p class="post-date"><span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="2012-10-01" itemprop="datePublished">Mon, Oct 1, 2012</time> <span>by</span> <span itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name"><a href="https://twitter.com/mirkosertic" itemprop="url" rel="author">Mirko Sertic</a></span></span></p><p><span class="icon"><i class="fa fa-clock-white"></i></span><span>3 Minutes reading time</span></p><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags-white"></i></span><a href="/tags/aop">AOP</a></span> ,&nbsp;<a href="/tags/dependency-injection">Dependency Injection</a> ,&nbsp;<a href="/tags/enterprise">Enterprise</a> ,&nbsp;<a href="/tags/modernization">Modernization</a></p></header><article class="post-content clearfix" itemprop="articleBody"><div class="paragraph"><p>CDI is a mighty enhancement to the Java programming language. But CDI has also some limitations that might be cumbersome:</p></div><div class="ulist"><ul><li><p>CDI needs a CDI container</p></li><li><p>All dependency injected beans are also managed beans</p></li><li><p>Hibernate or JPA entities are not managed by the CDI container, so there is no CDI support for them</p></li></ul></div><div class="paragraph"><p>So what can we do to get around these limitations, for instance we really want dependency injection in our Entities? The solution is AOP and AspectJ!</p></div><div class="sect1"><h2 id="_entities_with_cdi">Entities with CDI</h2><div class="sectionbody"><div class="paragraph"><p>Entities sometimes need references to other domain services or subsystems. Of course we can argue what this functionality can be promoted to a domain service itself, but this also means that business logic will go to services where it probably does not belong. So what can be a solution? We use AOP and AspectJ do inject dependencies into Entities. But how does it work?</p></div><div class="paragraph"><p>Consider the following code:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">public class WovenBean {
+
+    @Inject
+    String random;
+}</code></pre></div></div><div class="paragraph"><p>Now we need to inject the dependency into the field. We can use an AspectJ Field-Access Pointcut in combination with an advice to inject the missing dependency when the field is read. But wait! What should happen if we inject the field during unit testing? In this case, there must not be any dependency injection for the field at all.</p></div><div class="paragraph"><p>Please note that Entity dependency injection can lead to very bad design. If you are really sure you need a service or other kind of resources inside of Entity logic, consider using a method argument to do so. The above described solution should be the last case, but sometimes not avoidable in legacy code. If we search the web, we can find many examples where a before advice is used to change the field value. But note that changing a field value is potential not thread safe! The solution is quite simple. We use an around advice for field get access. This works pretty smooth, and we do not have multi threading issues at all.</p></div><div class="paragraph"><p>Here is the aspect code for the final dependency injection aspect:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">public aspect InjectAspect {
+
+    Map&lt;Class&lt;?&gt;, Provider&gt; providerCache = new ConcurrentHashMap&lt;Class&lt;?&gt;, Provider&gt;();
+
+    ServiceLoader&lt;InjectResolver&gt; loader;
+
+    around(): get(@Inject * **) {
+
+        Field field = ((FieldSignature)thisJoinPointStaticPart.getSignature()).getField();
+
+        try {
+
+            Object theReturnValue = proceed();
+
+            if (theReturnValue == null) {
+                // No value, so do a lookup
+                Provider theProvider = getInstance(field);
+                theReturnValue = theProvider.get();
+            }
+            return theReturnValue;
+        } catch (RuntimeException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new RuntimeException("Injection failed", e);
+        } catch (Throwable e) {
+            throw new RuntimeException("Injection failed", e);
+        }
+
+    }
+
+    private Provider getInstance(Field field) {
+        // Is there already a provider cached?
+        Provider theProvider = providerCache.get(field.getType());
+        if (theProvider != null) {
+            return theProvider;
+        }
+
+        // Nope, use ServiceLoader to retrieve one
+        synchronized (this) {
+            if (loader == null) {
+                loader = ServiceLoader.load(InjectResolver.class);
+            }
+        }
+        Iterator&lt;InjectResolver&gt; theIterator = loader.iterator();
+        while (theIterator.hasNext()) {
+            InjectResolver resolver = theIterator.next();
+            Provider instance = resolver.resolve(field);
+            if (instance != null) {
+                providerCache.put(field.getType(), instance);
+                return instance;
+            }
+
+        }
+        throw new RuntimeException("Injection failed: no provider found for " + field.getType().getName());
+    }
+}</code></pre></div></div><div class="paragraph"><p>Note that we are using the Java6 ServiceLoader API to retrieve all available InjectResolver from classpath. We can implement them by our self out of the box or implement one that delegates to Weld or Spring. This is up to you.</p></div></div></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2012/09/the-onion-architecture/">The Onion Architecture</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2012/10/logging-made-easy/">Logging made easy</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/3ed1d0078678954b6e563504c944c6772231ab69" target="_blank">3ed1d00</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
+        window.addEventListener("load", function(event) {
+            var disqusLoaded = false;
+            var disqusObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (!disqusLoaded && entry.isIntersecting) {
+                        console.log("Loading Disqus");
+                        disqusLoaded = true;
+
+                        document.getElementById('disqus-placeholder').remove();
+
+                        
+                        var script = document.createElement('script');
+                        script.src = '//www-mirkosertic-de.disqus.com/embed.js';
+                        script.async = true;
+                        script.setAttribute('data-timestamp', +new Date());
+                        script.addEventListener('load', function () {
+                            
+                            DISQUS.reset({reload: true, config: false});
+                        });
+                        (document.head || document.body).appendChild(script);
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: "0px",
+                threshold: [0]
+            });
+            disqusObserver.observe(document.querySelector(".comments"));
+        }, false);</script></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.mirkosertic.de/index.xml" itemprop="url"><i class="fa fa-rss-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://twitter.com/mirkosertic" itemprop="url"><i class="fa fa-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
+        var element = document.querySelector(aSelector);
+        if (element) {
+            return true;
+        }
+        return false;
+    }
+
+    var Loader = function () { };
+    Loader.prototype = {
+        require: function (scripts, callback) {
+            this.loadCount = 0;
+            this.totalRequired = scripts.length;
+            this.callback = callback;
+
+            for (var i=0;i<scripts.length;i++) {
+                this.writeScript(scripts[i]);
+            }
+        },
+        loaded: function (evt) {
+            this.loadCount++;
+
+            if (this.loadCount==this.totalRequired && typeof this.callback=='function') this.callback.call();
+        },
+        writeScript: function (src) {
+            var self = this;
+            var s = document.createElement('script');
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = src;
+            s.addEventListener('load', function (e) { self.loaded(e); }, false);
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(s);
+        }
+    };
+
+    if (existsByCSSSelector("pre.highlight code") > 0) {
+        var loader = new Loader();
+        loader.require(["https:\/\/www.mirkosertic.de\/js/highlight-9.9.0.min.js"], function() {
+
+            var additionalStylesheet = document.createElement('link');
+            additionalStylesheet.rel = "stylesheet";
+            additionalStylesheet.type = 'text/css';
+            additionalStylesheet.media = "screen";
+            additionalStylesheet.href = "https:\/\/www.mirkosertic.de\/css/highlight.css";
+
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(additionalStylesheet);
+
+            hljs.initHighlightingOnLoad();
+        });
+    }</script></body></html>

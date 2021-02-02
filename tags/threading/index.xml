@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Threading on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/threading/</link>
+    <description>Recent content in Threading on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Tue, 31 Jul 2012 08:01:03 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/threading/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Thread tracking or how to know who causes an error</title>
+      <link>https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error/</link>
+      <pubDate>Tue, 31 Jul 2012 08:01:03 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error/</guid>
+      <description>Often we are developing applications for multi-user environments. Classic examples are web applications or web services. This also means that technical or business exceptions can occur at the same time for different users. But how do we know you causes which exception?
+ We can use logging frameworks like Log4J and write some meta-information like the id of the current user and session to the Mapped Diagnostic Context and finally use a special logging configuration to output the MDC to the log files.</description>
+    </item>
+    
+  </channel>
+</rss>

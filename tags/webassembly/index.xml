@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Webassembly on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/webassembly/</link>
+    <description>Recent content in Webassembly on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Thu, 20 Dec 2018 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/webassembly/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WebAssembly with vue.js</title>
+      <link>https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/</link>
+      <pubDate>Thu, 20 Dec 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/</guid>
+      <description>State of the union WebAssembly for starters is a standard for high-performance, size-optimized executable code for the Web. It was released in March 2017 by the WebAssembly working group as version 1.0, which is basically a MVP (Minimum Viable Product), but the initial development started in June 2017. WebAssembly is the successor asm.js and the Google Native Client (NaCL).
+ WebAssembly itself is merely a sandboxed runtime environment. It was designed as a compile target.</description>
+    </item>
+    
+    <item>
+      <title>Object-Oriented WebAssembly</title>
+      <link>https://www.mirkosertic.de/blog/2018/01/object-oriented-webassembly/</link>
+      <pubDate>Mon, 01 Jan 2018 12:00:00 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2018/01/object-oriented-webassembly/</guid>
+      <description>Today, I want to write a little bit about object orientation and WebAssembly. For starters, what is WebAssembly? WebAssembly is a new portable, size and load-time efficient format suitable for compilation to the web. It is an open standard by a W3C community group and is currently integrated into all major browsers such as Firefox, Chrome, Edge and WebKit. WebAssembly aims to keep download speed and parsing time of program code low and execute at native speed by taking advance of common hardware capabilities available on a wide range of platforms.</description>
+    </item>
+    
+  </channel>
+</rss>

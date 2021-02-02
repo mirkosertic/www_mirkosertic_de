@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Graalvm on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/graalvm/</link>
+    <description>Recent content in Graalvm on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Tue, 23 Apr 2019 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/graalvm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Packaging JavaFX Applications for the Desktop</title>
+      <link>https://www.mirkosertic.de/blog/2019/04/java-desktop-packaging/</link>
+      <pubDate>Tue, 23 Apr 2019 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2019/04/java-desktop-packaging/</guid>
+      <description>Packaging Java applications for the Desktop has never been an easy task. In this blog post I want to look at the past to show where we are coming from, look at the present to see what we have now and finally try to take a look into the future to get a glimpse of what might be coming.
+ The Past of Java Packaging Before Java 5.0 there was no built-in support in Java for application distribution, as far as what we would consider an application.</description>
+    </item>
+    
+  </channel>
+</rss>

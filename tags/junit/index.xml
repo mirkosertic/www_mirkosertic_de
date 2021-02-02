@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Junit on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/junit/</link>
+    <description>Recent content in Junit on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Tue, 14 Feb 2017 00:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/junit/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Improve Test Quality with Mutation Testing</title>
+      <link>https://www.mirkosertic.de/blog/2017/02/improve-test-quality-with-mutationtesting/</link>
+      <pubDate>Tue, 14 Feb 2017 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2017/02/improve-test-quality-with-mutationtesting/</guid>
+      <description>A very common problem Unit testing is a today must have. Together with Test-driven Development and Frameworks such as JUnit we can easily prove that our code fulfills a set of requirements and business invariants. We use metrics like &#34;Test coverage&#34; to get insight about the completeness of our tests. A very common assumption taken from a test coverage of 80 percent is that 80 percent of our code is tested and working correctly.</description>
+    </item>
+    
+    <item>
+      <title>Preconditions, Project Lombok, JSR 303 and JSR 308</title>
+      <link>https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308/</link>
+      <pubDate>Wed, 14 Dec 2016 12:33:44 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308/</guid>
+      <description>A good method implementation validates all of its preconditions before it continues. Luckily there are different frameworks such as Project Lombok, JSR 303 Bean Validation API and JSR 308 Java Type Annotations available for this job. All of them are based on Java Annotations at method arguments, but they differ in runtime and compile time behavior. Here are some examples.
+ Project Lombok Project Lombok adds language features for boilerplate free code to the Java ecosystem.</description>
+    </item>
+    
+    <item>
+      <title>How to create JUnit assertions from running applications</title>
+      <link>https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications/</link>
+      <pubDate>Tue, 01 Oct 2013 07:20:37 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications/</guid>
+      <description>JUnit is a cool and powerful framework for unit test creation. But there is a drawback: we need to create a lot of assertions! Without assertions, we can create a very good path coverage, but it is not guaranteed that the code works correctly. This can be really cumbersome while we are working with big JavaBeans or Entities. Check for instance the following piece of code:
+ public class BeanTest { @Test public void testCreate() { ClassToTest theCandidate = new ClassToTest(); TestBean theTestBean = theCandidate.</description>
+    </item>
+    
+  </channel>
+</rss>

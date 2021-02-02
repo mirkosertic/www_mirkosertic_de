@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aop on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/aop/</link>
+    <description>Recent content in Aop on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Wed, 14 Dec 2016 12:33:44 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/aop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Preconditions, Project Lombok, JSR 303 and JSR 308</title>
+      <link>https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308/</link>
+      <pubDate>Wed, 14 Dec 2016 12:33:44 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308/</guid>
+      <description>A good method implementation validates all of its preconditions before it continues. Luckily there are different frameworks such as Project Lombok, JSR 303 Bean Validation API and JSR 308 Java Type Annotations available for this job. All of them are based on Java Annotations at method arguments, but they differ in runtime and compile time behavior. Here are some examples.
+ Project Lombok Project Lombok adds language features for boilerplate free code to the Java ecosystem.</description>
+    </item>
+    
+    <item>
+      <title>Method validation with JSR303 and AspectJ</title>
+      <link>https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj/</link>
+      <pubDate>Wed, 26 Jun 2013 10:29:19 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj/</guid>
+      <description>Hibernate Validator since version 4.2 supports method validation. For instance consider the following Java code:
+ package de.mirkosertic.aspectj; import javax.validation.constraints.NotNull; public class Example { public void doNothing(String aValue) { } public String getString(String aValue) { return aValue; } public @NotNull String getNullString(String aValue) { return aValue; } public void doNothingSingleNotNull(@NotNull String aValue) { } public void doNothingMiddleNotNull(String aStart,@NotNull String aValue, String aEnd) { } public void doNothingEndNotNull(String aStart,String aValue, @NotNull String aEnd) { } }   Wouldn&amp;#8217;t it be cool to validate the method pre- and post conditions without coding too much?</description>
+    </item>
+    
+    <item>
+      <title>Maven, Scala and AspectJ(AOP)</title>
+      <link>https://www.mirkosertic.de/blog/2013/03/maven-scala-and-aspectjaop/</link>
+      <pubDate>Mon, 25 Mar 2013 10:03:24 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/03/maven-scala-and-aspectjaop/</guid>
+      <description>Recently i was thinking about combining AspectJ and Scala in one project. Of course we can argue that functional programming addresses a lot of issues we are trying to solve with AspectJ, but that is not the point. AspectJ is a Bytecode manipulation framework, not a Java code manipulation thing. So why not implement cross cutting concerns like security or transaction handling with AOP/AspectJ in a Scala project? For this short example, i am using AspectJ 1.</description>
+    </item>
+    
+    <item>
+      <title>Building CDI support with AOP and AspectJ</title>
+      <link>https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj/</link>
+      <pubDate>Mon, 01 Oct 2012 02:47:45 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj/</guid>
+      <description>CDI is a mighty enhancement to the Java programming language. But CDI has also some limitations that might be cumbersome:
+   CDI needs a CDI container
+  All dependency injected beans are also managed beans
+  Hibernate or JPA entities are not managed by the CDI container, so there is no CDI support for them
+   So what can we do to get around these limitations, for instance we really want dependency injection in our Entities?</description>
+    </item>
+    
+    <item>
+      <title>Thread tracking or how to know who causes an error</title>
+      <link>https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error/</link>
+      <pubDate>Tue, 31 Jul 2012 08:01:03 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error/</guid>
+      <description>Often we are developing applications for multi-user environments. Classic examples are web applications or web services. This also means that technical or business exceptions can occur at the same time for different users. But how do we know you causes which exception?
+ We can use logging frameworks like Log4J and write some meta-information like the id of the current user and session to the Mapped Diagnostic Context and finally use a special logging configuration to output the MDC to the log files.</description>
+    </item>
+    
+    <item>
+      <title>Software defect detection with AOP and JSR-303 / JSR-305 / JSR-308</title>
+      <link>https://www.mirkosertic.de/blog/2012/07/software-defect-detection-with-aop-and-jsr-303-jsr-305-jsr-308/</link>
+      <pubDate>Mon, 30 Jul 2012 09:49:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/07/software-defect-detection-with-aop-and-jsr-303-jsr-305-jsr-308/</guid>
+      <description>Summary For many years common runtime exceptions like NullPointerException or ClassCastException are haunting poor Java programmers. This often leads to repetitions in the source code for checking method arguments for nullness. This is violating the DRY(Don&amp;#8217;t repeat yourself) principle. The Java Community Process created JSR-305 to address this issue. Unfortunately this JSR didn&amp;#8217;t become part of the official Java languages, but tools like FindBugs or IDEs like IntelliJ are offering static code analysis to find such NullPointerExceptions at compile time.</description>
+    </item>
+    
+  </channel>
+</rss>

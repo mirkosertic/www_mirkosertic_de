@@ -1,0 +1,325 @@
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>A JavaFX based LUA editor &middot; Mirko Sertic</title><meta name="description" content="One of my favorite projects is my JavaFX based Gameengine. It has a flexible entity component system, supports WYSIWYG game design and also has multiplayer network support. The entity component system is backed by a LUA based scripting system, the game designer can react freely on game events and script entity behaviors with the wonderful LUA scripting engine. Now, the game designer needs a visual tool with syntax highlighting, clipboard support and also some kind of testing mode to write bug free LUA scripts. Luckily I was able to build this with JavaFX, and here is a final screenshot:"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.49"><meta name="robots" content="index,follow"><meta property="og:title" content="A JavaFX based LUA editor"><meta property="og:description" content="One of my favorite projects is my JavaFX based Gameengine. It has a flexible entity component system, supports WYSIWYG game design and also has multiplayer network support. The entity component system is backed by a LUA based scripting system, the game designer can react freely on game events and script entity behaviors with the wonderful LUA scripting engine. Now, the game designer needs a visual tool with syntax highlighting, clipboard support and also some kind of testing mode to write bug free LUA scripts. Luckily I was able to build this with JavaFX, and here is a final screenshot:"><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2015/04/a-javafx-based-lua-editor/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-33614060-2', 'auto');
+	
+	ga('send', 'pageview');
+}</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="Tools &amp; Goodies">Tools &amp; Goodies</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Interesting Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link active" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><div itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"><header class="post-header"><h1 class="post-title" itemprop="name headline">A JavaFX based LUA editor</h1><p class="post-date"><span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="2015-04-03" itemprop="datePublished">Fri, Apr 3, 2015</time> <span>by</span> <span itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name"><a href="https://twitter.com/mirkosertic" itemprop="url" rel="author">Mirko Sertic</a></span></span></p><p><span class="icon"><i class="fa fa-clock-white"></i></span><span>5 Minutes reading time</span></p><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags-white"></i></span><a href="/tags/html5">HTML5</a></span> ,&nbsp;<a href="/tags/interesting">Interesting</a> ,&nbsp;<a href="/tags/lua">LUA</a> ,&nbsp;<a href="/tags/user-interface">User Interface</a> ,&nbsp;<a href="/tags/web">Web</a></p></header><article class="post-content clearfix" itemprop="articleBody"><div class="paragraph"><p>One of my favorite projects is my JavaFX based <a href="https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/">Gameengine</a>. It has a flexible entity component system, supports WYSIWYG game design and also has multiplayer network support. The entity component system is backed by a LUA based scripting system, the game designer can react freely on game events and script entity behaviors with the wonderful LUA scripting engine. Now, the game designer needs a visual tool with syntax highlighting, clipboard support and also some kind of testing mode to write bug free LUA scripts. Luckily I was able to build this with JavaFX, and here is a final screenshot:</p></div><div class="paragraph"><p><span class="image"><img src="/media/luascripteditor.png" alt="luascripteditor"></span></p></div><div class="paragraph"><p>Now, how did I achieve this? Well, luckily I didn&#8217;t have to reinvent everything by myself. There are a lot of cool scripting editors available today. One of them is the Ace editor. The Ace editor is HTML/ JavaScript based. And because of the wonderful JavaFX WebView I am able to integrate the rich text script editor with a JavaFX based user interface. For starters, we need to a editor.html page to the classpath. The whole Ace editor bootstrapping is done by this simple page:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-html" data-lang="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;style type="text/css" media="screen"&gt;
+        #editor {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div id="editor"&gt;&lt;/div&gt;
+
+&lt;script src="ace.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+&lt;script src="ext-language_tools.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+&lt;script&gt;
+
+    var editor;
+
+    function initeditor() {
+        ace.require("ace/ext/language_tools")
+        editor = ace.edit("editor");
+        editor.setOptions({
+            enableBasicAutocompletion: true,
+            enableSnippets: true,
+            enableLiveAutocompletion: false
+        });
+        editor.setTheme("ace/theme/monokai");
+        editor.getSession().setMode("ace/mode/lua");
+    }
+
+    function getvalue() {
+        return editor.getValue();
+    }
+
+    function copyselection() {
+        return editor.getCopyText();
+    }
+
+    function pastevalue(aValue) {
+        editor.insert(aValue);
+    }
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div></div><div class="paragraph"><p>We also need a controller for the JavaFX part. The initialization is a bit tricky, because we have to bootstrap the Ace editor by some Java/JavaScript down calls, but you will get the point while looking at the code:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">package de.mirkosertic.gamecomposer.contentarea.eventsheet.runscript;
+
+import de.mirkosertic.gamecomposer.PersistenceManager;
+import de.mirkosertic.gameengine.core.GameObject;
+import de.mirkosertic.gameengine.core.GameObjectInstance;
+import de.mirkosertic.gameengine.core.GameScene;
+import de.mirkosertic.gameengine.process.GameProcess;
+import de.mirkosertic.gameengine.script.RunScriptAction;
+import de.mirkosertic.gameengine.scriptengine.LUAScriptEngine;
+import de.mirkosertic.gameengine.type.Script;
+
+import javafx.concurrent.Worker;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextArea;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.DataFormat;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.KeyCombination;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.web.WebView;
+import javafx.stage.Stage;
+
+import netscape.javascript.JSObject;
+
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+import javax.inject.Inject;
+
+public class EditScriptDialog {
+
+    @Inject
+    PersistenceManager persistenceManager;
+
+    @FXML
+    WebView editorView;
+
+    @FXML
+    TextArea compileErrors;
+
+    private RunScriptAction action;
+    private Stage modalStage;
+    private GameScene gameScene;
+
+    public void initialize(GameScene aGameScene, RunScriptAction aAction, Stage aModalStage) {
+        action = aAction;
+        modalStage = aModalStage;
+        gameScene = aGameScene;
+
+        // We need JavaScript support
+        editorView.getEngine().setJavaScriptEnabled(true);
+        editorView.getEngine().getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -&gt; {
+            if (newValue == Worker.State.SUCCEEDED) {
+                initializeHTML();
+            }
+        });
+        // The build in ACE context menu does not work because
+        // JavaScript Clipboard interaction is disabled by security.
+        // We have to do this by ourselfs.
+        editorView.setContextMenuEnabled(false);
+
+        // Load the bootstrap html
+        // It will trigger the initializeHTML() method by the above registered state change listener
+        // after the everything was loaded
+        editorView.getEngine().load(EditScriptDialog.class.getResource("/ace/editor.html").toExternalForm());
+
+        // Copy &amp;amp; Paste Clipboard support
+        final KeyCombination theCombinationCopy = new KeyCodeCombination(KeyCode.C, KeyCombination.CONTROL_DOWN);
+        final KeyCombination theCombinationPaste = new KeyCodeCombination(KeyCode.V, KeyCombination.CONTROL_DOWN);
+        aModalStage.getScene().addEventFilter(KeyEvent.KEY_PRESSED, aEvent -&gt; {
+            if (theCombinationCopy.match(aEvent)) {
+                onCopy();
+            }
+            if (theCombinationPaste.match(aEvent)) {
+                onPaste();
+            }
+        });
+    }
+
+    private void onCopy() {
+
+        // Get the selected content from the editor
+        // We to a Java2JavaScript downcall here
+        // For details, take a look at the function declaration in editor.html
+        String theContentAsText = (String) editorView.getEngine().executeScript("copyselection()");
+
+        // And put it to the clipboard
+        Clipboard theClipboard = Clipboard.getSystemClipboard();
+        ClipboardContent theContent = new ClipboardContent();
+        theContent.putString(theContentAsText);
+        theClipboard.setContent(theContent);
+    }
+
+    private void onPaste() {
+
+        // Get the content from the clipboard
+        Clipboard theClipboard = Clipboard.getSystemClipboard();
+        String theContent = (String) theClipboard.getContent(DataFormat.PLAIN_TEXT);
+        if (theContent != null) {
+            // And put it in the editor
+            // We do a Java2JavaScript downcall here
+            // For details, take a look at the function declaration in editor.html
+            JSObject theWindow = (JSObject) editorView.getEngine().executeScript("window");
+            theWindow.call("pastevalue", theContent);
+        }
+    }
+
+    private void initializeHTML() {
+        // Initialize the editor
+        // and fill it with the LUA script taken from our editing action
+        Document theDocument = editorView.getEngine().getDocument();
+        Element theEditorElement = theDocument.getElementById("editor");
+
+        theEditorElement.setTextContent(action.scriptProperty().get().script);
+
+        editorView.getEngine().executeScript("initeditor()");
+    }
+
+    private boolean test(Script aScript) {
+        LUAScriptEngine theEngine = null;
+        try {
+
+            // We only want to test on a clone
+            // so the test does not change enything
+            GameScene theClone = persistenceManager.cloneSceneForPreview(gameScene);
+
+            // Execute a single run for verification
+            GameObject theObject = new GameObject(theClone, "dummy");
+            GameObjectInstance theInstance = theClone.createFrom(theObject);
+            theEngine = theClone.getRuntime().getScriptEngineFactory().createNewEngine(theClone, aScript);
+            theEngine.registerObject("instance", theInstance);
+            theEngine.registerObject("scene", theClone);
+            theEngine.registerObject("game", theClone.getGame());
+
+            Object theResult = theEngine.proceedGame(100, 16);
+            if (theResult == null) {
+                throw new RuntimeException("Got NULL as a response, expected " + GameProcess.ProceedResult.STOPPED+" or " + GameProcess.ProceedResult.CONTINUE_RUNNING);
+            }
+
+            GameProcess.ProceedResult theResultAsEnum = GameProcess.ProceedResult.valueOf(theResult.toString());
+
+            theEngine.shutdown();
+
+            compileErrors.setText("Got response : " + theResultAsEnum);
+
+            return true;
+        } catch (Exception e) {
+
+            StringWriter theWriter = new StringWriter();
+            e.printStackTrace(new PrintWriter(theWriter));
+
+            compileErrors.setText("Exception : " + theWriter);
+        } finally {
+            if (theEngine != null) {
+                theEngine.shutdown();
+            }
+        }
+        return false;
+    }
+
+    @FXML
+    public void onOk() {
+        // We need to sace the edited script to the game model.
+        String theContent = (String) editorView.getEngine().executeScript("getvalue()");
+        Script theNewScript = new Script(theContent);
+
+        action.scriptProperty().set(theNewScript);
+        modalStage.close();
+    }
+
+    @FXML
+    public void onTest() {
+        String theContent = (String) editorView.getEngine().executeScript("getvalue()");
+        Script theNewScript = new Script(theContent);
+        test(theNewScript);
+    }
+
+    @FXML
+    public void onCancel() {
+        modalStage.close();
+    }
+
+    public void performEditing() {
+        modalStage.show();
+    }
+}</code></pre></div></div><div class="paragraph"><p>The last thing we have to consider is clipboard interaction. Because the Ace editor is backed by JavaScript, which runs in a WebView, the editor is limited by the default JavaScript security limitations while interacting with the clipboard. To get around this limitation, we have to disable the default Ace context menu by just disabling the WebView context menu, and add the copy / paste actions by registering custom key listeners. The interaction between the key listener and the Ace editor can be done by Java / JavaScript down calls.</p></div><div class="paragraph"><p>Well, after some research and tweaking the clipboard problem, everything runs smooth and I was able to create a powerful LUA editor backed by Ace and JavaFX with a minimum amount of time. JavaFX definitely rocks!</p></div><div class="paragraph"><p>Links:</p></div><div class="paragraph"><p>The LUA language: <a href="http://www.lua.org/">www.lua.org</a></p></div><div class="paragraph"><p>Ace editor, the high performance code editor for the web: <a href="http://ace.c9.io/">ace.c9.io</a></p></div><div class="paragraph"><p>The source code for the Game Engine is available for free on GitHub: <a href="https://github.com/mirkosertic/GameComposer">github.com/mirkosertic/GameComposer</a></p></div><div class="paragraph"><p>Example Game backed by the TeaVM Renderer: <a href="http://mirkosertic.github.io/GameComposer/games/teavm/platformer/index.html">TeaVM Example</a></p></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2015/03/tuning-html5-canvas-filltext/">Tuning HTML5 Canvas.fillText()</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2015/12/how-to-download-maven-artifacts-with-maven-3-1-and-eclipse-aether/">How to download Maven artifacts with Maven &gt;=3.1 and Eclipse Aether</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/3ed1d0078678954b6e563504c944c6772231ab69" target="_blank">3ed1d00</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
+        window.addEventListener("load", function(event) {
+            var disqusLoaded = false;
+            var disqusObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (!disqusLoaded && entry.isIntersecting) {
+                        console.log("Loading Disqus");
+                        disqusLoaded = true;
+
+                        document.getElementById('disqus-placeholder').remove();
+
+                        
+                        var script = document.createElement('script');
+                        script.src = '//www-mirkosertic-de.disqus.com/embed.js';
+                        script.async = true;
+                        script.setAttribute('data-timestamp', +new Date());
+                        script.addEventListener('load', function () {
+                            
+                            DISQUS.reset({reload: true, config: false});
+                        });
+                        (document.head || document.body).appendChild(script);
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: "0px",
+                threshold: [0]
+            });
+            disqusObserver.observe(document.querySelector(".comments"));
+        }, false);</script></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.mirkosertic.de/index.xml" itemprop="url"><i class="fa fa-rss-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://twitter.com/mirkosertic" itemprop="url"><i class="fa fa-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
+        var element = document.querySelector(aSelector);
+        if (element) {
+            return true;
+        }
+        return false;
+    }
+
+    var Loader = function () { };
+    Loader.prototype = {
+        require: function (scripts, callback) {
+            this.loadCount = 0;
+            this.totalRequired = scripts.length;
+            this.callback = callback;
+
+            for (var i=0;i<scripts.length;i++) {
+                this.writeScript(scripts[i]);
+            }
+        },
+        loaded: function (evt) {
+            this.loadCount++;
+
+            if (this.loadCount==this.totalRequired && typeof this.callback=='function') this.callback.call();
+        },
+        writeScript: function (src) {
+            var self = this;
+            var s = document.createElement('script');
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = src;
+            s.addEventListener('load', function (e) { self.loaded(e); }, false);
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(s);
+        }
+    };
+
+    if (existsByCSSSelector("pre.highlight code") > 0) {
+        var loader = new Loader();
+        loader.require(["https:\/\/www.mirkosertic.de\/js/highlight-9.9.0.min.js"], function() {
+
+            var additionalStylesheet = document.createElement('link');
+            additionalStylesheet.rel = "stylesheet";
+            additionalStylesheet.type = 'text/css';
+            additionalStylesheet.media = "screen";
+            additionalStylesheet.href = "https:\/\/www.mirkosertic.de\/css/highlight.css";
+
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(additionalStylesheet);
+
+            hljs.initHighlightingOnLoad();
+        });
+    }</script></body></html>

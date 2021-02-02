@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Logging on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/logging/</link>
+    <description>Recent content in Logging on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Fri, 13 Jun 2014 09:07:11 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/logging/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to create user and eye friendly scannable Log4J log files</title>
+      <link>https://www.mirkosertic.de/blog/2014/06/how-to-create-user-and-eye-friendly-scannable-log4j-log-files/</link>
+      <pubDate>Fri, 13 Jun 2014 09:07:11 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2014/06/how-to-create-user-and-eye-friendly-scannable-log4j-log-files/</guid>
+      <description>Often we are writing logs files for our program execution. The logs are sometimes hard to parse, we have to look twice at them to detect error patterns. But it is possible to create a log file layout that is very fast human scannable. Using such kind of log file layout, we can easier scan for common error patterns.
+ This can easily be achieved using Log4J and some custom configuration using the Log4J EnhancedPatternLayout.</description>
+    </item>
+    
+    <item>
+      <title>Logging made easy</title>
+      <link>https://www.mirkosertic.de/blog/2012/10/logging-made-easy/</link>
+      <pubDate>Thu, 04 Oct 2012 03:41:46 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/10/logging-made-easy/</guid>
+      <description>In modern, distributed applications logging is a key requirement. But the problem arises if we try to track down an error using different log files on different servers. This is often a problem, depending on the business organization, access rights and other political forces.
+ To avoid wasting time to find and get the logs, we need a good tool to support us. Fortunately the Open Source Community has an answer.</description>
+    </item>
+    
+    <item>
+      <title>Thread tracking or how to know who causes an error</title>
+      <link>https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error/</link>
+      <pubDate>Tue, 31 Jul 2012 08:01:03 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error/</guid>
+      <description>Often we are developing applications for multi-user environments. Classic examples are web applications or web services. This also means that technical or business exceptions can occur at the same time for different users. But how do we know you causes which exception?
+ We can use logging frameworks like Log4J and write some meta-information like the id of the current user and session to the Mapped Diagnostic Context and finally use a special logging configuration to output the MDC to the log files.</description>
+    </item>
+    
+  </channel>
+</rss>

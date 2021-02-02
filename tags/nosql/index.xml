@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nosql on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/nosql/</link>
+    <description>Recent content in Nosql on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Thu, 22 Nov 2012 03:37:03 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>An overview of current NoSQL databases</title>
+      <link>https://www.mirkosertic.de/blog/2012/11/an-overview-of-current-nosql-databases/</link>
+      <pubDate>Thu, 22 Nov 2012 03:37:03 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/11/an-overview-of-current-nosql-databases/</guid>
+      <description>This summary is taken from the book “Seven Databases in Seven Weeks”. See the Books section for details.
+     Database
+ Version
+ Genre
+ Data Types
+ Data Relations
+ Standard Object
+ Written in
+ Transactions
+ Triggers
+ Main Differentiator
+ Weaknesses
+   MongoDB
+ 2.0
+ Document
+ Typed
+ None
+ JSON
+ C++
+ No
+ No
+ Easily query Big Data</description>
+    </item>
+    
+    <item>
+      <title>A first touch with NoSQL, graph databases and OrientDB</title>
+      <link>https://www.mirkosertic.de/blog/2012/08/a-first-touch-with-nosql-graph-databases-and-orientdb/</link>
+      <pubDate>Wed, 01 Aug 2012 01:43:48 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/08/a-first-touch-with-nosql-graph-databases-and-orientdb/</guid>
+      <description>The experiment I was thinking about the current way we often store data in relational databases like MySQL, PostgreSQL or Oracle. We are using object-relational mapping frameworks like Hibernate, enriching Java classes with JPA annotations and are hoping that the mapping framework does everything for us the right way.
+ But wait a minute. What are we storing here? Basically we are storing Java object graphs using our ORM framework. Object graphs.</description>
+    </item>
+    
+  </channel>
+</rss>

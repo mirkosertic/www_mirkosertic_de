@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Database on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/database/</link>
+    <description>Recent content in Database on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Thu, 22 Nov 2012 03:37:03 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>An overview of current NoSQL databases</title>
+      <link>https://www.mirkosertic.de/blog/2012/11/an-overview-of-current-nosql-databases/</link>
+      <pubDate>Thu, 22 Nov 2012 03:37:03 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/11/an-overview-of-current-nosql-databases/</guid>
+      <description>This summary is taken from the book “Seven Databases in Seven Weeks”. See the Books section for details.
+     Database
+ Version
+ Genre
+ Data Types
+ Data Relations
+ Standard Object
+ Written in
+ Transactions
+ Triggers
+ Main Differentiator
+ Weaknesses
+   MongoDB
+ 2.0
+ Document
+ Typed
+ None
+ JSON
+ C++
+ No
+ No
+ Easily query Big Data</description>
+    </item>
+    
+    <item>
+      <title>Reusing domain objects to create query specifications</title>
+      <link>https://www.mirkosertic.de/blog/2012/07/reusing-domain-objects-to-create-query-specifications/</link>
+      <pubDate>Fri, 20 Jul 2012 02:18:59 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/07/reusing-domain-objects-to-create-query-specifications/</guid>
+      <description>Problem Often you need to create query specifications to retrieve data from persistent memory. One of the following patterns is most likely used:
+ Bind Entity or Service with a distinct Query Object to the repository. A Service creates a distinct query object, passes it to the repository. Here the query object is translated to a Hibernate or JPA Criteria or HQL Statement and finally executed against the database.
+ Pros:</description>
+    </item>
+    
+  </channel>
+</rss>

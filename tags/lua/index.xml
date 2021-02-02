@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lua on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/lua/</link>
+    <description>Recent content in Lua on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Fri, 03 Apr 2015 05:32:40 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/lua/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A JavaFX based LUA editor</title>
+      <link>https://www.mirkosertic.de/blog/2015/04/a-javafx-based-lua-editor/</link>
+      <pubDate>Fri, 03 Apr 2015 05:32:40 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2015/04/a-javafx-based-lua-editor/</guid>
+      <description>One of my favorite projects is my JavaFX based Gameengine. It has a flexible entity component system, supports WYSIWYG game design and also has multiplayer network support. The entity component system is backed by a LUA based scripting system, the game designer can react freely on game events and script entity behaviors with the wonderful LUA scripting engine. Now, the game designer needs a visual tool with syntax highlighting, clipboard support and also some kind of testing mode to write bug free LUA scripts.</description>
+    </item>
+    
+  </channel>
+</rss>

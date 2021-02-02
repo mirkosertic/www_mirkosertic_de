@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Serialization on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/serialization/</link>
+    <description>Recent content in Serialization on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Thu, 23 May 2013 07:33:05 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/serialization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Comparison of JAXB XML and JSON Serialization Performance</title>
+      <link>https://www.mirkosertic.de/blog/2013/05/comparison-of-jaxb-xml-and-json-serialization-performance/</link>
+      <pubDate>Thu, 23 May 2013 07:33:05 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/05/comparison-of-jaxb-xml-and-json-serialization-performance/</guid>
+      <description>Once i tried to figure out the difference between JAXB XML and JSON Java Object serialization performance. I wanted to know which one has the better run time performance and thus scales better. Here are the results!
+ The test setup is a Windows 7 64bit machine with Intel Core2 Quad Q9450 CPU @2,66GHz. Java Runtime is 1.7.0_07(quite old, i know)
+ The profiling test case is to serialize and deserialize a simple Java object with JSON and XML.</description>
+    </item>
+    
+  </channel>
+</rss>

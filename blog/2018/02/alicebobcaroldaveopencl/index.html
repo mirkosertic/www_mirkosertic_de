@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Alice, Bob, Carol and Dave OpenCL Edition &middot; Mirko Sertic</title><meta name="description" content="Once upon a time in an office far far away worked four very nice IT people very hard in their office cubicles. Their names were Alice, Bob, Carol and Dave, and this is an OpenCL story."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.49"><meta name="robots" content="index,follow"><meta property="og:title" content="Alice, Bob, Carol and Dave OpenCL Edition"><meta property="og:description" content="Once upon a time in an office far far away worked four very nice IT people very hard in their office cubicles. Their names were Alice, Bob, Carol and Dave, and this is an OpenCL story."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2018/02/alicebobcaroldaveopencl/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-33614060-2', 'auto');
+	
+	ga('send', 'pageview');
+}</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="Tools &amp; Goodies">Tools &amp; Goodies</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Interesting Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link active" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><div itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"><header class="post-header"><h1 class="post-title" itemprop="name headline">Alice, Bob, Carol and Dave OpenCL Edition</h1><p class="post-date"><span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="2018-02-01" itemprop="datePublished">Thu, Feb 1, 2018</time> <span>by</span> <span itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name"><a href="https://twitter.com/mirkosertic" itemprop="url" rel="author">Mirko Sertic</a></span></span></p><p><span class="icon"><i class="fa fa-clock-white"></i></span><span>9 Minutes reading time</span></p><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags-white"></i></span><a href="/tags/performance">Performance</a></span> ,&nbsp;<a href="/tags/interesting">Interesting</a> ,&nbsp;<a href="/tags/opencl">OpenCL</a> ,&nbsp;<a href="/tags/compiler">Compiler</a></p></header><article class="post-content clearfix" itemprop="articleBody"><div class="sect1"><h2 id="_an_office_fairy_tale">An office fairy tale</h2><div class="sectionbody"><div class="paragraph"><p>Once upon a time in an office far far away worked four very nice IT people very hard in their office cubicles. Their names were Alice, Bob, Carol and Dave.</p></div><div class="paragraph"><p>They worked very hard each day. They started work at 9 o&#8217;clock, and finished often after sunset. They were very happy in their business, but they were very lonely in their private life due to the amount of work they did every day.</p></div><div class="paragraph"><p>Time passed. And some day, they sat together having a break and drinking some coffee. Suddenly, Alice stand up and said "We need to do something! Look at us, we are lonely, we need to change this!". Bob, Carol and Dave silently agreed. After a few minutes, Carol asked : "Yes, but how can we change something, where should we start?".</p></div></div></div><div class="sect1"><h2 id="_math_can_really_help">Math can really help</h2><div class="sectionbody"><div class="paragraph"><p>And here began a very interesting journey of our four friends. After some discussion, they came to the point where they collected some information about them self and their interests. Maybe they could find a mate matching their interests this way? Everyone in IT likes to make tables, so our friends. They created a table, showing their interests and how much they liked it. A score of 0 meant "I really dislike this", a score of 10 meant "I cannot live without this!". So this is the table our friends created:</p></div><table class="tableblock frame-all grid-all stretch"><colgroup><col style="width: 20%;"><col style="width: 20%;"><col style="width: 20%;"><col style="width: 20%;"><col style="width: 20%;"></colgroup><thead><tr><th class="tableblock halign-left valign-top">Interest</th><th class="tableblock halign-left valign-top">Alice</th><th class="tableblock halign-left valign-top">Bob</th><th class="tableblock halign-left valign-top">Carol</th><th class="tableblock halign-left valign-top">Dave</th></tr></thead><tbody><tr><th class="tableblock halign-left valign-top"><p class="tableblock">Hiking</p></th><td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td></tr><tr><th class="tableblock halign-left valign-top"><p class="tableblock">Swimming</p></th><td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td></tr><tr><th class="tableblock halign-left valign-top"><p class="tableblock">Cinema</p></th><td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td></tr><tr><th class="tableblock halign-left valign-top"><p class="tableblock">Dancing</p></th><td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td></tr></tbody></table><div class="paragraph"><p>After gathering this information, Bob asked "What now? What can we do with this kind of data?" Dave, the data scientist, came up with a simple idea: Why not express every person as a vector, and map the interests to vector elements? If we have vectors for other persons, we could use a <a href="https://en.wikipedia.org/wiki/Cosine_similarity">cosine similarity</a> to match the vectors, and the person with the highest similarity might be a possible mate!</p></div><div class="paragraph"><p>"What is a cosine similarity" asked Alice? Can you please explain this? And Dave did. A cosine similarity basically measures the delta of the angle of two vectors. If the vectors show in exactly the same direction, they have a similarity of 1. If they show in the opposite direction, the similarity is -1. We can use the cosine similarity to compute the similarity even for n-dimensional data. Look, the cosine similarity of vectors from two persons shows us how much they like the same interests. So it is an indicator of how good they might match!</p></div><div class="paragraph"><p>"Great idea!" said Alice,"but we do not have data from other persons". Silence. Finally, Carol came up with an option : "Well, why not try this similarity matching with ourselfs, before we collect masses of data?". That was a viable option, so our friends started to boot their development machines. Dave came up with another great idea. As they are doing some interesting math here, why not learn cool new tech while trying to find a mate? At this point, our friends met <a href="https://www.khronos.org/opencl">OpenCL</a>.</p></div></div></div><div class="sect1"><h2 id="_behind_the_scenes_of_opencl">Behind the scenes of OpenCL</h2><div class="sectionbody"><div class="paragraph"><p>OpenCL is a cross platform language for heavy data processing. Using OpenCL, we can write data processing algorithms and run them on any kind of OpenCL-enabled devices. Interestingly, OpenCL algorithms can run on the CPU utilizing maybe 4 or 8 CPU cores, but it can also run on the GPU(Graphics card) utilizing maybe thousands of threads in parallel. Using the GPU, heavy math can be greatly accelerated!.</p></div><div class="paragraph"><p>In OpenCL, data processing algorithms are called kernels. The amount of data is split into so called work items, and every work item is processed independently. So if we have for instance 300 work items, and our GPU can 300 threads, OpenCL can compute every single work item completely parallel!</p></div><div class="paragraph"><p>So, what kind of input and output generates the kernel for the mate-matching problem of our four friends?</p></div><div class="paragraph"><p>Well, we need a list of all potential mates, which is a list of vectors with four elements. One vector for every mate, and the elements of every vector describe their score for a given interest, such as hiking, swimming, cinema or dancing. This is one input for the kernel.</p></div><div class="paragraph"><p>We want to compute the similarity for a single mate with all the others. This computation can be done independently, so every single mate is a work item. The kernel gets another input, which is the current work item id. Now, what is the output? The kernel needs to calculate all the similarities, and for every work item, it needs to output the id of the most matching mate. So the output for a single work item is the id of its most matching mate based on the cosine similarity of their vectors.</p></div></div></div><div class="sect1"><h2 id="_developer_productivity">Developer productivity</h2><div class="sectionbody"><div class="paragraph"><p>OpenCL kernels are written in a C99 based language. It is not hard to learn, but it is different from languages such as Java. Our four friends are Java specialists, so what can they do? Well, there is a framework to the rescue. With <a href="https://github.com/mirkosertic/Bytecoder">Bytecoder</a>, we can write OpenCL kernels in Java. The Java bytecode is translated into C99 kernels in the background and executed on the OpenCL device. As our friends wanted to keep their productivity up, they decided to use Bytecoder.</p></div></div></div><div class="sect1"><h2 id="_putting_it_all_together">Putting it all together</h2><div class="sectionbody"><div class="paragraph"><p>How, here is the annotated Java kernel code for the matching problem of our four friends:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">import static de.mirkosertic.bytecoder.api.opencl.GlobalFunctions.get_global_id;
+import static de.mirkosertic.bytecoder.api.opencl.GlobalFunctions.get_global_size;
+import static de.mirkosertic.bytecoder.api.opencl.VectorFunctions.dot;
+import static de.mirkosertic.bytecoder.api.opencl.VectorFunctions.length;
+
+import de.mirkosertic.bytecoder.backend.opencl.CPUPlatform;
+import org.junit.Test;
+
+import de.mirkosertic.bytecoder.unittest.Slf4JLogger;
+
+@Test
+public void testSimilarity() throws Exception {
+    // The data of our four friends
+    Vec4f theAlice = new Vec4f(5f, 1f, 0f, 6f);
+    Vec4f theBob = new Vec4f(0f, 10f, 3f, 0f);
+    Vec4f theCarol = new Vec4f(2f, 6f, 3f, 2f);
+    Vec4f theDave = new Vec4f(7f, 2f, 1f, 8f);
+
+    // We need an input for our kernel, a list of vectors
+    Vec4f[] theInputs = new Vec4f[] {theAlice, theCarol, theBob, theDave};
+
+    // This is the computed output
+    int[] theMostSimilar = new int[theInputs.length];
+    float[] theMostSimilarity = new float[theInputs.length];
+
+    // We obtain a platform
+    Platform thePlatform = PlatformFactory.resolve().createPlatform(new Slf4JLogger());
+    // All computation is done within a context. A context is
+    // used to cache memory buffers and compiled kernels
+    try (Context theContext = thePlatform.createContext()) {
+
+        // We fire up the computations
+        theContext.compute(theInputs.length, new Kernel() {
+
+            // This method is called for every workitem
+            @Override
+            public void processWorkItem() {
+                // This is the id of the current work item
+                int theCurrentWorkItemId = get_global_id(0);
+                // This is the total number of work items
+                int theMax = get_global_size(0);
+
+                // We obtain the current work item from the list
+                Vec4f theCurrent = theInputs[theCurrentWorkItemId];
+                float theCurrentLength = length(theCurrent);
+
+                float theMaxSimilarity = -1;
+                int theMaxIndex = -1;
+
+                // And compute the similarities with all other work item
+                // except itself
+                for (int i = 0;i&lt;theMax;i++) {
+                    if (i != theCurrentWorkItemId) {
+                        Vec4f theOther = theInputs[i];
+                        float theOtherLength = length(theOther);
+
+                        float theLength = theCurrentLength * theOtherLength;
+
+                        if (theLength != 0) {
+                            float theSimilarity = dot(theCurrent, theOther) / (theLength);
+
+                            if (theSimilarity &gt; theMaxSimilarity) {
+                                theMaxSimilarity = theSimilarity;
+                                theMaxIndex = i;
+                            }
+                        }
+                    }
+                }
+
+                // The highest similarity is written to the output
+                theMostSimilar[theCurrentWorkItemId] = theMaxIndex;
+                theMostSimilarity[theCurrentWorkItemId] = theMaxSimilarity;
+            }
+        });
+    }
+
+    // Output the results
+    for (int i=0;i&lt;theInputs.length;i++) {
+        System.out.println("Most similar match for input " + i + " is " + theMostSimilar[i] + " with a similarity of " + theMostSimilarity[i]);
+    }
+}</code></pre></div></div><div class="paragraph"><p>Bytecoder makes it easy to write OpenCL kernels. We can use Java as the programming language to keep developer productivity up. Bytecoder compiles the Java bytecode to C99 kernels transparently in the background and sends them to the OpenCL enabled device. If there is no OpenCL device available, Bytecoder uses an emulation layer which executes the kernel in the Java virtual machine.</p></div></div></div><div class="sect1"><h2 id="_we_have_a_match">We have a match</h2><div class="sectionbody"><div class="paragraph"><p>Our friends started their machines, and put the created kernel to work with their own test data. Here is the output:</p></div><table class="tableblock frame-all grid-all stretch"><colgroup><col style="width: 25%;"><col style="width: 25%;"><col style="width: 25%;"><col style="width: 25%;"></colgroup><thead><tr><th class="tableblock halign-left valign-top">Item</th><th class="tableblock halign-left valign-top">Name</th><th class="tableblock halign-left valign-top">Best matching item</th><th class="tableblock halign-left valign-top">Similarity</th></tr></thead><tbody><tr><td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">Alice</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">0.993</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">Bob</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">0.907</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">Carol</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">0.907</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">Dave</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">0.993</p></td></tr></tbody></table><div class="paragraph"><p>The systems says Alice matches with Dave, and Bob matches with Carol! This was very confusing to our four friends, so they took a look at their data to check if the algorithm is wrong.</p></div><table class="tableblock frame-all grid-all stretch"><colgroup><col style="width: 20%;"><col style="width: 20%;"><col style="width: 20%;"><col style="width: 20%;"><col style="width: 20%;"></colgroup><thead><tr><th class="tableblock halign-left valign-top">Interest</th><th class="tableblock halign-left valign-top">Alice</th><th class="tableblock halign-left valign-top">Bob</th><th class="tableblock halign-left valign-top">Carol</th><th class="tableblock halign-left valign-top">Dave</th></tr></thead><tbody><tr><th class="tableblock halign-left valign-top"><p class="tableblock">Hiking</p></th><td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td></tr><tr><th class="tableblock halign-left valign-top"><p class="tableblock">Swimming</p></th><td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td></tr><tr><th class="tableblock halign-left valign-top"><p class="tableblock">Cinema</p></th><td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td></tr><tr><th class="tableblock halign-left valign-top"><p class="tableblock">Dancing</p></th><td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td></tr></tbody></table><div class="paragraph"><p>Alice has indeed a high similarity with Dave. Both like hiking and dancing. Bob and Carol have also a high similarity, as both like swimming and cinema. The algorithm seems to be correct.</p></div><div class="paragraph"><p>Our four friends also realized what happened. They spent far too much time with working, and didn&#8217;t realize where their potential soul mate is sitting. The next day, Alice went dancing with Dave, and Bob went swimming with Carol. No more data was needed.</p></div><div class="paragraph"><p>And they all lived happily ever after.</p></div></div></div><div class="sect1"><h2 id="_up_to_11_and_beyond">Up to 11 and beyond</h2><div class="sectionbody"><div class="paragraph"><p>Peggy, an intern of the IT department, realized some day that the office is empty and everyone is happy all the time. She heard about what our four friends have done, and also Peggy didn&#8217;t want to be alone anymore.</p></div><div class="paragraph"><p>Unfortunately, there is no one left in the office. But fortunately, Peggy has collected a very large data set from other persons, with over 100'000 data points. Maybe she previously worked for the CIA, but it doesn&#8217;t matter in this case. And thanks to OpenCL and GPU acceleration, Peggy can start up the machine and find her potential soul mate. How long might it take to compute the best matches of so many people? Here are the results:</p></div><div class="ulist"><ul><li><p>Running on the <strong>CPU/JVM</strong> on a Lenovo T440P Intel Core i7 with 8 cores : <strong>19 seconds</strong></p></li><li><p>Running on the embedded <strong>Intel GPU of the i7</strong> : <strong>6 seconds</strong></p></li><li><p>Running on the secondary <strong>NVIDIA GT 730M</strong> : <strong>3 seconds</strong></p></li></ul></div><div class="paragraph"><p>Just to be clear. This means she computed the cosine similarity for every single person with the others. She computed 100'000 x 99'999 = 9'999'900'000 cosine similarities!</p></div><div class="paragraph"><p>The OpenCL accelerated computation is a lot faster than running on the CPU. But it could even be faster, as the used kernel is far from being highly optimized.</p></div><div class="paragraph"><p>But Peggy didn&#8217;t care. After 3 seconds, she went our of the office to meet her new soul mate.</p></div></div></div><div class="sect1"><h2 id="_what_we_have_learned">What we have learned</h2><div class="sectionbody"><div class="paragraph"><p>Of course this is a fairy tale. And of course it is total overkill to compute four cosine similarities on the GPU. What I want to show you is a simple use case that might be extended to eventually become a full blown recommender system for all kind of matching problems. I also want to show you that we can easily use our favorite programming language and cross compiler technology such as Bytecoder to accelerate data processing problems by running them on the GPU. I also want to to note that <a href="https://github.com/mirkosertic/Bytecoder">Bytecoder</a> is not the only available Java OpenCL toolkit. <a href="https://github.com/aparapi/aparapi">Aparapi</a> is another great tool for this kind of problem, so maybe you want to take a look at this. I really hope that this short story was interesting and a little bit helpful. Thank you for reading, and happy processing!</p></div></div></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2018/01/object-oriented-webassembly/">Object-Oriented WebAssembly</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/">WebAssembly with vue.js</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/3ed1d0078678954b6e563504c944c6772231ab69" target="_blank">3ed1d00</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
+        window.addEventListener("load", function(event) {
+            var disqusLoaded = false;
+            var disqusObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (!disqusLoaded && entry.isIntersecting) {
+                        console.log("Loading Disqus");
+                        disqusLoaded = true;
+
+                        document.getElementById('disqus-placeholder').remove();
+
+                        
+                        var script = document.createElement('script');
+                        script.src = '//www-mirkosertic-de.disqus.com/embed.js';
+                        script.async = true;
+                        script.setAttribute('data-timestamp', +new Date());
+                        script.addEventListener('load', function () {
+                            
+                            DISQUS.reset({reload: true, config: false});
+                        });
+                        (document.head || document.body).appendChild(script);
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: "0px",
+                threshold: [0]
+            });
+            disqusObserver.observe(document.querySelector(".comments"));
+        }, false);</script></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.mirkosertic.de/index.xml" itemprop="url"><i class="fa fa-rss-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://twitter.com/mirkosertic" itemprop="url"><i class="fa fa-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
+        var element = document.querySelector(aSelector);
+        if (element) {
+            return true;
+        }
+        return false;
+    }
+
+    var Loader = function () { };
+    Loader.prototype = {
+        require: function (scripts, callback) {
+            this.loadCount = 0;
+            this.totalRequired = scripts.length;
+            this.callback = callback;
+
+            for (var i=0;i<scripts.length;i++) {
+                this.writeScript(scripts[i]);
+            }
+        },
+        loaded: function (evt) {
+            this.loadCount++;
+
+            if (this.loadCount==this.totalRequired && typeof this.callback=='function') this.callback.call();
+        },
+        writeScript: function (src) {
+            var self = this;
+            var s = document.createElement('script');
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = src;
+            s.addEventListener('load', function (e) { self.loaded(e); }, false);
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(s);
+        }
+    };
+
+    if (existsByCSSSelector("pre.highlight code") > 0) {
+        var loader = new Loader();
+        loader.require(["https:\/\/www.mirkosertic.de\/js/highlight-9.9.0.min.js"], function() {
+
+            var additionalStylesheet = document.createElement('link');
+            additionalStylesheet.rel = "stylesheet";
+            additionalStylesheet.type = 'text/css';
+            additionalStylesheet.media = "screen";
+            additionalStylesheet.href = "https:\/\/www.mirkosertic.de\/css/highlight.css";
+
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(additionalStylesheet);
+
+            hljs.initHighlightingOnLoad();
+        });
+    }</script></body></html>

@@ -1,0 +1,61 @@
+pre .conum[data-value] {
+  position: relative;
+  top: -.125em
+}
+
+.conum[data-value] {
+  display: inline-block;
+  color: #fff !important;
+  background-color: rgba(0, 0, 0, .8);
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  text-align: center;
+  font-size: .75em;
+  width: 1.67em;
+  height: 1.67em;
+  line-height: 1.67em;
+  font-style: normal;
+  font-weight: bold
+}
+
+.conum[data-value] * {
+  color: #fff !important
+}
+
+.conum[data-value] + b {
+  display: none
+}
+
+.conum[data-value]:after {
+  content: attr(data-value)
+}
+
+table {
+  tr {
+    .halign-left {
+      text-align: left;
+    }
+
+    .halign-right {
+      text-align: right;
+    }
+  }
+}
+
+div.sect1 {
+  h2 {
+    margin-top: 0.6em;
+  }
+}
+
+span.image {
+  img {
+    max-width: 100%;
+  }
+}
+
+div.imageblock {
+  img {
+    max-width: 100%;
+  }
+}

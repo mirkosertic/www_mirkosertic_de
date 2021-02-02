@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/web/</link>
+    <description>Recent content in Web on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Thu, 20 Dec 2018 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WebAssembly with vue.js</title>
+      <link>https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/</link>
+      <pubDate>Thu, 20 Dec 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/</guid>
+      <description>State of the union WebAssembly for starters is a standard for high-performance, size-optimized executable code for the Web. It was released in March 2017 by the WebAssembly working group as version 1.0, which is basically a MVP (Minimum Viable Product), but the initial development started in June 2017. WebAssembly is the successor asm.js and the Google Native Client (NaCL).
+ WebAssembly itself is merely a sandboxed runtime environment. It was designed as a compile target.</description>
+    </item>
+    
+    <item>
+      <title>Object-Oriented WebAssembly</title>
+      <link>https://www.mirkosertic.de/blog/2018/01/object-oriented-webassembly/</link>
+      <pubDate>Mon, 01 Jan 2018 12:00:00 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2018/01/object-oriented-webassembly/</guid>
+      <description>Today, I want to write a little bit about object orientation and WebAssembly. For starters, what is WebAssembly? WebAssembly is a new portable, size and load-time efficient format suitable for compilation to the web. It is an open standard by a W3C community group and is currently integrated into all major browsers such as Firefox, Chrome, Edge and WebKit. WebAssembly aims to keep download speed and parsing time of program code low and execute at native speed by taking advance of common hardware capabilities available on a wide range of platforms.</description>
+    </item>
+    
+    <item>
+      <title>Bytecoder : A Low Level Bytecode to JavaScript Transpiler</title>
+      <link>https://www.mirkosertic.de/blog/2017/06/compiling-bytecode-to-javascript/</link>
+      <pubDate>Tue, 20 Jun 2017 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2017/06/compiling-bytecode-to-javascript/</guid>
+      <description>The Idea JavaScript is everywhere! Almost every device we use today is connected to the Internet and supports JavaScript by its runtime environment. But in the same way new devices arrive on the market, old software written in plain old Java is still alive and useful. The idea is now to bridge the gap between this shiny new JavaScript world and our old but still useful legacy software written in Java.</description>
+    </item>
+    
+    <item>
+      <title>Why I switched to static HTML generators</title>
+      <link>https://www.mirkosertic.de/blog/2017/01/why-i-switched-to-static-html-generators/</link>
+      <pubDate>Mon, 30 Jan 2017 01:43:48 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2017/01/why-i-switched-to-static-html-generators/</guid>
+      <description>The Beginning This Blog started its life a few years ago. At the beginning, I was using DokuWiki for writing and editing. This was good, but I was very limited by the provided editors and markup. So I came to the point that I needed something else. And you will of course ask &#34;what else&#34;? Well, for a Blog, there is a very popular answer: Use Wordpress!
+ So I installed Wordpress on my web host, and migrated the whole content.</description>
+    </item>
+    
+    <item>
+      <title>Compile Time Speed GWT 2.8.0 vs. TeaVM 0.4.3 vs. TeaVM 1.0.0-SNAPSHOT</title>
+      <link>https://www.mirkosertic.de/blog/2016/11/compile-time-speed-gwt-2-8-0-vs-teavm-0-4-3/</link>
+      <pubDate>Thu, 24 Nov 2016 06:14:41 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2016/11/compile-time-speed-gwt-2-8-0-vs-teavm-0-4-3/</guid>
+      <description>Some years ago I wrote a JavaFX based Game authoring system. It was also written to be ported to different run time environments by using transpiler technologies such as GWT or TeaVM. While TeaVM was heavily improved over time, I haven&amp;#8217;t seen a new GWT release in the wild. Now, GWT 2.8.0 is released, and the question arises: Is the compiler still as slow as in 2.7? Well, lets take a look!</description>
+    </item>
+    
+    <item>
+      <title>A very simple Polymer Web Component</title>
+      <link>https://www.mirkosertic.de/blog/2016/02/a-very-simple-polymer-web-component/</link>
+      <pubDate>Mon, 01 Feb 2016 12:03:15 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2016/02/a-very-simple-polymer-web-component/</guid>
+      <description>Web Components are a very amazing new feature of HTML5. Google released its Polymer project which adds Web Components support to modern Web Browsers. Using Web Components, we can create very complex custom HTML Tags which are based on a very powerful templating engine, pretty cool JavaScript bindings, data model abstractions and also JavaScript and CSS encapsulation. Polymer comes with a set of already implemented components based on Googles Material Design which can be easily integrated into custom applications.</description>
+    </item>
+    
+    <item>
+      <title>A JavaFX based LUA editor</title>
+      <link>https://www.mirkosertic.de/blog/2015/04/a-javafx-based-lua-editor/</link>
+      <pubDate>Fri, 03 Apr 2015 05:32:40 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2015/04/a-javafx-based-lua-editor/</guid>
+      <description>One of my favorite projects is my JavaFX based Gameengine. It has a flexible entity component system, supports WYSIWYG game design and also has multiplayer network support. The entity component system is backed by a LUA based scripting system, the game designer can react freely on game events and script entity behaviors with the wonderful LUA scripting engine. Now, the game designer needs a visual tool with syntax highlighting, clipboard support and also some kind of testing mode to write bug free LUA scripts.</description>
+    </item>
+    
+    <item>
+      <title>Tuning HTML5 Canvas.fillText()</title>
+      <link>https://www.mirkosertic.de/blog/2015/03/tuning-html5-canvas-filltext/</link>
+      <pubDate>Wed, 25 Mar 2015 07:33:48 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2015/03/tuning-html5-canvas-filltext/</guid>
+      <description>Two years ago I wrote a Java based GameEngine. I used technologies such as GWT and TeaVM to transpile the Java source code to JavaScript. The Game Engine used the HTML5 Canvas to render the current game state representation to the user. For the past few weeks I had some time to implement new features for this cool engine. I also did some profiling to see if there are bottlenecks in the rendering code.</description>
+    </item>
+    
+    <item>
+      <title>GWT vs. Dragome vs. TeaVM for Game Programming</title>
+      <link>https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming/</link>
+      <pubDate>Thu, 18 Dec 2014 11:43:01 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming/</guid>
+      <description>Last year I wrote a cross platform game engine. It used a JavaFX based Game Authoring System and had a Java based Game Runtime, which was transpiled to different platforms such as Android, JavaScript over GWT and JavaFX.
+ Here is a screenshot of a simple platform game based on the GameEngine, some physics stuff and a lot of Java code:
+ 
+ Here is also a screenshot of the JavaFX based game authoring system while editing the example game:</description>
+    </item>
+    
+    <item>
+      <title>How to set the HTML base Tag in a JSP page</title>
+      <link>https://www.mirkosertic.de/blog/2014/10/how-to-set-the-html-base-tag-in-a-jsp-page/</link>
+      <pubDate>Fri, 31 Oct 2014 03:57:50 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2014/10/how-to-set-the-html-base-tag-in-a-jsp-page/</guid>
+      <description>Sometimes we have to set the HTML base Tag from within a JSP page. For this purpose, we have to compute the correct URL, because the JSP API does not fully expose it. The following shipped shows how it can be cone:
+ &amp;lt;%@ page contentType=&#34;text/html;charset=UTF-8&#34; language=&#34;java&#34; %&amp;gt; &amp;lt;%@ taglib prefix=&#34;fn&#34; uri=&#34;http://java.sun.com/jsp/jstl/functions&#34; %&amp;gt; &amp;lt;c:set var=&#34;req&#34; value=&#34;${pageContext.request}&#34; /&amp;gt; &amp;lt;c:set var=&#34;url&#34;&amp;gt;${req.requestURL}&amp;lt;/c:set&amp;gt; &amp;lt;c:set var=&#34;uri&#34; value=&#34;${req.requestURI}&#34; /&amp;gt; &amp;lt;!doctype html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;base href=&#34;${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.</description>
+    </item>
+    
+    <item>
+      <title>A JavaFX based Game Authoring System</title>
+      <link>https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/</link>
+      <pubDate>Fri, 15 Nov 2013 08:35:32 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/</guid>
+      <description>A few weeks ago I decided to enhance my knowledge in game coding, so I bought two very interesting books: “Real-Time Rendering, Third Edition by Thomas Akenine-Möller, Eric Haines and Nety Hoffmann” and “Game Coding Complete, Fourth Edition by Mike McShaffry and David “Rez” Graham”. After some insightful moments, hundreds of pages read and sleepless nights, I wanted to create my own game. So this project was born.
+ Primary Goals</description>
+    </item>
+    
+    <item>
+      <title>MVC revised or what are the alternatives?</title>
+      <link>https://www.mirkosertic.de/blog/2013/03/mvc-revised-or-what-are-the-alternatives/</link>
+      <pubDate>Sat, 30 Mar 2013 05:27:21 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/03/mvc-revised-or-what-are-the-alternatives/</guid>
+      <description>Pure MVC The Model View Controller pattern became a de-facto standard for implementing user interfaces or other kind of interaction with complex systems. Basically it separates the user interface into the following components:
+     Component
+ Responsibility
+   Model
+ The model contains the data to be presented
+   View
+ The view renders the data and is the user interface. The view also reacts to model changes and updates on such an event</description>
+    </item>
+    
+    <item>
+      <title>How to avoid server round trips by using pretty URLs</title>
+      <link>https://www.mirkosertic.de/blog/2012/11/how-to-avoid-server-roundtrips-by-using-pretty-urls/</link>
+      <pubDate>Mon, 19 Nov 2012 05:51:12 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/11/how-to-avoid-server-roundtrips-by-using-pretty-urls/</guid>
+      <description>Problem Unnecessary server round trips are a common cause for slow application performance. Unfortunately application frameworks like JSF(Java Server Faces) are forcing developers to do so. For instance given the following URL processed by a JSF Implementation:
+ http://localhost/myapplication/customer.faces This shows us a customer edit form. We can navigate to other customers, edit a customer or delete the record. So where are the unnecessary round trips to avoid? Let&amp;#8217;s take a closer look what happens in case of a JSF navigation rule to be fired.</description>
+    </item>
+    
+    <item>
+      <title>How to embed Hystrix into existing Spring applications</title>
+      <link>https://www.mirkosertic.de/blog/2012/07/how-to-embed-hystrix-into-existing-spring-applications/</link>
+      <pubDate>Tue, 31 Jul 2012 06:01:53 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/07/how-to-embed-hystrix-into-existing-spring-applications/</guid>
+      <description>Netflix Hystrix is a very powerful framework to build fault tolerant and resilient applications. It provides common implementations for patterns like Timeout, CircuitBreaker and others. It also comes with nice monitoring capabilities using the Hystrix Dashboard or even JMX.
+ Now, Hystrix should be used as a kind of decorator around interfaces or gateways to other (sub) systems. The tricky part is to do this in a non invasive manner. And here comes Spring and AOP to play:</description>
+    </item>
+    
+  </channel>
+</rss>

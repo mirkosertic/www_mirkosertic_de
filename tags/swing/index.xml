@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Swing on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/swing/</link>
+    <description>Recent content in Swing on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Wed, 27 Jun 2012 07:50:07 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/swing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Swing Databinding with Mogwai DataBinding</title>
+      <link>https://www.mirkosertic.de/blog/2012/06/swing-databinding-with-mogwai-databinding/</link>
+      <pubDate>Wed, 27 Jun 2012 07:50:07 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/06/swing-databinding-with-mogwai-databinding/</guid>
+      <description>While you are developing Java Swing based applications, you need a mechanism to bind Java objects to Swing widgets. Project mogwai.sourceforge.net provides a very simple but powerful framework called DataBinding to help you with this task. Here is an example.
+ Given the following piece of code(the model you want to bind):
+ import java.util.Collection; import java.util.HashSet; public class ExampleModel { private String string1; private String string2; private boolean bool; private String selected; private String type; private Collection&amp;lt;String&amp;gt; entries = new HashSet&amp;lt;String&amp;gt;(); private String[] entriesArray = new String[0]; public ExampleModel() { entries.</description>
+    </item>
+    
+  </channel>
+</rss>

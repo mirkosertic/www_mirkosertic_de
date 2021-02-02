@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javafx on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/javafx/</link>
+    <description>Recent content in Javafx on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Tue, 23 Apr 2019 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/javafx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Packaging JavaFX Applications for the Desktop</title>
+      <link>https://www.mirkosertic.de/blog/2019/04/java-desktop-packaging/</link>
+      <pubDate>Tue, 23 Apr 2019 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2019/04/java-desktop-packaging/</guid>
+      <description>Packaging Java applications for the Desktop has never been an easy task. In this blog post I want to look at the past to show where we are coming from, look at the present to see what we have now and finally try to take a look into the future to get a glimpse of what might be coming.
+ The Past of Java Packaging Before Java 5.0 there was no built-in support in Java for application distribution, as far as what we would consider an application.</description>
+    </item>
+    
+    <item>
+      <title>GWT vs. Dragome vs. TeaVM for Game Programming</title>
+      <link>https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming/</link>
+      <pubDate>Thu, 18 Dec 2014 11:43:01 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming/</guid>
+      <description>Last year I wrote a cross platform game engine. It used a JavaFX based Game Authoring System and had a Java based Game Runtime, which was transpiled to different platforms such as Android, JavaScript over GWT and JavaFX.
+ Here is a screenshot of a simple platform game based on the GameEngine, some physics stuff and a lot of Java code:
+ 
+ Here is also a screenshot of the JavaFX based game authoring system while editing the example game:</description>
+    </item>
+    
+    <item>
+      <title>A JavaFX based Game Authoring System</title>
+      <link>https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/</link>
+      <pubDate>Fri, 15 Nov 2013 08:35:32 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/</guid>
+      <description>A few weeks ago I decided to enhance my knowledge in game coding, so I bought two very interesting books: “Real-Time Rendering, Third Edition by Thomas Akenine-Möller, Eric Haines and Nety Hoffmann” and “Game Coding Complete, Fourth Edition by Mike McShaffry and David “Rez” Graham”. After some insightful moments, hundreds of pages read and sleepless nights, I wanted to create my own game. So this project was born.
+ Primary Goals</description>
+    </item>
+    
+    <item>
+      <title>JavaFX Custom Controls or WebView with D3.js?</title>
+      <link>https://www.mirkosertic.de/blog/2013/05/javafx-custom-controls-or-webview-with-d3-js/</link>
+      <pubDate>Thu, 02 May 2013 04:27:47 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/05/javafx-custom-controls-or-webview-with-d3-js/</guid>
+      <description>Often we need to visualize complex data in a fancy way. The core JavaFX controls are sometimes capable to do it, but most of the time they are not. So the question is: do we need to write a custom control?
+ The answer is: depends! Since JavaFX supports the famous WebView, we can also use some embedded HTML5 with JavaScript libraries like D3.js to visualize data driven documents.
+ To show how this works i used the JavaFX Desktop Search example and added an animated sunburst chart with D3.</description>
+    </item>
+    
+    <item>
+      <title>A JavaFX based Desktop Search Engine</title>
+      <link>https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine/</link>
+      <pubDate>Fri, 26 Apr 2013 09:17:13 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine/</guid>
+      <description>Microsoft Windows search is not fast, and it also does not give us good search results. So i thought about writing my own Search Engine for the Desktop. It should crawl the file system, extract the content and meta data and finally should give the same results as Google.
+ I also wanted to test some new technologies like JavaFX with embedded HTML5, Apache Lucene as a full text search engine, Apache Tika as the content extraction framework and other stuff.</description>
+    </item>
+    
+    <item>
+      <title>Displaying simple animated graphs with JavaFX 2.0</title>
+      <link>https://www.mirkosertic.de/blog/2012/10/displaying-simple-animated-graphs-with-javafx-2-0/</link>
+      <pubDate>Mon, 15 Oct 2012 10:03:39 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/10/displaying-simple-animated-graphs-with-javafx-2-0/</guid>
+      <description>JavaFX is quite cool. The scene graph concept is quite powerful, combined with visual effects like animation, shadows or motion blurring can create very nice looking user interfaces.
+ At the moment, JavaFX comes with a set of predefined Form elements(called Controls), and other primitive objects(called Shapes). This is enough to create most of user interface currently needed for business purposes.
+ But there are also some Controls missing, like a TreeTable and other stuff.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scala on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/scala/</link>
+    <description>Recent content in Scala on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Tue, 26 Mar 2013 08:50:41 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/scala/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Enterprise Scala Beans or Scala on a JEE application server</title>
+      <link>https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server/</link>
+      <pubDate>Tue, 26 Mar 2013 08:50:41 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server/</guid>
+      <description>Once i was thinking about writing Enterprise Java Beans(EJBs) with the Scala programming language. This should be easy as Scala greatly incorporates with existing Java code bases. But let&amp;#8217;s create a small test to verify this!
+ For this example, i am using Apache TomEE 1.5.1 as a JEE Web Profile certified server and Scala 2.10 to create a small stateless session bean and invoke it from a servlet. The stateless bean is injected to the servlet using CDI.</description>
+    </item>
+    
+    <item>
+      <title>Maven, Scala and AspectJ(AOP)</title>
+      <link>https://www.mirkosertic.de/blog/2013/03/maven-scala-and-aspectjaop/</link>
+      <pubDate>Mon, 25 Mar 2013 10:03:24 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/03/maven-scala-and-aspectjaop/</guid>
+      <description>Recently i was thinking about combining AspectJ and Scala in one project. Of course we can argue that functional programming addresses a lot of issues we are trying to solve with AspectJ, but that is not the point. AspectJ is a Bytecode manipulation framework, not a Java code manipulation thing. So why not implement cross cutting concerns like security or transaction handling with AOP/AspectJ in a Scala project? For this short example, i am using AspectJ 1.</description>
+    </item>
+    
+    <item>
+      <title>Using Scala with JPA 2.0</title>
+      <link>https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0/</link>
+      <pubDate>Tue, 19 Mar 2013 10:54:04 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0/</guid>
+      <description>Recently i was thinking about persisting Scala classes with JPA. I tried to set up a mixed Java/Scala project as described here , using Java code to do the JPA stuff and using Scala to create the entities. For a more complex example, i decided to persist a master/detail association to test if the Scala collections can be persisted, too. For the test i am using Scala 2.10.1 and the Hibernate 4.</description>
+    </item>
+    
+    <item>
+      <title>Using Scala in legacy applications</title>
+      <link>https://www.mirkosertic.de/blog/2013/03/using-scala-in-legacy-applications/</link>
+      <pubDate>Mon, 18 Mar 2013 06:09:22 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/03/using-scala-in-legacy-applications/</guid>
+      <description>Often we are enhancing and working on Java legacy applications. But time moves on, and new programming languages like Scala(www.scala-lang.org ) become popular. But one question arises: is it possible to use Scala in Java based legacy applications?
+ The reason i prefer Scala over Groovy is that Scala is statically typed. So the compiler does a lot of syntax checking for us, things that are not possible with dynamically typed languages like Groovy or Clojure.</description>
+    </item>
+    
+  </channel>
+</rss>

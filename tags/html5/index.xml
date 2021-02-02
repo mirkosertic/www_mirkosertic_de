@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Html5 on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/html5/</link>
+    <description>Recent content in Html5 on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Thu, 20 Dec 2018 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/html5/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WebAssembly with vue.js</title>
+      <link>https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/</link>
+      <pubDate>Thu, 20 Dec 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/</guid>
+      <description>State of the union WebAssembly for starters is a standard for high-performance, size-optimized executable code for the Web. It was released in March 2017 by the WebAssembly working group as version 1.0, which is basically a MVP (Minimum Viable Product), but the initial development started in June 2017. WebAssembly is the successor asm.js and the Google Native Client (NaCL).
+ WebAssembly itself is merely a sandboxed runtime environment. It was designed as a compile target.</description>
+    </item>
+    
+    <item>
+      <title>Object-Oriented WebAssembly</title>
+      <link>https://www.mirkosertic.de/blog/2018/01/object-oriented-webassembly/</link>
+      <pubDate>Mon, 01 Jan 2018 12:00:00 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2018/01/object-oriented-webassembly/</guid>
+      <description>Today, I want to write a little bit about object orientation and WebAssembly. For starters, what is WebAssembly? WebAssembly is a new portable, size and load-time efficient format suitable for compilation to the web. It is an open standard by a W3C community group and is currently integrated into all major browsers such as Firefox, Chrome, Edge and WebKit. WebAssembly aims to keep download speed and parsing time of program code low and execute at native speed by taking advance of common hardware capabilities available on a wide range of platforms.</description>
+    </item>
+    
+    <item>
+      <title>Bytecoder : A Low Level Bytecode to JavaScript Transpiler</title>
+      <link>https://www.mirkosertic.de/blog/2017/06/compiling-bytecode-to-javascript/</link>
+      <pubDate>Tue, 20 Jun 2017 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2017/06/compiling-bytecode-to-javascript/</guid>
+      <description>The Idea JavaScript is everywhere! Almost every device we use today is connected to the Internet and supports JavaScript by its runtime environment. But in the same way new devices arrive on the market, old software written in plain old Java is still alive and useful. The idea is now to bridge the gap between this shiny new JavaScript world and our old but still useful legacy software written in Java.</description>
+    </item>
+    
+    <item>
+      <title>Why I switched to static HTML generators</title>
+      <link>https://www.mirkosertic.de/blog/2017/01/why-i-switched-to-static-html-generators/</link>
+      <pubDate>Mon, 30 Jan 2017 01:43:48 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2017/01/why-i-switched-to-static-html-generators/</guid>
+      <description>The Beginning This Blog started its life a few years ago. At the beginning, I was using DokuWiki for writing and editing. This was good, but I was very limited by the provided editors and markup. So I came to the point that I needed something else. And you will of course ask &#34;what else&#34;? Well, for a Blog, there is a very popular answer: Use Wordpress!
+ So I installed Wordpress on my web host, and migrated the whole content.</description>
+    </item>
+    
+    <item>
+      <title>A Spring Boot Admin UI</title>
+      <link>https://www.mirkosertic.de/blog/2016/12/a-spring-boot-admin-ui/</link>
+      <pubDate>Sat, 31 Dec 2016 01:08:59 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2016/12/a-spring-boot-admin-ui/</guid>
+      <description>Spring Boot is a very cool framework for building modern, cloud-ready software. It also comes with a set of production ready endpoints which allow to administrate and monitor running applications. Unfortunately there is no admin user interface included in Spring Boot.
+ The good people at Codecentric recently released a very nice one, which is also available at GitHub. Here is a screenshot:
+ 
+ This user interface is basically a Spring Boot Starter, so you have to include it into your own application to make it runnable.</description>
+    </item>
+    
+    <item>
+      <title>Compile Time Speed GWT 2.8.0 vs. TeaVM 0.4.3 vs. TeaVM 1.0.0-SNAPSHOT</title>
+      <link>https://www.mirkosertic.de/blog/2016/11/compile-time-speed-gwt-2-8-0-vs-teavm-0-4-3/</link>
+      <pubDate>Thu, 24 Nov 2016 06:14:41 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2016/11/compile-time-speed-gwt-2-8-0-vs-teavm-0-4-3/</guid>
+      <description>Some years ago I wrote a JavaFX based Game authoring system. It was also written to be ported to different run time environments by using transpiler technologies such as GWT or TeaVM. While TeaVM was heavily improved over time, I haven&amp;#8217;t seen a new GWT release in the wild. Now, GWT 2.8.0 is released, and the question arises: Is the compiler still as slow as in 2.7? Well, lets take a look!</description>
+    </item>
+    
+    <item>
+      <title>A very simple Polymer Web Component</title>
+      <link>https://www.mirkosertic.de/blog/2016/02/a-very-simple-polymer-web-component/</link>
+      <pubDate>Mon, 01 Feb 2016 12:03:15 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2016/02/a-very-simple-polymer-web-component/</guid>
+      <description>Web Components are a very amazing new feature of HTML5. Google released its Polymer project which adds Web Components support to modern Web Browsers. Using Web Components, we can create very complex custom HTML Tags which are based on a very powerful templating engine, pretty cool JavaScript bindings, data model abstractions and also JavaScript and CSS encapsulation. Polymer comes with a set of already implemented components based on Googles Material Design which can be easily integrated into custom applications.</description>
+    </item>
+    
+    <item>
+      <title>A JavaFX based LUA editor</title>
+      <link>https://www.mirkosertic.de/blog/2015/04/a-javafx-based-lua-editor/</link>
+      <pubDate>Fri, 03 Apr 2015 05:32:40 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2015/04/a-javafx-based-lua-editor/</guid>
+      <description>One of my favorite projects is my JavaFX based Gameengine. It has a flexible entity component system, supports WYSIWYG game design and also has multiplayer network support. The entity component system is backed by a LUA based scripting system, the game designer can react freely on game events and script entity behaviors with the wonderful LUA scripting engine. Now, the game designer needs a visual tool with syntax highlighting, clipboard support and also some kind of testing mode to write bug free LUA scripts.</description>
+    </item>
+    
+    <item>
+      <title>Tuning HTML5 Canvas.fillText()</title>
+      <link>https://www.mirkosertic.de/blog/2015/03/tuning-html5-canvas-filltext/</link>
+      <pubDate>Wed, 25 Mar 2015 07:33:48 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2015/03/tuning-html5-canvas-filltext/</guid>
+      <description>Two years ago I wrote a Java based GameEngine. I used technologies such as GWT and TeaVM to transpile the Java source code to JavaScript. The Game Engine used the HTML5 Canvas to render the current game state representation to the user. For the past few weeks I had some time to implement new features for this cool engine. I also did some profiling to see if there are bottlenecks in the rendering code.</description>
+    </item>
+    
+    <item>
+      <title>GWT vs. Dragome vs. TeaVM for Game Programming</title>
+      <link>https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming/</link>
+      <pubDate>Thu, 18 Dec 2014 11:43:01 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming/</guid>
+      <description>Last year I wrote a cross platform game engine. It used a JavaFX based Game Authoring System and had a Java based Game Runtime, which was transpiled to different platforms such as Android, JavaScript over GWT and JavaFX.
+ Here is a screenshot of a simple platform game based on the GameEngine, some physics stuff and a lot of Java code:
+ 
+ Here is also a screenshot of the JavaFX based game authoring system while editing the example game:</description>
+    </item>
+    
+    <item>
+      <title>A JavaFX based Game Authoring System</title>
+      <link>https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/</link>
+      <pubDate>Fri, 15 Nov 2013 08:35:32 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/</guid>
+      <description>A few weeks ago I decided to enhance my knowledge in game coding, so I bought two very interesting books: “Real-Time Rendering, Third Edition by Thomas Akenine-Möller, Eric Haines and Nety Hoffmann” and “Game Coding Complete, Fourth Edition by Mike McShaffry and David “Rez” Graham”. After some insightful moments, hundreds of pages read and sleepless nights, I wanted to create my own game. So this project was born.
+ Primary Goals</description>
+    </item>
+    
+    <item>
+      <title>Building Portals with JavaFX, HTML5 and some Microdata</title>
+      <link>https://www.mirkosertic.de/blog/2013/05/building-portals-with-javafx-html5-and-some-microdata/</link>
+      <pubDate>Tue, 07 May 2013 09:37:10 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/05/building-portals-with-javafx-html5-and-some-microdata/</guid>
+      <description>Often we need to integrate different applications. This can be done at different integration levels, like integration using the database, integration using services and sometimes integration at user interface level.
+ Different solutions are available for user interface level application integration. The most famous are Portlets. A Portlet requires a Portlet Container to build a Portal. These containers are expensive, difficult to configure and maintain and the worst point is: the Portlet API is very limited to model complex integration scenarios!</description>
+    </item>
+    
+    <item>
+      <title>JavaFX Custom Controls or WebView with D3.js?</title>
+      <link>https://www.mirkosertic.de/blog/2013/05/javafx-custom-controls-or-webview-with-d3-js/</link>
+      <pubDate>Thu, 02 May 2013 04:27:47 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/05/javafx-custom-controls-or-webview-with-d3-js/</guid>
+      <description>Often we need to visualize complex data in a fancy way. The core JavaFX controls are sometimes capable to do it, but most of the time they are not. So the question is: do we need to write a custom control?
+ The answer is: depends! Since JavaFX supports the famous WebView, we can also use some embedded HTML5 with JavaScript libraries like D3.js to visualize data driven documents.
+ To show how this works i used the JavaFX Desktop Search example and added an animated sunburst chart with D3.</description>
+    </item>
+    
+    <item>
+      <title>Adding HTML5 Microdata to DokuWiki</title>
+      <link>https://www.mirkosertic.de/blog/2013/04/adding-html5-microdata-to-dokuwiki/</link>
+      <pubDate>Sat, 13 Apr 2013 12:45:14 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/04/adding-html5-microdata-to-dokuwiki/</guid>
+      <description>Microdata overview HTML5 is the new standard for webpage markups. It comes with some pretty cool new features like media support etc. But one of the best things is the Microdata support!
+ Now, what is Microdata exactly? Using Microdata we can classify HTML elements or regions with meta data like “This is the name of a person” or “Here comes the copyright information”, so the real semantic Web 2.0. This greatly helps search engines to crawl the page content and also enables us to improve the display of the webpage in the search engine results.</description>
+    </item>
+    
+  </channel>
+</rss>

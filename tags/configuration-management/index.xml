@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Configuration Management on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/configuration-management/</link>
+    <description>Recent content in Configuration Management on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Tue, 05 Nov 2013 04:28:08 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/configuration-management/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java Properties reinvented</title>
+      <link>https://www.mirkosertic.de/blog/2013/11/java-properties-reinvented/</link>
+      <pubDate>Tue, 05 Nov 2013 04:28:08 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/11/java-properties-reinvented/</guid>
+      <description>Recently i stumbled across the Owner Library(owner.aeonbits.org ). Using this small piece of technology, usage of Java property files can be reinvented! Now we can access properties using a refactoring safe interface the following way:
+ public interface ServerConfig extends Config { @Key(&#34;server.http.port&#34;) int port(); @Key(&#34;server.host.name&#34;) String hostname(); @Key(&#34;server.max.threads&#34;); @DefaultValue(&#34;42&#34;) int maxThreads(); } Properties props = new Properties(); // Load properties from a known source ServerConfig cfg = ConfigFactory .create(ServerConfig.class, props); System.</description>
+    </item>
+    
+  </channel>
+</rss>

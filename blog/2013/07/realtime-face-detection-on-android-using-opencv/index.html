@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Realtime face detection on Android using OpenCV &middot; Mirko Sertic</title><meta name="description" content="There is a cool computer vision library called OpenCV available. Using OpenCV, we can do stuff like object detection, feature extraction and other computer vision tasks. OpenCV is a native library, but it also comes with JNI Wrappers for Java and the Android platform."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.49"><meta name="robots" content="index,follow"><meta property="og:title" content="Realtime face detection on Android using OpenCV"><meta property="og:description" content="There is a cool computer vision library called OpenCV available. Using OpenCV, we can do stuff like object detection, feature extraction and other computer vision tasks. OpenCV is a native library, but it also comes with JNI Wrappers for Java and the Android platform."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2013/07/realtime-face-detection-on-android-using-opencv/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-33614060-2', 'auto');
+	
+	ga('send', 'pageview');
+}</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="Tools &amp; Goodies">Tools &amp; Goodies</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Interesting Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link active" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><div itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"><header class="post-header"><h1 class="post-title" itemprop="name headline">Realtime face detection on Android using OpenCV</h1><p class="post-date"><span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="2013-07-27" itemprop="datePublished">Sat, Jul 27, 2013</time> <span>by</span> <span itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name"><a href="https://twitter.com/mirkosertic" itemprop="url" rel="author">Mirko Sertic</a></span></span></p><p><span class="icon"><i class="fa fa-clock-white"></i></span><span>3 Minutes reading time</span></p><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags-white"></i></span><a href="/tags/android">Android</a></span> ,&nbsp;<a href="/tags/interesting">Interesting</a></p></header><article class="post-content clearfix" itemprop="articleBody"><div class="paragraph"><p>There is a cool computer vision library called <a href="http://opencv.org/">OpenCV</a> available. Using OpenCV, we can do stuff like object detection, feature extraction and other computer vision tasks. OpenCV is a native library, but it also comes with JNI Wrappers for Java and the Android platform.</p></div><div class="paragraph"><p>For the beginning, i want to implement real time face detection on my Samsung Galaxy S3 with OpenCV and some Java code. Here is a screenshot of the final result:</p></div><div class="paragraph"><p><span class="image"><img src="/media/opencvfacedetector.png" alt="opencvfacedetector"></span></p></div><div class="paragraph"><p>The OpenCV Android SDK comes with some handy Camera interface classes converting Android Bitmaps to OpenCV Mat instances. We can apply all computer vision tasks on such Mat instances and finally render the results. The following Android Activity shows all you need to do face detection on Android:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">package de.mirkosertic.opencvtest;
+
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.WindowManager;
+import org.opencv.android.*;
+import org.opencv.android.CameraBridgeViewBase.CvCameraViewListener;
+import org.opencv.core.*;
+import org.opencv.imgproc.Imgproc;
+import org.opencv.objdetect.CascadeClassifier;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+
+public class OpenCVActivity extends Activity
+        implements CvCameraViewListener {
+
+    private CameraBridgeViewBase openCvCameraView;
+    private CascadeClassifier cascadeClassifier;
+    private Mat grayscaleImage;
+    private int absoluteFaceSize;
+
+    private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
+        @Override
+        public void onManagerConnected(int status) {
+            switch (status) {
+                case LoaderCallbackInterface.SUCCESS:
+                    initializeOpenCVDependencies();
+                    break;
+                default:
+                    super.onManagerConnected(status);
+                    break;
+            }
+        }
+    };
+
+    private void initializeOpenCVDependencies() {
+
+        try {
+            // Copy the resource into a temp file so OpenCV can load it
+            InputStream is = getResources().openRawResource(R.raw.lbpcascade_frontalface);
+            File cascadeDir = getDir("cascade", Context.MODE_PRIVATE);
+            File mCascadeFile = new File(cascadeDir, "lbpcascade_frontalface.xml");
+            FileOutputStream os = new FileOutputStream(mCascadeFile);
+
+
+            byte[] buffer = new byte[4096];
+            int bytesRead;
+            while ((bytesRead = is.read(buffer)) != -1) {
+                os.write(buffer, 0, bytesRead);
+            }
+            is.close();
+            os.close();
+
+            // Load the cascade classifier
+            cascadeClassifier = new CascadeClassifier(mCascadeFile.getAbsolutePath());
+        } catch (Exception e) {
+            Log.e("OpenCVActivity", "Error loading cascade", e);
+        }
+
+        // And we are ready to go
+        openCvCameraView.enableView();
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+        openCvCameraView = new JavaCameraView(this, -1);
+        setContentView(openCvCameraView);
+        openCvCameraView.setCvCameraViewListener(this);
+    }
+
+    @Override
+    public void onCameraViewStarted(int width, int height) {
+        grayscaleImage = new Mat(height, width, CvType.CV_8UC4);
+
+        // The faces will be a 20% of the height of the screen
+        absoluteFaceSize = (int) (height * 0.2);
+    }
+
+    @Override
+    public void onCameraViewStopped() {
+    }
+
+    @Override
+    public Mat onCameraFrame(Mat aInputFrame) {
+        // Create a grayscale image
+        Imgproc.cvtColor(aInputFrame, grayscaleImage, Imgproc.COLOR_RGBA2RGB);
+
+        MatOfRect faces = new MatOfRect();
+
+        // Use the classifier to detect faces
+        if (cascadeClassifier != null) {
+            cascadeClassifier.detectMultiScale(grayscaleImage, faces, 1.1, 2, 2,
+                    new Size(absoluteFaceSize, absoluteFaceSize), new Size());
+        }
+
+        // If there are any faces found, draw a rectangle around it
+        Rect[] facesArray = faces.toArray();
+        for (int i = 0; i &lt;facesArray.length; i++)
+            Core.rectangle(aInputFrame, facesArray[i].tl(), facesArray[i].br(), new Scalar(0, 255, 0, 255), 3);
+
+        return aInputFrame;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_6, this, mLoaderCallback);
+    }
+}</code></pre></div></div><div class="paragraph"><p>The OpenCV documentation is not very Android or even user friendly, it is very technical. But if you do some Google research and look at the provided Unit Test classes, you can get a feeling about the API after a few days. The code from above uses an already trained cascade provided by OpenCV to detect faces. We can create own cascades do detect all types of objects, from pencils to cars or even traffic signs. This will be my next Android app.</p></div><div class="paragraph"><p>Stay tuned and happy coding!</p></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2013/07/high-performance-android-handwriting/">High performance Android handwriting</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2013/09/comparison-of-string-iterator-performance/">Comparison of String iterator performance</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/3ed1d0078678954b6e563504c944c6772231ab69" target="_blank">3ed1d00</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
+        window.addEventListener("load", function(event) {
+            var disqusLoaded = false;
+            var disqusObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (!disqusLoaded && entry.isIntersecting) {
+                        console.log("Loading Disqus");
+                        disqusLoaded = true;
+
+                        document.getElementById('disqus-placeholder').remove();
+
+                        
+                        var script = document.createElement('script');
+                        script.src = '//www-mirkosertic-de.disqus.com/embed.js';
+                        script.async = true;
+                        script.setAttribute('data-timestamp', +new Date());
+                        script.addEventListener('load', function () {
+                            
+                            DISQUS.reset({reload: true, config: false});
+                        });
+                        (document.head || document.body).appendChild(script);
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: "0px",
+                threshold: [0]
+            });
+            disqusObserver.observe(document.querySelector(".comments"));
+        }, false);</script></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.mirkosertic.de/index.xml" itemprop="url"><i class="fa fa-rss-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://twitter.com/mirkosertic" itemprop="url"><i class="fa fa-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
+        var element = document.querySelector(aSelector);
+        if (element) {
+            return true;
+        }
+        return false;
+    }
+
+    var Loader = function () { };
+    Loader.prototype = {
+        require: function (scripts, callback) {
+            this.loadCount = 0;
+            this.totalRequired = scripts.length;
+            this.callback = callback;
+
+            for (var i=0;i<scripts.length;i++) {
+                this.writeScript(scripts[i]);
+            }
+        },
+        loaded: function (evt) {
+            this.loadCount++;
+
+            if (this.loadCount==this.totalRequired && typeof this.callback=='function') this.callback.call();
+        },
+        writeScript: function (src) {
+            var self = this;
+            var s = document.createElement('script');
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = src;
+            s.addEventListener('load', function (e) { self.loaded(e); }, false);
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(s);
+        }
+    };
+
+    if (existsByCSSSelector("pre.highlight code") > 0) {
+        var loader = new Loader();
+        loader.require(["https:\/\/www.mirkosertic.de\/js/highlight-9.9.0.min.js"], function() {
+
+            var additionalStylesheet = document.createElement('link');
+            additionalStylesheet.rel = "stylesheet";
+            additionalStylesheet.type = 'text/css';
+            additionalStylesheet.media = "screen";
+            additionalStylesheet.href = "https:\/\/www.mirkosertic.de\/css/highlight.css";
+
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(additionalStylesheet);
+
+            hljs.initHighlightingOnLoad();
+        });
+    }</script></body></html>

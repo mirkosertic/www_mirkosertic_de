@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maven on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/maven/</link>
+    <description>Recent content in Maven on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Fri, 17 Jun 2016 04:35:13 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/maven/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to remove the Maven primary artifact during install and deploy phase</title>
+      <link>https://www.mirkosertic.de/blog/2016/06/how-to-remove-the-maven-primary-artifact-during-install-and-deploy-phase/</link>
+      <pubDate>Fri, 17 Jun 2016 04:35:13 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2016/06/how-to-remove-the-maven-primary-artifact-during-install-and-deploy-phase/</guid>
+      <description>Sometimes we use Maven “war” packaging and add the RPM Plugin to create a rpm which contains the project primary artifact. When this rpm needs to be published to the Maven repository, it can be added as a secondary artifact to the build. Here is an example of the plugin configuration in pom.xml:
+ &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.codehaus.mojo&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;rpm-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;attached-rpm&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;phase&amp;gt;package&amp;lt;/phase&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;/executions&amp;gt; &amp;lt;/plugin&amp;gt;   This configuration also installs the war and the rpm to the local and even remote repository.</description>
+    </item>
+    
+    <item>
+      <title>How to download Maven artifacts with Maven &gt;=3.1 and Eclipse Aether</title>
+      <link>https://www.mirkosertic.de/blog/2015/12/how-to-download-maven-artifacts-with-maven-3-1-and-eclipse-aether/</link>
+      <pubDate>Tue, 29 Dec 2015 11:50:42 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2015/12/how-to-download-maven-artifacts-with-maven-3-1-and-eclipse-aether/</guid>
+      <description>Starting with Maven 3.1, Sonatype Aether(github.com/sonatype/sonatype-aether ) was replaced with Eclipse Eather(www.eclipse.org/aether ). Now, sometimes we need do download additional Artifacts from Maven repositories during execution time of custom Maven plugins. As the Maven and Aether documentation is not very handsome, here is a short example about how to programmatically download and resolve Maven Artifacts using Maven 3.1 and later with the Eclipse Aether API:
+ import java.io.File; import java.util.ArrayList; import java.</description>
+    </item>
+    
+  </channel>
+</rss>

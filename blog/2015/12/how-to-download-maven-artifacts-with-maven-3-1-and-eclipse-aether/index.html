@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>How to download Maven artifacts with Maven &gt;=3.1 and Eclipse Aether &middot; Mirko Sertic</title><meta name="description" content="Starting with Maven 3.1, Sonatype Aether was replaced with Eclipse Eather. Now, sometimes we need do download additional Artifacts from Maven repositories during execution time of custom Maven plugins. As the Maven and Aether documentation is not very handsome, here is a short example about how to programmatically download and resolve Maven Artifacts using Maven 3.1 and later with the Eclipse Aether API."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.49"><meta name="robots" content="index,follow"><meta property="og:title" content="How to download Maven artifacts with Maven &gt;=3.1 and Eclipse Aether"><meta property="og:description" content="Starting with Maven 3.1, Sonatype Aether was replaced with Eclipse Eather. Now, sometimes we need do download additional Artifacts from Maven repositories during execution time of custom Maven plugins. As the Maven and Aether documentation is not very handsome, here is a short example about how to programmatically download and resolve Maven Artifacts using Maven 3.1 and later with the Eclipse Aether API."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2015/12/how-to-download-maven-artifacts-with-maven-3-1-and-eclipse-aether/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-33614060-2', 'auto');
+	
+	ga('send', 'pageview');
+}</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="Tools &amp; Goodies">Tools &amp; Goodies</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Interesting Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link active" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><div itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"><header class="post-header"><h1 class="post-title" itemprop="name headline">How to download Maven artifacts with Maven &gt;=3.1 and Eclipse Aether</h1><p class="post-date"><span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="2015-12-29" itemprop="datePublished">Tue, Dec 29, 2015</time> <span>by</span> <span itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name"><a href="https://twitter.com/mirkosertic" itemprop="url" rel="author">Mirko Sertic</a></span></span></p><p><span class="icon"><i class="fa fa-clock-white"></i></span><span>2 Minutes reading time</span></p><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags-white"></i></span><a href="/tags/maven">Maven</a></span></p></header><article class="post-content clearfix" itemprop="articleBody"><div class="paragraph"><p>Starting with Maven 3.1, Sonatype Aether(<a href="https://github.com/sonatype/sonatype-aether">github.com/sonatype/sonatype-aether</a> ) was replaced with Eclipse Eather(<a href="http://www.eclipse.org/aether">www.eclipse.org/aether</a> ). Now, sometimes we need do download additional Artifacts from Maven repositories during execution time of custom Maven plugins. As the Maven and Aether documentation is not very handsome, here is a short example about how to programmatically download and resolve Maven Artifacts using Maven 3.1 and later with the Eclipse Aether API:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.maven.execution.MavenSession;
+import org.apache.maven.plugin.AbstractMojo;
+import org.apache.maven.plugin.BuildPluginManager;
+import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugins.annotations.Component;
+import org.apache.maven.plugins.annotations.LifecyclePhase;
+import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
+import org.apache.maven.project.MavenProject;
+
+import org.eclipse.aether.RepositorySystem;
+import org.eclipse.aether.RepositorySystemSession;
+import org.eclipse.aether.artifact.Artifact;
+import org.eclipse.aether.artifact.DefaultArtifact;
+import org.eclipse.aether.collection.CollectRequest;
+import org.eclipse.aether.graph.DependencyFilter;
+import org.eclipse.aether.repository.RemoteRepository;
+import org.eclipse.aether.resolution.ArtifactResult;
+import org.eclipse.aether.resolution.DependencyRequest;
+import org.eclipse.aether.resolution.DependencyResolutionException;
+import org.eclipse.aether.resolution.DependencyResult;
+import org.eclipse.aether.util.artifact.JavaScopes;
+import org.eclipse.aether.util.filter.DependencyFilterUtils;
+
+@Mojo(name = "download-mojo", defaultPhase = LifecyclePhase.PACKAGE)
+public class DownloadMojo extends AbstractMojo {
+
+    @Component
+    private MavenProject mavenProject;
+
+    @Component
+    private MavenSession mavenSession;
+
+    @Component
+    private BuildPluginManager pluginManager;
+
+    @Component
+    private RepositorySystem repositorySystem;
+
+    @Parameter(defaultValue = "${repositorySystemSession}", readonly = true)
+    private RepositorySystemSession repositorySystemSession;
+
+    @Parameter(defaultValue = "${project.remotePluginRepositories}", readonly = true)
+    private List&lt;RemoteRepository&gt; remoteRepositories;
+
+    public void execute() throws MojoExecutionException {
+              // We want to collect the files in our local repository here
+              List theResult = new ArrayList&lt;&gt;();
+
+              String theGroupId = ""; // Replace with your Artifact
+              String theArtifactId = ""; // Replace with your Artifact
+              String theArtifactVersion = ""; // Replace with your Artifact
+              String theClassifier = ""; // Replace with your Artifact
+              String theExtension = ""; // Replace with your Artifact
+              String theScope = JavaScopes.COMPILE; // Replace with your Artifact
+
+              // We create a collect request here
+              // By adding the remote repositories we force Aether to download artifacts if they
+              // are not already in the local reposaitory
+              CollectRequest theCollectRequest = new CollectRequest();
+              theCollectRequest.setRoot(new org.eclipse.aether.graph.Dependency(new DefaultArtifact(theGroupId, theArtifactId,
+                               theClassifier, theExtension, theArtifactVersion), theScope));
+              for (RemoteRepository theRepository : remoteRepositories) {
+                        theCollectRequest.addRepository(theRepository);
+              }
+
+              // We filter dependencies here, as we only want compile scope
+              DependencyFilter theDependencyFilter = DependencyFilterUtils.classpathFilter(theScope);
+              DependencyRequest theDependencyRequest = new DependencyRequest(theCollectRequest, theDependencyFilter);
+              try {
+                        DependencyResult theDependencyResult = repositorySystem.resolveDependencies(repositorySystemSession, theDependencyRequest);
+                        for (ArtifactResult theArtifactResult : theDependencyResult.getArtifactResults()) {
+                                  Artifact theResolved = theArtifactResult.getArtifact();
+                                  // Now we have the artifact file locally stored available
+                                  // and we can do something with it
+                                  File theLocallyStoredFile = theResolved.getFile();
+                                  theResult.add(theLocallyStoredFile);
+                        }
+               } catch (DependencyResolutionException e) {
+                        throw new MojoExecutionException("Error while resolving dependency", e);
+               }
+    }
+}</code></pre></div></div><div class="paragraph"><p>Great :-) !</p></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2015/04/a-javafx-based-lua-editor/">A JavaFX based LUA editor</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2016/01/how-to-schedule-jobs-in-a-java-cdi-environment/">How to schedule Jobs in a Java CDI Environment</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/3ed1d0078678954b6e563504c944c6772231ab69" target="_blank">3ed1d00</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
+        window.addEventListener("load", function(event) {
+            var disqusLoaded = false;
+            var disqusObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (!disqusLoaded && entry.isIntersecting) {
+                        console.log("Loading Disqus");
+                        disqusLoaded = true;
+
+                        document.getElementById('disqus-placeholder').remove();
+
+                        
+                        var script = document.createElement('script');
+                        script.src = '//www-mirkosertic-de.disqus.com/embed.js';
+                        script.async = true;
+                        script.setAttribute('data-timestamp', +new Date());
+                        script.addEventListener('load', function () {
+                            
+                            DISQUS.reset({reload: true, config: false});
+                        });
+                        (document.head || document.body).appendChild(script);
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: "0px",
+                threshold: [0]
+            });
+            disqusObserver.observe(document.querySelector(".comments"));
+        }, false);</script></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.mirkosertic.de/index.xml" itemprop="url"><i class="fa fa-rss-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://twitter.com/mirkosertic" itemprop="url"><i class="fa fa-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
+        var element = document.querySelector(aSelector);
+        if (element) {
+            return true;
+        }
+        return false;
+    }
+
+    var Loader = function () { };
+    Loader.prototype = {
+        require: function (scripts, callback) {
+            this.loadCount = 0;
+            this.totalRequired = scripts.length;
+            this.callback = callback;
+
+            for (var i=0;i<scripts.length;i++) {
+                this.writeScript(scripts[i]);
+            }
+        },
+        loaded: function (evt) {
+            this.loadCount++;
+
+            if (this.loadCount==this.totalRequired && typeof this.callback=='function') this.callback.call();
+        },
+        writeScript: function (src) {
+            var self = this;
+            var s = document.createElement('script');
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = src;
+            s.addEventListener('load', function (e) { self.loaded(e); }, false);
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(s);
+        }
+    };
+
+    if (existsByCSSSelector("pre.highlight code") > 0) {
+        var loader = new Loader();
+        loader.require(["https:\/\/www.mirkosertic.de\/js/highlight-9.9.0.min.js"], function() {
+
+            var additionalStylesheet = document.createElement('link');
+            additionalStylesheet.rel = "stylesheet";
+            additionalStylesheet.type = 'text/css';
+            additionalStylesheet.media = "screen";
+            additionalStylesheet.href = "https:\/\/www.mirkosertic.de\/css/highlight.css";
+
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(additionalStylesheet);
+
+            hljs.initHighlightingOnLoad();
+        });
+    }</script></body></html>

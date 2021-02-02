@@ -1,0 +1,304 @@
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Domain-driven Design with JSF, EJB and CDI &middot; Mirko Sertic</title><meta name="description" content="Based on my previous post about Domain-driven Design Architecture i want to offer some implementation details about how to build a DDD-style application based on JSF2, PrettyFaces, EJB and CDI. I will give some code samples to give you an idea about how to start with this topic. Everything else is up to you :-). Also please note that most of the ideas in this example is inspired by the CEC-ECB(CDI-EJB-CDI Entity-Control-Boundary) patterns as described by Oracle for the JEE6 design."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.49"><meta name="robots" content="index,follow"><meta property="og:title" content="Domain-driven Design with JSF, EJB and CDI"><meta property="og:description" content="Based on my previous post about Domain-driven Design Architecture i want to offer some implementation details about how to build a DDD-style application based on JSF2, PrettyFaces, EJB and CDI. I will give some code samples to give you an idea about how to start with this topic. Everything else is up to you :-). Also please note that most of the ideas in this example is inspired by the CEC-ECB(CDI-EJB-CDI Entity-Control-Boundary) patterns as described by Oracle for the JEE6 design."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2013/09/domain-driven-design-with-jsf-ejb-and-cdi/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-33614060-2', 'auto');
+	
+	ga('send', 'pageview');
+}</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="Tools &amp; Goodies">Tools &amp; Goodies</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Interesting Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link active" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><div itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"><header class="post-header"><h1 class="post-title" itemprop="name headline">Domain-driven Design with JSF, EJB and CDI</h1><p class="post-date"><span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="2013-09-22" itemprop="datePublished">Sun, Sep 22, 2013</time> <span>by</span> <span itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name"><a href="https://twitter.com/mirkosertic" itemprop="url" rel="author">Mirko Sertic</a></span></span></p><p><span class="icon"><i class="fa fa-clock-white"></i></span><span>4 Minutes reading time</span></p><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags-white"></i></span><a href="/tags/domain-driven-design">Domain-driven Design</a></span> ,&nbsp;<a href="/tags/enterprise">Enterprise</a></p></header><article class="post-content clearfix" itemprop="articleBody"><div class="paragraph"><p>Based on my previous post about <a href="https://www.mirkosertic.de/blog/2013/04/domain-driven-design-example/">Domain-driven Design Architecture</a> i want to offer some implementation details about how to build a DDD-style application based on JSF2, PrettyFaces, EJB and CDI. I will give some code samples to give you an idea about how to start with this topic. Everything else is up to you :-). Also please note that most of the ideas in this example is inspired by the CEC-ECB(CDI-EJB-CDI Entity-Control-Boundary) patterns as described by Oracle for the JEE6 design.</p></div><div class="sect1"><h2 id="_presentation_with_jsf_and_prettyfaces">Presentation with JSF and Prettyfaces</h2><div class="sectionbody"><div class="paragraph"><p>JSF is part of the core JEE stack. Together with Prettyfaces it offers a well defined and standardized framework for user interface components. Personally i like the Model-View-Presenter pattern, hence i apply it here to a JSF managed bean:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">package de.mirkosertic.powerstaff.freelancer.ui;
+
+import com.ocpsoft.pretty.faces.annotation.URLAction;
+import com.ocpsoft.pretty.faces.annotation.URLMapping;
+import de.mirkosertic.powerstaff.freelancer.application.FreelancerApplicationService;
+import de.mirkosertic.powerstaff.freelancer.domain.FreelancerPresentation;
+import de.mirkosertic.powerstaff.freelancer.domain.NothingFoundException;
+import de.mirkosertic.powerstaff.generic.ui.Presenter;
+
+import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+import java.io.Serializable;
+
+@Presenter
+@ManagedBean(name = "freelancerPresenter")
+@ViewScoped
+@URLMapping(id = "freelancermain", pattern = "/freelancer/#{freelancerPresenter.freelancerId}/main", viewId = "/de/mirkosertic/powerstaff/freelancer/ui/freelancer.xhtml")
+public class FreelancerPresenter implements Serializable {
+
+    static final String NEW_RECORD_ID = "new";
+
+    @EJB
+    FreelancerApplicationService freelancerApplicationService;
+
+    String freelancerId;
+
+    FreelancerPresentation currentPresentation;
+
+    public String getFreelancerId() {
+        return freelancerId;
+    }
+
+    public void setFreelancerId(String aFreelancerId) {
+        freelancerId = aFreelancerId;
+    }
+
+    public FreelancerPresentation getCurrentPresentation() {
+        return currentPresentation;
+    }
+
+    /**
+     * This is invoked by PrettyFaces for every page access, but not for callbacks!
+     */
+    @URLAction(onPostback = false)
+    public void loadData() {
+        if (NEW_RECORD_ID.equals(freelancerId)) {
+            currentPresentation = new FreelancerPresentation();
+        } else {
+            try {
+                currentPresentation = freelancerApplicationService.getFreelancerPresentationFor(freelancerId);
+            } catch (NothingFoundException e) {
+                // Better exception handling here is required
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void saveData() {
+        if (currentPresentation.isPersistent()) {
+            try {
+                currentPresentation = freelancerApplicationService.updateFreelancerFrom(currentPresentation);
+            } catch (NothingFoundException e) {
+                // Better exception handling here is required
+                e.printStackTrace();
+            }
+        } else {
+            currentPresentation = freelancerApplicationService.createNewFreelancerFrom(currentPresentation);
+        }
+    }
+}</code></pre></div></div><div class="paragraph"><p>Here is the corresponding XHTML view:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ui:composition template="/maintemplate.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://java.sun.com/jsf/passthrough"&gt;
+  &lt;ui:define name="headcontent"&gt;
+    &lt;title&gt;Freelancer Data&lt;/title&gt;
+  &lt;/ui:define&gt;
+  &lt;ui:define name="content"&gt;
+
+      &lt;h:form&gt;
+          &lt;h1&gt;Freelancer Data&lt;/h1&gt;
+          &lt;fieldset class="login"&gt;
+              &lt;legend&gt;Freelancer Details&lt;/legend&gt;
+              &lt;div&gt;
+                  &lt;label&gt;Freelancer Name&lt;/label&gt; &lt;h:inputText value="#{freelancerPresenter.currentPresentation.name}"
+                                                              size="50"
+                                                              p:placeholder="Enter freelancer name"/&gt;
+              &lt;/div&gt;
+          &lt;/fieldset&gt;
+          &lt;h:commandButton value="Save" action="#{freelancerPresenter.saveData}"/&gt;
+      &lt;/h:form&gt;
+
+  &lt;/ui:define&gt;
+&lt;/ui:composition&gt;</code></pre></div></div><div class="paragraph"><p>The JSF beans are managed my the CDI container. This is the first C of the CEC pattern.</p></div></div></div><div class="sect1"><h2 id="_application_services_with_ejb">Application Services with EJB</h2><div class="sectionbody"><div class="paragraph"><p>Now we continue with the E part of the CEC pattern, the EJB&#8217;s. This part fits perfectly together with the Domain-driven Design Application Services. See the following EJB to make the intention clear:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">package de.mirkosertic.powerstaff.freelancer.application;
+
+import de.mirkosertic.powerstaff.freelancer.domain.FreelancerDomainService;
+import de.mirkosertic.powerstaff.freelancer.domain.FreelancerPresentation;
+import de.mirkosertic.powerstaff.freelancer.domain.NothingFoundException;
+import de.mirkosertic.powerstaff.generic.application.ApplicationService;
+
+import javax.ejb.Stateless;
+import javax.inject.Inject;
+
+/**
+ * The FreelancerApplicationServices is deployed as an EJB.
+ *
+ * ApplicationServices start transactions and apply security. Hence using EJB technology
+ * is a good choice as the entry point.
+ */
+@ApplicationService
+@Stateless
+public class FreelancerApplicationService {
+
+    @Inject
+    FreelancerDomainService freelancerDomainService;
+
+    public FreelancerPresentation createNewFreelancerFrom(FreelancerPresentation aPresentation) {
+        return freelancerDomainService.createNewFreelancerFrom(aPresentation);
+    }
+
+    public FreelancerPresentation getFreelancerPresentationFor(String aFreelancerID) throws NothingFoundException {
+        return freelancerDomainService.getFreelancerPresentationFor(aFreelancerID);
+    }
+
+    public FreelancerPresentation updateFreelancerFrom(FreelancerPresentation aPresentation) throws NothingFoundException {
+        return freelancerDomainService.updateFreelancerPresentationFrom(aPresentation);
+    }
+}</code></pre></div></div><div class="paragraph"><p>EJB offer additional functionality like transaction, security and pooling. This makes them a perfect choice for the main application entry point, the DDD Application Service.</p></div></div></div><div class="sect1"><h2 id="_domain_logic_with_cdi">Domain Logic with CDI</h2><div class="sectionbody"><div class="paragraph"><p>Now we come to the core domain logic. The main entry point is the domain service, as it is called by the application service. See the following domain service for instance:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">package de.mirkosertic.powerstaff.freelancer.domain;
+
+import de.mirkosertic.powerstaff.generic.domain.DomainService;
+
+import javax.inject.Inject;
+
+@DomainService
+public class FreelancerDomainService {
+
+    @Inject
+    FreelancerFactory freelancerFactory;
+
+    @Inject
+    FreelancerRepository freelancerRepository;
+
+    public FreelancerPresentation createNewFreelancerFrom(FreelancerPresentation aPresentation) {
+        Freelancer theNewFreelancer = freelancerFactory.create();
+        theNewFreelancer.fillFrom(aPresentation);
+        freelancerRepository.add(theNewFreelancer);
+        return theNewFreelancer.toPresentation();
+    }
+
+    public FreelancerPresentation getFreelancerPresentationFor(String aFreelancerID) throws NothingFoundException {
+        Freelancer theFreelancer = freelancerRepository.findById(aFreelancerID);
+        return theFreelancer.toPresentation();
+    }
+
+    public FreelancerPresentation updateFreelancerPresentationFrom(FreelancerPresentation aPresentation) throws NothingFoundException {
+        Freelancer theFreelancer = freelancerRepository.findById(aPresentation.getId());
+        theFreelancer.fillFrom(aPresentation);
+        return theFreelancer.toPresentation();
+    }
+}</code></pre></div></div><div class="paragraph"><p>The domain service delegates to factories or repositories to create or load data. Finally it invokes business logic on the domain objects, as seen by the following aggregate:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">package de.mirkosertic.powerstaff.freelancer.domain;
+
+import de.mirkosertic.powerstaff.generic.domain.Aggregate;
+import de.mirkosertic.powerstaff.generic.domain.FreelancerID;
+import de.mirkosertic.powerstaff.generic.domain.Name;
+
+@Aggregate
+public class Freelancer {
+
+    FreelancerID id;
+    Name name;
+
+    protected Freelancer(FreelancerID aID) {
+        id = aID;
+        name = new Name();
+    }
+
+    protected Freelancer() {
+        // Zero-Arg Constructor to make JPA happy
+    }
+
+    public FreelancerPresentation toPresentation() {
+        FreelancerPresentation thePresentation = new FreelancerPresentation();
+        thePresentation.setId(id.value());
+        thePresentation.setName(name.value());
+        thePresentation.setPersistent(false);
+        return thePresentation;
+    }
+
+    public void fillFrom(FreelancerPresentation aPresentation) {
+        name = new Name(aPresentation.getName());
+    }
+}</code></pre></div></div><div class="paragraph"><p>Here a presentation object comes to play. It is created and filled by the aggregate and used as an DTO which is finally rendered by the Presenter / View. Creating and filling presentation objects helps to keep aggregate encapsulation intact and avoid SessionClosed exceptions. Note that transaction and hence JPA session boundary is demarcated by the EJB, the ApplicationService.</p></div></div></div><div class="sect1"><h2 id="_infrastructure_with_jpa">Infrastructure with JPA</h2><div class="sectionbody"><div class="paragraph"><p>Finally the infrastructure part, implementing the domain repositories based on some persistence technology, in our case JPA:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">package de.mirkosertic.powerstaff.freelancer.infrastructure;
+
+import de.mirkosertic.powerstaff.freelancer.domain.Freelancer;
+import de.mirkosertic.powerstaff.freelancer.domain.FreelancerRepository;
+import de.mirkosertic.powerstaff.freelancer.domain.NothingFoundException;
+import de.mirkosertic.powerstaff.generic.infrastructure.Repository;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+@Repository
+public class FreelancerJPARepository implements FreelancerRepository {
+
+    @PersistenceContext
+    EntityManager entityManager;
+
+    public void add(Freelancer aFreelancer) {
+        // do something
+    }
+
+    public Freelancer findById(String aFreelancerID) throws NothingFoundException {
+        // do something
+    }
+}</code></pre></div></div><div class="paragraph"><p>Note that frameworks like <a href="http://www.querydsl.com/">QueryDSL</a> can help you a lot to keep the repository implementation clean and maintainable.</p></div><div class="paragraph"><p>Stay tuned for the next examples :-)</p></div></div></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se/">Bootstrapping Weld CDI from command line with Java SE</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications/">How to create JUnit assertions from running applications</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/3ed1d0078678954b6e563504c944c6772231ab69" target="_blank">3ed1d00</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
+        window.addEventListener("load", function(event) {
+            var disqusLoaded = false;
+            var disqusObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (!disqusLoaded && entry.isIntersecting) {
+                        console.log("Loading Disqus");
+                        disqusLoaded = true;
+
+                        document.getElementById('disqus-placeholder').remove();
+
+                        
+                        var script = document.createElement('script');
+                        script.src = '//www-mirkosertic-de.disqus.com/embed.js';
+                        script.async = true;
+                        script.setAttribute('data-timestamp', +new Date());
+                        script.addEventListener('load', function () {
+                            
+                            DISQUS.reset({reload: true, config: false});
+                        });
+                        (document.head || document.body).appendChild(script);
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: "0px",
+                threshold: [0]
+            });
+            disqusObserver.observe(document.querySelector(".comments"));
+        }, false);</script></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.mirkosertic.de/index.xml" itemprop="url"><i class="fa fa-rss-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://twitter.com/mirkosertic" itemprop="url"><i class="fa fa-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
+        var element = document.querySelector(aSelector);
+        if (element) {
+            return true;
+        }
+        return false;
+    }
+
+    var Loader = function () { };
+    Loader.prototype = {
+        require: function (scripts, callback) {
+            this.loadCount = 0;
+            this.totalRequired = scripts.length;
+            this.callback = callback;
+
+            for (var i=0;i<scripts.length;i++) {
+                this.writeScript(scripts[i]);
+            }
+        },
+        loaded: function (evt) {
+            this.loadCount++;
+
+            if (this.loadCount==this.totalRequired && typeof this.callback=='function') this.callback.call();
+        },
+        writeScript: function (src) {
+            var self = this;
+            var s = document.createElement('script');
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = src;
+            s.addEventListener('load', function (e) { self.loaded(e); }, false);
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(s);
+        }
+    };
+
+    if (existsByCSSSelector("pre.highlight code") > 0) {
+        var loader = new Loader();
+        loader.require(["https:\/\/www.mirkosertic.de\/js/highlight-9.9.0.min.js"], function() {
+
+            var additionalStylesheet = document.createElement('link');
+            additionalStylesheet.rel = "stylesheet";
+            additionalStylesheet.type = 'text/css';
+            additionalStylesheet.media = "screen";
+            additionalStylesheet.href = "https:\/\/www.mirkosertic.de\/css/highlight.css";
+
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(additionalStylesheet);
+
+            hljs.initHighlightingOnLoad();
+        });
+    }</script></body></html>

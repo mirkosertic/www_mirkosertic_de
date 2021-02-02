@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Modernization on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/modernization/</link>
+    <description>Recent content in Modernization on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Wed, 14 Dec 2016 12:33:44 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/modernization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Preconditions, Project Lombok, JSR 303 and JSR 308</title>
+      <link>https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308/</link>
+      <pubDate>Wed, 14 Dec 2016 12:33:44 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308/</guid>
+      <description>A good method implementation validates all of its preconditions before it continues. Luckily there are different frameworks such as Project Lombok, JSR 303 Bean Validation API and JSR 308 Java Type Annotations available for this job. All of them are based on Java Annotations at method arguments, but they differ in runtime and compile time behavior. Here are some examples.
+ Project Lombok Project Lombok adds language features for boilerplate free code to the Java ecosystem.</description>
+    </item>
+    
+    <item>
+      <title>Java SE Context and Dependency Injection with Java EE support</title>
+      <link>https://www.mirkosertic.de/blog/2013/10/java-se-context-and-dependency-injection-with-java-ee-support/</link>
+      <pubDate>Thu, 03 Oct 2013 06:02:44 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/10/java-se-context-and-dependency-injection-with-java-ee-support/</guid>
+      <description>Java CDI(Context and Dependency Injection) JSR-299 is available on Java EE application servers, but CDI(Weld is the reference implementation) is also embeddable in Java SE standard edition. Unfortunately Java EE functionalities like security or transaction support are not available here, for instance the following code just does not work as expected when running on CDI SE:
+ @Singleton public class WeldBean { @Resource Principal principal; @RolesAllowed(&#34;securedrole&#34;) public void run() { System.</description>
+    </item>
+    
+    <item>
+      <title>MVC revised or what are the alternatives?</title>
+      <link>https://www.mirkosertic.de/blog/2013/03/mvc-revised-or-what-are-the-alternatives/</link>
+      <pubDate>Sat, 30 Mar 2013 05:27:21 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/03/mvc-revised-or-what-are-the-alternatives/</guid>
+      <description>Pure MVC The Model View Controller pattern became a de-facto standard for implementing user interfaces or other kind of interaction with complex systems. Basically it separates the user interface into the following components:
+     Component
+ Responsibility
+   Model
+ The model contains the data to be presented
+   View
+ The view renders the data and is the user interface. The view also reacts to model changes and updates on such an event</description>
+    </item>
+    
+    <item>
+      <title>Using and enhancing Hibernate Search</title>
+      <link>https://www.mirkosertic.de/blog/2012/11/using-and-enhancing-hibernate-search/</link>
+      <pubDate>Sat, 17 Nov 2012 06:15:15 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/11/using-and-enhancing-hibernate-search/</guid>
+      <description>www.hibernate.org is a very cool and mature Java Object-Relational mapping tool. Using Hibernate we can easily persist or reconstitute Java Objects to or from a relational database like MySQL, PostgreSQL, SQLServer or Oracle.
+ Hibernate supports us to query the database using the Criteria API or HQL Statements(Or we can use Tools like QueryDSL). But Hibernate core lacks supporting us to do free style or even full text queries. For this purpose, Hibernate Search was created.</description>
+    </item>
+    
+    <item>
+      <title>Building CDI support with AOP and AspectJ</title>
+      <link>https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj/</link>
+      <pubDate>Mon, 01 Oct 2012 02:47:45 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj/</guid>
+      <description>CDI is a mighty enhancement to the Java programming language. But CDI has also some limitations that might be cumbersome:
+   CDI needs a CDI container
+  All dependency injected beans are also managed beans
+  Hibernate or JPA entities are not managed by the CDI container, so there is no CDI support for them
+   So what can we do to get around these limitations, for instance we really want dependency injection in our Entities?</description>
+    </item>
+    
+    <item>
+      <title>The Onion Architecture</title>
+      <link>https://www.mirkosertic.de/blog/2012/09/the-onion-architecture/</link>
+      <pubDate>Mon, 10 Sep 2012 06:48:34 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/09/the-onion-architecture/</guid>
+      <description>The Problem Often we develop complex business driven applications. While we design our application, it&amp;#8217;s architecture and it&amp;#8217;s layers, we often feel to use a traditional approach to define the layers. Here is a short structure of what i mean:
+ 
+ The problem with this structure is that the packaging is infrastructure driven. We have a user interface which uses the business logic. The business logic uses the data access layer to access data.</description>
+    </item>
+    
+    <item>
+      <title>Enriching legacy applications with CDI</title>
+      <link>https://www.mirkosertic.de/blog/2012/08/enriching-legacy-applications-with-cdi/</link>
+      <pubDate>Wed, 15 Aug 2012 09:45:09 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/08/enriching-legacy-applications-with-cdi/</guid>
+      <description>There are a lot of applications out there. Some of them are legacy, others are in their maintenance phase. While we are developing new applications, we can use the coolest new technologies, think about good design and other stuff. But what about the software maintenance phase? Often, due to lack of time and other constraints, we cannot do everything perfectly, we need to move some refactoring or even re-engineering to the maintenance phase.</description>
+    </item>
+    
+    <item>
+      <title>How to embed Hystrix into existing Spring applications</title>
+      <link>https://www.mirkosertic.de/blog/2012/07/how-to-embed-hystrix-into-existing-spring-applications/</link>
+      <pubDate>Tue, 31 Jul 2012 06:01:53 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/07/how-to-embed-hystrix-into-existing-spring-applications/</guid>
+      <description>Netflix Hystrix is a very powerful framework to build fault tolerant and resilient applications. It provides common implementations for patterns like Timeout, CircuitBreaker and others. It also comes with nice monitoring capabilities using the Hystrix Dashboard or even JMX.
+ Now, Hystrix should be used as a kind of decorator around interfaces or gateways to other (sub) systems. The tricky part is to do this in a non invasive manner. And here comes Spring and AOP to play:</description>
+    </item>
+    
+    <item>
+      <title>Domain-driven Design - Overview and building blocks</title>
+      <link>https://www.mirkosertic.de/blog/2012/07/domain-driven-design-overview-and-building-blocks/</link>
+      <pubDate>Sun, 29 Jul 2012 08:42:57 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/07/domain-driven-design-overview-and-building-blocks/</guid>
+      <description>There are a lot of excellent blogs out where about Domain Driven Design and what it&amp;#8217;s all about. I prefer Wikipedia for a short introduction, but there is also an excellent article at InfoQ about Domain Driven Design. If you want to know more about the principles behind DDD, you can also consult the GRASP Patterns or the SOLID Patterns. Here is a summary of DDD (also taken from Wikipedia):</description>
+    </item>
+    
+  </channel>
+</rss>

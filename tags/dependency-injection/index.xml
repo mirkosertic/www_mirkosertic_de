@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dependency Injection on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/dependency-injection/</link>
+    <description>Recent content in Dependency Injection on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Sun, 24 Jan 2016 04:01:55 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/dependency-injection/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to schedule Jobs in a Java CDI Environment</title>
+      <link>https://www.mirkosertic.de/blog/2016/01/how-to-schedule-jobs-in-a-java-cdi-environment/</link>
+      <pubDate>Sun, 24 Jan 2016 04:01:55 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2016/01/how-to-schedule-jobs-in-a-java-cdi-environment/</guid>
+      <description>Often we need to schedule Jobs. Standard Java CDI does not have a build in Job Scheduler feature. But this functionality can be easily implemented by using the CDI extension mechanism.
+ I wrote a simple CDI extension for Job scheduling backed by the Quartz Framework. It is hosted at Github.
+ To schedule a Job, we basically need to do the following things:
+ a) add the following Maven dependency(available from Central Repository):</description>
+    </item>
+    
+    <item>
+      <title>Bootstrapping Weld CDI from command line with Java SE</title>
+      <link>https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se/</link>
+      <pubDate>Sat, 21 Sep 2013 03:03:19 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se/</guid>
+      <description>It is possible to use CDI and Weld in a Java command line program. There are several options to bootstrap the CDI container. Weld offers a special Main class that does the job for us. But sometimes we just want to shield the CDI dependencies and provide our own main method. Now comes the tricky part: how do we pass command line arguments to the container, or even boot managed beans by injecting command line argument?</description>
+    </item>
+    
+    <item>
+      <title>Building CDI support with AOP and AspectJ</title>
+      <link>https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj/</link>
+      <pubDate>Mon, 01 Oct 2012 02:47:45 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj/</guid>
+      <description>CDI is a mighty enhancement to the Java programming language. But CDI has also some limitations that might be cumbersome:
+   CDI needs a CDI container
+  All dependency injected beans are also managed beans
+  Hibernate or JPA entities are not managed by the CDI container, so there is no CDI support for them
+   So what can we do to get around these limitations, for instance we really want dependency injection in our Entities?</description>
+    </item>
+    
+    <item>
+      <title>Enriching legacy applications with CDI</title>
+      <link>https://www.mirkosertic.de/blog/2012/08/enriching-legacy-applications-with-cdi/</link>
+      <pubDate>Wed, 15 Aug 2012 09:45:09 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/08/enriching-legacy-applications-with-cdi/</guid>
+      <description>There are a lot of applications out there. Some of them are legacy, others are in their maintenance phase. While we are developing new applications, we can use the coolest new technologies, think about good design and other stuff. But what about the software maintenance phase? Often, due to lack of time and other constraints, we cannot do everything perfectly, we need to move some refactoring or even re-engineering to the maintenance phase.</description>
+    </item>
+    
+  </channel>
+</rss>

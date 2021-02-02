@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Opengl on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/opengl/</link>
+    <description>Recent content in Opengl on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Thu, 05 Sep 2013 08:46:56 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/opengl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OpenGL2 on Android example</title>
+      <link>https://www.mirkosertic.de/blog/2013/09/opengl2-on-android-example/</link>
+      <pubDate>Thu, 05 Sep 2013 08:46:56 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/09/opengl2-on-android-example/</guid>
+      <description>The last days i fiddled a bit with OpenGL 2 on Android. The Android OpenGL tutorials are a bit outdated, so i had to do some API research by myself and copy and merge the provided examples together. Here is a screenshot of the running OpenGL App:
+ 
+ It supports touch events to rotate a triangle around and render the animation.
+ To run OpenGL, we need the base Activity class as follows:</description>
+    </item>
+    
+  </channel>
+</rss>

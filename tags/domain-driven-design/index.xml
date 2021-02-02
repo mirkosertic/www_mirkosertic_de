@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Domain Driven Design on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/domain-driven-design/</link>
+    <description>Recent content in Domain Driven Design on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Mon, 06 Mar 2017 00:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.mirkosertic.de/tags/domain-driven-design/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Service integration at UI level with server side includes(SSI)</title>
+      <link>https://www.mirkosertic.de/blog/2017/03/integration-at-ui-level-with-server-side-includes/</link>
+      <pubDate>Mon, 06 Mar 2017 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2017/03/integration-at-ui-level-with-server-side-includes/</guid>
+      <description>Microservices everywhere Today, Microservices are a common software modeling technique. This style is based on the principles behind Domain-driven Design, where every bounded context is equivalent to a service. If we also take the Twelve-Factor App manifesto into consideration, we able to create scalable and cloud ready systems.
+ But this design can also lead to problems. If we take the Microservice design too far(Nanoservices), we are quickly getting way to much services we can handle and maintain.</description>
+    </item>
+    
+    <item>
+      <title>Preconditions, Project Lombok, JSR 303 and JSR 308</title>
+      <link>https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308/</link>
+      <pubDate>Wed, 14 Dec 2016 12:33:44 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308/</guid>
+      <description>A good method implementation validates all of its preconditions before it continues. Luckily there are different frameworks such as Project Lombok, JSR 303 Bean Validation API and JSR 308 Java Type Annotations available for this job. All of them are based on Java Annotations at method arguments, but they differ in runtime and compile time behavior. Here are some examples.
+ Project Lombok Project Lombok adds language features for boilerplate free code to the Java ecosystem.</description>
+    </item>
+    
+    <item>
+      <title>Domain-driven Design with JSF, EJB and CDI</title>
+      <link>https://www.mirkosertic.de/blog/2013/09/domain-driven-design-with-jsf-ejb-and-cdi/</link>
+      <pubDate>Sun, 22 Sep 2013 06:08:29 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/09/domain-driven-design-with-jsf-ejb-and-cdi/</guid>
+      <description>Based on my previous post about Domain-driven Design Architecture i want to offer some implementation details about how to build a DDD-style application based on JSF2, PrettyFaces, EJB and CDI. I will give some code samples to give you an idea about how to start with this topic. Everything else is up to you :-). Also please note that most of the ideas in this example is inspired by the CEC-ECB(CDI-EJB-CDI Entity-Control-Boundary) patterns as described by Oracle for the JEE6 design.</description>
+    </item>
+    
+    <item>
+      <title>Domain-driven Design Example</title>
+      <link>https://www.mirkosertic.de/blog/2013/04/domain-driven-design-example/</link>
+      <pubDate>Mon, 22 Apr 2013 07:09:11 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/04/domain-driven-design-example/</guid>
+      <description>I saw a lot of IT projects in the past. Some of them were pretty good designed, others were really bad. Based on these experiences, I want to write a bit about an example project, and I also want to show how an example project can be modeled with UML and what would happen if we apply Domain-driven Design principles to the model.
+ Before you continue, you should read the books “Domain-driven Design” by Eric Evans and “Implementing Domain-driven Design” by Vaughn Vernon.</description>
+    </item>
+    
+    <item>
+      <title>Implementing State Machines with Java Enums</title>
+      <link>https://www.mirkosertic.de/blog/2013/04/implementing-state-machines-with-java-enums/</link>
+      <pubDate>Mon, 08 Apr 2013 01:06:42 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2013/04/implementing-state-machines-with-java-enums/</guid>
+      <description>Often we need to implement State Machines to encapsulate object behavior depending on a given object state. This can be cumbersome as it often leads to a lot of interfaces and implementation classes, and persisting such an object state often leads to problems, as we would need to implement a Hibernate custom type for instance to solve it.
+ Today i want you to show another approach. We model a State Machine using a Java Enum.</description>
+    </item>
+    
+    <item>
+      <title>The Onion Architecture</title>
+      <link>https://www.mirkosertic.de/blog/2012/09/the-onion-architecture/</link>
+      <pubDate>Mon, 10 Sep 2012 06:48:34 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/09/the-onion-architecture/</guid>
+      <description>The Problem Often we develop complex business driven applications. While we design our application, it&amp;#8217;s architecture and it&amp;#8217;s layers, we often feel to use a traditional approach to define the layers. Here is a short structure of what i mean:
+ 
+ The problem with this structure is that the packaging is infrastructure driven. We have a user interface which uses the business logic. The business logic uses the data access layer to access data.</description>
+    </item>
+    
+    <item>
+      <title>Domain-driven Design - Overview and building blocks</title>
+      <link>https://www.mirkosertic.de/blog/2012/07/domain-driven-design-overview-and-building-blocks/</link>
+      <pubDate>Sun, 29 Jul 2012 08:42:57 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2012/07/domain-driven-design-overview-and-building-blocks/</guid>
+      <description>There are a lot of excellent blogs out where about Domain Driven Design and what it&amp;#8217;s all about. I prefer Wikipedia for a short introduction, but there is also an excellent article at InfoQ about Domain Driven Design. If you want to know more about the principles behind DDD, you can also consult the GRASP Patterns or the SOLID Patterns. Here is a summary of DDD (also taken from Wikipedia):</description>
+    </item>
+    
+  </channel>
+</rss>
