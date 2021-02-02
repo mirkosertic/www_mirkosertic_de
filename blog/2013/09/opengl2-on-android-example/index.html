@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>OpenGL2 on Android example &middot; Mirko Sertic</title><meta name="description" content="The last days i fiddled a bit with OpenGL 2 on Android. The Android OpenGL tutorials are a bit outdated, so i had to do some API research by myself and copy and merge the provided examples together. Here is a screenshot of the running OpenGL App:"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.49"><meta name="robots" content="index,follow"><meta property="og:title" content="OpenGL2 on Android example"><meta property="og:description" content="The last days i fiddled a bit with OpenGL 2 on Android. The Android OpenGL tutorials are a bit outdated, so i had to do some API research by myself and copy and merge the provided examples together. Here is a screenshot of the running OpenGL App:"><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2013/09/opengl2-on-android-example/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>OpenGL2 on Android example &middot; Mirko Sertic</title><meta name="description" content="The last days i fiddled a bit with OpenGL 2 on Android. The Android OpenGL tutorials are a bit outdated, so i had to do some API research by myself and copy and merge the provided examples together. Here is a screenshot of the running OpenGL App:"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.80.0"><meta name="robots" content="index,follow"><meta property="og:title" content="OpenGL2 on Android example"><meta property="og:description" content="The last days i fiddled a bit with OpenGL 2 on Android. The Android OpenGL tutorials are a bit outdated, so i had to do some API research by myself and copy and merge the provided examples together. Here is a screenshot of the running OpenGL App:"><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2013/09/opengl2-on-android-example/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 	ga('create', 'UA-33614060-2', 'auto');
@@ -150,20 +150,20 @@ public class Triangle {
     private final String vertexShaderCode =
             // This matrix member variable provides a hook to manipulate
             // the coordinates of the objects that use this vertex shader
-            "uniform mat4 uMVPMatrix;" +
+            &#34;uniform mat4 uMVPMatrix;&#34; +
 
-            "attribute vec4 vPosition;" +
-            "void main() {" +
+            &#34;attribute vec4 vPosition;&#34; +
+            &#34;void main() {&#34; +
             // the matrix must be included as a modifier of gl_Position
-            "  gl_Position = vPosition * uMVPMatrix;" +
-            "}";
+            &#34;  gl_Position = vPosition * uMVPMatrix;&#34; +
+            &#34;}&#34;;
 
     private final String fragmentShaderCode =
-            "precision mediump float;" +
-            "uniform vec4 vColor;" +
-            "void main() {" +
-            "  gl_FragColor = vColor;" +
-            "}";
+            &#34;precision mediump float;&#34; +
+            &#34;uniform vec4 vColor;&#34; +
+            &#34;void main() {&#34; +
+            &#34;  gl_FragColor = vColor;&#34; +
+            &#34;}&#34;;
 
     private FloatBuffer vertexBuffer;
 
@@ -191,7 +191,7 @@ public class Triangle {
         ByteBuffer bb = ByteBuffer.allocateDirect(
                 // (number of coordinate values * 4 bytes per float)
                 triangleCoords.length * 4);
-        // use the device hardware's native byte order
+        // use the device hardware&#39;s native byte order
         bb.order(ByteOrder.nativeOrder());
 
         // create a floating point buffer from the ByteBuffer
@@ -215,8 +215,8 @@ public class Triangle {
         // Add program to OpenGL ES environment
         GLES20.glUseProgram(renderProgram);
 
-        // get handle to vertex shader's vPosition member
-        vPositionHandle = GLES20.glGetAttribLocation(renderProgram, "vPosition");
+        // get handle to vertex shader&#39;s vPosition member
+        vPositionHandle = GLES20.glGetAttribLocation(renderProgram, &#34;vPosition&#34;);
 
         // Enable a handle to the triangle vertices
         GLES20.glEnableVertexAttribArray(vPositionHandle);
@@ -226,19 +226,19 @@ public class Triangle {
                 GLES20.GL_FLOAT, false,
                 vertexStride, vertexBuffer);
 
-        // get handle to fragment shader's vColor member
-        vColorHandle = GLES20.glGetUniformLocation(renderProgram, "vColor");
+        // get handle to fragment shader&#39;s vColor member
+        vColorHandle = GLES20.glGetUniformLocation(renderProgram, &#34;vColor&#34;);
 
         // Set color for drawing the triangle
         GLES20.glUniform4fv(vColorHandle, 1, color, 0);
 
-        // get handle to shape's transformation matrix
-        mvpHandle = GLES20.glGetUniformLocation(renderProgram, "uMVPMatrix");
-        OpenGLUtils.checkGlError("glGetUniformLocation");
+        // get handle to shape&#39;s transformation matrix
+        mvpHandle = GLES20.glGetUniformLocation(renderProgram, &#34;uMVPMatrix&#34;);
+        OpenGLUtils.checkGlError(&#34;glGetUniformLocation&#34;);
 
         // Apply the projection and view transformation
         GLES20.glUniformMatrix4fv(mvpHandle, 1, false, mvpMatrix, 0);
-        OpenGLUtils.checkGlError("glUniformMatrix4fv");
+        OpenGLUtils.checkGlError(&#34;glUniformMatrix4fv&#34;);
 
         // Draw the triangle
         GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, vertexCount);
@@ -269,11 +269,11 @@ public class OpenGLUtils {
     public static void checkGlError(String glOperation) {
         int error;
         while ((error = GLES20.glGetError()) != GLES20.GL_NO_ERROR) {
-            Log.e("OpenGLUtils", glOperation + ": glError " + error);
-            throw new RuntimeException(glOperation + ": glError " + error);
+            Log.e(&#34;OpenGLUtils&#34;, glOperation + &#34;: glError &#34; + error);
+            throw new RuntimeException(glOperation + &#34;: glError &#34; + error);
         }
     }
-}</code></pre></div></div><div class="paragraph"><p>And OpenGL on Android is up and running :-)</p></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2013/09/comparison-of-string-iterator-performance/">Comparison of String iterator performance</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se/">Bootstrapping Weld CDI from command line with Java SE</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/3ed1d0078678954b6e563504c944c6772231ab69" target="_blank">3ed1d00</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
+}</code></pre></div></div><div class="paragraph"><p>And OpenGL on Android is up and running :-)</p></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2013/09/comparison-of-string-iterator-performance/">Comparison of String iterator performance</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se/">Bootstrapping Weld CDI from command line with Java SE</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/63a36b07236d1869ff91cec0ebccf5aa005e0057" target="_blank">63a36b0</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
         window.addEventListener("load", function(event) {
             var disqusLoaded = false;
             var disqusObserver = new IntersectionObserver(function(entries, observer) {

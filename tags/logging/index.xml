@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Logging on www.mirkosertic.de</title>
@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Fri, 13 Jun 2014 09:07:11 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.mirkosertic.de/tags/logging/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 13 Jun 2014 09:07:11 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/logging/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to create user and eye friendly scannable Log4J log files</title>
       <link>https://www.mirkosertic.de/blog/2014/06/how-to-create-user-and-eye-friendly-scannable-log4j-log-files/</link>

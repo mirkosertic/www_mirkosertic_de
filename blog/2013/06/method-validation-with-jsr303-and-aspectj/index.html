@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Method validation with JSR303 and AspectJ &middot; Mirko Sertic</title><meta name="description" content="A short tutorial about how to use Hibernate Validator for method level validation"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.49"><meta name="robots" content="index,follow"><meta property="og:title" content="Method validation with JSR303 and AspectJ"><meta property="og:description" content="A short tutorial about how to use Hibernate Validator for method level validation"><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Method validation with JSR303 and AspectJ &middot; Mirko Sertic</title><meta name="description" content="A short tutorial about how to use Hibernate Validator for method level validation"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.80.0"><meta name="robots" content="index,follow"><meta property="og:title" content="Method validation with JSR303 and AspectJ"><meta property="og:description" content="A short tutorial about how to use Hibernate Validator for method level validation"><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 	ga('create', 'UA-33614060-2', 'auto');
@@ -29,7 +29,7 @@ public class Example {
 
     public void doNothingEndNotNull(String aStart,String aValue, @NotNull String aEnd) {
     }
-}</code></pre></div></div><div class="paragraph"><p>Wouldn&#8217;t it be cool to validate the method pre- and post conditions without coding too much? Here comes method validation and AspectJ to play. Using the following Aspect, we can validate the conditions using JSR303. If an argument does not match or validation fails, a ConstraintViolationException is thrown.</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">package de.mirkosertic.aspectj;
+}</code></pre></div></div><div class="paragraph"><p>Wouldn’t it be cool to validate the method pre- and post conditions without coding too much? Here comes method validation and AspectJ to play. Using the following Aspect, we can validate the conditions using JSR303. If an argument does not match or validation fails, a ConstraintViolationException is thrown.</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">package de.mirkosertic.aspectj;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -53,7 +53,7 @@ public class ValidatorAspect {
         validatorFactory = Validation.buildDefaultValidatorFactory();
     }
 
-    @Around("execution(@javax.validation.constraints.* public * * (..))")
+    @Around(&#34;execution(@javax.validation.constraints.* public * * (..))&#34;)
     public Object afterReturning(ProceedingJoinPoint aJoinPoint) throws Throwable {
 
         Object theReturnValue = aJoinPoint.proceed();
@@ -70,7 +70,7 @@ public class ValidatorAspect {
         return theReturnValue;
     }
 
-    @Around("execution(public * * (.., @javax.validation.constraints..* (*), ..))")
+    @Around(&#34;execution(public * * (.., @javax.validation.constraints..* (*), ..))&#34;)
     public Object pointcutMethodArgument(ProceedingJoinPoint aJoinPoint) throws Throwable {
         return validateInvocation(aJoinPoint);
     }
@@ -89,7 +89,7 @@ public class ValidatorAspect {
 
         return aJoinPoint.proceed();
     }
-}</code></pre></div></div><div class="paragraph"><p>Nice! For further reading, please check the Hibernate Validator documentation.</p></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2013/05/comparison-of-jaxb-xml-and-json-serialization-performance/">Comparison of JAXB XML and JSON Serialization Performance</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2013/07/high-performance-android-handwriting/">High performance Android handwriting</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/3ed1d0078678954b6e563504c944c6772231ab69" target="_blank">3ed1d00</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
+}</code></pre></div></div><div class="paragraph"><p>Nice! For further reading, please check the Hibernate Validator documentation.</p></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2013/05/comparison-of-jaxb-xml-and-json-serialization-performance/">Comparison of JAXB XML and JSON Serialization Performance</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2013/07/high-performance-android-handwriting/">High performance Android handwriting</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/63a36b07236d1869ff91cec0ebccf5aa005e0057" target="_blank">63a36b0</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
         window.addEventListener("load", function(event) {
             var disqusLoaded = false;
             var disqusObserver = new IntersectionObserver(function(entries, observer) {

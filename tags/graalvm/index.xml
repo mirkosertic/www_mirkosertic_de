@@ -1,17 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Graalvm on www.mirkosertic.de</title>
+    <title>GraalVM on www.mirkosertic.de</title>
     <link>https://www.mirkosertic.de/tags/graalvm/</link>
-    <description>Recent content in Graalvm on www.mirkosertic.de</description>
+    <description>Recent content in GraalVM on www.mirkosertic.de</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Tue, 23 Apr 2019 00:00:00 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.mirkosertic.de/tags/graalvm/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 23 Apr 2019 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/graalvm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Packaging JavaFX Applications for the Desktop</title>
       <link>https://www.mirkosertic.de/blog/2019/04/java-desktop-packaging/</link>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Enterprise on www.mirkosertic.de</title>
@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Thu, 26 Oct 2017 00:00:00 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.mirkosertic.de/tags/enterprise/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 26 Oct 2017 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/enterprise/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Implementing a custom Query Parser for Apache Solr</title>
       <link>https://www.mirkosertic.de/blog/2017/10/custom-query-parser-for-solr/</link>
@@ -77,7 +73,7 @@
       <pubDate>Tue, 26 Mar 2013 08:50:41 +0100</pubDate>
       
       <guid>https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server/</guid>
-      <description>Once i was thinking about writing Enterprise Java Beans(EJBs) with the Scala programming language. This should be easy as Scala greatly incorporates with existing Java code bases. But let&amp;#8217;s create a small test to verify this!
+      <description>Once i was thinking about writing Enterprise Java Beans(EJBs) with the Scala programming language. This should be easy as Scala greatly incorporates with existing Java code bases. But let’s create a small test to verify this!
  For this example, i am using Apache TomEE 1.5.1 as a JEE Web Profile certified server and Scala 2.10 to create a small stateless session bean and invoke it from a servlet. The stateless bean is injected to the servlet using CDI.</description>
     </item>
     
@@ -129,7 +125,7 @@
       <pubDate>Mon, 10 Sep 2012 06:48:34 +0200</pubDate>
       
       <guid>https://www.mirkosertic.de/blog/2012/09/the-onion-architecture/</guid>
-      <description>The Problem Often we develop complex business driven applications. While we design our application, it&amp;#8217;s architecture and it&amp;#8217;s layers, we often feel to use a traditional approach to define the layers. Here is a short structure of what i mean:
+      <description>The Problem Often we develop complex business driven applications. While we design our application, it’s architecture and it’s layers, we often feel to use a traditional approach to define the layers. Here is a short structure of what i mean:
  
  The problem with this structure is that the packaging is infrastructure driven. We have a user interface which uses the business logic. The business logic uses the data access layer to access data.</description>
     </item>
@@ -159,7 +155,7 @@
       <pubDate>Mon, 30 Jul 2012 10:30:07 +0200</pubDate>
       
       <guid>https://www.mirkosertic.de/blog/2012/07/enterprise-search-with-apache-solr/</guid>
-      <description>It you want to build a enterprise search engine, you don&amp;#8217;t have to reinvent the wheel. You can use open source engines like Apache Lucene or if you have just one day to implement it Apache Solr. Solr is a full blown enterprise search server, which comes with a lot of bundled plugins like meta-data and content extraction from a very common set of document types with Apache Tika , search highlighting, fragmented search and also similarity search for search results.</description>
+      <description>It you want to build a enterprise search engine, you don’t have to reinvent the wheel. You can use open source engines like Apache Lucene or if you have just one day to implement it Apache Solr. Solr is a full blown enterprise search server, which comes with a lot of bundled plugins like meta-data and content extraction from a very common set of document types with Apache Tika , search highlighting, fragmented search and also similarity search for search results.</description>
     </item>
     
     <item>

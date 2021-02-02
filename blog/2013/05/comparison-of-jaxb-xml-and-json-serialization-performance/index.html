@@ -1,10 +1,10 @@
-<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Comparison of JAXB XML and JSON Serialization Performance &middot; Mirko Sertic</title><meta name="description" content="Once i tried to figure out the difference between JAXB XML and JSON Java Object serialization performance. I wanted to know which one has the better run time performance and thus scales better. Here are the results!"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.49"><meta name="robots" content="index,follow"><meta property="og:title" content="Comparison of JAXB XML and JSON Serialization Performance"><meta property="og:description" content="Once i tried to figure out the difference between JAXB XML and JSON Java Object serialization performance. I wanted to know which one has the better run time performance and thus scales better. Here are the results!"><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2013/05/comparison-of-jaxb-xml-and-json-serialization-performance/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Comparison of JAXB XML and JSON Serialization Performance &middot; Mirko Sertic</title><meta name="description" content="Once i tried to figure out the difference between JAXB XML and JSON Java Object serialization performance. I wanted to know which one has the better run time performance and thus scales better. Here are the results!"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.80.0"><meta name="robots" content="index,follow"><meta property="og:title" content="Comparison of JAXB XML and JSON Serialization Performance"><meta property="og:description" content="Once i tried to figure out the difference between JAXB XML and JSON Java Object serialization performance. I wanted to know which one has the better run time performance and thus scales better. Here are the results!"><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2013/05/comparison-of-jaxb-xml-and-json-serialization-performance/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 	ga('create', 'UA-33614060-2', 'auto');
 	
 	ga('send', 'pageview');
-}</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="Tools &amp; Goodies">Tools &amp; Goodies</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Interesting Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link active" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><div itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"><header class="post-header"><h1 class="post-title" itemprop="name headline">Comparison of JAXB XML and JSON Serialization Performance</h1><p class="post-date"><span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="2013-05-23" itemprop="datePublished">Thu, May 23, 2013</time> <span>by</span> <span itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name"><a href="https://twitter.com/mirkosertic" itemprop="url" rel="author">Mirko Sertic</a></span></span></p><p><span class="icon"><i class="fa fa-clock-white"></i></span><span>5 Minutes reading time</span></p><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags-white"></i></span><a href="/tags/performance">Performance</a></span> ,&nbsp;<a href="/tags/serialization">Serialization</a></p></header><article class="post-content clearfix" itemprop="articleBody"><div class="paragraph"><p>Once i tried to figure out the difference between JAXB XML and JSON Java Object serialization performance. I wanted to know which one has the better run time performance and thus scales better. Here are the results!</p></div><div class="paragraph"><p>The test setup is a Windows 7 64bit machine with Intel Core2 Quad Q9450 CPU @2,66GHz. Java Runtime is 1.7.0_07(quite old, i know)</p></div><div class="paragraph"><p>The profiling test case is to serialize and deserialize a simple Java object with JSON and XML. I wanted to run the process 1000, 10000, 100000 and 1000000 times. In contrast i used JSON, XML, Java ObjectOutputStream and Google Kryo. The following table shows the measures:</p></div><table class="tableblock frame-all grid-all stretch"><colgroup><col style="width: 20%;"><col style="width: 20%;"><col style="width: 20%;"><col style="width: 20%;"><col style="width: 20%;"></colgroup><tbody><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">1000 runs</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">10000 runs</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">100000 runs</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">1000000 runs</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Jettison/JSON Marshalling</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">168ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">863ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">2537ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">16659ms</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Jettison/JSON Unmarshalling</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">136ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">764ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">2229ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">12303ms</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">SDK JAXB XML Marshalling</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">109ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">598ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">2019ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">10513ms</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">SDK JAXB XML Unmarshalling</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">763ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">5574ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">29958ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">249972ms</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">SDK ObjectOutputStream Marshalling</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">71ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">243ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">470ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">1873ms</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Google Kryo Marshalling</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">14ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">85ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">290ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">2557ms</p></td></tr></tbody></table><div class="paragraph"><p>I used Jettison 2.1.3 for the test. Surprisingly it seems that XML marshalling is quite fast, even faster than JSON, but it creates more redundant data! But XML unmarshalling is terribly slow compared to JSON! And it also getting worse under heavy load, probably due to the XML DOM creates a lot of small objects, and this causes heavy garbage collector load. The non human readable serialization like ObjectOutputStream or Google Kryo perform better than JSON or XML at serialization time.</p></div><div class="paragraph"><p>Funny, isn&#8217;t it? It you want to know more about Java serialization performance, you can consult <a href="https://github.com/eishay/jvm-serializers/wiki">github.com/eishay/jvm-serializers/wiki</a>.</p></div><div class="paragraph"><p>JSON test case source code:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">import org.codehaus.jettison.json.JSONException;
+}</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="Tools &amp; Goodies">Tools &amp; Goodies</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Interesting Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link active" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><div itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"><header class="post-header"><h1 class="post-title" itemprop="name headline">Comparison of JAXB XML and JSON Serialization Performance</h1><p class="post-date"><span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="2013-05-23" itemprop="datePublished">Thu, May 23, 2013</time> <span>by</span> <span itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name"><a href="https://twitter.com/mirkosertic" itemprop="url" rel="author">Mirko Sertic</a></span></span></p><p><span class="icon"><i class="fa fa-clock-white"></i></span><span>5 Minutes reading time</span></p><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags-white"></i></span><a href="/tags/performance">Performance</a></span> ,&nbsp;<a href="/tags/serialization">Serialization</a></p></header><article class="post-content clearfix" itemprop="articleBody"><div class="paragraph"><p>Once i tried to figure out the difference between JAXB XML and JSON Java Object serialization performance. I wanted to know which one has the better run time performance and thus scales better. Here are the results!</p></div><div class="paragraph"><p>The test setup is a Windows 7 64bit machine with Intel Core2 Quad Q9450 CPU @2,66GHz. Java Runtime is 1.7.0_07(quite old, i know)</p></div><div class="paragraph"><p>The profiling test case is to serialize and deserialize a simple Java object with JSON and XML. I wanted to run the process 1000, 10000, 100000 and 1000000 times. In contrast i used JSON, XML, Java ObjectOutputStream and Google Kryo. The following table shows the measures:</p></div><table class="tableblock frame-all grid-all stretch"><colgroup><col style="width: 20%;"><col style="width: 20%;"><col style="width: 20%;"><col style="width: 20%;"><col style="width: 20%;"></colgroup><tbody><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">1000 runs</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">10000 runs</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">100000 runs</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">1000000 runs</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Jettison/JSON Marshalling</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">168ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">863ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">2537ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">16659ms</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Jettison/JSON Unmarshalling</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">136ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">764ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">2229ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">12303ms</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">SDK JAXB XML Marshalling</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">109ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">598ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">2019ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">10513ms</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">SDK JAXB XML Unmarshalling</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">763ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">5574ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">29958ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">249972ms</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">SDK ObjectOutputStream Marshalling</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">71ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">243ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">470ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">1873ms</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Google Kryo Marshalling</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">14ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">85ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">290ms</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">2557ms</p></td></tr></tbody></table><div class="paragraph"><p>I used Jettison 2.1.3 for the test. Surprisingly it seems that XML marshalling is quite fast, even faster than JSON, but it creates more redundant data! But XML unmarshalling is terribly slow compared to JSON! And it also getting worse under heavy load, probably due to the XML DOM creates a lot of small objects, and this causes heavy garbage collector load. The non human readable serialization like ObjectOutputStream or Google Kryo perform better than JSON or XML at serialization time.</p></div><div class="paragraph"><p>Funny, isn’t it? It you want to know more about Java serialization performance, you can consult <a href="https://github.com/eishay/jvm-serializers/wiki">github.com/eishay/jvm-serializers/wiki</a>.</p></div><div class="paragraph"><p>JSON test case source code:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 import org.codehaus.jettison.mapped.Configuration;
 import org.codehaus.jettison.mapped.MappedNamespaceConvention;
@@ -57,12 +57,12 @@ public class JSONPerformance {
         Configuration theConfig = new Configuration();
         MappedNamespaceConvention theConvention = new MappedNamespaceConvention(theConfig);
 
-        SimpleObject theObject = new SimpleObject("Mirko", "Sertic");
+        SimpleObject theObject = new SimpleObject(&#34;Mirko&#34;, &#34;Sertic&#34;);
 
         long theRuns = 1000000;
 
         // Marshalling
-        System.out.println("Performance test runing");
+        System.out.println(&#34;Performance test runing&#34;);
         long theCurrentTime = System.currentTimeMillis();
         for (int i = 0; i &lt;theRuns; i++) {
             StringWriter theWriter = new StringWriter();
@@ -70,10 +70,10 @@ public class JSONPerformance {
             Marshaller theMarshaller = theContext.createMarshaller();
             theMarshaller.marshal(theObject, theXMLWriter);
         }
-        System.out.println(System.currentTimeMillis() - theCurrentTime + " ms processing time");
+        System.out.println(System.currentTimeMillis() - theCurrentTime + &#34; ms processing time&#34;);
 
         // Unmarshalling
-        String theJSON = "{\"simpleObject\":{\"name1\":\"Mirko\",\"name2\":\"Sertic\"}}";
+        String theJSON = &#34;{\&#34;simpleObject\&#34;:{\&#34;name1\&#34;:\&#34;Mirko\&#34;,\&#34;name2\&#34;:\&#34;Sertic\&#34;}}&#34;;
         theCurrentTime = System.currentTimeMillis();
         for (int i = 0; i &lt;theRuns; i++) {
 
@@ -81,9 +81,9 @@ public class JSONPerformance {
             Unmarshaller theUnmarshaller = theContext.createUnmarshaller();
             SimpleObject theResult = (SimpleObject) theUnmarshaller.unmarshal(theXMLReader);
         }
-        System.out.println(System.currentTimeMillis() - theCurrentTime + " ms processing time");
+        System.out.println(System.currentTimeMillis() - theCurrentTime + &#34; ms processing time&#34;);
 
-        System.out.println("Done");
+        System.out.println(&#34;Done&#34;);
     }
 }</code></pre></div></div><div class="paragraph"><p>XML testcase source code:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -127,30 +127,30 @@ public class XMLPerformance {
 
         JAXBContext theContext = JAXBContext.newInstance(SimpleObject.class);
 
-        SimpleObject theObject = new SimpleObject("Mirko", "Sertic");
+        SimpleObject theObject = new SimpleObject(&#34;Mirko&#34;, &#34;Sertic&#34;);
 
         long theRuns = 1000000;
 
-        System.out.println("Performance test runing");
+        System.out.println(&#34;Performance test runing&#34;);
         long theCurrentTime = System.currentTimeMillis();
         for (int i = 0; i &lt;theRuns; i++) {
             Writer theWriter = new StringWriter();
             Marshaller theMarshaller = theContext.createMarshaller();
             theMarshaller.marshal(theObject, theWriter);
         }
-        System.out.println(System.currentTimeMillis() - theCurrentTime + " ms processing time");
+        System.out.println(System.currentTimeMillis() - theCurrentTime + &#34; ms processing time&#34;);
 
-        String theXML = "&lt;?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?&gt;&lt;simpleObject&gt;&lt;name1&gt;Mirko&lt;/name1&gt;" +
-                           "&lt;name2&gt;Sertic&lt;/name2&gt;&lt;/simpleObject&gt;";
+        String theXML = &#34;&lt;?xml version=\&#34;1.0\&#34; encoding=\&#34;UTF-8\&#34; standalone=\&#34;yes\&#34;?&gt;&lt;simpleObject&gt;&lt;name1&gt;Mirko&lt;/name1&gt;&#34; +
+                           &#34;&lt;name2&gt;Sertic&lt;/name2&gt;&lt;/simpleObject&gt;&#34;;
         theCurrentTime = System.currentTimeMillis();
         for (int i = 0; i &lt;theRuns; i++) {
             Unmarshaller theUnmarshaller = theContext.createUnmarshaller();
             SimpleObject theResult = (SimpleObject) theUnmarshaller.unmarshal(new StringReader(theXML));
         }
-        System.out.println(System.currentTimeMillis() - theCurrentTime + " ms processing time");
+        System.out.println(System.currentTimeMillis() - theCurrentTime + &#34; ms processing time&#34;);
 
 
-        System.out.println("Done");
+        System.out.println(&#34;Done&#34;);
     }
 }</code></pre></div></div><div class="paragraph"><p>ObjectOutputStream testcase source code:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">import javax.xml.bind.JAXBException;
 import java.io.ByteArrayOutputStream;
@@ -184,18 +184,18 @@ public class ObjectStreamPerformance {
 
     public static void main(String[] args) throws JAXBException, IOException {
 
-        SimpleObject theObject = new SimpleObject("Mirko", "Sertic");
+        SimpleObject theObject = new SimpleObject(&#34;Mirko&#34;, &#34;Sertic&#34;);
 
         long theRuns = 1000000;
 
-        System.out.println("Performance test runing");
+        System.out.println(&#34;Performance test runing&#34;);
         long theCurrentTime = System.currentTimeMillis();
         for (int i = 0; i &lt; theRuns; i++) {
             ObjectOutputStream theStream = new ObjectOutputStream(new ByteArrayOutputStream());
             theStream.writeObject(theObject);
         }
-        System.out.println(System.currentTimeMillis() - theCurrentTime + " ms processing time");
-        System.out.println("Done");
+        System.out.println(System.currentTimeMillis() - theCurrentTime + &#34; ms processing time&#34;);
+        System.out.println(&#34;Done&#34;);
     }
 }</code></pre></div></div><div class="paragraph"><p>Google Kryo testcase source code:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">import javax.xml.bind.JAXBException;
 import java.io.*;
@@ -230,22 +230,22 @@ public class KryoPerformance {
 
     public static void main(String[] args) throws JAXBException, IOException {
 
-        SimpleObject theObject = new SimpleObject("Mirko", "Sertic");
+        SimpleObject theObject = new SimpleObject(&#34;Mirko&#34;, &#34;Sertic&#34;);
 
         Kryo theKryo = new Kryo();
         theKryo.register(SimpleObject.class);
 
         long theRuns = 1000000;
 
-        System.out.println("Performance test runing");
+        System.out.println(&#34;Performance test runing&#34;);
         long theCurrentTime = System.currentTimeMillis();
         for (int i = 0; i &lt; theRuns; i++) {
             theKryo.writeObject(ByteBuffer.allocate(5000), theObject);
         }
-        System.out.println(System.currentTimeMillis() - theCurrentTime + " ms processing time");
-        System.out.println("Done");
+        System.out.println(System.currentTimeMillis() - theCurrentTime + &#34; ms processing time&#34;);
+        System.out.println(&#34;Done&#34;);
     }
-}</code></pre></div></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2013/05/building-portals-with-javafx-html5-and-some-microdata/">Building Portals with JavaFX, HTML5 and some Microdata</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj/">Method validation with JSR303 and AspectJ</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/3ed1d0078678954b6e563504c944c6772231ab69" target="_blank">3ed1d00</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
+}</code></pre></div></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2013/05/building-portals-with-javafx-html5-and-some-microdata/">Building Portals with JavaFX, HTML5 and some Microdata</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj/">Method validation with JSR303 and AspectJ</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/63a36b07236d1869ff91cec0ebccf5aa005e0057" target="_blank">63a36b0</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
         window.addEventListener("load", function(event) {
             var disqusLoaded = false;
             var disqusObserver = new IntersectionObserver(function(entries, observer) {

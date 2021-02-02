@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Globals on www.mirkosertic.de</title>
@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Wed, 18 Nov 2020 00:00:00 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.mirkosertic.de/global/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 18 Nov 2020 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/global/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tools &amp; Goodies</title>
       <link>https://www.mirkosertic.de/global/toolsgoodies/</link>
@@ -66,13 +62,10 @@
       
       <guid>https://www.mirkosertic.de/global/impressum/</guid>
       <description>Impressum Angaben gemäß § 5 TMG
- Mirko Sertic
-Josefine-Mauser-Strasse 66
-48157 Münster
+ Mirko Sertic Josefine-Mauser-Strasse 66 48157 Münster
  Kontakt
- Telefon: 01575-1337193
-E-Mail: mirko@mirkosertic.de
- Haftungsausschluss Haftung für Inhalte Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß &amp;sect; 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach &amp;sect;&amp;sect; 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</description>
+ Telefon: 01575-1337193 E-Mail: mirko@mirkosertic.de
+ Haftungsausschluss Haftung für Inhalte Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</description>
     </item>
     
   </channel>

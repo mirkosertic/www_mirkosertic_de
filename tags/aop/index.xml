@@ -1,17 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Aop on www.mirkosertic.de</title>
+    <title>AOP on www.mirkosertic.de</title>
     <link>https://www.mirkosertic.de/tags/aop/</link>
-    <description>Recent content in Aop on www.mirkosertic.de</description>
+    <description>Recent content in AOP on www.mirkosertic.de</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Wed, 14 Dec 2016 12:33:44 +0100</lastBuildDate>
-    
-	<atom:link href="https://www.mirkosertic.de/tags/aop/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 14 Dec 2016 12:33:44 +0100</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/aop/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Preconditions, Project Lombok, JSR 303 and JSR 308</title>
       <link>https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308/</link>
@@ -29,7 +25,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj/</guid>
       <description>Hibernate Validator since version 4.2 supports method validation. For instance consider the following Java code:
- package de.mirkosertic.aspectj; import javax.validation.constraints.NotNull; public class Example { public void doNothing(String aValue) { } public String getString(String aValue) { return aValue; } public @NotNull String getNullString(String aValue) { return aValue; } public void doNothingSingleNotNull(@NotNull String aValue) { } public void doNothingMiddleNotNull(String aStart,@NotNull String aValue, String aEnd) { } public void doNothingEndNotNull(String aStart,String aValue, @NotNull String aEnd) { } }   Wouldn&amp;#8217;t it be cool to validate the method pre- and post conditions without coding too much?</description>
+ package de.mirkosertic.aspectj; import javax.validation.constraints.NotNull; public class Example { public void doNothing(String aValue) { } public String getString(String aValue) { return aValue; } public @NotNull String getNullString(String aValue) { return aValue; } public void doNothingSingleNotNull(@NotNull String aValue) { } public void doNothingMiddleNotNull(String aStart,@NotNull String aValue, String aEnd) { } public void doNothingEndNotNull(String aStart,String aValue, @NotNull String aEnd) { } }   Wouldn’t it be cool to validate the method pre- and post conditions without coding too much?</description>
     </item>
     
     <item>
@@ -70,7 +66,7 @@
       <pubDate>Mon, 30 Jul 2012 09:49:00 +0200</pubDate>
       
       <guid>https://www.mirkosertic.de/blog/2012/07/software-defect-detection-with-aop-and-jsr-303-jsr-305-jsr-308/</guid>
-      <description>Summary For many years common runtime exceptions like NullPointerException or ClassCastException are haunting poor Java programmers. This often leads to repetitions in the source code for checking method arguments for nullness. This is violating the DRY(Don&amp;#8217;t repeat yourself) principle. The Java Community Process created JSR-305 to address this issue. Unfortunately this JSR didn&amp;#8217;t become part of the official Java languages, but tools like FindBugs or IDEs like IntelliJ are offering static code analysis to find such NullPointerExceptions at compile time.</description>
+      <description>Summary For many years common runtime exceptions like NullPointerException or ClassCastException are haunting poor Java programmers. This often leads to repetitions in the source code for checking method arguments for nullness. This is violating the DRY(Don’t repeat yourself) principle. The Java Community Process created JSR-305 to address this issue. Unfortunately this JSR didn’t become part of the official Java languages, but tools like FindBugs or IDEs like IntelliJ are offering static code analysis to find such NullPointerExceptions at compile time.</description>
     </item>
     
   </channel>

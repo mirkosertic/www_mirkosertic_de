@@ -1,17 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Html5 on www.mirkosertic.de</title>
+    <title>HTML5 on www.mirkosertic.de</title>
     <link>https://www.mirkosertic.de/tags/html5/</link>
-    <description>Recent content in Html5 on www.mirkosertic.de</description>
+    <description>Recent content in HTML5 on www.mirkosertic.de</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Thu, 20 Dec 2018 00:00:00 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.mirkosertic.de/tags/html5/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 20 Dec 2018 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/html5/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WebAssembly with vue.js</title>
       <link>https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/</link>
@@ -46,7 +42,7 @@
       <pubDate>Mon, 30 Jan 2017 01:43:48 +0200</pubDate>
       
       <guid>https://www.mirkosertic.de/blog/2017/01/why-i-switched-to-static-html-generators/</guid>
-      <description>The Beginning This Blog started its life a few years ago. At the beginning, I was using DokuWiki for writing and editing. This was good, but I was very limited by the provided editors and markup. So I came to the point that I needed something else. And you will of course ask &#34;what else&#34;? Well, for a Blog, there is a very popular answer: Use Wordpress!
+      <description>The Beginning This Blog started its life a few years ago. At the beginning, I was using DokuWiki for writing and editing. This was good, but I was very limited by the provided editors and markup. So I came to the point that I needed something else. And you will of course ask &amp;#34;what else&amp;#34;? Well, for a Blog, there is a very popular answer: Use Wordpress!
  So I installed Wordpress on my web host, and migrated the whole content.</description>
     </item>
     
@@ -68,7 +64,7 @@
       <pubDate>Thu, 24 Nov 2016 06:14:41 +0100</pubDate>
       
       <guid>https://www.mirkosertic.de/blog/2016/11/compile-time-speed-gwt-2-8-0-vs-teavm-0-4-3/</guid>
-      <description>Some years ago I wrote a JavaFX based Game authoring system. It was also written to be ported to different run time environments by using transpiler technologies such as GWT or TeaVM. While TeaVM was heavily improved over time, I haven&amp;#8217;t seen a new GWT release in the wild. Now, GWT 2.8.0 is released, and the question arises: Is the compiler still as slow as in 2.7? Well, lets take a look!</description>
+      <description>Some years ago I wrote a JavaFX based Game authoring system. It was also written to be ported to different run time environments by using transpiler technologies such as GWT or TeaVM. While TeaVM was heavily improved over time, I haven’t seen a new GWT release in the wild. Now, GWT 2.8.0 is released, and the question arises: Is the compiler still as slow as in 2.7? Well, lets take a look!</description>
     </item>
     
     <item>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Interesting on www.mirkosertic.de</title>
@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Thu, 20 Dec 2018 00:00:00 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.mirkosertic.de/tags/interesting/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 20 Dec 2018 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/interesting/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WebAssembly with vue.js</title>
       <link>https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/</link>
@@ -29,7 +25,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2018/02/alicebobcaroldaveopencl/</guid>
       <description>An office fairy tale Once upon a time in an office far far away worked four very nice IT people very hard in their office cubicles. Their names were Alice, Bob, Carol and Dave.
- They worked very hard each day. They started work at 9 o&amp;#8217;clock, and finished often after sunset. They were very happy in their business, but they were very lonely in their private life due to the amount of work they did every day.</description>
+ They worked very hard each day. They started work at 9 o’clock, and finished often after sunset. They were very happy in their business, but they were very lonely in their private life due to the amount of work they did every day.</description>
     </item>
     
     <item>
@@ -160,7 +156,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj/</guid>
       <description>Hibernate Validator since version 4.2 supports method validation. For instance consider the following Java code:
- package de.mirkosertic.aspectj; import javax.validation.constraints.NotNull; public class Example { public void doNothing(String aValue) { } public String getString(String aValue) { return aValue; } public @NotNull String getNullString(String aValue) { return aValue; } public void doNothingSingleNotNull(@NotNull String aValue) { } public void doNothingMiddleNotNull(String aStart,@NotNull String aValue, String aEnd) { } public void doNothingEndNotNull(String aStart,String aValue, @NotNull String aEnd) { } }   Wouldn&amp;#8217;t it be cool to validate the method pre- and post conditions without coding too much?</description>
+ package de.mirkosertic.aspectj; import javax.validation.constraints.NotNull; public class Example { public void doNothing(String aValue) { } public String getString(String aValue) { return aValue; } public @NotNull String getNullString(String aValue) { return aValue; } public void doNothingSingleNotNull(@NotNull String aValue) { } public void doNothingMiddleNotNull(String aStart,@NotNull String aValue, String aEnd) { } public void doNothingEndNotNull(String aStart,String aValue, @NotNull String aEnd) { } }   Wouldn’t it be cool to validate the method pre- and post conditions without coding too much?</description>
     </item>
     
     <item>
@@ -209,7 +205,7 @@
       <pubDate>Tue, 26 Mar 2013 08:50:41 +0100</pubDate>
       
       <guid>https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server/</guid>
-      <description>Once i was thinking about writing Enterprise Java Beans(EJBs) with the Scala programming language. This should be easy as Scala greatly incorporates with existing Java code bases. But let&amp;#8217;s create a small test to verify this!
+      <description>Once i was thinking about writing Enterprise Java Beans(EJBs) with the Scala programming language. This should be easy as Scala greatly incorporates with existing Java code bases. But let’s create a small test to verify this!
  For this example, i am using Apache TomEE 1.5.1 as a JEE Web Profile certified server and Scala 2.10 to create a small stateless session bean and invoke it from a servlet. The stateless bean is injected to the servlet using CDI.</description>
     </item>
     
@@ -289,7 +285,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/08/putting-your-objects-into-context-or-why-overwriting-tostring-can-be-evil/</guid>
       <description>Often we need to display Java business objects in the user interface. The easiest way is to overwrite the toString() method and give back the String representation of the object. This seems to be easy, but it is an evil temptation.
- I&amp;#8217;d consider this as a break of the single responsibility rule in object oriented design. The responsibility of the business object is to contain business logic. The responsibility of ui classes is to display something to the user.</description>
+ I’d consider this as a break of the single responsibility rule in object oriented design. The responsibility of the business object is to contain business logic. The responsibility of ui classes is to display something to the user.</description>
     </item>
     
     <item>
@@ -298,7 +294,7 @@
       <pubDate>Thu, 02 Aug 2012 03:42:12 +0200</pubDate>
       
       <guid>https://www.mirkosertic.de/blog/2012/08/the-law-of-leaky-abstractions/</guid>
-      <description>Personally i really like Joel Spolskys law of Leaky abstractions. Every architect should read and understand his article. Here is a summary of this law taken from Joel&amp;#8217;s Website and Wikipedia :
+      <description>Personally i really like Joel Spolskys law of Leaky abstractions. Every architect should read and understand his article. Here is a summary of this law taken from Joel’s Website and Wikipedia :
  History The term “leaky abstraction” appears to have been coined in 2002 by Joel Spolsky. However, an earlier paper by Kiczales clearly describes some of the issues with imperfect abstractions and presents a potential solution to the problem by allowing for the customization of the abstraction itself.</description>
     </item>
     
@@ -308,7 +304,7 @@
       <pubDate>Mon, 30 Jul 2012 09:49:00 +0200</pubDate>
       
       <guid>https://www.mirkosertic.de/blog/2012/07/software-defect-detection-with-aop-and-jsr-303-jsr-305-jsr-308/</guid>
-      <description>Summary For many years common runtime exceptions like NullPointerException or ClassCastException are haunting poor Java programmers. This often leads to repetitions in the source code for checking method arguments for nullness. This is violating the DRY(Don&amp;#8217;t repeat yourself) principle. The Java Community Process created JSR-305 to address this issue. Unfortunately this JSR didn&amp;#8217;t become part of the official Java languages, but tools like FindBugs or IDEs like IntelliJ are offering static code analysis to find such NullPointerExceptions at compile time.</description>
+      <description>Summary For many years common runtime exceptions like NullPointerException or ClassCastException are haunting poor Java programmers. This often leads to repetitions in the source code for checking method arguments for nullness. This is violating the DRY(Don’t repeat yourself) principle. The Java Community Process created JSR-305 to address this issue. Unfortunately this JSR didn’t become part of the official Java languages, but tools like FindBugs or IDEs like IntelliJ are offering static code analysis to find such NullPointerExceptions at compile time.</description>
     </item>
     
   </channel>

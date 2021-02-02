@@ -1,17 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Springboot on www.mirkosertic.de</title>
+    <title>SpringBoot on www.mirkosertic.de</title>
     <link>https://www.mirkosertic.de/tags/springboot/</link>
-    <description>Recent content in Springboot on www.mirkosertic.de</description>
+    <description>Recent content in SpringBoot on www.mirkosertic.de</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Sat, 31 Dec 2016 01:08:59 +0100</lastBuildDate>
-    
-	<atom:link href="https://www.mirkosertic.de/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 31 Dec 2016 01:08:59 +0100</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Spring Boot Admin UI</title>
       <link>https://www.mirkosertic.de/blog/2016/12/a-spring-boot-admin-ui/</link>

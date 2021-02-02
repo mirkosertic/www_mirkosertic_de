@@ -1,17 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Domain Driven Design on www.mirkosertic.de</title>
+    <title>Domain-driven Design on www.mirkosertic.de</title>
     <link>https://www.mirkosertic.de/tags/domain-driven-design/</link>
-    <description>Recent content in Domain Driven Design on www.mirkosertic.de</description>
+    <description>Recent content in Domain-driven Design on www.mirkosertic.de</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Mon, 06 Mar 2017 00:00:00 +0100</lastBuildDate>
-    
-	<atom:link href="https://www.mirkosertic.de/tags/domain-driven-design/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 06 Mar 2017 00:00:00 +0100</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/domain-driven-design/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Service integration at UI level with server side includes(SSI)</title>
       <link>https://www.mirkosertic.de/blog/2017/03/integration-at-ui-level-with-server-side-includes/</link>
@@ -67,7 +63,7 @@
       <pubDate>Mon, 10 Sep 2012 06:48:34 +0200</pubDate>
       
       <guid>https://www.mirkosertic.de/blog/2012/09/the-onion-architecture/</guid>
-      <description>The Problem Often we develop complex business driven applications. While we design our application, it&amp;#8217;s architecture and it&amp;#8217;s layers, we often feel to use a traditional approach to define the layers. Here is a short structure of what i mean:
+      <description>The Problem Often we develop complex business driven applications. While we design our application, it’s architecture and it’s layers, we often feel to use a traditional approach to define the layers. Here is a short structure of what i mean:
  
  The problem with this structure is that the packaging is infrastructure driven. We have a user interface which uses the business logic. The business logic uses the data access layer to access data.</description>
     </item>
@@ -78,7 +74,7 @@
       <pubDate>Sun, 29 Jul 2012 08:42:57 +0200</pubDate>
       
       <guid>https://www.mirkosertic.de/blog/2012/07/domain-driven-design-overview-and-building-blocks/</guid>
-      <description>There are a lot of excellent blogs out where about Domain Driven Design and what it&amp;#8217;s all about. I prefer Wikipedia for a short introduction, but there is also an excellent article at InfoQ about Domain Driven Design. If you want to know more about the principles behind DDD, you can also consult the GRASP Patterns or the SOLID Patterns. Here is a summary of DDD (also taken from Wikipedia):</description>
+      <description>There are a lot of excellent blogs out where about Domain Driven Design and what it’s all about. I prefer Wikipedia for a short introduction, but there is also an excellent article at InfoQ about Domain Driven Design. If you want to know more about the principles behind DDD, you can also consult the GRASP Patterns or the SOLID Patterns. Here is a summary of DDD (also taken from Wikipedia):</description>
     </item>
     
   </channel>

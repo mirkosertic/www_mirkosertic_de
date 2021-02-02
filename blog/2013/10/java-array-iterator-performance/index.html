@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Java Array Iterator Performance &middot; Mirko Sertic</title><meta name="description" content="Lets check a very simple example: we want to fill a multi-dimensional array with values. What is the fastest way to do so?"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.49"><meta name="robots" content="index,follow"><meta property="og:title" content="Java Array Iterator Performance"><meta property="og:description" content="Lets check a very simple example: we want to fill a multi-dimensional array with values. What is the fastest way to do so?"><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2013/10/java-array-iterator-performance/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Java Array Iterator Performance &middot; Mirko Sertic</title><meta name="description" content="Lets check a very simple example: we want to fill a multi-dimensional array with values. What is the fastest way to do so?"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.80.0"><meta name="robots" content="index,follow"><meta property="og:title" content="Java Array Iterator Performance"><meta property="og:description" content="Lets check a very simple example: we want to fill a multi-dimensional array with values. What is the fastest way to do so?"><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2013/10/java-array-iterator-performance/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 	ga('create', 'UA-33614060-2', 'auto');
@@ -18,7 +18,7 @@ if (!doNotTrack) {
                 }
             }
         }
-        System.out.println("RowOrder : " + (System.currentTimeMillis() - theTime));
+        System.out.println(&#34;RowOrder : &#34; + (System.currentTimeMillis() - theTime));
     }
 
     void columnOrderTest() {
@@ -31,7 +31,7 @@ if (!doNotTrack) {
                 }
             }
         }
-        System.out.println("ColumnOrder : " + (System.currentTimeMillis() - theTime));
+        System.out.println(&#34;ColumnOrder : &#34; + (System.currentTimeMillis() - theTime));
     }
 
     void arrayTest1() {
@@ -48,7 +48,7 @@ if (!doNotTrack) {
                 }
             }
         }
-        System.out.println("ArrayTest1 : " + (System.currentTimeMillis() - theTime) + " #" + theCounter);
+        System.out.println(&#34;ArrayTest1 : &#34; + (System.currentTimeMillis() - theTime) + &#34; #&#34; + theCounter);
     }
 
     void arrayTest2() {
@@ -56,7 +56,7 @@ if (!doNotTrack) {
         int theArray[] = new int[SIZE*SIZE*SIZE];
         long theTime = System.currentTimeMillis();
         Arrays.fill(theArray, 0);
-        System.out.println("ArrayTest2 : " + (System.currentTimeMillis() - theTime));
+        System.out.println(&#34;ArrayTest2 : &#34; + (System.currentTimeMillis() - theTime));
     }
 
     void arrayTest3() {
@@ -73,7 +73,7 @@ if (!doNotTrack) {
                 }
             }
         }
-        System.out.println("ArrayTest3 : " + (System.currentTimeMillis() - theTime) + " #" + theCounter);
+        System.out.println(&#34;ArrayTest3 : &#34; + (System.currentTimeMillis() - theTime) + &#34; #&#34; + theCounter);
     }
 
      public static void main(String[] args) {
@@ -84,7 +84,7 @@ if (!doNotTrack) {
         theTest.arrayTest2();
         theTest.arrayTest3();
     }
-}</code></pre></div></div><div class="paragraph"><p>The rowOrderTest() Method finishes on my machine within 42ms, the columnOrderTest() Method takes about 2195ms to complete, so it is more than 50 times slower than rowOrderTest(), but it does exactly the same! The columnOrderTest() Method just trashes the VM and CPU read ahead caches, so this explains the deadly slow down. This effect can be reproduced with long and byte as data types also.</p></div><div class="paragraph"><p>Some unexpected results are coming from the arrayTest1(), arrayTest2() and arrayTest3() Methods. Here i do not use a three dimensional array, i use a one dimensional array and emulate the other dimensions by offset multiplication. The arrayTest1() Method includes some little math to compute the array index, but on my machine it takes about 33ms to complete, so almost as fast as the rowOrderTest() Method. The arrayTest2() Method uses the SDK Array.fill Method to complete the task, and it still takes about 33ms to complete. The manual array fill in arrayTest3() takes about 36ms to complete, which is almost as fast as Array.fill(). Under the hood, Arrays.fill() does nothing else, so this is not surprising.</p></div><div class="paragraph"><p>Always check for array indexes and iteration algorithms, there might be room for performance improvements. From a performance point of view the best would be to avoid multi dimensional arrays at all and use other data structures.</p></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2013/10/java-se-context-and-dependency-injection-with-java-ee-support/">Java SE Context and Dependency Injection with Java EE support</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2013/11/java-properties-reinvented/">Java Properties reinvented</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/3ed1d0078678954b6e563504c944c6772231ab69" target="_blank">3ed1d00</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
+}</code></pre></div></div><div class="paragraph"><p>The rowOrderTest() Method finishes on my machine within 42ms, the columnOrderTest() Method takes about 2195ms to complete, so it is more than 50 times slower than rowOrderTest(), but it does exactly the same! The columnOrderTest() Method just trashes the VM and CPU read ahead caches, so this explains the deadly slow down. This effect can be reproduced with long and byte as data types also.</p></div><div class="paragraph"><p>Some unexpected results are coming from the arrayTest1(), arrayTest2() and arrayTest3() Methods. Here i do not use a three dimensional array, i use a one dimensional array and emulate the other dimensions by offset multiplication. The arrayTest1() Method includes some little math to compute the array index, but on my machine it takes about 33ms to complete, so almost as fast as the rowOrderTest() Method. The arrayTest2() Method uses the SDK Array.fill Method to complete the task, and it still takes about 33ms to complete. The manual array fill in arrayTest3() takes about 36ms to complete, which is almost as fast as Array.fill(). Under the hood, Arrays.fill() does nothing else, so this is not surprising.</p></div><div class="paragraph"><p>Always check for array indexes and iteration algorithms, there might be room for performance improvements. From a performance point of view the best would be to avoid multi dimensional arrays at all and use other data structures.</p></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2013/10/java-se-context-and-dependency-injection-with-java-ee-support/">Java SE Context and Dependency Injection with Java EE support</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2013/11/java-properties-reinvented/">Java Properties reinvented</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/63a36b07236d1869ff91cec0ebccf5aa005e0057" target="_blank">63a36b0</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
         window.addEventListener("load", function(event) {
             var disqusLoaded = false;
             var disqusObserver = new IntersectionObserver(function(entries, observer) {

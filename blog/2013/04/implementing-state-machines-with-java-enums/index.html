@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Implementing State Machines with Java Enums &middot; Mirko Sertic</title><meta name="description" content="Often we need to implement State Machines to encapsulate object behavior depending on a given object state. This can be cumbersome as it often leads to a lot of interfaces and implementation classes, and persisting such an object state often leads to problems, as we would need to implement a Hibernate custom type for instance to solve it."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.49"><meta name="robots" content="index,follow"><meta property="og:title" content="Implementing State Machines with Java Enums"><meta property="og:description" content="Often we need to implement State Machines to encapsulate object behavior depending on a given object state. This can be cumbersome as it often leads to a lot of interfaces and implementation classes, and persisting such an object state often leads to problems, as we would need to implement a Hibernate custom type for instance to solve it."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2013/04/implementing-state-machines-with-java-enums/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Implementing State Machines with Java Enums &middot; Mirko Sertic</title><meta name="description" content="Often we need to implement State Machines to encapsulate object behavior depending on a given object state. This can be cumbersome as it often leads to a lot of interfaces and implementation classes, and persisting such an object state often leads to problems, as we would need to implement a Hibernate custom type for instance to solve it."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.80.0"><meta name="robots" content="index,follow"><meta property="og:title" content="Implementing State Machines with Java Enums"><meta property="og:description" content="Often we need to implement State Machines to encapsulate object behavior depending on a given object state. This can be cumbersome as it often leads to a lot of interfaces and implementation classes, and persisting such an object state often leads to problems, as we would need to implement a Hibernate custom type for instance to solve it."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2013/04/implementing-state-machines-with-java-enums/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 	ga('create', 'UA-33614060-2', 'auto');
@@ -11,21 +11,21 @@ public enum State {
     INITIAL {
         @Override
         State doSomething(String aParameter) {
-            System.out.println("Doing Something in INITIAL state and jumping to NEXT_STEP, argument = " + aParameter);
+            System.out.println(&#34;Doing Something in INITIAL state and jumping to NEXT_STEP, argument = &#34; + aParameter);
             return NEXT_STEP;
         }
     },
     NEXT_STEP {
         @Override
         State doSomething(String aParameter) {
-            System.out.println("Doing Something in NEXT_STEP and jumping into FINAL, argument = " + aParameter);
+            System.out.println(&#34;Doing Something in NEXT_STEP and jumping into FINAL, argument = &#34; + aParameter);
             return FINAL;
         }
     },
     FINAL {
         @Override
         State doSomething(String aParameter) {
-            System.out.println("I am in FINAL state, argument = " + aParameter);
+            System.out.println(&#34;I am in FINAL state, argument = &#34; + aParameter);
             return this;
         }
     };
@@ -47,13 +47,13 @@ public class StatefulObject {
 
     public static void main(String[] args) {
         StatefulObject theObject = new StatefulObject();
-        theObject.performRequest("Hello");
-        theObject.performRequest("Hello");
-        theObject.performRequest("Hello");
-        theObject.performRequest("Hello");
-        theObject.performRequest("Hello");
+        theObject.performRequest(&#34;Hello&#34;);
+        theObject.performRequest(&#34;Hello&#34;);
+        theObject.performRequest(&#34;Hello&#34;);
+        theObject.performRequest(&#34;Hello&#34;);
+        theObject.performRequest(&#34;Hello&#34;);
     }
-}</code></pre></div></div><div class="paragraph"><p>Using Enums to model State Machines fits better than Interface/Implementation classes, and also an Enum can be easily persisted using Hibernate Enum types. Also, we have implemented the CQS principle and increased test-ability a lot.</p></div><div class="paragraph"><p>Stay tuned! If you want to see more of such cool guidelines, please consult Vaughn Vernon excellent book <a href="http://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/">Implementing Domain-Driven Design</a>.</p></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2013/03/mvc-revised-or-what-are-the-alternatives/">MVC revised or what are the alternatives?</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2013/04/adding-html5-microdata-to-dokuwiki/">Adding HTML5 Microdata to DokuWiki</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/3ed1d0078678954b6e563504c944c6772231ab69" target="_blank">3ed1d00</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
+}</code></pre></div></div><div class="paragraph"><p>Using Enums to model State Machines fits better than Interface/Implementation classes, and also an Enum can be easily persisted using Hibernate Enum types. Also, we have implemented the CQS principle and increased test-ability a lot.</p></div><div class="paragraph"><p>Stay tuned! If you want to see more of such cool guidelines, please consult Vaughn Vernon excellent book <a href="http://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/">Implementing Domain-Driven Design</a>.</p></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2013/03/mvc-revised-or-what-are-the-alternatives/">MVC revised or what are the alternatives?</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2013/04/adding-html5-microdata-to-dokuwiki/">Adding HTML5 Microdata to DokuWiki</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/63a36b07236d1869ff91cec0ebccf5aa005e0057" target="_blank">63a36b0</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
         window.addEventListener("load", function(event) {
             var disqusLoaded = false;
             var disqusObserver = new IntersectionObserver(function(entries, observer) {

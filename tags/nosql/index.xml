@@ -1,17 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nosql on www.mirkosertic.de</title>
+    <title>NoSQL on www.mirkosertic.de</title>
     <link>https://www.mirkosertic.de/tags/nosql/</link>
-    <description>Recent content in Nosql on www.mirkosertic.de</description>
+    <description>Recent content in NoSQL on www.mirkosertic.de</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Thu, 22 Nov 2012 03:37:03 +0100</lastBuildDate>
-    
-	<atom:link href="https://www.mirkosertic.de/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 22 Nov 2012 03:37:03 +0100</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>An overview of current NoSQL databases</title>
       <link>https://www.mirkosertic.de/blog/2012/11/an-overview-of-current-nosql-databases/</link>

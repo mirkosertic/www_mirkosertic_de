@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Swing Databinding with Mogwai DataBinding &middot; Mirko Sertic</title><meta name="description" content="While you are developing Java Swing based applications, you need a mechanism to bind Java objects to Swing widgets. Project mogwai.sourceforge.net provides a very simple but powerful framework called DataBinding to help you with this task. Here is an example."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.49"><meta name="robots" content="index,follow"><meta property="og:title" content="Swing Databinding with Mogwai DataBinding"><meta property="og:description" content="While you are developing Java Swing based applications, you need a mechanism to bind Java objects to Swing widgets. Project mogwai.sourceforge.net provides a very simple but powerful framework called DataBinding to help you with this task. Here is an example."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2012/06/swing-databinding-with-mogwai-databinding/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Swing Databinding with Mogwai DataBinding &middot; Mirko Sertic</title><meta name="description" content="While you are developing Java Swing based applications, you need a mechanism to bind Java objects to Swing widgets. Project mogwai.sourceforge.net provides a very simple but powerful framework called DataBinding to help you with this task. Here is an example."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.80.0"><meta name="robots" content="index,follow"><meta property="og:title" content="Swing Databinding with Mogwai DataBinding"><meta property="og:description" content="While you are developing Java Swing based applications, you need a mechanism to bind Java objects to Swing widgets. Project mogwai.sourceforge.net provides a very simple but powerful framework called DataBinding to help you with this task. Here is an example."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2012/06/swing-databinding-with-mogwai-databinding/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 	ga('create', 'UA-33614060-2', 'auto');
@@ -18,11 +18,11 @@ public class ExampleModel {
     private String[] entriesArray = new String[0];
 
     public ExampleModel() {
-        entries.add("A");
-        entries.add("B");
-        entries.add("C");
+        entries.add(&#34;A&#34;);
+        entries.add(&#34;B&#34;);
+        entries.add(&#34;C&#34;);
 
-        entriesArray = new String[]{"D", "E", "F"};
+        entriesArray = new String[]{&#34;D&#34;, &#34;E&#34;, &#34;F&#34;};
     }
 
     public String getString1() {
@@ -109,7 +109,7 @@ public class DataBindingTest1 {
     public static void main(String args[]) {
 
         // Setup the view
-        JFrame frame = new JFrame("Test");
+        JFrame frame = new JFrame(&#34;Test&#34;);
         frame.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 System.exit(0);
@@ -119,8 +119,8 @@ public class DataBindingTest1 {
 
         CellConstraints cons = new CellConstraints();
 
-        FormLayout layout = new FormLayout("90dlu,80dlu:grow",
-                "2dlu,p,2dlu,p,2dlu,p,2dlu,p,2dlu,p,2dlu,p,p,p,2dlu");
+        FormLayout layout = new FormLayout(&#34;90dlu,80dlu:grow&#34;,
+                &#34;2dlu,p,2dlu,p,2dlu,p,2dlu,p,2dlu,p,2dlu,p,p,p,2dlu&#34;);
 
         JPanel content = new JPanel();
         content.setLayout(layout);
@@ -128,40 +128,40 @@ public class DataBindingTest1 {
         frame.getContentPane().setLayout(new BorderLayout());
         frame.getContentPane().add(content, BorderLayout.CENTER);
 
-        JLabel label1 = new JLabel("JTextField with value");
+        JLabel label1 = new JLabel(&#34;JTextField with value&#34;);
         JTextField textfield1 = new JTextField();
 
         content.add(label1, cons.xy(1, 2));
         content.add(textfield1, cons.xy(2, 2));
 
-        JLabel label2 = new JLabel("JTextField without value");
+        JLabel label2 = new JLabel(&#34;JTextField without value&#34;);
         JTextField textfield2 = new JTextField();
 
         content.add(label2, cons.xy(1, 4));
         content.add(textfield2, cons.xy(2, 4));
 
-        JLabel label3 = new JLabel("JCheckBox");
+        JLabel label3 = new JLabel(&#34;JCheckBox&#34;);
         JCheckBox box3 = new JCheckBox();
 
         content.add(label3, cons.xy(1, 6));
         content.add(box3, cons.xy(2, 6));
 
-        JLabel label4 = new JLabel("JComboBox bound to Vector");
+        JLabel label4 = new JLabel(&#34;JComboBox bound to Vector&#34;);
         JComboBox combo1 = new JComboBox();
 
         content.add(label4, cons.xy(1, 8));
         content.add(combo1, cons.xy(2, 8));
 
-        JLabel label5 = new JLabel("JComboBox bound to Object[]");
+        JLabel label5 = new JLabel(&#34;JComboBox bound to Object[]&#34;);
         JComboBox combo2 = new JComboBox();
 
         content.add(label5, cons.xy(1, 10));
         content.add(combo2, cons.xy(2, 10));
 
-        JLabel label6 = new JLabel("JRadioButton");
-        JRadioButton radio1 = new JRadioButton("Radio 1");
-        JRadioButton radio2 = new JRadioButton("Radio 2");
-        JRadioButton radio3 = new JRadioButton("Radio 3");
+        JLabel label6 = new JLabel(&#34;JRadioButton&#34;);
+        JRadioButton radio1 = new JRadioButton(&#34;Radio 1&#34;);
+        JRadioButton radio2 = new JRadioButton(&#34;Radio 2&#34;);
+        JRadioButton radio3 = new JRadioButton(&#34;Radio 3&#34;);
 
         content.add(label6, cons.xy(1, 12));
         content.add(radio1, cons.xy(2, 12));
@@ -176,24 +176,24 @@ public class DataBindingTest1 {
 
         // Setup the model
         ExampleModel model = new ExampleModel();
-        model.setString1("Wutzpu");
+        model.setString1(&#34;Wutzpu&#34;);
         model.setBool(true);
-        model.setSelected("2");
+        model.setSelected(&#34;2&#34;);
 
         // Setup the binding
         final BindingInfo binding = new BindingInfo(ExampleModel.class);
-        binding.addBinding("string1", textfield1);
-        binding.addBinding("string2", textfield2);
-        binding.addBinding("bool", box3);
-        binding.addBinding("type", combo1);
-        binding.addBinding("entries", new ComboboxModelAdapter(combo1));
-        binding.addBinding("entriesArray", new ComboboxModelAdapter(combo2));
+        binding.addBinding(&#34;string1&#34;, textfield1);
+        binding.addBinding(&#34;string2&#34;, textfield2);
+        binding.addBinding(&#34;bool&#34;, box3);
+        binding.addBinding(&#34;type&#34;, combo1);
+        binding.addBinding(&#34;entries&#34;, new ComboboxModelAdapter(combo1));
+        binding.addBinding(&#34;entriesArray&#34;, new ComboboxModelAdapter(combo2));
 
         RadioButtonAdapter adaptor = new RadioButtonAdapter();
-        adaptor.addMapping("1", radio1);
-        adaptor.addMapping("2", radio2);
-        adaptor.addMapping("3", radio3);
-        binding.addBinding("selected", adaptor);
+        adaptor.addMapping(&#34;1&#34;, radio1);
+        adaptor.addMapping(&#34;2&#34;, radio2);
+        adaptor.addMapping(&#34;3&#34;, radio3);
+        binding.addBinding(&#34;selected&#34;, adaptor);
 
         binding.setDefaultModel(model);
 
@@ -202,7 +202,7 @@ public class DataBindingTest1 {
         binding.model2view();
 
         // Event listener
-        JButton button = new JButton("View 2 Model");
+        JButton button = new JButton(&#34;View 2 Model&#34;);
 
         //
         // This is an example event listener !
@@ -216,7 +216,7 @@ public class DataBindingTest1 {
                 ExampleModel model = (ExampleModel) binding.getDefaultModel();
 
                 // Modify the model
-                String test = model.getType() + " " + model.getSelected();
+                String test = model.getType() + &#34; &#34; + model.getSelected();
                 model.setString2(test);
 
                 // Transfer the model to the view
@@ -229,24 +229,24 @@ public class DataBindingTest1 {
     }
 }</code></pre></div></div><div class="paragraph"><p>This will generate a full functional Swing UI with bidirectional data binding between the model and the widgets. The tricky part is the initialization and usage of the Mogwai BindingInfo instance. The Initialization works as following:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">final BindingInfo binding = new BindingInfo(ExampleModel.class);
 
-binding.addBinding("string1", textfield1);
-binding.addBinding("string2", textfield2);
-binding.addBinding("bool", box3);
-binding.addBinding("type", combo1);
-binding.addBinding("entries", new ComboboxModelAdapter(combo1));
-binding.addBinding("entriesArray", new ComboboxModelAdapter(combo2));
+binding.addBinding(&#34;string1&#34;, textfield1);
+binding.addBinding(&#34;string2&#34;, textfield2);
+binding.addBinding(&#34;bool&#34;, box3);
+binding.addBinding(&#34;type&#34;, combo1);
+binding.addBinding(&#34;entries&#34;, new ComboboxModelAdapter(combo1));
+binding.addBinding(&#34;entriesArray&#34;, new ComboboxModelAdapter(combo2));
 
 RadioButtonAdapter adaptor = new RadioButtonAdapter();
-adaptor.addMapping("1", radio1);
-adaptor.addMapping("2", radio2);
-adaptor.addMapping("3", radio3);
-binding.addBinding("selected", adaptor);
+adaptor.addMapping(&#34;1&#34;, radio1);
+adaptor.addMapping(&#34;2&#34;, radio2);
+adaptor.addMapping(&#34;3&#34;, radio3);
+binding.addBinding(&#34;selected&#34;, adaptor);
 
 
 binding.setDefaultModel(model);</code></pre></div></div><div class="paragraph"><p>This creates a BindingInfo instance for a model of Type ExampleModel. The property “string1” is bound to the JTextField instance textfield1. The values of the array property “entriesArray” and the collection property “entries” are bound to the JComboBox instances combo1 and combo2. The property “selected” is bound to three RadioButtons, which are bundled to a group. If radio1 is selected, the value “1” is stored in the “selected” property of the model and so forth.</p></div><div class="paragraph"><p>The model is written to the UI with the following code:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">// Initialize the view !
 // This also forces the collection to model mapping to be initialized !
 binding.model2view();</code></pre></div></div><div class="paragraph"><p>The state of the UI is written back to the model with the following code:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">// Transfer the data to the model
-binding.view2model();</code></pre></div></div><div class="paragraph"><p>Using Mogwai Databinding, you can easily create user interfaces, bind them to POJOs and automate the time consuming and error prone task of copying and converting Java properties.</p></div><div class="metainfo"><span>Next posting: <a href="https://www.mirkosertic.de/blog/2012/07/reusing-domain-objects-to-create-query-specifications/">Reusing domain objects to create query specifications</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/3ed1d0078678954b6e563504c944c6772231ab69" target="_blank">3ed1d00</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
+binding.view2model();</code></pre></div></div><div class="paragraph"><p>Using Mogwai Databinding, you can easily create user interfaces, bind them to POJOs and automate the time consuming and error prone task of copying and converting Java properties.</p></div><div class="metainfo"><span>Next posting: <a href="https://www.mirkosertic.de/blog/2012/07/reusing-domain-objects-to-create-query-specifications/">Reusing domain objects to create query specifications</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/63a36b07236d1869ff91cec0ebccf5aa005e0057" target="_blank">63a36b0</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
         window.addEventListener("load", function(event) {
             var disqusLoaded = false;
             var disqusObserver = new IntersectionObserver(function(entries, observer) {

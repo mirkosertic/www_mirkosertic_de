@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Using Scala with JPA 2.0 &middot; Mirko Sertic</title><meta name="description" content="Recently i was thinking about persisting Scala classes with JPA. I tried to set up a mixed Java/Scala project, using Java code to do the JPA stuff and using Scala to create the entities. For a more complex example, i decided to persist a master/detail association to test if the Scala collections can be persisted, too. For the test i am using Scala 2.10.1 and the Hibernate 4.1.10.Final EntityManager as the JPA 2.0 vendor."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.49"><meta name="robots" content="index,follow"><meta property="og:title" content="Using Scala with JPA 2.0"><meta property="og:description" content="Recently i was thinking about persisting Scala classes with JPA. I tried to set up a mixed Java/Scala project, using Java code to do the JPA stuff and using Scala to create the entities. For a more complex example, i decided to persist a master/detail association to test if the Scala collections can be persisted, too. For the test i am using Scala 2.10.1 and the Hibernate 4.1.10.Final EntityManager as the JPA 2.0 vendor."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Using Scala with JPA 2.0 &middot; Mirko Sertic</title><meta name="description" content="Recently i was thinking about persisting Scala classes with JPA. I tried to set up a mixed Java/Scala project, using Java code to do the JPA stuff and using Scala to create the entities. For a more complex example, i decided to persist a master/detail association to test if the Scala collections can be persisted, too. For the test i am using Scala 2.10.1 and the Hibernate 4.1.10.Final EntityManager as the JPA 2.0 vendor."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.80.0"><meta name="robots" content="index,follow"><meta property="og:title" content="Using Scala with JPA 2.0"><meta property="og:description" content="Recently i was thinking about persisting Scala classes with JPA. I tried to set up a mixed Java/Scala project, using Java code to do the JPA stuff and using Scala to create the entities. For a more complex example, i decided to persist a master/detail association to test if the Scala collections can be persisted, too. For the test i am using Scala 2.10.1 and the Hibernate 4.1.10.Final EntityManager as the JPA 2.0 vendor."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 	ga('create', 'UA-33614060-2', 'auto');
@@ -18,18 +18,18 @@ public class JPA20 {
 
     public static void main(String[] args) {
 
-        EntityManagerFactory theEMF = Persistence.createEntityManagerFactory("ScalaMixedTutorial");
+        EntityManagerFactory theEMF = Persistence.createEntityManagerFactory(&#34;ScalaMixedTutorial&#34;);
         EntityManager theEntityManager = theEMF.createEntityManager();
 
         // Enter some testdata
         theEntityManager.getTransaction().begin();
-        Parent p = new Parent("name1","name2");
+        Parent p = new Parent(&#34;name1&#34;,&#34;name2&#34;);
         theEntityManager.persist(p);
         theEntityManager.getTransaction().commit();
 
         theEntityManager.getTransaction().begin();
-        p = new Parent("name2","name2");
-        Child c = new Child("child1");
+        p = new Parent(&#34;name2&#34;,&#34;name2&#34;);
+        Child c = new Child(&#34;child1&#34;);
         p.addChild(c);
         theEntityManager.persist(p);
         theEntityManager.getTransaction().commit();
@@ -42,14 +42,14 @@ public class JPA20 {
             System.out.println(theParent);
         }
     }
-}</code></pre></div></div><div class="paragraph"><p>And here is the console output:</p></div><div class="paragraph"><p>Hibernate: create table CHILD (id integer generated by default as identity (start with 1), name varchar(255), PARENT_ID integer, primary key (id)) Hibernate: create table PARENT (id integer generated by default as identity (start with 1), name1 varchar(255), name2 varchar(255), primary key (id)) Hibernate: alter table CHILD add constraint FK3D1FCFC63FC2D55 foreign key (PARENT_ID) references PARENT Mrz 19, 2013nto PARENT (id, name1, name2) values (default, ?, ?) Hibernate: insert into PARENT (id, name1, name2) values (default, ?, ?) Hibernate: insert into CHILD (id, name) values (default, ?) Hibernate: update CHILD set PARENT_ID=? where id=? Hibernate: select distinct parent0_.id as id1_, parent0_.name1 as name2_1_, parent0_.name2 as name3_1_ from PARENT parent0_ 1 name1 name2 [] 2 name2 name2 [child1]</p></div><div class="paragraph"><p>The two created entites are persisted and correctly retrieved. Fine!</p></div><div class="paragraph"><p>The tricky part starts with defining the entites. Let&#8217;s start with the Parent.scala class:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-scala" data-lang="scala">package de.mirkosertic.scala
+}</code></pre></div></div><div class="paragraph"><p>And here is the console output:</p></div><div class="paragraph"><p>Hibernate: create table CHILD (id integer generated by default as identity (start with 1), name varchar(255), PARENT_ID integer, primary key (id)) Hibernate: create table PARENT (id integer generated by default as identity (start with 1), name1 varchar(255), name2 varchar(255), primary key (id)) Hibernate: alter table CHILD add constraint FK3D1FCFC63FC2D55 foreign key (PARENT_ID) references PARENT Mrz 19, 2013nto PARENT (id, name1, name2) values (default, ?, ?) Hibernate: insert into PARENT (id, name1, name2) values (default, ?, ?) Hibernate: insert into CHILD (id, name) values (default, ?) Hibernate: update CHILD set PARENT_ID=? where id=? Hibernate: select distinct parent0_.id as id1_, parent0_.name1 as name2_1_, parent0_.name2 as name3_1_ from PARENT parent0_ 1 name1 name2 [] 2 name2 name2 [child1]</p></div><div class="paragraph"><p>The two created entites are persisted and correctly retrieved. Fine!</p></div><div class="paragraph"><p>The tricky part starts with defining the entites. Let’s start with the Parent.scala class:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-scala" data-lang="scala">package de.mirkosertic.scala
 
 import beans.BeanProperty
 import javax.persistence._
 import java.util
 
 @Entity
-@Table(name = "PARENT")
+@Table(name = &#34;PARENT&#34;)
 class Parent(@BeanProperty var name1: String, @BeanProperty var name2: String) {
 
   @Id
@@ -57,7 +57,7 @@ class Parent(@BeanProperty var name1: String, @BeanProperty var name2: String) {
   var id: Int = _
 
   @OneToMany(cascade = Array(CascadeType.ALL))
-  @JoinColumn(name = "PARENT_ID")
+  @JoinColumn(name = &#34;PARENT_ID&#34;)
   @BeanProperty
 
   // Use Java collection types instead of Scala ones to make JPA happy
@@ -81,14 +81,14 @@ class Parent(@BeanProperty var name1: String, @BeanProperty var name2: String) {
    *
    * @return id + name1 + name2 + childs as a String.
    */
-  override def toString() = id + " " + name1 + " " + name2 + " " + childs;
-}</code></pre></div></div><div class="paragraph"><p>This is a very good example. I am creating two constructors, one default constructor with private visibility to enable JPA/Hibernate proxy support, and one constructor which takes name1 and name2 as arguments. Finally i add a toString() implementation to the entity class.</p></div><div class="paragraph"><p>Please note that i am using field level annotations, so field access is used instead of property access. I don&#8217;t want to code redundant getter and setters, so i am using the Scala @BeanProperty annotation, this will tell the Scala compiler to create the getter and setter for me. This removes a lot of boilerplate code, which would otherwise just be there to make JPA happy and force property access. So data access is encapsulated within getter and setter, persistence is declared using annotations at field level, and construction is defined by a set of public constructors.</p></div><div class="paragraph"><p>One ugly thing remains: we have to use the Java collection API instead of Scala collections. This is a requirement by the JPA spec, as the field type must be a Java collection interface.Let&#8217;s take a look at the Child.scala class:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-scala" data-lang="scala">package de.mirkosertic.scala
+  override def toString() = id + &#34; &#34; + name1 + &#34; &#34; + name2 + &#34; &#34; + childs;
+}</code></pre></div></div><div class="paragraph"><p>This is a very good example. I am creating two constructors, one default constructor with private visibility to enable JPA/Hibernate proxy support, and one constructor which takes name1 and name2 as arguments. Finally i add a toString() implementation to the entity class.</p></div><div class="paragraph"><p>Please note that i am using field level annotations, so field access is used instead of property access. I don’t want to code redundant getter and setters, so i am using the Scala @BeanProperty annotation, this will tell the Scala compiler to create the getter and setter for me. This removes a lot of boilerplate code, which would otherwise just be there to make JPA happy and force property access. So data access is encapsulated within getter and setter, persistence is declared using annotations at field level, and construction is defined by a set of public constructors.</p></div><div class="paragraph"><p>One ugly thing remains: we have to use the Java collection API instead of Scala collections. This is a requirement by the JPA spec, as the field type must be a Java collection interface.Let’s take a look at the Child.scala class:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-scala" data-lang="scala">package de.mirkosertic.scala
 
 import beans.BeanProperty
 import javax.persistence._
 
 @Entity
-@Table(name = "CHILD")
+@Table(name = &#34;CHILD&#34;)
 class Child(@BeanProperty var name: String) {
 
   @Id
@@ -100,25 +100,25 @@ class Child(@BeanProperty var name: String) {
   private def this() = this(null)
 
   override def toString() = name
-}</code></pre></div></div><div class="paragraph"><p>The Child entity is straight forward. No comments here.</p></div><div class="paragraph"><p>Finally let&#8217;s take a look at the META-INF/persistence.xml file(i am using an embedded in-memory HSQLDB):</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;persistence xmlns="http://java.sun.com/xml/ns/persistence"
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
-             version="2.0"&gt;
-    &lt;persistence-unit name="ScalaMixedTutorial"&gt;
+}</code></pre></div></div><div class="paragraph"><p>The Child entity is straight forward. No comments here.</p></div><div class="paragraph"><p>Finally let’s take a look at the META-INF/persistence.xml file(i am using an embedded in-memory HSQLDB):</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+&lt;persistence xmlns=&#34;http://java.sun.com/xml/ns/persistence&#34;
+             xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
+             xsi:schemaLocation=&#34;http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd&#34;
+             version=&#34;2.0&#34;&gt;
+    &lt;persistence-unit name=&#34;ScalaMixedTutorial&#34;&gt;
         &lt;class&gt;de.mirkosertic.scala.Parent&lt;/class&gt;
         &lt;class&gt;de.mirkosertic.scala.Child&lt;/class&gt;
         &lt;properties&gt;
-            &lt;property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/&gt;
-            &lt;property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:MixedScala"/&gt;
-            &lt;property name="hibernate.show_sql" value="true"/&gt;
-            &lt;property name="hibernate.hbm2ddl.auto" value="create"/&gt;
+            &lt;property name=&#34;javax.persistence.jdbc.driver&#34; value=&#34;org.hsqldb.jdbcDriver&#34;/&gt;
+            &lt;property name=&#34;javax.persistence.jdbc.url&#34; value=&#34;jdbc:hsqldb:mem:MixedScala&#34;/&gt;
+            &lt;property name=&#34;hibernate.show_sql&#34; value=&#34;true&#34;/&gt;
+            &lt;property name=&#34;hibernate.hbm2ddl.auto&#34; value=&#34;create&#34;/&gt;
         &lt;/properties&gt;
     &lt;/persistence-unit&gt;
-&lt;/persistence&gt;</code></pre></div></div><div class="paragraph"><p>and also the Maven pom.xml:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+&lt;/persistence&gt;</code></pre></div></div><div class="paragraph"><p>and also the Maven pom.xml:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+&lt;project xmlns=&#34;http://maven.apache.org/POM/4.0.0&#34;
+         xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
+         xsi:schemaLocation=&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;&gt;
     &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 
     &lt;groupId&gt;MavenScalaMixed&lt;/groupId&gt;
@@ -201,7 +201,7 @@ class Child(@BeanProperty var name: String) {
             &lt;version&gt;2.2.9&lt;/version&gt;
         &lt;/dependency&gt;
     &lt;/dependencies&gt;
-&lt;/project&gt;</code></pre></div></div><div class="paragraph"><p>So it is possible to persist Scala classes with JPA. We just have to watch out for the collection types! Cool!</p></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2013/03/using-scala-in-legacy-applications/">Using Scala in legacy applications</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2013/03/maven-scala-and-aspectjaop/">Maven, Scala and AspectJ(AOP)</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/3ed1d0078678954b6e563504c944c6772231ab69" target="_blank">3ed1d00</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
+&lt;/project&gt;</code></pre></div></div><div class="paragraph"><p>So it is possible to persist Scala classes with JPA. We just have to watch out for the collection types! Cool!</p></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2013/03/using-scala-in-legacy-applications/">Using Scala in legacy applications</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2013/03/maven-scala-and-aspectjaop/">Maven, Scala and AspectJ(AOP)</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/63a36b07236d1869ff91cec0ebccf5aa005e0057" target="_blank">63a36b0</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
         window.addEventListener("load", function(event) {
             var disqusLoaded = false;
             var disqusObserver = new IntersectionObserver(function(entries, observer) {

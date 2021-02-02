@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Search on www.mirkosertic.de</title>
@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Thu, 26 Oct 2017 00:00:00 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.mirkosertic.de/tags/search/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 26 Oct 2017 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/search/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Implementing a custom Query Parser for Apache Solr</title>
       <link>https://www.mirkosertic.de/blog/2017/10/custom-query-parser-for-solr/</link>
@@ -48,7 +44,7 @@
       <pubDate>Mon, 30 Jul 2012 10:30:07 +0200</pubDate>
       
       <guid>https://www.mirkosertic.de/blog/2012/07/enterprise-search-with-apache-solr/</guid>
-      <description>It you want to build a enterprise search engine, you don&amp;#8217;t have to reinvent the wheel. You can use open source engines like Apache Lucene or if you have just one day to implement it Apache Solr. Solr is a full blown enterprise search server, which comes with a lot of bundled plugins like meta-data and content extraction from a very common set of document types with Apache Tika , search highlighting, fragmented search and also similarity search for search results.</description>
+      <description>It you want to build a enterprise search engine, you don’t have to reinvent the wheel. You can use open source engines like Apache Lucene or if you have just one day to implement it Apache Solr. Solr is a full blown enterprise search server, which comes with a lot of bundled plugins like meta-data and content extraction from a very common set of document types with Apache Tika , search highlighting, fragmented search and also similarity search for search results.</description>
     </item>
     
   </channel>
