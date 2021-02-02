@@ -28,7 +28,14 @@ jobs:
       - run: |
           npm install
           npm update
-          chmod 755 ./asciidoctor
-          echo "." >> $GITHUB_PATH
           unset "_JAVA_OPTIONS"
           npm run build
+      - uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: ./public
+          CLEAN: true
+      - run: |
+          curl http://www.google.com/webmasters/sitemaps/ping?sitemap=https://www.mirkosertic.de/sitemap.xml
+          curl http://www.bing.com/ping?sitemap=https://www.mirkosertic.de/sitemap.xml
