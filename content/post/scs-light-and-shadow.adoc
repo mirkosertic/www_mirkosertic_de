@@ -64,8 +64,6 @@ In SCS so it is not just a collection of technical principles, but rather a guid
 Without adjustments within the organization, the approach cannot show its advantages. Ideally, this corresponds to the organization of
 the Context-map from the DDD world.
 
-image:/media/Abbildung_1_ContextMap.png[]
-
 == Data storage
 
 An SCS should contain all functionalities that are necessary for the execution of the use cases it contains.
@@ -212,8 +210,6 @@ offline-capable, a different interface must be made available for the app. In th
 longer part of the SCS, and probably also the app development is no longer part of the actual SCS team. In this case, the compromise would be to add a (REST)
 API to the SCS and make this available to the app. The functionality then remains encapsulated in the SCS, only the app-specific part of the presentation layer
 is externalized.
-
-image:/media/Abbildung_2_Systemuebersicht.png[]
 
 == Lessons learned
 
