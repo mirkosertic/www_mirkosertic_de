@@ -3,6 +3,62 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.mirkosertic.de/tags/database/</loc>
+    <lastmod>2021-04-07T12:23:12+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/domain-driven-design/</loc>
+    <lastmod>2021-04-07T12:23:12+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/enterprise/</loc>
+    <lastmod>2021-04-07T12:23:12+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/post/</loc>
+    <lastmod>2021-04-07T12:23:12+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2021/04/scs-light-and-shadow/</loc>
+    <lastmod>2021-04-07T12:23:12+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/</loc>
+    <lastmod>2021-04-07T12:23:12+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/web/</loc>
+    <lastmod>2021-04-07T12:23:12+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/</loc>
+    <lastmod>2021-04-07T12:23:12+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.mirkosertic.de/global/</loc>
     <lastmod>2020-11-18T21:50:30+01:00</lastmod>
     <changefreq>daily</changefreq>
@@ -11,13 +67,6 @@
   
   <url>
     <loc>https://www.mirkosertic.de/global/toolsgoodies/</loc>
-    <lastmod>2020-11-18T21:50:30+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mirkosertic.de/</loc>
     <lastmod>2020-11-18T21:50:30+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -73,20 +122,6 @@
   </url>
   
   <url>
-    <loc>https://www.mirkosertic.de/post/</loc>
-    <lastmod>2019-09-24T19:10:40+02:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mirkosertic.de/tags/</loc>
-    <lastmod>2019-09-24T19:10:40+02:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://www.mirkosertic.de/tags/compiler/</loc>
     <lastmod>2018-12-21T12:35:52+01:00</lastmod>
     <changefreq>daily</changefreq>
@@ -129,13 +164,6 @@
   </url>
   
   <url>
-    <loc>https://www.mirkosertic.de/tags/web/</loc>
-    <lastmod>2018-12-31T14:26:08+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://www.mirkosertic.de/tags/webassembly/</loc>
     <lastmod>2018-12-21T12:35:52+01:00</lastmod>
     <changefreq>daily</changefreq>
@@ -171,13 +199,6 @@
   </url>
   
   <url>
-    <loc>https://www.mirkosertic.de/tags/enterprise/</loc>
-    <lastmod>2017-12-27T17:55:29+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://www.mirkosertic.de/blog/2017/10/custom-query-parser-for-solr/</loc>
     <lastmod>2017-12-27T17:55:29+01:00</lastmod>
     <changefreq>daily</changefreq>
@@ -194,13 +215,6 @@
   <url>
     <loc>https://www.mirkosertic.de/blog/2017/06/compiling-bytecode-to-javascript/</loc>
     <lastmod>2018-04-29T09:47:41+02:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mirkosertic.de/tags/domain-driven-design/</loc>
-    <lastmod>2017-09-04T20:20:56+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -627,13 +641,6 @@
   
   <url>
     <loc>https://www.mirkosertic.de/blog/2012/11/an-overview-of-current-nosql-databases/</loc>
-    <lastmod>2018-10-10T11:37:04+02:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mirkosertic.de/tags/database/</loc>
     <lastmod>2018-10-10T11:37:04+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

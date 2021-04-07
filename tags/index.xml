@@ -7,7 +7,43 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Tue, 23 Apr 2019 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Apr 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Database</title>
+      <link>https://www.mirkosertic.de/tags/database/</link>
+      <pubDate>Wed, 07 Apr 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Domain-driven Design</title>
+      <link>https://www.mirkosertic.de/tags/domain-driven-design/</link>
+      <pubDate>Wed, 07 Apr 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/tags/domain-driven-design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Enterprise</title>
+      <link>https://www.mirkosertic.de/tags/enterprise/</link>
+      <pubDate>Wed, 07 Apr 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/tags/enterprise/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>https://www.mirkosertic.de/tags/web/</link>
+      <pubDate>Wed, 07 Apr 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/tags/web/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>GraalVM</title>
       <link>https://www.mirkosertic.de/tags/graalvm/</link>
@@ -99,15 +135,6 @@
     </item>
     
     <item>
-      <title>Web</title>
-      <link>https://www.mirkosertic.de/tags/web/</link>
-      <pubDate>Thu, 20 Dec 2018 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.mirkosertic.de/tags/web/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>WebAssembly</title>
       <link>https://www.mirkosertic.de/tags/webassembly/</link>
       <pubDate>Thu, 20 Dec 2018 00:00:00 +0200</pubDate>
@@ -126,29 +153,11 @@
     </item>
     
     <item>
-      <title>Enterprise</title>
-      <link>https://www.mirkosertic.de/tags/enterprise/</link>
-      <pubDate>Thu, 26 Oct 2017 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.mirkosertic.de/tags/enterprise/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Search</title>
       <link>https://www.mirkosertic.de/tags/search/</link>
       <pubDate>Thu, 26 Oct 2017 00:00:00 +0200</pubDate>
       
       <guid>https://www.mirkosertic.de/tags/search/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Domain-driven Design</title>
-      <link>https://www.mirkosertic.de/tags/domain-driven-design/</link>
-      <pubDate>Mon, 06 Mar 2017 00:00:00 +0100</pubDate>
-      
-      <guid>https://www.mirkosertic.de/tags/domain-driven-design/</guid>
       <description></description>
     </item>
     
@@ -320,15 +329,6 @@
       <pubDate>Mon, 18 Mar 2013 06:09:22 +0100</pubDate>
       
       <guid>https://www.mirkosertic.de/tags/legacy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Database</title>
-      <link>https://www.mirkosertic.de/tags/database/</link>
-      <pubDate>Thu, 22 Nov 2012 03:37:03 +0100</pubDate>
-      
-      <guid>https://www.mirkosertic.de/tags/database/</guid>
       <description></description>
     </item>
     

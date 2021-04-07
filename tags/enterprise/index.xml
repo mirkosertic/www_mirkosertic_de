@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Thu, 26 Oct 2017 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/enterprise/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Apr 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/enterprise/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Self-Contained-Systems Light &amp; Shadow</title>
+      <link>https://www.mirkosertic.de/blog/2021/04/scs-light-and-shadow/</link>
+      <pubDate>Wed, 07 Apr 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2021/04/scs-light-and-shadow/</guid>
+      <description>Self-Contained-Cystem, what is it? Self-Contained-System, referred to the following short SCS, is an architectural approach. The idea is to map requirements using individual, functionally independent systems. These systems include everything for mapping the necessary requirements, starting with data management, the actual business logic and finally a complete user interface. This makes these systems self-contained.
+ Each SCS should be looked after by its own development team. In addition to the technical separation of the systems, this architectural approach should also facilitate the organizational separation.</description>
+    </item>
+    
     <item>
       <title>Implementing a custom Query Parser for Apache Solr</title>
       <link>https://www.mirkosertic.de/blog/2017/10/custom-query-parser-for-solr/</link>
