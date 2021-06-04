@@ -7,7 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Wed, 18 Nov 2020 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/global/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Jun 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/global/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My personal list of interesting books</title>
+      <link>https://www.mirkosertic.de/global/interestingbooks/</link>
+      <pubDate>Fri, 04 Jun 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/global/interestingbooks/</guid>
+      <description>General software engineering &amp;amp; project management   The Mythical Man-Month. Essays on Software Engineering. Frederick P. Brooks
+  Requirements-Engineering und -Management: Professionelle, iterative Anforderungsanalyse für die Praxis. Chris Rupp und die SOPHISTEN
+  The Deadline: A Novel About Project Management. Tom DeMarco
+  The Goal: A Process of Ongoing Improvement. Eliyahu M. Goldratt, Jeff Cox
+  Peopleware: Productive Projects and Teams. Tom DeMarco
+  97 Things Every Programmer Should Know</description>
+    </item>
+    
     <item>
       <title>Tools &amp; Goodies</title>
       <link>https://www.mirkosertic.de/global/toolsgoodies/</link>
@@ -22,20 +36,6 @@
  The Camunda Workflow Engine is the right choice for both (micro-)service orchestration and human task management.
  Lime
  Lime: Explaining the predictions of any machine learning classifier.</description>
-    </item>
-    
-    <item>
-      <title>My personal list of interesting books</title>
-      <link>https://www.mirkosertic.de/global/interestingbooks/</link>
-      <pubDate>Mon, 04 Nov 2019 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.mirkosertic.de/global/interestingbooks/</guid>
-      <description>General software engineering &amp;amp; project management   The Mythical Man-Month. Essays on Software Engineering. Frederick P. Brooks
-  Requirements-Engineering und -Management: Professionelle, iterative Anforderungsanalyse für die Praxis. Chris Rupp und die SOPHISTEN
-  The Deadline: A Novel About Project Management. Tom DeMarco
-  The Goal: A Process of Ongoing Improvement. Eliyahu M. Goldratt, Jeff Cox
-  Peopleware: Productive Projects and Teams. Tom DeMarco
-  97 Things Every Programmer Should Know</description>
     </item>
     
     <item>
