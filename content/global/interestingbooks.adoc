@@ -1,5 +1,5 @@
 +++
-date = "2019-11-04T00:00:00+02:00"
+date = "2021-06-04T00:00:00+02:00"
 title = "My personal list of interesting books"
 tags = []
 draft = false
@@ -57,6 +57,7 @@ include::globals.adoc[]
     
 == Others
 
+    * The Secrets of Consulting. A Guide to Getting and Giving Advice Successfully. Gerald M. Weinberg
     * QualityLand. Marc-Uwe Kling
     * The Science of Why: Answers to Questions about the World Around Us. Jay Ingram
     * The Back of the Napkin. Solving problems and selling ideas with pictures. Dan Roam
