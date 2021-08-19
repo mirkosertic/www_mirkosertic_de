@@ -4,63 +4,84 @@
   
   <url>
     <loc>https://www.mirkosertic.de/tags/architecture/</loc>
-    <lastmod>2021-08-19T21:26:56+02:00</lastmod>
+    <lastmod>2021-08-19T21:37:40+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mirkosertic.de/tags/awt/</loc>
-    <lastmod>2021-08-19T21:26:56+02:00</lastmod>
+    <lastmod>2021-08-19T21:37:40+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/enterprise/</loc>
+    <lastmod>2021-08-19T21:37:40+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mirkosertic.de/tags/html5/</loc>
-    <lastmod>2021-08-19T21:26:56+02:00</lastmod>
+    <lastmod>2021-08-19T21:37:40+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/java/</loc>
+    <lastmod>2021-08-19T21:37:40+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/packaging/</loc>
+    <lastmod>2021-08-19T21:37:40+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mirkosertic.de/post/</loc>
-    <lastmod>2021-08-19T21:26:56+02:00</lastmod>
+    <lastmod>2021-08-19T21:37:40+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mirkosertic.de/blog/2021/08/swing-jetbrains-projector/</loc>
-    <lastmod>2021-08-19T21:26:56+02:00</lastmod>
+    <lastmod>2021-08-19T21:37:40+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mirkosertic.de/tags/swing/</loc>
-    <lastmod>2021-08-19T21:26:56+02:00</lastmod>
+    <lastmod>2021-08-19T21:37:40+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mirkosertic.de/tags/</loc>
-    <lastmod>2021-08-19T21:26:56+02:00</lastmod>
+    <lastmod>2021-08-19T21:37:40+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mirkosertic.de/tags/web/</loc>
-    <lastmod>2021-08-19T21:26:56+02:00</lastmod>
+    <lastmod>2021-08-19T21:37:40+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mirkosertic.de/</loc>
-    <lastmod>2021-08-19T21:26:56+02:00</lastmod>
+    <lastmod>2021-08-19T21:37:40+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -94,13 +115,6 @@
   </url>
   
   <url>
-    <loc>https://www.mirkosertic.de/tags/enterprise/</loc>
-    <lastmod>2021-04-07T12:27:46+02:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://www.mirkosertic.de/blog/2021/04/scs-light-and-shadow/</loc>
     <lastmod>2021-04-07T12:27:46+02:00</lastmod>
     <changefreq>daily</changefreq>
@@ -122,13 +136,6 @@
   </url>
   
   <url>
-    <loc>https://www.mirkosertic.de/tags/java/</loc>
-    <lastmod>2019-09-24T19:10:40+02:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://www.mirkosertic.de/tags/javafx/</loc>
     <lastmod>2019-09-24T19:10:40+02:00</lastmod>
     <changefreq>daily</changefreq>
@@ -137,13 +144,6 @@
   
   <url>
     <loc>https://www.mirkosertic.de/tags/native/</loc>
-    <lastmod>2019-09-24T19:10:40+02:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mirkosertic.de/tags/packaging/</loc>
     <lastmod>2019-09-24T19:10:40+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
