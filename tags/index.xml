@@ -9,24 +9,6 @@
     <copyright>Mirko Sertic</copyright>
     <lastBuildDate>Sun, 15 Aug 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Architecture</title>
-      <link>https://www.mirkosertic.de/tags/architecture/</link>
-      <pubDate>Sun, 15 Aug 2021 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.mirkosertic.de/tags/architecture/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AWT</title>
-      <link>https://www.mirkosertic.de/tags/awt/</link>
-      <pubDate>Sun, 15 Aug 2021 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.mirkosertic.de/tags/awt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Enterprise</title>
       <link>https://www.mirkosertic.de/tags/enterprise/</link>
       <pubDate>Sun, 15 Aug 2021 00:00:00 +0200</pubDate>
@@ -68,6 +50,15 @@
       <pubDate>Sun, 15 Aug 2021 00:00:00 +0200</pubDate>
       
       <guid>https://www.mirkosertic.de/tags/swing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>User Interface</title>
+      <link>https://www.mirkosertic.de/tags/user-interface/</link>
+      <pubDate>Sun, 15 Aug 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/tags/user-interface/</guid>
       <description></description>
     </item>
     
@@ -194,15 +185,6 @@
       <pubDate>Mon, 06 Mar 2017 00:00:00 +0100</pubDate>
       
       <guid>https://www.mirkosertic.de/tags/integration/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>User Interface</title>
-      <link>https://www.mirkosertic.de/tags/user-interface/</link>
-      <pubDate>Mon, 06 Mar 2017 00:00:00 +0100</pubDate>
-      
-      <guid>https://www.mirkosertic.de/tags/user-interface/</guid>
       <description></description>
     </item>
     
