@@ -1,0 +1,60 @@
++++
+date = "2020-08-15T00:00:00+02:00"
+title = "Running Swing Applications with JetBrains Projector in a browser"
+tags = ["HTML5", "Web", "Swing", "AWT", "Architecture"]
+draft = false
+description = "JetBrains Projector is a self-hosted technology that runs Swing-based applications on the server, allowing you access to them from anywhere using Web-browsers and native apps."
++++
+include::globals.adoc[]
+
+== A story of two worlds
+
+Java Swing is part of the Java Runtime since version 1.2. Swing is also part of the Java Foundation Classes, which are the library for creating component bases, modular, portable, and cross-platform graphical user interfaces. Being part of the core runtime, Java Swing is a valid choice for a lot of projects running in a different environment, starting from tiny calculator applications to humongous insurance or tax administration systems.
+
+Time has changed. Nowadays the Internet is almost everywhere. Writing HTML, CSS and JavaScript is a convenient way to implement and distribute the user interface. Uploading these assets is a lot simpler than installing a Java Runtime, and some libraries on a client machine. Also, we do not need a lot of resources to render an HTML page. The Java Runtime on the other hand needs more resources and also has some startup lag before we can even start to use the application.
+
+The mentioned humongous applications don't go away. At least, they need time and a lot of money to be rewritten into some kind of "newer" technology. This also introduces financial and organizational risk. Risk no one wants to take without benefit.
+
+Given the need to reduce distribution overhead for existing Java Swing applications, the need to make them usable on low end and SoC devices, and the strategy to migrate them to a newer technology stack without a big bang rewrite, what might be an  option to do so? A well-known software company from Prague might have an answer to this question.
+
+== What is JetBrains Projector?
+
+JetBrains Projector is a self-hosted technology that runs Swing-based applications on the server, allowing you access to them from anywhere using Web-browsers and native apps.
+
+The following use cases come to mind for Projector:
+
+* Migration strategy for huge Swing-based projects to newer presentation technologies
+* Allow thin clients on cheap hardware like Android tablets or small-sized consumer hardware only capable of Web-browsing
+* High-security zones and corporate environments, restricting access to assets like databases, compiled binaries or source code
+* many others as mentioned on https://lp.jetbrains.com/projector[Projector website]
+
+Internally, Projector replaces the Swing rendering pipeline with some kind of remote rendering. The new rendering pipeline generates drawing command lists, which are sent to a client that is implements rendering of such commands. This client can be HTML and JavaScript, using WebSockets as the communication protocols. A client can also be implemented as a native application using Java or any other frontend technology, even native Android or iOS apps are possible. The whole setup is very similar to the X Window System.
+
+JetBrains is using Projector to make IntelliJ available to the web, which is pretty cool. But Projector can also be used for any Java Swing-based app!
+
+== A working example
+
+I tried to use https://github.com/mirkosertic/MogwaiERDesignerNG[ERDesignerNG] with Projector. ERDesignerNG is a Swing-based database modeling tool. Here is a screenshot running it as a desktop app:
+
+image:/media/erdesignerng.png[]
+
+With minor changes to the startup script and including Projector in the classpath as described https://github.com/JetBrains/projector-server[here], it runs in a browser:
+
+image:/media/erdesignerng_projector.png[]
+
+This is awesome. Now I can deploy this application as a SaaS application by running it in the cloud. A new opportunity to make money :-).
+
+There are also other possibilities. Projector comes with a module called Projector Server. I used this module for ERDesignerNG to make it available as a webpage. There is also a module called Projector Agent. Projector Agents starts the application and renders the regular Swing frontend, but it also starts a Projector Server to make the running application available over HTTP. This is quite neat for presentation and training purposes. In terms of a web-based IDE this can be also used for pair programming, which IntelliJ already does!
+
+== Caveats and missing parts
+
+Projector is a drop-in replacement for all kinds of Swing-based applications. But there are some things we have to be aware of:
+
+* Your application must not call `System.exit()`, as this terminates the whole JVM and thus terminates all running sessions and not only for the current user.
+* The `Java Preferences API` might not work as you expect with Projector in a multi-user environment. All sessions get the same preferences, as they share the same process on the same JVM.
+* Rendering is done using drawing commands, basically for pixels. This might reduce accessibility, as everything on HTML client-side is a `<canvas>`. No proper HTML tags with `<alt>` attributes. The Swing frontend is rendered as it is in HTML, pixel by pixel.
+* Cross-platform Swing Look & Feel might be an issue to switch, but I haven't tested that yet.
+* You have to think about security and scalability for yourself.
+* Projector currently only supports Java 11 and the JetBrains Java Runtime Environment. *There is no support for OpenJDK* yet!
+
+All in all, Projector is an awesome solution and a migration path enabler for existing Java Swing-based applications. Of course, there needs some more work to be done in the real world for many projects. Projectors part is presentation technology replacement, which it does very well.
