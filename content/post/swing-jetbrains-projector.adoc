@@ -1,7 +1,7 @@
 +++
 date = "2021-08-15T00:00:00+02:00"
 title = "Running Swing Applications with JetBrains Projector in a browser"
-tags = ["HTML5", "Web", "Swing", "AWT", "Architecture"]
+tags = ["Java", "HTML5", "Web", "Swing", "AWT", "Architecture", "Packaging", "Enterprise"]
 draft = false
 description = "JetBrains Projector is a self-hosted technology that runs Swing-based applications on the server, allowing you access to them from anywhere using Web-browsers and native apps."
 +++
