@@ -1,5 +1,5 @@
 +++
-date = "2020-08-15T00:00:00+02:00"
+date = "2021-08-15T00:00:00+02:00"
 title = "Running Swing Applications with JetBrains Projector in a browser"
 tags = ["HTML5", "Web", "Swing", "AWT", "Architecture"]
 draft = false
