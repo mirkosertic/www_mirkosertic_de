@@ -7,13 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Sat, 15 Aug 2020 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/swing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Aug 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/swing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Running Swing Applications with JetBrains Projector in a browser</title>
-      <link>https://www.mirkosertic.de/blog/2020/08/swing-jetbrains-projector/</link>
-      <pubDate>Sat, 15 Aug 2020 00:00:00 +0200</pubDate>
+      <link>https://www.mirkosertic.de/blog/2021/08/swing-jetbrains-projector/</link>
+      <pubDate>Sun, 15 Aug 2021 00:00:00 +0200</pubDate>
       
-      <guid>https://www.mirkosertic.de/blog/2020/08/swing-jetbrains-projector/</guid>
+      <guid>https://www.mirkosertic.de/blog/2021/08/swing-jetbrains-projector/</guid>
       <description>A story of two worlds Java Swing is part of the Java Runtime since version 1.2. Swing is also part of the Java Foundation Classes, which are the library for creating component bases, modular, portable, and cross-platform graphical user interfaces. Being part of the core runtime, Java Swing is a valid choice for a lot of projects running in a different environment, starting from tiny calculator applications to humongous insurance or tax administration systems.</description>
     </item>
     

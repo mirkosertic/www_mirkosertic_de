@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Running Swing Applications with JetBrains Projector in a browser &middot; Mirko Sertic</title><meta name="description" content="JetBrains Projector is a self-hosted technology that runs Swing-based applications on the server, allowing you access to them from anywhere using Web-browsers and native apps."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="generator" content="Hugo 0.80.0"><meta name="robots" content="index,follow"><meta property="og:title" content="Running Swing Applications with JetBrains Projector in a browser"><meta property="og:description" content="JetBrains Projector is a self-hosted technology that runs Swing-based applications on the server, allowing you access to them from anywhere using Web-browsers and native apps."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2021/08/swing-jetbrains-projector/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script><meta name="theme-color" content="#ffffff"><script type="application/javascript">var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-33614060-2', 'auto');
+	
+	ga('send', 'pageview');
+}</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="Tools &amp; Goodies">Tools &amp; Goodies</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Interesting Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link active" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><div itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"><header class="post-header"><h1 class="post-title" itemprop="name headline">Running Swing Applications with JetBrains Projector in a browser</h1><p class="post-date"><span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="2021-08-15" itemprop="datePublished">Sun, Aug 15, 2021</time> <span>by</span> <span itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name"><a href="https://twitter.com/mirkosertic" itemprop="url" rel="author">Mirko Sertic</a></span></span></p><p><span class="icon"><i class="fa fa-clock-white"></i></span><span>4 Minutes reading time</span></p><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags-white"></i></span><a href="/tags/html5">HTML5</a></span> ,&nbsp;<a href="/tags/web">Web</a> ,&nbsp;<a href="/tags/swing">Swing</a> ,&nbsp;<a href="/tags/awt">AWT</a> ,&nbsp;<a href="/tags/architecture">Architecture</a></p></header><article class="post-content clearfix" itemprop="articleBody"><div class="sect1"><h2 id="_a_story_of_two_worlds">A story of two worlds</h2><div class="sectionbody"><div class="paragraph"><p>Java Swing is part of the Java Runtime since version 1.2. Swing is also part of the Java Foundation Classes, which are the library for creating component bases, modular, portable, and cross-platform graphical user interfaces. Being part of the core runtime, Java Swing is a valid choice for a lot of projects running in a different environment, starting from tiny calculator applications to humongous insurance or tax administration systems.</p></div><div class="paragraph"><p>Time has changed. Nowadays the Internet is almost everywhere. Writing HTML, CSS and JavaScript is a convenient way to implement and distribute the user interface. Uploading these assets is a lot simpler than installing a Java Runtime, and some libraries on a client machine. Also, we do not need a lot of resources to render an HTML page. The Java Runtime on the other hand needs more resources and also has some startup lag before we can even start to use the application.</p></div><div class="paragraph"><p>The mentioned humongous applications don’t go away. At least, they need time and a lot of money to be rewritten into some kind of &#34;newer&#34; technology. This also introduces financial and organizational risk. Risk no one wants to take without benefit.</p></div><div class="paragraph"><p>Given the need to reduce distribution overhead for existing Java Swing applications, the need to make them usable on low end and SoC devices, and the strategy to migrate them to a newer technology stack without a big bang rewrite, what might be an option to do so? A well-known software company from Prague might have an answer to this question.</p></div></div></div><div class="sect1"><h2 id="_what_is_jetbrains_projector">What is JetBrains Projector?</h2><div class="sectionbody"><div class="paragraph"><p>JetBrains Projector is a self-hosted technology that runs Swing-based applications on the server, allowing you access to them from anywhere using Web-browsers and native apps.</p></div><div class="paragraph"><p>The following use cases come to mind for Projector:</p></div><div class="ulist"><ul><li><p>Migration strategy for huge Swing-based projects to newer presentation technologies</p></li><li><p>Allow thin clients on cheap hardware like Android tablets or small-sized consumer hardware only capable of Web-browsing</p></li><li><p>High-security zones and corporate environments, restricting access to assets like databases, compiled binaries or source code</p></li><li><p>many others as mentioned on <a href="https://lp.jetbrains.com/projector">Projector website</a></p></li></ul></div><div class="paragraph"><p>Internally, Projector replaces the Swing rendering pipeline with some kind of remote rendering. The new rendering pipeline generates drawing command lists, which are sent to a client that is implements rendering of such commands. This client can be HTML and JavaScript, using WebSockets as the communication protocols. A client can also be implemented as a native application using Java or any other frontend technology, even native Android or iOS apps are possible. The whole setup is very similar to the X Window System.</p></div><div class="paragraph"><p>JetBrains is using Projector to make IntelliJ available to the web, which is pretty cool. But Projector can also be used for any Java Swing-based app!</p></div></div></div><div class="sect1"><h2 id="_a_working_example">A working example</h2><div class="sectionbody"><div class="paragraph"><p>I tried to use <a href="https://github.com/mirkosertic/MogwaiERDesignerNG">ERDesignerNG</a> with Projector. ERDesignerNG is a Swing-based database modeling tool. Here is a screenshot running it as a desktop app:</p></div><div class="paragraph"><p><span class="image"><img src="/media/erdesignerng.png" alt="erdesignerng"></span></p></div><div class="paragraph"><p>With minor changes to the startup script and including Projector in the classpath as described <a href="https://github.com/JetBrains/projector-server">here</a>, it runs in a browser:</p></div><div class="paragraph"><p><span class="image"><img src="/media/erdesignerng_projector.png" alt="erdesignerng projector"></span></p></div><div class="paragraph"><p>This is awesome. Now I can deploy this application as a SaaS application by running it in the cloud. A new opportunity to make money :-).</p></div><div class="paragraph"><p>There are also other possibilities. Projector comes with a module called Projector Server. I used this module for ERDesignerNG to make it available as a webpage. There is also a module called Projector Agent. Projector Agents starts the application and renders the regular Swing frontend, but it also starts a Projector Server to make the running application available over HTTP. This is quite neat for presentation and training purposes. In terms of a web-based IDE this can be also used for pair programming, which IntelliJ already does!</p></div></div></div><div class="sect1"><h2 id="_caveats_and_missing_parts">Caveats and missing parts</h2><div class="sectionbody"><div class="paragraph"><p>Projector is a drop-in replacement for all kinds of Swing-based applications. But there are some things we have to be aware of:</p></div><div class="ulist"><ul><li><p>Your application must not call <code>System.exit()</code>, as this terminates the whole JVM and thus terminates all running sessions and not only for the current user.</p></li><li><p>The <code>Java Preferences API</code> might not work as you expect with Projector in a multi-user environment. All sessions get the same preferences, as they share the same process on the same JVM.</p></li><li><p>Rendering is done using drawing commands, basically for pixels. This might reduce accessibility, as everything on HTML client-side is a <code>&lt;canvas&gt;</code>. No proper HTML tags with <code>&lt;alt&gt;</code> attributes. The Swing frontend is rendered as it is in HTML, pixel by pixel.</p></li><li><p>Cross-platform Swing Look &amp; Feel might be an issue to switch, but I haven’t tested that yet.</p></li><li><p>You have to think about security and scalability for yourself.</p></li><li><p>Projector currently only supports Java 11 and the JetBrains Java Runtime Environment. <strong>There is no support for OpenJDK</strong> yet!</p></li></ul></div><div class="paragraph"><p>All in all, Projector is an awesome solution and a migration path enabler for existing Java Swing-based applications. Of course, there needs some more work to be done in the real world for many projects. Projectors part is presentation technology replacement, which it does very well.</p></div></div></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2021/04/scs-light-and-shadow/">Self-Contained-Systems Light &amp; Shadow</a></span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/4d889a2f479e92d64e4d6d1f871eef69583580c2" target="_blank">4d889a2</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
+        window.addEventListener("load", function(event) {
+            var disqusLoaded = false;
+            var disqusObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (!disqusLoaded && entry.isIntersecting) {
+                        console.log("Loading Disqus");
+                        disqusLoaded = true;
+
+                        document.getElementById('disqus-placeholder').remove();
+
+                        
+                        var script = document.createElement('script');
+                        script.src = '//www-mirkosertic-de.disqus.com/embed.js';
+                        script.async = true;
+                        script.setAttribute('data-timestamp', +new Date());
+                        script.addEventListener('load', function () {
+                            
+                            DISQUS.reset({reload: true, config: false});
+                        });
+                        (document.head || document.body).appendChild(script);
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: "0px",
+                threshold: [0]
+            });
+            disqusObserver.observe(document.querySelector(".comments"));
+        }, false);</script></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.mirkosertic.de/index.xml" itemprop="url"><i class="fa fa-rss-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://twitter.com/mirkosertic" itemprop="url"><i class="fa fa-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
+        var element = document.querySelector(aSelector);
+        if (element) {
+            return true;
+        }
+        return false;
+    }
+
+    var Loader = function () { };
+    Loader.prototype = {
+        require: function (scripts, callback) {
+            this.loadCount = 0;
+            this.totalRequired = scripts.length;
+            this.callback = callback;
+
+            for (var i=0;i<scripts.length;i++) {
+                this.writeScript(scripts[i]);
+            }
+        },
+        loaded: function (evt) {
+            this.loadCount++;
+
+            if (this.loadCount==this.totalRequired && typeof this.callback=='function') this.callback.call();
+        },
+        writeScript: function (src) {
+            var self = this;
+            var s = document.createElement('script');
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = src;
+            s.addEventListener('load', function (e) { self.loaded(e); }, false);
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(s);
+        }
+    };
+
+    if (existsByCSSSelector("pre.highlight code") > 0) {
+        var loader = new Loader();
+        loader.require(["https:\/\/www.mirkosertic.de\/js/highlight-9.9.0.min.js"], function() {
+
+            var additionalStylesheet = document.createElement('link');
+            additionalStylesheet.rel = "stylesheet";
+            additionalStylesheet.type = 'text/css';
+            additionalStylesheet.media = "screen";
+            additionalStylesheet.href = "https:\/\/www.mirkosertic.de\/css/highlight.css";
+
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(additionalStylesheet);
+
+            hljs.initHighlightingOnLoad();
+        });
+    }</script></body></html>

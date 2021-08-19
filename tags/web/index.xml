@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Wed, 07 Apr 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Aug 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Running Swing Applications with JetBrains Projector in a browser</title>
+      <link>https://www.mirkosertic.de/blog/2021/08/swing-jetbrains-projector/</link>
+      <pubDate>Sun, 15 Aug 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2021/08/swing-jetbrains-projector/</guid>
+      <description>A story of two worlds Java Swing is part of the Java Runtime since version 1.2. Swing is also part of the Java Foundation Classes, which are the library for creating component bases, modular, portable, and cross-platform graphical user interfaces. Being part of the core runtime, Java Swing is a valid choice for a lot of projects running in a different environment, starting from tiny calculator applications to humongous insurance or tax administration systems.</description>
+    </item>
+    
     <item>
       <title>Self-Contained-Systems Light &amp; Shadow</title>
       <link>https://www.mirkosertic.de/blog/2021/04/scs-light-and-shadow/</link>
@@ -16,15 +25,6 @@
       <guid>https://www.mirkosertic.de/blog/2021/04/scs-light-and-shadow/</guid>
       <description>Self-Contained-Cystem, what is it? Self-Contained-System, referred to the following short SCS, is an architectural approach. The idea is to map requirements using individual, functionally independent systems. These systems include everything for mapping the necessary requirements, starting with data management, the actual business logic and finally a complete user interface. This makes these systems self-contained.
  Each SCS should be looked after by its own development team. In addition to the technical separation of the systems, this architectural approach should also facilitate the organizational separation.</description>
-    </item>
-    
-    <item>
-      <title>Running Swing Applications with JetBrains Projector in a browser</title>
-      <link>https://www.mirkosertic.de/blog/2020/08/swing-jetbrains-projector/</link>
-      <pubDate>Sat, 15 Aug 2020 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.mirkosertic.de/blog/2020/08/swing-jetbrains-projector/</guid>
-      <description>A story of two worlds Java Swing is part of the Java Runtime since version 1.2. Swing is also part of the Java Foundation Classes, which are the library for creating component bases, modular, portable, and cross-platform graphical user interfaces. Being part of the core runtime, Java Swing is a valid choice for a lot of projects running in a different environment, starting from tiny calculator applications to humongous insurance or tax administration systems.</description>
     </item>
     
     <item>

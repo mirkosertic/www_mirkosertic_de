@@ -7,7 +7,52 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Wed, 07 Apr 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Aug 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Architecture</title>
+      <link>https://www.mirkosertic.de/tags/architecture/</link>
+      <pubDate>Sun, 15 Aug 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/tags/architecture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWT</title>
+      <link>https://www.mirkosertic.de/tags/awt/</link>
+      <pubDate>Sun, 15 Aug 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/tags/awt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HTML5</title>
+      <link>https://www.mirkosertic.de/tags/html5/</link>
+      <pubDate>Sun, 15 Aug 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/tags/html5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Swing</title>
+      <link>https://www.mirkosertic.de/tags/swing/</link>
+      <pubDate>Sun, 15 Aug 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/tags/swing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>https://www.mirkosertic.de/tags/web/</link>
+      <pubDate>Sun, 15 Aug 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/tags/web/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Database</title>
       <link>https://www.mirkosertic.de/tags/database/</link>
@@ -32,51 +77,6 @@
       <pubDate>Wed, 07 Apr 2021 00:00:00 +0200</pubDate>
       
       <guid>https://www.mirkosertic.de/tags/enterprise/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Web</title>
-      <link>https://www.mirkosertic.de/tags/web/</link>
-      <pubDate>Wed, 07 Apr 2021 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.mirkosertic.de/tags/web/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Architecture</title>
-      <link>https://www.mirkosertic.de/tags/architecture/</link>
-      <pubDate>Sat, 15 Aug 2020 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.mirkosertic.de/tags/architecture/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AWT</title>
-      <link>https://www.mirkosertic.de/tags/awt/</link>
-      <pubDate>Sat, 15 Aug 2020 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.mirkosertic.de/tags/awt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>HTML5</title>
-      <link>https://www.mirkosertic.de/tags/html5/</link>
-      <pubDate>Sat, 15 Aug 2020 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.mirkosertic.de/tags/html5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Swing</title>
-      <link>https://www.mirkosertic.de/tags/swing/</link>
-      <pubDate>Sat, 15 Aug 2020 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.mirkosertic.de/tags/swing/</guid>
       <description></description>
     </item>
     
