@@ -18,7 +18,7 @@
   
   <url>
     <loc>https://www.mirkosertic.de/</loc>
-    <lastmod>2021-06-04T10:02:30+02:00</lastmod>
+    <lastmod>2021-08-19T15:32:21+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -46,7 +46,7 @@
   
   <url>
     <loc>https://www.mirkosertic.de/post/</loc>
-    <lastmod>2021-04-07T12:27:46+02:00</lastmod>
+    <lastmod>2021-08-19T15:32:21+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -60,14 +60,14 @@
   
   <url>
     <loc>https://www.mirkosertic.de/tags/</loc>
-    <lastmod>2021-04-07T12:27:46+02:00</lastmod>
+    <lastmod>2021-08-19T15:32:21+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mirkosertic.de/tags/web/</loc>
-    <lastmod>2021-04-07T12:27:46+02:00</lastmod>
+    <lastmod>2021-08-19T15:32:21+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -75,6 +75,41 @@
   <url>
     <loc>https://www.mirkosertic.de/global/toolsgoodies/</loc>
     <lastmod>2020-11-18T21:50:30+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/architecture/</loc>
+    <lastmod>2021-08-19T15:32:21+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/awt/</loc>
+    <lastmod>2021-08-19T15:32:21+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/html5/</loc>
+    <lastmod>2021-08-19T15:32:21+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2020/08/swing-jetbrains-projector/</loc>
+    <lastmod>2021-08-19T15:32:21+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/swing/</loc>
+    <lastmod>2021-08-19T15:32:21+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -124,13 +159,6 @@
   <url>
     <loc>https://www.mirkosertic.de/tags/compiler/</loc>
     <lastmod>2018-12-21T12:35:52+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mirkosertic.de/tags/html5/</loc>
-    <lastmod>2018-12-31T14:26:08+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -802,13 +830,6 @@
   
   <url>
     <loc>https://www.mirkosertic.de/tags/databinding/</loc>
-    <lastmod>2017-09-04T20:20:56+02:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mirkosertic.de/tags/swing/</loc>
     <lastmod>2017-09-04T20:20:56+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

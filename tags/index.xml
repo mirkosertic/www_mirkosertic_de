@@ -45,6 +45,42 @@
     </item>
     
     <item>
+      <title>Architecture</title>
+      <link>https://www.mirkosertic.de/tags/architecture/</link>
+      <pubDate>Sat, 15 Aug 2020 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/tags/architecture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWT</title>
+      <link>https://www.mirkosertic.de/tags/awt/</link>
+      <pubDate>Sat, 15 Aug 2020 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/tags/awt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HTML5</title>
+      <link>https://www.mirkosertic.de/tags/html5/</link>
+      <pubDate>Sat, 15 Aug 2020 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/tags/html5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Swing</title>
+      <link>https://www.mirkosertic.de/tags/swing/</link>
+      <pubDate>Sat, 15 Aug 2020 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/tags/swing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>GraalVM</title>
       <link>https://www.mirkosertic.de/tags/graalvm/</link>
       <pubDate>Tue, 23 Apr 2019 00:00:00 +0200</pubDate>
@@ -95,15 +131,6 @@
       <pubDate>Thu, 20 Dec 2018 00:00:00 +0200</pubDate>
       
       <guid>https://www.mirkosertic.de/tags/compiler/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>HTML5</title>
-      <link>https://www.mirkosertic.de/tags/html5/</link>
-      <pubDate>Thu, 20 Dec 2018 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.mirkosertic.de/tags/html5/</guid>
       <description></description>
     </item>
     
@@ -383,15 +410,6 @@
       <pubDate>Wed, 27 Jun 2012 07:50:07 +0200</pubDate>
       
       <guid>https://www.mirkosertic.de/tags/databinding/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Swing</title>
-      <link>https://www.mirkosertic.de/tags/swing/</link>
-      <pubDate>Wed, 27 Jun 2012 07:50:07 +0200</pubDate>
-      
-      <guid>https://www.mirkosertic.de/tags/swing/</guid>
       <description></description>
     </item>
     
