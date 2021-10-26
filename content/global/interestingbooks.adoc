@@ -54,7 +54,7 @@ include::globals.adoc[]
     * Deep Learning (Adaptive Computation and Machine Learning). Ian Goodfellow, Yoshua Bengio, Aaron Courville
     * Reinforcement Learning: An Introduction (Adaptive Computation and Machine Learning). Richard S. Sutton, Andrew G. Barto
     * Deep Learning for Search. Tommaso Teofili
-    
+
 == Others
 
     * The Secrets of Consulting. A Guide to Getting and Giving Advice Successfully. Gerald M. Weinberg
@@ -65,5 +65,6 @@ include::globals.adoc[]
     * Real-Time Rendering, Third Edition. Tomas Akenine-Möller, Eric Haines, Naty Hoffmann
     * Game Coding Complete, Fourth Edition. Mike McShaffry, David Graham
     * Game Engine Black Book: Wolfenstein 3D. Fabien Sanglard
-    * What If?: Serious Scientific Answers to Absurd Hypothetical Questions. Randall Munroe.
+    * What If?: Serious Scientific Answers to Absurd Hypothetical Questions. Randall Munroe
     * Game Engine Black Book: Doom. Fabien Sanglard
+    * infinite powers: How Calculus Reveals the Secrets of the Universe. Steven Strogatz
