@@ -14,10 +14,10 @@
       <pubDate>Sat, 19 Feb 2022 00:00:00 +0100</pubDate>
       
       <guid>https://www.mirkosertic.de/blog/2022/02/roomba-series/</guid>
-      <description>I found an outdated Roomba 581 vacuum robot in the attic. I just couldn’t throw it away, so I decided to pimp it a little.
+      <description>Maybe too much time I found an outdated Roomba 581 vacuum robot in the attic. I just couldn’t throw it away, so I decided to pimp it a little.
  A new hobby project was born!
  
- After all, the Roomba hardware is a good vacuum, and it offers a serial interface to read sensors and control the actuators. Only the robot brain and navigation systems are really outdated. I decided to give it a new brain with better navigation hardware, and reuse the Roomba platform as a whole.</description>
+ After all, the Roomba hardware is a good vacuum, and it offers a serial interface to read sensors and control the actuators. Only the robot brain and navigation systems are really outdated.</description>
     </item>
     
     <item>
