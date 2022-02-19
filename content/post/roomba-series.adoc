@@ -1,0 +1,32 @@
++++
+date = "2022-02-19T00:00:00+01:00"
+title = "The Roomba Series - How to create an autonomous mobile robot"
+tags = ["Roomba", "Robot", "DIY"]
+draft = false
+description = "How to create an autonomous mobile robot based on the Roomba 500 platform, ROS and an Raspberry PI."
++++
+include::globals.adoc[]
+
+I found an outdated Roomba 581 vacuum robot in the attic. I just couldn't throw it away, so
+I decided to pimp it a little.
+
+A new hobby project was born!
+
+image:/media/roomba500.png[]
+
+After all, the Roomba hardware is a good vacuum, and it offers a serial interface to read sensors and control the actuators. Only the robot brain and navigation systems are really outdated. I decided to give it a new brain with better navigation hardware, and reuse the
+Roomba platform as a whole. Here are the ingredients:
+
+- Raspberry Pi Zero 2 W as the new 64 bit brain
+- YDLiDAR X4 2D 360 degrees laser scanner
+- Small OLED display for better user interaction and feedback
+- Control software based on ROS(Robot Operating System)
+
+There is a lot of stuff going on behind the scenes. After all the goal was to create a fully autonomous system, which is a quite complex task. So I am planning a series of postings here covering the following topics:
+
+- General system architecture and high level control logic
+- Low level hardware interface
+- Navigation stack with SLAM and AMCL, simple navigation and efficient vacuum path finding
+- Overall system debugging and tuning.
+
+So stay tuned! I will link the posts here as soon as they are ready.

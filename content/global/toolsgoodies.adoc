@@ -1,5 +1,5 @@
 +++
-date = "2020-11-18T00:00:00+02:00"
+date = "2022-02-19T00:00:00+02:00"
 title = "Tools & Goodies"
 tags = []
 draft = false
@@ -7,6 +7,14 @@ description = "A collection of tools and goodies"
 +++
 include::globals.adoc[]
 == Technical stuff
+
+https://helm.sh/[Helm]
+
+Helm is the best way to find, share, and use software built for Kubernetes.
+
+https://kustomize.io/[Kustomize]
+
+Kustomize introduces a template-free way to customize application configuration that simplifies the use of off-the-shelf applications.
 
 https://www.cypress.io/[Cypress]
 
