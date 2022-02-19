@@ -7,6 +7,8 @@ description = "How to create an autonomous mobile robot based on the Roomba 500 
 +++
 include::globals.adoc[]
 
+== Maybe too much time
+
 I found an outdated Roomba 581 vacuum robot in the attic. I just couldn't throw it away, so
 I decided to pimp it a little.
 
@@ -21,6 +23,8 @@ Roomba platform as a whole. Here are the ingredients:
 - YDLiDAR X4 2D 360 degrees laser scanner
 - Small OLED display for better user interaction and feedback
 - Control software based on ROS(Robot Operating System)
+
+== What I am planning
 
 There is a lot of stuff going on behind the scenes. After all the goal was to create a fully autonomous system, which is a quite complex task. So I am planning a series of postings here covering the following topics:
 
