@@ -7,7 +7,35 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Sun, 15 Aug 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Feb 2022 00:00:00 +0100</lastBuildDate><atom:link href="https://www.mirkosertic.de/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Roomba Series - How to create an autonomous mobile robot</title>
+      <link>https://www.mirkosertic.de/blog/2022/02/roomba-series/</link>
+      <pubDate>Sat, 19 Feb 2022 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2022/02/roomba-series/</guid>
+      <description>I found an outdated Roomba 581 vacuum robot in the attic. I just couldn’t throw it away, so I decided to pimp it a little.
+ A new hobby project was born!
+ 
+ After all, the Roomba hardware is a good vacuum, and it offers a serial interface to read sensors and control the actuators. Only the robot brain and navigation systems are really outdated. I decided to give it a new brain with better navigation hardware, and reuse the Roomba platform as a whole.</description>
+    </item>
+    
+    <item>
+      <title>Tools &amp; Goodies</title>
+      <link>https://www.mirkosertic.de/global/toolsgoodies/</link>
+      <pubDate>Sat, 19 Feb 2022 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/global/toolsgoodies/</guid>
+      <description>Technical stuff Helm
+ Helm is the best way to find, share, and use software built for Kubernetes.
+ Kustomize
+ Kustomize introduces a template-free way to customize application configuration that simplifies the use of off-the-shelf applications.
+ Cypress
+ The web has evolved. Finally, testing has too. Fast, easy and reliable testing for anything that runs in a browser.
+ Insomnia
+ Design and debug APIs like a human, not a robot.</description>
+    </item>
+    
     <item>
       <title>Running Swing Applications with JetBrains Projector in a browser</title>
       <link>https://www.mirkosertic.de/blog/2021/08/swing-jetbrains-projector/</link>
@@ -39,22 +67,6 @@
       <guid>https://www.mirkosertic.de/blog/2021/04/scs-light-and-shadow/</guid>
       <description>Self-Contained-Cystem, what is it? Self-Contained-System, referred to the following short SCS, is an architectural approach. The idea is to map requirements using individual, functionally independent systems. These systems include everything for mapping the necessary requirements, starting with data management, the actual business logic and finally a complete user interface. This makes these systems self-contained.
  Each SCS should be looked after by its own development team. In addition to the technical separation of the systems, this architectural approach should also facilitate the organizational separation.</description>
-    </item>
-    
-    <item>
-      <title>Tools &amp; Goodies</title>
-      <link>https://www.mirkosertic.de/global/toolsgoodies/</link>
-      <pubDate>Wed, 18 Nov 2020 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.mirkosertic.de/global/toolsgoodies/</guid>
-      <description>Technical stuff Cypress
- The web has evolved. Finally, testing has too. Fast, easy and reliable testing for anything that runs in a browser.
- Insomnia
- Design and debug APIs like a human, not a robot.
- Camunda BPMN / DMN
- The Camunda Workflow Engine is the right choice for both (micro-)service orchestration and human task management.
- Lime
- Lime: Explaining the predictions of any machine learning classifier.</description>
     </item>
     
     <item>

@@ -3,6 +3,69 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.mirkosertic.de/tags/diy/</loc>
+    <lastmod>2022-02-19T21:02:40+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/post/</loc>
+    <lastmod>2022-02-19T21:02:40+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/robot/</loc>
+    <lastmod>2022-02-19T21:02:40+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/roomba/</loc>
+    <lastmod>2022-02-19T21:02:40+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/tags/</loc>
+    <lastmod>2022-02-19T21:02:40+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/blog/2022/02/roomba-series/</loc>
+    <lastmod>2022-02-19T21:02:40+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/</loc>
+    <lastmod>2022-02-19T21:02:40+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/global/</loc>
+    <lastmod>2022-02-19T21:02:40+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/global/toolsgoodies/</loc>
+    <lastmod>2022-02-19T21:02:40+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.mirkosertic.de/tags/enterprise/</loc>
     <lastmod>2021-08-19T21:43:59+02:00</lastmod>
     <changefreq>daily</changefreq>
@@ -31,13 +94,6 @@
   </url>
   
   <url>
-    <loc>https://www.mirkosertic.de/post/</loc>
-    <lastmod>2021-08-19T21:43:59+02:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://www.mirkosertic.de/blog/2021/08/swing-jetbrains-projector/</loc>
     <lastmod>2021-08-19T21:43:59+02:00</lastmod>
     <changefreq>daily</changefreq>
@@ -46,13 +102,6 @@
   
   <url>
     <loc>https://www.mirkosertic.de/tags/swing/</loc>
-    <lastmod>2021-08-19T21:43:59+02:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mirkosertic.de/tags/</loc>
     <lastmod>2021-08-19T21:43:59+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -68,20 +117,6 @@
   <url>
     <loc>https://www.mirkosertic.de/tags/web/</loc>
     <lastmod>2021-08-19T21:43:59+02:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mirkosertic.de/</loc>
-    <lastmod>2021-10-26T20:43:59+02:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mirkosertic.de/global/</loc>
-    <lastmod>2021-10-26T20:43:59+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -110,13 +145,6 @@
   <url>
     <loc>https://www.mirkosertic.de/blog/2021/04/scs-light-and-shadow/</loc>
     <lastmod>2021-04-07T12:27:46+02:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mirkosertic.de/global/toolsgoodies/</loc>
-    <lastmod>2020-11-18T21:50:30+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

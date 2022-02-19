@@ -7,7 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Fri, 04 Jun 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/global/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Feb 2022 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/global/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tools &amp; Goodies</title>
+      <link>https://www.mirkosertic.de/global/toolsgoodies/</link>
+      <pubDate>Sat, 19 Feb 2022 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/global/toolsgoodies/</guid>
+      <description>Technical stuff Helm
+ Helm is the best way to find, share, and use software built for Kubernetes.
+ Kustomize
+ Kustomize introduces a template-free way to customize application configuration that simplifies the use of off-the-shelf applications.
+ Cypress
+ The web has evolved. Finally, testing has too. Fast, easy and reliable testing for anything that runs in a browser.
+ Insomnia
+ Design and debug APIs like a human, not a robot.</description>
+    </item>
+    
     <item>
       <title>My personal list of interesting books</title>
       <link>https://www.mirkosertic.de/global/interestingbooks/</link>
@@ -20,22 +36,6 @@
   The Goal: A Process of Ongoing Improvement. Eliyahu M. Goldratt, Jeff Cox
   Peopleware: Productive Projects and Teams. Tom DeMarco
   97 Things Every Programmer Should Know</description>
-    </item>
-    
-    <item>
-      <title>Tools &amp; Goodies</title>
-      <link>https://www.mirkosertic.de/global/toolsgoodies/</link>
-      <pubDate>Wed, 18 Nov 2020 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.mirkosertic.de/global/toolsgoodies/</guid>
-      <description>Technical stuff Cypress
- The web has evolved. Finally, testing has too. Fast, easy and reliable testing for anything that runs in a browser.
- Insomnia
- Design and debug APIs like a human, not a robot.
- Camunda BPMN / DMN
- The Camunda Workflow Engine is the right choice for both (micro-)service orchestration and human task management.
- Lime
- Lime: Explaining the predictions of any machine learning classifier.</description>
     </item>
     
     <item>

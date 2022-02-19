@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Sun, 15 Aug 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Feb 2022 00:00:00 +0100</lastBuildDate><atom:link href="https://www.mirkosertic.de/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Roomba Series - How to create an autonomous mobile robot</title>
+      <link>https://www.mirkosertic.de/blog/2022/02/roomba-series/</link>
+      <pubDate>Sat, 19 Feb 2022 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2022/02/roomba-series/</guid>
+      <description>I found an outdated Roomba 581 vacuum robot in the attic. I just couldn’t throw it away, so I decided to pimp it a little.
+ A new hobby project was born!
+ 
+ After all, the Roomba hardware is a good vacuum, and it offers a serial interface to read sensors and control the actuators. Only the robot brain and navigation systems are really outdated. I decided to give it a new brain with better navigation hardware, and reuse the Roomba platform as a whole.</description>
+    </item>
+    
     <item>
       <title>Running Swing Applications with JetBrains Projector in a browser</title>
       <link>https://www.mirkosertic.de/blog/2021/08/swing-jetbrains-projector/</link>
