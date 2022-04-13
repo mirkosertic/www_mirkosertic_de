@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Sat, 19 Feb 2022 00:00:00 +0100</lastBuildDate><atom:link href="https://www.mirkosertic.de/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Apr 2022 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tools &amp; Goodies</title>
+      <link>https://www.mirkosertic.de/global/toolsgoodies/</link>
+      <pubDate>Wed, 13 Apr 2022 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/global/toolsgoodies/</guid>
+      <description>Technical stuff Dependency-Track
+ Dependency-Track is an intelligent Component Analysis platform that allows organizations to identify and reduce risk in the software supply chain. Dependency-Track takes a unique and highly beneficial approach by leveraging the capabilities of Software Bill of Materials (SBOM). This approach provides capabilities that traditional Software Composition Analysis (SCA) solutions cannot achieve.
+ OWASP CycloneDX
+ OWASP CycloneDX is a lightweight Software Bill of Materials (SBOM) standard designed for use in application security contexts and supply chain component analysis.</description>
+    </item>
+    
     <item>
       <title>The Roomba Series - How to create an autonomous mobile robot</title>
       <link>https://www.mirkosertic.de/blog/2022/02/roomba-series/</link>
@@ -18,22 +30,6 @@
  A new hobby project was born!
  
  After all, the Roomba hardware is a good vacuum, and it offers a serial interface to read sensors and control the actuators. Only the robot brain and navigation systems are really outdated.</description>
-    </item>
-    
-    <item>
-      <title>Tools &amp; Goodies</title>
-      <link>https://www.mirkosertic.de/global/toolsgoodies/</link>
-      <pubDate>Sat, 19 Feb 2022 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.mirkosertic.de/global/toolsgoodies/</guid>
-      <description>Technical stuff Helm
- Helm is the best way to find, share, and use software built for Kubernetes.
- Kustomize
- Kustomize introduces a template-free way to customize application configuration that simplifies the use of off-the-shelf applications.
- Cypress
- The web has evolved. Finally, testing has too. Fast, easy and reliable testing for anything that runs in a browser.
- Insomnia
- Design and debug APIs like a human, not a robot.</description>
     </item>
     
     <item>

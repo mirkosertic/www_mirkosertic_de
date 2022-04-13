@@ -3,6 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.mirkosertic.de/global/</loc>
+    <lastmod>2022-04-13T08:12:23+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/global/toolsgoodies/</loc>
+    <lastmod>2022-04-13T08:12:23+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mirkosertic.de/</loc>
+    <lastmod>2022-04-13T08:12:23+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.mirkosertic.de/tags/diy/</loc>
     <lastmod>2022-02-19T21:20:17+01:00</lastmod>
     <changefreq>daily</changefreq>
@@ -40,27 +61,6 @@
   <url>
     <loc>https://www.mirkosertic.de/blog/2022/02/roomba-series/</loc>
     <lastmod>2022-02-19T21:20:17+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mirkosertic.de/</loc>
-    <lastmod>2022-02-19T21:20:17+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mirkosertic.de/global/</loc>
-    <lastmod>2022-02-19T21:02:40+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mirkosertic.de/global/toolsgoodies/</loc>
-    <lastmod>2022-02-19T21:02:40+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
