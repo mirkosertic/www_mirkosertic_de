@@ -1,5 +1,5 @@
 +++
-date = "2022-02-19T00:00:00+02:00"
+date = "2022-04-13T00:00:00+02:00"
 title = "Tools & Goodies"
 tags = []
 draft = false
@@ -7,6 +7,16 @@ description = "A collection of tools and goodies"
 +++
 include::globals.adoc[]
 == Technical stuff
+
+https://docs.dependencytrack.org/[Dependency-Track]
+
+Dependency-Track is an intelligent Component Analysis platform that allows organizations to identify and reduce risk in the software supply chain. Dependency-Track takes a unique and highly beneficial approach by leveraging the capabilities of Software Bill of Materials (SBOM). This approach provides capabilities that traditional Software Composition Analysis (SCA) solutions cannot achieve.
+
+https://cyclonedx.org/[OWASP CycloneDX]
+
+OWASP CycloneDX is a lightweight Software Bill of Materials (SBOM) standard designed for use in application security contexts and supply chain component analysis.
+
+Strategic direction and maintenance of the specification is managed by the CycloneDX Core working group, with origins in the OWASP community.
 
 https://helm.sh/[Helm]
 
@@ -120,9 +130,10 @@ http://masonry.desandro.com/[Masonry]
 
 Masonry is a JavaScript grid layout library. It works by placing elements in optimal position based on available vertical space, sort of like a mason fitting stones in a wall. You’ve probably seen it in use all over the Internet.
 
-https://github.com/Netflix/Hystrix[Hystrix]
+https://github.com/resilience4j/resilience4j[Resilience4j]
 
-Hystrix is a latency and fault tolerance library designed to isolate points of access to remote systems, services and 3rd party libraries, stop cascading failure and enable resilience in complex distributed systems where failure is inevitable.
+Resilience4j is a lightweight, easy-to-use fault tolerance library inspired by
+Netflix Hystrix, but designed for Java 8 and functional programming. Lightweight, because the library only uses Vavr, which does not have any other external library dependencies. Netflix Hystrix, in contrast, has a compile dependency to Archaius which has many more external library dependencies such as Guava and Apache Commons Configuration.
 
 http://windup.jboss.org/index.html[JBoss Windup]
 
