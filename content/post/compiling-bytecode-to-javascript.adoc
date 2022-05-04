@@ -33,7 +33,7 @@ Writing a compiler is a science and also an art. Compiler include almost every c
 
 Doing this all at once is far too complex. We have to split this complex problems into smaller ones. And we start with a very small one: parsing JVM class files.
 
-[ditaa,compilerpipeline,png]
+[ditaa,compilerpipeline,svg]
 ----
 
  +------------------------------+
@@ -118,7 +118,7 @@ SSA form introduces a lot of new variables. This is OK, as we rely on optimizing
 
 Some naming trickery must be done for control flow constructs such as loop. The loop counter for instance is incremented multiple times, depending on how often the loop is executed. This is a problem, as SSA form insists on one declaration and one assignment. If we take a look at a simple control flow graph of a loop, we see that the loop body is its own predecessor, and in fact it has two.
 
-[ditaa,loopcfg,png]
+[ditaa,loopcfg,svg]
 ----
 
 +-----------------+

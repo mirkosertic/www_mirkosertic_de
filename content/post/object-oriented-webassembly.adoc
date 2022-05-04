@@ -321,7 +321,7 @@ areas distinguish. The heap can be very fragmented, as new objects are created o
 Stack grows at precomputed rates which are determined at compile time. The compiler knows the exact number of local
 variables. Also the stack cannot fragment, as it is a FILO stack.
 
-[ditaa,memorylayout,png]
+[ditaa,memorylayout,svg]
 ----
  Offset 0                                       Max memory
  +----------+----------------+----+----------------------+

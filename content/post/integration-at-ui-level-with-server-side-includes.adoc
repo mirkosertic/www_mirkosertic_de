@@ -34,7 +34,7 @@ frontend(i will come to this later).
 
 Now, what is a SCS-Architecture? Basically it looks as follows:
 
-[ditaa,scsarchitecture]
+[ditaa,scsarchitecture,svg]
 ----
 +---------------------------------+            +---------------------------------+
 | SCS for Bounded Context 1       |            | SCS for Bounded Context 2..n    |
@@ -72,7 +72,7 @@ components? How does the user login? How does the user navigate? How does the us
 The answer is simple. Instead of composing the systems at API level, we compose them at user interface
 level. We need to build a Portal!
 
-[ditaa,userinterfaceaggregation]
+[ditaa,userinterfaceaggregation,svg]
 ----
 +------------------------------------------------------------------------------+
 | Portal HTML Page                                                             |
