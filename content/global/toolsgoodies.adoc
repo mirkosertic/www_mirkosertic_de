@@ -254,13 +254,3 @@ CodeCity is an integrated environment for software analysis, in which software s
 http://www.tomjewett.com/dbdesign/dbdesign.php[Database design with UML and SQL]
 
 A cool summary about database design with UML and SQL.
-
-== Geeky but cool
-
-http://www.dilbert.com/[Dilbert]
-
-Dilbert is our hero!
-
-http://www.userfriendly.org/[Userfriendly]
-
-Funny cartoons about the Columbia Internet ISP
