@@ -23,7 +23,14 @@
     <link rel="mask-icon" href="{{ .Site.BaseURL }}safari-pinned-tab.svg" color="#5bbad5">
     <script src="https://polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver"></script>
     <meta name="theme-color" content="#ffffff">
-    {{ template "_internal/google_analytics_async.html" . }}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-33614060-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-33614060-2');
+    </script>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage">
 <header>
