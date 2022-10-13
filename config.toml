@@ -50,9 +50,10 @@ enableGitInfo = true
     weight = 5
 
 [markup.asciidocExt]
-    extensions = ["asciidoctor-diagram"]
+    extensions = ["asciidoctor-kroki"]
+    [markup.asciidocExt.attributes]
+        kroki-fetch-diagram = true
 
 [security]
     [security.exec]
-        allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^asciidoctor$', '^asciidoctor-diagram$']
-
+        allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^asciidoctor$']
