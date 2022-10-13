@@ -7,11 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Sat, 19 Feb 2022 00:00:00 +0100</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Oct 2022 00:00:00 +0100</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Architecture</title>
+      <link>https://www.mirkosertic.de/tags/architecture/</link>
+      <pubDate>Thu, 13 Oct 2022 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/tags/architecture/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>DIY</title>
       <link>https://www.mirkosertic.de/tags/diy/</link>
-      <pubDate>Sat, 19 Feb 2022 00:00:00 +0100</pubDate>
+      <pubDate>Thu, 13 Oct 2022 00:00:00 +0100</pubDate>
       
       <guid>https://www.mirkosertic.de/tags/diy/</guid>
       <description></description>
@@ -20,7 +29,7 @@
     <item>
       <title>Robot</title>
       <link>https://www.mirkosertic.de/tags/robot/</link>
-      <pubDate>Sat, 19 Feb 2022 00:00:00 +0100</pubDate>
+      <pubDate>Thu, 13 Oct 2022 00:00:00 +0100</pubDate>
       
       <guid>https://www.mirkosertic.de/tags/robot/</guid>
       <description></description>
@@ -29,7 +38,7 @@
     <item>
       <title>Roomba</title>
       <link>https://www.mirkosertic.de/tags/roomba/</link>
-      <pubDate>Sat, 19 Feb 2022 00:00:00 +0100</pubDate>
+      <pubDate>Thu, 13 Oct 2022 00:00:00 +0100</pubDate>
       
       <guid>https://www.mirkosertic.de/tags/roomba/</guid>
       <description></description>

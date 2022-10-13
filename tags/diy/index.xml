@@ -7,7 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Sat, 19 Feb 2022 00:00:00 +0100</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/diy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Oct 2022 00:00:00 +0100</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/diy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Roomba Series - General System Architecture</title>
+      <link>https://www.mirkosertic.de/blog/2022/10/roomba-series-1/</link>
+      <pubDate>Thu, 13 Oct 2022 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2022/10/roomba-series-1/</guid>
+      <description>Standing on the shoulders of giants My custom Roomba vacuum uses a lot of free available open source software. Without it, it wouldn’t be possible to create and compose a complex system such as an autonomous robot in a reasonable amount of time.
+The core ingredients are:
+Raspberry Pi Zero 2 W
+Ubuntu 64bit OS
+Additional sensors, connected by USB, UART or I2C bus.
+Robot Operating System (ROS), Noetic Release</description>
+    </item>
+    
     <item>
       <title>The Roomba Series - How to create an autonomous mobile robot</title>
       <link>https://www.mirkosertic.de/blog/2022/02/roomba-series/</link>
