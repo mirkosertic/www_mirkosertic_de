@@ -73,22 +73,22 @@ Now comes the interesting part. How is the Roomba software organized? First, I'l
     | +-node---+------------+    +-node---+------------+                   |
     | |differentialodometry +----+ekf_localization_node|                   |
     | +---------------------+    +---+-----------------+                   |
-    +--Localization layer--------------------------------------------------|
+    +--Localization layer--------------------------------------------------+
     |                                                                      |
     | +-node----------+      +-node----------+     +-node----------+       |
     | |gmapping       |      |mapserver      +-----+amcl           |       |
     | +---------------+      +---------------+     +---------------+       |
-    +--Navigation layer----------------------------------------------------|
+    +--Navigation layer----------------------------------------------------+
     |                                                                      |
     | +-node----------+                                                    |
     | |move_base      |                                                    |
     | +---------------+                                                    |
-    +--High level functions layer------------------------------------------|
+    +--High level functions layer------------------------------------------+
     |                                                                      |
     | +-node----------+                                                    |
     | |highlevel      |                                                    |
     | +---------------+                                                    |
-    +--Supervisor functions layer------------------------------------------|
+    +--Supervisor functions layer------------------------------------------+
     |                                                                      |
     | +-node----------+                                                    |
     | |supervisor     |                                                    |
