@@ -22,9 +22,9 @@ enableGitInfo = true
     opengraph = true
 
 [sitemap]
-  changefreq = "daily"
-  priority = 0.5
-  filename = "sitemap.xml"
+    changefreq = "daily"
+    priority = 0.5
+    filename = "sitemap.xml"
 
 [Permalinks]
     post = "blog/:year/:month/:filename/"
@@ -51,3 +51,8 @@ enableGitInfo = true
 
 [markup.asciidocExt]
     extensions = ["asciidoctor-diagram"]
+
+[security]
+    [security.exec]
+        allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^asciidoctor$', '^asciidoctor-diagram$']
+

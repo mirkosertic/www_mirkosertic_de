@@ -7,12 +7,9 @@
     <meta name="description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
-    {{ .Hugo.Generator }}
     <meta name="robots" content="index,follow">
     {{ if .Site.Params.opengraph }}{{ partial "opengraph.html" . }}{{ end }}
-    {{ if .RSSLink }}
-    <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml">
-    {{ end }}
+    {{ with .OutputFormats.Get "RSS" }}<link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml">{{ end }}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ .Site.BaseURL }}css/site.css" rel="stylesheet" media="screen">
     <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.BaseURL }}favicon.ico">
@@ -37,19 +34,19 @@
                 <ul class="navbar-nav mr-auto">
 
                     <li class="nav-item">
-                        <a itemprop="url" class="nav-link{{ if in (print .URL) "global/toolsgoodies"}} active{{end}}" href="/global/toolsgoodies" title="Tools &amp; Goodies">Tools &amp; Goodies</a>
+                        <a itemprop="url" class="nav-link{{ if in (print .Page.RelPermalink) "global/toolsgoodies"}} active{{end}}" href="/global/toolsgoodies" title="Tools &amp; Goodies">Tools &amp; Goodies</a>
                     </li>
 
                     <li class="nav-item">
-                        <a itemprop="url" class="nav-link{{ if in (print .URL) "lobal/interestingbooks"}} active{{end}}" href="/global/interestingbooks" title="Interesting Books">Interesting Books</a>
+                        <a itemprop="url" class="nav-link{{ if in (print .Page.RelPermalink) "global/interestingbooks"}} active{{end}}" href="/global/interestingbooks" title="Interesting Books">Interesting Books</a>
                     </li>
 
                     <li class="nav-item">
-                        <a itemprop="url" class="nav-link{{if in (print .URL) "global/favorites"}} active{{end}}" href="/global/favorites" title="My favorite postings">My favorite postings</a>
+                        <a itemprop="url" class="nav-link{{if in (print .Page.RelPermalink) "global/favorites"}} active{{end}}" href="/global/favorites" title="My favorite postings">My favorite postings</a>
                     </li>
 
                     <li class="nav-item">
-                        <a itemprop="url" class="nav-link{{if or (in (print .URL) "blog/") (in (print .URL) "post/")}} active{{end}}" href="/post/" title="Blog">Blog</a>
+                        <a itemprop="url" class="nav-link{{if or (in (print .Page.RelPermalink) "blog/") (in (print .Page.RelPermalink) "post/")}} active{{end}}" href="/post/" title="Blog">Blog</a>
                     </li>
                 </ul>
             </div>
