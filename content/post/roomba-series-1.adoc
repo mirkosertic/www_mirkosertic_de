@@ -9,7 +9,7 @@ include::globals.adoc[]
 
 == Standing on the shoulders of giants
 
-My custom Roomba vacuum uses a lot of free available open source software. Without it, it wouln't be possible to create
+My custom Roomba vacuum uses a lot of free available open source software. Without it, it wouldn't be possible to create
 and compose a complex system such as an autonomous robot in a reasonable amount of time.
 
 The core ingredients are:
@@ -30,7 +30,7 @@ functionality, message-passing between processes, and package management.
 
 The ROS components are controlled by project-specific parts, such as the web-based user interface, system supervision and
 implementation of the navigation and cleaning functionality. Measured in lines-of-code, the project-specific part is tiny
-compared to the out-of-the-box functionality of the ROS suite. Is is truly standing on the shoulders of giants.
+compared to the out-of-the-box functionality of the ROS suite. It is truly standing on the shoulders of giants.
 
 == The Roomba layered Architecture
 
@@ -56,7 +56,7 @@ bidirectional level shifter between them. The level shifter is not part of the d
 The YDLiDAR X4 also has a serial interface. However, it comes with a serial-to-usb adapter, and the whole software suite
 including the ROS driver fits to this adapter. I wanted to reuse as much as possible, so I used the serial-to-usb adapter
 and connected the LiDAR with USB to the Raspberry. In the future I also might use a multi-uart-to-i2c adapter, and
-connect everything using the I2C bus. But I did't have time to check this out yet.
+connect everything using the I2C bus. But I didn't have time to check this out yet.
 
 The MPU6050 IMU and the OLED displays are directly connected to the I2C bus of the Raspberry.
 
