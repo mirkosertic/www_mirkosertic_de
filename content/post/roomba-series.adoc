@@ -22,6 +22,7 @@ Roomba platform as a whole. Here are the ingredients:
 - Raspberry Pi Zero 2 W as the new 64 bit brain
 - YDLiDAR X4 2D 360 degrees laser scanner
 - Small OLED display for better user interaction and feedback
+- MPU6050 6-DOF IMU to measure relative orientation, acceleration and velocity
 - Control software based on ROS(Robot Operating System)
 
 == What I am planning
