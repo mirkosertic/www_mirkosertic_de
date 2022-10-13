@@ -68,7 +68,7 @@ Now comes the interesting part. How is the Roomba software organized? First, I'l
     |                                                                      |
     | +-node----------+                +-node-+          +-node---+        |
     | |roombainterface|                |imu   |          |ydlidar |        |
-    | +--------+------+                +--*---+          +---+----+        |
+    | +--------+------+                +--+---+          +---+----+        |
     |          |                          |                                |
     | +-node---+------------+    +-node---+------------+                   |
     | |differentialodometry +----+ekf_localization_node|                   |
@@ -114,7 +114,7 @@ The nature of this data is noisy. This node is Roomba specific.
 
 The *differentialodometry* node reads the Roomba sensor messages and converts data from the wheel encoders to a robot
 odometry including a pose. A pose includes a position, and orientation and additional velocity and acceleration information.
-All these information is derrived from the wheel encoder data. The nature of this data is noisy and it will drift over time a
+All of this is derived from the wheel encoder data. The nature of this data is noisy and it will drift over time a
 lot. This node is Roomba specific.
 
 The *ydlidar* node reads data from the YDLiDAR X4 360 degrees laser scanner and publishes the data over topics. The
@@ -122,7 +122,7 @@ nature of this data is noisy, but it is the only source of absolute measurements
 absolute distance to a wall with a laser scan. All other sensors can only track relative movements and acceleration. This
 node is provided by the LiDAR manufacturer.
 
-The *ekf_localization_node* node does sensor fusion. As mentioned above, the IMU and odometry data is noisy, and tends to
+The *ekf_localization_node* node does sensor fusion. As mentioned above, the IMU and odometry data are noisy, and tend to
 drift over time. The ekf_localization_node node uses an Extended Kalman filter to create and continuously refine a position
 estimation based on the noisy sensor data. This should remove drift and increase precision of the measured position,
 acceleration and velocity. This node is part of the ROS stack.
@@ -171,7 +171,8 @@ demand all other layers of the system.
 
 The *supervisor* node implements the user interface. Once a user decides to clean a room, the supervisor starts all
 other layers of the stack and controls their lifecycle. It provides visual feedback such as the map, the current
-robot position, the already cleaned path and so on. This node is Roomba specific.
+robot position, the already cleaned path and so on. It also uses the OLED display to render telemetry and status data
+directly on the device. This node is Roomba specific.
 
 == Data flow
 
