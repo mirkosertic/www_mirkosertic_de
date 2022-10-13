@@ -2,7 +2,7 @@
 date = "2022-10-14T00:00:00+01:00"
 title = "The Roomba Series - General System Architecture"
 tags = ["Roomba", "Robot", "DIY", "Architecture"]
-draft = true
+draft = false
 description = "How to create an autonomous mobile robot based on the Roomba 500 platform, ROS and an Raspberry PI. Focus: General System Architecture"
 +++
 include::globals.adoc[]
@@ -105,26 +105,26 @@ Let's start from top to bottom:
 === Hardware interface layer
 The hardware interface layer is responsible to communicate with the physical hardware.
 
-The *roombainterface* node reads the Roomba sensor data stream such as
-wheel encoders or bumpers and publishes the data over topics. It also consumes messages controlling the actuators such
-as the left or right wheel or the vacuum. This node is Roomba specific.
+The *roombainterface* node reads the Roomba sensor data stream such as wheel encoders or bumpers and publishes the data
+over topics. It also consumes messages controlling the actuators such as the left or right wheel or the vacuum. This node
+is Roomba specific.
 
 The *imu* node reads data from the MPU6050 IMU and publishes the data over topics.
 The nature of this data is noisy. This node is Roomba specific.
 
-The *differentialodometry* node reads the Roomba sensor messages and converts data from
-the Roomba wheel encoders to a robot odometry including a pose. A pose includes a position, and orientation and additional
-velocity and acceleration information. All these information is derrived from the wheel Roomba wheel encoder data. The
-nature of this data is noisy and it will drift over time a lot. This node is Roomba specific.
+The *differentialodometry* node reads the Roomba sensor messages and converts data from the wheel encoders to a robot
+odometry including a pose. A pose includes a position, and orientation and additional velocity and acceleration information.
+All these information is derrived from the wheel encoder data. The nature of this data is noisy and it will drift over time a
+lot. This node is Roomba specific.
 
-The *ydlidar* node reads data from the YDLidar X4 360 degrees laser scanner and publishes the data over topics. The
+The *ydlidar* node reads data from the YDLiDAR X4 360 degrees laser scanner and publishes the data over topics. The
 nature of this data is noisy, but it is the only source of absolute measurements in this stack. We can measure the
-absolute distance to a wall. All other sensors can only track relative movement and acceleration. This
-node is provided by the manufacturer.
+absolute distance to a wall with a laser scan. All other sensors can only track relative movements and acceleration. This
+node is provided by the LiDAR manufacturer.
 
 The *ekf_localization_node* node does sensor fusion. As mentioned above, the IMU and odometry data is noisy, and tends to
-drift over time. The ekf_localization_node node uses an extended kalman filter to create and continuously refine a position
-estimated based on the noisy sensor data. This should remove drift and increase precision of the measured position,
+drift over time. The ekf_localization_node node uses an Extended Kalman filter to create and continuously refine a position
+estimation based on the noisy sensor data. This should remove drift and increase precision of the measured position,
 acceleration and velocity. This node is part of the ROS stack.
 
 === Localization layer
@@ -175,8 +175,9 @@ robot position, the already cleaned path and so on. This node is Roomba specific
 
 == Data flow
 
-TODO
+Comming soon...
 
 == That's it
 
-TODO
+Here we are. Now you've got the first overview of the whole Roomba ROS hardware and software stack. Stay tuned for
+the next post of the Roomba Series. Thank you for reading!
