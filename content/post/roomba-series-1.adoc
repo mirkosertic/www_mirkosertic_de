@@ -98,7 +98,7 @@ Now comes the interesting part. How is the Roomba software organized? First, I'l
 This is a very simplistic overview of the whole system. The key building block is the
 concept of a ROS node. Nodes are processes doing stuff. Nodes can communicate with
 other nodes by calling provided services or consuming or publishing messages over topics.
-I didn't include the relevant topics in the overview to make it simpler to the beginning.
+I didn't include the relevant topics in the overview to make it simpler for the beginning.
 
 Let's start from top to bottom:
 
