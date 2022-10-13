@@ -50,4 +50,4 @@ enableGitInfo = true
     weight = 5
 
 [markup.asciidocExt]
-    extensions = ["asciidoctor-kroki"]
+    extensions = ["asciidoctor-diagram"]
