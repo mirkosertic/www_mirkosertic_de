@@ -15,9 +15,8 @@
       
       <guid>https://www.mirkosertic.de/blog/2022/02/roomba-series/</guid>
       <description>Maybe too much time I found an outdated Roomba 581 vacuum robot in the attic. I just couldn’t throw it away, so I decided to pimp it a little.
- A new hobby project was born!
- 
- After all, the Roomba hardware is a good vacuum, and it offers a serial interface to read sensors and control the actuators. Only the robot brain and navigation systems are really outdated.</description>
+A new hobby project was born!
+After all, the Roomba hardware is a good vacuum, and it offers a serial interface to read sensors and control the actuators. Only the robot brain and navigation systems are really outdated. I decided to give it a new brain with better navigation hardware, and reuse the Roomba platform as a whole.</description>
     </item>
     
     <item>
@@ -36,7 +35,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2021/04/scs-light-and-shadow/</guid>
       <description>Self-Contained-Cystem, what is it? Self-Contained-System, referred to the following short SCS, is an architectural approach. The idea is to map requirements using individual, functionally independent systems. These systems include everything for mapping the necessary requirements, starting with data management, the actual business logic and finally a complete user interface. This makes these systems self-contained.
- Each SCS should be looked after by its own development team. In addition to the technical separation of the systems, this architectural approach should also facilitate the organizational separation.</description>
+Each SCS should be looked after by its own development team. In addition to the technical separation of the systems, this architectural approach should also facilitate the organizational separation.</description>
     </item>
     
     <item>
@@ -46,7 +45,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2019/04/java-desktop-packaging/</guid>
       <description>Packaging Java applications for the Desktop has never been an easy task. In this blog post I want to look at the past to show where we are coming from, look at the present to see what we have now and finally try to take a look into the future to get a glimpse of what might be coming.
- The Past of Java Packaging Before Java 5.0 there was no built-in support in Java for application distribution, as far as what we would consider an application.</description>
+The Past of Java Packaging Before Java 5.0 there was no built-in support in Java for application distribution, as far as what we would consider an application.</description>
     </item>
     
     <item>
@@ -56,7 +55,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/</guid>
       <description>State of the union WebAssembly for starters is a standard for high-performance, size-optimized executable code for the Web. It was released in March 2017 by the WebAssembly working group as version 1.0, which is basically a MVP (Minimum Viable Product), but the initial development started in June 2017. WebAssembly is the successor asm.js and the Google Native Client (NaCL).
- WebAssembly itself is merely a sandboxed runtime environment. It was designed as a compile target.</description>
+WebAssembly itself is merely a sandboxed runtime environment. It was designed as a compile target.</description>
     </item>
     
     <item>
@@ -66,7 +65,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2018/02/alicebobcaroldaveopencl/</guid>
       <description>An office fairy tale Once upon a time in an office far far away worked four very nice IT people very hard in their office cubicles. Their names were Alice, Bob, Carol and Dave.
- They worked very hard each day. They started work at 9 o’clock, and finished often after sunset. They were very happy in their business, but they were very lonely in their private life due to the amount of work they did every day.</description>
+They worked very hard each day. They started work at 9 o’clock, and finished often after sunset. They were very happy in their business, but they were very lonely in their private life due to the amount of work they did every day.</description>
     </item>
     
     <item>
@@ -85,7 +84,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2017/10/custom-query-parser-for-solr/</guid>
       <description>Apache Solr is a very powerful and mature enterprise search server. It comes with a lot of handy and useful features. One of its features is the query API.
- Now, what is the query API? This API is used to search thru the indexed documents, as the name suggests. But how are the documents searched? Well, the search is based on a search query. Basically the search query is a string, and this string is passed to a so called query parser.</description>
+Now, what is the query API? This API is used to search thru the indexed documents, as the name suggests. But how are the documents searched? Well, the search is based on a search query. Basically the search query is a string, and this string is passed to a so called query parser.</description>
     </item>
     
     <item>
@@ -104,7 +103,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2017/03/integration-at-ui-level-with-server-side-includes/</guid>
       <description>Microservices everywhere Today, Microservices are a common software modeling technique. This style is based on the principles behind Domain-driven Design, where every bounded context is equivalent to a service. If we also take the Twelve-Factor App manifesto into consideration, we able to create scalable and cloud ready systems.
- But this design can also lead to problems. If we take the Microservice design too far(Nanoservices), we are quickly getting way to much services we can handle and maintain.</description>
+But this design can also lead to problems. If we take the Microservice design too far(Nanoservices), we are quickly getting way to much services we can handle and maintain.</description>
     </item>
     
     <item>
@@ -123,7 +122,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2017/01/why-i-switched-to-static-html-generators/</guid>
       <description>The Beginning This Blog started its life a few years ago. At the beginning, I was using DokuWiki for writing and editing. This was good, but I was very limited by the provided editors and markup. So I came to the point that I needed something else. And you will of course ask &amp;#34;what else&amp;#34;? Well, for a Blog, there is a very popular answer: Use Wordpress!
- So I installed Wordpress on my web host, and migrated the whole content.</description>
+So I installed Wordpress on my web host, and migrated the whole content.</description>
     </item>
     
     <item>
@@ -133,9 +132,8 @@
       
       <guid>https://www.mirkosertic.de/blog/2016/12/a-spring-boot-admin-ui/</guid>
       <description>Spring Boot is a very cool framework for building modern, cloud-ready software. It also comes with a set of production ready endpoints which allow to administrate and monitor running applications. Unfortunately there is no admin user interface included in Spring Boot.
- The good people at Codecentric recently released a very nice one, which is also available at GitHub. Here is a screenshot:
- 
- This user interface is basically a Spring Boot Starter, so you have to include it into your own application to make it runnable.</description>
+The good people at Codecentric recently released a very nice one, which is also available at GitHub. Here is a screenshot:
+This user interface is basically a Spring Boot Starter, so you have to include it into your own application to make it runnable.</description>
     </item>
     
     <item>
@@ -145,7 +143,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308/</guid>
       <description>A good method implementation validates all of its preconditions before it continues. Luckily there are different frameworks such as Project Lombok, JSR 303 Bean Validation API and JSR 308 Java Type Annotations available for this job. All of them are based on Java Annotations at method arguments, but they differ in runtime and compile time behavior. Here are some examples.
- Project Lombok Project Lombok adds language features for boilerplate free code to the Java ecosystem.</description>
+Project Lombok Project Lombok adds language features for boilerplate free code to the Java ecosystem.</description>
     </item>
     
     <item>
@@ -164,7 +162,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2016/06/how-to-remove-the-maven-primary-artifact-during-install-and-deploy-phase/</guid>
       <description>Sometimes we use Maven “war” packaging and add the RPM Plugin to create a rpm which contains the project primary artifact. When this rpm needs to be published to the Maven repository, it can be added as a secondary artifact to the build. Here is an example of the plugin configuration in pom.xml:
- &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.codehaus.mojo&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;rpm-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;attached-rpm&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;phase&amp;gt;package&amp;lt;/phase&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;/executions&amp;gt; &amp;lt;/plugin&amp;gt;   This configuration also installs the war and the rpm to the local and even remote repository.</description>
+&amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.codehaus.mojo&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;rpm-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;attached-rpm&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;phase&amp;gt;package&amp;lt;/phase&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;/executions&amp;gt; &amp;lt;/plugin&amp;gt; This configuration also installs the war and the rpm to the local and even remote repository.</description>
     </item>
     
     <item>
@@ -183,9 +181,9 @@
       
       <guid>https://www.mirkosertic.de/blog/2016/01/how-to-schedule-jobs-in-a-java-cdi-environment/</guid>
       <description>Often we need to schedule Jobs. Standard Java CDI does not have a build in Job Scheduler feature. But this functionality can be easily implemented by using the CDI extension mechanism.
- I wrote a simple CDI extension for Job scheduling backed by the Quartz Framework. It is hosted at Github.
- To schedule a Job, we basically need to do the following things:
- a) add the following Maven dependency(available from Central Repository):</description>
+I wrote a simple CDI extension for Job scheduling backed by the Quartz Framework. It is hosted at Github.
+To schedule a Job, we basically need to do the following things:
+a) add the following Maven dependency(available from Central Repository):</description>
     </item>
     
     <item>
@@ -195,7 +193,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2015/12/how-to-download-maven-artifacts-with-maven-3-1-and-eclipse-aether/</guid>
       <description>Starting with Maven 3.1, Sonatype Aether(github.com/sonatype/sonatype-aether ) was replaced with Eclipse Eather(www.eclipse.org/aether ). Now, sometimes we need do download additional Artifacts from Maven repositories during execution time of custom Maven plugins. As the Maven and Aether documentation is not very handsome, here is a short example about how to programmatically download and resolve Maven Artifacts using Maven 3.1 and later with the Eclipse Aether API:
- import java.io.File; import java.util.ArrayList; import java.</description>
+import java.io.File; import java.util.ArrayList; import java.</description>
     </item>
     
     <item>
@@ -223,9 +221,8 @@
       
       <guid>https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming/</guid>
       <description>Last year I wrote a cross platform game engine. It used a JavaFX based Game Authoring System and had a Java based Game Runtime, which was transpiled to different platforms such as Android, JavaScript over GWT and JavaFX.
- Here is a screenshot of a simple platform game based on the GameEngine, some physics stuff and a lot of Java code:
- 
- Here is also a screenshot of the JavaFX based game authoring system while editing the example game:</description>
+Here is a screenshot of a simple platform game based on the GameEngine, some physics stuff and a lot of Java code:
+Here is also a screenshot of the JavaFX based game authoring system while editing the example game:</description>
     </item>
     
     <item>
@@ -235,7 +232,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2014/10/how-to-set-the-html-base-tag-in-a-jsp-page/</guid>
       <description>Sometimes we have to set the HTML base Tag from within a JSP page. For this purpose, we have to compute the correct URL, because the JSP API does not fully expose it. The following shipped shows how it can be cone:
- &amp;lt;%@ page contentType=&amp;#34;text/html;charset=UTF-8&amp;#34; language=&amp;#34;java&amp;#34; %&amp;gt; &amp;lt;%@ taglib prefix=&amp;#34;fn&amp;#34; uri=&amp;#34;http://java.sun.com/jsp/jstl/functions&amp;#34; %&amp;gt; &amp;lt;c:set var=&amp;#34;req&amp;#34; value=&amp;#34;${pageContext.request}&amp;#34; /&amp;gt; &amp;lt;c:set var=&amp;#34;url&amp;#34;&amp;gt;${req.requestURL}&amp;lt;/c:set&amp;gt; &amp;lt;c:set var=&amp;#34;uri&amp;#34; value=&amp;#34;${req.requestURI}&amp;#34; /&amp;gt; &amp;lt;!doctype html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;base href=&amp;#34;${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.</description>
+&amp;lt;%@ page contentType=&amp;#34;text/html;charset=UTF-8&amp;#34; language=&amp;#34;java&amp;#34; %&amp;gt; &amp;lt;%@ taglib prefix=&amp;#34;fn&amp;#34; uri=&amp;#34;http://java.sun.com/jsp/jstl/functions&amp;#34; %&amp;gt; &amp;lt;c:set var=&amp;#34;req&amp;#34; value=&amp;#34;${pageContext.request}&amp;#34; /&amp;gt; &amp;lt;c:set var=&amp;#34;url&amp;#34;&amp;gt;${req.requestURL}&amp;lt;/c:set&amp;gt; &amp;lt;c:set var=&amp;#34;uri&amp;#34; value=&amp;#34;${req.requestURI}&amp;#34; /&amp;gt; &amp;lt;!doctype html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;base href=&amp;#34;${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.</description>
     </item>
     
     <item>
@@ -245,7 +242,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2014/06/how-to-create-user-and-eye-friendly-scannable-log4j-log-files/</guid>
       <description>Often we are writing logs files for our program execution. The logs are sometimes hard to parse, we have to look twice at them to detect error patterns. But it is possible to create a log file layout that is very fast human scannable. Using such kind of log file layout, we can easier scan for common error patterns.
- This can easily be achieved using Log4J and some custom configuration using the Log4J EnhancedPatternLayout.</description>
+This can easily be achieved using Log4J and some custom configuration using the Log4J EnhancedPatternLayout.</description>
     </item>
     
     <item>
@@ -255,7 +252,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/</guid>
       <description>A few weeks ago I decided to enhance my knowledge in game coding, so I bought two very interesting books: “Real-Time Rendering, Third Edition by Thomas Akenine-Möller, Eric Haines and Nety Hoffmann” and “Game Coding Complete, Fourth Edition by Mike McShaffry and David “Rez” Graham”. After some insightful moments, hundreds of pages read and sleepless nights, I wanted to create my own game. So this project was born.
- Primary Goals</description>
+Primary Goals</description>
     </item>
     
     <item>
@@ -265,7 +262,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/11/java-properties-reinvented/</guid>
       <description>Recently i stumbled across the Owner Library(owner.aeonbits.org ). Using this small piece of technology, usage of Java property files can be reinvented! Now we can access properties using a refactoring safe interface the following way:
- public interface ServerConfig extends Config { @Key(&amp;#34;server.http.port&amp;#34;) int port(); @Key(&amp;#34;server.host.name&amp;#34;) String hostname(); @Key(&amp;#34;server.max.threads&amp;#34;); @DefaultValue(&amp;#34;42&amp;#34;) int maxThreads(); } Properties props = new Properties(); // Load properties from a known source ServerConfig cfg = ConfigFactory .create(ServerConfig.class, props); System.</description>
+public interface ServerConfig extends Config { @Key(&amp;#34;server.http.port&amp;#34;) int port(); @Key(&amp;#34;server.host.name&amp;#34;) String hostname(); @Key(&amp;#34;server.max.threads&amp;#34;); @DefaultValue(&amp;#34;42&amp;#34;) int maxThreads(); } Properties props = new Properties(); // Load properties from a known source ServerConfig cfg = ConfigFactory .create(ServerConfig.class, props); System.</description>
     </item>
     
     <item>
@@ -275,7 +272,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/10/java-array-iterator-performance/</guid>
       <description>Lets check a very simple example: we want to fill a multi-dimensional array with values. What is the fastest way to do so? The following piece of code gives us surprising results:
- public class CacheTest { final int SIZE = 256; void rowOrderTest() { int theArray[][][] = new int[SIZE][SIZE][SIZE]; long theTime = System.currentTimeMillis(); for (int i = 0; i &amp;lt;SIZE; i++) { for (int j = 0; j &amp;lt;SIZE; j++) { for (int k = 0; k &amp;lt;SIZE; k++) { theArray[i][j][k] = 1; } } } System.</description>
+public class CacheTest { final int SIZE = 256; void rowOrderTest() { int theArray[][][] = new int[SIZE][SIZE][SIZE]; long theTime = System.currentTimeMillis(); for (int i = 0; i &amp;lt;SIZE; i++) { for (int j = 0; j &amp;lt;SIZE; j++) { for (int k = 0; k &amp;lt;SIZE; k++) { theArray[i][j][k] = 1; } } } System.</description>
     </item>
     
     <item>
@@ -285,7 +282,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/10/java-se-context-and-dependency-injection-with-java-ee-support/</guid>
       <description>Java CDI(Context and Dependency Injection) JSR-299 is available on Java EE application servers, but CDI(Weld is the reference implementation) is also embeddable in Java SE standard edition. Unfortunately Java EE functionalities like security or transaction support are not available here, for instance the following code just does not work as expected when running on CDI SE:
- @Singleton public class WeldBean { @Resource Principal principal; @RolesAllowed(&amp;#34;securedrole&amp;#34;) public void run() { System.</description>
+@Singleton public class WeldBean { @Resource Principal principal; @RolesAllowed(&amp;#34;securedrole&amp;#34;) public void run() { System.</description>
     </item>
     
     <item>
@@ -295,7 +292,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications/</guid>
       <description>JUnit is a cool and powerful framework for unit test creation. But there is a drawback: we need to create a lot of assertions! Without assertions, we can create a very good path coverage, but it is not guaranteed that the code works correctly. This can be really cumbersome while we are working with big JavaBeans or Entities. Check for instance the following piece of code:
- public class BeanTest { @Test public void testCreate() { ClassToTest theCandidate = new ClassToTest(); TestBean theTestBean = theCandidate.</description>
+public class BeanTest { @Test public void testCreate() { ClassToTest theCandidate = new ClassToTest(); TestBean theTestBean = theCandidate.</description>
     </item>
     
     <item>
@@ -323,9 +320,8 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/09/opengl2-on-android-example/</guid>
       <description>The last days i fiddled a bit with OpenGL 2 on Android. The Android OpenGL tutorials are a bit outdated, so i had to do some API research by myself and copy and merge the provided examples together. Here is a screenshot of the running OpenGL App:
- 
- It supports touch events to rotate a triangle around and render the animation.
- To run OpenGL, we need the base Activity class as follows:</description>
+It supports touch events to rotate a triangle around and render the animation.
+To run OpenGL, we need the base Activity class as follows:</description>
     </item>
     
     <item>
@@ -335,8 +331,8 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/09/comparison-of-string-iterator-performance/</guid>
       <description>Often we need to iterate over a String. Java gives use several options. We can either use a simple loop with an index using the following style:
- for (int i=0;i&amp;lt;theLine.length();i++) { char theCurrentChar = theLine.charAt(i); // Do something with the character }   Or we can use the advanced for style using a character array the following way:
- for (char theCurrentChar : theLine.toCharArray()) { // Do something with the character }   Checking both options for performance gives us surprising results: Under heavy stress the first syntax takes in an advanced use case about 200 microseconds , the second syntax takes only 91 microseconds!</description>
+for (int i=0;i&amp;lt;theLine.length();i++) { char theCurrentChar = theLine.charAt(i); // Do something with the character } Or we can use the advanced for style using a character array the following way:
+for (char theCurrentChar : theLine.toCharArray()) { // Do something with the character } Checking both options for performance gives us surprising results: Under heavy stress the first syntax takes in an advanced use case about 200 microseconds , the second syntax takes only 91 microseconds!</description>
     </item>
     
     <item>
@@ -346,7 +342,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/07/realtime-face-detection-on-android-using-opencv/</guid>
       <description>There is a cool computer vision library called OpenCV available. Using OpenCV, we can do stuff like object detection, feature extraction and other computer vision tasks. OpenCV is a native library, but it also comes with JNI Wrappers for Java and the Android platform.
- For the beginning, i want to implement real time face detection on my Samsung Galaxy S3 with OpenCV and some Java code. Here is a screenshot of the final result:</description>
+For the beginning, i want to implement real time face detection on my Samsung Galaxy S3 with OpenCV and some Java code. Here is a screenshot of the final result:</description>
     </item>
     
     <item>
@@ -356,8 +352,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/07/high-performance-android-handwriting/</guid>
       <description>For one of my Android Apps Leas Painting App i needed to implement a sketching and handwriting functionality. The user must be able to draw with his fingers on the canvas and sketch something. This is a screenshot of my App:
- 
- But on my way i had to tweak with Android to make the App responsive even on slower devices. Here are my findings about how to keep everything responsive and smooth:</description>
+But on my way i had to tweak with Android to make the App responsive even on slower devices. Here are my findings about how to keep everything responsive and smooth:</description>
     </item>
     
     <item>
@@ -367,7 +362,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj/</guid>
       <description>Hibernate Validator since version 4.2 supports method validation. For instance consider the following Java code:
- package de.mirkosertic.aspectj; import javax.validation.constraints.NotNull; public class Example { public void doNothing(String aValue) { } public String getString(String aValue) { return aValue; } public @NotNull String getNullString(String aValue) { return aValue; } public void doNothingSingleNotNull(@NotNull String aValue) { } public void doNothingMiddleNotNull(String aStart,@NotNull String aValue, String aEnd) { } public void doNothingEndNotNull(String aStart,String aValue, @NotNull String aEnd) { } }   Wouldn’t it be cool to validate the method pre- and post conditions without coding too much?</description>
+package de.mirkosertic.aspectj; import javax.validation.constraints.NotNull; public class Example { public void doNothing(String aValue) { } public String getString(String aValue) { return aValue; } public @NotNull String getNullString(String aValue) { return aValue; } public void doNothingSingleNotNull(@NotNull String aValue) { } public void doNothingMiddleNotNull(String aStart,@NotNull String aValue, String aEnd) { } public void doNothingEndNotNull(String aStart,String aValue, @NotNull String aEnd) { } } Wouldn’t it be cool to validate the method pre- and post conditions without coding too much?</description>
     </item>
     
     <item>
@@ -377,8 +372,8 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/05/comparison-of-jaxb-xml-and-json-serialization-performance/</guid>
       <description>Once i tried to figure out the difference between JAXB XML and JSON Java Object serialization performance. I wanted to know which one has the better run time performance and thus scales better. Here are the results!
- The test setup is a Windows 7 64bit machine with Intel Core2 Quad Q9450 CPU @2,66GHz. Java Runtime is 1.7.0_07(quite old, i know)
- The profiling test case is to serialize and deserialize a simple Java object with JSON and XML.</description>
+The test setup is a Windows 7 64bit machine with Intel Core2 Quad Q9450 CPU @2,66GHz. Java Runtime is 1.7.0_07(quite old, i know)
+The profiling test case is to serialize and deserialize a simple Java object with JSON and XML.</description>
     </item>
     
     <item>
@@ -388,7 +383,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/05/building-portals-with-javafx-html5-and-some-microdata/</guid>
       <description>Often we need to integrate different applications. This can be done at different integration levels, like integration using the database, integration using services and sometimes integration at user interface level.
- Different solutions are available for user interface level application integration. The most famous are Portlets. A Portlet requires a Portlet Container to build a Portal. These containers are expensive, difficult to configure and maintain and the worst point is: the Portlet API is very limited to model complex integration scenarios!</description>
+Different solutions are available for user interface level application integration. The most famous are Portlets. A Portlet requires a Portlet Container to build a Portal. These containers are expensive, difficult to configure and maintain and the worst point is: the Portlet API is very limited to model complex integration scenarios!</description>
     </item>
     
     <item>
@@ -398,8 +393,8 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/05/javafx-custom-controls-or-webview-with-d3-js/</guid>
       <description>Often we need to visualize complex data in a fancy way. The core JavaFX controls are sometimes capable to do it, but most of the time they are not. So the question is: do we need to write a custom control?
- The answer is: depends! Since JavaFX supports the famous WebView, we can also use some embedded HTML5 with JavaScript libraries like D3.js to visualize data driven documents.
- To show how this works i used the JavaFX Desktop Search example and added an animated sunburst chart with D3.</description>
+The answer is: depends! Since JavaFX supports the famous WebView, we can also use some embedded HTML5 with JavaScript libraries like D3.js to visualize data driven documents.
+To show how this works i used the JavaFX Desktop Search example and added an animated sunburst chart with D3.</description>
     </item>
     
     <item>
@@ -409,7 +404,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine/</guid>
       <description>Microsoft Windows search is not fast, and it also does not give us good search results. So i thought about writing my own Search Engine for the Desktop. It should crawl the file system, extract the content and meta data and finally should give the same results as Google.
- I also wanted to test some new technologies like JavaFX with embedded HTML5, Apache Lucene as a full text search engine, Apache Tika as the content extraction framework and other stuff.</description>
+I also wanted to test some new technologies like JavaFX with embedded HTML5, Apache Lucene as a full text search engine, Apache Tika as the content extraction framework and other stuff.</description>
     </item>
     
     <item>
@@ -419,7 +414,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/04/google-style-query-parser-for-apache-lucene/</guid>
       <description>I needed a query parser for Apache Lucene supporting Google style queries. Basically the following searches should be supported:
- mirko sertic → Should result in a BooleanQuery with “mirko” and “sertic” +mirko+sertic → Should result in a BooleanQuery with “mirko” and “sertic” +mirko +sertic → Should result in a BooleanQuery with “mirko” and “sertic” mirko sertic -klaus → Should result in a BooleanQuery with “mirko” and “sertic” but not “klaus” “mirko sertic” → Should result in a PhraeQuery with terms “mirko” and “sertic” in sequence mirko~ → Should result in a FuzzyQuery with “mirko”</description>
+mirko sertic → Should result in a BooleanQuery with “mirko” and “sertic” +mirko+sertic → Should result in a BooleanQuery with “mirko” and “sertic” +mirko +sertic → Should result in a BooleanQuery with “mirko” and “sertic” mirko sertic -klaus → Should result in a BooleanQuery with “mirko” and “sertic” but not “klaus” “mirko sertic” → Should result in a PhraeQuery with terms “mirko” and “sertic” in sequence mirko~ → Should result in a FuzzyQuery with “mirko”</description>
     </item>
     
     <item>
@@ -429,7 +424,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/04/domain-driven-design-example/</guid>
       <description>I saw a lot of IT projects in the past. Some of them were pretty good designed, others were really bad. Based on these experiences, I want to write a bit about an example project, and I also want to show how an example project can be modeled with UML and what would happen if we apply Domain-driven Design principles to the model.
- Before you continue, you should read the books “Domain-driven Design” by Eric Evans and “Implementing Domain-driven Design” by Vaughn Vernon.</description>
+Before you continue, you should read the books “Domain-driven Design” by Eric Evans and “Implementing Domain-driven Design” by Vaughn Vernon.</description>
     </item>
     
     <item>
@@ -439,7 +434,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/04/adding-html5-microdata-to-dokuwiki/</guid>
       <description>Microdata overview HTML5 is the new standard for webpage markups. It comes with some pretty cool new features like media support etc. But one of the best things is the Microdata support!
- Now, what is Microdata exactly? Using Microdata we can classify HTML elements or regions with meta data like “This is the name of a person” or “Here comes the copyright information”, so the real semantic Web 2.0. This greatly helps search engines to crawl the page content and also enables us to improve the display of the webpage in the search engine results.</description>
+Now, what is Microdata exactly? Using Microdata we can classify HTML elements or regions with meta data like “This is the name of a person” or “Here comes the copyright information”, so the real semantic Web 2.0. This greatly helps search engines to crawl the page content and also enables us to improve the display of the webpage in the search engine results.</description>
     </item>
     
     <item>
@@ -449,7 +444,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/04/implementing-state-machines-with-java-enums/</guid>
       <description>Often we need to implement State Machines to encapsulate object behavior depending on a given object state. This can be cumbersome as it often leads to a lot of interfaces and implementation classes, and persisting such an object state often leads to problems, as we would need to implement a Hibernate custom type for instance to solve it.
- Today i want you to show another approach. We model a State Machine using a Java Enum.</description>
+Today i want you to show another approach. We model a State Machine using a Java Enum.</description>
     </item>
     
     <item>
@@ -459,12 +454,13 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/03/mvc-revised-or-what-are-the-alternatives/</guid>
       <description>Pure MVC The Model View Controller pattern became a de-facto standard for implementing user interfaces or other kind of interaction with complex systems. Basically it separates the user interface into the following components:
-     Component
- Responsibility
-   Model
- The model contains the data to be presented
-   View
- The view renders the data and is the user interface. The view also reacts to model changes and updates on such an event</description>
+Component
+Responsibility
+Model
+The model contains the data to be presented
+View
+The view renders the data and is the user interface. The view also reacts to model changes and updates on such an event
+Controller</description>
     </item>
     
     <item>
@@ -474,7 +470,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server/</guid>
       <description>Once i was thinking about writing Enterprise Java Beans(EJBs) with the Scala programming language. This should be easy as Scala greatly incorporates with existing Java code bases. But let’s create a small test to verify this!
- For this example, i am using Apache TomEE 1.5.1 as a JEE Web Profile certified server and Scala 2.10 to create a small stateless session bean and invoke it from a servlet. The stateless bean is injected to the servlet using CDI.</description>
+For this example, i am using Apache TomEE 1.5.1 as a JEE Web Profile certified server and Scala 2.10 to create a small stateless session bean and invoke it from a servlet. The stateless bean is injected to the servlet using CDI.</description>
     </item>
     
     <item>
@@ -502,7 +498,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/03/using-scala-in-legacy-applications/</guid>
       <description>Often we are enhancing and working on Java legacy applications. But time moves on, and new programming languages like Scala(www.scala-lang.org ) become popular. But one question arises: is it possible to use Scala in Java based legacy applications?
- The reason i prefer Scala over Groovy is that Scala is statically typed. So the compiler does a lot of syntax checking for us, things that are not possible with dynamically typed languages like Groovy or Clojure.</description>
+The reason i prefer Scala over Groovy is that Scala is statically typed. So the compiler does a lot of syntax checking for us, things that are not possible with dynamically typed languages like Groovy or Clojure.</description>
     </item>
     
     <item>
@@ -512,27 +508,42 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/11/an-overview-of-current-nosql-databases/</guid>
       <description>This summary is taken from the book “Seven Databases in Seven Weeks”. See the Books section for details.
-     Database
- Version
- Genre
- Data Types
- Data Relations
- Standard Object
- Written in
- Transactions
- Triggers
- Main Differentiator
- Weaknesses
-   MongoDB
- 2.0
- Document
- Typed
- None
- JSON
- C++
- No
- No
- Easily query Big Data</description>
+Database
+Version
+Genre
+Data Types
+Data Relations
+Standard Object
+Written in
+Transactions
+Triggers
+Main Differentiator
+Weaknesses
+MongoDB
+2.0
+Document
+Typed
+None
+JSON
+C++
+No
+No
+Easily query Big Data
+Embed-ability
+CouchDB
+1.1
+Document
+Typed
+None
+JSON
+Erlang
+No
+Update validation or Changes API
+Durable and embeddable clusters
+Query-ability
+Riak
+1.0
+Key-value</description>
     </item>
     
     <item>
@@ -542,7 +553,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/11/how-to-avoid-server-roundtrips-by-using-pretty-urls/</guid>
       <description>Problem Unnecessary server round trips are a common cause for slow application performance. Unfortunately application frameworks like JSF(Java Server Faces) are forcing developers to do so. For instance given the following URL processed by a JSF Implementation:
- http://localhost/myapplication/customer.faces This shows us a customer edit form. We can navigate to other customers, edit a customer or delete the record. So where are the unnecessary round trips to avoid? Let’s take a closer look what happens in case of a JSF navigation rule to be fired.</description>
+http://localhost/myapplication/customer.faces This shows us a customer edit form. We can navigate to other customers, edit a customer or delete the record. So where are the unnecessary round trips to avoid? Let’s take a closer look what happens in case of a JSF navigation rule to be fired.</description>
     </item>
     
     <item>
@@ -552,7 +563,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/11/using-and-enhancing-hibernate-search/</guid>
       <description>www.hibernate.org is a very cool and mature Java Object-Relational mapping tool. Using Hibernate we can easily persist or reconstitute Java Objects to or from a relational database like MySQL, PostgreSQL, SQLServer or Oracle.
- Hibernate supports us to query the database using the Criteria API or HQL Statements(Or we can use Tools like QueryDSL). But Hibernate core lacks supporting us to do free style or even full text queries. For this purpose, Hibernate Search was created.</description>
+Hibernate supports us to query the database using the Criteria API or HQL Statements(Or we can use Tools like QueryDSL). But Hibernate core lacks supporting us to do free style or even full text queries. For this purpose, Hibernate Search was created.</description>
     </item>
     
     <item>
@@ -562,8 +573,8 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/10/displaying-simple-animated-graphs-with-javafx-2-0/</guid>
       <description>JavaFX is quite cool. The scene graph concept is quite powerful, combined with visual effects like animation, shadows or motion blurring can create very nice looking user interfaces.
- At the moment, JavaFX comes with a set of predefined Form elements(called Controls), and other primitive objects(called Shapes). This is enough to create most of user interface currently needed for business purposes.
- But there are also some Controls missing, like a TreeTable and other stuff.</description>
+At the moment, JavaFX comes with a set of predefined Form elements(called Controls), and other primitive objects(called Shapes). This is enough to create most of user interface currently needed for business purposes.
+But there are also some Controls missing, like a TreeTable and other stuff.</description>
     </item>
     
     <item>
@@ -573,7 +584,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/10/logging-made-easy/</guid>
       <description>In modern, distributed applications logging is a key requirement. But the problem arises if we try to track down an error using different log files on different servers. This is often a problem, depending on the business organization, access rights and other political forces.
- To avoid wasting time to find and get the logs, we need a good tool to support us. Fortunately the Open Source Community has an answer.</description>
+To avoid wasting time to find and get the logs, we need a good tool to support us. Fortunately the Open Source Community has an answer.</description>
     </item>
     
     <item>
@@ -583,10 +594,10 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj/</guid>
       <description>CDI is a mighty enhancement to the Java programming language. But CDI has also some limitations that might be cumbersome:
-   CDI needs a CDI container
-  All dependency injected beans are also managed beans
-  Hibernate or JPA entities are not managed by the CDI container, so there is no CDI support for them
-   So what can we do to get around these limitations, for instance we really want dependency injection in our Entities?</description>
+CDI needs a CDI container
+All dependency injected beans are also managed beans
+Hibernate or JPA entities are not managed by the CDI container, so there is no CDI support for them
+So what can we do to get around these limitations, for instance we really want dependency injection in our Entities?</description>
     </item>
     
     <item>
@@ -596,8 +607,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/09/the-onion-architecture/</guid>
       <description>The Problem Often we develop complex business driven applications. While we design our application, it’s architecture and it’s layers, we often feel to use a traditional approach to define the layers. Here is a short structure of what i mean:
- 
- The problem with this structure is that the packaging is infrastructure driven. We have a user interface which uses the business logic. The business logic uses the data access layer to access data.</description>
+The problem with this structure is that the packaging is infrastructure driven. We have a user interface which uses the business logic. The business logic uses the data access layer to access data.</description>
     </item>
     
     <item>
@@ -616,7 +626,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/08/putting-your-objects-into-context-or-why-overwriting-tostring-can-be-evil/</guid>
       <description>Often we need to display Java business objects in the user interface. The easiest way is to overwrite the toString() method and give back the String representation of the object. This seems to be easy, but it is an evil temptation.
- I’d consider this as a break of the single responsibility rule in object oriented design. The responsibility of the business object is to contain business logic. The responsibility of ui classes is to display something to the user.</description>
+I’d consider this as a break of the single responsibility rule in object oriented design. The responsibility of the business object is to contain business logic. The responsibility of ui classes is to display something to the user.</description>
     </item>
     
     <item>
@@ -626,7 +636,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/08/the-law-of-leaky-abstractions/</guid>
       <description>Personally i really like Joel Spolskys law of Leaky abstractions. Every architect should read and understand his article. Here is a summary of this law taken from Joel’s Website and Wikipedia :
- History The term “leaky abstraction” appears to have been coined in 2002 by Joel Spolsky. However, an earlier paper by Kiczales clearly describes some of the issues with imperfect abstractions and presents a potential solution to the problem by allowing for the customization of the abstraction itself.</description>
+History The term “leaky abstraction” appears to have been coined in 2002 by Joel Spolsky. However, an earlier paper by Kiczales clearly describes some of the issues with imperfect abstractions and presents a potential solution to the problem by allowing for the customization of the abstraction itself.</description>
     </item>
     
     <item>
@@ -636,7 +646,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/08/a-first-touch-with-nosql-graph-databases-and-orientdb/</guid>
       <description>The experiment I was thinking about the current way we often store data in relational databases like MySQL, PostgreSQL or Oracle. We are using object-relational mapping frameworks like Hibernate, enriching Java classes with JPA annotations and are hoping that the mapping framework does everything for us the right way.
- But wait a minute. What are we storing here? Basically we are storing Java object graphs using our ORM framework. Object graphs.</description>
+But wait a minute. What are we storing here? Basically we are storing Java object graphs using our ORM framework. Object graphs.</description>
     </item>
     
     <item>
@@ -646,7 +656,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error/</guid>
       <description>Often we are developing applications for multi-user environments. Classic examples are web applications or web services. This also means that technical or business exceptions can occur at the same time for different users. But how do we know you causes which exception?
- We can use logging frameworks like Log4J and write some meta-information like the id of the current user and session to the Mapped Diagnostic Context and finally use a special logging configuration to output the MDC to the log files.</description>
+We can use logging frameworks like Log4J and write some meta-information like the id of the current user and session to the Mapped Diagnostic Context and finally use a special logging configuration to output the MDC to the log files.</description>
     </item>
     
     <item>
@@ -656,7 +666,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/07/how-to-embed-hystrix-into-existing-spring-applications/</guid>
       <description>Netflix Hystrix is a very powerful framework to build fault tolerant and resilient applications. It provides common implementations for patterns like Timeout, CircuitBreaker and others. It also comes with nice monitoring capabilities using the Hystrix Dashboard or even JMX.
- Now, Hystrix should be used as a kind of decorator around interfaces or gateways to other (sub) systems. The tricky part is to do this in a non invasive manner. And here comes Spring and AOP to play:</description>
+Now, Hystrix should be used as a kind of decorator around interfaces or gateways to other (sub) systems. The tricky part is to do this in a non invasive manner. And here comes Spring and AOP to play:</description>
     </item>
     
     <item>
@@ -693,7 +703,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/07/xml-resourcebundles-and-how-to-make-i18n-refactoring-safe/</guid>
       <description>Java Resourcebundles are cumbersome. Without good IDE support, you are lost. It is hard to maintain the different property files, keep them in sync and take care of correct character encoding. And even if you manage all this, you still have the resource keys hard coded in your source code. It is very hard to detect where your resource keys are used.
- But fortunately you don’t have to live with these limitations!</description>
+But fortunately you don’t have to live with these limitations!</description>
     </item>
     
     <item>
@@ -703,8 +713,8 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/07/reusing-domain-objects-to-create-query-specifications/</guid>
       <description>Problem Often you need to create query specifications to retrieve data from persistent memory. One of the following patterns is most likely used:
- Bind Entity or Service with a distinct Query Object to the repository. A Service creates a distinct query object, passes it to the repository. Here the query object is translated to a Hibernate or JPA Criteria or HQL Statement and finally executed against the database.
- Pros:</description>
+Bind Entity or Service with a distinct Query Object to the repository. A Service creates a distinct query object, passes it to the repository. Here the query object is translated to a Hibernate or JPA Criteria or HQL Statement and finally executed against the database.
+Pros:</description>
     </item>
     
     <item>
@@ -714,8 +724,8 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/06/swing-databinding-with-mogwai-databinding/</guid>
       <description>While you are developing Java Swing based applications, you need a mechanism to bind Java objects to Swing widgets. Project mogwai.sourceforge.net provides a very simple but powerful framework called DataBinding to help you with this task. Here is an example.
- Given the following piece of code(the model you want to bind):
- import java.util.Collection; import java.util.HashSet; public class ExampleModel { private String string1; private String string2; private boolean bool; private String selected; private String type; private Collection&amp;lt;String&amp;gt; entries = new HashSet&amp;lt;String&amp;gt;(); private String[] entriesArray = new String[0]; public ExampleModel() { entries.</description>
+Given the following piece of code(the model you want to bind):
+import java.util.Collection; import java.util.HashSet; public class ExampleModel { private String string1; private String string2; private boolean bool; private String selected; private String type; private Collection&amp;lt;String&amp;gt; entries = new HashSet&amp;lt;String&amp;gt;(); private String[] entriesArray = new String[0]; public ExampleModel() { entries.</description>
     </item>
     
   </channel>

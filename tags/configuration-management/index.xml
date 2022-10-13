@@ -15,7 +15,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/11/java-properties-reinvented/</guid>
       <description>Recently i stumbled across the Owner Library(owner.aeonbits.org ). Using this small piece of technology, usage of Java property files can be reinvented! Now we can access properties using a refactoring safe interface the following way:
- public interface ServerConfig extends Config { @Key(&amp;#34;server.http.port&amp;#34;) int port(); @Key(&amp;#34;server.host.name&amp;#34;) String hostname(); @Key(&amp;#34;server.max.threads&amp;#34;); @DefaultValue(&amp;#34;42&amp;#34;) int maxThreads(); } Properties props = new Properties(); // Load properties from a known source ServerConfig cfg = ConfigFactory .create(ServerConfig.class, props); System.</description>
+public interface ServerConfig extends Config { @Key(&amp;#34;server.http.port&amp;#34;) int port(); @Key(&amp;#34;server.host.name&amp;#34;) String hostname(); @Key(&amp;#34;server.max.threads&amp;#34;); @DefaultValue(&amp;#34;42&amp;#34;) int maxThreads(); } Properties props = new Properties(); // Load properties from a known source ServerConfig cfg = ConfigFactory .create(ServerConfig.class, props); System.</description>
     </item>
     
   </channel>

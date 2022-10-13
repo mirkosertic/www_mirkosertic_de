@@ -15,7 +15,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error/</guid>
       <description>Often we are developing applications for multi-user environments. Classic examples are web applications or web services. This also means that technical or business exceptions can occur at the same time for different users. But how do we know you causes which exception?
- We can use logging frameworks like Log4J and write some meta-information like the id of the current user and session to the Mapped Diagnostic Context and finally use a special logging configuration to output the MDC to the log files.</description>
+We can use logging frameworks like Log4J and write some meta-information like the id of the current user and session to the Mapped Diagnostic Context and finally use a special logging configuration to output the MDC to the log files.</description>
     </item>
     
   </channel>

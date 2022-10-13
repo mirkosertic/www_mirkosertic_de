@@ -15,7 +15,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/07/xml-resourcebundles-and-how-to-make-i18n-refactoring-safe/</guid>
       <description>Java Resourcebundles are cumbersome. Without good IDE support, you are lost. It is hard to maintain the different property files, keep them in sync and take care of correct character encoding. And even if you manage all this, you still have the resource keys hard coded in your source code. It is very hard to detect where your resource keys are used.
- But fortunately you don’t have to live with these limitations!</description>
+But fortunately you don’t have to live with these limitations!</description>
     </item>
     
   </channel>

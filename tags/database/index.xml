@@ -15,7 +15,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2021/04/scs-light-and-shadow/</guid>
       <description>Self-Contained-Cystem, what is it? Self-Contained-System, referred to the following short SCS, is an architectural approach. The idea is to map requirements using individual, functionally independent systems. These systems include everything for mapping the necessary requirements, starting with data management, the actual business logic and finally a complete user interface. This makes these systems self-contained.
- Each SCS should be looked after by its own development team. In addition to the technical separation of the systems, this architectural approach should also facilitate the organizational separation.</description>
+Each SCS should be looked after by its own development team. In addition to the technical separation of the systems, this architectural approach should also facilitate the organizational separation.</description>
     </item>
     
     <item>
@@ -25,27 +25,42 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/11/an-overview-of-current-nosql-databases/</guid>
       <description>This summary is taken from the book “Seven Databases in Seven Weeks”. See the Books section for details.
-     Database
- Version
- Genre
- Data Types
- Data Relations
- Standard Object
- Written in
- Transactions
- Triggers
- Main Differentiator
- Weaknesses
-   MongoDB
- 2.0
- Document
- Typed
- None
- JSON
- C++
- No
- No
- Easily query Big Data</description>
+Database
+Version
+Genre
+Data Types
+Data Relations
+Standard Object
+Written in
+Transactions
+Triggers
+Main Differentiator
+Weaknesses
+MongoDB
+2.0
+Document
+Typed
+None
+JSON
+C++
+No
+No
+Easily query Big Data
+Embed-ability
+CouchDB
+1.1
+Document
+Typed
+None
+JSON
+Erlang
+No
+Update validation or Changes API
+Durable and embeddable clusters
+Query-ability
+Riak
+1.0
+Key-value</description>
     </item>
     
     <item>
@@ -55,8 +70,8 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/07/reusing-domain-objects-to-create-query-specifications/</guid>
       <description>Problem Often you need to create query specifications to retrieve data from persistent memory. One of the following patterns is most likely used:
- Bind Entity or Service with a distinct Query Object to the repository. A Service creates a distinct query object, passes it to the repository. Here the query object is translated to a Hibernate or JPA Criteria or HQL Statement and finally executed against the database.
- Pros:</description>
+Bind Entity or Service with a distinct Query Object to the repository. A Service creates a distinct query object, passes it to the repository. Here the query object is translated to a Hibernate or JPA Criteria or HQL Statement and finally executed against the database.
+Pros:</description>
     </item>
     
   </channel>

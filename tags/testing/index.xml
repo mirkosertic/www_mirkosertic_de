@@ -24,7 +24,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications/</guid>
       <description>JUnit is a cool and powerful framework for unit test creation. But there is a drawback: we need to create a lot of assertions! Without assertions, we can create a very good path coverage, but it is not guaranteed that the code works correctly. This can be really cumbersome while we are working with big JavaBeans or Entities. Check for instance the following piece of code:
- public class BeanTest { @Test public void testCreate() { ClassToTest theCandidate = new ClassToTest(); TestBean theTestBean = theCandidate.</description>
+public class BeanTest { @Test public void testCreate() { ClassToTest theCandidate = new ClassToTest(); TestBean theTestBean = theCandidate.</description>
     </item>
     
   </channel>

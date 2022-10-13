@@ -15,9 +15,8 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/09/opengl2-on-android-example/</guid>
       <description>The last days i fiddled a bit with OpenGL 2 on Android. The Android OpenGL tutorials are a bit outdated, so i had to do some API research by myself and copy and merge the provided examples together. Here is a screenshot of the running OpenGL App:
- 
- It supports touch events to rotate a triangle around and render the animation.
- To run OpenGL, we need the base Activity class as follows:</description>
+It supports touch events to rotate a triangle around and render the animation.
+To run OpenGL, we need the base Activity class as follows:</description>
     </item>
     
   </channel>

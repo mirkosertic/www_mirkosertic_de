@@ -15,9 +15,9 @@
       
       <guid>https://www.mirkosertic.de/global/toolsgoodies/</guid>
       <description>Technical stuff PlotJuggler
- PlotJuggler is a tool to visualize time series that is fast, powerful and intuitive.
- Dependency-Track
- Dependency-Track is an intelligent Component Analysis platform that allows organizations to identify and reduce risk in the software supply chain. Dependency-Track takes a unique and highly beneficial approach by leveraging the capabilities of Software Bill of Materials (SBOM). This approach provides capabilities that traditional Software Composition Analysis (SCA) solutions cannot achieve.</description>
+PlotJuggler is a tool to visualize time series that is fast, powerful and intuitive.
+Dependency-Track
+Dependency-Track is an intelligent Component Analysis platform that allows organizations to identify and reduce risk in the software supply chain. Dependency-Track takes a unique and highly beneficial approach by leveraging the capabilities of Software Bill of Materials (SBOM). This approach provides capabilities that traditional Software Composition Analysis (SCA) solutions cannot achieve.</description>
     </item>
     
     <item>
@@ -26,12 +26,13 @@
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0200</pubDate>
       
       <guid>https://www.mirkosertic.de/global/interestingbooks/</guid>
-      <description>General software engineering &amp;amp; project management   The Mythical Man-Month. Essays on Software Engineering. Frederick P. Brooks
-  Requirements-Engineering und -Management: Professionelle, iterative Anforderungsanalyse für die Praxis. Chris Rupp und die SOPHISTEN
-  The Deadline: A Novel About Project Management. Tom DeMarco
-  The Goal: A Process of Ongoing Improvement. Eliyahu M. Goldratt, Jeff Cox
-  Peopleware: Productive Projects and Teams. Tom DeMarco
-  97 Things Every Programmer Should Know</description>
+      <description>General software engineering &amp;amp; project management The Mythical Man-Month. Essays on Software Engineering. Frederick P. Brooks
+Requirements-Engineering und -Management: Professionelle, iterative Anforderungsanalyse für die Praxis. Chris Rupp und die SOPHISTEN
+The Deadline: A Novel About Project Management. Tom DeMarco
+The Goal: A Process of Ongoing Improvement. Eliyahu M. Goldratt, Jeff Cox
+Peopleware: Productive Projects and Teams. Tom DeMarco
+97 Things Every Programmer Should Know
+Knigge für Softwarearchitekten. Peter Hruschka</description>
     </item>
     
     <item>
@@ -41,14 +42,16 @@
       
       <guid>https://www.mirkosertic.de/global/favorites/</guid>
       <description>Here is a list of my favorite and evergreen postings so far:
-   WebAssembly with vue.js
-  Alice, Bob, Carol and Dave OpenCL Edition
-  Object-Oriented WebAssembly
-  Bytecoder : A Low Level Bytecode to JavaScript Transpiler
-  A Domain-driven Design Example
-  Improve Test Quality with Mutation Testing
-  A JavaFX based Game Authoring System
-  Why I switched to static HTML generators</description>
+WebAssembly with vue.js
+Alice, Bob, Carol and Dave OpenCL Edition
+Object-Oriented WebAssembly
+Bytecoder : A Low Level Bytecode to JavaScript Transpiler
+A Domain-driven Design Example
+Improve Test Quality with Mutation Testing
+A JavaFX based Game Authoring System
+Why I switched to static HTML generators
+A JavaFX based Desktop Search Engine
+GWT vs. Dragome vs. TeaVM for Game Programming</description>
     </item>
     
     <item>
@@ -58,10 +61,10 @@
       
       <guid>https://www.mirkosertic.de/global/impressum/</guid>
       <description>Impressum Angaben gemäß § 5 TMG
- Mirko Sertic Josefine-Mauser-Strasse 66 48157 Münster
- Kontakt
- Telefon: 01575-1337193 E-Mail: mirko@mirkosertic.de
- Haftungsausschluss Haftung für Inhalte Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</description>
+Mirko Sertic Josefine-Mauser-Strasse 66 48157 Münster
+Kontakt
+Telefon: 01575-1337193 E-Mail: mirko@mirkosertic.de
+Haftungsausschluss Haftung für Inhalte Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</description>
     </item>
     
   </channel>

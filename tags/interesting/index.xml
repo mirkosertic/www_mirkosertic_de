@@ -15,7 +15,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/</guid>
       <description>State of the union WebAssembly for starters is a standard for high-performance, size-optimized executable code for the Web. It was released in March 2017 by the WebAssembly working group as version 1.0, which is basically a MVP (Minimum Viable Product), but the initial development started in June 2017. WebAssembly is the successor asm.js and the Google Native Client (NaCL).
- WebAssembly itself is merely a sandboxed runtime environment. It was designed as a compile target.</description>
+WebAssembly itself is merely a sandboxed runtime environment. It was designed as a compile target.</description>
     </item>
     
     <item>
@@ -25,7 +25,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2018/02/alicebobcaroldaveopencl/</guid>
       <description>An office fairy tale Once upon a time in an office far far away worked four very nice IT people very hard in their office cubicles. Their names were Alice, Bob, Carol and Dave.
- They worked very hard each day. They started work at 9 o’clock, and finished often after sunset. They were very happy in their business, but they were very lonely in their private life due to the amount of work they did every day.</description>
+They worked very hard each day. They started work at 9 o’clock, and finished often after sunset. They were very happy in their business, but they were very lonely in their private life due to the amount of work they did every day.</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2017/10/custom-query-parser-for-solr/</guid>
       <description>Apache Solr is a very powerful and mature enterprise search server. It comes with a lot of handy and useful features. One of its features is the query API.
- Now, what is the query API? This API is used to search thru the indexed documents, as the name suggests. But how are the documents searched? Well, the search is based on a search query. Basically the search query is a string, and this string is passed to a so called query parser.</description>
+Now, what is the query API? This API is used to search thru the indexed documents, as the name suggests. But how are the documents searched? Well, the search is based on a search query. Basically the search query is a string, and this string is passed to a so called query parser.</description>
     </item>
     
     <item>
@@ -63,7 +63,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308/</guid>
       <description>A good method implementation validates all of its preconditions before it continues. Luckily there are different frameworks such as Project Lombok, JSR 303 Bean Validation API and JSR 308 Java Type Annotations available for this job. All of them are based on Java Annotations at method arguments, but they differ in runtime and compile time behavior. Here are some examples.
- Project Lombok Project Lombok adds language features for boilerplate free code to the Java ecosystem.</description>
+Project Lombok Project Lombok adds language features for boilerplate free code to the Java ecosystem.</description>
     </item>
     
     <item>
@@ -82,7 +82,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/</guid>
       <description>A few weeks ago I decided to enhance my knowledge in game coding, so I bought two very interesting books: “Real-Time Rendering, Third Edition by Thomas Akenine-Möller, Eric Haines and Nety Hoffmann” and “Game Coding Complete, Fourth Edition by Mike McShaffry and David “Rez” Graham”. After some insightful moments, hundreds of pages read and sleepless nights, I wanted to create my own game. So this project was born.
- Primary Goals</description>
+Primary Goals</description>
     </item>
     
     <item>
@@ -92,7 +92,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/10/java-array-iterator-performance/</guid>
       <description>Lets check a very simple example: we want to fill a multi-dimensional array with values. What is the fastest way to do so? The following piece of code gives us surprising results:
- public class CacheTest { final int SIZE = 256; void rowOrderTest() { int theArray[][][] = new int[SIZE][SIZE][SIZE]; long theTime = System.currentTimeMillis(); for (int i = 0; i &amp;lt;SIZE; i++) { for (int j = 0; j &amp;lt;SIZE; j++) { for (int k = 0; k &amp;lt;SIZE; k++) { theArray[i][j][k] = 1; } } } System.</description>
+public class CacheTest { final int SIZE = 256; void rowOrderTest() { int theArray[][][] = new int[SIZE][SIZE][SIZE]; long theTime = System.currentTimeMillis(); for (int i = 0; i &amp;lt;SIZE; i++) { for (int j = 0; j &amp;lt;SIZE; j++) { for (int k = 0; k &amp;lt;SIZE; k++) { theArray[i][j][k] = 1; } } } System.</description>
     </item>
     
     <item>
@@ -102,7 +102,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications/</guid>
       <description>JUnit is a cool and powerful framework for unit test creation. But there is a drawback: we need to create a lot of assertions! Without assertions, we can create a very good path coverage, but it is not guaranteed that the code works correctly. This can be really cumbersome while we are working with big JavaBeans or Entities. Check for instance the following piece of code:
- public class BeanTest { @Test public void testCreate() { ClassToTest theCandidate = new ClassToTest(); TestBean theTestBean = theCandidate.</description>
+public class BeanTest { @Test public void testCreate() { ClassToTest theCandidate = new ClassToTest(); TestBean theTestBean = theCandidate.</description>
     </item>
     
     <item>
@@ -112,9 +112,8 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/09/opengl2-on-android-example/</guid>
       <description>The last days i fiddled a bit with OpenGL 2 on Android. The Android OpenGL tutorials are a bit outdated, so i had to do some API research by myself and copy and merge the provided examples together. Here is a screenshot of the running OpenGL App:
- 
- It supports touch events to rotate a triangle around and render the animation.
- To run OpenGL, we need the base Activity class as follows:</description>
+It supports touch events to rotate a triangle around and render the animation.
+To run OpenGL, we need the base Activity class as follows:</description>
     </item>
     
     <item>
@@ -124,8 +123,8 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/09/comparison-of-string-iterator-performance/</guid>
       <description>Often we need to iterate over a String. Java gives use several options. We can either use a simple loop with an index using the following style:
- for (int i=0;i&amp;lt;theLine.length();i++) { char theCurrentChar = theLine.charAt(i); // Do something with the character }   Or we can use the advanced for style using a character array the following way:
- for (char theCurrentChar : theLine.toCharArray()) { // Do something with the character }   Checking both options for performance gives us surprising results: Under heavy stress the first syntax takes in an advanced use case about 200 microseconds , the second syntax takes only 91 microseconds!</description>
+for (int i=0;i&amp;lt;theLine.length();i++) { char theCurrentChar = theLine.charAt(i); // Do something with the character } Or we can use the advanced for style using a character array the following way:
+for (char theCurrentChar : theLine.toCharArray()) { // Do something with the character } Checking both options for performance gives us surprising results: Under heavy stress the first syntax takes in an advanced use case about 200 microseconds , the second syntax takes only 91 microseconds!</description>
     </item>
     
     <item>
@@ -135,7 +134,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/07/realtime-face-detection-on-android-using-opencv/</guid>
       <description>There is a cool computer vision library called OpenCV available. Using OpenCV, we can do stuff like object detection, feature extraction and other computer vision tasks. OpenCV is a native library, but it also comes with JNI Wrappers for Java and the Android platform.
- For the beginning, i want to implement real time face detection on my Samsung Galaxy S3 with OpenCV and some Java code. Here is a screenshot of the final result:</description>
+For the beginning, i want to implement real time face detection on my Samsung Galaxy S3 with OpenCV and some Java code. Here is a screenshot of the final result:</description>
     </item>
     
     <item>
@@ -145,8 +144,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/07/high-performance-android-handwriting/</guid>
       <description>For one of my Android Apps Leas Painting App i needed to implement a sketching and handwriting functionality. The user must be able to draw with his fingers on the canvas and sketch something. This is a screenshot of my App:
- 
- But on my way i had to tweak with Android to make the App responsive even on slower devices. Here are my findings about how to keep everything responsive and smooth:</description>
+But on my way i had to tweak with Android to make the App responsive even on slower devices. Here are my findings about how to keep everything responsive and smooth:</description>
     </item>
     
     <item>
@@ -156,7 +154,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj/</guid>
       <description>Hibernate Validator since version 4.2 supports method validation. For instance consider the following Java code:
- package de.mirkosertic.aspectj; import javax.validation.constraints.NotNull; public class Example { public void doNothing(String aValue) { } public String getString(String aValue) { return aValue; } public @NotNull String getNullString(String aValue) { return aValue; } public void doNothingSingleNotNull(@NotNull String aValue) { } public void doNothingMiddleNotNull(String aStart,@NotNull String aValue, String aEnd) { } public void doNothingEndNotNull(String aStart,String aValue, @NotNull String aEnd) { } }   Wouldn’t it be cool to validate the method pre- and post conditions without coding too much?</description>
+package de.mirkosertic.aspectj; import javax.validation.constraints.NotNull; public class Example { public void doNothing(String aValue) { } public String getString(String aValue) { return aValue; } public @NotNull String getNullString(String aValue) { return aValue; } public void doNothingSingleNotNull(@NotNull String aValue) { } public void doNothingMiddleNotNull(String aStart,@NotNull String aValue, String aEnd) { } public void doNothingEndNotNull(String aStart,String aValue, @NotNull String aEnd) { } } Wouldn’t it be cool to validate the method pre- and post conditions without coding too much?</description>
     </item>
     
     <item>
@@ -166,7 +164,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/05/building-portals-with-javafx-html5-and-some-microdata/</guid>
       <description>Often we need to integrate different applications. This can be done at different integration levels, like integration using the database, integration using services and sometimes integration at user interface level.
- Different solutions are available for user interface level application integration. The most famous are Portlets. A Portlet requires a Portlet Container to build a Portal. These containers are expensive, difficult to configure and maintain and the worst point is: the Portlet API is very limited to model complex integration scenarios!</description>
+Different solutions are available for user interface level application integration. The most famous are Portlets. A Portlet requires a Portlet Container to build a Portal. These containers are expensive, difficult to configure and maintain and the worst point is: the Portlet API is very limited to model complex integration scenarios!</description>
     </item>
     
     <item>
@@ -176,7 +174,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine/</guid>
       <description>Microsoft Windows search is not fast, and it also does not give us good search results. So i thought about writing my own Search Engine for the Desktop. It should crawl the file system, extract the content and meta data and finally should give the same results as Google.
- I also wanted to test some new technologies like JavaFX with embedded HTML5, Apache Lucene as a full text search engine, Apache Tika as the content extraction framework and other stuff.</description>
+I also wanted to test some new technologies like JavaFX with embedded HTML5, Apache Lucene as a full text search engine, Apache Tika as the content extraction framework and other stuff.</description>
     </item>
     
     <item>
@@ -186,7 +184,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/04/google-style-query-parser-for-apache-lucene/</guid>
       <description>I needed a query parser for Apache Lucene supporting Google style queries. Basically the following searches should be supported:
- mirko sertic → Should result in a BooleanQuery with “mirko” and “sertic” +mirko+sertic → Should result in a BooleanQuery with “mirko” and “sertic” +mirko +sertic → Should result in a BooleanQuery with “mirko” and “sertic” mirko sertic -klaus → Should result in a BooleanQuery with “mirko” and “sertic” but not “klaus” “mirko sertic” → Should result in a PhraeQuery with terms “mirko” and “sertic” in sequence mirko~ → Should result in a FuzzyQuery with “mirko”</description>
+mirko sertic → Should result in a BooleanQuery with “mirko” and “sertic” +mirko+sertic → Should result in a BooleanQuery with “mirko” and “sertic” +mirko +sertic → Should result in a BooleanQuery with “mirko” and “sertic” mirko sertic -klaus → Should result in a BooleanQuery with “mirko” and “sertic” but not “klaus” “mirko sertic” → Should result in a PhraeQuery with terms “mirko” and “sertic” in sequence mirko~ → Should result in a FuzzyQuery with “mirko”</description>
     </item>
     
     <item>
@@ -196,7 +194,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/04/domain-driven-design-example/</guid>
       <description>I saw a lot of IT projects in the past. Some of them were pretty good designed, others were really bad. Based on these experiences, I want to write a bit about an example project, and I also want to show how an example project can be modeled with UML and what would happen if we apply Domain-driven Design principles to the model.
- Before you continue, you should read the books “Domain-driven Design” by Eric Evans and “Implementing Domain-driven Design” by Vaughn Vernon.</description>
+Before you continue, you should read the books “Domain-driven Design” by Eric Evans and “Implementing Domain-driven Design” by Vaughn Vernon.</description>
     </item>
     
     <item>
@@ -206,7 +204,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server/</guid>
       <description>Once i was thinking about writing Enterprise Java Beans(EJBs) with the Scala programming language. This should be easy as Scala greatly incorporates with existing Java code bases. But let’s create a small test to verify this!
- For this example, i am using Apache TomEE 1.5.1 as a JEE Web Profile certified server and Scala 2.10 to create a small stateless session bean and invoke it from a servlet. The stateless bean is injected to the servlet using CDI.</description>
+For this example, i am using Apache TomEE 1.5.1 as a JEE Web Profile certified server and Scala 2.10 to create a small stateless session bean and invoke it from a servlet. The stateless bean is injected to the servlet using CDI.</description>
     </item>
     
     <item>
@@ -234,7 +232,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/03/using-scala-in-legacy-applications/</guid>
       <description>Often we are enhancing and working on Java legacy applications. But time moves on, and new programming languages like Scala(www.scala-lang.org ) become popular. But one question arises: is it possible to use Scala in Java based legacy applications?
- The reason i prefer Scala over Groovy is that Scala is statically typed. So the compiler does a lot of syntax checking for us, things that are not possible with dynamically typed languages like Groovy or Clojure.</description>
+The reason i prefer Scala over Groovy is that Scala is statically typed. So the compiler does a lot of syntax checking for us, things that are not possible with dynamically typed languages like Groovy or Clojure.</description>
     </item>
     
     <item>
@@ -244,27 +242,42 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/11/an-overview-of-current-nosql-databases/</guid>
       <description>This summary is taken from the book “Seven Databases in Seven Weeks”. See the Books section for details.
-     Database
- Version
- Genre
- Data Types
- Data Relations
- Standard Object
- Written in
- Transactions
- Triggers
- Main Differentiator
- Weaknesses
-   MongoDB
- 2.0
- Document
- Typed
- None
- JSON
- C++
- No
- No
- Easily query Big Data</description>
+Database
+Version
+Genre
+Data Types
+Data Relations
+Standard Object
+Written in
+Transactions
+Triggers
+Main Differentiator
+Weaknesses
+MongoDB
+2.0
+Document
+Typed
+None
+JSON
+C++
+No
+No
+Easily query Big Data
+Embed-ability
+CouchDB
+1.1
+Document
+Typed
+None
+JSON
+Erlang
+No
+Update validation or Changes API
+Durable and embeddable clusters
+Query-ability
+Riak
+1.0
+Key-value</description>
     </item>
     
     <item>
@@ -274,8 +287,8 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/10/displaying-simple-animated-graphs-with-javafx-2-0/</guid>
       <description>JavaFX is quite cool. The scene graph concept is quite powerful, combined with visual effects like animation, shadows or motion blurring can create very nice looking user interfaces.
- At the moment, JavaFX comes with a set of predefined Form elements(called Controls), and other primitive objects(called Shapes). This is enough to create most of user interface currently needed for business purposes.
- But there are also some Controls missing, like a TreeTable and other stuff.</description>
+At the moment, JavaFX comes with a set of predefined Form elements(called Controls), and other primitive objects(called Shapes). This is enough to create most of user interface currently needed for business purposes.
+But there are also some Controls missing, like a TreeTable and other stuff.</description>
     </item>
     
     <item>
@@ -285,7 +298,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/08/putting-your-objects-into-context-or-why-overwriting-tostring-can-be-evil/</guid>
       <description>Often we need to display Java business objects in the user interface. The easiest way is to overwrite the toString() method and give back the String representation of the object. This seems to be easy, but it is an evil temptation.
- I’d consider this as a break of the single responsibility rule in object oriented design. The responsibility of the business object is to contain business logic. The responsibility of ui classes is to display something to the user.</description>
+I’d consider this as a break of the single responsibility rule in object oriented design. The responsibility of the business object is to contain business logic. The responsibility of ui classes is to display something to the user.</description>
     </item>
     
     <item>
@@ -295,7 +308,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/08/the-law-of-leaky-abstractions/</guid>
       <description>Personally i really like Joel Spolskys law of Leaky abstractions. Every architect should read and understand his article. Here is a summary of this law taken from Joel’s Website and Wikipedia :
- History The term “leaky abstraction” appears to have been coined in 2002 by Joel Spolsky. However, an earlier paper by Kiczales clearly describes some of the issues with imperfect abstractions and presents a potential solution to the problem by allowing for the customization of the abstraction itself.</description>
+History The term “leaky abstraction” appears to have been coined in 2002 by Joel Spolsky. However, an earlier paper by Kiczales clearly describes some of the issues with imperfect abstractions and presents a potential solution to the problem by allowing for the customization of the abstraction itself.</description>
     </item>
     
     <item>

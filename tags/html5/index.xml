@@ -24,7 +24,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/</guid>
       <description>State of the union WebAssembly for starters is a standard for high-performance, size-optimized executable code for the Web. It was released in March 2017 by the WebAssembly working group as version 1.0, which is basically a MVP (Minimum Viable Product), but the initial development started in June 2017. WebAssembly is the successor asm.js and the Google Native Client (NaCL).
- WebAssembly itself is merely a sandboxed runtime environment. It was designed as a compile target.</description>
+WebAssembly itself is merely a sandboxed runtime environment. It was designed as a compile target.</description>
     </item>
     
     <item>
@@ -52,7 +52,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2017/01/why-i-switched-to-static-html-generators/</guid>
       <description>The Beginning This Blog started its life a few years ago. At the beginning, I was using DokuWiki for writing and editing. This was good, but I was very limited by the provided editors and markup. So I came to the point that I needed something else. And you will of course ask &amp;#34;what else&amp;#34;? Well, for a Blog, there is a very popular answer: Use Wordpress!
- So I installed Wordpress on my web host, and migrated the whole content.</description>
+So I installed Wordpress on my web host, and migrated the whole content.</description>
     </item>
     
     <item>
@@ -62,9 +62,8 @@
       
       <guid>https://www.mirkosertic.de/blog/2016/12/a-spring-boot-admin-ui/</guid>
       <description>Spring Boot is a very cool framework for building modern, cloud-ready software. It also comes with a set of production ready endpoints which allow to administrate and monitor running applications. Unfortunately there is no admin user interface included in Spring Boot.
- The good people at Codecentric recently released a very nice one, which is also available at GitHub. Here is a screenshot:
- 
- This user interface is basically a Spring Boot Starter, so you have to include it into your own application to make it runnable.</description>
+The good people at Codecentric recently released a very nice one, which is also available at GitHub. Here is a screenshot:
+This user interface is basically a Spring Boot Starter, so you have to include it into your own application to make it runnable.</description>
     </item>
     
     <item>
@@ -110,9 +109,8 @@
       
       <guid>https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming/</guid>
       <description>Last year I wrote a cross platform game engine. It used a JavaFX based Game Authoring System and had a Java based Game Runtime, which was transpiled to different platforms such as Android, JavaScript over GWT and JavaFX.
- Here is a screenshot of a simple platform game based on the GameEngine, some physics stuff and a lot of Java code:
- 
- Here is also a screenshot of the JavaFX based game authoring system while editing the example game:</description>
+Here is a screenshot of a simple platform game based on the GameEngine, some physics stuff and a lot of Java code:
+Here is also a screenshot of the JavaFX based game authoring system while editing the example game:</description>
     </item>
     
     <item>
@@ -122,7 +120,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/</guid>
       <description>A few weeks ago I decided to enhance my knowledge in game coding, so I bought two very interesting books: “Real-Time Rendering, Third Edition by Thomas Akenine-Möller, Eric Haines and Nety Hoffmann” and “Game Coding Complete, Fourth Edition by Mike McShaffry and David “Rez” Graham”. After some insightful moments, hundreds of pages read and sleepless nights, I wanted to create my own game. So this project was born.
- Primary Goals</description>
+Primary Goals</description>
     </item>
     
     <item>
@@ -132,7 +130,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/05/building-portals-with-javafx-html5-and-some-microdata/</guid>
       <description>Often we need to integrate different applications. This can be done at different integration levels, like integration using the database, integration using services and sometimes integration at user interface level.
- Different solutions are available for user interface level application integration. The most famous are Portlets. A Portlet requires a Portlet Container to build a Portal. These containers are expensive, difficult to configure and maintain and the worst point is: the Portlet API is very limited to model complex integration scenarios!</description>
+Different solutions are available for user interface level application integration. The most famous are Portlets. A Portlet requires a Portlet Container to build a Portal. These containers are expensive, difficult to configure and maintain and the worst point is: the Portlet API is very limited to model complex integration scenarios!</description>
     </item>
     
     <item>
@@ -142,8 +140,8 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/05/javafx-custom-controls-or-webview-with-d3-js/</guid>
       <description>Often we need to visualize complex data in a fancy way. The core JavaFX controls are sometimes capable to do it, but most of the time they are not. So the question is: do we need to write a custom control?
- The answer is: depends! Since JavaFX supports the famous WebView, we can also use some embedded HTML5 with JavaScript libraries like D3.js to visualize data driven documents.
- To show how this works i used the JavaFX Desktop Search example and added an animated sunburst chart with D3.</description>
+The answer is: depends! Since JavaFX supports the famous WebView, we can also use some embedded HTML5 with JavaScript libraries like D3.js to visualize data driven documents.
+To show how this works i used the JavaFX Desktop Search example and added an animated sunburst chart with D3.</description>
     </item>
     
     <item>
@@ -153,7 +151,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/04/adding-html5-microdata-to-dokuwiki/</guid>
       <description>Microdata overview HTML5 is the new standard for webpage markups. It comes with some pretty cool new features like media support etc. But one of the best things is the Microdata support!
- Now, what is Microdata exactly? Using Microdata we can classify HTML elements or regions with meta data like “This is the name of a person” or “Here comes the copyright information”, so the real semantic Web 2.0. This greatly helps search engines to crawl the page content and also enables us to improve the display of the webpage in the search engine results.</description>
+Now, what is Microdata exactly? Using Microdata we can classify HTML elements or regions with meta data like “This is the name of a person” or “Here comes the copyright information”, so the real semantic Web 2.0. This greatly helps search engines to crawl the page content and also enables us to improve the display of the webpage in the search engine results.</description>
     </item>
     
   </channel>

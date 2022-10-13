@@ -24,8 +24,8 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/06/swing-databinding-with-mogwai-databinding/</guid>
       <description>While you are developing Java Swing based applications, you need a mechanism to bind Java objects to Swing widgets. Project mogwai.sourceforge.net provides a very simple but powerful framework called DataBinding to help you with this task. Here is an example.
- Given the following piece of code(the model you want to bind):
- import java.util.Collection; import java.util.HashSet; public class ExampleModel { private String string1; private String string2; private boolean bool; private String selected; private String type; private Collection&amp;lt;String&amp;gt; entries = new HashSet&amp;lt;String&amp;gt;(); private String[] entriesArray = new String[0]; public ExampleModel() { entries.</description>
+Given the following piece of code(the model you want to bind):
+import java.util.Collection; import java.util.HashSet; public class ExampleModel { private String string1; private String string2; private boolean bool; private String selected; private String type; private Collection&amp;lt;String&amp;gt; entries = new HashSet&amp;lt;String&amp;gt;(); private String[] entriesArray = new String[0]; public ExampleModel() { entries.</description>
     </item>
     
   </channel>

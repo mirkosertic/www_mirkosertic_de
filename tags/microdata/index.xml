@@ -15,7 +15,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/04/adding-html5-microdata-to-dokuwiki/</guid>
       <description>Microdata overview HTML5 is the new standard for webpage markups. It comes with some pretty cool new features like media support etc. But one of the best things is the Microdata support!
- Now, what is Microdata exactly? Using Microdata we can classify HTML elements or regions with meta data like “This is the name of a person” or “Here comes the copyright information”, so the real semantic Web 2.0. This greatly helps search engines to crawl the page content and also enables us to improve the display of the webpage in the search engine results.</description>
+Now, what is Microdata exactly? Using Microdata we can classify HTML elements or regions with meta data like “This is the name of a person” or “Here comes the copyright information”, so the real semantic Web 2.0. This greatly helps search engines to crawl the page content and also enables us to improve the display of the webpage in the search engine results.</description>
     </item>
     
   </channel>

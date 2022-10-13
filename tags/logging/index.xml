@@ -15,7 +15,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2014/06/how-to-create-user-and-eye-friendly-scannable-log4j-log-files/</guid>
       <description>Often we are writing logs files for our program execution. The logs are sometimes hard to parse, we have to look twice at them to detect error patterns. But it is possible to create a log file layout that is very fast human scannable. Using such kind of log file layout, we can easier scan for common error patterns.
- This can easily be achieved using Log4J and some custom configuration using the Log4J EnhancedPatternLayout.</description>
+This can easily be achieved using Log4J and some custom configuration using the Log4J EnhancedPatternLayout.</description>
     </item>
     
     <item>
@@ -25,7 +25,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/10/logging-made-easy/</guid>
       <description>In modern, distributed applications logging is a key requirement. But the problem arises if we try to track down an error using different log files on different servers. This is often a problem, depending on the business organization, access rights and other political forces.
- To avoid wasting time to find and get the logs, we need a good tool to support us. Fortunately the Open Source Community has an answer.</description>
+To avoid wasting time to find and get the logs, we need a good tool to support us. Fortunately the Open Source Community has an answer.</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error/</guid>
       <description>Often we are developing applications for multi-user environments. Classic examples are web applications or web services. This also means that technical or business exceptions can occur at the same time for different users. But how do we know you causes which exception?
- We can use logging frameworks like Log4J and write some meta-information like the id of the current user and session to the Mapped Diagnostic Context and finally use a special logging configuration to output the MDC to the log files.</description>
+We can use logging frameworks like Log4J and write some meta-information like the id of the current user and session to the Mapped Diagnostic Context and finally use a special logging configuration to output the MDC to the log files.</description>
     </item>
     
   </channel>

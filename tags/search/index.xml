@@ -15,7 +15,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2017/10/custom-query-parser-for-solr/</guid>
       <description>Apache Solr is a very powerful and mature enterprise search server. It comes with a lot of handy and useful features. One of its features is the query API.
- Now, what is the query API? This API is used to search thru the indexed documents, as the name suggests. But how are the documents searched? Well, the search is based on a search query. Basically the search query is a string, and this string is passed to a so called query parser.</description>
+Now, what is the query API? This API is used to search thru the indexed documents, as the name suggests. But how are the documents searched? Well, the search is based on a search query. Basically the search query is a string, and this string is passed to a so called query parser.</description>
     </item>
     
     <item>
@@ -25,7 +25,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine/</guid>
       <description>Microsoft Windows search is not fast, and it also does not give us good search results. So i thought about writing my own Search Engine for the Desktop. It should crawl the file system, extract the content and meta data and finally should give the same results as Google.
- I also wanted to test some new technologies like JavaFX with embedded HTML5, Apache Lucene as a full text search engine, Apache Tika as the content extraction framework and other stuff.</description>
+I also wanted to test some new technologies like JavaFX with embedded HTML5, Apache Lucene as a full text search engine, Apache Tika as the content extraction framework and other stuff.</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/04/google-style-query-parser-for-apache-lucene/</guid>
       <description>I needed a query parser for Apache Lucene supporting Google style queries. Basically the following searches should be supported:
- mirko sertic → Should result in a BooleanQuery with “mirko” and “sertic” +mirko+sertic → Should result in a BooleanQuery with “mirko” and “sertic” +mirko +sertic → Should result in a BooleanQuery with “mirko” and “sertic” mirko sertic -klaus → Should result in a BooleanQuery with “mirko” and “sertic” but not “klaus” “mirko sertic” → Should result in a PhraeQuery with terms “mirko” and “sertic” in sequence mirko~ → Should result in a FuzzyQuery with “mirko”</description>
+mirko sertic → Should result in a BooleanQuery with “mirko” and “sertic” +mirko+sertic → Should result in a BooleanQuery with “mirko” and “sertic” +mirko +sertic → Should result in a BooleanQuery with “mirko” and “sertic” mirko sertic -klaus → Should result in a BooleanQuery with “mirko” and “sertic” but not “klaus” “mirko sertic” → Should result in a PhraeQuery with terms “mirko” and “sertic” in sequence mirko~ → Should result in a FuzzyQuery with “mirko”</description>
     </item>
     
     <item>

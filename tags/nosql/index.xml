@@ -15,27 +15,42 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/11/an-overview-of-current-nosql-databases/</guid>
       <description>This summary is taken from the book “Seven Databases in Seven Weeks”. See the Books section for details.
-     Database
- Version
- Genre
- Data Types
- Data Relations
- Standard Object
- Written in
- Transactions
- Triggers
- Main Differentiator
- Weaknesses
-   MongoDB
- 2.0
- Document
- Typed
- None
- JSON
- C++
- No
- No
- Easily query Big Data</description>
+Database
+Version
+Genre
+Data Types
+Data Relations
+Standard Object
+Written in
+Transactions
+Triggers
+Main Differentiator
+Weaknesses
+MongoDB
+2.0
+Document
+Typed
+None
+JSON
+C++
+No
+No
+Easily query Big Data
+Embed-ability
+CouchDB
+1.1
+Document
+Typed
+None
+JSON
+Erlang
+No
+Update validation or Changes API
+Durable and embeddable clusters
+Query-ability
+Riak
+1.0
+Key-value</description>
     </item>
     
     <item>
@@ -45,7 +60,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/08/a-first-touch-with-nosql-graph-databases-and-orientdb/</guid>
       <description>The experiment I was thinking about the current way we often store data in relational databases like MySQL, PostgreSQL or Oracle. We are using object-relational mapping frameworks like Hibernate, enriching Java classes with JPA annotations and are hoping that the mapping framework does everything for us the right way.
- But wait a minute. What are we storing here? Basically we are storing Java object graphs using our ORM framework. Object graphs.</description>
+But wait a minute. What are we storing here? Basically we are storing Java object graphs using our ORM framework. Object graphs.</description>
     </item>
     
   </channel>

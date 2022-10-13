@@ -15,7 +15,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308/</guid>
       <description>A good method implementation validates all of its preconditions before it continues. Luckily there are different frameworks such as Project Lombok, JSR 303 Bean Validation API and JSR 308 Java Type Annotations available for this job. All of them are based on Java Annotations at method arguments, but they differ in runtime and compile time behavior. Here are some examples.
- Project Lombok Project Lombok adds language features for boilerplate free code to the Java ecosystem.</description>
+Project Lombok Project Lombok adds language features for boilerplate free code to the Java ecosystem.</description>
     </item>
     
     <item>
@@ -25,7 +25,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj/</guid>
       <description>Hibernate Validator since version 4.2 supports method validation. For instance consider the following Java code:
- package de.mirkosertic.aspectj; import javax.validation.constraints.NotNull; public class Example { public void doNothing(String aValue) { } public String getString(String aValue) { return aValue; } public @NotNull String getNullString(String aValue) { return aValue; } public void doNothingSingleNotNull(@NotNull String aValue) { } public void doNothingMiddleNotNull(String aStart,@NotNull String aValue, String aEnd) { } public void doNothingEndNotNull(String aStart,String aValue, @NotNull String aEnd) { } }   Wouldn’t it be cool to validate the method pre- and post conditions without coding too much?</description>
+package de.mirkosertic.aspectj; import javax.validation.constraints.NotNull; public class Example { public void doNothing(String aValue) { } public String getString(String aValue) { return aValue; } public @NotNull String getNullString(String aValue) { return aValue; } public void doNothingSingleNotNull(@NotNull String aValue) { } public void doNothingMiddleNotNull(String aStart,@NotNull String aValue, String aEnd) { } public void doNothingEndNotNull(String aStart,String aValue, @NotNull String aEnd) { } } Wouldn’t it be cool to validate the method pre- and post conditions without coding too much?</description>
     </item>
     
     <item>
@@ -44,10 +44,10 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj/</guid>
       <description>CDI is a mighty enhancement to the Java programming language. But CDI has also some limitations that might be cumbersome:
-   CDI needs a CDI container
-  All dependency injected beans are also managed beans
-  Hibernate or JPA entities are not managed by the CDI container, so there is no CDI support for them
-   So what can we do to get around these limitations, for instance we really want dependency injection in our Entities?</description>
+CDI needs a CDI container
+All dependency injected beans are also managed beans
+Hibernate or JPA entities are not managed by the CDI container, so there is no CDI support for them
+So what can we do to get around these limitations, for instance we really want dependency injection in our Entities?</description>
     </item>
     
     <item>
@@ -57,7 +57,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error/</guid>
       <description>Often we are developing applications for multi-user environments. Classic examples are web applications or web services. This also means that technical or business exceptions can occur at the same time for different users. But how do we know you causes which exception?
- We can use logging frameworks like Log4J and write some meta-information like the id of the current user and session to the Mapped Diagnostic Context and finally use a special logging configuration to output the MDC to the log files.</description>
+We can use logging frameworks like Log4J and write some meta-information like the id of the current user and session to the Mapped Diagnostic Context and finally use a special logging configuration to output the MDC to the log files.</description>
     </item>
     
     <item>

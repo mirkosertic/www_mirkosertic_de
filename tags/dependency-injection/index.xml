@@ -15,9 +15,9 @@
       
       <guid>https://www.mirkosertic.de/blog/2016/01/how-to-schedule-jobs-in-a-java-cdi-environment/</guid>
       <description>Often we need to schedule Jobs. Standard Java CDI does not have a build in Job Scheduler feature. But this functionality can be easily implemented by using the CDI extension mechanism.
- I wrote a simple CDI extension for Job scheduling backed by the Quartz Framework. It is hosted at Github.
- To schedule a Job, we basically need to do the following things:
- a) add the following Maven dependency(available from Central Repository):</description>
+I wrote a simple CDI extension for Job scheduling backed by the Quartz Framework. It is hosted at Github.
+To schedule a Job, we basically need to do the following things:
+a) add the following Maven dependency(available from Central Repository):</description>
     </item>
     
     <item>
@@ -36,10 +36,10 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj/</guid>
       <description>CDI is a mighty enhancement to the Java programming language. But CDI has also some limitations that might be cumbersome:
-   CDI needs a CDI container
-  All dependency injected beans are also managed beans
-  Hibernate or JPA entities are not managed by the CDI container, so there is no CDI support for them
-   So what can we do to get around these limitations, for instance we really want dependency injection in our Entities?</description>
+CDI needs a CDI container
+All dependency injected beans are also managed beans
+Hibernate or JPA entities are not managed by the CDI container, so there is no CDI support for them
+So what can we do to get around these limitations, for instance we really want dependency injection in our Entities?</description>
     </item>
     
     <item>

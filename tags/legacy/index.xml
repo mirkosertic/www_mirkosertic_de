@@ -15,7 +15,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/03/using-scala-in-legacy-applications/</guid>
       <description>Often we are enhancing and working on Java legacy applications. But time moves on, and new programming languages like Scala(www.scala-lang.org ) become popular. But one question arises: is it possible to use Scala in Java based legacy applications?
- The reason i prefer Scala over Groovy is that Scala is statically typed. So the compiler does a lot of syntax checking for us, things that are not possible with dynamically typed languages like Groovy or Clojure.</description>
+The reason i prefer Scala over Groovy is that Scala is statically typed. So the compiler does a lot of syntax checking for us, things that are not possible with dynamically typed languages like Groovy or Clojure.</description>
     </item>
     
     <item>

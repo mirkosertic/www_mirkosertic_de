@@ -24,7 +24,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2017/03/integration-at-ui-level-with-server-side-includes/</guid>
       <description>Microservices everywhere Today, Microservices are a common software modeling technique. This style is based on the principles behind Domain-driven Design, where every bounded context is equivalent to a service. If we also take the Twelve-Factor App manifesto into consideration, we able to create scalable and cloud ready systems.
- But this design can also lead to problems. If we take the Microservice design too far(Nanoservices), we are quickly getting way to much services we can handle and maintain.</description>
+But this design can also lead to problems. If we take the Microservice design too far(Nanoservices), we are quickly getting way to much services we can handle and maintain.</description>
     </item>
     
     <item>
@@ -34,9 +34,8 @@
       
       <guid>https://www.mirkosertic.de/blog/2016/12/a-spring-boot-admin-ui/</guid>
       <description>Spring Boot is a very cool framework for building modern, cloud-ready software. It also comes with a set of production ready endpoints which allow to administrate and monitor running applications. Unfortunately there is no admin user interface included in Spring Boot.
- The good people at Codecentric recently released a very nice one, which is also available at GitHub. Here is a screenshot:
- 
- This user interface is basically a Spring Boot Starter, so you have to include it into your own application to make it runnable.</description>
+The good people at Codecentric recently released a very nice one, which is also available at GitHub. Here is a screenshot:
+This user interface is basically a Spring Boot Starter, so you have to include it into your own application to make it runnable.</description>
     </item>
     
     <item>
@@ -55,7 +54,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/</guid>
       <description>A few weeks ago I decided to enhance my knowledge in game coding, so I bought two very interesting books: “Real-Time Rendering, Third Edition by Thomas Akenine-Möller, Eric Haines and Nety Hoffmann” and “Game Coding Complete, Fourth Edition by Mike McShaffry and David “Rez” Graham”. After some insightful moments, hundreds of pages read and sleepless nights, I wanted to create my own game. So this project was born.
- Primary Goals</description>
+Primary Goals</description>
     </item>
     
     <item>
@@ -65,7 +64,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/05/building-portals-with-javafx-html5-and-some-microdata/</guid>
       <description>Often we need to integrate different applications. This can be done at different integration levels, like integration using the database, integration using services and sometimes integration at user interface level.
- Different solutions are available for user interface level application integration. The most famous are Portlets. A Portlet requires a Portlet Container to build a Portal. These containers are expensive, difficult to configure and maintain and the worst point is: the Portlet API is very limited to model complex integration scenarios!</description>
+Different solutions are available for user interface level application integration. The most famous are Portlets. A Portlet requires a Portlet Container to build a Portal. These containers are expensive, difficult to configure and maintain and the worst point is: the Portlet API is very limited to model complex integration scenarios!</description>
     </item>
     
     <item>
@@ -75,7 +74,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine/</guid>
       <description>Microsoft Windows search is not fast, and it also does not give us good search results. So i thought about writing my own Search Engine for the Desktop. It should crawl the file system, extract the content and meta data and finally should give the same results as Google.
- I also wanted to test some new technologies like JavaFX with embedded HTML5, Apache Lucene as a full text search engine, Apache Tika as the content extraction framework and other stuff.</description>
+I also wanted to test some new technologies like JavaFX with embedded HTML5, Apache Lucene as a full text search engine, Apache Tika as the content extraction framework and other stuff.</description>
     </item>
     
     <item>
@@ -85,8 +84,8 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/10/displaying-simple-animated-graphs-with-javafx-2-0/</guid>
       <description>JavaFX is quite cool. The scene graph concept is quite powerful, combined with visual effects like animation, shadows or motion blurring can create very nice looking user interfaces.
- At the moment, JavaFX comes with a set of predefined Form elements(called Controls), and other primitive objects(called Shapes). This is enough to create most of user interface currently needed for business purposes.
- But there are also some Controls missing, like a TreeTable and other stuff.</description>
+At the moment, JavaFX comes with a set of predefined Form elements(called Controls), and other primitive objects(called Shapes). This is enough to create most of user interface currently needed for business purposes.
+But there are also some Controls missing, like a TreeTable and other stuff.</description>
     </item>
     
     <item>
@@ -96,7 +95,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/10/logging-made-easy/</guid>
       <description>In modern, distributed applications logging is a key requirement. But the problem arises if we try to track down an error using different log files on different servers. This is often a problem, depending on the business organization, access rights and other political forces.
- To avoid wasting time to find and get the logs, we need a good tool to support us. Fortunately the Open Source Community has an answer.</description>
+To avoid wasting time to find and get the logs, we need a good tool to support us. Fortunately the Open Source Community has an answer.</description>
     </item>
     
     <item>

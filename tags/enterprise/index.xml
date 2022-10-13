@@ -24,7 +24,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2021/04/scs-light-and-shadow/</guid>
       <description>Self-Contained-Cystem, what is it? Self-Contained-System, referred to the following short SCS, is an architectural approach. The idea is to map requirements using individual, functionally independent systems. These systems include everything for mapping the necessary requirements, starting with data management, the actual business logic and finally a complete user interface. This makes these systems self-contained.
- Each SCS should be looked after by its own development team. In addition to the technical separation of the systems, this architectural approach should also facilitate the organizational separation.</description>
+Each SCS should be looked after by its own development team. In addition to the technical separation of the systems, this architectural approach should also facilitate the organizational separation.</description>
     </item>
     
     <item>
@@ -34,7 +34,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2017/10/custom-query-parser-for-solr/</guid>
       <description>Apache Solr is a very powerful and mature enterprise search server. It comes with a lot of handy and useful features. One of its features is the query API.
- Now, what is the query API? This API is used to search thru the indexed documents, as the name suggests. But how are the documents searched? Well, the search is based on a search query. Basically the search query is a string, and this string is passed to a so called query parser.</description>
+Now, what is the query API? This API is used to search thru the indexed documents, as the name suggests. But how are the documents searched? Well, the search is based on a search query. Basically the search query is a string, and this string is passed to a so called query parser.</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2017/03/integration-at-ui-level-with-server-side-includes/</guid>
       <description>Microservices everywhere Today, Microservices are a common software modeling technique. This style is based on the principles behind Domain-driven Design, where every bounded context is equivalent to a service. If we also take the Twelve-Factor App manifesto into consideration, we able to create scalable and cloud ready systems.
- But this design can also lead to problems. If we take the Microservice design too far(Nanoservices), we are quickly getting way to much services we can handle and maintain.</description>
+But this design can also lead to problems. If we take the Microservice design too far(Nanoservices), we are quickly getting way to much services we can handle and maintain.</description>
     </item>
     
     <item>
@@ -63,7 +63,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/05/building-portals-with-javafx-html5-and-some-microdata/</guid>
       <description>Often we need to integrate different applications. This can be done at different integration levels, like integration using the database, integration using services and sometimes integration at user interface level.
- Different solutions are available for user interface level application integration. The most famous are Portlets. A Portlet requires a Portlet Container to build a Portal. These containers are expensive, difficult to configure and maintain and the worst point is: the Portlet API is very limited to model complex integration scenarios!</description>
+Different solutions are available for user interface level application integration. The most famous are Portlets. A Portlet requires a Portlet Container to build a Portal. These containers are expensive, difficult to configure and maintain and the worst point is: the Portlet API is very limited to model complex integration scenarios!</description>
     </item>
     
     <item>
@@ -73,7 +73,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine/</guid>
       <description>Microsoft Windows search is not fast, and it also does not give us good search results. So i thought about writing my own Search Engine for the Desktop. It should crawl the file system, extract the content and meta data and finally should give the same results as Google.
- I also wanted to test some new technologies like JavaFX with embedded HTML5, Apache Lucene as a full text search engine, Apache Tika as the content extraction framework and other stuff.</description>
+I also wanted to test some new technologies like JavaFX with embedded HTML5, Apache Lucene as a full text search engine, Apache Tika as the content extraction framework and other stuff.</description>
     </item>
     
     <item>
@@ -83,7 +83,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/04/google-style-query-parser-for-apache-lucene/</guid>
       <description>I needed a query parser for Apache Lucene supporting Google style queries. Basically the following searches should be supported:
- mirko sertic → Should result in a BooleanQuery with “mirko” and “sertic” +mirko+sertic → Should result in a BooleanQuery with “mirko” and “sertic” +mirko +sertic → Should result in a BooleanQuery with “mirko” and “sertic” mirko sertic -klaus → Should result in a BooleanQuery with “mirko” and “sertic” but not “klaus” “mirko sertic” → Should result in a PhraeQuery with terms “mirko” and “sertic” in sequence mirko~ → Should result in a FuzzyQuery with “mirko”</description>
+mirko sertic → Should result in a BooleanQuery with “mirko” and “sertic” +mirko+sertic → Should result in a BooleanQuery with “mirko” and “sertic” +mirko +sertic → Should result in a BooleanQuery with “mirko” and “sertic” mirko sertic -klaus → Should result in a BooleanQuery with “mirko” and “sertic” but not “klaus” “mirko sertic” → Should result in a PhraeQuery with terms “mirko” and “sertic” in sequence mirko~ → Should result in a FuzzyQuery with “mirko”</description>
     </item>
     
     <item>
@@ -93,7 +93,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server/</guid>
       <description>Once i was thinking about writing Enterprise Java Beans(EJBs) with the Scala programming language. This should be easy as Scala greatly incorporates with existing Java code bases. But let’s create a small test to verify this!
- For this example, i am using Apache TomEE 1.5.1 as a JEE Web Profile certified server and Scala 2.10 to create a small stateless session bean and invoke it from a servlet. The stateless bean is injected to the servlet using CDI.</description>
+For this example, i am using Apache TomEE 1.5.1 as a JEE Web Profile certified server and Scala 2.10 to create a small stateless session bean and invoke it from a servlet. The stateless bean is injected to the servlet using CDI.</description>
     </item>
     
     <item>
@@ -112,7 +112,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/11/using-and-enhancing-hibernate-search/</guid>
       <description>www.hibernate.org is a very cool and mature Java Object-Relational mapping tool. Using Hibernate we can easily persist or reconstitute Java Objects to or from a relational database like MySQL, PostgreSQL, SQLServer or Oracle.
- Hibernate supports us to query the database using the Criteria API or HQL Statements(Or we can use Tools like QueryDSL). But Hibernate core lacks supporting us to do free style or even full text queries. For this purpose, Hibernate Search was created.</description>
+Hibernate supports us to query the database using the Criteria API or HQL Statements(Or we can use Tools like QueryDSL). But Hibernate core lacks supporting us to do free style or even full text queries. For this purpose, Hibernate Search was created.</description>
     </item>
     
     <item>
@@ -122,7 +122,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/10/logging-made-easy/</guid>
       <description>In modern, distributed applications logging is a key requirement. But the problem arises if we try to track down an error using different log files on different servers. This is often a problem, depending on the business organization, access rights and other political forces.
- To avoid wasting time to find and get the logs, we need a good tool to support us. Fortunately the Open Source Community has an answer.</description>
+To avoid wasting time to find and get the logs, we need a good tool to support us. Fortunately the Open Source Community has an answer.</description>
     </item>
     
     <item>
@@ -132,10 +132,10 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj/</guid>
       <description>CDI is a mighty enhancement to the Java programming language. But CDI has also some limitations that might be cumbersome:
-   CDI needs a CDI container
-  All dependency injected beans are also managed beans
-  Hibernate or JPA entities are not managed by the CDI container, so there is no CDI support for them
-   So what can we do to get around these limitations, for instance we really want dependency injection in our Entities?</description>
+CDI needs a CDI container
+All dependency injected beans are also managed beans
+Hibernate or JPA entities are not managed by the CDI container, so there is no CDI support for them
+So what can we do to get around these limitations, for instance we really want dependency injection in our Entities?</description>
     </item>
     
     <item>
@@ -145,8 +145,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/09/the-onion-architecture/</guid>
       <description>The Problem Often we develop complex business driven applications. While we design our application, it’s architecture and it’s layers, we often feel to use a traditional approach to define the layers. Here is a short structure of what i mean:
- 
- The problem with this structure is that the packaging is infrastructure driven. We have a user interface which uses the business logic. The business logic uses the data access layer to access data.</description>
+The problem with this structure is that the packaging is infrastructure driven. We have a user interface which uses the business logic. The business logic uses the data access layer to access data.</description>
     </item>
     
     <item>
@@ -165,7 +164,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/08/a-first-touch-with-nosql-graph-databases-and-orientdb/</guid>
       <description>The experiment I was thinking about the current way we often store data in relational databases like MySQL, PostgreSQL or Oracle. We are using object-relational mapping frameworks like Hibernate, enriching Java classes with JPA annotations and are hoping that the mapping framework does everything for us the right way.
- But wait a minute. What are we storing here? Basically we are storing Java object graphs using our ORM framework. Object graphs.</description>
+But wait a minute. What are we storing here? Basically we are storing Java object graphs using our ORM framework. Object graphs.</description>
     </item>
     
     <item>
@@ -184,8 +183,8 @@
       
       <guid>https://www.mirkosertic.de/blog/2012/07/reusing-domain-objects-to-create-query-specifications/</guid>
       <description>Problem Often you need to create query specifications to retrieve data from persistent memory. One of the following patterns is most likely used:
- Bind Entity or Service with a distinct Query Object to the repository. A Service creates a distinct query object, passes it to the repository. Here the query object is translated to a Hibernate or JPA Criteria or HQL Statement and finally executed against the database.
- Pros:</description>
+Bind Entity or Service with a distinct Query Object to the repository. A Service creates a distinct query object, passes it to the repository. Here the query object is translated to a Hibernate or JPA Criteria or HQL Statement and finally executed against the database.
+Pros:</description>
     </item>
     
   </channel>

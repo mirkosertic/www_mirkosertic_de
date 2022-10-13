@@ -15,7 +15,7 @@
       
       <guid>https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/</guid>
       <description>State of the union WebAssembly for starters is a standard for high-performance, size-optimized executable code for the Web. It was released in March 2017 by the WebAssembly working group as version 1.0, which is basically a MVP (Minimum Viable Product), but the initial development started in June 2017. WebAssembly is the successor asm.js and the Google Native Client (NaCL).
- WebAssembly itself is merely a sandboxed runtime environment. It was designed as a compile target.</description>
+WebAssembly itself is merely a sandboxed runtime environment. It was designed as a compile target.</description>
     </item>
     
     <item>
