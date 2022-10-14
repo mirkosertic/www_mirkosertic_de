@@ -1,0 +1,2200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1022px" preserveAspectRatio="none" style="width:2166px;height:1022px;background:#FFFFFF;" version="1.1" viewBox="0 0 2166 1022" width="2166px" zoomAndPan="magnify"><defs/><g><!--MD5=[84dda40acb3410cad7262261daba2aaf]
+cluster c1--><g id="cluster_c1"><rect height="643" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;fill:none;stroke-dasharray:7.0,7.0;" width="521" x="888" y="97.61"/><text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="184" x="1056.5" y="115.61">Hardware interface layer</text></g><!--MD5=[a79645e74fdddf168a098e501fbfe8e0]
+cluster c2--><g id="cluster_c2"><rect height="182" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;fill:none;stroke-dasharray:7.0,7.0;" width="257" x="1449" y="550.61"/><text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="133" x="1511" y="568.61">Localization layer</text></g><!--MD5=[fb252dd5a834d4be8567d0df3f6bbec4]
+cluster c3--><g id="cluster_c3"><rect height="182" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;fill:none;stroke-dasharray:7.0,7.0;" width="241" x="1025" y="826.61"/><text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="123" x="1084" y="844.61">Navigation layer</text></g><!--MD5=[97c5945d6525e7b0cdd96575c2713c62]
+cluster c4--><g id="cluster_c4"><rect height="198" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;fill:none;stroke-dasharray:7.0,7.0;" width="275" x="1586" y="818.61"/><text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="192" x="1627.5" y="836.61">High level functions layer</text></g><!--MD5=[93057bf11c391f46c1193dff9f50b064]
+cluster c5--><g id="cluster_c5"><rect height="182" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;fill:none;stroke-dasharray:7.0,7.0;" width="234" x="1858" y="550.61"/><text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="201" x="1874.5" y="568.61">Supervisor functions layer</text></g><!--MD5=[a6327fbf02f41d1072347f46f6d9818e]
+cluster c0--><g id="cluster_c0"><rect height="149" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;fill:none;stroke-dasharray:7.0,7.0;" width="572" x="7" y="122.11"/><text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="73" x="256.5" y="140.11">Hardware</text></g><!--MD5=[a6806c341501d5f9abbd56363c659c28]
+entity roombainterface--><g id="elem_roombainterface"><rect fill="#1168BD" height="89.5998" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="199" x="912.5" y="173.61"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="125" x="949.5" y="199.61">roombainterface</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1010" y="216.81"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="171" x="926.5" y="233.6099">Handles interaction with the</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="955" y="250.4098">Roomba hardware</text></g><!--MD5=[8d83a12329186457828b7f0308b4ff39]
+entity imu--><g id="elem_imu"><rect fill="#1168BD" height="89.5998" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="199" x="912.5" y="376.61"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="28" x="998" y="402.61">imu</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1010" y="419.81"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="171" x="926.5" y="436.6099">Handles interaction with the</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="965.5" y="453.4098">MPU6050 IMU</text></g><!--MD5=[fe31d09cd534baeb488f3d70d66b4534]
+entity ydlidar--><g id="elem_ydlidar"><rect fill="#1168BD" height="106.3997" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="219" x="1146.5" y="165.61"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="52" x="1230" y="191.61">ydlidar</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1254" y="208.81"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="171" x="1170.5" y="225.6099">Handles interaction with the</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="195" x="1156.5" y="242.4098">YDLiDAR X4 360 degrees laser</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="1231" y="259.2098">scanner</text></g><!--MD5=[9691ebc880e62e239631532203342544]
+entity differentialodometry--><g id="elem_differentialodometry"><rect fill="#1168BD" height="89.5998" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="217" x="1146.5" y="376.61"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="153" x="1178.5" y="402.61">differentialodometry</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1253" y="419.81"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="189" x="1160.5" y="436.6099">Computes odometry from RAW</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="1193.5" y="453.4098">roomba sensor data</text></g><!--MD5=[d49d5eed2275785f47e075547d22ee6e]
+entity ekflocalizationnode--><g id="elem_ekflocalizationnode"><rect fill="#1168BD" height="106.3997" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="219" x="1146.5" y="610.61"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="166" x="1173" y="636.61">ekf_localization_node</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1254" y="653.81"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="156" x="1178" y="670.6099">Performs sensor fusion to</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="199" x="1156.5" y="687.4098">reduce signal noise and improve</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="1197.5" y="704.2098">overall data quality</text></g><!--MD5=[acce8985cfe8dfbdebe6367e168f2336]
+entity gmapping--><g id="elem_gmapping"><rect fill="#1168BD" height="89.5998" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="190" x="1473" y="618.61"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="77" x="1529.5" y="644.61">gmapping</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1566" y="661.81"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162" x="1487" y="678.6099">Implementation of a SLAM</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="1539.5" y="695.4098">algorithm</text></g><!--MD5=[76575cf32f74b8346fa1b08eda589fda]
+entity movebase--><g id="elem_movebase"><rect fill="#1168BD" height="89.5998" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="173" x="1049.5" y="894.61"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="88" x="1092" y="920.61">move_base</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1134" y="937.81"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="1063.5" y="954.6099">General navigation and</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="138" x="1067" y="971.4098">pathfinding algorithms</text></g><!--MD5=[02c3f258399cf12b4fee62543f205b1b]
+entity highlevel--><g id="elem_highlevel"><rect fill="#1168BD" height="106.3997" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="208" x="1629" y="886.61"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="69" x="1698.5" y="912.61">highlevel</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1731" y="929.81"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164" x="1651" y="946.6099">Implementation of cleaning</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="1639" y="963.4098">functionality and full coverage</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="1696" y="980.2098">path finding</text></g><!--MD5=[4bebba49608589dc38d1c6132cbcfa51]
+entity supervisor--><g id="elem_supervisor"><rect fill="#1168BD" height="106.3997" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="201" x="1874.5" y="610.61"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="82" x="1934" y="636.61">supervisor</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1973" y="653.81"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="173" x="1888.5" y="670.6099">Provides user intergace and</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="1885.5" y="687.4098">controls all other parts of the</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43" x="1953.5" y="704.2098">system</text></g><!--MD5=[9dc3350b22364e2977a1f1b17a35caff]
+entity roomba--><g id="elem_roomba"><rect fill="#1168BD" height="72.7999" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="184" x="154" y="182.11"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="92" x="200" y="208.11">Roomba580</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="244" y="225.31"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160" x="168" y="242.1099">The Roomba 581 vacuum</text></g><!--MD5=[fe42e5a4540f19786bf5acf05f7ccff0]
+entity scanner--><g id="elem_scanner"><rect fill="#1168BD" height="72.7999" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="189" x="373.5" y="182.11"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="95" x="420.5" y="208.11">YDLiDAR X4</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="466" y="225.31"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165" x="387.5" y="242.1099">360 degrees laser scanner</text></g><!--MD5=[a21081b9af886533c3223396f7d0f68c]
+entity mpu--><g id="elem_mpu"><rect fill="#1168BD" height="72.7999" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="96" x="23" y="182.11"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="73" x="34.5" y="208.11">MPU6050</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="69" y="225.31"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="37" y="242.1099">6-DOF IMU</text></g><!--MD5=[e4c1270a3d373a2869de3369f60e3bdc]
+link mpu to imu--><g id="link_mpu_imu"><path d="M109.43,260.77 C117.88,267.85 127.24,274.43 137,279.11 C271.11,343.4 701.54,391.27 904.36,410.87 " fill="none" id="mpu-imu" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="912.36,411.64,904.6868,407.882,904.1078,413.854,912.36,411.64" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="103.15,255.27,107.1976,262.7944,111.1471,258.2776,103.15,255.27" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="20" x="430.5" y="314.6101">I2C</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="114" x="382" y="329.0102">[I2C connection to the</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="47" x="417" y="343.4103">Scanner]</text></g><!--MD5=[4036e55c7701e3e28839a0914d8a505c]
+link scanner to ydlidar--><g id="link_scanner_ydlidar"><path d="M490.23,174.49 C511.88,136.94 548.66,85.54 597.5,62.61 C642.88,41.3 1009.78,26.21 1129,81.61 C1164.82,98.25 1195.3,130.07 1217.42,158.85 " fill="none" id="scanner-ydlidar" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1222.29,165.32,1219.8695,157.126,1215.0785,160.738,1222.29,165.32" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="486.1,181.81,492.6496,176.3234,487.427,173.3697,486.1,181.81" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="25" x="647.5" y="34.6101">USB</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="120" x="598.5" y="49.0102">[USB connection to the</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="47" x="636.5" y="63.4103">Scanner]</text></g><!--MD5=[edd789dfd25c8dee8ca3269f44d245a6]
+link roombainterface to roomba--><g id="link_roombainterface_roomba"><path d="M985.57,166.4 C962.86,127.88 926.18,78.37 878,55.61 C772.99,6 458.91,27.77 356,81.61 C316.93,102.05 286.91,143.1 268.17,174.95 " fill="none" id="roombainterface-roomba" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="264.12,182.01,270.7047,176.5656,265.5012,173.5784,264.12,182.01" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="989.64,173.46,988.2383,165.0318,983.042,168.0316,989.64,173.46" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="34" x="786" y="27.6101">UART</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="145" x="729" y="42.0102">[RS-232 using the Roomba</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="29" x="788.5" y="56.4103">Open</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="49" x="778.5" y="70.8104">Interface]</text></g><!--MD5=[d1bf89d7a5a9bc5ed39b6779d618947a]
+link roombainterface to differentialodometry--><g id="link_roombainterface_differentialodometry"><path d="M1065.33,263.72 C1103.79,295.53 1155.72,338.49 1195.52,371.41 " fill="none" id="roombainterface-to-differentialodometry" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1201.8,376.6,1197.5527,369.1865,1193.7253,373.8072,1201.8,376.6" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="112" x="1163" y="329.1101">Topic /sensorframe</text></g><!--MD5=[24d8a0b390f1f587abfa4eb17048d289]
+link differentialodometry to ekflocalizationnode--><g id="link_differentialodometry_ekflocalizationnode"><path d="M1255.18,466.63 C1255.34,504.69 1255.57,560.07 1255.75,602.26 " fill="none" id="differentialodometry-to-ekflocalizationnode" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1255.78,610.52,1258.7371,602.504,1252.7372,602.5362,1255.78,610.52" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="32" x="1297.5" y="509.6101">Topic</text><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="118" x="1256" y="524.0102">/wheelencoder/odom</text></g><!--MD5=[1f10b5bb7a0273fc0f053b69d2469616]
+link imu to ekflocalizationnode--><g id="link_imu_ekflocalizationnode"><path d="M1056.75,466.63 C1096.25,505.48 1154.11,562.39 1197.31,604.88 " fill="none" id="imu-to-ekflocalizationnode" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1203.04,610.52,1199.4456,602.7688,1195.2353,607.0435,1203.04,610.52" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="87" x="1113" y="516.6101">Topic /imu/data</text></g><!--MD5=[c7c54cd7005e114cb3c047f01c358d10]
+link ekflocalizationnode to gmapping--><g id="link_ekflocalizationnode_gmapping"><path d="M1365.56,663.61 C1397.85,663.61 1433.07,663.61 1464.94,663.61 " fill="none" id="ekflocalizationnode-to-gmapping" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1472.96,663.61,1464.96,660.61,1464.96,666.61,1472.96,663.61" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="70" x="1384.25" y="657.6101">Topic /odom</text></g><!--MD5=[766aec6525a59242a630724edcf15957]
+link ydlidar to gmapping--><g id="link_ydlidar_gmapping"><path d="M1355.02,271.66 C1360.08,274.2 1365.09,276.7 1370,279.11 C1576.93,380.82 1716.75,302.38 1841,496.61 C1848.18,507.84 1850.21,516.97 1841,526.61 C1827.63,540.61 1684.17,525.69 1667,534.61 C1634.94,551.27 1610.11,583.49 1593.33,611.44 " fill="none" id="ydlidar-to-gmapping" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1589.24,618.44,1595.8595,613.038,1590.6753,610.0174,1589.24,618.44" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="66" x="1816" y="426.6101">Topic /scan</text></g><!--MD5=[566206b99f4ff96a5dbaaaad8f7845e2]
+link gmapping to movebase--><g id="link_gmapping_movebase"><path d="M1497.06,708.84 C1463.49,727.32 1422.06,746.77 1382,756.61 C1362.9,761.3 1041.75,750.54 1028,764.61 C992.11,801.32 1031.07,851.98 1071.86,889.17 " fill="none" id="gmapping-to-movebase" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1077.88,894.55,1073.9084,886.9852,1069.9136,891.462,1077.88,894.55" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="63" x="1029" y="784.6101">Topic /map</text></g><!--MD5=[2bf4bb99aa33a2e3e717605222882452]
+link movebase to differentialodometry--><g id="link_movebase_differentialodometry"><path d="M1079.49,894.41 C1051.33,868.7 1020.12,833.7 1005,794.61 C962.91,685.81 986.17,637.58 1041,534.61 C1052.68,512.68 1061.16,510.14 1082,496.61 C1099.61,485.17 1119.29,474.82 1138.89,465.71 " fill="none" id="movebase-to-differentialodometry" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1146.39,462.29,1137.8663,462.8782,1140.3547,468.3378,1146.39,462.29" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="86" x="1042" y="668.6101">Topic /cmd_vel</text></g><!--MD5=[e180db3a7b6c9d1a18ea8160f321dc3e]
+link gmapping to highlevel--><g id="link_gmapping_highlevel"><path d="M1605.45,708.77 C1622.52,726.21 1644.03,744.85 1667,756.61 C1683.14,764.87 1694.5,751.48 1707,764.61 C1735.29,794.33 1741.05,840.77 1740.14,878.2 " fill="none" id="gmapping-to-highlevel" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1739.82,886.53,1743.1177,878.648,1737.1219,878.4232,1739.82,886.53" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="63" x="1726" y="784.6101">Topic /map</text></g><!--MD5=[ebb871916bc2ac556b48f8ae97e750a3]
+link movebase to highlevel--><g id="link_movebase_highlevel"><path d="M1152.81,894.32 C1167.24,862.54 1191.4,822.32 1227,802.61 C1245.19,792.54 1545.3,795.48 1594,798.61 C1607.86,799.5 1612.92,795.76 1625,802.61 C1656.45,820.44 1682.06,851.44 1700.43,879.44 " fill="none" id="movebase-to-highlevel" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1704.94,886.48,1703.1473,878.1262,1698.0964,881.3648,1704.94,886.48" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="32" x="1467.5" y="777.6101">Topic</text><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="216" x="1377" y="792.0102">/move_base/global_costmap/costmap</text></g><!--MD5=[289b305b79adef85edfbaaff3268229c]
+link highlevel to movebase--><g id="link_highlevel_movebase"><path d="M1705.73,886.36 C1687.34,856.67 1660.04,822.37 1625,805.61 C1545.22,767.44 1305.16,764.21 1227,805.61 C1194.58,822.78 1171.58,857.24 1156.8,886.92 " fill="none" id="highlevel-to-movebase" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1153.23,894.35,1159.4067,888.4467,1154.0021,885.841,1153.23,894.35" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="112" x="1258" y="784.6101">Service move_base</text></g><!--MD5=[95f1a555b317927feec80ca00eba637f]
+link ekflocalizationnode to highlevel--><g id="link_ekflocalizationnode_highlevel"><path d="M1350.74,716.73 C1383.46,732.33 1420.97,747.66 1457,756.61 C1486.81,764.02 1567.74,750.45 1595,764.61 C1608.07,771.4 1654.71,832.08 1690.18,879.9 " fill="none" id="ekflocalizationnode-to-highlevel" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1695.11,886.55,1692.7628,878.3347,1687.9397,881.9038,1695.11,886.55" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="70" x="1625" y="784.6101">Topic /odom</text></g><!--MD5=[4bb5e8b0259e894b296eb6fbda3faa16]
+link supervisor to c4--><g id="link_supervisor_c4"><path d="M1905.74,716.91 C1858.9,752.05 1804.43,792.35 1798,794.61 C1778.59,801.44 1628.23,788.77 1613,802.61 C1610.2213,805.135 1607.7125,807.8641 1605.451,810.7626 C1604.3203,812.2119 1603.2514,813.7035 1602.2415,815.2332 C1601.7365,815.998 1601.2463,816.7723 1600.7705,817.5556 C1600.6515,817.7514 1600.5335,817.9478 1600.4163,818.1447 " fill="none" id="supervisor-to-c4" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1600.4163,818.1447,1607.0848,812.8033,1601.9284,809.7356,1600.4163,818.1447" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="114" x="1842" y="784.6101">Controls lifecycle of</text></g><!--MD5=[3437572f5ba97e27655bcece29c30ce3]
+link supervisor to c3--><g id="link_supervisor_c3"><path d="M1874.19,708.77 C1826.59,727.37 1768.4,746.92 1714,756.61 C1698.11,759.44 1144.33,753.12 1133,764.61 C1123.64,774.1 1123.93,784.83 1133,794.61 C1149.06,811.93 1221.77,786.44 1239,802.61 C1244.4763,807.7488 1248.8925,813.682 1252.4267,820.1365 C1253.3102,821.7501 1254.1387,823.3963 1254.9147,825.0708 C1255.1088,825.4894 1255.2995,825.9098 1255.487,826.3319 " fill="none" id="supervisor-to-c3" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1255.487,826.3319,1254.9807,817.8029,1249.4974,820.2389,1255.487,826.3319" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="114" x="1134" y="784.6101">Controls lifecycle of</text></g><!--MD5=[86a8d696fee643960264ceacf096668a]
+link supervisor to c2--><g id="link_supervisor_c2"><path d="M1874.23,663.61 C1836.195,663.61 1794.0525,663.61 1760.5175,663.61 C1743.75,663.61 1729.1344,663.61 1718.26,663.61 C1715.5414,663.61 1713.0566,663.61 1710.8305,663.61 C1709.7175,663.61 1708.6691,663.61 1707.6885,663.61 C1707.1982,663.61 1706.7248,663.61 1706.2688,663.61 " fill="none" id="supervisor-to-c2" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1706.2688,663.61,1714.2688,666.61,1714.2688,660.61,1706.2688,663.61" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="114" x="1729.43" y="657.6101">Controls lifecycle of</text></g><!--MD5=[ebad69e28c5389df21ee58979f175eae]
+link supervisor to c1--><g id="link_supervisor_c1"><path d="M1973.85,610.46 C1969.62,546.9 1952.99,440.13 1891,376.61 C1811.765,295.415 1690.5525,256.1425 1588.5125,237.18 C1537.4925,227.6987 1491.2656,223.295 1457.4756,221.2672 C1440.5806,220.2533 1426.7948,219.8334 1417.0738,219.6697 C1414.6435,219.6288 1412.4672,219.6039 1410.56,219.5898 C1410.0832,219.5862 1409.6232,219.5834 1409.1802,219.5811 " fill="none" id="supervisor-to-c1" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1409.1802,219.5811,1417.1647,222.6222,1417.1955,216.6223,1409.1802,219.5811" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="114" x="1944" y="426.6101">Controls lifecycle of</text></g><!--MD5=[158535a5f9e76230538447028ad3c90e]
+link supervisor to highlevel--><g id="link_supervisor_highlevel"><path d="M1982.98,716.92 C1984.23,742.04 1981.71,771.6 1968,794.61 C1940.22,841.23 1890.91,874.81 1844.62,897.75 " fill="none" id="supervisor-to-highlevel" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1837.22,901.34,1845.7278,900.5542,1843.1133,895.1538,1837.22,901.34" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="77" x="1980" y="784.6101">Service clean</text></g><!--MD5=[158535a5f9e76230538447028ad3c90e]
+link supervisor to highlevel--><g id="link_supervisor_highlevel"><path d="M2044.46,716.63 C2067.37,740.21 2083.09,768.59 2066,794.61 C2017.36,868.64 1921.67,904.79 1845.31,922.34 " fill="none" id="supervisor-to-highlevel-1" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1837.04,924.18,1845.5012,925.3666,1844.1951,919.5105,1837.04,924.18" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="84" x="2074" y="784.6101">Service cancel</text></g><!--MD5=[d83a7aa59b7060a50da626525cf0014c]
+link gmapping to supervisor--><g id="link_gmapping_supervisor"><path d="M1588.9,618.6 C1605.45,588.77 1631.68,552.03 1667,534.61 C1685.74,525.37 1693.66,529.86 1714,534.61 C1774.28,548.69 1836.62,578.83 1885.26,606.43 " fill="none" id="gmapping-to-supervisor" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1892.33,610.48,1886.8754,603.9037,1883.8962,609.1119,1892.33,610.48" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="63" x="1698.5" y="516.6101">Topic /map</text></g><!--MD5=[73a0beabc5cf104dd741f08e4469dd9b]
+link ekflocalizationnode to supervisor--><g id="link_ekflocalizationnode_supervisor"><path d="M1318.3,610.31 C1355.82,581.8 1406.07,549.55 1457,534.61 C1566.61,502.46 1602.77,508.62 1714,534.61 C1774.28,548.69 1836.62,578.83 1885.26,606.43 " fill="none" id="ekflocalizationnode-to-supervisor" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1892.33,610.48,1886.8754,603.9037,1883.8962,609.1119,1892.33,610.48" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="70" x="1769" y="516.6101">Topic /odom</text></g><!--MD5=[feb064cbea8654a97b7c778e2d0b3b8c]
+@startuml C4_Elements
+' C4-PlantUML
+' https://github.com/plantuml-stdlib/C4-PlantUML/tree/v2.4.0
+
+'Version
+' ##################################
+!function C4Version()
+  !return "2.4.0"
+!end function
+
+!procedure C4VersionDetails()
+rectangle C4VersionDetailsArea <<legendArea>> [
+| PlantUML | **%version()** |
+| C4-PlantUML | **C4Version()** |
+]
+!end procedure
+
+' Colors
+' ##################################
+
+!global $ELEMENT_FONT_COLOR = "#FFFFFF"
+
+!global $ARROW_COLOR = "#666666"
+
+!global $BOUNDARY_COLOR = "#444444"
+!global $BOUNDARY_BG_COLOR = "transparent"
+
+!global $LEGEND_FONT_COLOR = "#FFFFFF"
+!global $LEGEND_TITLE_COLOR = "#000000"
+' %darken(darkkhaki,50), #khaki
+!global $LEGEND_DARK_COLOR = "#66622E"
+!global $LEGEND_LIGHT_COLOR = "#khaki"
+
+' Labels
+' ##################################
+
+!global $LEGEND_SHADOW_TEXT = "(shadow) "
+!global $LEGEND_NO_SHADOW_TEXT = "(no shadow) "
+!global $LEGEND_NO_FONT_BG_TEXT = "(no text, no back color) "
+!global $LEGEND_NO_FONT_TEXT = "(no text color) "
+!global $LEGEND_NO_BG_TEXT = "(no back color) "
+!global $LEGEND_NO_LINE_TEXT = "(no line color) "
+!global $LEGEND_ROUNDED_BOX = "(rounded box) "
+!global $LEGEND_EIGHT_SIDED = "(eight sided) "
+!global $LEGEND_DOTTED_LINE = "(dotted) "
+!global $LEGEND_DASHED_LINE = "(dashed) "
+!global $LEGEND_BOLD_LINE = "(bold) "
+
+' Styling
+' ##################################
+
+!global $TECHN_FONT_SIZE = 12
+!global $ROUNDED_BOX_SIZE = 25
+!global $EIGHT_SIDED_SIZE = 18
+
+!global $ROUNDED_BOX = "roundedBox"
+!global $EIGHT_SIDED = "eightSided"
+
+!global $DOTTED_LINE = "dotted"
+!global $DASHED_LINE = "dashed"
+!global $BOLD_LINE = "bold"
+
+skinparam defaultTextAlignment center
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+
+skinparam LegendBorderColor transparent
+skinparam LegendBackgroundColor transparent
+skinparam LegendFontColor $LEGEND_FONT_COLOR
+
+skinparam shadowing<<legendArea>> false
+' #00000000 is transparent
+skinparam rectangle<<legendArea>> {
+    backgroundcolor #00000000
+    bordercolor #00000000
+}
+
+skinparam rectangle {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam database {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam queue {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam arrow {
+    Color $ARROW_COLOR
+    FontColor $ARROW_COLOR
+    FontSize 12
+}
+
+skinparam actor {
+    StereotypeFontSize 12
+    shadowing false
+    style awesome
+}
+
+skinparam person {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+' Some boundary skinparams have to be set as package skinparams too (PlantUML uses internal packages)
+skinparam package {
+    StereotypeFontSize 6
+    StereotypeFontColor $BOUNDARY_BG_COLOR
+    FontStyle plain
+    BackgroundColor $BOUNDARY_BG_COLOR
+}
+
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 6
+    StereotypeFontColor $BOUNDARY_BG_COLOR
+    FontColor $BOUNDARY_COLOR
+    BorderColor $BOUNDARY_COLOR
+    BackgroundColor $BOUNDARY_BG_COLOR
+    BorderStyle dashed
+}
+
+' Legend and Tags
+' ##################################
+!global $tagDefaultLegend = ""
+!global $tagCustomLegend = ""
+
+' rel specific
+!unquoted function $toStereos($tags)
+  !if (%strlen($tags) == 0)
+    !return ''
+  !endif
+  !$stereos = ''
+  !$brPos = %strpos($tags, "+")
+  !while ($brPos >= 0)
+    !$tag = %substr($tags, 0, $brPos)
+    !$stereos = $stereos + '<<' + $tag + '>>'
+%set_variable_value("$" + $tag + "_LineLegend", %true())
+    !$tags = %substr($tags, $brPos+1)
+    !$brPos = %strpos($tags, "+")
+  !endwhile
+  !if (%strlen($tags) > 0)
+    !$stereos = $stereos + '<<' + $tags + '>>'
+%set_variable_value("$" + $tags + "_LineLegend", %true())
+  !endif
+  !return $stereos
+!endfunction
+
+' if $sprite/$techn is an empty argument, try to calculate it via the defined $tag 
+!unquoted function $toRelArg($arg, $tags, $varPostfix)
+  !if ($arg > "")
+    !return $arg
+  !endif
+
+  !if (%strlen($tags) == 0)
+       !return $arg
+  !endif
+  !$brPos = %strpos($tags, "+")
+  !while ($brPos >= 0)
+    !$tag = %substr($tags, 0, $brPos)
+    !$newArg = %get_variable_value("$" + $tag + $varPostfix)
+    !if ($newArg > "")
+       !return $newArg
+    !endif
+    !$tags = %substr($tags, $brPos+1)
+    !$brPos = %strpos($tags, "+")
+  !endwhile
+  !if (%strlen($tags) > 0)
+    !$newArg = %get_variable_value("$" + $tags + $varPostfix)
+    !if ($newArg > "")
+       !return $newArg
+    !endif
+  !endif
+  !return $arg
+!endfunction
+
+' element specific (unused are hidden based on mask)
+!unquoted function $toStereos($elementType, $tags)
+  !if (%strlen($tags) == 0)
+    !$stereos = '<<' + $elementType + '>>'
+%set_variable_value("$" + $elementType + "Legend", %true())
+    !return $stereos
+  !endif
+  !$stereos = ''
+  !$mask = $resetMask()
+  !$brPos = %strpos($tags, "+")
+  !while ($brPos >= 0)
+    !$tag = %substr($tags, 0, $brPos)
+    !$stereos = $stereos + '<<' + $tag + '>>'
+    !$mergedMask = $combineMaskWithTag($mask, $tag)
+    !if ($mergedMask != $mask)
+%set_variable_value("$" + $tag + "Legend", %true())
+      !$mask = $mergedMask
+    !endif
+    !$tags = %substr($tags, $brPos+1)
+    !$brPos = %strpos($tags, "+")
+  !endwhile
+  !if (%strlen($tags) > 0)
+    !$stereos = $stereos + '<<' + $tags + '>>'
+    !$mergedMask = $combineMaskWithTag($mask, $tags)
+    !if ($mergedMask != $mask)
+%set_variable_value("$" + $tags + "Legend", %true())
+      !$mask = $mergedMask
+    !endif
+  !endif
+  ' has to be last, otherwise PlantUML overwrites all tag specific skinparams
+  !$stereos = $stereos + '<<' + $elementType + '>>'
+  !$mergedMask = $combineMaskWithTag($mask, $elementType)
+  !if ($mergedMask != $mask)
+%set_variable_value("$" + $elementType + "Legend", %true())
+    !$mask = $mergedMask
+  !endif
+  !return $stereos
+!endfunction
+
+' if $sprite/$techn is an empty argument, try to calculate it via the defined $tag 
+!unquoted function $toElementArg($arg, $tags, $varPostfix, $elementType)
+  !if ($arg > "")
+    !return $arg
+  !endif
+
+  !if (%strlen($tags) == 0)
+    !$newArg = %get_variable_value("$" + $elementType + $varPostfix)
+    !if ($newArg > "")
+       !return $newArg
+    !else
+       !return $arg
+    !endif
+  !endif
+  !$brPos = %strpos($tags, "+")
+  !while ($brPos >= 0)
+    !$tag = %substr($tags, 0, $brPos)
+    !$newArg = %get_variable_value("$" + $tag + $varPostfix)
+    !if ($newArg > "")
+       !return $newArg
+    !endif
+    !$tags = %substr($tags, $brPos+1)
+    !$brPos = %strpos($tags, "+")
+  !endwhile
+  !if (%strlen($tags) > 0)
+    !$newArg = %get_variable_value("$" + $tags + $varPostfix)
+    !if ($newArg > "")
+       !return $newArg
+    !endif
+    !$newArg = %get_variable_value("$" + $elementType + $varPostfix)
+    !if ($newArg > "")
+       !return $newArg
+    !endif
+  !endif
+  !return $arg
+!endfunction
+
+!function $elementTagSkinparams($element, $tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, $shape)
+  !$elementSkin = "skinparam " + $element + "<<" + $tagStereo + ">> {" + %newline()
+  !if ($fontColor != "")
+    !if ($tagStereo != "boundary")
+      !$elementSkin = $elementSkin + "    StereotypeFontColor " + $fontColor + %newline()
+    !endif
+    !$elementSkin = $elementSkin + "    FontColor " + $fontColor + %newline()
+  !endif
+  !if ($bgColor != "")
+    !$elementSkin = $elementSkin + "    BackgroundColor " + $bgColor + %newline()
+  !endif
+  !if ($borderColor != "")
+    !$elementSkin = $elementSkin + "    BorderColor " + $borderColor+ %newline()
+  !endif
+  !if ($shadowing == "true")
+    !$elementSkin = $elementSkin + "    Shadowing<<" + $tagStereo + ">> " + "true" + %newline()
+  !endif
+  !if ($shadowing == "false")
+    !$elementSkin = $elementSkin + "    Shadowing<<" + $tagStereo + ">> " + "false" + %newline()
+  !endif
+  ' only rectangle supports shape(d corners), define both skinparam that overlays are working
+  !if ($shape != "" && $element == "rectangle")
+    !if ($shape == $ROUNDED_BOX)
+      !$elementSkin = $elementSkin + "    RoundCorner " + $ROUNDED_BOX_SIZE+ %newline()
+      !$elementSkin = $elementSkin + "    DiagonalCorner " + "0" + %newline()
+    !elseif ($shape == $EIGHT_SIDED)
+      !$elementSkin = $elementSkin + "    RoundCorner " + "0" + %newline()
+      !$elementSkin = $elementSkin + "    DiagonalCorner " + $EIGHT_SIDED_SIZE+ %newline()
+    !endif
+  !endif
+  !$elementSkin = $elementSkin + "}" + %newline()
+  !return $elementSkin
+!endfunction
+
+!unquoted procedure $defineSkinparams($tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, $shape)
+  ' only rectangle supports shape(d corners)
+  !$tagSkin = $elementTagSkinparams("rectangle", $tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, $shape)
+  !$tagSkin = $tagSkin + $elementTagSkinparams("database", $tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, "")
+  !$tagSkin = $tagSkin + $elementTagSkinparams("queue", $tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, "")
+  ' actor has style awesome, therefore $fontColor is ignored and text uses $bgColor too
+  !$tagSkin = $tagSkin + $elementTagSkinparams("actor", $tagStereo, $bgColor, $bgColor, $borderColor, $shadowing, "")
+  !$tagSkin = $tagSkin + $elementTagSkinparams("person", $tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, "")
+  !if ($tagStereo == "boundary" && $bgColor != "")
+    !$tagSkin = $tagSkin + "skinparam package<<boundary>>StereotypeFontColor " + $bgColor + %newline()
+    !$tagSkin = $tagSkin + "skinparam rectangle<<boundary>>StereotypeFontColor " + $bgColor + %newline()
+  !endif
+$tagSkin
+!endprocedure
+
+' arrow colors cannot start with # (legend background has to start with #)
+!function $colorWithoutHash($c)
+  !if (%substr($c, 0, 1) == "#")
+    !$c = %substr($c,1)
+  !endif
+  !return $c
+!endfunction
+
+!unquoted procedure $defineRelSkinparams($tagStereo, $textColor, $lineColor, $lineStyle)
+  !$elementSkin = "skinparam arrow<<" + $tagStereo + ">> {" + %newline()
+  !$elementSkin = $elementSkin + "    Color "
+  !if ($lineColor != "")
+    !$elementSkin = $elementSkin + $colorWithoutHash($lineColor)
+  !endif
+  !if ($textColor != "")
+    !$elementSkin = $elementSkin + ";text:" + $colorWithoutHash($textColor)
+  !endif
+  !if ($lineStyle != "")
+    !$elementSkin = $elementSkin + ";line." + $lineStyle
+  !endif
+  !$elementSkin = $elementSkin + %newline()
+  !$elementSkin = $elementSkin + "}" + %newline()
+$elementSkin
+!endprocedure
+
+' %is_dark() requires PlantUML version >= 1.2021.6
+!if (%function_exists("%is_dark"))
+  !$PlantUMLSupportsDynamicLegendColor = %true()
+!else
+  !$PlantUMLSupportsDynamicLegendColor = %false()
+  !log "dynamic undefined legend colors" requires PlantUML version >= 1.2021.6, therefore only static assigned colors are used
+!endif
+
+!unquoted function $contrastLegend($color)
+  !if (%is_dark($color))
+    !$value = $LEGEND_LIGHT_COLOR
+  !else
+    !$value = $LEGEND_DARK_COLOR
+  !endif
+  !return $value
+!endfunction
+
+!unquoted function $flatLegend($color)
+  !if (%is_dark($color))
+    !$value = $LEGEND_DARK_COLOR
+  !else
+    !$value = $LEGEND_LIGHT_COLOR
+  !endif
+  !return $value
+!endfunction
+
+' legend background has to start with #
+!function $colorWithHash($c)
+  !if (%substr($c, 0, 1) != "#")
+    !$c = "#" + $c
+  !endif
+  !return $c
+!endfunction
+
+!function $addMaskFlag($mask, $attr)
+  !if ($attr == "")
+    !$mask = $mask + "0"
+  !else
+    !$mask = $mask + "1"
+  !endif
+  !return $mask
+!endfunction
+
+!function $orFlags($flag1, $flag2)
+  !if ($flag1 == "0" && $flag2 == "0")
+    !return "0"
+  !endif
+  !return "1"
+!endfunction
+
+!function $tagLegendMask($bgColor, $fontColor, $borderColor, $shadowing, $shape, $sprite)
+  !$mask = ""
+  !$mask = $addMaskFlag($mask, $bgColor)
+  !$mask = $addMaskFlag($mask, $fontColor)
+  !$mask = $addMaskFlag($mask, $borderColor)
+  !$mask = $addMaskFlag($mask, $shadowing)
+  !$mask = $addMaskFlag($mask, $shape)
+  !$mask = $addMaskFlag($mask, $sprite)
+  !return $mask
+!endfunction
+
+!function $resetMask()
+  !return "000000"
+!endfunction
+
+!function $combineMasks($mask1, $mask2)
+  !$mask = ""
+  !$mask = $mask + $orFlags(%substr($mask1, 0, 1), %substr($mask2, 0, 1))
+  !$mask = $mask + $orFlags(%substr($mask1, 1, 1), %substr($mask2, 1, 1))
+  !$mask = $mask + $orFlags(%substr($mask1, 2, 1), %substr($mask2, 2, 1))
+  !$mask = $mask + $orFlags(%substr($mask1, 3, 1), %substr($mask2, 3, 1))
+  !$mask = $mask + $orFlags(%substr($mask1, 4, 1), %substr($mask2, 4, 1))
+  !$mask = $mask + $orFlags(%substr($mask1, 5, 1), %substr($mask2, 5, 1))
+  !return $mask
+!endfunction
+
+!function $combineMaskWithTag($mask1, $tag)
+  !$mask2 = %get_variable_value("$" + $tag+ "LegendMask")
+  !if ($mask2 == "")
+    ' !log combineMaskWithTag $mask1, $tag, ... only $mask1
+    !return $mask1
+  !endif
+
+  ' !log combineMaskWithTag $mask1, $tag, $mask2 ... $combineMasks($mask1, $mask2)
+  !return  $combineMasks($mask1, $mask2)
+!endfunction
+
+' element symbols typically 4 times too big in legend
+!function $smallVersionSprite($sprite)
+  ' ,scale= ... has to be first (...,color=black,scale=0.25... is invalid too)
+  !if (%strpos($sprite, "=") < 0)
+    !if (%substr($sprite, 0, 4) == "img:")
+      !$smallSprite = $sprite + "{scale=0.25}"
+    !else
+      !$smallSprite = $sprite + ",scale=0.25"
+    !endif
+  !else
+    !$smallSprite = $sprite
+  !endif
+  !return $smallSprite
+!endfunction
+
+' format sprite that it can be used in diagram
+!function $getSprite($sprite)
+  ' if it starts with & it's a OpenIconic, details see https://useiconic.com/open/
+  ' if it starts with img: it's an image, details see https://plantuml.com/creole
+  !if (%substr($sprite, 0, 1) != "&" && %substr($sprite, 0, 4) != "img:")
+    !$formatted = "<$" + $sprite + ">"
+  !else
+    !$formatted = "<" + $sprite + ">"
+  !endif
+  !return $formatted
+!endfunction
+
+!function $tagLegendEntry($tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, $shape, $legendText, $legendSprite)
+  !$bg = $bgColor
+  !$fo = $fontColor
+  !$bo = $borderColor
+
+  !if ($fo == "")
+    !if ($bg != "")
+!if ($PlantUMLSupportsDynamicLegendColor)
+      !$fo = $contrastLegend($bg)
+!else
+      !$fo = $LEGEND_DARK_COLOR
+!endif
+    !else
+      !if ($bo == "")
+        !$fo = $LEGEND_DARK_COLOR
+        !$bg = $LEGEND_LIGHT_COLOR
+      !else
+!if ($PlantUMLSupportsDynamicLegendColor)
+        !$fo = $flatLegend($bo)
+        !$bg = $contrastLegend($bo)
+!else
+        !$fo = $LEGEND_DARK_COLOR
+        !$bg = $LEGEND_LIGHT_COLOR
+!endif
+      !endif
+    !endif
+  !else
+    !if ($bg == "")
+!if ($PlantUMLSupportsDynamicLegendColor)
+      !$bg = $contrastLegend($fo)
+!else
+      !$bg = $LEGEND_LIGHT_COLOR
+!endif
+    !endif
+  !endif
+
+  !if ($bo == "")
+    !$bo = $bg
+  !endif
+
+  !$tagEntry = "|"
+  !$tagEntry = $tagEntry + "<" + $colorWithHash($bg) +">"
+  ' <U+25AF> ..white rectangle
+  !$tagEntry = $tagEntry + "<color:"+$bo+"> <U+25AF></color> "
+  !$tagEntry = $tagEntry + "<color:"+$fo+">"
+  !if ($legendSprite != "")
+    !$tagEntry = $tagEntry + $getSprite($legendSprite) + " "
+  !endif
+  !if ($legendText == "")
+    !$tagEntry = $tagEntry + " " + $tagStereo + " "
+    !if ($shadowing == "true")
+      !$tagEntry = $tagEntry + $LEGEND_SHADOW_TEXT
+    !endif
+    !if ($shadowing == "false")
+      !$tagEntry = $tagEntry + $LEGEND_NO_SHADOW_TEXT
+    !endif
+    !if ($shape == $ROUNDED_BOX)
+      !$tagEntry = $tagEntry + $LEGEND_ROUNDED_BOX
+    !endif
+    !if ($shape == $EIGHT_SIDED)
+      !$tagEntry = $tagEntry + $LEGEND_EIGHT_SIDED
+    !endif
+    !if ($fontColor == "" && $bgColor == "")
+        !$tagEntry = $tagEntry + $LEGEND_NO_FONT_BG_TEXT
+    !else 
+      !if ($fontColor == "")
+        !$tagEntry = $tagEntry + $LEGEND_NO_FONT_TEXT
+      !endif
+      !if ($bgColor == "")
+        !$tagEntry = $tagEntry + $LEGEND_NO_BG_TEXT
+      !endif
+    !endif
+  !else
+    !$tagEntry = $tagEntry + " " + $legendText + " "
+  !endif
+
+  !$tagEntry = $tagEntry + "</color> "
+  !$tagEntry = $tagEntry + "|"
+  !return $tagEntry
+!endfunction
+
+!function $tagRelLegendEntry($tagStereo, $textColor, $lineColor, $lineStyle, $legendText, $legendSprite)
+  !$tc = $textColor
+  !$lc = $lineColor
+
+  !if ($tc == "")
+    !if ($PlantUMLSupportsDynamicLegendColor)
+      !$tc = $flatLegend($ARROW_COLOR)
+    !else
+      !$tc = $LEGEND_DARK_COLOR
+    !endif
+  !endif
+  !if ($lc == "")
+    !if ($PlantUMLSupportsDynamicLegendColor)
+      !$lc = $flatLegend($ARROW_COLOR)
+    !else
+      !$lc = $LEGEND_DARK_COLOR
+    !endif
+  !endif
+
+  !$tagEntry = "|"
+  ' <U+2500> ..white line
+  !$tagEntry = $tagEntry + "<color:"+$lc+"> <U+2500></color> "
+  !$tagEntry = $tagEntry + "<color:"+$tc+">"
+  !if ($legendSprite != "")
+    !$tagEntry = $tagEntry + $getSprite($legendSprite) + " "
+  !endif
+  !if ($legendText == "")
+    !$tagEntry = $tagEntry + " " + $tagStereo + " "
+    !if ($textColor == "")
+      !$tagEntry = $tagEntry + $LEGEND_NO_FONT_TEXT
+    !endif
+    !if ($lineColor == "")
+      !$tagEntry = $tagEntry + $LEGEND_NO_LINE_TEXT
+    !endif
+    !if ($lineStyle != "")
+      !if ($lineStyle == $DOTTED_LINE)
+        !$tagEntry = $tagEntry + $LEGEND_DOTTED_LINE
+      !elseif ($lineStyle == $DASHED_LINE)
+        !$tagEntry = $tagEntry + $LEGEND_DASHED_LINE
+      !elseif ($lineStyle == $BOLD_LINE)
+        !$tagEntry = $tagEntry + $LEGEND_BOLD_LINE
+      !else
+        !$tagEntry = $tagEntry + "(" + $lineStyle + ") "
+      !endif
+    !endif
+  !else
+    !$tagEntry = $tagEntry + " " + $legendText + " "
+  !endif
+
+  !$tagEntry = $tagEntry + "</color> "
+  !$tagEntry = $tagEntry + "|"
+  !return $tagEntry
+!endfunction
+
+!global $LEGEND_DOTTED_LINE = "(dotted) "
+!global $LEGEND_DASHED_LINE = "(dashed) "
+!global $LEGEND_BOLD_LINE = "(bold) "
+
+!unquoted procedure $addTagToLegend($tagStereo, $bgColor="", $fontColor="", $borderColor="", $shadowing="", $shape="", $legendText="", $legendSprite="")
+'' if a combined element tag is defined (e.g. "v1.0&v1.1") then it is typically a merged color,
+'' like a new $fontColor="#fdae61" therefore it should be added to the legend
+'' and the & combined tags will be not removed
+'  !if (%strpos($tagStereo, "&") < 0)
+  !$tagEntry = $tagLegendEntry($tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, $shape, $legendText, $legendSprite)
+%set_variable_value("$" + $tagStereo + "LegendEntry", $tagEntry)
+  !$tagCustomLegend = $tagCustomLegend + $tagStereo + "\n"
+  !$tagMask = $tagLegendMask( $bgColor, $fontColor, $borderColor, $shadowing, $shape, $sprite)
+%set_variable_value("$" + $tagStereo + "LegendMask", $tagMask)
+'  !endif
+!endprocedure
+
+!unquoted procedure $addRelTagToLegend($tagStereo, $textColor="", $lineColor="", $lineStyle="", $legendText="", $legendSprite="")
+'' Arrows have a bug with stereotype/skinparams and cannot combine text colors of one stereotype
+'' and the line color of another stereotype. Therefore the text color of one tag and the line color
+'' of another tag have to be combined via a "workaround" tag ("v1.0&v1.1").
+'' This workaround tag could be theoretically removed in the legend but after that there would
+'' be an inconsistency between the element tags and the rel tags and therefore
+'' & combined workaround tags are not removed too (and in unlikely cases the color itself could be changed)
+'  !if (%strpos($tagStereo, "&") < 0)
+    !$tagEntry = $tagRelLegendEntry($tagStereo, $textColor, $lineColor, $lineStyle, $legendText, $legendSprite)
+%set_variable_value("$" + $tagStereo + "_LineLegendEntry", $tagEntry)
+    !$tagCustomLegend = $tagCustomLegend + $tagStereo + "_Line\n"
+'  !endif
+!endprocedure
+
+!procedure $showActiveLegendEntries($allDefined)
+  !$brPos = %strpos($allDefined, "\n")
+  !while ($brPos >= 0)
+    !$tagStereo = %substr($allDefined, 0, $brPos)
+    !$allDefined = %substr($allDefined, $brPos+2)
+    !$brPos = %strpos($allDefined, "\n")
+    !if (%variable_exists("$" + $tagStereo + "Legend"))
+%get_variable_value("$" + $tagStereo + "LegendEntry")
+    !endif
+  !endwhile
+  !if (%strlen($allDefined) > 0)
+    !$tagStereo = $allDefined
+    !if (%variable_exists("$" + $tagStereo + "Legend"))
+%get_variable_value("$" + $tagStereo + "LegendEntry")
+    !endif
+  !endif
+!endprocedure
+
+!function RoundedBoxShape()
+!return $ROUNDED_BOX
+!endfunction
+
+!function EightSidedShape()
+!return $EIGHT_SIDED
+!endfunction
+
+!function DottedLine()
+!return $DOTTED_LINE
+!endfunction
+
+!function DashedLine()
+!return $DASHED_LINE
+!endfunction
+
+!function BoldLine()
+!return $BOLD_LINE
+!endfunction
+
+' used by new defined tags
+!unquoted procedure AddElementTag($tagStereo, $bgColor="", $fontColor="", $borderColor="", $shadowing="", $shape="", $sprite="", $techn="", $legendText="", $legendSprite="")
+$defineSkinparams($tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, $shape)
+  !if ($sprite!="")
+%set_variable_value("$" + $tagStereo + "ElementTagSprite", $sprite)
+    !if ($legendSprite == "")
+      !$legendSprite = $smallVersionSprite($sprite)
+    !endif
+  !endif
+  !if ($techn != "")
+%set_variable_value("$" + $tagStereo + "ElementTagTechn", $techn)
+  !endif
+$addTagToLegend($tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, $shape, $legendText, $legendSprite)
+!endprocedure
+
+' used by new defined rel tags
+!unquoted procedure AddRelTag($tagStereo, $textColor="", $lineColor="", $lineStyle = "", $sprite="", $techn="", $legendText="", $legendSprite="")
+$defineRelSkinparams($tagStereo, $textColor, $lineColor, $lineStyle)
+  !if ($sprite != "")
+%set_variable_value("$" + $tagStereo + "RelTagSprite", $sprite)
+    !if ($legendSprite == "")
+      ' relation symbols typically 1:1 no additional scale required
+      !$legendSprite = $sprite
+    !endif
+  !endif
+  !if ($techn != "")
+%set_variable_value("$" + $tagStereo + "RelTagTechn", $techn)
+  !endif
+$addRelTagToLegend($tagStereo, $textColor, $lineColor, $lineStyle, $legendText, $legendSprite)
+!endprocedure
+
+' update the style of existing elements like person, ...
+!unquoted procedure UpdateElementStyle($elementName, $bgColor="", $fontColor="", $borderColor="", $shadowing="", $shape="", $sprite="", $techn="", $legendText="", $legendSprite="")
+$defineSkinparams($elementName, $bgColor, $fontColor, $borderColor, $shadowing, $shape)
+  !if ($sprite != "")
+%set_variable_value("$" + $elementName + "ElementTagSprite", $sprite)
+    !if ($legendSprite == "")
+      !$legendSprite = $smallVersionSprite($sprite)
+    !endif
+  !endif
+  !if ($techn != "")
+%set_variable_value("$" + $elementName + "ElementTagTechn", $techn)
+  !endif
+  !$tagEntry = $tagLegendEntry($elementName, $bgColor, $fontColor, $borderColor, $shadowing, $shape, $legendText, $legendSprite)
+%set_variable_value("$" + $elementName + "LegendEntry", $tagEntry)
+  ' default tags sets at least bgColor and fontColor
+  !$tagMask = $tagLegendMask("CHANGED", "CHANGED", $borderColor, $shadowing, $shape, $sprite)
+%set_variable_value("$" + $elementName + "LegendMask", $tagMask)
+!endprocedure
+
+/' @deprecated in favor of UpdateElementStyle '/
+!unquoted procedure UpdateSkinparamsAndLegendEntry($elementName, $bgColor="", $fontColor="", $borderColor="", $shadowing="")
+UpdateElementStyle($elementName, $bgColor, $fontColor, $borderColor, $shadowing)
+!endprocedure
+
+' update the style of default relation, it has to set both properties (combined statement not working)
+!unquoted procedure UpdateRelStyle($textColor, $lineColor)
+  !$elementSkin = "skinparam arrow {" + %newline()
+  !$elementSkin = $elementSkin + "    Color " + $lineColor + %newline()
+  !$elementSkin = $elementSkin + "    FontColor " + $textColor + %newline()
+  !$elementSkin = $elementSkin + "}" + %newline()
+$elementSkin
+!endprocedure
+
+' tags/stereotypes have to be delimited with \n
+!unquoted procedure SetDefaultLegendEntries($tagStereoEntries)
+  !$tagDefaultLegend = $tagStereoEntries
+!endprocedure
+
+' Links
+' ##################################
+
+!function $getLink($link)
+  !if ($link != "")
+    !return "[[" + $link + "]]"
+  !else
+    !return ""
+  !endif
+!endfunction
+
+' Line breaks
+' ##################################
+
+' PlantUML supports no DETERMINISTIC/automatic line breaks of "PlantUML line" (C4 Relashionships)
+' therefore Rel...() implements an automatic line break based on spaces (like in all other objects).
+' If a $type contains \n then these are used (and no automatic space based line breaks are done)
+' $REL_TECHN_MAX_CHAR_WIDTH defines the automatic line break position
+!global $REL_TECHN_MAX_CHAR_WIDTH = 35
+!global $REL_DESCR_MAX_CHAR_WIDTH = 32
+
+!unquoted function $breakDescr($descr, $widthStr)
+!$width = %intval($widthStr)
+!$multiLine = ""
+!if (%strpos($descr, "\n") >= 0)
+!else
+  !while (%strlen($descr) > $width)
+    !$brPos = $width
+    !while ($brPos > 0 && %substr($descr, $brPos, 1) != ' ')
+      !$brPos = $brPos - 1
+    !endwhile
+
+    !if ($brPos < 1)
+      !$brPos = %strpos($descr, " ")
+    !else
+    !endif
+
+    !if ($brPos > 0)
+      !$multiLine = $multiLine + %substr($descr, 0, $brPos) + "\n"
+      !$descr = %substr($descr, $brPos + 1)
+    !else
+      !$multiLine = $multiLine+ $descr
+      !$descr = ""
+    !endif
+  !endwhile
+!endif
+!if (%strlen($descr) > 0)
+  !$multiLine = $multiLine + $descr
+!endif
+!return $multiLine
+!endfunction
+
+' $breakTechn() supports //...//; $breakNode() in C4_Deployment supports no //....//
+!unquoted function $breakTechn($techn, $widthStr)
+!$width = %intval($widthStr)
+!$multiLine = ""
+!if (%strpos($techn, "\n") >= 0)
+  !while (%strpos($techn, "\n") >= 0)
+    !$brPos = %strpos($techn, "\n")
+    !$multiLine = $multiLine + %substr($techn, 0, $brPos) + '</size>//\n//<size:'+$TECHN_FONT_SIZE+'>'
+    !$techn = %substr($techn, $brPos+2)
+  !endwhile
+!else
+  !while (%strlen($techn) > $width)
+    !$brPos = $width
+    !while ($brPos > 0 && %substr($techn, $brPos, 1) != ' ')
+      !$brPos = $brPos - 1
+    !endwhile
+
+    !if ($brPos < 1)
+      !$brPos = %strpos($techn, " ")
+    !else
+    !endif
+
+    !if ($brPos > 0)
+      !$multiLine = $multiLine + %substr($techn, 0, $brPos) + '</size>//\n//<size:'+$TECHN_FONT_SIZE+'>'
+      !$techn = %substr($techn, $brPos + 1)
+    !else
+      !$multiLine = $multiLine+ $techn
+      !$techn = ""
+    !endif
+  !endwhile
+!endif
+!if (%strlen($techn) > 0)
+  !$multiLine = $multiLine + $techn
+!endif
+!return $multiLine
+!endfunction
+
+' Element properties
+' ##################################
+
+' collect all defined properties as table rows
+!global $propTable = ""
+!global $propTableCaption = ""
+!global $propColCaption = "="
+
+!unquoted function SetPropertyHeader($col1Name, $col2Name, $col3Name = "", $col4Name = "")
+  !$propColCaption = ""
+  !$propTableCaption = "|= " + $col1Name + " |= " + $col2Name + " |"
+  !if ($col3Name != "")
+    !$propTableCaption = $propTableCaption + "= " + $col3Name + " |"
+  !endif
+  !if ($col4Name != "")
+    !$propTableCaption = $propTableCaption + "= " + $col4Name + " |"
+  !endif
+  !return ""
+!endfunction
+
+!unquoted function WithoutPropertyHeader()
+  !$propTableCaption = ""
+  !$propColCaption = "="
+  !return ""
+!endfunction
+
+!unquoted function AddProperty($col1, $col2, $col3 = "", $col4 = "")
+  !if ($propTable == "")
+    !if ($propTableCaption != "")
+      !$propTable = $propTableCaption + "\n"
+    !endif
+  !else
+    !$propTable = $propTable + "\n"
+  !endif
+  !$propTable = $propTable + "| " + $col1 + " |" + $propColCaption + " " + $col2 + " |"
+  !if ($col3 != "")
+    !$propTable = $propTable + " " + $col3 + " |"
+  !endif
+  !if ($col4 != "")
+    !$propTable = $propTable + " " + $col4 + " |"
+  !endif
+  !return ""
+!endfunction
+
+!unquoted function $getProps($alignedNL = "\n")
+  !if ($propTable != "")
+    !$retTable = $alignedNL + $propTable
+    !$propTable = ""
+    !return $retTable
+  !endif
+  !return ""
+!endfunction
+
+!unquoted function $getProps_L()
+  !return $getProps("\l")
+!endfunction
+
+!unquoted function $getProps_R()
+  !return $getProps("\r")
+!endfunction
+
+SetPropertyHeader("Property","Value")
+
+' Layout
+' ##################################
+
+!procedure $getHideStereotype($hideStereotype)
+!if ($hideStereotype == "true")
+hide stereotype
+!endif
+!endprocedure
+
+!procedure $getLegendTable()
+<#00000000,#00000000>|<color:$LEGEND_TITLE_COLOR>**Legend**</color> |
+$showActiveLegendEntries($tagDefaultLegend)
+$showActiveLegendEntries($tagCustomLegend)
+!endprocedure
+
+!procedure $getLegendArea($areaAlias, $hideStereotype)
+$getHideStereotype($hideStereotype)
+rectangle $areaAlias<<legendArea>> [
+$getLegendTable()
+]
+!endprocedure
+
+!procedure HIDE_STEREOTYPE()
+hide stereotype
+!endprocedure
+
+!procedure LAYOUT_AS_SKETCH()
+skinparam backgroundColor #EEEBDC
+skinparam handwritten true
+skinparam defaultFontName "Comic Sans MS"
+center footer <font color=red>Warning:</font> Created for discussion, needs to be validated
+!endprocedure
+
+!global $fix_direction=%false()
+
+!function $down($start,$end)
+!if ($fix_direction)
+!return $start+"RIGHT"+$end
+!else
+!return $start+"DOWN"+$end
+!endif
+!endfunction
+
+!function $up($start,$end)
+!if ($fix_direction)
+!return $start+"LEFT"+$end
+!else
+!return $start+"UP"+$end
+!endif
+!endfunction
+
+!function $left($start,$end)
+!if ($fix_direction)
+!return $start+"UP"+$end
+!else
+!return $start+"LEFT"+$end
+!endif
+!endfunction
+
+!function $right($start,$end)
+!if ($fix_direction)
+!return $start+"DOWN"+$end
+!else
+!return $start+"RIGHT"+$end
+!endif
+!endfunction
+
+!procedure LAYOUT_TOP_DOWN()
+!global $fix_direction=%false()
+top to bottom direction
+!endprocedure
+
+!procedure LAYOUT_LEFT_RIGHT() 
+!global $fix_direction = %false()
+left to right direction
+!endprocedure
+
+!procedure LAYOUT_LANDSCAPE() 
+!global $fix_direction = %true()
+left to right direction
+!endprocedure
+
+' has to be last call in diagram
+!unquoted procedure SHOW_LEGEND($hideStereotype="true")
+$getHideStereotype($hideStereotype)
+legend right
+$getLegendTable()
+endlegend
+!endprocedure
+
+/' @deprecated in favor of SHOW_LEGEND '/
+!unquoted procedure SHOW_DYNAMIC_LEGEND($hideStereotype="true")
+SHOW_LEGEND($hideStereotype)
+!endprocedure
+
+' legend is reserved and cannot be uses as alias of SHOW_FLOATING_LEGEND() therefore
+' LEGEND() is introduced. It returns the default name of the floating alias "floating_legend_alias"
+' and can be used in the Lay_Distance() calls
+!function LEGEND()
+!return "floating_legend_alias"
+!endfunction
+
+' enables that legend can be located in drawing area of the diagram. It has to be last call in diagram followed by Lay_Distance()
+!unquoted procedure SHOW_FLOATING_LEGEND($alias=LEGEND(), $hideStereotype="true")
+$getLegendArea($alias, $hideStereotype)
+!endprocedure
+
+' Boundaries
+' ##################################
+
+!function $getBoundary($label, $type)
+  !if ($type == "")
+    !return '==' + $label
+  !endif
+  !if (type != "")
+    !return '==' + $label + '\n<size:' + $TECHN_FONT_SIZE + '>[' + $type + ']</size>'
+  !endif
+!endfunction
+
+!unquoted procedure Boundary($alias, $label, $type="", $tags="", $link="")
+rectangle "$getBoundary($label, $type)" $toStereos("boundary", $tags) as $alias $getLink($link)
+!endprocedure
+
+' Relationship
+' ##################################
+
+!function $getRel($direction, $alias1, $alias2, $label, $techn, $descr, $sprite, $tags, $link)
+  !$sprite = $toRelArg($sprite, $tags, "RelTagSprite")
+  !$techn = $toRelArg($techn, $tags, "RelTagTechn")
+  !$rel = $alias1 + ' ' + $direction + ' ' + $alias2
+  !if ($tags != "")
+    !$rel = $rel + ' ' + $toStereos($tags)
+  !endif
+  !$rel = $rel + ' : '
+  !if ($sprite != "")
+    !$rel = $rel + $getSprite($sprite) + ' '
+  !endif
+  !if ($link != "")
+    !$rel = $rel + '**[[' + $link + ' ' + $label + ']]**'
+  !else
+    !$rel = $rel + '**' + $label + '**'
+  !endif
+  !if ($techn != "")
+    ' line break is not deterministic, calculate it
+    !$rel = $rel + '\n//<size:' + $TECHN_FONT_SIZE + '>[' + $breakTechn($techn, $REL_TECHN_MAX_CHAR_WIDTH) + ']</size>//'
+  !endif
+  !if ($descr != "")
+    ' line break is not deterministic, calculate it
+    !$rel = $rel + '\n\n' + $breakDescr($descr, $REL_DESCR_MAX_CHAR_WIDTH)
+  !endif
+  !return $rel
+!endfunction
+
+!unquoted procedure Rel_($alias1, $alias2, $label, $direction)
+$alias1 $direction $alias2 : **$label**
+!endprocedure
+!unquoted procedure Rel_($alias1, $alias2, $label, $techn, $direction)
+$alias1 $direction $alias2 : **$label**\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//
+!endprocedure
+
+!unquoted procedure Rel($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel("- ->>", $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure BiRel($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel("<<- ->>", $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Rel_Back($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel("<<- -", $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Rel_Neighbor($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel("->>", $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure BiRel_Neighbor($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel("<<->>", $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Rel_Back_Neighbor($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel("<<-", $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Rel_D($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($down("-","->>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure Rel_Down($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($down("-","->>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure BiRel_D($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($down("<<-","->>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure BiRel_Down($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($down("<<-","->>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Rel_U($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($up("-","->>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure Rel_Up($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($up("-","->>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure BiRel_U($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($up("<<-","->>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure BiRel_Up($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($up("<<-","->>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Rel_L($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($left("-","->>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure Rel_Left($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($left("-","->>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure BiRel_L($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($left("<<-","->>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure BiRel_Left($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($left("<<-","->>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Rel_R($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($right("-","->>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure Rel_Right($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($right("-","->>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure BiRel_R($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($right("<<-","->>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure BiRel_Right($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($right("<<-","->>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+' Layout Helpers
+' ##################################
+
+!function $getHiddenLine($distance)
+  !return '-[hidden]' + %substr('- - - - - - - - - - - -', 0, %intval($distance) + 1)
+!endfunction
+
+!unquoted procedure Lay_D($from, $to)
+$from -[hidden]D- $to
+!endprocedure
+!unquoted procedure Lay_U($from, $to)
+$from -[hidden]U- $to
+!endprocedure
+!unquoted procedure Lay_R($from, $to)
+$from -[hidden]R- $to
+!endprocedure
+!unquoted procedure Lay_L($from, $to)
+$from -[hidden]L- $to
+!endprocedure
+
+' PlantUML bug: lines which does "not match" with the orientation/direction of the diagram
+' uses the same length therefore the method offers no direction at all.
+' If a direction is required the Lay_...() methods can be used
+!unquoted procedure Lay_Distance($from, $to, $distance="0")
+$from $getHiddenLine($distance) $to
+!endprocedure' Scope: A single software system.
+' Primary elements: The software system in scope.
+' Supporting elements: People and software systems directly connected to the software system in scope.
+' Intended audience: Everybody, both technical and non-technical people, inside and outside of the software development team.
+
+' Colors
+' ##################################
+
+!global $PERSON_BG_COLOR = "#08427B"
+!global $PERSON_BORDER_COLOR = "#073B6F"
+!global $EXTERNAL_PERSON_BG_COLOR = "#686868"
+!global $EXTERNAL_PERSON_BORDER_COLOR = "#8A8A8A"
+!global $SYSTEM_BG_COLOR = "#1168BD"
+!global $SYSTEM_BORDER_COLOR = "#3C7FC0"
+!global $EXTERNAL_SYSTEM_BG_COLOR = "#999999"
+!global $EXTERNAL_SYSTEM_BORDER_COLOR = "#8A8A8A"
+
+' Styling
+' ##################################
+
+UpdateElementStyle("person", $PERSON_BG_COLOR, $ELEMENT_FONT_COLOR, $PERSON_BORDER_COLOR)
+UpdateElementStyle("external_person", $EXTERNAL_PERSON_BG_COLOR, $ELEMENT_FONT_COLOR, $EXTERNAL_PERSON_BORDER_COLOR)
+UpdateElementStyle("system", $SYSTEM_BG_COLOR, $ELEMENT_FONT_COLOR, $SYSTEM_BORDER_COLOR)
+UpdateElementStyle("external_system", $EXTERNAL_SYSTEM_BG_COLOR, $ELEMENT_FONT_COLOR, $EXTERNAL_SYSTEM_BORDER_COLOR)
+
+' shortcuts with default colors
+!unquoted procedure AddPersonTag($tagStereo, $bgColor=$PERSON_BG_COLOR, $fontColor=$ELEMENT_FONT_COLOR, $borderColor=$PERSON_BORDER_COLOR, $shadowing="", $shape="", $sprite="", $legendText="", $legendSprite="")
+  AddElementTag($tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, $shape, $sprite, "", $legendText, $legendSprite)
+!endprocedure
+!unquoted procedure AddExternalPersonTag($tagStereo, $bgColor=$EXTERNAL_PERSON_BG_COLOR, $fontColor=$ELEMENT_FONT_COLOR, $borderColor=$EXTERNAL_PERSON_BORDER_COLOR, $shadowing="", $shape="", $sprite="", $legendText="", $legendSprite="")
+  AddElementTag($tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, $shape, $sprite, "", $legendText, $legendSprite)
+!endprocedure
+!unquoted procedure AddSystemTag($tagStereo, $bgColor=$SYSTEM_BG_COLOR, $fontColor=$ELEMENT_FONT_COLOR, $borderColor=$SYSTEM_BORDER_COLOR, $shadowing="", $shape="", $sprite="", $legendText="", $legendSprite="")
+  AddElementTag($tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, $shape, $sprite, "", $legendText, $legendSprite)
+!endprocedure
+!unquoted procedure AddExternalSystemTag($tagStereo, $bgColor=$EXTERNAL_SYSTEM_BG_COLOR, $fontColor=$ELEMENT_FONT_COLOR, $borderColor=$EXTERNAL_SYSTEM_BORDER_COLOR, $shadowing="", $shape="", $sprite="", $legendText="", $legendSprite="")
+  AddElementTag($tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, $shape, $sprite, "", $legendText, $legendSprite)
+!endprocedure
+
+' Sprites
+' ##################################
+
+sprite $person [48x48/16] {
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+0000000000000000000049BCCA7200000000000000000000
+0000000000000000006EFFFFFFFFB3000000000000000000
+00000000000000001CFFFFFFFFFFFF700000000000000000
+0000000000000001EFFFFFFFFFFFFFF80000000000000000
+000000000000000CFFFFFFFFFFFFFFFF6000000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+00000000000001FFFFFFFFFFFFFFFFFFF900000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFF00000000000000
+0000000000000BFFFFFFFFFFFFFFFFFFFF40000000000000
+0000000000000EFFFFFFFFFFFFFFFFFFFF70000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000DFFFFFFFFFFFFFFFFFFFF60000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFF40000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFE00000000000000
+00000000000000EFFFFFFFFFFFFFFFFFF800000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+000000000000000BFFFFFFFFFFFFFFFF5000000000000000
+0000000000000001DFFFFFFFFFFFFFF70000000000000000
+00000000000000000BFFFFFFFFFFFF500000000000000000
+0000000000000000005DFFFFFFFFA1000000000000000000
+0000000000000000000037ABB96100000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000025788300000000005886410000000000000
+000000000007DFFFFFFD9643347BFFFFFFFB400000000000
+0000000004EFFFFFFFFFFFFFFFFFFFFFFFFFFB1000000000
+000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFD200000000
+00000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE10000000
+0000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB0000000
+000000BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5000000
+000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD000000
+000009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF200000
+00000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF600000
+00000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF800000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA00000
+00000EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF700000
+000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE100000
+0000008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD3000000
+000000014555555555555555555555555555555300000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+}
+
+sprite $person2 [48x48/16] {
+0000000000000000000049BCCA7200000000000000000000
+0000000000000000006EFFFFFFFFB3000000000000000000
+00000000000000001CFFFFFFFFFFFF700000000000000000
+0000000000000001EFFFFFFFFFFFFFF80000000000000000
+000000000000000CFFFFFFFFFFFFFFFF6000000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+00000000000001FFFFFFFFFFFFFFFFFFF900000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFF00000000000000
+0000000000000BFFFFFFFFFFFFFFFFFFFF40000000000000
+0000000000000EFFFFFFFFFFFFFFFFFFFF70000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000DFFFFFFFFFFFFFFFFFFFF60000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFF40000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFE00000000000000
+00000000000000EFFFFFFFFFFFFFFFFFF800000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+000000000000000BFFFFFFFFFFFFFFFF5000000000000000
+0000000000000001DFFFFFFFFFFFFFF70000000000000000
+00000000000000000BFFFFFFFFFFFF500000000000000000
+0000000000000000005DFFFFFFFFA1000000000000000000
+0000000000000000000037ABB96100000000000000000000
+000000000002578888300000000005888864100000000000
+0000000007DFFFFFFFFD9643347BFFFFFFFFFB4000000000
+00000004EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB10000000
+0000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD2000000
+000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE100000
+00003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+0000BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF50000
+0003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD0000
+0009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2000
+000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6000
+000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA000
+000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6000
+0009FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF2000
+0003FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFD0000
+0000BFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFF50000
+00003FFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFB00000
+000006FFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFE100000
+0000007FFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFD2000000
+00000004EFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFB10000000
+0000000007DF8FFFFFFFFFFFFFFFFFFFFFF8FB4000000000
+000000000002578888888888888888888864100000000000
+}
+
+' Layout
+' ##################################
+
+SetDefaultLegendEntries("person\nsystem\nexternal_person\nexternal_system")
+
+!procedure LAYOUT_WITH_LEGEND()
+hide stereotype
+legend right
+|<color:$LEGEND_TITLE_COLOR>**Legend**</color> |
+|<$PERSON_BG_COLOR> person |
+|<$SYSTEM_BG_COLOR> system|
+|<$EXTERNAL_PERSON_BG_COLOR> external person |
+|<$EXTERNAL_SYSTEM_BG_COLOR> external system |
+endlegend
+!endprocedure
+
+!global $defaultPersonSprite = "person"
+!global $portraitPerson = "false"
+
+!procedure HIDE_PERSON_SPRITE()
+  !$defaultPersonSprite = ""
+  !$portraitPerson = "false"
+!endprocedure
+
+!unquoted procedure SHOW_PERSON_SPRITE($sprite="")
+  !if ($sprite == "")
+    !$defaultPersonSprite = "person"
+  !else
+    !$defaultPersonSprite = $sprite
+  !endif
+  !$portraitPerson = "false"
+!endprocedure
+
+!unquoted procedure SHOW_PERSON_PORTRAIT()
+  !$defaultPersonSprite = ""
+  !$portraitPerson = "portrait"
+!endprocedure
+
+!unquoted procedure SHOW_PERSON_OUTLINE()
+  !$defaultPersonSprite = ""
+  !$portraitPerson = "outline"
+!endprocedure
+
+' Elements
+' ##################################
+
+!function $getPerson($label, $descr, $sprite)
+!if ($sprite == "") && ($defaultPersonSprite != "")
+  !$sprite = $defaultPersonSprite
+!endif
+!if ($descr == "") && ($sprite == "")
+  !return '=='+$label
+!endif
+!if ($descr == "") && ($sprite != "")
+  !return $getSprite($sprite)+'\n=='+$label
+!endif
+!if ($descr != "") && ($sprite == "")
+  !return '=='+$label+'\n\n '+$descr
+!endif
+!if ($descr != "") && ($sprite != "")
+  !return $getSprite($sprite)+'\n=='+$label+'\n\n '+$descr
+!endif
+!endfunction
+
+!function $getSystem($label, $descr, $sprite)
+!if ($descr == "") && ($sprite == "")
+!return '=='+$label
+!endif
+!if ($descr == "") && ($sprite != "")
+!return $getSprite($sprite)+'\n=='+$label
+!endif
+!if ($descr != "") && ($sprite == "")
+!return '=='+$label+'\n\n '+$descr
+!endif
+!if ($descr != "") && ($sprite != "")
+!return $getSprite($sprite)+'\n=='+$label+'\n\n '+$descr
+!endif
+!endfunction
+
+!unquoted procedure Person($alias, $label, $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "person")
+!if ($portraitPerson == "portrait") && ($sprite == "")
+actor "$getPerson($label, $descr, $sprite)$getProps()" $toStereos("person", $tags) as $alias $getLink($link)
+!elseif ($portraitPerson == "outline") && ($sprite == "")
+person "$getPerson($label, $descr, $sprite)$getProps()" $toStereos("person", $tags) as $alias $getLink($link)
+!else
+rectangle "$getPerson($label, $descr, $sprite)$getProps()" $toStereos("person", $tags) as $alias $getLink($link)
+!endif
+!endprocedure
+
+!unquoted procedure Person_Ext($alias, $label, $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "external_person")
+!if ($portraitPerson == "portrait") && ($sprite == "")
+actor "$getPerson($label, $descr, $sprite)$getProps()" $toStereos("external_person", $tags) as $alias $getLink($link)
+!elseif ($portraitPerson == "outline") && ($sprite == "")
+person "$getPerson($label, $descr, $sprite)$getProps()" $toStereos("external_person", $tags) as $alias $getLink($link)
+!else
+rectangle "$getPerson($label, $descr, $sprite)$getProps()" $toStereos("external_person", $tags) as $alias $getLink($link)
+!endif
+!endprocedure
+
+!unquoted procedure System($alias, $label, $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "system")
+rectangle "$getSystem($label, $descr, $sprite)$getProps()" $toStereos("system", $tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure System_Ext($alias, $label, $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "external_system")
+rectangle "$getSystem($label, $descr, $sprite)$getProps()" $toStereos("external_system", $tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure SystemDb($alias, $label, $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "system")
+database "$getSystem($label, $descr, $sprite)$getProps()" $toStereos("system", $tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure SystemQueue($alias, $label, $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "system")
+queue "$getSystem($label, $descr, $sprite)$getProps()" $toStereos("system", $tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure SystemDb_Ext($alias, $label, $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "external_system")
+database "$getSystem($label, $descr, $sprite)$getProps()" $toStereos("external_system", $tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure SystemQueue_Ext($alias, $label, $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "external_system")
+queue "$getSystem($label, $descr, $sprite)$getProps()" $toStereos("external_system", $tags) as $alias $getLink($link)
+!endprocedure
+
+' Boundaries
+' ##################################
+
+!unquoted procedure Enterprise_Boundary($alias, $label, $tags="", $link="")
+Boundary($alias, $label, "Enterprise", $tags, $link)
+!endprocedure
+
+!unquoted procedure System_Boundary($alias, $label, $tags="", $link="")
+Boundary($alias, $label, "System", $tags, $link)
+!endprocedure' Scope: A single software system.
+' Primary elements: Containers within the software system in scope.
+' Supporting elements: People and software systems directly connected to the containers.
+' Intended audience: Technical people inside and outside of the software development team; including software architects, developers and operations/support staff.
+
+' Colors
+' ##################################
+
+!global $CONTAINER_BG_COLOR = "#438DD5"
+!global $CONTAINER_BORDER_COLOR = "#3C7FC0"
+!global $EXTERNAL_CONTAINER_BG_COLOR = "#B3B3B3"
+!global $EXTERNAL_CONTAINER_BORDER_COLOR = "#A6A6A6"
+
+' Styling
+' ##################################
+UpdateElementStyle("container", $CONTAINER_BG_COLOR, $ELEMENT_FONT_COLOR, $CONTAINER_BORDER_COLOR)
+UpdateElementStyle("external_container", $EXTERNAL_CONTAINER_BG_COLOR, $ELEMENT_FONT_COLOR, $EXTERNAL_CONTAINER_BORDER_COLOR)
+
+' shortcuts with default colors
+!unquoted procedure AddContainerTag($tagStereo, $bgColor=$CONTAINER_BG_COLOR, $fontColor=$ELEMENT_FONT_COLOR, $borderColor=$CONTAINER_BORDER_COLOR, $shadowing="", $shape="", $sprite="", $techn="", $legendText="", $legendSprite="")
+  AddElementTag($tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, $shape, $sprite, $techn, $legendText, $legendSprite)
+!endprocedure
+!unquoted procedure AddExternalContainerTag($tagStereo, $bgColor=$EXTERNAL_CONTAINER_BG_COLOR, $fontColor=$ELEMENT_FONT_COLOR, $borderColor=$EXTERNAL_CONTAINER_BORDER_COLOR, $shadowing="", $shape="", $sprite="", $techn="", $legendText="", $legendSprite="")
+  AddElementTag($tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, $shape, $sprite, $techn, $legendText, $legendSprite)
+!endprocedure
+
+' Layout
+' ##################################
+
+SetDefaultLegendEntries("person\nsystem\ncontainer\nexternal_person\nexternal_system\nexternal_container")
+
+!procedure LAYOUT_WITH_LEGEND()
+hide stereotype
+legend right
+|<color:$LEGEND_TITLE_COLOR>**Legend**</color> |
+|<$PERSON_BG_COLOR> person |
+|<$SYSTEM_BG_COLOR> system |
+|<$CONTAINER_BG_COLOR> container |
+|<$EXTERNAL_PERSON_BG_COLOR> external person |
+|<$EXTERNAL_SYSTEM_BG_COLOR> external system |
+|<$EXTERNAL_CONTAINER_BG_COLOR> external container |
+endlegend
+!endprocedure
+
+' Elements
+' ##################################
+
+!function $getContainer($label, $techn, $descr, $sprite)
+!if ($descr == "") && ($sprite == "")
+!return '=='+$label+'\n//<size:'+$TECHN_FONT_SIZE+'>['+$techn+']</size>//'
+!endif
+!if ($descr == "") && ($sprite != "")
+!return $getSprite($sprite)+'\n=='+$label+'\n//<size:'+$TECHN_FONT_SIZE+'>['+$techn+']</size>//'
+!endif
+!if ($descr != "") && ($sprite == "")
+!return '=='+$label+'\n//<size:'+$TECHN_FONT_SIZE+'>['+$techn+']</size>//\n\n '+$descr
+!endif
+!if ($descr != "") && ($sprite != "")
+!return $getSprite($sprite)+'\n=='+$label+'\n//<size:'+$TECHN_FONT_SIZE+'>['+$techn+']</size>//\n\n '+$descr
+!endif
+!endfunction
+
+!unquoted procedure Container($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "container")
+!$techn=$toElementArg($techn, $tags, "ElementTagTechn", "container")
+rectangle "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("container", $tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure ContainerDb($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "container")
+!$techn=$toElementArg($techn, $tags, "ElementTagTechn", "container")
+database "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("container", $tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure ContainerQueue($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "container")
+!$techn=$toElementArg($techn, $tags, "ElementTagTechn", "container")
+queue "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("container", $tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure Container_Ext($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "external_container")
+!$techn=$toElementArg($techn, $tags, "ElementTagTechn", "external_container")
+rectangle "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_container", $tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure ContainerDb_Ext($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "external_container")
+!$techn=$toElementArg($techn, $tags, "ElementTagTechn", "external_container")
+database "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_container", $tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure ContainerQueue_Ext($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "external_container")
+!$techn=$toElementArg($techn, $tags, "ElementTagTechn", "external_container")
+queue "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_container", $tags) as $alias $getLink($link)
+!endprocedure
+
+' Boundaries
+' ##################################
+
+!unquoted procedure Container_Boundary($alias, $label, $tags="", $link="")
+Boundary($alias, $label, "Container", $tags, $link)
+!endprocedure
+HIDE_STEREOTYPE()
+
+Boundary(c1, "Hardware interface layer") {
+    System(roombainterface, "roombainterface", "Handles interaction with the Roomba hardware")
+    System(imu, "imu", "Handles interaction with the MPU6050 IMU")
+    System(ydlidar, "ydlidar", "Handles interaction with the YDLiDAR X4 360 degrees laser scanner")
+    System(differentialodometry, "differentialodometry", "Computes odometry from RAW roomba sensor data")
+    System(ekflocalizationnode, "ekf_localization_node", "Performs sensor fusion to reduce signal noise and improve overall data quality")
+}
+
+Boundary(c2, "Localization layer") {
+    System(gmapping, "gmapping", "Implementation of a SLAM algorithm")
+}
+
+Boundary(c3, "Navigation layer") {
+    System(movebase, "move_base", "General navigation and pathfinding algorithms")
+}
+
+Boundary(c4, "High level functions layer") {
+    System(highlevel, "highlevel", "Implementation of cleaning functionality and full coverage path finding")
+}
+
+Boundary(c5, "Supervisor functions layer") {
+    System(supervisor, "supervisor", "Provides user intergace and controls all other parts of the system")
+}
+
+Boundary(c0, "Hardware") {
+    System(roomba, "Roomba580", "The Roomba 581 vacuum")
+    System(scanner, "YDLiDAR X4", "360 degrees laser scanner")
+    System(mpu, "MPU6050", "6-DOF IMU")
+}
+
+
+BiRel(mpu,imu,"I2C","I2C connection to the Scanner")
+BiRel(scanner,ydlidar,"USB","USB connection to the Scanner")
+BiRel(roombainterface, roomba, "UART", "RS-232 using the Roomba Open Interface")
+Rel(roombainterface,differentialodometry, "Topic /sensorframe", "")
+Rel(differentialodometry,ekflocalizationnode,"Topic /wheelencoder/odom", "")
+Rel(imu,ekflocalizationnode, "Topic /imu/data", "")
+Rel(ekflocalizationnode,gmapping, "Topic /odom", "")
+Rel(ydlidar,gmapping, "Topic /scan", "")
+Rel(gmapping,movebase, "Topic /map", "")
+Rel(movebase,differentialodometry, "Topic /cmd_vel", "")
+Rel(gmapping,highlevel, "Topic /map", "")
+Rel(movebase,highlevel, "Topic /move_base/global_costmap/costmap", "")
+Rel(highlevel,movebase, "Service move_base", "")
+Rel(ekflocalizationnode,highlevel, "Topic /odom")
+Rel(supervisor,c4,"Controls lifecycle of")
+Rel(supervisor,c3,"Controls lifecycle of")
+Rel(supervisor,c2,"Controls lifecycle of")
+Rel(supervisor,c1,"Controls lifecycle of")
+Rel(supervisor,highlevel, "Service clean", "")
+Rel(supervisor,highlevel, "Service cancel", "")
+Rel(gmapping,supervisor, "Topic /map")
+Rel(ekflocalizationnode,supervisor, "Topic /odom")
+@enduml
+
+@startuml C4_Elements
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam defaultTextAlignment center
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+
+skinparam LegendBorderColor transparent
+skinparam LegendBackgroundColor transparent
+skinparam LegendFontColor #FFFFFF
+
+skinparam shadowing<<legendArea>> false
+skinparam rectangle<<legendArea>> {
+    backgroundcolor #00000000
+    bordercolor #00000000
+}
+
+skinparam rectangle {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam database {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam queue {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam arrow {
+    Color #666666
+    FontColor #666666
+    FontSize 12
+}
+
+skinparam actor {
+    StereotypeFontSize 12
+    shadowing false
+    style awesome
+}
+
+skinparam person {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam package {
+    StereotypeFontSize 6
+    StereotypeFontColor transparent
+    FontStyle plain
+    BackgroundColor transparent
+}
+
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 6
+    StereotypeFontColor transparent
+    FontColor #444444
+    BorderColor #444444
+    BackgroundColor transparent
+    BorderStyle dashed
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam database<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam queue<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam actor<<person>> {
+    StereotypeFontColor #08427B
+    FontColor #08427B
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam person<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+
+
+skinparam rectangle<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam database<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam actor<<external_person>> {
+    StereotypeFontColor #686868
+    FontColor #686868
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam person<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+
+
+skinparam rectangle<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam database<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam queue<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam actor<<system>> {
+    StereotypeFontColor #1168BD
+    FontColor #1168BD
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam person<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+
+
+skinparam rectangle<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam database<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam actor<<external_system>> {
+    StereotypeFontColor #999999
+    FontColor #999999
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam person<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+
+
+
+
+
+sprite $person [48x48/16] {
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+0000000000000000000049BCCA7200000000000000000000
+0000000000000000006EFFFFFFFFB3000000000000000000
+00000000000000001CFFFFFFFFFFFF700000000000000000
+0000000000000001EFFFFFFFFFFFFFF80000000000000000
+000000000000000CFFFFFFFFFFFFFFFF6000000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+00000000000001FFFFFFFFFFFFFFFFFFF900000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFF00000000000000
+0000000000000BFFFFFFFFFFFFFFFFFFFF40000000000000
+0000000000000EFFFFFFFFFFFFFFFFFFFF70000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000DFFFFFFFFFFFFFFFFFFFF60000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFF40000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFE00000000000000
+00000000000000EFFFFFFFFFFFFFFFFFF800000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+000000000000000BFFFFFFFFFFFFFFFF5000000000000000
+0000000000000001DFFFFFFFFFFFFFF70000000000000000
+00000000000000000BFFFFFFFFFFFF500000000000000000
+0000000000000000005DFFFFFFFFA1000000000000000000
+0000000000000000000037ABB96100000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000025788300000000005886410000000000000
+000000000007DFFFFFFD9643347BFFFFFFFB400000000000
+0000000004EFFFFFFFFFFFFFFFFFFFFFFFFFFB1000000000
+000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFD200000000
+00000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE10000000
+0000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB0000000
+000000BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5000000
+000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD000000
+000009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF200000
+00000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF600000
+00000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF800000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA00000
+00000EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF700000
+000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE100000
+0000008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD3000000
+000000014555555555555555555555555555555300000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+}
+
+sprite $person2 [48x48/16] {
+0000000000000000000049BCCA7200000000000000000000
+0000000000000000006EFFFFFFFFB3000000000000000000
+00000000000000001CFFFFFFFFFFFF700000000000000000
+0000000000000001EFFFFFFFFFFFFFF80000000000000000
+000000000000000CFFFFFFFFFFFFFFFF6000000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+00000000000001FFFFFFFFFFFFFFFFFFF900000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFF00000000000000
+0000000000000BFFFFFFFFFFFFFFFFFFFF40000000000000
+0000000000000EFFFFFFFFFFFFFFFFFFFF70000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000DFFFFFFFFFFFFFFFFFFFF60000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFF40000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFE00000000000000
+00000000000000EFFFFFFFFFFFFFFFFFF800000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+000000000000000BFFFFFFFFFFFFFFFF5000000000000000
+0000000000000001DFFFFFFFFFFFFFF70000000000000000
+00000000000000000BFFFFFFFFFFFF500000000000000000
+0000000000000000005DFFFFFFFFA1000000000000000000
+0000000000000000000037ABB96100000000000000000000
+000000000002578888300000000005888864100000000000
+0000000007DFFFFFFFFD9643347BFFFFFFFFFB4000000000
+00000004EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB10000000
+0000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD2000000
+000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE100000
+00003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+0000BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF50000
+0003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD0000
+0009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2000
+000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6000
+000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA000
+000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6000
+0009FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF2000
+0003FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFD0000
+0000BFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFF50000
+00003FFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFB00000
+000006FFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFE100000
+0000007FFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFD2000000
+00000004EFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFB10000000
+0000000007DF8FFFFFFFFFFFFFFFFFFFFFF8FB4000000000
+000000000002578888888888888888888864100000000000
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam database<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam queue<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam actor<<container>> {
+    StereotypeFontColor #438DD5
+    FontColor #438DD5
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam person<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+
+
+skinparam rectangle<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam database<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam queue<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam actor<<external_container>> {
+    StereotypeFontColor #B3B3B3
+    FontColor #B3B3B3
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam person<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+hide stereotype
+
+rectangle "==Hardware interface layer" <<boundary>> as c1  {
+    rectangle "==roombainterface\n\n Handles interaction with the Roomba hardware" <<system>> as roombainterface 
+    rectangle "==imu\n\n Handles interaction with the MPU6050 IMU" <<system>> as imu 
+    rectangle "==ydlidar\n\n Handles interaction with the YDLiDAR X4 360 degrees laser scanner" <<system>> as ydlidar 
+    rectangle "==differentialodometry\n\n Computes odometry from RAW roomba sensor data" <<system>> as differentialodometry 
+    rectangle "==ekf_localization_node\n\n Performs sensor fusion to reduce signal noise and improve overall data quality" <<system>> as ekflocalizationnode 
+}
+
+rectangle "==Localization layer" <<boundary>> as c2  {
+    rectangle "==gmapping\n\n Implementation of a SLAM algorithm" <<system>> as gmapping 
+}
+
+rectangle "==Navigation layer" <<boundary>> as c3  {
+    rectangle "==move_base\n\n General navigation and pathfinding algorithms" <<system>> as movebase 
+}
+
+rectangle "==High level functions layer" <<boundary>> as c4  {
+    rectangle "==highlevel\n\n Implementation of cleaning functionality and full coverage path finding" <<system>> as highlevel 
+}
+
+rectangle "==Supervisor functions layer" <<boundary>> as c5  {
+    rectangle "==supervisor\n\n Provides user intergace and controls all other parts of the system" <<system>> as supervisor 
+}
+
+rectangle "==Hardware" <<boundary>> as c0  {
+    rectangle "==Roomba580\n\n The Roomba 581 vacuum" <<system>> as roomba 
+    rectangle "==YDLiDAR X4\n\n 360 degrees laser scanner" <<system>> as scanner 
+    rectangle "==MPU6050\n\n 6-DOF IMU" <<system>> as mpu 
+}
+
+
+mpu <<- ->> imu : **I2C**\n//<size:12>[I2C connection to the Scanner]</size>//
+scanner <<- ->> ydlidar : **USB**\n//<size:12>[USB connection to the Scanner]</size>//
+roombainterface <<- ->> roomba : **UART**\n//<size:12>[RS-232 using the Roomba Open</size>//\n//<size:12>Interface]</size>//
+roombainterface - ->> differentialodometry : **Topic /sensorframe**
+differentialodometry - ->> ekflocalizationnode : **Topic /wheelencoder/odom**
+imu - ->> ekflocalizationnode : **Topic /imu/data**
+ekflocalizationnode - ->> gmapping : **Topic /odom**
+ydlidar - ->> gmapping : **Topic /scan**
+gmapping - ->> movebase : **Topic /map**
+movebase - ->> differentialodometry : **Topic /cmd_vel**
+gmapping - ->> highlevel : **Topic /map**
+movebase - ->> highlevel : **Topic /move_base/global_costmap/costmap**
+highlevel - ->> movebase : **Service move_base**
+ekflocalizationnode - ->> highlevel : **Topic /odom**
+supervisor - ->> c4 : **Controls lifecycle of**
+supervisor - ->> c3 : **Controls lifecycle of**
+supervisor - ->> c2 : **Controls lifecycle of**
+supervisor - ->> c1 : **Controls lifecycle of**
+supervisor - ->> highlevel : **Service clean**
+supervisor - ->> highlevel : **Service cancel**
+gmapping - ->> supervisor : **Topic /map**
+ekflocalizationnode - ->> supervisor : **Topic /odom**
+@enduml
+
+PlantUML version 1.2022.5(Sat Apr 30 10:55:52 GMT 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
