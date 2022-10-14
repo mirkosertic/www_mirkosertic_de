@@ -212,6 +212,7 @@ Boundary(c0, "Hardware") {
     System(roomba, "Roomba580", "The Roomba 581 vacuum")
     System(scanner, "YDLiDAR X4", "360 degrees laser scanner")
     System(mpu, "MPU6050", "6-DOF IMU")
+    System(oled, "OLED", "Small OLED display")
 }
 
 
@@ -237,6 +238,7 @@ Rel(supervisor,highlevel, "Service clean", "")
 Rel(supervisor,highlevel, "Service cancel", "")
 Rel(gmapping,supervisor, "Topic /map")
 Rel(ekflocalizationnode,supervisor, "Topic /odom")
+Rel(supervisor,oled, "Displays status")
 @enduml
 ----
 
