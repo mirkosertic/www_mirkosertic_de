@@ -176,7 +176,69 @@ directly on the device. This node is Roomba specific.
 
 == Data flow
 
-Comming soon...
+To make it a little bit more complex, here is an overview of all system component's interactions in their full glory. Yes, it is a little bit complicated. I will explain it more in the upcoming posts.
+
+[plantuml,roombadataflow,svg]
+----
+@startuml C4_Elements
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+HIDE_STEREOTYPE()
+
+Boundary(c1, "Hardware interface layer") {
+    System(roombainterface, "roombainterface", "Handles interaction with the Roomba hardware")
+    System(imu, "imu", "Handles interaction with the MPU6050 IMU")
+    System(ydlidar, "ydlidar", "Handles interaction with the YDLiDAR X4 360 degrees laser scanner")
+    System(differentialodometry, "differentialodometry", "Computes odometry from RAW roomba sensor data")
+    System(ekflocalizationnode, "ekf_localization_node", "Performs sensor fusion to reduce signal noise and improve overall data quality")
+}
+
+Boundary(c2, "Localization layer") {
+    System(gmapping, "gmapping", "Implementation of a SLAM algorithm")
+}
+
+Boundary(c3, "Navigation layer") {
+    System(movebase, "move_base", "General navigation and pathfinding algorithms")
+}
+
+Boundary(c4, "High level functions layer") {
+    System(highlevel, "highlevel", "Implementation of cleaning functionality and full coverage path finding")
+}
+
+Boundary(c5, "Supervisor functions layer") {
+    System(supervisor, "supervisor", "Provides user intergace and controls all other parts of the system")
+}
+
+Boundary(c0, "Hardware") {
+    System(roomba, "Roomba580", "The Roomba 581 vacuum")
+    System(scanner, "YDLiDAR X4", "360 degrees laser scanner")
+    System(mpu, "MPU6050", "6-DOF IMU")
+}
+
+
+BiRel(mpu,imu,"I2C","I2C connection to the Scanner")
+BiRel(scanner,ydlidar,"USB","USB connection to the Scanner")
+BiRel(roombainterface, roomba, "UART", "RS-232 using the Roomba Open Interface")
+Rel(roombainterface,differentialodometry, "Topic /sensorframe", "")
+Rel(differentialodometry,ekflocalizationnode,"Topic /wheelencoder/odom", "")
+Rel(imu,ekflocalizationnode, "Topic /imu/data", "")
+Rel(ekflocalizationnode,gmapping, "Topic /odom", "")
+Rel(ydlidar,gmapping, "Topic /scan", "")
+Rel(gmapping,movebase, "Topic /map", "")
+Rel(movebase,differentialodometry, "Topic /cmd_vel", "")
+Rel(gmapping,highlevel, "Topic /map", "")
+Rel(movebase,highlevel, "Topic /move_base/global_costmap/costmap", "")
+Rel(highlevel,movebase, "Service move_base", "")
+Rel(ekflocalizationnode,highlevel, "Topic /odom")
+Rel(supervisor,c4,"Controls lifecycle of")
+Rel(supervisor,c3,"Controls lifecycle of")
+Rel(supervisor,c2,"Controls lifecycle of")
+Rel(supervisor,c1,"Controls lifecycle of")
+Rel(supervisor,highlevel, "Service clean", "")
+Rel(supervisor,highlevel, "Service cancel", "")
+Rel(gmapping,supervisor, "Topic /map")
+Rel(ekflocalizationnode,supervisor, "Topic /odom")
+@enduml
+----
 
 == That's it
 
