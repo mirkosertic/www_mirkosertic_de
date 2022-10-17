@@ -62,39 +62,35 @@ The MPU6050 IMU and the OLED displays are directly connected to the I2C bus of t
 
 Now comes the interesting part. How is the Roomba software organized? First, I'll show you a diagram, and I'll explain it later:
 
-[ditaa,roombasoftwareros,svg]
+[plantuml,roombalayers,svg]
 ----
-    +--Hardware interface layer--------------------------------------------+
-    |                                                                      |
-    | +-node----------+                +-node-+          +-node---+        |
-    | |roombainterface|                |imu   |          |ydlidar |        |
-    | +--------+------+                +--+---+          +---+----+        |
-    |          |                          |                                |
-    | +-node---+------------+    +-node---+------------+                   |
-    | |differentialodometry +----+ekf_localization_node|                   |
-    | +---------------------+    +---+-----------------+                   |
-    +--Localization layer--------------------------------------------------+
-    |                                                                      |
-    | +-node----------+      +-node----------+     +-node----------+       |
-    | |gmapping       |      |mapserver      +-----+amcl           |       |
-    | +---------------+      +---------------+     +---------------+       |
-    +--Navigation layer----------------------------------------------------+
-    |                                                                      |
-    | +-node----------+                                                    |
-    | |move_base      |                                                    |
-    | +---------------+                                                    |
-    +--High level functions layer------------------------------------------+
-    |                                                                      |
-    | +-node----------+                                                    |
-    | |highlevel      |                                                    |
-    | +---------------+                                                    |
-    +--Supervisor functions layer------------------------------------------+
-    |                                                                      |
-    | +-node----------+                                                    |
-    | |supervisor     |                                                    |
-    | +---------------+                                                    |
-    +----------------------------------------------------------------------+
+@startuml C4_Elements
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+HIDE_STEREOTYPE()
+
+Boundary(c0, "Hardware interface layer", "The hardware interface layer is responsible to communicate with the physical hardware.") {
+}
+Boundary(c1, "Localization layer", "The localization layer creates a precise localization of the Roomba on a map based on absolute(LiDAR) and relative (fused odometry) data.") {
+}
+Boundary(c2, "Navigation layer", "The navigation stack can guide a robot from one place of the map to another place. It reads sensor data and positional information and creates steering commands for the robot to reach a target pose.") {
+}
+Boundary(c3, "High level functions layer", "The high level functions layer implements the cleaning functionality. It can compute a full coverage path for the Roomba based on a map and instructs the navigation layer the follow that path.") {
+}
+Boundary(c4, "Supervisor functions layer", "The supervisor functions layer provides the web-based user interface. It is always active, and starts and stops on demand all other layers of the system.") {
+}
+
+Rel(c1, c0, "Depends on")
+Rel(c2, c1, "Depends on")
+Rel(c3, c2, "Depends on")
+Rel(c4, c3, "Depends on")
+Rel(c4, c0, "Controls lifecycle of")
+Rel(c4, c1, "Controls lifecycle of")
+Rel(c4, c2, "Controls lifecycle of")
+Rel(c4, c3, "Controls lifecycle of")
+
+@enduml
 ----
+
 This is a very simplistic overview of the whole system. The key building block is the
 concept of a ROS node. Nodes are processes doing stuff. Nodes can communicate with
 other nodes by calling provided services or consuming or publishing messages over topics.
@@ -104,6 +100,52 @@ Let's start from top to bottom:
 
 === Hardware interface layer
 The hardware interface layer is responsible to communicate with the physical hardware.
+
+[plantuml,roombahardwareinterfacelayer,svg]
+----
+@startuml C4_Elements
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+HIDE_STEREOTYPE()
+
+Boundary(c1, "Hardware interface layer") {
+    System(roombainterface, "roombainterface", "Handles interaction with the Roomba hardware")
+    System(imu, "imu", "Handles interaction with the MPU6050 IMU")
+    System(ydlidar, "ydlidar", "Handles interaction with the YDLiDAR X4 360 degrees laser scanner")
+    System(differentialodometry, "differentialodometry", "Computes odometry from RAW roomba sensor data")
+    System(ekflocalizationnode, "ekf_localization_node", "Performs sensor fusion to reduce signal noise and improve overall data quality")
+}
+
+Boundary(c0, "Hardware") {
+    System(roomba, "Roomba580", "The Roomba 581 vacuum")
+    System(scanner, "YDLiDAR X4", "360 degrees laser scanner")
+    System(mpu, "MPU6050", "6-DOF IMU")
+    System(oled, "OLED", "Small OLED display")
+}
+
+Boundary(t0, "Topics") {
+    System(cmd_vel,"/cmd_vel", "")
+    System(imu_data,"/imu_data", "")
+    System(odom,"/odom", "")
+    System(sensorframe,"/sensorframe", "")
+    System(wheelencoder,"/wheelencoder/odom", "")
+    System(scan,"/scan", "")
+}
+
+BiRel(mpu,imu,"I2C","I2C connection to the Scanner")
+BiRel(scanner,ydlidar,"USB","USB connection to the Scanner")
+BiRel(roombainterface, roomba, "UART", "RS-232 using the Roomba Open Interface")
+
+Rel(roombainterface, sensorframe, "Publishes", "")
+Rel(sensorframe, differentialodometry, "Consumes", "")
+Rel(differentialodometry, wheelencoder, "Publishes", "")
+Rel(wheelencoder, ekflocalizationnode, "Consumes", "")
+Rel(imu, imu_data, "Publishes", "")
+Rel(imu_data, ekflocalizationnode, "Consumes", "")
+Rel(ekflocalizationnode,odom, "Publishes", "")
+Rel(ydlidar,scan, "Publishes", "")
+Rel(cmd_vel,differentialodometry, "Consumes", "")
+@enduml
+----
 
 The *roombainterface* node reads the Roomba sensor data stream such as wheel encoders or bumpers and publishes the data
 over topics. It also consumes messages controlling the actuators such as the left or right wheel or the vacuum. This node
@@ -131,6 +173,33 @@ acceleration and velocity. This node is part of the ROS stack.
 The localization layer creates a precise localization of the Roomba on a map based on absolute(LiDAR) and relative
 (fused odometry) data.
 
+[plantuml,roombalocalizationlayer,svg]
+----
+@startuml C4_Elements
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+HIDE_STEREOTYPE()
+
+Boundary(c2, "Localization layer") {
+    System(gmapping, "gmapping", "Implementation of a SLAM algorithm")
+    System(amcl, "amcl", "Implementation of an AMCL algorithm")
+    System(mapserver, "mapserver", "Implementation of an AMCL algorithm")
+}
+
+Boundary(t0, "Topics") {
+    System(map,"/map", "")
+    System(odom,"/odom", "")
+    System(scan,"/scan", "")
+}
+
+Rel(gmapping, map, "Publishes", "")
+Rel(mapserver, map, "Publishes", "")
+Rel(odom, gmapping, "Consumes", "")
+Rel(odom, amcl, "Consumes", "")
+Rel(scan, gmapping, "Consumes", "")
+Rel(scan, amcl, "Consumes", "")
+@enduml
+----
+
 The *gmapping* node provides a SLAM(Simultaneous Localization and Mapping) implementation. It consumes LiDAR and
 odometry data and continuously builds a map and a position of the Roomba on the map. This map and position is refined over
 time as new sensor data arrives. The Roomba stack uses the gmapping node as long as there is no stored map of a known room
@@ -149,6 +218,37 @@ Either the gmapping or mapserver+amcl nodes are started by the supervisor, depen
 The navigation stack can guide a robot from one place of the map to another place. It reads sensor data and positional
 information and creates steering commands for the robot to reach a target pose.
 
+[plantuml,roombanavigationlayer,svg]
+----
+@startuml C4_Elements
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+HIDE_STEREOTYPE()
+
+Boundary(c2, "Navigation layer") {
+    System(movebase, "move_base", "General navigation and pathfinding algorithms")
+}
+
+Boundary(t0, "Topics") {
+    System(map,"/map", "")
+    System(odom,"/odom", "")
+    System(scan,"/scan", "")
+    System(cmd_vel,"/cmd_vel", "")
+    System(costmap,"/move_base/global_costmap/costmap", "")
+}
+
+Boundary(a0, "Actions") {
+    System(action,"move_base", "")
+}
+
+Rel(movebase, cmd_vel, "Publishes", "")
+Rel(movebase, costmap, "Publishes", "")
+Rel(movebase, action, "Provides", "")
+Rel(map, movebase, "Consumes", "")
+Rel(odom, movebase, "Consumes", "")
+Rel(scan, movebase, "Consumes", "")
+@enduml
+----
+
 The *move_base* node is part of the ROS navigation stack and also part of the ROS suite. It consumes map data and positional
 information and can compute plans to reach a given target pose on the map. It consumes sensor information such
 as LiDAR or bumper data to add additional information to the provided map. This information is stored as cost maps, which
@@ -160,6 +260,37 @@ longer reachable. This node is part of the ROS stack.
 The high level functions layer implements the cleaning functionality. It can compute a full coverage path for the Roomba
 based on a map and instructs the navigation layer the follow that path.
 
+[plantuml,roombahighlevelfunctionslayer,svg]
+----
+@startuml C4_Elements
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+HIDE_STEREOTYPE()
+
+Boundary(c2, "Highlevel functions layer") {
+    System(highlevel, "highlevel", "Implementation of cleaning functionality and full coverage path finding")
+}
+
+Boundary(t0, "Topics") {
+    System(map,"/map", "")
+    System(odom,"/odom", "")
+    System(costmap,"/move_base/global_costmap/costmap", "")
+}
+
+Boundary(a0, "Actions") {
+    System(action,"move_base", "")
+    System(clean,"clean", "")
+    System(cancel,"cancel", "")
+}
+
+Rel(map, highlevel, "Consumes", "")
+Rel(odom, highlevel, "Consumes", "")
+Rel(costmap, highlevel, "Consumes", "")
+Rel(highlevel, action, "Calls", "")
+Rel(highlevel, clean, "Provides", "")
+Rel(highlevel, cancel, "Provides", "")
+@enduml
+----
+
 The *highlevel* node implements the whole functionality. It uses the map data to create a minimum spanning tree from the
 grid cells. The cleaning path is derived from this spanning tree. It also implements recovery mechanisms once the
 navigation layer detects a part of the path is no longer reachable. The highlevel node also actively decides when to
@@ -169,80 +300,45 @@ activate or deactivate the vacuum actuators. This node is Roomba specific.
 The supervisor functions layer provides the web-based user interface. It is always active, and starts and stops on
 demand all other layers of the system.
 
-The *supervisor* node implements the user interface. Once a user decides to clean a room, the supervisor starts all
-other layers of the stack and controls their lifecycle. It provides visual feedback such as the map, the current
-robot position, the already cleaned path and so on. It also uses the OLED display to render telemetry and status data
-directly on the device. This node is Roomba specific.
-
-== Data flow
-
-To make it a little bit more complex, here is an overview of all system component's interactions in their full glory. Yes, it is a little bit complicated. I will explain it more in the upcoming posts.
-
-[plantuml,roombadataflow,svg]
+[plantuml,supervisorlayer,svg]
 ----
 @startuml C4_Elements
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 HIDE_STEREOTYPE()
 
-Boundary(c1, "Hardware interface layer") {
-    System(roombainterface, "roombainterface", "Handles interaction with the Roomba hardware")
-    System(imu, "imu", "Handles interaction with the MPU6050 IMU")
-    System(ydlidar, "ydlidar", "Handles interaction with the YDLiDAR X4 360 degrees laser scanner")
-    System(differentialodometry, "differentialodometry", "Computes odometry from RAW roomba sensor data")
-    System(ekflocalizationnode, "ekf_localization_node", "Performs sensor fusion to reduce signal noise and improve overall data quality")
-}
-
-Boundary(c2, "Localization layer") {
-    System(gmapping, "gmapping", "Implementation of a SLAM algorithm")
-}
-
-Boundary(c3, "Navigation layer") {
-    System(movebase, "move_base", "General navigation and pathfinding algorithms")
-}
-
-Boundary(c4, "High level functions layer") {
-    System(highlevel, "highlevel", "Implementation of cleaning functionality and full coverage path finding")
-}
-
-Boundary(c5, "Supervisor functions layer") {
+Boundary(c2, "Supervisor layer") {
     System(supervisor, "supervisor", "Provides user intergace and controls all other parts of the system")
 }
 
-Boundary(c0, "Hardware") {
-    System(roomba, "Roomba580", "The Roomba 581 vacuum")
-    System(scanner, "YDLiDAR X4", "360 degrees laser scanner")
-    System(mpu, "MPU6050", "6-DOF IMU")
-    System(oled, "OLED", "Small OLED display")
+Boundary(co, "All other layers") {
 }
 
+Boundary(t0, "Topics") {
+    System(map,"/map", "")
+    System(odom,"/odom", "")
+    System(costmap,"/move_base/global_costmap/costmap", "")
+}
 
-BiRel(mpu,imu,"I2C","I2C connection to the Scanner")
-BiRel(scanner,ydlidar,"USB","USB connection to the Scanner")
-BiRel(roombainterface, roomba, "UART", "RS-232 using the Roomba Open Interface")
-Rel(roombainterface,differentialodometry, "Topic /sensorframe", "")
-Rel(differentialodometry,ekflocalizationnode,"Topic /wheelencoder/odom", "")
-Rel(imu,ekflocalizationnode, "Topic /imu/data", "")
-Rel(ekflocalizationnode,gmapping, "Topic /odom", "")
-Rel(ydlidar,gmapping, "Topic /scan", "")
-Rel(gmapping,movebase, "Topic /map", "")
-Rel(movebase,differentialodometry, "Topic /cmd_vel", "")
-Rel(gmapping,highlevel, "Topic /map", "")
-Rel(movebase,highlevel, "Topic /move_base/global_costmap/costmap", "")
-Rel(highlevel,movebase, "Service move_base", "")
-Rel(ekflocalizationnode,highlevel, "Topic /odom")
-Rel(supervisor,c4,"Controls lifecycle of")
-Rel(supervisor,c3,"Controls lifecycle of")
-Rel(supervisor,c2,"Controls lifecycle of")
-Rel(supervisor,c1,"Controls lifecycle of")
-Rel(supervisor,highlevel, "Service clean", "")
-Rel(supervisor,highlevel, "Service cancel", "")
-Rel(gmapping,supervisor, "Topic /map")
-Rel(ekflocalizationnode,supervisor, "Topic /odom")
-Rel(supervisor,oled, "Displays status")
+Boundary(a0, "Actions") {
+    System(clean,"clean", "")
+    System(cancel,"cancel", "")
+}
+
+Rel(map, supervisor, "Consumes", "")
+Rel(odom, supervisor, "Consumes", "")
+Rel(costmap, supervisor, "Consumes", "")
+Rel(supervisor, clean, "Calls", "")
+Rel(supervisor, cancel, "Calls", "")
+Rel(supervisor, co, "Controls lifecycle of", "")
 @enduml
 ----
 
+The *supervisor* node implements the user interface. Once a user decides to clean a room, the supervisor starts all
+other layers of the stack and controls their lifecycle. It provides visual feedback such as the map, the current
+robot position, the already cleaned path and so on. It also uses the OLED display to render telemetry and status data
+directly on the device. This node is Roomba specific.
+
 == That's it
 
-Here we are. Now you've got the first overview of the whole Roomba ROS hardware and software stack. Stay tuned for
+Here we are. Now you've got the first overview of the whole Roomba ROS hardware and software stack. If you like to dived deeper into the whole system, please take a look at the source code provided at https://github.com/mirkosertic/roomba500[the GitHub project page]. Stay tuned for
 the next post of the Roomba Series. Thank you for reading!
