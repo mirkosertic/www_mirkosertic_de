@@ -29,7 +29,7 @@ Roomba platform as a whole. Here are the ingredients:
 
 There is a lot of stuff going on behind the scenes. After all the goal was to create a fully autonomous system, which is a quite complex task. So I am planning a series of postings here covering the following topics:
 
-- General system architecture and high level control logic
+- link:{{< ref "roomba-series-1.adoc" >}}[General system architecture and high level control logic]
 - Low level hardware interface
 - Navigation stack with SLAM and AMCL, simple navigation and efficient vacuum path finding
 - Overall system debugging and tuning.
