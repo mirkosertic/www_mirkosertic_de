@@ -38,15 +38,15 @@ The following diagrams shows the whole hardware wiring of the described componen
 
 [ditaa,roombahardware,svg]
 ----
-    +--Roomba hardware wiring--------------------------------------------+
-    |                                                                    |
-    | +----------+ +--------------------+ +----+ +-------+ +----------+  |
-    | |Roomba 581| |Raspberry Pi Zero 2W| |OLED| |MPU6050| |YDLiDAR X4|  |
-    | +----+-----+ +--+---+---+---------+ +-+--+ +--+----+ +-----+----+  |
-    |      |          |   |   |             |       |            |       |
-    |      +---UART---+   |   +------I2C----+-------+            |       |
-    |                     +------------------------USB-----------+       |
-    +--------------------------------------------------------------------+
+    +--Roomba hardware wiring-------------------------------------------------------+
+    |                                                                               |
+    | +----------+ +--------------------+ +----+ +-------+ +--------+ +----------+  |
+    | |Roomba 581| |Raspberry Pi Zero 2W| |OLED| |MPU6050| |HMC5883L| |YDLiDAR X4|  |
+    | +----+-----+ +--+---+---+---------+ +-+--+ +--+----+ +----+---+ +----+-----+  |
+    |      |          |   |   |             |       |           |          |        |
+    |      +---UART---+   |   +------I2C----+-------+-----------+          |        |
+    |                     +------------------------USB---------------------+        |
+    +-------------------------------------------------------------------------------+
 ----
 
 The Roomba only has a serial interface, which can be connected
@@ -58,7 +58,7 @@ including the ROS driver fits to this adapter. I wanted to reuse as much as poss
 and connected the LiDAR with USB to the Raspberry. In the future I also might use a multi-uart-to-i2c adapter, and
 connect everything using the I2C bus. But I didn't have time to check this out yet.
 
-The MPU6050 IMU and the OLED displays are directly connected to the I2C bus of the Raspberry.
+The MPU6050 IMU, the HMC5883L magnetometer and the OLED displays are directly connected to the I2C bus of the Raspberry.
 
 Now comes the interesting part. How is the Roomba software organized? First, I'll show you a diagram, and I'll explain it later:
 
@@ -96,7 +96,7 @@ concept of a ROS node. Nodes are processes doing stuff. Nodes can communicate wi
 other nodes by calling provided services or consuming or publishing messages over topics.
 I didn't include the relevant topics in the overview to make it simpler for the beginning.
 
-Let's start from top to bottom:
+Let's start from bottom to top:
 
 === Hardware interface layer
 The hardware interface layer is responsible to communicate with the physical hardware.
@@ -110,6 +110,7 @@ HIDE_STEREOTYPE()
 Boundary(c1, "Hardware interface layer") {
     System(roombainterface, "roombainterface", "Handles interaction with the Roomba hardware")
     System(imu, "imu", "Handles interaction with the MPU6050 IMU")
+    System(magnetometer, "magnetometer", "Handles interaction with the HMC5883L magnetometer")
     System(ydlidar, "ydlidar", "Handles interaction with the YDLiDAR X4 360 degrees laser scanner")
     System(differentialodometry, "differentialodometry", "Computes odometry from RAW roomba sensor data")
     System(ekflocalizationnode, "ekf_localization_node", "Performs sensor fusion to reduce signal noise and improve overall data quality")
@@ -119,6 +120,7 @@ Boundary(c0, "Hardware") {
     System(roomba, "Roomba580", "The Roomba 581 vacuum")
     System(scanner, "YDLiDAR X4", "360 degrees laser scanner")
     System(mpu, "MPU6050", "6-DOF IMU")
+    System(mag, "HMC5883L", "Magnetometer / compass module")
     System(oled, "OLED", "Small OLED display")
 }
 
@@ -129,9 +131,11 @@ Boundary(t0, "Topics") {
     System(sensorframe,"/sensorframe", "")
     System(wheelencoder,"/wheelencoder/odom", "")
     System(scan,"/scan", "")
+    System(magdat,"/imu/mag", "")
 }
 
 BiRel(mpu,imu,"I2C","I2C connection to the Scanner")
+BiRel(mag,magnetometer,"I2C","I2C connection to the Scanner")
 BiRel(scanner,ydlidar,"USB","USB connection to the Scanner")
 BiRel(roombainterface, roomba, "UART", "RS-232 using the Roomba Open Interface")
 
@@ -144,6 +148,7 @@ Rel(imu_data, ekflocalizationnode, "Consumes", "")
 Rel(ekflocalizationnode,odom, "Publishes", "")
 Rel(ydlidar,scan, "Publishes", "")
 Rel(cmd_vel,differentialodometry, "Consumes", "")
+Rel(magnetometer,magdat, "Publishes", "")
 @enduml
 ----
 
