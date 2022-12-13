@@ -20,7 +20,6 @@ jobs:
           gem install asciidoctor
           gem install coderay
           gem install asciidoctor-kroki
-          sudo apt-get install python
           gem install pygments.rb
           which asciidoctor
           which ruby
