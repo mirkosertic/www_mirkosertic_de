@@ -13,6 +13,9 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.6'
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
       - run: |
           gem install asciidoctor
           gem install coderay
