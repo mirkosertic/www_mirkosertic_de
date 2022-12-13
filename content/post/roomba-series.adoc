@@ -14,16 +14,24 @@ I decided to pimp it a little.
 
 A new hobby project was born!
 
-image:/media/roomba500.png[]
+[.float-group]
+--
+[.left.text-center]
+Prototype:
+image:/media/roomba500.png[300,300]
+Release version:
+image:/media/roomba500_2.png[300,300]
+--
 
 After all, the Roomba hardware is a good vacuum, and it offers a serial interface to read sensors and control the actuators. Only the robot brain and navigation systems are really outdated. I decided to give it a new brain with better navigation hardware, and reuse the
 Roomba platform as a whole. Here are the ingredients:
 
-- Raspberry Pi Zero 2 W as the new 64 bit brain
+- Raspberry Pi Zero 2 W as the new 64 bit brain running Ubuntu Linux
 - YDLiDAR X4 2D 360 degrees laser scanner
 - Small OLED display for better user interaction and feedback
 - MPU6050 6-DOF IMU to measure relative orientation, acceleration and velocity
-- Control software based on ROS(Robot Operating System)
+- HMC5883L magnetometer
+- Control software based on ROS (Robot Operating System)
 
 == What I am planning
 
