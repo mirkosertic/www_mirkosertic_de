@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Magnetometer on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/magnetometer/</link>
+    <description>Recent content in Magnetometer on www.mirkosertic.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Thu, 12 Jan 2023 00:00:00 +0100</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/magnetometer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to calibrate a 2D magnetometer with ellipsoid fitting</title>
+      <link>https://www.mirkosertic.de/blog/2023/01/magnetometer-calibration-ellipsoid/</link>
+      <pubDate>Thu, 12 Jan 2023 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2023/01/magnetometer-calibration-ellipsoid/</guid>
+      <description>How to calibrate a 2D magnetometer with ellipsoid fitting Step 1: Load uncalibrated magnetometer data as CSV The data was recorded by logging data from the magnetometer.
+Take care! This calibration process should be done while all systems of your robot or solution are running, so in a real life environment. This will make sure we take all hard iron influences into consideration. Place the robot in the middle of a room and let your robot turn to the left and to the right for a minute, and record the data.</description>
+    </item>
+    
+  </channel>
+</rss>

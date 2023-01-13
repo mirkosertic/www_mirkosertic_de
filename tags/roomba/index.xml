@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Thu, 13 Oct 2022 00:00:00 +0100</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/roomba/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Jan 2023 00:00:00 +0100</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/roomba/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to calibrate a 2D magnetometer with ellipsoid fitting</title>
+      <link>https://www.mirkosertic.de/blog/2023/01/magnetometer-calibration-ellipsoid/</link>
+      <pubDate>Thu, 12 Jan 2023 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.mirkosertic.de/blog/2023/01/magnetometer-calibration-ellipsoid/</guid>
+      <description>How to calibrate a 2D magnetometer with ellipsoid fitting Step 1: Load uncalibrated magnetometer data as CSV The data was recorded by logging data from the magnetometer.
+Take care! This calibration process should be done while all systems of your robot or solution are running, so in a real life environment. This will make sure we take all hard iron influences into consideration. Place the robot in the middle of a room and let your robot turn to the left and to the right for a minute, and record the data.</description>
+    </item>
+    
     <item>
       <title>The Roomba Series - General System Architecture</title>
       <link>https://www.mirkosertic.de/blog/2022/10/roomba-series-1/</link>

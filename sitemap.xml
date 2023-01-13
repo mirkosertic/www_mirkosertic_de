@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.mirkosertic.de/blog/2023/01/magnetometer-calibration-ellipsoid/</loc>
+    <lastmod>2023-01-13T12:02:28+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/magnetometer/</loc>
+    <lastmod>2023-01-13T12:02:28+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/post/</loc>
+    <lastmod>2023-01-13T12:02:28+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/robot/</loc>
+    <lastmod>2023-01-13T12:02:28+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/roomba/</loc>
+    <lastmod>2023-01-13T12:02:28+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/</loc>
+    <lastmod>2023-01-13T12:02:28+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/</loc>
+    <lastmod>2023-01-13T12:02:28+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://www.mirkosertic.de/tags/architecture/</loc>
     <lastmod>2022-11-14T12:45:59+01:00</lastmod>
     <changefreq>daily</changefreq>
@@ -12,33 +47,8 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://www.mirkosertic.de/post/</loc>
-    <lastmod>2022-12-13T11:53:37+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://www.mirkosertic.de/tags/robot/</loc>
-    <lastmod>2022-12-13T11:53:37+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://www.mirkosertic.de/tags/roomba/</loc>
-    <lastmod>2022-12-13T11:53:37+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://www.mirkosertic.de/tags/</loc>
-    <lastmod>2022-12-13T11:53:37+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://www.mirkosertic.de/blog/2022/10/roomba-series-1/</loc>
     <lastmod>2022-11-14T12:45:59+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://www.mirkosertic.de/</loc>
-    <lastmod>2022-12-13T11:53:37+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
