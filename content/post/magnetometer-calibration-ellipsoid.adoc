@@ -21,7 +21,7 @@ left and to the right for a minute, and record the data.
 
 
 +*In[1]:*+
-[source, ipython3]
+[source, python]
 ----
 import math
 import pandas as pd
@@ -47,7 +47,7 @@ measurements back into a circle.
 
 
 +*In[2]:*+
-[source, ipython3]
+[source, python]
 ----
 plt.scatter(rawdata["x"], rawdata["y"], label='Data Points', color='b')
 plt.show()
@@ -67,7 +67,7 @@ length of its axes and also its orientation.
 
 
 +*In[3]:*+
-[source, ipython3]
+[source, python]
 ----
 xcol = rawdata["x"]
 ycol = rawdata["y"]
@@ -195,7 +195,7 @@ rat = ap / bp
 
 
 +*In[4]:*+
-[source, ipython3]
+[source, python]
 ----
 ellipse = Ellipse((x0, y0), ap * 2, bp * 2, color='r', angle=math.degrees(phi), fill=False)
 
@@ -221,7 +221,7 @@ compensations to the data points to make it the best circle we can.
 
 
 +*In[5]:*+
-[source, ipython3]
+[source, python]
 ----
 rot = round(phi / (math.pi / 2.0))
 rotation = -(phi - rot * math.pi / 2.0)
@@ -251,7 +251,7 @@ background showing the layout of a perfect circle to see the difference.
 
 
 +*In[6]:*+
-[source, ipython3]
+[source, python]
 ----
 circle = plt.Circle((0, 0), ap, color='g', alpha=0.2)
 
