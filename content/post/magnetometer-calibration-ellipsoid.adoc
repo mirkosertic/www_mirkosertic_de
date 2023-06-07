@@ -20,7 +20,7 @@ Place the robot in the middle of a room and let your robot turn to the
 left and to the right for a minute, and record the data.
 
 
-+*In[1]:*+
+**In[1]:**
 [source, python]
 ----
 import math
@@ -46,7 +46,7 @@ Goal of the calibration procedure is to find a way to transform the
 measurements back into a circle.
 
 
-+*In[2]:*+
+**In[2]:**
 [source, python]
 ----
 plt.scatter(rawdata["x"], rawdata["y"], label='Data Points', color='b')
@@ -54,7 +54,7 @@ plt.show()
 ----
 
 
-+*Out[2]:*+
+**Out[2]:**
 
 image:/media/ellipsoid_output_4_0.png[]
 
@@ -66,7 +66,7 @@ reduced. As the result, we get the center point of the ellipsoid, the
 length of its axes and also its orientation.
 
 
-+*In[3]:*+
+**In[3]:**
 [source, python]
 ----
 xcol = rawdata["x"]
@@ -182,8 +182,10 @@ rat = ap / bp
 ----
 
 
-+*Out[3]:*+
-----[1.0796413094280661,
+**Out[3]:**
+
+----
+[1.0796413094280661,
 400.20000000000005,
 353.28000000000003,
 -1233.400221573585,
@@ -191,10 +193,11 @@ rat = ap / bp
 163.20561364076153,
 151.16651448546256,
 0.3769501500025899,
-4.9892937074437285]----
+4.9892937074437285]
+----
 
 
-+*In[4]:*+
+**In[4]:**
 [source, python]
 ----
 ellipse = Ellipse((x0, y0), ap * 2, bp * 2, color='r', angle=math.degrees(phi), fill=False)
@@ -210,7 +213,7 @@ plt.show()
 ----
 
 
-+*Out[4]:*+
+**Out[4]:**
 
 image:/media/ellipsoid_output_7_0.png[]
 
@@ -220,7 +223,7 @@ We apply the found hard iron offsets, scale factors and rotation
 compensations to the data points to make it the best circle we can.
 
 
-+*In[5]:*+
+**In[5]:**
 [source, python]
 ----
 rot = round(phi / (math.pi / 2.0))
@@ -240,8 +243,10 @@ math.degrees(phi), math.degrees(rotation)
 ----
 
 
-+*Out[5]:*+
-----(4.9892937074437285, -4.9892937074437285)----
+**Out[5]:**
+----
+(4.9892937074437285, -4.9892937074437285)
+----
 
 === Finally, the corrected data
 
@@ -250,7 +255,7 @@ center of the circle is at (0,0). There is also a green circle in the
 background showing the layout of a perfect circle to see the difference.
 
 
-+*In[6]:*+
+**In[6]:**
 [source, python]
 ----
 circle = plt.Circle((0, 0), ap, color='g', alpha=0.2)
@@ -263,7 +268,7 @@ plt.show()
 ----
 
 
-+*Out[6]:*+
+**Out[6]:**
 
 image:/media/ellipsoid_output_11_0.png[]
 
