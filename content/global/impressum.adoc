@@ -1,5 +1,5 @@
 +++
-date = "2017-01-01T00:00:00+02:00"
+date = "2034-12-30T00:00:00+02:00"
 title = "Impressum"
 tags = []
 draft = false
@@ -11,7 +11,7 @@ include::globals.adoc[]
 *Angaben gemäß § 5 TMG*
 
 Mirko Sertic +
-Josefine-Mauser-Strasse 66 +
+Josefine-Mauser-Straße 66 +
 48157 Münster
 
 *Kontakt*
