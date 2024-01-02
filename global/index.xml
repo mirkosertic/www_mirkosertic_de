@@ -7,19 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Fri, 02 Sep 2022 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/global/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Tools &amp; Goodies</title>
-      <link>https://www.mirkosertic.de/global/toolsgoodies/</link>
-      <pubDate>Fri, 02 Sep 2022 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.mirkosertic.de/global/toolsgoodies/</guid>
-      <description>Technical stuff PlotJuggler
-PlotJuggler is a tool to visualize time series that is fast, powerful and intuitive.
-Dependency-Track
-Dependency-Track is an intelligent Component Analysis platform that allows organizations to identify and reduce risk in the software supply chain. Dependency-Track takes a unique and highly beneficial approach by leveraging the capabilities of Software Bill of Materials (SBOM). This approach provides capabilities that traditional Software Composition Analysis (SCA) solutions cannot achieve.</description>
-    </item>
-    
+    <lastBuildDate>Fri, 04 Jun 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/global/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My personal list of interesting books</title>
       <link>https://www.mirkosertic.de/global/interestingbooks/</link>

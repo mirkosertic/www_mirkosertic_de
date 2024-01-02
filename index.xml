@@ -33,18 +33,6 @@ Robot Operating System (ROS), Noetic Release</description>
     </item>
     
     <item>
-      <title>Tools &amp; Goodies</title>
-      <link>https://www.mirkosertic.de/global/toolsgoodies/</link>
-      <pubDate>Fri, 02 Sep 2022 00:00:00 +0200</pubDate>
-      
-      <guid>https://www.mirkosertic.de/global/toolsgoodies/</guid>
-      <description>Technical stuff PlotJuggler
-PlotJuggler is a tool to visualize time series that is fast, powerful and intuitive.
-Dependency-Track
-Dependency-Track is an intelligent Component Analysis platform that allows organizations to identify and reduce risk in the software supply chain. Dependency-Track takes a unique and highly beneficial approach by leveraging the capabilities of Software Bill of Materials (SBOM). This approach provides capabilities that traditional Software Composition Analysis (SCA) solutions cannot achieve.</description>
-    </item>
-    
-    <item>
       <title>The Roomba Series - How to create an autonomous mobile robot</title>
       <link>https://www.mirkosertic.de/blog/2022/02/roomba-series/</link>
       <pubDate>Sat, 19 Feb 2022 00:00:00 +0100</pubDate>
