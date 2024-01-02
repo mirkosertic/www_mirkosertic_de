@@ -1,5 +1,5 @@
 +++
-date = "2022-09-02T00:00:00+02:00"
+date = "2024-01-04T00:00:00+02:00"
 title = "Tools & Goodies"
 tags = []
 draft = false
@@ -7,6 +7,14 @@ description = "A collection of tools and goodies"
 +++
 include::globals.adoc[]
 == Technical stuff
+
+https://architecture-antipatterns.tech/[Architecture Antipatterns]
+
+Discover common architecture antipatterns, learn how to avoid them and overcome design pitfalls! Gain valuable insights, practical advice, and real-world examples to build better software architectures and improve existing ones.
+
+https://roca-style.org/[Resource-Oriented Client Architecture]
+
+A collection of simple recommendations for decent Web application frontends.
 
 https://www.plotjuggler.io/[PlotJuggler]
 
