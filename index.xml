@@ -7,7 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Thu, 12 Jan 2023 00:00:00 +0100</lastBuildDate><atom:link href="https://www.mirkosertic.de/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0200</lastBuildDate><atom:link href="https://www.mirkosertic.de/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tools &amp; Goodies</title>
+      <link>https://www.mirkosertic.de/global/toolsgoodies/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.mirkosertic.de/global/toolsgoodies/</guid>
+      <description>Technical stuff Architecture Antipatterns
+Discover common architecture antipatterns, learn how to avoid them and overcome design pitfalls! Gain valuable insights, practical advice, and real-world examples to build better software architectures and improve existing ones.
+Resource-Oriented Client Architecture
+A collection of simple recommendations for decent Web application frontends.
+PlotJuggler
+PlotJuggler is a tool to visualize time series that is fast, powerful and intuitive.
+Dependency-Track
+Dependency-Track is an intelligent Component Analysis platform that allows organizations to identify and reduce risk in the software supply chain.</description>
+    </item>
+    
     <item>
       <title>How to calibrate a 2D magnetometer with ellipsoid fitting</title>
       <link>https://www.mirkosertic.de/blog/2023/01/magnetometer-calibration-ellipsoid/</link>
