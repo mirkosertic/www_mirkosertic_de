@@ -8,6 +8,10 @@ description = "A collection of tools and goodies"
 include::globals.adoc[]
 == Technical stuff
 
+https://jsoncrack.com/editor[JSON Crack]
+
+Visualize, analyze, and manipulate data with ease, a versatile and powerful tool for data representation and exploration.
+
 https://www.desmos.com/[Desmos]
 
 Desmos is an advanced graphing calculator implemented as a web application and a mobile application written in TypeScript and JavaScript.
