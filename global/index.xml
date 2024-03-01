@@ -14,13 +14,12 @@
       <pubDate>Mon, 12 Feb 2024 00:00:00 +0200</pubDate>
       
       <guid>https://www.mirkosertic.de/global/toolsgoodies/</guid>
-      <description>Technical stuff Desmos
+      <description>Technical stuff JSON Crack
+Visualize, analyze, and manipulate data with ease, a versatile and powerful tool for data representation and exploration.
+Desmos
 Desmos is an advanced graphing calculator implemented as a web application and a mobile application written in TypeScript and JavaScript.
 Architecture Antipatterns
-Discover common architecture antipatterns, learn how to avoid them and overcome design pitfalls! Gain valuable insights, practical advice, and real-world examples to build better software architectures and improve existing ones.
-Resource-Oriented Client Architecture
-A collection of simple recommendations for decent Web application frontends.
-PlotJuggler</description>
+Discover common architecture antipatterns, learn how to avoid them and overcome design pitfalls! Gain valuable insights, practical advice, and real-world examples to build better software architectures and improve existing ones.</description>
     </item>
     
     <item>
