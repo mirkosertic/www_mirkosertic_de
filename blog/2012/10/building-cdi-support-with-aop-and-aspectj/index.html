@@ -130,17 +130,17 @@ if (!doNotTrack) {
 
     if (existsByCSSSelector("pre.highlight code") > 0) {
         var loader = new Loader();
-        loader.require(["https:\/\/www.mirkosertic.de\/js/highlight-9.9.0.min.js"], function() {
+        loader.require(["https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"], function() {
 
             var additionalStylesheet = document.createElement('link');
             additionalStylesheet.rel = "stylesheet";
             additionalStylesheet.type = 'text/css';
             additionalStylesheet.media = "screen";
-            additionalStylesheet.href = "https:\/\/www.mirkosertic.de\/css/highlight.css";
+            additionalStylesheet.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css";
 
             var head = document.getElementsByTagName('head')[0];
             head.appendChild(additionalStylesheet);
 
-            hljs.initHighlightingOnLoad();
+            hljs.highlightAll();
         });
     }</script></body></html>
