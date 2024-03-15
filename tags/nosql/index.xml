@@ -7,61 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Thu, 22 Nov 2012 03:37:03 +0100</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Oct 2018 11:37:04 +0200</lastBuildDate>
+    <atom:link href="https://www.mirkosertic.de/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>An overview of current NoSQL databases</title>
       <link>https://www.mirkosertic.de/blog/2012/11/an-overview-of-current-nosql-databases/</link>
       <pubDate>Thu, 22 Nov 2012 03:37:03 +0100</pubDate>
-      
       <guid>https://www.mirkosertic.de/blog/2012/11/an-overview-of-current-nosql-databases/</guid>
-      <description>This summary is taken from the book “Seven Databases in Seven Weeks”. See the Books section for details.
-Database
-Version
-Genre
-Data Types
-Data Relations
-Standard Object
-Written in
-Transactions
-Triggers
-Main Differentiator
-Weaknesses
-MongoDB
-2.0
-Document
-Typed
-None
-JSON
-C++
-No
-No
-Easily query Big Data
-Embed-ability
-CouchDB
-1.1
-Document
-Typed
-None
-JSON
-Erlang
-No
-Update validation or Changes API
-Durable and embeddable clusters
-Query-ability
-Riak
-1.0
-Key-value</description>
+      <description>This summary is taken from the book “Seven Databases in Seven Weeks”. See the Books section for details.&#xA;Database&#xA;Version&#xA;Genre&#xA;Data Types&#xA;Data Relations&#xA;Standard Object&#xA;Written in&#xA;Transactions&#xA;Triggers&#xA;Main Differentiator&#xA;Weaknesses&#xA;MongoDB&#xA;2.0&#xA;Document&#xA;Typed&#xA;None&#xA;JSON&#xA;C++&#xA;No&#xA;No&#xA;Easily query Big Data&#xA;Embed-ability&#xA;CouchDB&#xA;1.1&#xA;Document&#xA;Typed&#xA;None&#xA;JSON&#xA;Erlang&#xA;No&#xA;Update validation or Changes API&#xA;Durable and embeddable clusters&#xA;Query-ability&#xA;Riak&#xA;1.0&#xA;Key-value</description>
     </item>
-    
     <item>
       <title>A first touch with NoSQL, graph databases and OrientDB</title>
       <link>https://www.mirkosertic.de/blog/2012/08/a-first-touch-with-nosql-graph-databases-and-orientdb/</link>
       <pubDate>Wed, 01 Aug 2012 01:43:48 +0200</pubDate>
-      
       <guid>https://www.mirkosertic.de/blog/2012/08/a-first-touch-with-nosql-graph-databases-and-orientdb/</guid>
-      <description>The experiment I was thinking about the current way we often store data in relational databases like MySQL, PostgreSQL or Oracle. We are using object-relational mapping frameworks like Hibernate, enriching Java classes with JPA annotations and are hoping that the mapping framework does everything for us the right way.
-But wait a minute. What are we storing here? Basically we are storing Java object graphs using our ORM framework. Object graphs.</description>
+      <description>The experiment I was thinking about the current way we often store data in relational databases like MySQL, PostgreSQL or Oracle. We are using object-relational mapping frameworks like Hibernate, enriching Java classes with JPA annotations and are hoping that the mapping framework does everything for us the right way.&#xA;But wait a minute. What are we storing here? Basically we are storing Java object graphs using our ORM framework. Object graphs.</description>
     </item>
-    
   </channel>
 </rss>

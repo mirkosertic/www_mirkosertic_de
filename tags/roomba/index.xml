@@ -7,41 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Thu, 12 Jan 2023 00:00:00 +0100</lastBuildDate><atom:link href="https://www.mirkosertic.de/tags/roomba/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Jun 2023 13:44:30 +0200</lastBuildDate>
+    <atom:link href="https://www.mirkosertic.de/tags/roomba/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to calibrate a 2D magnetometer with ellipsoid fitting</title>
       <link>https://www.mirkosertic.de/blog/2023/01/magnetometer-calibration-ellipsoid/</link>
       <pubDate>Thu, 12 Jan 2023 00:00:00 +0100</pubDate>
-      
       <guid>https://www.mirkosertic.de/blog/2023/01/magnetometer-calibration-ellipsoid/</guid>
-      <description>How to calibrate a 2D magnetometer with ellipsoid fitting Step 1: Load uncalibrated magnetometer data as CSV The data was recorded by logging data from the magnetometer.
-Take care! This calibration process should be done while all systems of your robot or solution are running, so in a real life environment. This will make sure we take all hard iron influences into consideration. Place the robot in the middle of a room and let your robot turn to the left and to the right for a minute, and record the data.</description>
+      <description>How to calibrate a 2D magnetometer with ellipsoid fitting Step 1: Load uncalibrated magnetometer data as CSV The data was recorded by logging data from the magnetometer.&#xA;Take care! This calibration process should be done while all systems of your robot or solution are running, so in a real life environment. This will make sure we take all hard iron influences into consideration. Place the robot in the middle of a room and let your robot turn to the left and to the right for a minute, and record the data.</description>
     </item>
-    
     <item>
       <title>The Roomba Series - General System Architecture</title>
       <link>https://www.mirkosertic.de/blog/2022/10/roomba-series-1/</link>
       <pubDate>Thu, 13 Oct 2022 00:00:00 +0100</pubDate>
-      
       <guid>https://www.mirkosertic.de/blog/2022/10/roomba-series-1/</guid>
-      <description>Standing on the shoulders of giants My custom Roomba vacuum uses a lot of free available open source software. Without it, it wouldn’t be possible to create and compose a complex system such as an autonomous robot in a reasonable amount of time.
-The core ingredients are:
-Raspberry Pi Zero 2 W
-Ubuntu 64bit OS
-Additional sensors, connected by USB, UART or I2C bus.
-Robot Operating System (ROS), Noetic Release</description>
+      <description>Standing on the shoulders of giants My custom Roomba vacuum uses a lot of free available open source software. Without it, it wouldn’t be possible to create and compose a complex system such as an autonomous robot in a reasonable amount of time.&#xA;The core ingredients are:&#xA;Raspberry Pi Zero 2 W&#xA;Ubuntu 64bit OS&#xA;Additional sensors, connected by USB, UART or I2C bus.&#xA;Robot Operating System (ROS), Noetic Release</description>
     </item>
-    
     <item>
       <title>The Roomba Series - How to create an autonomous mobile robot</title>
       <link>https://www.mirkosertic.de/blog/2022/02/roomba-series/</link>
       <pubDate>Sat, 19 Feb 2022 00:00:00 +0100</pubDate>
-      
       <guid>https://www.mirkosertic.de/blog/2022/02/roomba-series/</guid>
-      <description>Maybe too much time I found an outdated Roomba 581 vacuum robot in the attic. I just couldn’t throw it away, so I decided to pimp it a little.
-A new hobby project was born!
-Prototype: Release version: After all, the Roomba hardware is a good vacuum, and it offers a serial interface to read sensors and control the actuators. Only the robot brain and navigation systems are really outdated.</description>
+      <description>Maybe too much time I found an outdated Roomba 581 vacuum robot in the attic. I just couldn’t throw it away, so I decided to pimp it a little.&#xA;A new hobby project was born!&#xA;Prototype: Release version: After all, the Roomba hardware is a good vacuum, and it offers a serial interface to read sensors and control the actuators. Only the robot brain and navigation systems are really outdated.</description>
     </item>
-    
   </channel>
 </rss>
