@@ -19,7 +19,6 @@ jobs:
       - run: |
           gem install coderay
           gem install pygments.rb
-          gem install asciidoctor-lazy-images
           which ruby
       - uses: actions/setup-node@v2
         with:
