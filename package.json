@@ -28,5 +28,9 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "asciidoctor": "^3.0.4",
+    "asciidoctor-kroki": "^0.18.1"
   }
 }
