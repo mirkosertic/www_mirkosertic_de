@@ -50,7 +50,7 @@ enableGitInfo = true
     weight = 5
 
 [markup.asciidocExt]
-    extensions = ["asciidoctor-kroki"]
+    extensions = ["asciidoctor-kroki", "asciidoctor-lazy-images"]
     [markup.asciidocExt.attributes]
         kroki-fetch-diagram = true
 
