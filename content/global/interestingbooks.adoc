@@ -1,5 +1,5 @@
 +++
-date = "2021-06-04T00:00:00+02:00"
+date = "2024-03-17T00:00:00+02:00"
 title = "My personal list of interesting books"
 tags = []
 draft = false
@@ -54,6 +54,7 @@ include::globals.adoc[]
     * Deep Learning (Adaptive Computation and Machine Learning). Ian Goodfellow, Yoshua Bengio, Aaron Courville
     * Reinforcement Learning: An Introduction (Adaptive Computation and Machine Learning). Richard S. Sutton, Andrew G. Barto
     * Deep Learning for Search. Tommaso Teofili
+    * Genetic Algorithms and Machine Learning for Programmers. Create AI Models and Evolve Solutions. Frances Buontempo.
 
 == Others
 
