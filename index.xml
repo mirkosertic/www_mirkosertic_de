@@ -7,14 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Fri, 15 Mar 2024 14:10:58 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 18 Mar 2024 14:01:53 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My personal list of interesting books</title>
+      <link>https://www.mirkosertic.de/global/interestingbooks/</link>
+      <pubDate>Sun, 17 Mar 2024 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/global/interestingbooks/</guid>
+      <description>General software engineering &amp;amp; project management The Mythical Man-Month. Essays on Software Engineering. Frederick P. Brooks&#xA;Requirements-Engineering und -Management: Professionelle, iterative Anforderungsanalyse für die Praxis. Chris Rupp und die SOPHISTEN&#xA;The Deadline: A Novel About Project Management. Tom DeMarco&#xA;The Goal: A Process of Ongoing Improvement. Eliyahu M. Goldratt, Jeff Cox&#xA;Peopleware: Productive Projects and Teams. Tom DeMarco&#xA;97 Things Every Programmer Should Know&#xA;Knigge für Softwarearchitekten. Peter Hruschka</description>
+    </item>
     <item>
       <title>Tools &amp; Goodies</title>
       <link>https://www.mirkosertic.de/global/toolsgoodies/</link>
-      <pubDate>Mon, 12 Feb 2024 00:00:00 +0200</pubDate>
+      <pubDate>Sun, 17 Mar 2024 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/global/toolsgoodies/</guid>
-      <description>Technical stuff JSON Crack&#xA;Visualize, analyze, and manipulate data with ease, a versatile and powerful tool for data representation and exploration.&#xA;Desmos&#xA;Desmos is an advanced graphing calculator implemented as a web application and a mobile application written in TypeScript and JavaScript.&#xA;Architecture Antipatterns&#xA;Discover common architecture antipatterns, learn how to avoid them and overcome design pitfalls! Gain valuable insights, practical advice, and real-world examples to build better software architectures and improve existing ones.</description>
+      <description>Technical stuff Playwright&#xA;Playwright enables reliable end-to-end testing for modern web apps.&#xA;JSON Crack&#xA;Visualize, analyze, and manipulate data with ease, a versatile and powerful tool for data representation and exploration.&#xA;Desmos&#xA;Desmos is an advanced graphing calculator implemented as a web application and a mobile application written in TypeScript and JavaScript.&#xA;Architecture Antipatterns&#xA;Discover common architecture antipatterns, learn how to avoid them and overcome design pitfalls! Gain valuable insights, practical advice, and real-world examples to build better software architectures and improve existing ones.</description>
     </item>
     <item>
       <title>How to calibrate a 2D magnetometer with ellipsoid fitting</title>
@@ -43,13 +50,6 @@
       <pubDate>Sun, 15 Aug 2021 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2021/08/swing-jetbrains-projector/</guid>
       <description>A story of two worlds Java Swing is part of the Java Runtime since version 1.2. Swing is also part of the Java Foundation Classes, which are the library for creating component bases, modular, portable, and cross-platform graphical user interfaces. Being part of the core runtime, Java Swing is a valid choice for a lot of projects running in a different environment, starting from tiny calculator applications to humongous insurance or tax administration systems.</description>
-    </item>
-    <item>
-      <title>My personal list of interesting books</title>
-      <link>https://www.mirkosertic.de/global/interestingbooks/</link>
-      <pubDate>Fri, 04 Jun 2021 00:00:00 +0200</pubDate>
-      <guid>https://www.mirkosertic.de/global/interestingbooks/</guid>
-      <description>General software engineering &amp;amp; project management The Mythical Man-Month. Essays on Software Engineering. Frederick P. Brooks&#xA;Requirements-Engineering und -Management: Professionelle, iterative Anforderungsanalyse für die Praxis. Chris Rupp und die SOPHISTEN&#xA;The Deadline: A Novel About Project Management. Tom DeMarco&#xA;The Goal: A Process of Ongoing Improvement. Eliyahu M. Goldratt, Jeff Cox&#xA;Peopleware: Productive Projects and Teams. Tom DeMarco&#xA;97 Things Every Programmer Should Know&#xA;Knigge für Softwarearchitekten. Peter Hruschka</description>
     </item>
     <item>
       <title>Self-Contained-Systems Light &amp; Shadow</title>
