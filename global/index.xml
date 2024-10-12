@@ -7,14 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Thu, 06 Jun 2024 12:10:49 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 12 Oct 2024 11:18:33 +0200</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/global/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tools &amp; Goodies</title>
       <link>https://www.mirkosertic.de/global/toolsgoodies/</link>
       <pubDate>Thu, 06 Jun 2024 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/global/toolsgoodies/</guid>
-      <description>Technical stuff Kaitai Struct&#xA;A new way to develop parsers for binary structures.&#xA;Playwright&#xA;Playwright enables reliable end-to-end testing for modern web apps.&#xA;JSON Crack&#xA;Visualize, analyze, and manipulate data with ease, a versatile and powerful tool for data representation and exploration.&#xA;Desmos&#xA;Desmos is an advanced graphing calculator implemented as a web application and a mobile application written in TypeScript and JavaScript.&#xA;Architecture Antipatterns&#xA;Discover common architecture antipatterns, learn how to avoid them and overcome design pitfalls!</description>
+      <description>Technical stuff Backstage&#xA;An open source framework for building developer portals. Powered by a centralized software catalog, Backstage restores order to your infrastructure and enables your product teams to ship high-quality code quickly — without compromising autonomy.&#xA;Kaitai Struct&#xA;A new way to develop parsers for binary structures.&#xA;Playwright&#xA;Playwright enables reliable end-to-end testing for modern web apps.&#xA;JSON Crack&#xA;Visualize, analyze, and manipulate data with ease, a versatile and powerful tool for data representation and exploration.</description>
     </item>
     <item>
       <title>My personal list of interesting books</title>
