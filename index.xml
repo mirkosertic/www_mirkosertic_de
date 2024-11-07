@@ -7,21 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Sat, 12 Oct 2024 11:18:59 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 07 Nov 2024 12:19:35 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My personal list of interesting books</title>
+      <link>https://www.mirkosertic.de/global/interestingbooks/</link>
+      <pubDate>Thu, 07 Nov 2024 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/global/interestingbooks/</guid>
+      <description>General software engineering &amp;amp; project management The Mythical Man-Month. Essays on Software Engineering. Frederick P. Brooks&#xA;Requirements-Engineering und -Management: Professionelle, iterative Anforderungsanalyse für die Praxis. Chris Rupp und die SOPHISTEN&#xA;The Deadline: A Novel About Project Management. Tom DeMarco&#xA;The Goal: A Process of Ongoing Improvement. Eliyahu M. Goldratt, Jeff Cox&#xA;Peopleware: Productive Projects and Teams. Tom DeMarco&#xA;97 Things Every Programmer Should Know&#xA;Knigge für Softwarearchitekten. Peter Hruschka</description>
+    </item>
     <item>
       <title>Tools &amp; Goodies</title>
       <link>https://www.mirkosertic.de/global/toolsgoodies/</link>
       <pubDate>Sat, 12 Oct 2024 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/global/toolsgoodies/</guid>
       <description>Technical stuff Backstage&#xA;An open source framework for building developer portals. Powered by a centralized software catalog, Backstage restores order to your infrastructure and enables your product teams to ship high-quality code quickly — without compromising autonomy.&#xA;Kaitai Struct&#xA;A new way to develop parsers for binary structures.&#xA;Playwright&#xA;Playwright enables reliable end-to-end testing for modern web apps.&#xA;JSON Crack&#xA;Visualize, analyze, and manipulate data with ease, a versatile and powerful tool for data representation and exploration.</description>
-    </item>
-    <item>
-      <title>My personal list of interesting books</title>
-      <link>https://www.mirkosertic.de/global/interestingbooks/</link>
-      <pubDate>Sun, 17 Mar 2024 00:00:00 +0200</pubDate>
-      <guid>https://www.mirkosertic.de/global/interestingbooks/</guid>
-      <description>General software engineering &amp;amp; project management The Mythical Man-Month. Essays on Software Engineering. Frederick P. Brooks&#xA;Requirements-Engineering und -Management: Professionelle, iterative Anforderungsanalyse für die Praxis. Chris Rupp und die SOPHISTEN&#xA;The Deadline: A Novel About Project Management. Tom DeMarco&#xA;The Goal: A Process of Ongoing Improvement. Eliyahu M. Goldratt, Jeff Cox&#xA;Peopleware: Productive Projects and Teams. Tom DeMarco&#xA;97 Things Every Programmer Should Know&#xA;Knigge für Softwarearchitekten. Peter Hruschka</description>
     </item>
     <item>
       <title>How to calibrate a 2D magnetometer with ellipsoid fitting</title>
