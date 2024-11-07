@@ -1,5 +1,5 @@
 +++
-date = "2024-03-17T00:00:00+02:00"
+date = "2024-11-07T00:00:00+02:00"
 title = "My personal list of interesting books"
 tags = []
 draft = false
@@ -22,6 +22,7 @@ include::globals.adoc[]
     * Specification by Example. How successful teams deliver the right software. Gojko Adzik
     * Infrastructure as Code. Kief Morris
     * Engineering a Compiler. Linda Torczon, Keith Cooper
+    * Writing a C Compiler: Build a Real Programming Language from Scratch. Nora Sandler 
 
 == (Object-oriented) design
 
@@ -69,3 +70,4 @@ include::globals.adoc[]
     * What If?: Serious Scientific Answers to Absurd Hypothetical Questions. Randall Munroe
     * Game Engine Black Book: Doom. Fabien Sanglard
     * infinite powers: How Calculus Reveals the Secrets of the Universe. Steven Strogatz
+    * Alice’s Adventures in a differentiable wonderland: A primer on designing neural networks (Volume I). Simone Scardapane
