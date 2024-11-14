@@ -16,7 +16,7 @@
 
                         // Callback code
                         var script = document.createElement('script');
-                        script.src = '//{{ .Site.DisqusShortname }}.disqus.com/embed.js';
+                        script.src = '//{{ .Site.Config.Services.Disqus.Shortname }}.disqus.com/embed.js';
                         script.async = true;
                         script.setAttribute('data-timestamp', +new Date());
                         script.addEventListener('load', function () {
