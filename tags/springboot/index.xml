@@ -4,7 +4,7 @@
     <title>SpringBoot on www.mirkosertic.de</title>
     <link>https://www.mirkosertic.de/tags/springboot/</link>
     <description>Recent content in SpringBoot on www.mirkosertic.de</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
     <lastBuildDate>Tue, 05 Sep 2017 08:05:00 +0200</lastBuildDate>
@@ -14,14 +14,14 @@
       <link>https://www.mirkosertic.de/blog/2016/12/a-spring-boot-admin-ui/</link>
       <pubDate>Sat, 31 Dec 2016 01:08:59 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2016/12/a-spring-boot-admin-ui/</guid>
-      <description>Spring Boot is a very cool framework for building modern, cloud-ready software. It also comes with a set of production ready endpoints which allow to administrate and monitor running applications. Unfortunately there is no admin user interface included in Spring Boot.&#xA;The good people at Codecentric recently released a very nice one, which is also available at GitHub. Here is a screenshot:&#xA;This user interface is basically a Spring Boot Starter, so you have to include it into your own application to make it runnable.</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Spring Boot is a very cool framework for building modern, cloud-ready software. It also comes with a set of production ready endpoints which allow to administrate and monitor running applications. Unfortunately there is no admin user interface included in Spring Boot.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;The good people at &lt;a href=&#34;https://www.codecentric.de/&#34;&gt;Codecentric&lt;/a&gt; recently released a very nice one, which is also available at GitHub. Here is a screenshot:&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://www.mirkosertic.de/media/springbootadminui.png&#34; alt=&#34;springbootadminui&#34;/&gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;This user interface is basically a Spring Boot Starter, so you have to include it into your own application to make it runnable. It comes with the following features:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>How to embed Hystrix into existing Spring applications</title>
       <link>https://www.mirkosertic.de/blog/2012/07/how-to-embed-hystrix-into-existing-spring-applications/</link>
       <pubDate>Tue, 31 Jul 2012 06:01:53 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2012/07/how-to-embed-hystrix-into-existing-spring-applications/</guid>
-      <description>Netflix Hystrix is a very powerful framework to build fault tolerant and resilient applications. It provides common implementations for patterns like Timeout, CircuitBreaker and others. It also comes with nice monitoring capabilities using the Hystrix Dashboard or even JMX.&#xA;Now, Hystrix should be used as a kind of decorator around interfaces or gateways to other (sub) systems. The tricky part is to do this in a non invasive manner. And here comes Spring and AOP to play:</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Netflix &lt;a href=&#34;https://github.com/Netflix/Hystrix&#34;&gt;Hystrix&lt;/a&gt; is a very powerful framework to build fault tolerant and resilient applications. It provides common implementations for patterns like Timeout, &lt;a href=&#34;http://martinfowler.com/bliki/CircuitBreaker.html&#34;&gt;CircuitBreaker&lt;/a&gt; and others. It also comes with nice monitoring capabilities using the Hystrix Dashboard or even JMX.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Now, Hystrix should be used as a kind of decorator around interfaces or gateways to other (sub) systems. The tricky part is to do this in a non invasive manner. And here comes Spring and AOP to play:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

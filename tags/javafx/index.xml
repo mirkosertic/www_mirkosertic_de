@@ -4,7 +4,7 @@
     <title>JavaFX on www.mirkosertic.de</title>
     <link>https://www.mirkosertic.de/tags/javafx/</link>
     <description>Recent content in JavaFX on www.mirkosertic.de</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
     <lastBuildDate>Tue, 24 Sep 2019 19:10:40 +0200</lastBuildDate>
@@ -14,42 +14,42 @@
       <link>https://www.mirkosertic.de/blog/2019/04/java-desktop-packaging/</link>
       <pubDate>Tue, 23 Apr 2019 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2019/04/java-desktop-packaging/</guid>
-      <description>Packaging Java applications for the Desktop has never been an easy task. In this blog post I want to look at the past to show where we are coming from, look at the present to see what we have now and finally try to take a look into the future to get a glimpse of what might be coming.&#xA;The Past of Java Packaging Before Java 5.0 there was no built-in support in Java for application distribution, as far as what we would consider an application.</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Packaging Java applications for the Desktop has never been an easy task. In this blog post I want to look at the past&#xA;to show where we are coming from, look at the present to see what we have now and finally try to take a look into the&#xA;future to get a glimpse of what might be coming.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_the_past_of_java_packaging&#34;&gt;The Past of Java Packaging&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Before Java 5.0 there was no built-in support in Java for application distribution, as far as what we would consider&#xA;an application. But there was hope. We had &lt;a href=&#34;https://www.oracle.com/technetwork/java/applets-137637.html&#34;&gt;Java Applets&lt;/a&gt;.&#xA;Applets used to be Java programs executed by a special plugin installed in our browser. This plugin downloaded the jar&#xA;files of the applet, and executed the code in an isolated, restricted sandbox. We used signed applets to escape this&#xA;sandbox and get full access to system resources. One problem remained: there was no built-in update mechanism. We only&#xA;had the browser cache to prevent jar files from being downloaded every time.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>GWT vs. Dragome vs. TeaVM for Game Programming</title>
       <link>https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming/</link>
       <pubDate>Thu, 18 Dec 2014 11:43:01 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming/</guid>
-      <description>Last year I wrote a cross platform game engine. It used a JavaFX based Game Authoring System and had a Java based Game Runtime, which was transpiled to different platforms such as Android, JavaScript over GWT and JavaFX.&#xA;Here is a screenshot of a simple platform game based on the GameEngine, some physics stuff and a lot of Java code:&#xA;Here is also a screenshot of the JavaFX based game authoring system while editing the example game:</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Last year I wrote a &lt;a href=&#34;https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/&#34;&gt;cross platform game engine&lt;/a&gt;. It used a JavaFX based Game Authoring System and had a Java based Game Runtime, which was transpiled to different platforms such as Android, JavaScript over GWT and JavaFX.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Here is a screenshot of a simple platform game based on the GameEngine, some physics stuff and a lot of Java code:&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://www.mirkosertic.de/media/dukejumprunchrome.png&#34; alt=&#34;dukejumprunchrome&#34;/&gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Here is also a screenshot of the JavaFX based game authoring system while editing the example game:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>A JavaFX based Game Authoring System</title>
       <link>https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/</link>
       <pubDate>Fri, 15 Nov 2013 08:35:32 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/</guid>
-      <description>A few weeks ago I decided to enhance my knowledge in game coding, so I bought two very interesting books: “Real-Time Rendering, Third Edition by Thomas Akenine-Möller, Eric Haines and Nety Hoffmann” and “Game Coding Complete, Fourth Edition by Mike McShaffry and David “Rez” Graham”. After some insightful moments, hundreds of pages read and sleepless nights, I wanted to create my own game. So this project was born.&#xA;Primary Goals</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;A few weeks ago I decided to enhance my knowledge in game coding, so I bought two very interesting books: “Real-Time Rendering, Third Edition by Thomas Akenine-Möller, Eric Haines and Nety Hoffmann” and “Game Coding Complete, Fourth Edition by Mike McShaffry and David “Rez” Graham”. After some insightful moments, hundreds of pages read and sleepless nights, I wanted to create my own game. So this project was born.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Primary Goals&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>JavaFX Custom Controls or WebView with D3.js?</title>
       <link>https://www.mirkosertic.de/blog/2013/05/javafx-custom-controls-or-webview-with-d3-js/</link>
       <pubDate>Thu, 02 May 2013 04:27:47 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/05/javafx-custom-controls-or-webview-with-d3-js/</guid>
-      <description>Often we need to visualize complex data in a fancy way. The core JavaFX controls are sometimes capable to do it, but most of the time they are not. So the question is: do we need to write a custom control?&#xA;The answer is: depends! Since JavaFX supports the famous WebView, we can also use some embedded HTML5 with JavaScript libraries like D3.js to visualize data driven documents.&#xA;To show how this works i used the JavaFX Desktop Search example and added an animated sunburst chart with D3.</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Often we need to visualize complex data in a fancy way. The core JavaFX controls are sometimes capable to do it, but most of the time they are not. So the question is: do we need to write a custom control?&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;The answer is: depends! Since JavaFX supports the famous WebView, we can also use some embedded HTML5 with JavaScript libraries like &lt;a href=&#34;http://d3js.org/&#34;&gt;D3.js&lt;/a&gt; to visualize data driven documents.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;To show how this works i used the &lt;a href=&#34;https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine/&#34;&gt;JavaFX Desktop Search&lt;/a&gt; example and added an animated sunburst chart with D3.js support to show the document distribution by author, last modification time stamp and document type. This is how it looks:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>A JavaFX based Desktop Search Engine</title>
       <link>https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine/</link>
       <pubDate>Fri, 26 Apr 2013 09:17:13 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine/</guid>
-      <description>Microsoft Windows search is not fast, and it also does not give us good search results. So i thought about writing my own Search Engine for the Desktop. It should crawl the file system, extract the content and meta data and finally should give the same results as Google.&#xA;I also wanted to test some new technologies like JavaFX with embedded HTML5, Apache Lucene as a full text search engine, Apache Tika as the content extraction framework and other stuff.</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Microsoft Windows search is not fast, and it also does not give us good search results. So i thought about writing my own Search Engine for the Desktop. It should crawl the file system, extract the content and meta data and finally should give the same results as Google.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;I also wanted to test some new technologies like JavaFX with embedded HTML5, Apache Lucene as a full text search engine, Apache Tika as the content extraction framework and other stuff. But before we dive deep into internals, lets take a look at the frontend:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Displaying simple animated graphs with JavaFX 2.0</title>
       <link>https://www.mirkosertic.de/blog/2012/10/displaying-simple-animated-graphs-with-javafx-2-0/</link>
       <pubDate>Mon, 15 Oct 2012 10:03:39 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2012/10/displaying-simple-animated-graphs-with-javafx-2-0/</guid>
-      <description>JavaFX is quite cool. The scene graph concept is quite powerful, combined with visual effects like animation, shadows or motion blurring can create very nice looking user interfaces.&#xA;At the moment, JavaFX comes with a set of predefined Form elements(called Controls), and other primitive objects(called Shapes). This is enough to create most of user interface currently needed for business purposes.&#xA;But there are also some Controls missing, like a TreeTable and other stuff.</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;JavaFX is quite cool. The scene graph concept is quite powerful, combined with visual effects like animation, shadows or motion blurring can create very nice looking user interfaces.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;At the moment, JavaFX comes with a set of predefined Form elements(called Controls), and other primitive objects(called Shapes). This is enough to create most of user interface currently needed for business purposes.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;But there are also some Controls missing, like a TreeTable and other stuff. I hope this will be added in the near future.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

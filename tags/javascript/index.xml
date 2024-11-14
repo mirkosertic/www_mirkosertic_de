@@ -4,7 +4,7 @@
     <title>JavaScript on www.mirkosertic.de</title>
     <link>https://www.mirkosertic.de/tags/javascript/</link>
     <description>Recent content in JavaScript on www.mirkosertic.de</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
     <lastBuildDate>Wed, 04 May 2022 22:44:59 +0200</lastBuildDate>
@@ -14,56 +14,56 @@
       <link>https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/</link>
       <pubDate>Thu, 20 Dec 2018 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/</guid>
-      <description>State of the union WebAssembly for starters is a standard for high-performance, size-optimized executable code for the Web. It was released in March 2017 by the WebAssembly working group as version 1.0, which is basically a MVP (Minimum Viable Product), but the initial development started in June 2017. WebAssembly is the successor asm.js and the Google Native Client (NaCL).&#xA;WebAssembly itself is merely a sandboxed runtime environment. It was designed as a compile target.</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_state_of_the_union&#34;&gt;State of the union&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;WebAssembly for starters is a standard for high-performance, size-optimized executable code for the Web.&#xA;It was released in March 2017 by the &lt;a href=&#34;https://www.w3.org/wasm/&#34;&gt;WebAssembly working group&lt;/a&gt; as version 1.0, which is basically a MVP&#xA;(Minimum Viable Product), but the initial development started in June 2017. WebAssembly is the successor&#xA;&lt;a href=&#34;http://asmjs.org/&#34;&gt;asm.js&lt;/a&gt; and the &lt;a href=&#34;https://developer.chrome.com/native-client&#34;&gt;Google Native Client (NaCL)&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;WebAssembly itself is merely a sandboxed runtime environment. It was designed as a compile target. High&#xA;level languages such as C/C++, Rust, .NET or Java can be compiled to WebAssembly. As a compile target, it&#xA;implements a set of binary opcodes, a module system and a stack machine making the opcodes executable. Modern&#xA;compiler can translate and optimize high level languages to low level WebAssembly modules.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Object-Oriented WebAssembly</title>
       <link>https://www.mirkosertic.de/blog/2018/01/object-oriented-webassembly/</link>
       <pubDate>Mon, 01 Jan 2018 12:00:00 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2018/01/object-oriented-webassembly/</guid>
-      <description>Today, I want to write a little bit about object orientation and WebAssembly. For starters, what is WebAssembly? WebAssembly is a new portable, size and load-time efficient format suitable for compilation to the web. It is an open standard by a W3C community group and is currently integrated into all major browsers such as Firefox, Chrome, Edge and WebKit. WebAssembly aims to keep download speed and parsing time of program code low and execute at native speed by taking advance of common hardware capabilities available on a wide range of platforms.</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Today, I want to write a little bit about object orientation and WebAssembly. For starters, what is WebAssembly?&#xA;WebAssembly is a new portable, size and load-time efficient format suitable for compilation to the web. It is an open&#xA;standard by a W3C community group and is currently integrated into all major browsers such as Firefox, Chrome, Edge and&#xA;WebKit. WebAssembly aims to keep download speed and parsing time of program code low and execute at native speed by&#xA;taking advance of common hardware capabilities available on a wide range of platforms. WebAssembly is basically bytecode&#xA;for the Web.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Bytecoder : A Low Level Bytecode to JavaScript Transpiler</title>
       <link>https://www.mirkosertic.de/blog/2017/06/compiling-bytecode-to-javascript/</link>
       <pubDate>Tue, 20 Jun 2017 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2017/06/compiling-bytecode-to-javascript/</guid>
-      <description>The Idea JavaScript is everywhere! Almost every device we use today is connected to the Internet and supports JavaScript by its runtime environment. But in the same way new devices arrive on the market, old software written in plain old Java is still alive and useful. The idea is now to bridge the gap between this shiny new JavaScript world and our old but still useful legacy software written in Java.</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_the_idea&#34;&gt;The Idea&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;JavaScript is everywhere! Almost every device we use today is connected to the Internet and supports JavaScript by its runtime environment. But in the same way new devices arrive on the market, old software written in plain old Java is still alive and useful. The idea is now to bridge the gap between this shiny new JavaScript world and our old but still useful legacy software written in Java.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Why I switched to static HTML generators</title>
       <link>https://www.mirkosertic.de/blog/2017/01/why-i-switched-to-static-html-generators/</link>
       <pubDate>Mon, 30 Jan 2017 01:43:48 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2017/01/why-i-switched-to-static-html-generators/</guid>
-      <description>The Beginning This Blog started its life a few years ago. At the beginning, I was using DokuWiki for writing and editing. This was good, but I was very limited by the provided editors and markup. So I came to the point that I needed something else. And you will of course ask &amp;#34;what else&amp;#34;? Well, for a Blog, there is a very popular answer: Use Wordpress!&#xA;So I installed Wordpress on my web host, and migrated the whole content.</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_the_beginning&#34;&gt;The Beginning&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;This Blog started its life a few years ago. At the beginning, I was using &lt;a href=&#34;https://www.dokuwiki.org&#34;&gt;DokuWiki&lt;/a&gt; for writing&#xA;and editing. This was good, but I was very limited by the provided editors and markup. So I came to the point that I needed&#xA;something else. And you will of course ask &amp;#34;what else&amp;#34;? Well, for a Blog, there is a very popular answer: Use &lt;a href=&#34;https://wordpress.org&#34;&gt;Wordpress&lt;/a&gt;!&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;So I installed Wordpress on my web host, and migrated the whole content. The migration task was easy. But I spent a lot of&#xA;time with decisions like &amp;#34;Which theme? Which plugin? What about SEO? I really spent too much time on this.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Compile Time Speed GWT 2.8.0 vs. TeaVM 0.4.3 vs. TeaVM 1.0.0-SNAPSHOT</title>
       <link>https://www.mirkosertic.de/blog/2016/11/compile-time-speed-gwt-2-8-0-vs-teavm-0-4-3/</link>
       <pubDate>Thu, 24 Nov 2016 06:14:41 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2016/11/compile-time-speed-gwt-2-8-0-vs-teavm-0-4-3/</guid>
-      <description>Some years ago I wrote a JavaFX based Game authoring system. It was also written to be ported to different run time environments by using transpiler technologies such as GWT or TeaVM. While TeaVM was heavily improved over time, I haven’t seen a new GWT release in the wild. Now, GWT 2.8.0 is released, and the question arises: Is the compiler still as slow as in 2.7? Well, lets take a look!</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Some years ago I wrote a JavaFX based &lt;a href=&#34;https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/&#34;&gt;Game authoring system&lt;/a&gt;. It was also written to be ported to different run time environments by using transpiler technologies such as GWT or TeaVM. While TeaVM was heavily improved over time, I haven’t seen a new GWT release in the wild. Now, GWT 2.8.0 is released, and the question arises: Is the compiler still as slow as in 2.7? Well, lets take a look!&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Tuning HTML5 Canvas.fillText()</title>
       <link>https://www.mirkosertic.de/blog/2015/03/tuning-html5-canvas-filltext/</link>
       <pubDate>Wed, 25 Mar 2015 07:33:48 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2015/03/tuning-html5-canvas-filltext/</guid>
-      <description>Two years ago I wrote a Java based GameEngine. I used technologies such as GWT and TeaVM to transpile the Java source code to JavaScript. The Game Engine used the HTML5 Canvas to render the current game state representation to the user. For the past few weeks I had some time to implement new features for this cool engine. I also did some profiling to see if there are bottlenecks in the rendering code.</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Two years ago I wrote a Java based &lt;a href=&#34;https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/&#34;&gt;GameEngine&lt;/a&gt;. I used technologies such as GWT and TeaVM to transpile the Java source code to JavaScript. The Game Engine used the HTML5 Canvas to render the current game state representation to the user. For the past few weeks I had some time to implement new features for this cool engine. I also did some profiling to see if there are bottlenecks in the rendering code. During the profiling sessions already known facts became visible: some browsers perform better than others.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>GWT vs. Dragome vs. TeaVM for Game Programming</title>
       <link>https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming/</link>
       <pubDate>Thu, 18 Dec 2014 11:43:01 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming/</guid>
-      <description>Last year I wrote a cross platform game engine. It used a JavaFX based Game Authoring System and had a Java based Game Runtime, which was transpiled to different platforms such as Android, JavaScript over GWT and JavaFX.&#xA;Here is a screenshot of a simple platform game based on the GameEngine, some physics stuff and a lot of Java code:&#xA;Here is also a screenshot of the JavaFX based game authoring system while editing the example game:</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Last year I wrote a &lt;a href=&#34;https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/&#34;&gt;cross platform game engine&lt;/a&gt;. It used a JavaFX based Game Authoring System and had a Java based Game Runtime, which was transpiled to different platforms such as Android, JavaScript over GWT and JavaFX.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Here is a screenshot of a simple platform game based on the GameEngine, some physics stuff and a lot of Java code:&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://www.mirkosertic.de/media/dukejumprunchrome.png&#34; alt=&#34;dukejumprunchrome&#34;/&gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Here is also a screenshot of the JavaFX based game authoring system while editing the example game:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>A JavaFX based Game Authoring System</title>
       <link>https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/</link>
       <pubDate>Fri, 15 Nov 2013 08:35:32 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/</guid>
-      <description>A few weeks ago I decided to enhance my knowledge in game coding, so I bought two very interesting books: “Real-Time Rendering, Third Edition by Thomas Akenine-Möller, Eric Haines and Nety Hoffmann” and “Game Coding Complete, Fourth Edition by Mike McShaffry and David “Rez” Graham”. After some insightful moments, hundreds of pages read and sleepless nights, I wanted to create my own game. So this project was born.&#xA;Primary Goals</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;A few weeks ago I decided to enhance my knowledge in game coding, so I bought two very interesting books: “Real-Time Rendering, Third Edition by Thomas Akenine-Möller, Eric Haines and Nety Hoffmann” and “Game Coding Complete, Fourth Edition by Mike McShaffry and David “Rez” Graham”. After some insightful moments, hundreds of pages read and sleepless nights, I wanted to create my own game. So this project was born.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Primary Goals&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

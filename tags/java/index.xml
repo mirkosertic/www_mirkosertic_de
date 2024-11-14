@@ -4,7 +4,7 @@
     <title>Java on www.mirkosertic.de</title>
     <link>https://www.mirkosertic.de/tags/java/</link>
     <description>Recent content in Java on www.mirkosertic.de</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
     <lastBuildDate>Thu, 19 Aug 2021 21:43:59 +0200</lastBuildDate>
@@ -14,14 +14,14 @@
       <link>https://www.mirkosertic.de/blog/2021/08/swing-jetbrains-projector/</link>
       <pubDate>Sun, 15 Aug 2021 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2021/08/swing-jetbrains-projector/</guid>
-      <description>A story of two worlds Java Swing is part of the Java Runtime since version 1.2. Swing is also part of the Java Foundation Classes, which are the library for creating component bases, modular, portable, and cross-platform graphical user interfaces. Being part of the core runtime, Java Swing is a valid choice for a lot of projects running in a different environment, starting from tiny calculator applications to humongous insurance or tax administration systems.</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_a_story_of_two_worlds&#34;&gt;A story of two worlds&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Java Swing is part of the Java Runtime since version 1.2. Swing is also part of the Java Foundation Classes, which are the library for creating component bases, modular, portable, and cross-platform graphical user interfaces. Being part of the core runtime, Java Swing is a valid choice for a lot of projects running in a different environment, starting from tiny calculator applications to humongous insurance or tax administration systems.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Packaging JavaFX Applications for the Desktop</title>
       <link>https://www.mirkosertic.de/blog/2019/04/java-desktop-packaging/</link>
       <pubDate>Tue, 23 Apr 2019 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2019/04/java-desktop-packaging/</guid>
-      <description>Packaging Java applications for the Desktop has never been an easy task. In this blog post I want to look at the past to show where we are coming from, look at the present to see what we have now and finally try to take a look into the future to get a glimpse of what might be coming.&#xA;The Past of Java Packaging Before Java 5.0 there was no built-in support in Java for application distribution, as far as what we would consider an application.</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Packaging Java applications for the Desktop has never been an easy task. In this blog post I want to look at the past&#xA;to show where we are coming from, look at the present to see what we have now and finally try to take a look into the&#xA;future to get a glimpse of what might be coming.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_the_past_of_java_packaging&#34;&gt;The Past of Java Packaging&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Before Java 5.0 there was no built-in support in Java for application distribution, as far as what we would consider&#xA;an application. But there was hope. We had &lt;a href=&#34;https://www.oracle.com/technetwork/java/applets-137637.html&#34;&gt;Java Applets&lt;/a&gt;.&#xA;Applets used to be Java programs executed by a special plugin installed in our browser. This plugin downloaded the jar&#xA;files of the applet, and executed the code in an isolated, restricted sandbox. We used signed applets to escape this&#xA;sandbox and get full access to system resources. One problem remained: there was no built-in update mechanism. We only&#xA;had the browser cache to prevent jar files from being downloaded every time.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

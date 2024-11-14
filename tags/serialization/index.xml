@@ -4,7 +4,7 @@
     <title>Serialization on www.mirkosertic.de</title>
     <link>https://www.mirkosertic.de/tags/serialization/</link>
     <description>Recent content in Serialization on www.mirkosertic.de</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
     <lastBuildDate>Mon, 04 Sep 2017 20:20:56 +0200</lastBuildDate>
@@ -14,7 +14,7 @@
       <link>https://www.mirkosertic.de/blog/2013/05/comparison-of-jaxb-xml-and-json-serialization-performance/</link>
       <pubDate>Thu, 23 May 2013 07:33:05 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/05/comparison-of-jaxb-xml-and-json-serialization-performance/</guid>
-      <description>Once i tried to figure out the difference between JAXB XML and JSON Java Object serialization performance. I wanted to know which one has the better run time performance and thus scales better. Here are the results!&#xA;The test setup is a Windows 7 64bit machine with Intel Core2 Quad Q9450 CPU @2,66GHz. Java Runtime is 1.7.0_07(quite old, i know)&#xA;The profiling test case is to serialize and deserialize a simple Java object with JSON and XML.</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Once i tried to figure out the difference between JAXB XML and JSON Java Object serialization performance. I wanted to know which one has the better run time performance and thus scales better. Here are the results!&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;The test setup is a Windows 7 64bit machine with Intel Core2 Quad Q9450 CPU @2,66GHz. Java Runtime is 1.7.0_07(quite old, i know)&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;The profiling test case is to serialize and deserialize a simple Java object with JSON and XML. I wanted to run the process 1000, 10000, 100000 and 1000000 times. In contrast i used JSON, XML, Java ObjectOutputStream and Google Kryo. The following table shows the measures:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

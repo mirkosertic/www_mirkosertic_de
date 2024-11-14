@@ -4,7 +4,7 @@
     <title>WebComponents on www.mirkosertic.de</title>
     <link>https://www.mirkosertic.de/tags/webcomponents/</link>
     <description>Recent content in WebComponents on www.mirkosertic.de</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
     <lastBuildDate>Mon, 04 Sep 2017 20:20:56 +0200</lastBuildDate>
@@ -14,7 +14,7 @@
       <link>https://www.mirkosertic.de/blog/2016/02/a-very-simple-polymer-web-component/</link>
       <pubDate>Mon, 01 Feb 2016 12:03:15 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2016/02/a-very-simple-polymer-web-component/</guid>
-      <description>Web Components are a very amazing new feature of HTML5. Google released its Polymer project which adds Web Components support to modern Web Browsers. Using Web Components, we can create very complex custom HTML Tags which are based on a very powerful templating engine, pretty cool JavaScript bindings, data model abstractions and also JavaScript and CSS encapsulation. Polymer comes with a set of already implemented components based on Googles Material Design which can be easily integrated into custom applications.</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Web Components are a very amazing new feature of HTML5. Google released its &lt;a href=&#34;https://www.polymer-project.org/&#34;&gt;Polymer&lt;/a&gt; project which adds Web Components support to modern Web Browsers. Using Web Components, we can create very complex custom HTML Tags which are based on a very powerful templating engine, pretty cool JavaScript bindings, data model abstractions and also JavaScript and CSS encapsulation. Polymer comes with a set of already implemented components based on Googles Material Design which can be easily integrated into custom applications. Finally, Polymer has a &lt;a href=&#34;https://developers.google.com/web/tools/polymer-starter-kit&#34;&gt;Starter Kit&lt;/a&gt; Project, which can bring you up in a minimum amount of time to development speed with Polymer, Web Components and Single Page Web Applications.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

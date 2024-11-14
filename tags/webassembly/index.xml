@@ -4,7 +4,7 @@
     <title>WebAssembly on www.mirkosertic.de</title>
     <link>https://www.mirkosertic.de/tags/webassembly/</link>
     <description>Recent content in WebAssembly on www.mirkosertic.de</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
     <lastBuildDate>Wed, 04 May 2022 22:44:59 +0200</lastBuildDate>
@@ -14,14 +14,14 @@
       <link>https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/</link>
       <pubDate>Thu, 20 Dec 2018 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/</guid>
-      <description>State of the union WebAssembly for starters is a standard for high-performance, size-optimized executable code for the Web. It was released in March 2017 by the WebAssembly working group as version 1.0, which is basically a MVP (Minimum Viable Product), but the initial development started in June 2017. WebAssembly is the successor asm.js and the Google Native Client (NaCL).&#xA;WebAssembly itself is merely a sandboxed runtime environment. It was designed as a compile target.</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_state_of_the_union&#34;&gt;State of the union&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;WebAssembly for starters is a standard for high-performance, size-optimized executable code for the Web.&#xA;It was released in March 2017 by the &lt;a href=&#34;https://www.w3.org/wasm/&#34;&gt;WebAssembly working group&lt;/a&gt; as version 1.0, which is basically a MVP&#xA;(Minimum Viable Product), but the initial development started in June 2017. WebAssembly is the successor&#xA;&lt;a href=&#34;http://asmjs.org/&#34;&gt;asm.js&lt;/a&gt; and the &lt;a href=&#34;https://developer.chrome.com/native-client&#34;&gt;Google Native Client (NaCL)&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;WebAssembly itself is merely a sandboxed runtime environment. It was designed as a compile target. High&#xA;level languages such as C/C++, Rust, .NET or Java can be compiled to WebAssembly. As a compile target, it&#xA;implements a set of binary opcodes, a module system and a stack machine making the opcodes executable. Modern&#xA;compiler can translate and optimize high level languages to low level WebAssembly modules.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Object-Oriented WebAssembly</title>
       <link>https://www.mirkosertic.de/blog/2018/01/object-oriented-webassembly/</link>
       <pubDate>Mon, 01 Jan 2018 12:00:00 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2018/01/object-oriented-webassembly/</guid>
-      <description>Today, I want to write a little bit about object orientation and WebAssembly. For starters, what is WebAssembly? WebAssembly is a new portable, size and load-time efficient format suitable for compilation to the web. It is an open standard by a W3C community group and is currently integrated into all major browsers such as Firefox, Chrome, Edge and WebKit. WebAssembly aims to keep download speed and parsing time of program code low and execute at native speed by taking advance of common hardware capabilities available on a wide range of platforms.</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Today, I want to write a little bit about object orientation and WebAssembly. For starters, what is WebAssembly?&#xA;WebAssembly is a new portable, size and load-time efficient format suitable for compilation to the web. It is an open&#xA;standard by a W3C community group and is currently integrated into all major browsers such as Firefox, Chrome, Edge and&#xA;WebKit. WebAssembly aims to keep download speed and parsing time of program code low and execute at native speed by&#xA;taking advance of common hardware capabilities available on a wide range of platforms. WebAssembly is basically bytecode&#xA;for the Web.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

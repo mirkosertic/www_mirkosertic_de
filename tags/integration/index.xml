@@ -4,7 +4,7 @@
     <title>Integration on www.mirkosertic.de</title>
     <link>https://www.mirkosertic.de/tags/integration/</link>
     <description>Recent content in Integration on www.mirkosertic.de</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
     <lastBuildDate>Wed, 04 May 2022 22:44:59 +0200</lastBuildDate>
@@ -14,7 +14,7 @@
       <link>https://www.mirkosertic.de/blog/2017/03/integration-at-ui-level-with-server-side-includes/</link>
       <pubDate>Mon, 06 Mar 2017 00:00:00 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2017/03/integration-at-ui-level-with-server-side-includes/</guid>
-      <description>Microservices everywhere Today, Microservices are a common software modeling technique. This style is based on the principles behind Domain-driven Design, where every bounded context is equivalent to a service. If we also take the Twelve-Factor App manifesto into consideration, we able to create scalable and cloud ready systems.&#xA;But this design can also lead to problems. If we take the Microservice design too far(Nanoservices), we are quickly getting way to much services we can handle and maintain.</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_microservices_everywhere&#34;&gt;Microservices everywhere&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Today, &lt;a href=&#34;https://en.wikipedia.org/wiki/Microservices&#34;&gt;Microservices&lt;/a&gt; are a common software modeling technique. This style&#xA;is based on the principles behind &lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;Domain-driven Design&lt;/a&gt;, where every&#xA;bounded context is equivalent to a service. If we also take the &lt;a href=&#34;https://12factor.net&#34;&gt;Twelve-Factor App&lt;/a&gt; manifesto into&#xA;consideration, we able to create scalable and cloud ready systems.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;But this design can also lead to problems. If we take the Microservice design too far(&lt;a href=&#34;https://en.wikipedia.org/wiki/Microservices&#34;&gt;Nanoservices&lt;/a&gt;), we are quickly getting way to&#xA;much services we can handle and maintain. There is also the risk that we are somehow violating the original bounded context&#xA;of our services, leading to lack of responsibility and functional encapsulation. Maybe the Microservices could degenerate&#xA;to some kind of remote data access object. If we do not respect the principle of independently deployable units, we&#xA;would be quickly creating a distributed, complex and very slow monolith.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

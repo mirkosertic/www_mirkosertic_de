@@ -4,7 +4,7 @@
     <title>User Interface on www.mirkosertic.de</title>
     <link>https://www.mirkosertic.de/tags/user-interface/</link>
     <description>Recent content in User Interface on www.mirkosertic.de</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
     <lastBuildDate>Wed, 04 May 2022 22:44:59 +0200</lastBuildDate>
@@ -14,70 +14,70 @@
       <link>https://www.mirkosertic.de/blog/2021/08/swing-jetbrains-projector/</link>
       <pubDate>Sun, 15 Aug 2021 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2021/08/swing-jetbrains-projector/</guid>
-      <description>A story of two worlds Java Swing is part of the Java Runtime since version 1.2. Swing is also part of the Java Foundation Classes, which are the library for creating component bases, modular, portable, and cross-platform graphical user interfaces. Being part of the core runtime, Java Swing is a valid choice for a lot of projects running in a different environment, starting from tiny calculator applications to humongous insurance or tax administration systems.</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_a_story_of_two_worlds&#34;&gt;A story of two worlds&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Java Swing is part of the Java Runtime since version 1.2. Swing is also part of the Java Foundation Classes, which are the library for creating component bases, modular, portable, and cross-platform graphical user interfaces. Being part of the core runtime, Java Swing is a valid choice for a lot of projects running in a different environment, starting from tiny calculator applications to humongous insurance or tax administration systems.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Service integration at UI level with server side includes(SSI)</title>
       <link>https://www.mirkosertic.de/blog/2017/03/integration-at-ui-level-with-server-side-includes/</link>
       <pubDate>Mon, 06 Mar 2017 00:00:00 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2017/03/integration-at-ui-level-with-server-side-includes/</guid>
-      <description>Microservices everywhere Today, Microservices are a common software modeling technique. This style is based on the principles behind Domain-driven Design, where every bounded context is equivalent to a service. If we also take the Twelve-Factor App manifesto into consideration, we able to create scalable and cloud ready systems.&#xA;But this design can also lead to problems. If we take the Microservice design too far(Nanoservices), we are quickly getting way to much services we can handle and maintain.</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_microservices_everywhere&#34;&gt;Microservices everywhere&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Today, &lt;a href=&#34;https://en.wikipedia.org/wiki/Microservices&#34;&gt;Microservices&lt;/a&gt; are a common software modeling technique. This style&#xA;is based on the principles behind &lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-driven_design&#34;&gt;Domain-driven Design&lt;/a&gt;, where every&#xA;bounded context is equivalent to a service. If we also take the &lt;a href=&#34;https://12factor.net&#34;&gt;Twelve-Factor App&lt;/a&gt; manifesto into&#xA;consideration, we able to create scalable and cloud ready systems.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;But this design can also lead to problems. If we take the Microservice design too far(&lt;a href=&#34;https://en.wikipedia.org/wiki/Microservices&#34;&gt;Nanoservices&lt;/a&gt;), we are quickly getting way to&#xA;much services we can handle and maintain. There is also the risk that we are somehow violating the original bounded context&#xA;of our services, leading to lack of responsibility and functional encapsulation. Maybe the Microservices could degenerate&#xA;to some kind of remote data access object. If we do not respect the principle of independently deployable units, we&#xA;would be quickly creating a distributed, complex and very slow monolith.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>A Spring Boot Admin UI</title>
       <link>https://www.mirkosertic.de/blog/2016/12/a-spring-boot-admin-ui/</link>
       <pubDate>Sat, 31 Dec 2016 01:08:59 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2016/12/a-spring-boot-admin-ui/</guid>
-      <description>Spring Boot is a very cool framework for building modern, cloud-ready software. It also comes with a set of production ready endpoints which allow to administrate and monitor running applications. Unfortunately there is no admin user interface included in Spring Boot.&#xA;The good people at Codecentric recently released a very nice one, which is also available at GitHub. Here is a screenshot:&#xA;This user interface is basically a Spring Boot Starter, so you have to include it into your own application to make it runnable.</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Spring Boot is a very cool framework for building modern, cloud-ready software. It also comes with a set of production ready endpoints which allow to administrate and monitor running applications. Unfortunately there is no admin user interface included in Spring Boot.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;The good people at &lt;a href=&#34;https://www.codecentric.de/&#34;&gt;Codecentric&lt;/a&gt; recently released a very nice one, which is also available at GitHub. Here is a screenshot:&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://www.mirkosertic.de/media/springbootadminui.png&#34; alt=&#34;springbootadminui&#34;/&gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;This user interface is basically a Spring Boot Starter, so you have to include it into your own application to make it runnable. It comes with the following features:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>A JavaFX based LUA editor</title>
       <link>https://www.mirkosertic.de/blog/2015/04/a-javafx-based-lua-editor/</link>
       <pubDate>Fri, 03 Apr 2015 05:32:40 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2015/04/a-javafx-based-lua-editor/</guid>
-      <description>One of my favorite projects is my JavaFX based Gameengine. It has a flexible entity component system, supports WYSIWYG game design and also has multiplayer network support. The entity component system is backed by a LUA based scripting system, the game designer can react freely on game events and script entity behaviors with the wonderful LUA scripting engine. Now, the game designer needs a visual tool with syntax highlighting, clipboard support and also some kind of testing mode to write bug free LUA scripts.</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;One of my favorite projects is my JavaFX based &lt;a href=&#34;https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/&#34;&gt;Gameengine&lt;/a&gt;. It has a flexible entity component system, supports WYSIWYG game design and also has multiplayer network support. The entity component system is backed by a LUA based scripting system, the game designer can react freely on game events and script entity behaviors with the wonderful LUA scripting engine.&#xA;Now, the game designer needs a visual tool with syntax highlighting, clipboard support and also some kind of testing mode to write bug free LUA scripts. Luckily I was able to build this with JavaFX, and here is a final screenshot:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>A JavaFX based Game Authoring System</title>
       <link>https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/</link>
       <pubDate>Fri, 15 Nov 2013 08:35:32 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/</guid>
-      <description>A few weeks ago I decided to enhance my knowledge in game coding, so I bought two very interesting books: “Real-Time Rendering, Third Edition by Thomas Akenine-Möller, Eric Haines and Nety Hoffmann” and “Game Coding Complete, Fourth Edition by Mike McShaffry and David “Rez” Graham”. After some insightful moments, hundreds of pages read and sleepless nights, I wanted to create my own game. So this project was born.&#xA;Primary Goals</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;A few weeks ago I decided to enhance my knowledge in game coding, so I bought two very interesting books: “Real-Time Rendering, Third Edition by Thomas Akenine-Möller, Eric Haines and Nety Hoffmann” and “Game Coding Complete, Fourth Edition by Mike McShaffry and David “Rez” Graham”. After some insightful moments, hundreds of pages read and sleepless nights, I wanted to create my own game. So this project was born.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Primary Goals&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Building Portals with JavaFX, HTML5 and some Microdata</title>
       <link>https://www.mirkosertic.de/blog/2013/05/building-portals-with-javafx-html5-and-some-microdata/</link>
       <pubDate>Tue, 07 May 2013 09:37:10 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/05/building-portals-with-javafx-html5-and-some-microdata/</guid>
-      <description>Often we need to integrate different applications. This can be done at different integration levels, like integration using the database, integration using services and sometimes integration at user interface level.&#xA;Different solutions are available for user interface level application integration. The most famous are Portlets. A Portlet requires a Portlet Container to build a Portal. These containers are expensive, difficult to configure and maintain and the worst point is: the Portlet API is very limited to model complex integration scenarios!</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Often we need to integrate different applications. This can be done at different integration levels, like integration using the database, integration using services and sometimes integration at user interface level.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Different solutions are available for user interface level application integration. The most famous are Portlets. A Portlet requires a Portlet Container to build a Portal. These containers are expensive, difficult to configure and maintain and the worst point is: the Portlet API is very limited to model complex integration scenarios!&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>A JavaFX based Desktop Search Engine</title>
       <link>https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine/</link>
       <pubDate>Fri, 26 Apr 2013 09:17:13 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine/</guid>
-      <description>Microsoft Windows search is not fast, and it also does not give us good search results. So i thought about writing my own Search Engine for the Desktop. It should crawl the file system, extract the content and meta data and finally should give the same results as Google.&#xA;I also wanted to test some new technologies like JavaFX with embedded HTML5, Apache Lucene as a full text search engine, Apache Tika as the content extraction framework and other stuff.</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Microsoft Windows search is not fast, and it also does not give us good search results. So i thought about writing my own Search Engine for the Desktop. It should crawl the file system, extract the content and meta data and finally should give the same results as Google.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;I also wanted to test some new technologies like JavaFX with embedded HTML5, Apache Lucene as a full text search engine, Apache Tika as the content extraction framework and other stuff. But before we dive deep into internals, lets take a look at the frontend:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Displaying simple animated graphs with JavaFX 2.0</title>
       <link>https://www.mirkosertic.de/blog/2012/10/displaying-simple-animated-graphs-with-javafx-2-0/</link>
       <pubDate>Mon, 15 Oct 2012 10:03:39 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2012/10/displaying-simple-animated-graphs-with-javafx-2-0/</guid>
-      <description>JavaFX is quite cool. The scene graph concept is quite powerful, combined with visual effects like animation, shadows or motion blurring can create very nice looking user interfaces.&#xA;At the moment, JavaFX comes with a set of predefined Form elements(called Controls), and other primitive objects(called Shapes). This is enough to create most of user interface currently needed for business purposes.&#xA;But there are also some Controls missing, like a TreeTable and other stuff.</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;JavaFX is quite cool. The scene graph concept is quite powerful, combined with visual effects like animation, shadows or motion blurring can create very nice looking user interfaces.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;At the moment, JavaFX comes with a set of predefined Form elements(called Controls), and other primitive objects(called Shapes). This is enough to create most of user interface currently needed for business purposes.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;But there are also some Controls missing, like a TreeTable and other stuff. I hope this will be added in the near future.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Logging made easy</title>
       <link>https://www.mirkosertic.de/blog/2012/10/logging-made-easy/</link>
       <pubDate>Thu, 04 Oct 2012 03:41:46 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2012/10/logging-made-easy/</guid>
-      <description>In modern, distributed applications logging is a key requirement. But the problem arises if we try to track down an error using different log files on different servers. This is often a problem, depending on the business organization, access rights and other political forces.&#xA;To avoid wasting time to find and get the logs, we need a good tool to support us. Fortunately the Open Source Community has an answer.</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;In modern, distributed applications logging is a key requirement. But the problem arises if we try to track down an error using different log files on different servers. This is often a problem, depending on the business organization, access rights and other political forces.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;To avoid wasting time to find and get the logs, we need a good tool to support us. Fortunately the Open Source Community has an answer. Logstash!&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Enterprise search with Apache Solr</title>
       <link>https://www.mirkosertic.de/blog/2012/07/enterprise-search-with-apache-solr/</link>
       <pubDate>Mon, 30 Jul 2012 10:30:07 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2012/07/enterprise-search-with-apache-solr/</guid>
-      <description>It you want to build a enterprise search engine, you don’t have to reinvent the wheel. You can use open source engines like Apache Lucene or if you have just one day to implement it Apache Solr. Solr is a full blown enterprise search server, which comes with a lot of bundled plugins like meta-data and content extraction from a very common set of document types with Apache Tika , search highlighting, fragmented search and also similarity search for search results.</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;It you want to build a enterprise search engine, you don’t have to reinvent the wheel. You can use open source engines like &lt;a href=&#34;http://lucene.apache.org/core/&#34;&gt;Apache Lucene&lt;/a&gt; or if you have just one day to implement it &lt;a href=&#34;http://lucene.apache.org/solr/&#34;&gt;Apache Solr&lt;/a&gt;. Solr is a full blown enterprise search server, which comes with a lot of bundled plugins like meta-data and content extraction from a very common set of document types with &lt;a href=&#34;http://tika.apache.org/&#34;&gt;Apache Tika&lt;/a&gt; , search highlighting, fragmented search and also similarity search for search results. This is a short tutorial how to create a search application within one day.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

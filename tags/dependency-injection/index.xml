@@ -4,7 +4,7 @@
     <title>Dependency Injection on www.mirkosertic.de</title>
     <link>https://www.mirkosertic.de/tags/dependency-injection/</link>
     <description>Recent content in Dependency Injection on www.mirkosertic.de</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
     <lastBuildDate>Mon, 04 Sep 2017 20:20:56 +0200</lastBuildDate>
@@ -14,28 +14,28 @@
       <link>https://www.mirkosertic.de/blog/2016/01/how-to-schedule-jobs-in-a-java-cdi-environment/</link>
       <pubDate>Sun, 24 Jan 2016 04:01:55 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2016/01/how-to-schedule-jobs-in-a-java-cdi-environment/</guid>
-      <description>Often we need to schedule Jobs. Standard Java CDI does not have a build in Job Scheduler feature. But this functionality can be easily implemented by using the CDI extension mechanism.&#xA;I wrote a simple CDI extension for Job scheduling backed by the Quartz Framework. It is hosted at Github.&#xA;To schedule a Job, we basically need to do the following things:&#xA;a) add the following Maven dependency(available from Central Repository):</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Often we need to schedule Jobs. Standard Java &lt;a href=&#34;http://weld.cdi-spec.org/&#34;&gt;CDI&lt;/a&gt; does not have a build in Job Scheduler feature. But this functionality can be easily implemented by using the CDI extension mechanism.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;I wrote a simple CDI extension for Job scheduling backed by the &lt;a href=&#34;https://quartz-scheduler.org/&#34;&gt;Quartz&lt;/a&gt; Framework. It is hosted at &lt;a href=&#34;https://github.com/mirkosertic/cdicron&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;To schedule a Job, we basically need to do the following things:&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;a) add the following Maven dependency(available from Central Repository):&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;listingblock xml&#34;&gt;&#xA;&lt;div class=&#34;content&#34;&gt;&#xA;&lt;pre class=&#34;highlight&#34;&gt;&lt;code&gt;&amp;lt;dependency&amp;gt;&#xA;    &amp;lt;groupId&amp;gt;de.mirkosertic.cdicron&amp;lt;/groupId&amp;gt;&#xA;    &amp;lt;artifactId&amp;gt;cdi-cron-quartz-scheduler&amp;lt;/artifactId&amp;gt;&#xA;    &amp;lt;version&amp;gt;1.0&amp;lt;/version&amp;gt;&#xA;&amp;lt;/dependency&amp;gt;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Bootstrapping Weld CDI from command line with Java SE</title>
       <link>https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se/</link>
       <pubDate>Sat, 21 Sep 2013 03:03:19 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se/</guid>
-      <description>It is possible to use CDI and Weld in a Java command line program. There are several options to bootstrap the CDI container. Weld offers a special Main class that does the job for us. But sometimes we just want to shield the CDI dependencies and provide our own main method. Now comes the tricky part: how do we pass command line arguments to the container, or even boot managed beans by injecting command line argument?</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;It is possible to use CDI and Weld in a Java command line program. There are several options to bootstrap the CDI container. Weld offers a special Main class that does the job for us. But sometimes we just want to shield the CDI dependencies and provide our own main method. Now comes the tricky part: how do we pass command line arguments to the container, or even boot managed beans by injecting command line argument?&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Building CDI support with AOP and AspectJ</title>
       <link>https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj/</link>
       <pubDate>Mon, 01 Oct 2012 02:47:45 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj/</guid>
-      <description>CDI is a mighty enhancement to the Java programming language. But CDI has also some limitations that might be cumbersome:&#xA;CDI needs a CDI container&#xA;All dependency injected beans are also managed beans&#xA;Hibernate or JPA entities are not managed by the CDI container, so there is no CDI support for them&#xA;So what can we do to get around these limitations, for instance we really want dependency injection in our Entities?</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;CDI is a mighty enhancement to the Java programming language. But CDI has also some limitations that might be cumbersome:&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;CDI needs a CDI container&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;All dependency injected beans are also managed beans&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Hibernate or JPA entities are not managed by the CDI container, so there is no CDI support for them&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;So what can we do to get around these limitations, for instance we really want dependency injection in our Entities? The solution is AOP and AspectJ!&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Enriching legacy applications with CDI</title>
       <link>https://www.mirkosertic.de/blog/2012/08/enriching-legacy-applications-with-cdi/</link>
       <pubDate>Wed, 15 Aug 2012 09:45:09 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2012/08/enriching-legacy-applications-with-cdi/</guid>
-      <description>There are a lot of applications out there. Some of them are legacy, others are in their maintenance phase. While we are developing new applications, we can use the coolest new technologies, think about good design and other stuff. But what about the software maintenance phase? Often, due to lack of time and other constraints, we cannot do everything perfectly, we need to move some refactoring or even re-engineering to the maintenance phase.</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;There are a lot of applications out there. Some of them are legacy, others are in their maintenance phase. While we are developing new applications, we can use the coolest new technologies, think about good design and other stuff. But what about the software maintenance phase? Often, due to lack of time and other constraints, we cannot do everything perfectly, we need to move some refactoring or even re-engineering to the maintenance phase.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

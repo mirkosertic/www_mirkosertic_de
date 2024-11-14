@@ -4,7 +4,7 @@
     <title>Configuration Management on www.mirkosertic.de</title>
     <link>https://www.mirkosertic.de/tags/configuration-management/</link>
     <description>Recent content in Configuration Management on www.mirkosertic.de</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
     <lastBuildDate>Mon, 04 Sep 2017 20:20:56 +0200</lastBuildDate>
@@ -14,7 +14,7 @@
       <link>https://www.mirkosertic.de/blog/2013/11/java-properties-reinvented/</link>
       <pubDate>Tue, 05 Nov 2013 04:28:08 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/11/java-properties-reinvented/</guid>
-      <description>Recently i stumbled across the Owner Library(owner.aeonbits.org ). Using this small piece of technology, usage of Java property files can be reinvented! Now we can access properties using a refactoring safe interface the following way:&#xA;public interface ServerConfig extends Config { @Key(&amp;#34;server.http.port&amp;#34;) int port(); @Key(&amp;#34;server.host.name&amp;#34;) String hostname(); @Key(&amp;#34;server.max.threads&amp;#34;); @DefaultValue(&amp;#34;42&amp;#34;) int maxThreads(); } Properties props = new Properties(); // Load properties from a known source ServerConfig cfg = ConfigFactory .create(ServerConfig.class, props); System.</description>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Recently i stumbled across the Owner Library(&lt;a href=&#34;http://owner.aeonbits.org&#34;&gt;owner.aeonbits.org&lt;/a&gt; ). Using this small piece of technology, usage of Java property files can be reinvented! Now we can access properties using a refactoring safe interface the following way:&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;listingblock&#34;&gt;&#xA;&lt;div class=&#34;content&#34;&gt;&#xA;&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;public interface ServerConfig extends Config {&#xA;    @Key(&amp;#34;server.http.port&amp;#34;)&#xA;    int port();&#xA;&#xA;&#xA;    @Key(&amp;#34;server.host.name&amp;#34;)&#xA;    String hostname();&#xA;&#xA;&#xA;    @Key(&amp;#34;server.max.threads&amp;#34;);&#xA;    @DefaultValue(&amp;#34;42&amp;#34;)&#xA;    int maxThreads();&#xA;}&#xA;&#xA;Properties props = new Properties(); // Load properties from a known source&#xA;&#xA;&#xA;ServerConfig cfg = ConfigFactory&#xA;    .create(ServerConfig.class, props);&#xA;&#xA;&#xA;System.out.println(cfg.hostname()); // And simply use them&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>
