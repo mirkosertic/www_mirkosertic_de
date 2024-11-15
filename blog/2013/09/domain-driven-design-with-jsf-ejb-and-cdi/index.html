@@ -215,36 +215,7 @@ public class FreelancerJPARepository implements FreelancerRepository {
     public Freelancer findById(String aFreelancerID) throws NothingFoundException {
         // do something
     }
-}</code></pre></div></div><div class="paragraph"><p>Note that frameworks like <a href="http://www.querydsl.com/">QueryDSL</a> can help you a lot to keep the repository implementation clean and maintainable.</p></div><div class="paragraph"><p>Stay tuned for the next examples :-)</p></div></div></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se/">Bootstrapping Weld CDI from command line with Java SE</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications/">How to create JUnit assertions from running applications</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/63a36b07236d1869ff91cec0ebccf5aa005e0057" target="_blank">63a36b0</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
-        window.addEventListener("load", function(event) {
-            var disqusLoaded = false;
-            var disqusObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(entry) {
-                    if (!disqusLoaded && entry.isIntersecting) {
-                        console.log("Loading Disqus");
-                        disqusLoaded = true;
-
-                        document.getElementById('disqus-placeholder').remove();
-
-                        
-                        var script = document.createElement('script');
-                        script.src = '//www-mirkosertic-de.disqus.com/embed.js';
-                        script.async = true;
-                        script.setAttribute('data-timestamp', +new Date());
-                        script.addEventListener('load', function () {
-                            
-                            DISQUS.reset({reload: true, config: false});
-                        });
-                        (document.head || document.body).appendChild(script);
-                    }
-                });
-            }, {
-                root: null,
-                rootMargin: "0px",
-                threshold: [0]
-            });
-            disqusObserver.observe(document.querySelector(".comments"));
-        }, false);</script></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.mirkosertic.de/index.xml" itemprop="url"><i class="fa fa-rss-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://twitter.com/mirkosertic" itemprop="url"><i class="fa fa-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
+}</code></pre></div></div><div class="paragraph"><p>Note that frameworks like <a href="http://www.querydsl.com/">QueryDSL</a> can help you a lot to keep the repository implementation clean and maintainable.</p></div><div class="paragraph"><p>Stay tuned for the next examples :-)</p></div></div></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2013/09/bootstrapping-weld-cdi-from-command-line-with-java-se/">Bootstrapping Weld CDI from command line with Java SE</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications/">How to create JUnit assertions from running applications</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/63a36b07236d1869ff91cec0ebccf5aa005e0057" target="_blank">63a36b0</a></p></article></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.mirkosertic.de/index.xml" itemprop="url"><i class="fa fa-rss-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://twitter.com/mirkosertic" itemprop="url"><i class="fa fa-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
         var element = document.querySelector(aSelector);
         if (element) {
             return true;

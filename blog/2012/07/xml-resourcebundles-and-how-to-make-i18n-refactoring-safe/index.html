@@ -49,36 +49,7 @@ private static final ResourceHelper BINDINGHELPER =
    ResourceHelper.getResourceHelper(BindingBundle.BUNDLE_NAME);
 
 // Get a localized value from the bundle
-String theCurrentTypeName = helper.getText(ERDesignerBundle.CURRENTDATATYPE);</code></pre></div></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2012/07/reusing-domain-objects-to-create-query-specifications/">Reusing domain objects to create query specifications</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2012/07/domain-driven-design-overview-and-building-blocks/">Domain-driven Design - Overview and building blocks</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/63a36b07236d1869ff91cec0ebccf5aa005e0057" target="_blank">63a36b0</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
-        window.addEventListener("load", function(event) {
-            var disqusLoaded = false;
-            var disqusObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(entry) {
-                    if (!disqusLoaded && entry.isIntersecting) {
-                        console.log("Loading Disqus");
-                        disqusLoaded = true;
-
-                        document.getElementById('disqus-placeholder').remove();
-
-                        
-                        var script = document.createElement('script');
-                        script.src = '//www-mirkosertic-de.disqus.com/embed.js';
-                        script.async = true;
-                        script.setAttribute('data-timestamp', +new Date());
-                        script.addEventListener('load', function () {
-                            
-                            DISQUS.reset({reload: true, config: false});
-                        });
-                        (document.head || document.body).appendChild(script);
-                    }
-                });
-            }, {
-                root: null,
-                rootMargin: "0px",
-                threshold: [0]
-            });
-            disqusObserver.observe(document.querySelector(".comments"));
-        }, false);</script></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.mirkosertic.de/index.xml" itemprop="url"><i class="fa fa-rss-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://twitter.com/mirkosertic" itemprop="url"><i class="fa fa-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
+String theCurrentTypeName = helper.getText(ERDesignerBundle.CURRENTDATATYPE);</code></pre></div></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2012/07/reusing-domain-objects-to-create-query-specifications/">Reusing domain objects to create query specifications</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2012/07/domain-driven-design-overview-and-building-blocks/">Domain-driven Design - Overview and building blocks</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/63a36b07236d1869ff91cec0ebccf5aa005e0057" target="_blank">63a36b0</a></p></article></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.mirkosertic.de/index.xml" itemprop="url"><i class="fa fa-rss-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://twitter.com/mirkosertic" itemprop="url"><i class="fa fa-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
         var element = document.querySelector(aSelector);
         if (element) {
             return true;

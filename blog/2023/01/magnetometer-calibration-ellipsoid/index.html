@@ -150,36 +150,7 @@ fig, ax = plt.subplots()
 ax.add_patch(circle)
 ax.scatter(rawdata[&#34;xcorrected&#34;], rawdata[&#34;ycorrected&#34;], label=&#39;Data Points&#39;, color=&#39;b&#39;)
 
-plt.show()</code></pre></div></div><div class="paragraph"><p><strong>Out[6]:</strong></p></div><div class="paragraph"><p><span class="image"><img src="/media/ellipsoid_output_11_0.png" alt="ellipsoid output 11 0"></span></p></div></div></div></div><h1 id="summary" class="sect0">Summary</h1><div class="sect1"><h2 id="pros">Pros</h2><div class="sectionbody"><div class="ulist"><ul><li><p>Sensor noise and outliers are well handled</p></li><li><p>Directional and rotational offsets are corrected</p></li><li><p>Works with a small set of data points to start calibration</p></li></ul></div></div></div><div class="sect1"><h2 id="cons">Cons</h2><div class="sectionbody"><div class="ulist"><ul><li><p>Computationally intensive</p></li><li><p>Harder math</p></li><li><p>Harder to debug</p></li></ul></div></div></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2022/10/roomba-series-1/">The Roomba Series - General System Architecture</a></span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/a0ba441358322abe64996295042c1c5c94bbc6a0" target="_blank">a0ba441</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
-        window.addEventListener("load", function(event) {
-            var disqusLoaded = false;
-            var disqusObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(entry) {
-                    if (!disqusLoaded && entry.isIntersecting) {
-                        console.log("Loading Disqus");
-                        disqusLoaded = true;
-
-                        document.getElementById('disqus-placeholder').remove();
-
-                        
-                        var script = document.createElement('script');
-                        script.src = '//www-mirkosertic-de.disqus.com/embed.js';
-                        script.async = true;
-                        script.setAttribute('data-timestamp', +new Date());
-                        script.addEventListener('load', function () {
-                            
-                            DISQUS.reset({reload: true, config: false});
-                        });
-                        (document.head || document.body).appendChild(script);
-                    }
-                });
-            }, {
-                root: null,
-                rootMargin: "0px",
-                threshold: [0]
-            });
-            disqusObserver.observe(document.querySelector(".comments"));
-        }, false);</script></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.mirkosertic.de/index.xml" itemprop="url"><i class="fa fa-rss-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://twitter.com/mirkosertic" itemprop="url"><i class="fa fa-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
+plt.show()</code></pre></div></div><div class="paragraph"><p><strong>Out[6]:</strong></p></div><div class="paragraph"><p><span class="image"><img src="/media/ellipsoid_output_11_0.png" alt="ellipsoid output 11 0"></span></p></div></div></div></div><h1 id="summary" class="sect0">Summary</h1><div class="sect1"><h2 id="pros">Pros</h2><div class="sectionbody"><div class="ulist"><ul><li><p>Sensor noise and outliers are well handled</p></li><li><p>Directional and rotational offsets are corrected</p></li><li><p>Works with a small set of data points to start calibration</p></li></ul></div></div></div><div class="sect1"><h2 id="cons">Cons</h2><div class="sectionbody"><div class="ulist"><ul><li><p>Computationally intensive</p></li><li><p>Harder math</p></li><li><p>Harder to debug</p></li></ul></div></div></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2022/10/roomba-series-1/">The Roomba Series - General System Architecture</a></span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/a0ba441358322abe64996295042c1c5c94bbc6a0" target="_blank">a0ba441</a></p></article></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.mirkosertic.de/index.xml" itemprop="url"><i class="fa fa-rss-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://twitter.com/mirkosertic" itemprop="url"><i class="fa fa-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
         var element = document.querySelector(aSelector);
         if (element) {
             return true;

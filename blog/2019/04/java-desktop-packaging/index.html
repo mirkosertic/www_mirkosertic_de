@@ -43,36 +43,7 @@ Fatal error: java.lang.UnsupportedClassVersionError: de/mirkosertic/desktopsearc
         at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
         at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
         at java.lang.Thread.run(Thread.java:748)
-Error: Image build request failed with exit status 1</pre></div></div><div class="paragraph"><p>Oops. GraalVM currently does not support Java 12. It currently can only read Java class files with byte code version up to Java 8. So unfortunately GraalVM is no option (yet) for packaging, but I will stay up to date and give it a try when new versions become available.</p></div><div class="paragraph"><p>So, thank you for reading! Feel free to leave a comment, I am always glad to help!</p></div></div></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/">WebAssembly with vue.js</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2021/04/scs-light-and-shadow/">Self-Contained-Systems Light &amp; Shadow</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/cde32e64165c8dfaa9eb7a48ad4fb69b3490e03b" target="_blank">cde32e6</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
-        window.addEventListener("load", function(event) {
-            var disqusLoaded = false;
-            var disqusObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(entry) {
-                    if (!disqusLoaded && entry.isIntersecting) {
-                        console.log("Loading Disqus");
-                        disqusLoaded = true;
-
-                        document.getElementById('disqus-placeholder').remove();
-
-                        
-                        var script = document.createElement('script');
-                        script.src = '//www-mirkosertic-de.disqus.com/embed.js';
-                        script.async = true;
-                        script.setAttribute('data-timestamp', +new Date());
-                        script.addEventListener('load', function () {
-                            
-                            DISQUS.reset({reload: true, config: false});
-                        });
-                        (document.head || document.body).appendChild(script);
-                    }
-                });
-            }, {
-                root: null,
-                rootMargin: "0px",
-                threshold: [0]
-            });
-            disqusObserver.observe(document.querySelector(".comments"));
-        }, false);</script></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.mirkosertic.de/index.xml" itemprop="url"><i class="fa fa-rss-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://twitter.com/mirkosertic" itemprop="url"><i class="fa fa-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
+Error: Image build request failed with exit status 1</pre></div></div><div class="paragraph"><p>Oops. GraalVM currently does not support Java 12. It currently can only read Java class files with byte code version up to Java 8. So unfortunately GraalVM is no option (yet) for packaging, but I will stay up to date and give it a try when new versions become available.</p></div><div class="paragraph"><p>So, thank you for reading! Feel free to leave a comment, I am always glad to help!</p></div></div></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/">WebAssembly with vue.js</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2021/04/scs-light-and-shadow/">Self-Contained-Systems Light &amp; Shadow</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/cde32e64165c8dfaa9eb7a48ad4fb69b3490e03b" target="_blank">cde32e6</a></p></article></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.mirkosertic.de/index.xml" itemprop="url"><i class="fa fa-rss-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://twitter.com/mirkosertic" itemprop="url"><i class="fa fa-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
         var element = document.querySelector(aSelector);
         if (element) {
             return true;

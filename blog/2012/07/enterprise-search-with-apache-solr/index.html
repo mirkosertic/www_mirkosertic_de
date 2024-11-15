@@ -231,36 +231,7 @@ Die Suche wurde in &lt;%=theResponse.getElapsedTime()%&gt;ms ausgef&amp;amp;uuml
     }
 %&gt;
 &lt;/body&gt;
-&lt;/html&gt;</code></pre></div></div></div></div><div class="sect1"><h2 id="_the_result">The result</h2><div class="sectionbody"><div class="paragraph"><p>Here is an example of our crawler and the ui in action. Looks quite nice, right? You will get a list of found documents. You will also see the Solr MoreLikeThis Feature in action. For every found result, a set of documents which are “similar” to this one are also displayed. Using MoreLikeThis, you can also detect duplicate files.</p></div><div class="paragraph"><p><span class="image"><img src="/media/solrui.png" alt="solrui"></span></p></div></div></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2012/07/software-defect-detection-with-aop-and-jsr-303-jsr-305-jsr-308/">Software defect detection with AOP and JSR-303 / JSR-305 / JSR-308</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2012/07/how-to-embed-hystrix-into-existing-spring-applications/">How to embed Hystrix into existing Spring applications</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/63a36b07236d1869ff91cec0ebccf5aa005e0057" target="_blank">63a36b0</a></p></article></div><div class="comments"><div id="disqus-placeholder">Loading comments...</div><div id="disqus_thread"></div><script>'use strict';
-        window.addEventListener("load", function(event) {
-            var disqusLoaded = false;
-            var disqusObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(entry) {
-                    if (!disqusLoaded && entry.isIntersecting) {
-                        console.log("Loading Disqus");
-                        disqusLoaded = true;
-
-                        document.getElementById('disqus-placeholder').remove();
-
-                        
-                        var script = document.createElement('script');
-                        script.src = '//www-mirkosertic-de.disqus.com/embed.js';
-                        script.async = true;
-                        script.setAttribute('data-timestamp', +new Date());
-                        script.addEventListener('load', function () {
-                            
-                            DISQUS.reset({reload: true, config: false});
-                        });
-                        (document.head || document.body).appendChild(script);
-                    }
-                });
-            }, {
-                root: null,
-                rootMargin: "0px",
-                threshold: [0]
-            });
-            disqusObserver.observe(document.querySelector(".comments"));
-        }, false);</script></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.mirkosertic.de/index.xml" itemprop="url"><i class="fa fa-rss-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://twitter.com/mirkosertic" itemprop="url"><i class="fa fa-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
+&lt;/html&gt;</code></pre></div></div></div></div><div class="sect1"><h2 id="_the_result">The result</h2><div class="sectionbody"><div class="paragraph"><p>Here is an example of our crawler and the ui in action. Looks quite nice, right? You will get a list of found documents. You will also see the Solr MoreLikeThis Feature in action. For every found result, a set of documents which are “similar” to this one are also displayed. Using MoreLikeThis, you can also detect duplicate files.</p></div><div class="paragraph"><p><span class="image"><img src="/media/solrui.png" alt="solrui"></span></p></div></div></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2012/07/software-defect-detection-with-aop-and-jsr-303-jsr-305-jsr-308/">Software defect detection with AOP and JSR-303 / JSR-305 / JSR-308</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2012/07/how-to-embed-hystrix-into-existing-spring-applications/">How to embed Hystrix into existing Spring applications</a>&gt;&gt;</span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/63a36b07236d1869ff91cec0ebccf5aa005e0057" target="_blank">63a36b0</a></p></article></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.mirkosertic.de/index.xml" itemprop="url"><i class="fa fa-rss-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://twitter.com/mirkosertic" itemprop="url"><i class="fa fa-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
         var element = document.querySelector(aSelector);
         if (element) {
             return true;
