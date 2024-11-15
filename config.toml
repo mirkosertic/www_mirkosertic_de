@@ -4,7 +4,6 @@ theme= "boot"
 baseurl = "https://www.mirkosertic.de/"
 copyright = "Mirko Sertic"
 googleAnalytics = "UA-33614060-2"
-disqusShortname = "www-mirkosertic-de"
 paginate = 40
 enableRobotsTXT = false
 disableHugoGeneratorInject = true
