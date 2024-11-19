@@ -18,7 +18,7 @@ enableGitInfo = true
 
     [Params.author]
         name = "Mirko Sertic"
-        profile = "https://twitter.com/mirkosertic"
+        profile = "https://x.com/mirkosertic"
 
 [sitemap]
     changefreq = "daily"
