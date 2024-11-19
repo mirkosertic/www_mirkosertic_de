@@ -1,9 +1,10 @@
 +++
 date = "2013-03-25T10:03:24+01:00"
-title = "Maven, Scala and AspectJ(AOP)"
+title = "Cross-Cutting Concerns: Bridging Scala and AspectJ with Maven"
 tags = ["AOP", "Interesting", "Scala"]
 draft = false
-description = "Recently i was thinking about combining AspectJ and Scala in one project. Of course we can argue that functional programming addresses a lot of issues we are trying to solve with AspectJ, but that is not the point. AspectJ is a Bytecode manipulation framework, not a Java code manipulation thing. So why not implement cross cutting concerns like security or transaction handling with AOP/AspectJ in a Scala project? For this short example, i am using AspectJ 1.6.11 and Scala 2.10.1."
+description = "Discover how to seamlessly integrate AspectJ's powerful aspect-oriented programming with Scala projects using Maven, despite some IDE challenges! This technical fusion shows how to implement cross-cutting concerns like security and transaction handling in Scala while leveraging AspectJ's bytecode manipulation capabilities."
+abstract = "This article explores the technical integration of AspectJ and Scala within a Maven project environment. While functional programming in Scala addresses many traditional concerns, AspectJ's bytecode manipulation capabilities offer unique advantages for handling cross-cutting concerns. The guide details the setup process, including Maven configuration, compilation order considerations, and working around IDE limitations. Though IDE support is currently limited, especially for .aj syntax, the article demonstrates a practical approach using annotation-style aspects and provides working examples of aspect implementation in both Java and Scala code."
 +++
 include::globals.adoc[]
 Recently i was thinking about combining AspectJ and Scala in one project. Of course we can argue that functional programming addresses a lot of issues we are trying to solve with AspectJ, but that is not the point. AspectJ is a Bytecode manipulation framework, not a Java code manipulation thing. So why not implement cross cutting concerns like security or transaction handling with AOP/AspectJ in a Scala project? For this short example, i am using AspectJ 1.6.11 and Scala 2.10.1.

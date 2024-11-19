@@ -1,1 +1,7 @@
 /.env
+.idea/
+hugo
+node_modules/
+public
+*.iml
+*.lock

@@ -1,9 +1,10 @@
 +++
 date = "2015-03-25T07:33:48+01:00"
-title = "Tuning HTML5 Canvas.fillText()"
+title = "Supercharging HTML5 Canvas Text Performance: A Game-Changing Optimization"
 tags = ["HTML5", "Performance", "Web", "JavaScript"]
 draft = false
-description = "Two years ago I wrote a Java based GameEngine. I used technologies such as GWT and TeaVM to transpile the Java source code to JavaScript. The Game Engine used the HTML5 Canvas to render the current game state representation to the user. For the past few weeks I had some time to implement new features for this cool engine. I also did some profiling to see if there are bottlenecks in the rendering code. During the profiling sessions already known facts became visible: some browsers perform better than others."
+description = "Discover how a simple caching trick with offscreen Canvas elements transformed sluggish text rendering into lightning-fast performance across browsers. By switching from direct fillText() calls to pre-rendered bitmap caching, frame rendering times dropped from 10ms to just 1ms in Firefox, proving that sometimes the simplest solutions yield the most impressive results."
+abstract = "This technical article explores a significant performance optimization for HTML5 Canvas text rendering in a cross-browser game engine. Through detailed performance profiling, it reveals unexpected bottlenecks in Firefox's fillText() implementation and presents an elegant solution using offscreen Canvas elements for text caching. The optimization resulted in dramatic performance improvements across different browsers and platforms, reducing rendering times from 10ms to 1ms in some cases, making it a valuable technique for web-based game development and Canvas applications."
 +++
 include::globals.adoc[]
 Two years ago I wrote a Java based link:{{< ref "a-javafx-based-game-authoring-system.adoc">}}[GameEngine]. I used technologies such as GWT and TeaVM to transpile the Java source code to JavaScript. The Game Engine used the HTML5 Canvas to render the current game state representation to the user. For the past few weeks I had some time to implement new features for this cool engine. I also did some profiling to see if there are bottlenecks in the rendering code. During the profiling sessions already known facts became visible: some browsers perform better than others.

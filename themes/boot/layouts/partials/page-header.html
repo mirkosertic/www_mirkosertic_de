@@ -1,16 +1,23 @@
 <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ .Title }}</h1>
-    <p class="post-date">
-        <span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="{{ .Date.Format "2006-01-02" }}" itemprop="datePublished">{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
-        <span>by</span>
-        <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-            <span itemprop="name">
-                <a href="{{ .Site.Params.Author.profile }}" itemprop="url" rel="author">{{ .Site.Params.Author.name }}</a>
+    <div class="contentbox">
+        <h1 class="post-title" itemprop="name headline">{{ .Title }}</h1>
+        <p class="post-date">
+            <span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="{{ .Date.Format "2006-01-02" }}" itemprop="datePublished">{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
+            <span>by</span>
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+                <span itemprop="name">
+                    <a href="{{ .Site.Params.Author.profile }}" itemprop="url" rel="author">{{ .Site.Params.Author.name }}</a>
+                </span>
             </span>
-        </span>
-    </p>
-    <p>
-        <span class="icon"><i class="fa fa-clock-white"></i></span><span>{{.ReadingTime}} Minutes reading time</span>
-    </p>
-    {{ partial "taglist-white.html" . }}
+        </p>
+        {{ if .Params.abstract }}
+        <p class="post-abstract" itemprop="abstract">
+            <span>{{ .Params.abstract }}</span>
+        </p>
+        {{ end }}
+        <p>
+            <span class="icon"><i class="fa fa-clock-white"></i></span><span>{{.ReadingTime}} Minutes reading time</span>
+        </p>
+        {{ partial "taglist-white.html" . }}
+    </div>
 </header>

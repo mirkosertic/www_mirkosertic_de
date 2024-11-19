@@ -1,9 +1,10 @@
 +++
 date = "2015-04-03T05:32:40+02:00"
-title = "A JavaFX based LUA editor"
+title = "Building a Powerful LUA Script Editor with JavaFX and Ace"
 tags = ["HTML5", "Interesting", "LUA", "User Interface", "Web"]
 draft = false
-description = "One of my favorite projects is my JavaFX based Gameengine. It has a flexible entity component system, supports WYSIWYG game design and also has multiplayer network support. The entity component system is backed by a LUA based scripting system, the game designer can react freely on game events and script entity behaviors with the wonderful LUA scripting engine. Now, the game designer needs a visual tool with syntax highlighting, clipboard support and also some kind of testing mode to write bug free LUA scripts. Luckily I was able to build this with JavaFX, and here is a final screenshot:"
+description = "Discover how JavaFX and the Ace editor join forces to create a feature-rich LUA script editor with syntax highlighting and clipboard support! This clever integration showcases the perfect marriage between JavaFX's WebView and JavaScript-based technologies, making game script editing a breeze."
+abstract = "This article demonstrates the implementation of a sophisticated LUA script editor using JavaFX and the Ace editor. The integration leverages JavaFX's WebView component to incorporate the JavaScript-based Ace editor, providing features like syntax highlighting and custom clipboard handling. The editor serves as a crucial component in a larger game authoring system, enabling game designers to write and test LUA scripts for entity behaviors and event handling. The solution exemplifies how modern web technologies can be effectively combined with JavaFX to create powerful development tools."
 +++
 include::globals.adoc[]
 One of my favorite projects is my JavaFX based link:{{< ref "a-javafx-based-game-authoring-system.adoc">}}[Gameengine]. It has a flexible entity component system, supports WYSIWYG game design and also has multiplayer network support. The entity component system is backed by a LUA based scripting system, the game designer can react freely on game events and script entity behaviors with the wonderful LUA scripting engine.

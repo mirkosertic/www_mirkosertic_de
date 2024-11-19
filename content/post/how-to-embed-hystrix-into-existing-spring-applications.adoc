@@ -1,9 +1,10 @@
 +++
 date = "2012-07-31T06:01:53+02:00"
-title = "How to embed Hystrix into existing Spring applications"
+title = "Building Resilient Spring Applications with Netflix Hystrix: A Simple AOP Approach"
 tags = ["Modernization", "SpringBoot", "Web"]
 draft = false
-description = "Netflix Hystrix is a very powerful framework to build fault tolerant and resilient applications. It provides common implementations for patterns like Timeout, CircuitBreaker and others. It also comes with nice monitoring capabilities using the Hystrix Dashboard or even JMX."
+description = "Transform your Spring application into a fault-tolerant powerhouse using Netflix Hystrix and the magic of AOP! With just a simple annotation and an aspect, you can add circuit breakers and monitoring capabilities to protect your services from failures, complete with a sleek dashboard to keep an eye on everything."
+abstract = "This guide demonstrates how to integrate Netflix Hystrix into existing Spring applications using Aspect-Oriented Programming (AOP). By implementing a custom @CircuitBreaker annotation and corresponding aspect, developers can easily add fault tolerance patterns to their service interfaces. The integration includes monitoring capabilities through the Hystrix Dashboard, allowing real-time visualization of service health and circuit breaker status. The approach is non-invasive and requires minimal changes to existing code, making it an elegant solution for improving application resilience."
 +++
 include::globals.adoc[]
 Netflix https://github.com/Netflix/Hystrix[Hystrix] is a very powerful framework to build fault tolerant and resilient applications. It provides common implementations for patterns like Timeout, http://martinfowler.com/bliki/CircuitBreaker.html[CircuitBreaker] and others. It also comes with nice monitoring capabilities using the Hystrix Dashboard or even JMX.

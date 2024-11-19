@@ -1,9 +1,10 @@
 +++
 date = "2016-12-31T01:08:59+01:00"
-title = "A Spring Boot Admin UI"
+title = "Spring Boot Admin UI: Your Mission Control for Spring Applications"
 tags = ["HTML5", "SpringBoot", "User Interface"]
 draft = false
-description = "Spring Boot is a very cool framework for building modern, cloud-ready software. It also comes with a set of production ready endpoints which allow to administrate and monitor running applications. Unfortunately there is no admin user interface included in Spring Boot."
+description = "Discover a sleek admin interface for Spring Boot applications that puts monitoring and management at your fingertips! This powerful UI starter by Codecentric offers everything from health checks to heap dumps, making Spring Boot administration a breeze. No more fumbling through endpoints - get comprehensive monitoring with style!"
+abstract = "Spring Boot Admin UI is a comprehensive management and monitoring solution for Spring Boot applications, developed by Codecentric. This tool provides a user-friendly interface to access Spring Boot's production-ready endpoints, offering features such as health monitoring, metrics visualization, log file browsing, and environment configuration management. As a Spring Boot starter with minimal dependencies, it can be easily integrated into existing applications and extended with custom plugins, while supporting various security frameworks for authentication needs. The UI serves as a central dashboard for managing multiple Spring applications, regardless of their deployment location - whether on local servers, dedicated infrastructure, or in the cloud."
 +++
 include::globals.adoc[]
 Spring Boot is a very cool framework for building modern, cloud-ready software. It also comes with a set of production ready endpoints which allow to administrate and monitor running applications. Unfortunately there is no admin user interface included in Spring Boot.

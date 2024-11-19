@@ -1,9 +1,10 @@
 +++
 date = "2013-05-02T04:27:47+02:00"
-title = "JavaFX Custom Controls or WebView with D3.js?"
+title = "Supercharge JavaFX Data Visualization with D3.js Integration"
 tags = ["HTML5", "JavaFX"]
 draft = false
-description = "Often we need to visualize complex data in a fancy way. The core JavaFX controls are sometimes capable to do it, but most of the time they are not. So the question is: do we need to write a custom control?"
+description = "Discover how to bypass complex custom control development in JavaFX by leveraging the power of D3.js through WebView! This clever hack demonstrates beautiful data visualization using an animated sunburst chart in a desktop search application, proving that sometimes the best JavaFX solution is actually JavaScript."
+abstract = "This article explores the integration of D3.js with JavaFX applications through WebView as an alternative to creating custom controls for complex data visualization. Using a practical example of a desktop search application featuring an animated sunburst chart, the post demonstrates how incorporating existing JavaScript libraries can simplify development while delivering sophisticated visualization capabilities. The solution offers developers a powerful approach to implement advanced data visualization without the overhead of building custom JavaFX controls from scratch."
 +++
 include::globals.adoc[]
 Often we need to visualize complex data in a fancy way. The core JavaFX controls are sometimes capable to do it, but most of the time they are not. So the question is: do we need to write a custom control?

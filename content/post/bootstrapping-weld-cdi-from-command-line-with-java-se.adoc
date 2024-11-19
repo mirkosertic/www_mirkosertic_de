@@ -1,9 +1,10 @@
 +++
 date = "2013-09-21T03:03:19+02:00"
-title = "Bootstrapping Weld CDI from command line with Java SE"
+title = "Simple CDI Magic: Command Line Apps with Weld and Static Producers"
 tags = ["Dependency Injection"]
 draft = false
-description = "It is possible to use CDI and Weld in a Java command line program. There are several options to bootstrap the CDI container. Weld offers a special Main class that does the job for us. But sometimes we just want to shield the CDI dependencies and provide our own main method. Now comes the tricky part: how do we pass command line arguments to the container, or even boot managed beans by injecting command line argument?"
+description = "Unleash the power of CDI in command-line applications with a neat static producer trick! Pass command-line arguments to your Weld container and inject them into managed beans using this elegant solution that keeps your dependencies clean and tidy."
+abstract = "This technical guide demonstrates how to effectively bootstrap a CDI container in a Java SE command-line environment using Weld. It presents a practical solution for passing command-line arguments to managed beans through static producer methods, providing a clean and maintainable approach to dependency injection in standalone Java applications. The implementation showcases a singleton main class that manages the container lifecycle while maintaining proper separation of concerns."
 +++
 include::globals.adoc[]
 It is possible to use CDI and Weld in a Java command line program. There are several options to bootstrap the CDI container. Weld offers a special Main class that does the job for us. But sometimes we just want to shield the CDI dependencies and provide our own main method. Now comes the tricky part: how do we pass command line arguments to the container, or even boot managed beans by injecting command line argument?

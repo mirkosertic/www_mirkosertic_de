@@ -1,9 +1,10 @@
 +++
 date = "2012-11-17T06:15:15+01:00"
-title = "Using and enhancing Hibernate Search"
+title = "Supercharging Hibernate with Full-Text Search Capabilities"
 tags = ["Enterprise", "Modernization"]
 draft = false
-description = "www.hibernate.org is a very cool and mature Java Object-Relational mapping tool. Using Hibernate we can easily persist or reconstitute Java Objects to or from a relational database like MySQL, PostgreSQL, SQLServer or Oracle."
+description = "Dive into the powerful combination of Hibernate Search and Apache Lucene to unlock advanced full-text search capabilities beyond your domain model. Discover how to index external documents and find similar content using Lucene's MoreLikeThis feature, making your Java applications smarter and more searchable than ever."
+abstract = "This article explores advanced features of Hibernate Search, demonstrating how to extend its capabilities beyond simple domain model searches. It explains how to implement ClassBridge to index external documents and data sources, and shows how to leverage Lucene's MoreLikeThis functionality for similarity searches. The tutorial includes practical code examples for implementing custom search solutions and integrating external content into Hibernate's search infrastructure, making it valuable for developers working on enterprise search solutions."
 +++
 include::globals.adoc[]
 http://www.hibernate.org/[www.hibernate.org] is a very cool and mature Java Object-Relational mapping tool. Using Hibernate we can easily persist or reconstitute Java Objects to or from a relational database like MySQL, PostgreSQL, SQLServer or Oracle.

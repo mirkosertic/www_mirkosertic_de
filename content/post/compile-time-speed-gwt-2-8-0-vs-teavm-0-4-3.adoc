@@ -1,9 +1,10 @@
 +++
 date = "2016-11-24T06:14:41+01:00"
-title = "Compile Time Speed GWT 2.8.0 vs. TeaVM 0.4.3 vs. TeaVM 1.0.0-SNAPSHOT"
+title = "Java to JavaScript: TeaVM Outperforms GWT in Compilation Speed Race"
 tags = ["Compiler", "HTML5", "Performance", "Web", "JavaScript"]
 draft = false
-description = "Some years ago I wrote a JavaFX based Game authoring system. It was also written to be ported to different run time environments by using transpiler technologies such as GWT or TeaVM. While TeaVM was heavily improved over time, I haven't seen a new GWT release in the wild. Now, GWT 2.8.0 is released, and the question arises: Is the compiler still as slow as in 2.7? Well, lets take a look!"
+description = "TeaVM proves itself as the speed champion in Java-to-JavaScript compilation, leaving GWT 2.8.0 in the dust with impressive compile times and smaller output sizes! While GWT surprisingly shows slower performance than its predecessor, TeaVM continues to rock the transpiler world with both its stable 0.4.3 and upcoming 1.0.0 versions."
+abstract = "A performance comparison between GWT 2.8.0 and TeaVM versions 0.4.3 and 1.0.0-SNAPSHOT reveals significant differences in compilation speed and output file sizes. TeaVM demonstrates superior performance with compilation times around 10-12 seconds compared to GWT's 43 seconds, while also producing smaller JavaScript output files. The analysis, based on a JavaFX game authoring system, shows TeaVM's continued improvement and stability, making it a preferred choice for Java-to-JavaScript transpilation."
 +++
 include::globals.adoc[]
 Some years ago I wrote a JavaFX based link:{{< ref "a-javafx-based-game-authoring-system.adoc">}}[Game authoring system]. It was also written to be ported to different run time environments by using transpiler technologies such as GWT or TeaVM. While TeaVM was heavily improved over time, I haven't seen a new GWT release in the wild. Now, GWT 2.8.0 is released, and the question arises: Is the compiler still as slow as in 2.7? Well, lets take a look!

@@ -1,9 +1,10 @@
 +++
 date = "2013-04-26T08:29:50+02:00"
-title = "Google Style Query Parser for Apache Lucene"
+title = "Building a Google-Style Search Parser for Lucene: Simple Yet Powerful"
 tags = ["Enterprise", "Interesting", "Search"]
 draft = false
-description = "A simple Apache Lucene Google-Style Query Parser"
+description = "Transform your Lucene searches into Google-like magic with this nifty query parser implementation! Supporting everything from basic term searches to fuzzy matching and phrase queries, this code snippet makes complex search operations feel like a breeze."
+abstract = "This article presents a custom implementation of a Google-style query parser for Apache Lucene 4.2. The implementation supports various search features including basic term searches, phrase queries, fuzzy matching, and term negation. The parser handles different search syntaxes such as space-separated terms, quoted phrases, negation with minus signs, and fuzzy search with tilde operators. The provided Java implementation demonstrates how to convert these search patterns into Lucene's query types including BooleanQuery, PhraseQuery, and FuzzyQuery, making it easier to implement Google-like search functionality in Lucene-based applications."
 +++
 include::globals.adoc[]
 I needed a query parser for Apache Lucene supporting Google style queries. Basically the following searches should be supported:

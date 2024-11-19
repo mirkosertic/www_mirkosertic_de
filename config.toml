@@ -12,13 +12,13 @@ enableGitInfo = true
 [Taxonomies]
     tag = "tags"
 
-[Author]
-    name = "Mirko Sertic"
-    profile = "https://twitter.com/mirkosertic"
-
 [Params]
     description = "The digital Home of Mirko Sertic"
     opengraph = true
+
+    [Params.author]
+        name = "Mirko Sertic"
+        profile = "https://twitter.com/mirkosertic"
 
 [sitemap]
     changefreq = "daily"

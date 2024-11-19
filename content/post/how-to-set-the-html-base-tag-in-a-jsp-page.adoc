@@ -1,9 +1,10 @@
 +++
 date = "2014-10-31T03:57:50+01:00"
-title = "How to set the HTML base Tag in a JSP page"
+title = "Dynamic HTML Base Tag Generation in JSP: A Clean Solution"
 tags = ["Web"]
 draft = false
-description = "Sometimes we have to set the HTML base Tag from within a JSP page. For this purpose, we have to compute the correct URL, because the JSP API does not fully expose it. The following shipped shows how it can be cone:"
+description = "Tired of broken relative paths in your JSP pages? Here's a neat trick to dynamically set the HTML base tag using JSP's built-in capabilities. Just a few lines of code ensure your static resources always load correctly, no matter where your page lives!"
+abstract = "This technical guide demonstrates how to programmatically set the HTML base tag in JSP pages using JSTL and JSP's page context. The solution involves computing the correct URL by manipulating the request URL and URI, ensuring proper resolution of relative paths for static resources. This approach is particularly useful for maintaining consistent path references across different deployment contexts and server configurations."
 +++
 include::globals.adoc[]
 Sometimes we have to set the HTML base Tag from within a JSP page. For this purpose, we have to compute the correct URL, because the JSP API does not fully expose it. The following shipped shows how it can be cone:

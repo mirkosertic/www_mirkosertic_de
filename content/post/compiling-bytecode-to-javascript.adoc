@@ -3,7 +3,8 @@ date = "2017-06-20T00:00:00+02:00"
 title = "Bytecoder : A Low Level Bytecode to JavaScript Transpiler"
 tags = ["Compiler", "Interesting", "Performance", "JavaScript", "HTML5", "Web"]
 draft = false
-description = "JavaScript is everywhere! Almost every device we use today is connected to the Internet and supports JavaScript by its runtime environment. But in the same way new devices arrive on the market, old software written in plain old Java is still alive and useful. The idea is now to bridge the gap between this shiny new JavaScript world and our old but still useful legacy software written in Java."
+description = "Discover how legacy Java applications can seamlessly transform into modern JavaScript code without touching the source! This fascinating deep-dive into compiler construction shows how JVM bytecode can be transpiled directly to JavaScript, complete with optimizations and real-world physics simulations."
+abstract = "Bytecoder is an innovative compiler project that enables direct translation of JVM bytecode to JavaScript without requiring source code modifications. Unlike traditional approaches such as GWT, it works at the bytecode level, making it suitable for legacy code migration and supporting multiple JVM languages. The compiler implements sophisticated techniques including SSA form, control flow analysis, and method de-virtualization, demonstrated through a practical JBox2D physics simulation example. Performance optimization is achieved through control flow recreation and integration with the Google Closure Compiler, resulting in efficient JavaScript output suitable for modern web environments."
 +++
 include::globals.adoc[]
 

@@ -1,9 +1,10 @@
 +++
 date = "2012-08-01T01:43:48+02:00"
-title = "A first touch with NoSQL, graph databases and OrientDB"
+title = "Taming Graph Databases: A Journey from JPA to OrientDB"
 tags = ["Enterprise", "NoSQL"]
 draft = false
-description = "I was thinking about the current way we often store data in relational databases like MySQL, PostgreSQL or Oracle. We are using object-relational mapping frameworks like Hibernate, enriching Java classes with JPA annotations and are hoping that the mapping framework does everything for us the right way."
+description = "Dive into the exciting world of graph databases with OrientDB, where storing object relationships becomes as natural as drawing connections on a whiteboard! While exploring alternatives to traditional relational databases, this hands-on experiment reveals both the promise and pitfalls of using OrientDB's JPA-compatible solution for storing Java object graphs."
+abstract = "This article explores the transition from traditional relational databases to graph databases using OrientDB as a case study. It examines how object graphs can be stored directly in a graph database instead of using conventional object-relational mapping, demonstrating the process through practical Java code examples. While OrientDB's ObjectDatabase feature shows promise for JPA-compatible graph storage, the article also highlights important limitations such as missing session management and first-level cache functionality, providing valuable insights for developers considering similar database migrations."
 +++
 include::globals.adoc[]
 == The experiment

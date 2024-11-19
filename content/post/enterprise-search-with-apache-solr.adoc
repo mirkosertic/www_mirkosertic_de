@@ -1,9 +1,10 @@
 +++
 date = "2012-07-30T10:30:07+02:00"
-title = "Enterprise search with Apache Solr"
+title = "Building a Enterprise Search Engine in One Day with Apache Solr"
 tags = ["Enterprise", "Search", "User Interface"]
 draft = false
-description = "It you want to build a enterprise search engine, you don't have to reinvent the wheel. You can use open source engines like Apache Lucene or if you have just one day to implement it Apache Solr. Solr is a full blown enterprise search server, which comes with a lot of bundled plugins like meta-data and content extraction from a very common set of document types with Apache Tika , search highlighting, fragmented search and also similarity search for search results. This is a short tutorial how to create a search application within one day."
+description = "Transform your file system into a powerful searchable knowledge base using Apache Solr's magic in just 24 hours! With a simple crawler, content extraction, and a Google-like UI, finding documents becomes as easy as pie - including cool features like similarity search and duplicate detection."
+abstract = "This tutorial demonstrates how to build a complete enterprise search solution using Apache Solr in just one day. It covers the installation of Solr, implementation of a file system crawler using SolrJ, and creation of a search interface with highlighting and similarity search features. The solution includes content extraction from various document formats using Apache Tika and provides a Google-like search experience with advanced features like MoreLikeThis for finding similar documents and detecting duplicates."
 +++
 include::globals.adoc[]
 It you want to build a enterprise search engine, you don't have to reinvent the wheel. You can use open source engines like http://lucene.apache.org/core/[Apache Lucene] or if you have just one day to implement it http://lucene.apache.org/solr/[Apache Solr]. Solr is a full blown enterprise search server, which comes with a lot of bundled plugins like meta-data and content extraction from a very common set of document types with http://tika.apache.org/[Apache Tika] , search highlighting, fragmented search and also similarity search for search results. This is a short tutorial how to create a search application within one day.

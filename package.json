@@ -2,7 +2,8 @@
   "private": true,
   "scripts": {
     "build": "gulp build",
-    "summarize": "node aisummarize.js"
+    "summarize": "node aisummarize.js",
+    "develop": "hugo server" 
   },
   "type": "module",
   "devDependencies": {

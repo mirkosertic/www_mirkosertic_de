@@ -1,9 +1,10 @@
 +++
 date = "2018-01-01T12:00:00+01:00"
-title = "Object-Oriented WebAssembly"
+title = "Mastering Object-Oriented Programming in WebAssembly: From High-Level to Low-Level"
 tags = ["Compiler", "Interesting", "Performance", "JavaScript", "HTML5", "Web", "WebAssembly"]
 draft = false
-description = "Today, I want to write a little bit about object orientation and WebAssembly. For starters, what is WebAssembly? WebAssembly is a new portable, size and load-time efficient format suitable for compilation to the web. It is an open standard by a W3C community group and is currently integrated into all major browsers such as Firefox, Chrome, Edge and WebKit. WebAssembly aims to keep download speed and parsing time of program code low and execute at native speed by taking advance of common hardware capabilities available on a wide range of platforms. WebAssembly is basically bytecode for the Web."
+description = "Journey through the fascinating world of WebAssembly and discover how high-level object-oriented concepts magically transform into efficient low-level code! From virtual function tables to memory management tricks, this deep dive shows how modern browsers execute your favorite OOP patterns at lightning speed."
+abstract = "This article explores how object-oriented programming concepts are implemented in WebAssembly, a low-level binary instruction format for stack-based virtual machines. It demonstrates the translation of high-level language features like classes, methods, and inheritance into WebAssembly's basic primitive types and functions. Through practical examples, it explains crucial concepts such as virtual function tables, memory management, and object allocation, providing insights into how modern compilers bridge the gap between high-level programming languages and WebAssembly's efficient but limited instruction set."
 +++
 include::globals.adoc[]
 

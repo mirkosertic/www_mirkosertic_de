@@ -1,9 +1,10 @@
 +++
 date = "2016-01-24T04:01:55+01:00"
-title = "How to schedule Jobs in a Java CDI Environment"
+title = "Simple Job Scheduling in Java CDI with Quartz Integration"
 tags = ["Dependency Injection"]
 draft = false
-description = "Often we need to schedule Jobs. Standard Java http://weld.cdi-spec.org/[CDI] does not have a build in Job Scheduler feature. But this functionality can be easily implemented by using the CDI extension mechanism."
+description = "Transform your Java CDI environment into a scheduling powerhouse with just a Maven dependency and a simple annotation! Harness the power of Quartz scheduler through an elegant CDI extension that makes job scheduling as easy as adding @Cron to your methods."
+abstract = "A practical guide demonstrating how to implement job scheduling in a Java CDI environment using a custom CDI extension powered by the Quartz Framework. The solution requires minimal setup - just a Maven dependency and a @Cron annotation - making it an elegant approach to scheduling tasks in enterprise Java applications. The implementation supports different scheduling frameworks through a built-in scheduler abstraction, offering flexibility and maintainability."
 +++
 include::globals.adoc[]
 Often we need to schedule Jobs. Standard Java http://weld.cdi-spec.org/[CDI] does not have a build in Job Scheduler feature. But this functionality can be easily implemented by using the CDI extension mechanism.

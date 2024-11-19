@@ -1,9 +1,10 @@
 +++
 date = "2019-04-23T00:00:00+02:00"
-title = "Packaging JavaFX Applications for the Desktop"
+title = "Modern Desktop Distribution Guide: Packaging JavaFX Apps Like a Pro"
 tags = ["Java", "JavaFX", "Packaging", "Native", "GraalVM"]
 draft = false
-description = "Packaging Java applications for the Desktop has never been an easy task. In this blog post I want to look at the past to show where we are coming from, look at the present to see what we have now and finally try to take a look into the future to get a glimpse of what might be coming."
+description = "Journey through the evolution of Java desktop app packaging, from ancient Applets to modern JPackage solutions, with a sprinkle of cross-platform magic using Windows Subsystem for Linux! Learn how to create native installers for JavaFX applications and distribute them through modern app stores, all while keeping your sanity intact."
+abstract = "This comprehensive guide explores the evolution of Java desktop application packaging, from early solutions like Applets and WebStart to modern approaches using JPackage. It provides practical insights into creating platform-specific installers, leveraging Windows Subsystem for Linux for cross-platform builds, and distributing applications through contemporary app stores. The article also touches on future possibilities with GraalVM, offering developers a complete perspective on Java application distribution strategies."
 +++
 include::globals.adoc[]
 

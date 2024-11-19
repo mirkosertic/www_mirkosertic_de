@@ -1,9 +1,10 @@
 +++
 date = "2013-03-26T08:50:41+01:00"
-title = "Enterprise Scala Beans or Scala on a JEE application server"
+title = "Creating Enterprise Scala Beans: When Scala Meets Java EE"
 tags = ["Enterprise", "Interesting", "Scala"]
 draft = false
-description = "Once i was thinking about writing Enterprise Java Beans(EJBs) with the Scala programming language. This should be easy as Scala greatly incorporates with existing Java code bases. But let's create a small test to verify this!"
+description = "Discover how Scala can seamlessly power Enterprise Java Beans (EJBs) in a Java EE environment! A simple experiment with TomEE and a stateless session bean proves that Scala's Java interoperability makes Enterprise Scala Beans not just possible, but surprisingly straightforward."
+abstract = "This article demonstrates the integration of Scala with Java EE by implementing Enterprise Java Beans (EJBs) using Scala programming language. Using Apache TomEE 1.5.1 as the application server and Scala 2.10, a simple stateless session bean is created and successfully injected into a Java servlet using CDI. The implementation showcases Scala's excellent Java interoperability features and proves that Enterprise Scala Beans are a viable option for enterprise development."
 +++
 include::globals.adoc[]
 Once i was thinking about writing Enterprise Java Beans(EJBs) with the Scala programming language. This should be easy as Scala greatly incorporates with existing Java code bases. But let's create a small test to verify this!

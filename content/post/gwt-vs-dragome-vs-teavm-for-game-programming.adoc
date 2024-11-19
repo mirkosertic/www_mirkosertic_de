@@ -1,9 +1,10 @@
 +++
 date = "2014-12-18T11:43:01+01:00"
-title = "GWT vs. Dragome vs. TeaVM for Game Programming"
+title = "Java-to-JavaScript Game Development: Battle of the Transpilers"
 tags = ["Compiler", "HTML5", "JavaFX", "Performance", "Web", "JavaScript"]
 draft = false
-description = "Last year I wrote a cross platform game engine. It used a JavaFX based Game Authoring System and had a Java based Game Runtime, which was transpiled to different platforms such as Android, JavaScript over GWT and JavaFX."
+description = "Dive into an exciting showdown between GWT, Dragome, and TeaVM for transforming Java games into JavaScript glory! Through detailed benchmarking and real-world testing with a platform game engine, TeaVM emerges as the champion with its swift compilation, compact output, and natural JavaScript integration."
+abstract = "This comprehensive analysis compares three Java-to-JavaScript transpilers - GWT, Dragome, and TeaVM - in the context of game development. Using a custom-built game engine as a test case, the comparison covers crucial aspects including compilation speed, output size, runtime performance, and Java 8 feature support. The evaluation demonstrates TeaVM's superiority in terms of compilation speed, JavaScript size optimization, and developer-friendly JavaScript integration, making it an optimal choice for mobile game development. The article includes practical demonstrations through a platform game implementation across all three frameworks, complete with performance metrics and real-world usage scenarios."
 +++
 include::globals.adoc[]
 Last year I wrote a link:{{< ref "a-javafx-based-game-authoring-system.adoc" >}}[cross platform game engine]. It used a JavaFX based Game Authoring System and had a Java based Game Runtime, which was transpiled to different platforms such as Android, JavaScript over GWT and JavaFX.

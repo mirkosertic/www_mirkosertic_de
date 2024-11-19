@@ -1,9 +1,10 @@
 +++
 date = "2018-12-20T00:00:00+02:00"
-title = "WebAssembly with vue.js"
+title = "Supercharging Vue.js with WebAssembly and Java"
 tags = ["Compiler", "Interesting", "Performance", "JavaScript", "HTML5", "Web", "WebAssembly"]
 draft = false
-description = "This posts shows how to integrate modern web technologies like WebAssembly and vue.js by using cross-compiler technologies."
+description = "Discover how to turbocharge Vue.js applications by combining the power of WebAssembly with Java using Bytecoder! This exciting fusion allows developers to write high-performance web applications in Java while leveraging Vue.js's reactive UI capabilities, all compiled down to lightning-fast WebAssembly code."
+abstract = "This article explores the integration of WebAssembly with Vue.js using Bytecoder, a powerful Java bytecode transpiler. It demonstrates how to bridge the gap between Java development and modern web frameworks by compiling Java code to WebAssembly while maintaining seamless integration with Vue.js. The article covers the technical aspects of WebAssembly as a compile target, introduces Bytecoder's capabilities, and provides practical examples of implementing Vue.js components using Java code that compiles to WebAssembly. This approach combines the benefits of Java's strong typing and development tools with Vue.js's reactive UI framework, all while achieving the performance benefits of WebAssembly."
 +++
 include::globals.adoc[]
 

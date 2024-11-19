@@ -1,9 +1,10 @@
 +++
 date = "2012-11-19T05:51:12+01:00"
-title = "How to avoid server round trips by using pretty URLs"
+title = "Streamline Your Web App: Pretty URLs vs Server Round Trips"
 tags = ["JavaServerFaces(JSF)", "Performance", "Web"]
 draft = false
-description = "Unnecessary server round trips are a common cause for slow application performance. Unfortunately application frameworks like JSF(Java Server Faces) are forcing developers to do so. For instance given the following URL processed by a JSF Implementation:"
+description = "Discover how pretty URLs can revolutionize your web application's performance by eliminating unnecessary server round trips. Instead of complex JSF navigation patterns forcing multiple server interactions, leverage clean URLs like '/customer/1344' to create a faster, more scalable user experience with bonus SEO benefits."
+abstract = "This article explores how to optimize web application performance by replacing traditional JSF navigation patterns with pretty URLs. By moving from standard JSF URLs to more semantic ones, developers can reduce server round trips, improve scalability, and enhance user experience. The solution involves shifting state management from backing beans to URLs using frameworks like PrettyFaces, resulting in bookmark-able, SEO-friendly URLs while eliminating session storage issues and simplifying navigation patterns. This approach works across JSF versions 1.1, 1.2, and 2.0, offering a robust solution for modern web applications."
 +++
 include::globals.adoc[]
 == Problem

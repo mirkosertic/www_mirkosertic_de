@@ -1,9 +1,10 @@
 +++
 date = "2022-10-13T00:00:00+01:00"
-title = "The Roomba Series - General System Architecture"
+title = "Building a Smart Roomba: A Symphony of Hardware and ROS"
 tags = ["Roomba", "Robot", "DIY", "Architecture"]
 draft = false
-description = "How to create an autonomous mobile robot based on the Roomba 500 platform, ROS and an Raspberry PI. Focus: General System Architecture"
+description = "Take a deep dive into transforming a Roomba into an intelligent cleaning machine using a Raspberry Pi Zero 2 W and the Robot Operating System (ROS)! This comprehensive architecture breakdown reveals how open-source magic turns simple hardware into a sophisticated robot, combining LiDAR, IMU sensors, and clever software layers for autonomous navigation."
+abstract = "This article presents a detailed exploration of a custom Roomba vacuum system architecture, built using a Raspberry Pi Zero 2 W and the Robot Operating System (ROS). The system integrates various sensors including YDLiDAR X4, MPU6050 IMU, and HMC5883L magnetometer, organized in a layered architecture comprising hardware interface, localization, navigation, high-level functions, and supervisor layers. Each layer serves specific functions, from basic hardware communication to complex autonomous navigation and cleaning path planning, demonstrating how open-source components can be combined to create a sophisticated robotic system."
 +++
 include::globals.adoc[]
 

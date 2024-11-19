@@ -1,9 +1,10 @@
 +++
 date = "2012-08-02T03:42:12+02:00"
-title = "The law of leaky abstractions"
+title = "Why Perfect Abstractions Are a Myth: Understanding Spolsky's Law"
 tags = ["Interesting"]
 draft = false
-description = "Personally i really like Joel Spolskys law of Leaky abstractions. Every architect should read and understand his article. Here is a summary of this law taken from Joel's Website and Wikipedia."
+description = "Dive into the fascinating world of leaky abstractions, where even the most elegant software solutions can't fully hide their underlying complexity. From TCP/IP protocols to SQL queries, discover why developers can't escape understanding what's under the hood - and why that's actually important!"
+abstract = "Joel Spolsky's Law of Leaky Abstractions posits that all non-trivial abstractions are inherently leaky, meaning they cannot completely hide their underlying complexity. This fundamental principle in software development explains why developers must often understand implementation details despite using high-level abstractions. The article explores the history, implications, and real-world examples of this law, from TCP/IP networking to database queries, demonstrating its significant impact on modern software development practices and system reliability."
 +++
 include::globals.adoc[]
 Personally i really like Joel Spolskys law of http://www.joelonsoftware.com/articles/LeakyAbstractions.html[Leaky abstractions]. Every architect should read and understand his article. Here is a summary of this law taken from Joel's Website and http://en.wikipedia.org/wiki/Leaky_abstraction[Wikipedia] :

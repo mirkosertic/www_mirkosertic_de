@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>{{ .Title }} &middot; {{ .Site.Params.Author }}</title>
+    <title>{{ .Title }} &middot; {{ .Site.Params.Author.name }}</title>
     <meta name="description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">

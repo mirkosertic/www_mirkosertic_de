@@ -1,9 +1,10 @@
 +++
 date = "2017-02-14T00:00:00+01:00"
-title = "Improve Test Quality with Mutation Testing"
+title = "Beyond Code Coverage: Supercharging Your Tests with Mutation Testing"
 tags = ["JUnit", "Testing"]
 draft = false
-description = "Unit testing is a today must have. Together with Test-driven Development and Frameworks such as JUnit we can easily prove that our code fulfills a set of requirements and business invariants. We use metrics like Test coverage to get insight about the completeness of our tests. A very common assumption taken from a test coverage of 80 percent is that 80 percent of our code is tested and working correctly."
+description = "Ever wondered if your 80% test coverage actually means anything? Discover how mutation testing introduces deliberate bugs to measure your tests' true effectiveness, turning your test suite from a paper tiger into a real watchdog! PITest makes this powerful technique accessible to Java developers with just a few lines of configuration."
+abstract = "This article explores how mutation testing can significantly improve test quality by going beyond traditional code coverage metrics. It introduces PITest, a powerful Java mutation testing framework that helps developers identify weaknesses in their test suites by introducing controlled defects into the code. The article demonstrates practical examples of how mutation testing can reveal inadequate test cases despite high code coverage, and discusses strategies for integrating mutation testing into code review systems and continuous integration pipelines, while acknowledging its limitations in complex testing scenarios."
 +++
 include::globals.adoc[]
 

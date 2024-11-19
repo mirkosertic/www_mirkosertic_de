@@ -1,9 +1,10 @@
 +++
 date = "2012-10-01T02:47:45+02:00"
-title = "Building CDI support with AOP and AspectJ"
+title = "Supercharging Java Entities with CDI: An AspectJ Adventure"
 tags = ["AOP", "Dependency Injection", "Enterprise", "Modernization"]
 draft = false
-description = "This explains how to use emulare CDI with AOP and AspectJ"
+description = "Discover how to break free from CDI container limitations and inject dependencies directly into Java Entities using the power of AspectJ and AOP! This clever hack combines field-access pointcuts with around advice to achieve thread-safe dependency injection, perfect for those tricky legacy code situations."
+abstract = "This technical article explores an advanced solution for implementing CDI support in Java applications beyond traditional container limitations. By leveraging AspectJ and AOP techniques, it demonstrates how to safely inject dependencies into entities while maintaining thread safety. The implementation utilizes field-access pointcuts with around advice and the Java ServiceLoader API, providing a flexible approach for scenarios where traditional dependency injection patterns aren't feasible. While acknowledging potential design implications, the solution offers a practical workaround for legacy code scenarios where service injection into entities becomes necessary."
 +++
 include::globals.adoc[]
 CDI is a mighty enhancement to the Java programming language. But CDI has also some limitations that might be cumbersome:

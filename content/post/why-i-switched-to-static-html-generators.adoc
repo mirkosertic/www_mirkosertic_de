@@ -1,9 +1,10 @@
 +++
 date = "2017-01-30T01:43:48+02:00"
-title = "Why I switched to static HTML generators"
+title = "From CMS to Static: A Journey to Blazing Fast Blogging"
 tags = ["HTML5", "Performance", "Web", "JavaScript"]
 draft = false
-description = "This Blog started its life a few years ago. At the beginning, I was using DokuWiki for writing and editing. This was good, but I was very limited by the provided editors and markup. So I came to the point that I needed something else. And you will of course ask what else?"
+description = "Discover how a journey from DokuWiki through WordPress led to a powerful combination of Hugo and Asciidoctor for the perfect blogging setup. This tech evolution story showcases how sometimes less is more, especially when it comes to creating and delivering content at lightning speed."
+abstract = "This article chronicles the evolution of a blog from traditional CMS platforms to a modern static site setup using Hugo and Asciidoctor. It explores the benefits of moving away from dynamic content management systems, highlighting how the combination of Hugo's speed and Asciidoctor's powerful technical documentation features creates an ideal platform for technical blogging. The piece demonstrates practical examples of syntax highlighting, diagram generation, and UML creation, while emphasizing the advantages of simplified content delivery and improved security through static site generation."
 +++
 include::globals.adoc[]
 

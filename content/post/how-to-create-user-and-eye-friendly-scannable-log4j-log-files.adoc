@@ -1,9 +1,10 @@
 +++
 date = "2014-06-13T09:07:11+02:00"
-title = "How to create user and eye friendly scannable Log4J log files"
+title = "Log4J Magic: Creating Human-Friendly, Scannable Log Files"
 tags = ["Logging"]
 draft = false
-description = "Often we are writing logs files for our program execution. The logs are sometimes hard to parse, we have to look twice at them to detect error patterns. But it is possible to create a log file layout that is very fast human scannable. Using such kind of log file layout, we can easier scan for common error patterns."
+description = "Transform messy logs into beautifully organized, column-based output that's a joy to read using Log4J's EnhancedPatternLayout, making error pattern detection a breeze. With fixed-width columns and intelligent package name shortening, even massive log files become a pleasure to analyze!"
+abstract = "This article demonstrates how to configure Log4J to produce user-friendly, easily scannable log files using the EnhancedPatternLayout. By implementing a column-oriented format with fixed widths and shortened package names, the resulting logs become much more readable and easier to analyze. The guide includes a complete XML configuration example and shows the clean, structured output format that helps developers quickly identify patterns and issues in their log files."
 +++
 include::globals.adoc[]
 Often we are writing logs files for our program execution. The logs are sometimes hard to parse, we have to look twice at them to detect error patterns. But it is possible to create a log file layout that is very fast human scannable. Using such kind of log file layout, we can easier scan for common error patterns.

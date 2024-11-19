@@ -1,9 +1,10 @@
 +++
 date = "2012-08-15T09:45:09+02:00"
-title = "Enriching legacy applications with CDI"
+title = "Modernizing Legacy Apps: Adding CDI Magic to Swing Applications"
 tags = ["Dependency Injection", "Enterprise", "Legacy", "Modernization"]
 draft = false
-description = "There are a lot of applications out there. Some of them are legacy, others are in their maintenance phase. While we are developing new applications, we can use the coolest new technologies, think about good design and other stuff. But what about the software maintenance phase? Often, due to lack of time and other constraints, we cannot do everything perfectly, we need to move some refactoring or even re-engineering to the maintenance phase."
+description = "Transform your aging Swing applications into modern marvels by adding CDI superpowers with just a few lines of code! This clever hack shows how to bridge the gap between legacy UI frameworks and contemporary dependency injection, making maintenance a breeze and testing a joy."
+abstract = "This technical guide demonstrates how to enhance legacy Java applications by incorporating CDI (Contexts and Dependency Injection) into existing Swing applications. By introducing a custom CDIHelper class and leveraging Weld's capabilities, developers can modernize their legacy codebase with dependency injection patterns, improving maintainability and testability without complete reengineering. The article provides practical code examples showing how to seamlessly integrate CDI with Swing components, enabling features like interceptors and proper lifecycle management in traditional desktop applications."
 +++
 include::globals.adoc[]
 There are a lot of applications out there. Some of them are legacy, others are in their maintenance phase. While we are developing new applications, we can use the coolest new technologies, think about good design and other stuff. But what about the software maintenance phase? Often, due to lack of time and other constraints, we cannot do everything perfectly, we need to move some refactoring or even re-engineering to the maintenance phase.

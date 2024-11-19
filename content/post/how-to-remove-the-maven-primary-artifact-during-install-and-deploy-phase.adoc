@@ -1,9 +1,10 @@
 +++
 date = "2016-06-17T04:35:13+02:00"
-title = "How to remove the Maven primary artifact during install and deploy phase"
+title = "Maven Magic: Removing Primary Artifacts While Keeping RPMs"
 tags = ["Maven"]
 draft = false
-description = "Sometimes we use Maven “war” packaging and add the RPM Plugin to create a rpm which contains the project primary artifact. When this rpm needs to be published to the Maven repository, it can be added as a secondary artifact to the build. Here is an example of the plugin configuration in pom.xml."
+description = "When building RPMs with Maven, sometimes you want to keep just the RPM and ditch the WAR file during install and deploy phases. A neat Groovy one-liner can make those unwanted artifacts disappear like magic, saving precious repository space!"
+abstract = "This technical guide demonstrates how to efficiently manage Maven artifacts when building both WAR and RPM files, specifically focusing on removing the primary WAR artifact during install and deploy phases while retaining the RPM. Using the rpm-maven-plugin for package creation and a simple Groovy script through gmaven-plugin, developers can optimize their repository space by deploying only the necessary RPM artifacts. This approach provides a cleaner alternative to changing the Maven packaging type while maintaining build flexibility."
 +++
 include::globals.adoc[]
 Sometimes we use Maven “war” packaging and add the RPM Plugin to create a rpm which contains the project primary artifact. When this rpm needs to be published to the Maven repository, it can be added as a secondary artifact to the build. Here is an example of the plugin configuration in pom.xml:

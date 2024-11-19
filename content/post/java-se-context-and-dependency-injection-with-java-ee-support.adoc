@@ -1,9 +1,10 @@
 +++
 date = "2013-10-03T06:02:44+02:00"
-title = "Java SE Context and Dependency Injection with Java EE support"
+title = "Enabling Java EE Features in CDI SE: A Portable Extension Magic Trick"
 tags = ["Modernization"]
 draft = false
-description = "Java CDI(Context and Dependency Injection) JSR-299 is available on Java EE application servers, but CDI(Weld is the reference implementation) is also embeddable in Java SE standard edition. Unfortunately Java EE functionalities like security or transaction support are not available here, for instance the following code just does not work as expected when running on CDI SE:"
+description = "Transform Java EE annotations into CDI-compatible magic using the power of Portable Extensions! Discover how to make @Resource and @RolesAllowed work seamlessly in Java SE environments through clever annotation transformation, without modifying your existing code."
+abstract = "This article demonstrates how to enable Java EE features like security annotations and resource injection in a Java SE environment using CDI Portable Extensions. It explains the technique of transforming Java EE annotations (@Resource, @RolesAllowed) into CDI-compatible alternatives through container meta data manipulation, allowing developers to maintain their existing Java EE code while running in SE environments. The solution involves creating a custom extension that rewrites annotations and implements security checks using interceptors, all without requiring modification of the original code or additional third-party dependencies."
 +++
 include::globals.adoc[]
 Java CDI(Context and Dependency Injection) JSR-299 is available on Java EE application servers, but CDI(Weld is the reference implementation) is also embeddable in Java SE standard edition. Unfortunately Java EE functionalities like security or transaction support are not available here, for instance the following code just does not work as expected when running on CDI SE:

@@ -1,9 +1,10 @@
 +++
 date = "2013-04-26T09:17:13+02:00"
-title = "A JavaFX based Desktop Search Engine"
+title = "Building a Better Desktop Search: A JavaFX and Lucene Powered Solution"
 tags = ["Enterprise", "Interesting", "JavaFX", "Search", "User Interface"]
 draft = false
-description = "Microsoft Windows search is not fast, and it also does not give us good search results. So i thought about writing my own Search Engine for the Desktop. It should crawl the file system, extract the content and meta data and finally should give the same results as Google."
+description = "Fed up with slow Windows search? Here's a sleek JavaFX-based desktop search engine that combines the power of Apache Lucene with the beauty of d3js visualizations. This clever hybrid solution brings Google-like search capabilities to your desktop, complete with stunning sunburst diagrams and lightning-fast results."
+abstract = "A powerful desktop search application built with JavaFX that offers Google-like search capabilities for local file systems. The solution combines Apache Lucene for full-text search, Apache Tika for content extraction, and d3js for data visualization. Using a multi-threaded pipes and filters architecture, it efficiently crawls, indexes, and searches files while providing an intuitive JavaFX/HTML5 hybrid interface with interactive sunburst diagrams. The application demonstrates modern software architecture principles and leverages multiple open-source technologies to deliver fast, accurate search results with rich visualization capabilities."
 +++
 include::globals.adoc[]
 Microsoft Windows search is not fast, and it also does not give us good search results. So i thought about writing my own Search Engine for the Desktop. It should crawl the file system, extract the content and meta data and finally should give the same results as Google.

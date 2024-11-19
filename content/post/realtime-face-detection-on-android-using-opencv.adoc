@@ -1,9 +1,10 @@
 +++
 date = "2013-07-27T06:20:34+02:00"
-title = "Realtime face detection on Android using OpenCV"
+title = "Building a Real-time Face Detection App: OpenCV meets Android"
 tags = ["Android", "Interesting"]
 draft = false
-description = "There is a cool computer vision library called OpenCV available. Using OpenCV, we can do stuff like object detection, feature extraction and other computer vision tasks. OpenCV is a native library, but it also comes with JNI Wrappers for Java and the Android platform."
+description = "Transform your Android device into a face-detecting powerhouse using OpenCV's computer vision magic! With just a few lines of Java code and OpenCV's pre-trained cascade classifier, your phone's camera can identify faces in real-time and draw cool green rectangles around them."
+abstract = "This tutorial demonstrates how to implement real-time face detection on Android devices using OpenCV, a powerful computer vision library. The guide walks through the implementation of an Android Activity that captures camera input, processes frames using OpenCV's face detection capabilities, and visualizes the results by drawing rectangles around detected faces. The solution utilizes OpenCV's Java bindings and pre-trained cascade classifiers, providing a foundation for more advanced computer vision applications on mobile devices."
 +++
 include::globals.adoc[]
 There is a cool computer vision library called http://opencv.org/[OpenCV] available. Using OpenCV, we can do stuff like object detection, feature extraction and other computer vision tasks. OpenCV is a native library, but it also comes with JNI Wrappers for Java and the Android platform.

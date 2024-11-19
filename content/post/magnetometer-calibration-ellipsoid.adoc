@@ -1,9 +1,10 @@
 +++
 date = "2023-01-12T00:00:00+01:00"
-title = "How to calibrate a 2D magnetometer with ellipsoid fitting"
+title = "Transform Wonky Magnetometer Data into Perfect Circles: A Python Guide"
 tags = ["Roomba", "Robot", "Magnetometer"]
 draft = false
-description = "This jupyter-labs example shows how to calibrate noisy magnetometer data using ellipsoid fitting."
+description = "Discover how to turn messy magnetometer readings into perfect circles using Python's ellipsoid fitting magic! This mathematical journey transforms scattered data points into calibrated compass readings by battling hard iron effects and sensor noise - all visualized in beautiful plots."
+abstract = "A comprehensive guide demonstrating the calibration process for 2D magnetometer data using ellipsoid fitting techniques in Python. The tutorial walks through loading raw magnetometer data, visualizing the distorted measurements, calculating the best-fitting ellipsoid, and applying corrections to achieve properly calibrated circular output. The solution handles sensor noise and hard iron effects while providing clear visual feedback through matplotlib plots, making it particularly useful for robotics applications requiring accurate compass readings."
 +++
 include::globals.adoc[]
 

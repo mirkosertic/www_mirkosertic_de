@@ -1,9 +1,10 @@
 +++
 date = "2013-05-23T07:33:05+02:00"
-title = "Comparison of JAXB XML and JSON Serialization Performance"
+title = "Java Serialization Showdown: XML vs JSON vs Native - Surprising Performance Results"
 tags = ["Performance", "Serialization"]
 draft = false
-description = "Once i tried to figure out the difference between JAXB XML and JSON Java Object serialization performance. I wanted to know which one has the better run time performance and thus scales better. Here are the results!"
+description = "In a head-to-head battle of Java serialization methods, XML surprisingly outperforms JSON in marshalling but falls flat on its face during unmarshalling due to heavy DOM object creation. Binary serializers like ObjectOutputStream and Google Kryo steal the show with blazing-fast performance, leaving their human-readable counterparts in the dust."
+abstract = "This article presents a comprehensive performance comparison between different Java serialization methods including JAXB XML, JSON (Jettison), ObjectOutputStream, and Google Kryo. The benchmark tests measure both marshalling and unmarshalling performance across different iteration counts (1000 to 1000000). Results show that while XML marshalling performs surprisingly well, it struggles significantly with unmarshalling operations. Binary serialization methods like ObjectOutputStream and Google Kryo demonstrate superior performance overall. The article includes complete source code examples for each serialization method tested and detailed performance metrics."
 +++
 include::globals.adoc[]
 Once i tried to figure out the difference between JAXB XML and JSON Java Object serialization performance. I wanted to know which one has the better run time performance and thus scales better. Here are the results!

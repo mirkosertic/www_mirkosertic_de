@@ -1,9 +1,10 @@
 +++
 date = "2013-11-15T08:35:32+01:00"
-title = "A JavaFX based Game Authoring System"
+title = "Building Cross-Platform Games with JavaFX: A Modern Game Engine Adventure"
 tags = ["HTML5", "Interesting", "JavaFX", "User Interface", "Web", "JavaScript"]
 draft = false
-description = "A few weeks ago I decided to enhance my knowledge in game coding, so I bought two very interesting books: “Real-Time Rendering, Third Edition by Thomas Akenine-Möller, Eric Haines and Nety Hoffmann” and “Game Coding Complete, Fourth Edition by Mike McShaffry and David “Rez” Graham”. After some insightful moments, hundreds of pages read and sleepless nights, I wanted to create my own game. So this project was born."
+description = "Dive into an exciting journey of creating a versatile game engine that runs both on desktop and web browsers using JavaFX and GWT! Experience the perfect harmony of domain-driven design, CDI events, and modern game architecture, bringing the Java Duke to life across multiple platforms without browser plugins."
+abstract = "This article explores the development of a cross-platform game engine and authoring system built with JavaFX and modern web technologies. The project demonstrates how to create a flexible game architecture using domain-driven design principles and CDI events, while achieving cross-platform compatibility through Java-to-JavaScript compilation with GWT. The system features a sophisticated JavaFX-based authoring tool, multiple rendering options including WebGL and HTML5 Canvas, and showcases how traditional Java technologies can be leveraged for modern game development without requiring browser plugins."
 +++
 include::globals.adoc[]
 A few weeks ago I decided to enhance my knowledge in game coding, so I bought two very interesting books: “Real-Time Rendering, Third Edition by Thomas Akenine-Möller, Eric Haines and Nety Hoffmann” and “Game Coding Complete, Fourth Edition by Mike McShaffry and David “Rez” Graham”. After some insightful moments, hundreds of pages read and sleepless nights, I wanted to create my own game. So this project was born.

@@ -1,9 +1,10 @@
 +++
 date = "2013-03-30T05:27:21+01:00"
-title = "MVC revised or what are the alternatives?"
+title = "Beyond MVC: A Guide to Modern UI Architecture Patterns"
 tags = ["Modernization", "Web"]
 draft = false
-description = "A simple overview about the MVC pattern and its alternatives"
+description = "Dive into the world of UI architecture patterns where MVC isn't the only player in town! While Model-View-Controller has been the go-to pattern for decades, alternatives like MVP and MVVM offer exciting possibilities for better testability and cleaner separation of concerns."
+abstract = "This article explores the evolution of user interface architecture patterns, starting with the traditional Model-View-Controller (MVC) pattern and its inherent limitations. It then introduces alternative patterns like Model-View-Presenter (MVP) and Model-View-ViewModel (MVVM), discussing their benefits in terms of testability and separation of concerns. The discussion includes Martin Fowler's perspectives on UI architecture and emphasizes the importance of choosing the right pattern for specific use cases. Each pattern is explained with its components, responsibilities, and practical implications for software development."
 +++
 include::globals.adoc[]
 == Pure MVC

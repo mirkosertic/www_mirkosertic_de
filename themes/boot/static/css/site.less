@@ -90,6 +90,8 @@ main {
     color: white;
     background: rgb(23,159,133);
     background: linear-gradient(48deg, rgba(23,159,133,1) 0%, rgba(41,128,185,1) 100%);
+    display: flex;
+    justify-content: center;
 
     h1 {
       padding-top: 4rem;
@@ -108,6 +110,14 @@ main {
     }
 
     border-bottom: 1px solid silver;
+
+    div.contentbox {
+      max-width: 900px;
+    }
+  }
+
+  .post-abstract {
+    font-style: italic;
   }
 
   article {
@@ -225,4 +235,24 @@ footer {
       color: white;
     }
   }
+}
+
+.presentations {
+
+  padding-left: 0.2rem;
+
+  li {
+
+    display: block;
+    padding-bottom: 0.8rem;
+
+    div.title {
+      font-weight: bold;;
+    }
+
+    a {
+      margin-left: 0.5rem;
+    }
+  }
+
 }

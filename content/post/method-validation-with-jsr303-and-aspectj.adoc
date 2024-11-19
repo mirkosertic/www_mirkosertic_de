@@ -1,9 +1,10 @@
 +++
 date = "2013-06-26T10:29:19+02:00"
-title = "Method validation with JSR303 and AspectJ"
+title = "Effortless Method Validation: Combining JSR303 and AspectJ Magic"
 tags = ["AOP", "Interesting"]
 draft = false
-description = "A short tutorial about how to use Hibernate Validator for method level validation"
+description = "Discover how to supercharge Java method validation using the dynamic duo of JSR303 and AspectJ! With just a sprinkle of aspect-oriented programming, validate method inputs and outputs automatically without cluttering your business logic."
+abstract = "This technical guide demonstrates how to implement automated method validation in Java using JSR303 (Bean Validation) and AspectJ. By combining Hibernate Validator's method validation capabilities with AspectJ's aspect-oriented programming features, developers can enforce method pre- and post-conditions declaratively. The solution uses annotations like @NotNull and implements validation through aspects, throwing ConstraintViolationException when validation fails. This approach keeps the validation logic separate from business code, resulting in cleaner and more maintainable applications."
 +++
 include::globals.adoc[]
 Hibernate Validator since version 4.2 supports method validation. For instance consider the following Java code:

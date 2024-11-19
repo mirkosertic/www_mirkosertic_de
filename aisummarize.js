@@ -1,20 +1,305 @@
 import Anthropic from '@anthropic-ai/sdk';
+import { sleep } from '@anthropic-ai/sdk/core';
+import { Console } from 'console';
 
 import dotenv from 'dotenv';
+import fs from 'fs';
+import path from 'path';
+
 dotenv.config();
 
 const client = new Anthropic({
     apiKey: process.env['ANTHROPIC_API_KEY'], // This is the default and can be omitted
 });
 
-async function main() {
-    const message = await client.messages.create({
-        max_tokens: 1024,
-        messages: [{ role: 'user', content: 'Please summarize the following text in catchy way. The text must not contain the phrases "the autor" or "the writer" or something like that and must not be longer than two sentences. The summary should be in the style of a children\'s book title and will be later used to generate a banner image for the story. The text to summarize is:' }],
-        model: 'claude-3-5-haiku-20241022',
-    });
+function loadFilesWithExtension(dirPath, extension) {
+    const results = [];
 
-    console.log(message.content);
+    // Read directory contents
+    function readDirectory(currentPath) {
+        console.info('Scanning directory ' + currentPath);
+        const files = fs.readdirSync(currentPath);
+        
+        for (const file of files) {
+            const filePath = path.join(currentPath, file);
+            const stat = fs.statSync(filePath);
+            
+            if (stat.isDirectory()) {
+                // Recursively process subdirectories
+                readDirectory(filePath);
+            } else if (path.extname(file).toLowerCase() === extension.toLowerCase()) {
+                // Load file content if extension matches
+                try {
+                    const content = fs.readFileSync(filePath, 'utf8');
+                    results.push({
+                        path: filePath,
+                        content: content
+                    });
+                } catch (error) {
+                    console.error(`Error reading file ${filePath}:`, error);
+                }
+            }
+        }
+    }
+
+    // Start recursive processing
+    readDirectory(dirPath);
+    return results;
+}
+
+/**
+ * Extracts and parses TOML front matter from an AsciiDoctor file
+ * @param {string} content - The content of the AsciiDoctor file
+ * @returns {Object} Object containing parsed frontMatter and remaining content
+ */
+function parseAsciidocFrontMatter(content) {
+    const frontMatterRegex = /^\+\+\+\r?\n([\s\S]*?)\r?\n\+\+\+\r?\n([\s\S]*)$/;
+    const match = content.match(frontMatterRegex);
+    
+    if (!match) {
+        return {
+            frontMatter: {},
+            content: content.trim()
+        };
+    }
+    
+    const [, frontMatterStr, remainingContent] = match;
+    
+    try {
+        const frontMatter = parseTOML(frontMatterStr);
+        return {
+            frontMatter,
+            content: remainingContent.trim()
+        };
+    } catch (error) {
+        throw new Error(`Error parsing TOML front matter: ${error.message}`);
+    }
+}
+
+/**
+ * Parses TOML-formatted string into JavaScript object
+ * @param {string} toml - TOML string to parse
+ * @returns {Object} Parsed TOML as JavaScript object
+ */
+function parseTOML(toml) {
+    const result = {};
+    let currentTable = result;
+    let currentTablePath = [];
+    
+    const lines = toml.split('\n');
+    
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+        
+        // Skip empty lines and comments
+        if (!line || line.startsWith('#')) continue;
+        
+        // Handle table headers
+        if (line.startsWith('[') && line.endsWith(']')) {
+            const tableName = line.slice(1, -1).trim();
+            currentTablePath = tableName.split('.');
+            
+            // Create nested objects for the table path
+            let current = result;
+            currentTablePath.forEach((key, index) => {
+                if (index === currentTablePath.length - 1) {
+                    current[key] = current[key] || {};
+                    currentTable = current[key];
+                } else {
+                    current[key] = current[key] || {};
+                    current = current[key];
+                }
+            });
+            continue;
+        }
+        
+        // Handle key-value pairs
+        const equalIndex = line.indexOf('=');
+        if (equalIndex === -1) continue;
+        
+        const key = line.slice(0, equalIndex).trim();
+        let value = line.slice(equalIndex + 1).trim();
+        
+        // Parse the value
+        try {
+            value = parseTOMLValue(value, lines, i);
+            // If parseTOMLValue returns an object with nextIndex, update the line counter
+            if (value && typeof value === 'object' && 'nextIndex' in value) {
+                i = value.nextIndex;
+                value = value.value;
+            }
+        } catch (error) {
+            throw new Error(`Error parsing value at line ${i + 1}: ${error.message}`);
+        }
+        
+        currentTable[key] = value;
+    }
+    
+    return result;
+}
+
+/**
+ * Parses a TOML value, handling various data types
+ * @param {string} value - The value string to parse
+ * @param {string[]} lines - All lines of the TOML content
+ * @param {number} currentIndex - Current line index
+ * @returns {any} Parsed value
+ */
+function parseTOMLValue(value, lines, currentIndex) {
+    // Handle strings
+    if (value.startsWith('"') && value.endsWith('"')) {
+        return value.slice(1, -1).replace(/\\"/g, '"');
+    }
+    
+    // Handle multi-line strings
+    if (value.startsWith('"""')) {
+        return parseMultilineString(lines, currentIndex);
+    }
+    
+    // Handle arrays
+    if (value.startsWith('[')) {
+        return parseArray(value);
+    }
+    
+    // Handle booleans
+    if (value.toLowerCase() === 'true') return true;
+    if (value.toLowerCase() === 'false') return false;
+    
+    // Handle dates
+    if (/^\d{4}-\d{2}-\d{2}/.test(value)) {
+        const date = new Date(value);
+        if (!isNaN(date.getTime())) return date;
+    }
+    
+    // Handle numbers
+    if (!isNaN(value)) {
+        // Check if it's an integer or float
+        return value.includes('.') ? parseFloat(value) : parseInt(value, 10);
+    }
+    
+    return value;
+}
+
+/**
+ * Parses a TOML array
+ * @param {string} arrayStr - The array string to parse
+ * @returns {Array} Parsed array
+ */
+function parseArray(arrayStr) {
+    // Remove brackets and split by commas
+    const items = arrayStr.slice(1, -1).split(',');
+    return items.map(item => {
+        const trimmed = item.trim();
+        if (!trimmed) return undefined;
+        return parseTOMLValue(trimmed);
+    }).filter(item => item !== undefined);
+}
+
+/**
+ * Parses a multi-line string
+ * @param {string[]} lines - All lines of the TOML content
+ * @param {number} startIndex - Starting line index
+ * @returns {Object} Object containing the parsed value and next index
+ */
+function parseMultilineString(lines, startIndex) {
+    let result = '';
+    let currentIndex = startIndex;
+    let foundEnd = false;
+    
+    // Skip the first line with """
+    currentIndex++;
+    
+    while (currentIndex < lines.length) {
+        const line = lines[currentIndex].trim();
+        if (line.endsWith('"""')) {
+            foundEnd = true;
+            result += line.slice(0, -3);
+            break;
+        }
+        result += lines[currentIndex] + '\n';
+        currentIndex++;
+    }
+    
+    if (!foundEnd) {
+        throw new Error('Unterminated multi-line string');
+    }
+    
+    return {
+        value: result.trim(),
+        nextIndex: currentIndex
+    };
+}
+
+function convertToMessage(frontMatter, content) {
+    const prompt = `<instructions>
+Please summarize the following text stored in the content tags taken from a blog in a catchy way. The content is formatted as AsciiDoc, so please handle headlines and code formattings accordingly. 
+The summary must not contain the phrases "the autor" or "the writer" or something like that and must not be longer than three sentences. 
+The summary should be in the witty, but not too technical style and will be later used to generate a banner image for the blog entry. 
+Please format the answer as a machine readable json containing the attributes "title" and "summary". 
+The title attribute of the response should contain an alternative title, based on the title tag of the content and the content itself.
+Please also try to generate keywords for the content and return them as the "keywords" attribute so they can be used as HTML meta data. 
+Finally please try to generate an abstract for the content and return it as the "abstract" attribute of the response.
+</instructions>
+    
+<content>
+    <title>${frontMatter.title}</title>
+    <body>
+        ${content}
+    </body>    
+</content>`;
+
+    const messageObj = {
+        system: 'You are a technical writer with strong computer science background and try to optimize Blog content in terms of quality, readability, joy and search engine optimization.',
+        max_tokens: 1024,
+        messages: [
+            { role: 'user', content: prompt }
+        ],
+        model: 'claude-3-5-sonnet-latest'
+    };
+    return messageObj;
+}
+
+async function handleSingleFile(entry) {
+    const filename = entry.path;
+
+    const {frontMatter, content} = parseAsciidocFrontMatter(entry.content);
+    const message = convertToMessage(frontMatter, content);
+
+    const response = await client.messages.create(message);
+
+    const aicontent = response.content;
+    for (var i = 0; i < aicontent.length; i++) {
+        const elem = aicontent[i];
+        if ('text' === elem.type) {
+            const js = JSON.parse(elem.text);
+            if (js.title) {
+                frontMatter["ai_title"] = js.title;
+            }
+            if (js.summary) {
+                frontMatter["ai_summary"] = js.summary;
+            }
+            if (js.summary) {
+                frontMatter["ai_abstract"] = js.abstract;
+            }
+        }
+    }
+
+    fs.writeFileSync(filename + '.aifrontmatter.json', JSON.stringify(frontMatter, null, 2));
+    console.info('Finished file ' + filename);
+}
+
+async function main() {
+    const files = loadFilesWithExtension('./content/post/', '.adoc');
+
+    console.info('Found ' + files.length + ' files');
+    for (var i = 0; i < files.length; i++) {
+        handleSingleFile(files[i]);
+        if (i % 5 == 0) {
+            console.log('Sleeping due to rate limit!');
+            await sleep(30000);
+        }
+    }
+    console.log('Finished!');
 }
 
 main();

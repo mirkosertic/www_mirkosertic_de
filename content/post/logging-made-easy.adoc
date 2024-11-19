@@ -1,9 +1,10 @@
 +++
 date = "2012-10-04T03:41:46+02:00"
-title = "Logging made easy"
+title = "Mastering Log Management with Logstash and Kibana"
 tags = ["Enterprise", "Logging", "User Interface"]
 draft = false
-description = "In modern, distributed applications logging is a key requirement. But the problem arises if we try to track down an error using different log files on different servers. This is often a problem, depending on the business organization, access rights and other political forces."
+description = "Tired of hunting down logs across multiple servers? Logstash comes to the rescue as a powerful open-source solution for centralized log management. Combined with Kibana's sleek interface, it transforms the tedious task of log analysis into a surprisingly enjoyable experience!"
+abstract = "This article introduces Logstash, an open-source solution for managing logs and events in distributed applications. It addresses the common challenge of tracking errors across multiple servers by providing a centralized logging system. The integration with Kibana, a modern web interface, enhances the log analysis experience with improved visualization and analytical capabilities. Both tools are freely available under the Apache 2.0 license, making them accessible solutions for enterprise-level log management needs."
 +++
 include::globals.adoc[]
 In modern, distributed applications logging is a key requirement. But the problem arises if we try to track down an error using different log files on different servers. This is often a problem, depending on the business organization, access rights and other political forces.
