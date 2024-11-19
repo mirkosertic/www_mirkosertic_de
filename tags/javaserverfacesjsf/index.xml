@@ -7,10 +7,10 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Mon, 04 Sep 2017 20:20:56 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 19 Nov 2024 12:01:27 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/javaserverfacesjsf/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>How to avoid server round trips by using pretty URLs</title>
+      <title>Streamline Your Web App: Pretty URLs vs Server Round Trips</title>
       <link>https://www.mirkosertic.de/blog/2012/11/how-to-avoid-server-roundtrips-by-using-pretty-urls/</link>
       <pubDate>Mon, 19 Nov 2012 05:51:12 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2012/11/how-to-avoid-server-roundtrips-by-using-pretty-urls/</guid>

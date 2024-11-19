@@ -7,45 +7,45 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Mon, 04 Sep 2017 20:20:56 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 19 Nov 2024 12:01:27 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/aop/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Preconditions, Project Lombok, JSR 303 and JSR 308</title>
+      <title>Beyond Null Checks: Smart Validation in Java with Lombok, JSR 303, and JSR 308</title>
       <link>https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308/</link>
       <pubDate>Wed, 14 Dec 2016 12:33:44 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;A good method implementation validates all of its preconditions before it continues. Luckily there are different frameworks such as Project Lombok, JSR 303 Bean Validation API and JSR 308 Java Type Annotations available for this job.  All of them are based on Java Annotations at method arguments, but they differ in runtime and compile time behavior. Here are some examples.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_project_lombok&#34;&gt;Project Lombok&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Project Lombok adds language features for boilerplate free code to the Java ecosystem. It is based on the Java Annotation Processor facility of the Java compiler. One of the features is null check of method preconditions. This is basically done by annotating the method arguments with @lombok.NonNull as shown in the following example:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>Method validation with JSR303 and AspectJ</title>
+      <title>Effortless Method Validation: Combining JSR303 and AspectJ Magic</title>
       <link>https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj/</link>
       <pubDate>Wed, 26 Jun 2013 10:29:19 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Hibernate Validator since version 4.2 supports method validation. For instance consider the following Java code:&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;listingblock&#34;&gt;&#xA;&lt;div class=&#34;content&#34;&gt;&#xA;&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;package de.mirkosertic.aspectj;&#xA;&#xA;import javax.validation.constraints.NotNull;&#xA;&#xA;public class Example {&#xA;&#xA;    public void doNothing(String aValue) {&#xA;    }&#xA;&#xA;    public String getString(String aValue) {&#xA;        return aValue;&#xA;    }&#xA;&#xA;    public @NotNull String getNullString(String aValue) {&#xA;        return aValue;&#xA;    }&#xA;&#xA;    public void doNothingSingleNotNull(@NotNull String aValue) {&#xA;    }&#xA;&#xA;    public void doNothingMiddleNotNull(String aStart,@NotNull String aValue, String aEnd) {&#xA;    }&#xA;&#xA;    public void doNothingEndNotNull(String aStart,String aValue, @NotNull String aEnd) {&#xA;    }&#xA;}&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>Maven, Scala and AspectJ(AOP)</title>
+      <title>Cross-Cutting Concerns: Bridging Scala and AspectJ with Maven</title>
       <link>https://www.mirkosertic.de/blog/2013/03/maven-scala-and-aspectjaop/</link>
       <pubDate>Mon, 25 Mar 2013 10:03:24 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/03/maven-scala-and-aspectjaop/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Recently i was thinking about combining AspectJ and Scala in one project. Of course we can argue that functional programming addresses a lot of issues we are trying to solve with AspectJ, but that is not the point. AspectJ is a Bytecode manipulation framework, not a Java code manipulation thing. So why not implement cross cutting concerns like security or transaction handling with AOP/AspectJ in a Scala project? For this short example, i am using AspectJ 1.6.11 and Scala 2.10.1.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>Building CDI support with AOP and AspectJ</title>
+      <title>Supercharging Java Entities with CDI: An AspectJ Adventure</title>
       <link>https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj/</link>
       <pubDate>Mon, 01 Oct 2012 02:47:45 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;CDI is a mighty enhancement to the Java programming language. But CDI has also some limitations that might be cumbersome:&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;CDI needs a CDI container&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;All dependency injected beans are also managed beans&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Hibernate or JPA entities are not managed by the CDI container, so there is no CDI support for them&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;So what can we do to get around these limitations, for instance we really want dependency injection in our Entities? The solution is AOP and AspectJ!&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>Thread tracking or how to know who causes an error</title>
+      <title>Smart Thread Naming: Your Secret Weapon for Debugging Multi-User Applications</title>
       <link>https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error/</link>
       <pubDate>Tue, 31 Jul 2012 08:01:03 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Often we are developing applications for multi-user environments. Classic examples are web applications or web services. This also means that technical or business exceptions can occur at the same time for different users. But how do we know you causes which exception?&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;We can use logging frameworks like &lt;a href=&#34;http://logging.apache.org/log4j/2.x/&#34;&gt;Log4J&lt;/a&gt; and write some meta-information like the id of the current user and session to the &lt;a href=&#34;http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/MDC.html&#34;&gt;Mapped Diagnostic Context&lt;/a&gt; and finally use a special logging configuration to output the MDC to the log files. But this also means a lot of configuration work, which can also be error prone.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>Software defect detection with AOP and JSR-303 / JSR-305 / JSR-308</title>
+      <title>Nullpointer-free Java: Combining AOP with Modern Validation Standards</title>
       <link>https://www.mirkosertic.de/blog/2012/07/software-defect-detection-with-aop-and-jsr-303-jsr-305-jsr-308/</link>
       <pubDate>Mon, 30 Jul 2012 09:49:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2012/07/software-defect-detection-with-aop-and-jsr-303-jsr-305-jsr-308/</guid>

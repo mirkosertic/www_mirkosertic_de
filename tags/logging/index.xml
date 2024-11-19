@@ -7,24 +7,24 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Mon, 04 Sep 2017 20:20:56 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 19 Nov 2024 12:01:27 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/logging/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>How to create user and eye friendly scannable Log4J log files</title>
+      <title>Log4J Magic: Creating Human-Friendly, Scannable Log Files</title>
       <link>https://www.mirkosertic.de/blog/2014/06/how-to-create-user-and-eye-friendly-scannable-log4j-log-files/</link>
       <pubDate>Fri, 13 Jun 2014 09:07:11 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2014/06/how-to-create-user-and-eye-friendly-scannable-log4j-log-files/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Often we are writing logs files for our program execution. The logs are sometimes hard to parse, we have to look twice at them to detect error patterns. But it is possible to create a log file layout that is very fast human scannable. Using such kind of log file layout, we can easier scan for common error patterns.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;This can easily be achieved using Log4J and some custom configuration using the Log4J EnhancedPatternLayout. Here is an example:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>Logging made easy</title>
+      <title>Mastering Log Management with Logstash and Kibana</title>
       <link>https://www.mirkosertic.de/blog/2012/10/logging-made-easy/</link>
       <pubDate>Thu, 04 Oct 2012 03:41:46 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2012/10/logging-made-easy/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;In modern, distributed applications logging is a key requirement. But the problem arises if we try to track down an error using different log files on different servers. This is often a problem, depending on the business organization, access rights and other political forces.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;To avoid wasting time to find and get the logs, we need a good tool to support us. Fortunately the Open Source Community has an answer. Logstash!&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>Thread tracking or how to know who causes an error</title>
+      <title>Smart Thread Naming: Your Secret Weapon for Debugging Multi-User Applications</title>
       <link>https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error/</link>
       <pubDate>Tue, 31 Jul 2012 08:01:03 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error/</guid>

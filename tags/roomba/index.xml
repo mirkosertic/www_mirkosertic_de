@@ -7,24 +7,24 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Wed, 07 Jun 2023 13:44:30 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 19 Nov 2024 12:01:27 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/roomba/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>How to calibrate a 2D magnetometer with ellipsoid fitting</title>
+      <title>Transform Wonky Magnetometer Data into Perfect Circles: A Python Guide</title>
       <link>https://www.mirkosertic.de/blog/2023/01/magnetometer-calibration-ellipsoid/</link>
       <pubDate>Thu, 12 Jan 2023 00:00:00 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2023/01/magnetometer-calibration-ellipsoid/</guid>
       <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_how_to_calibrate_a_2d_magnetometer_with_ellipsoid_fitting&#34;&gt;How to calibrate a 2D magnetometer with ellipsoid fitting&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_step_1_load_uncalibrated_magnetometer_data_as_csv&#34;&gt;Step 1: Load uncalibrated magnetometer data as CSV&lt;/h3&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;The data was recorded by logging data from the magnetometer.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Take care! This calibration process should be done while all systems of&#xA;your robot or solution are running, so in a real life environment. This&#xA;will make sure we take all hard iron influences into consideration.&#xA;Place the robot in the middle of a room and let your robot turn to the&#xA;left and to the right for a minute, and record the data.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>The Roomba Series - General System Architecture</title>
+      <title>Building a Smart Roomba: A Symphony of Hardware and ROS</title>
       <link>https://www.mirkosertic.de/blog/2022/10/roomba-series-1/</link>
       <pubDate>Thu, 13 Oct 2022 00:00:00 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2022/10/roomba-series-1/</guid>
       <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_standing_on_the_shoulders_of_giants&#34;&gt;Standing on the shoulders of giants&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;My custom Roomba vacuum uses a lot of free available open source software. Without it, it wouldn’t be possible to create&#xA;and compose a complex system such as an autonomous robot in a reasonable amount of time.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;The core ingredients are:&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Raspberry Pi Zero 2 W&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Ubuntu 64bit OS&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Additional sensors, connected by USB, UART or I2C bus.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Robot Operating System (ROS), Noetic Release&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>The Roomba Series - How to create an autonomous mobile robot</title>
+      <title>DIY Robot Revolution: Transforming an Old Roomba into a Smart Autonomous System</title>
       <link>https://www.mirkosertic.de/blog/2022/02/roomba-series/</link>
       <pubDate>Sat, 19 Feb 2022 00:00:00 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2022/02/roomba-series/</guid>

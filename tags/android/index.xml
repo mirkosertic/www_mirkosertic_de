@@ -7,17 +7,17 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Mon, 04 Sep 2017 20:20:56 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 19 Nov 2024 12:01:27 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/android/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>OpenGL2 on Android example</title>
+      <title>Building a Touch-Responsive OpenGL Triangle on Android</title>
       <link>https://www.mirkosertic.de/blog/2013/09/opengl2-on-android-example/</link>
       <pubDate>Thu, 05 Sep 2013 08:46:56 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/09/opengl2-on-android-example/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;The last days i fiddled a bit with OpenGL 2 on Android. The Android OpenGL tutorials are a bit outdated, so i had to do some API research by myself and copy and merge the provided examples together. Here is a screenshot of the running OpenGL App:&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://www.mirkosertic.de/media/openglandroidapp.png&#34; alt=&#34;openglandroidapp&#34;/&gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;It supports touch events to rotate a triangle around and render the animation.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;To run OpenGL, we need the base Activity class as follows:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>Realtime face detection on Android using OpenCV</title>
+      <title>Building a Real-time Face Detection App: OpenCV meets Android</title>
       <link>https://www.mirkosertic.de/blog/2013/07/realtime-face-detection-on-android-using-opencv/</link>
       <pubDate>Sat, 27 Jul 2013 06:20:34 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/07/realtime-face-detection-on-android-using-opencv/</guid>

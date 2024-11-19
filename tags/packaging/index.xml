@@ -7,17 +7,17 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Thu, 19 Aug 2021 21:43:59 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 19 Nov 2024 12:01:27 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/packaging/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Running Swing Applications with JetBrains Projector in a browser</title>
+      <title>Transform Legacy Swing Apps into Modern Web Applications with JetBrains Projector</title>
       <link>https://www.mirkosertic.de/blog/2021/08/swing-jetbrains-projector/</link>
       <pubDate>Sun, 15 Aug 2021 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2021/08/swing-jetbrains-projector/</guid>
       <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_a_story_of_two_worlds&#34;&gt;A story of two worlds&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Java Swing is part of the Java Runtime since version 1.2. Swing is also part of the Java Foundation Classes, which are the library for creating component bases, modular, portable, and cross-platform graphical user interfaces. Being part of the core runtime, Java Swing is a valid choice for a lot of projects running in a different environment, starting from tiny calculator applications to humongous insurance or tax administration systems.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>Packaging JavaFX Applications for the Desktop</title>
+      <title>Modern Desktop Distribution Guide: Packaging JavaFX Apps Like a Pro</title>
       <link>https://www.mirkosertic.de/blog/2019/04/java-desktop-packaging/</link>
       <pubDate>Tue, 23 Apr 2019 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2019/04/java-desktop-packaging/</guid>

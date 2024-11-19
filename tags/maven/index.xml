@@ -7,17 +7,17 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Mon, 04 Sep 2017 20:20:56 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 19 Nov 2024 12:01:27 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/maven/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>How to remove the Maven primary artifact during install and deploy phase</title>
+      <title>Maven Magic: Removing Primary Artifacts While Keeping RPMs</title>
       <link>https://www.mirkosertic.de/blog/2016/06/how-to-remove-the-maven-primary-artifact-during-install-and-deploy-phase/</link>
       <pubDate>Fri, 17 Jun 2016 04:35:13 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2016/06/how-to-remove-the-maven-primary-artifact-during-install-and-deploy-phase/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Sometimes we use Maven “war” packaging and add the RPM Plugin to create a rpm which contains the project primary artifact. When this rpm needs to be published to the Maven repository, it can be added as a secondary artifact to the build. Here is an example of the plugin configuration in pom.xml:&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;listingblock&#34;&gt;&#xA;&lt;div class=&#34;content&#34;&gt;&#xA;&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&amp;lt;plugin&amp;gt;&#xA;&#x9;&amp;lt;groupId&amp;gt;org.codehaus.mojo&amp;lt;/groupId&amp;gt;&#xA;&#x9;&amp;lt;artifactId&amp;gt;rpm-maven-plugin&amp;lt;/artifactId&amp;gt;&#xA;&#x9;&amp;lt;executions&amp;gt;&#xA;&#x9;    &amp;lt;execution&amp;gt;&#xA;&#x9;&#x9;&amp;lt;goals&amp;gt;&#xA;&#x9;&#x9;    &amp;lt;goal&amp;gt;attached-rpm&amp;lt;/goal&amp;gt;&#xA;&#x9;&#x9;&amp;lt;/goals&amp;gt;&#xA;&#x9;&#x9;&amp;lt;phase&amp;gt;package&amp;lt;/phase&amp;gt;&#xA;&#x9;    &amp;lt;/execution&amp;gt;&#xA;&#x9;&amp;lt;/executions&amp;gt;&#xA;&amp;lt;/plugin&amp;gt;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;This configuration also installs the war and the rpm to the local and even remote repository. If you setup your Maven repository, for instance Nexus, as a yum repository, we are only interested in the rpm, so deploying the war to the repository is a waste of disk space.&#xA;Of course we could change the Maven packaging to RPM, but then we would have to declare the war plugin configuration by hand. But there is also another solution to remove the primary artifact from install and deploy phase. With a little bit of Groovy, we can do the following:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>How to download Maven artifacts with Maven &gt;=3.1 and Eclipse Aether</title>
+      <title>Mastering Maven Artifact Downloads with Eclipse Aether: A Developer&#39;s Guide</title>
       <link>https://www.mirkosertic.de/blog/2015/12/how-to-download-maven-artifacts-with-maven-3-1-and-eclipse-aether/</link>
       <pubDate>Tue, 29 Dec 2015 11:50:42 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2015/12/how-to-download-maven-artifacts-with-maven-3-1-and-eclipse-aether/</guid>

@@ -7,24 +7,24 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Mon, 04 Sep 2017 20:20:56 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 19 Nov 2024 12:01:27 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/junit/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Improve Test Quality with Mutation Testing</title>
+      <title>Beyond Code Coverage: Supercharging Your Tests with Mutation Testing</title>
       <link>https://www.mirkosertic.de/blog/2017/02/improve-test-quality-with-mutationtesting/</link>
       <pubDate>Tue, 14 Feb 2017 00:00:00 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2017/02/improve-test-quality-with-mutationtesting/</guid>
       <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_a_very_common_problem&#34;&gt;A very common problem&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Unit testing is a today must have. Together with &lt;a href=&#34;https://en.wikipedia.org/wiki/Test-driven_development&#34;&gt;Test-driven Development&lt;/a&gt;&#xA;and Frameworks such as &lt;a href=&#34;http://junit.org/junit4&#34;&gt;JUnit&lt;/a&gt; we can easily prove that our code fulfills a set of requirements and business invariants. We use metrics&#xA;like &amp;#34;Test coverage&amp;#34; to get insight about the completeness of our tests. A very common assumption taken from a test coverage of 80 percent&#xA;is that 80 percent of our code is tested and working correctly.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>Preconditions, Project Lombok, JSR 303 and JSR 308</title>
+      <title>Beyond Null Checks: Smart Validation in Java with Lombok, JSR 303, and JSR 308</title>
       <link>https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308/</link>
       <pubDate>Wed, 14 Dec 2016 12:33:44 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;A good method implementation validates all of its preconditions before it continues. Luckily there are different frameworks such as Project Lombok, JSR 303 Bean Validation API and JSR 308 Java Type Annotations available for this job.  All of them are based on Java Annotations at method arguments, but they differ in runtime and compile time behavior. Here are some examples.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_project_lombok&#34;&gt;Project Lombok&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Project Lombok adds language features for boilerplate free code to the Java ecosystem. It is based on the Java Annotation Processor facility of the Java compiler. One of the features is null check of method preconditions. This is basically done by annotating the method arguments with @lombok.NonNull as shown in the following example:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>How to create JUnit assertions from running applications</title>
+      <title>JUnit Test Assertions Made Easy: Generate Instead of Write</title>
       <link>https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications/</link>
       <pubDate>Tue, 01 Oct 2013 07:20:37 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications/</guid>

@@ -7,31 +7,31 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Wed, 27 Dec 2017 17:55:29 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 19 Nov 2024 12:01:27 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/search/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Implementing a custom Query Parser for Apache Solr</title>
+      <title>Crafting Smart Search: Building a Custom Query Parser for Apache Solr</title>
       <link>https://www.mirkosertic.de/blog/2017/10/custom-query-parser-for-solr/</link>
       <pubDate>Thu, 26 Oct 2017 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2017/10/custom-query-parser-for-solr/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Apache Solr is a very powerful and mature enterprise search server. It comes with a lot of handy&#xA;and useful features. One of its features is the query API.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Now, what is the query API? This API is used to search thru the indexed documents, as the name suggests.&#xA;But how are the documents searched? Well, the search is based on a search query. Basically the search query&#xA;is a string, and this string is passed to a so called query parser. The query parser then transforms the query&#xA;string to a Lucene query instance, which is then used by Solr to crawl the index and return found documents.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>A JavaFX based Desktop Search Engine</title>
+      <title>Building a Better Desktop Search: A JavaFX and Lucene Powered Solution</title>
       <link>https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine/</link>
       <pubDate>Fri, 26 Apr 2013 09:17:13 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/04/a-javafx-based-desktop-search-engine/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Microsoft Windows search is not fast, and it also does not give us good search results. So i thought about writing my own Search Engine for the Desktop. It should crawl the file system, extract the content and meta data and finally should give the same results as Google.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;I also wanted to test some new technologies like JavaFX with embedded HTML5, Apache Lucene as a full text search engine, Apache Tika as the content extraction framework and other stuff. But before we dive deep into internals, lets take a look at the frontend:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>Google Style Query Parser for Apache Lucene</title>
+      <title>Building a Google-Style Search Parser for Lucene: Simple Yet Powerful</title>
       <link>https://www.mirkosertic.de/blog/2013/04/google-style-query-parser-for-apache-lucene/</link>
       <pubDate>Fri, 26 Apr 2013 08:29:50 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/04/google-style-query-parser-for-apache-lucene/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;I needed a query parser for Apache Lucene supporting Google style queries. Basically the following searches should be supported:&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;mirko sertic → Should result in a BooleanQuery with “mirko” and “sertic”&#xA;+mirko+sertic → Should result in a BooleanQuery with “mirko” and “sertic”&#xA;+mirko +sertic → Should result in a BooleanQuery with “mirko” and “sertic”&#xA;mirko sertic -klaus → Should result in a BooleanQuery with “mirko” and “sertic” but not “klaus”&#xA;“mirko sertic” → Should result in a PhraeQuery with terms “mirko” and “sertic” in sequence&#xA;mirko~ → Should result in a FuzzyQuery with “mirko”&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>Enterprise search with Apache Solr</title>
+      <title>Building a Enterprise Search Engine in One Day with Apache Solr</title>
       <link>https://www.mirkosertic.de/blog/2012/07/enterprise-search-with-apache-solr/</link>
       <pubDate>Mon, 30 Jul 2012 10:30:07 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2012/07/enterprise-search-with-apache-solr/</guid>

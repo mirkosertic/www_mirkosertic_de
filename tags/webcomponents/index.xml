@@ -7,10 +7,10 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Mon, 04 Sep 2017 20:20:56 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 19 Nov 2024 12:01:27 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/webcomponents/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>A very simple Polymer Web Component</title>
+      <title>Building a Dynamic Material Design List with Polymer Web Components</title>
       <link>https://www.mirkosertic.de/blog/2016/02/a-very-simple-polymer-web-component/</link>
       <pubDate>Mon, 01 Feb 2016 12:03:15 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2016/02/a-very-simple-polymer-web-component/</guid>

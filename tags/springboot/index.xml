@@ -7,17 +7,17 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Tue, 05 Sep 2017 08:05:00 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 19 Nov 2024 12:01:27 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>A Spring Boot Admin UI</title>
+      <title>Spring Boot Admin UI: Your Mission Control for Spring Applications</title>
       <link>https://www.mirkosertic.de/blog/2016/12/a-spring-boot-admin-ui/</link>
       <pubDate>Sat, 31 Dec 2016 01:08:59 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2016/12/a-spring-boot-admin-ui/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Spring Boot is a very cool framework for building modern, cloud-ready software. It also comes with a set of production ready endpoints which allow to administrate and monitor running applications. Unfortunately there is no admin user interface included in Spring Boot.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;The good people at &lt;a href=&#34;https://www.codecentric.de/&#34;&gt;Codecentric&lt;/a&gt; recently released a very nice one, which is also available at GitHub. Here is a screenshot:&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://www.mirkosertic.de/media/springbootadminui.png&#34; alt=&#34;springbootadminui&#34;/&gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;This user interface is basically a Spring Boot Starter, so you have to include it into your own application to make it runnable. It comes with the following features:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>How to embed Hystrix into existing Spring applications</title>
+      <title>Building Resilient Spring Applications with Netflix Hystrix: A Simple AOP Approach</title>
       <link>https://www.mirkosertic.de/blog/2012/07/how-to-embed-hystrix-into-existing-spring-applications/</link>
       <pubDate>Tue, 31 Jul 2012 06:01:53 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2012/07/how-to-embed-hystrix-into-existing-spring-applications/</guid>

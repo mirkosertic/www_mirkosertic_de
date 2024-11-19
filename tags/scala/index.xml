@@ -7,31 +7,31 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Mon, 04 Sep 2017 20:20:56 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 19 Nov 2024 12:01:27 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/scala/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Enterprise Scala Beans or Scala on a JEE application server</title>
+      <title>Creating Enterprise Scala Beans: When Scala Meets Java EE</title>
       <link>https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server/</link>
       <pubDate>Tue, 26 Mar 2013 08:50:41 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/03/enterprise-scala-beans-or-scala-on-a-jee-application-server/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Once i was thinking about writing Enterprise Java Beans(EJBs) with the Scala programming language. This should be easy as Scala greatly incorporates with existing Java code bases. But let’s create a small test to verify this!&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;For this example, i am using Apache TomEE 1.5.1 as a JEE Web Profile certified server and Scala 2.10 to create a small stateless session bean and invoke it from a servlet. The stateless bean is injected to the servlet using CDI. I use IntelliJ 12 as my favorite IDE.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>Maven, Scala and AspectJ(AOP)</title>
+      <title>Cross-Cutting Concerns: Bridging Scala and AspectJ with Maven</title>
       <link>https://www.mirkosertic.de/blog/2013/03/maven-scala-and-aspectjaop/</link>
       <pubDate>Mon, 25 Mar 2013 10:03:24 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/03/maven-scala-and-aspectjaop/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Recently i was thinking about combining AspectJ and Scala in one project. Of course we can argue that functional programming addresses a lot of issues we are trying to solve with AspectJ, but that is not the point. AspectJ is a Bytecode manipulation framework, not a Java code manipulation thing. So why not implement cross cutting concerns like security or transaction handling with AOP/AspectJ in a Scala project? For this short example, i am using AspectJ 1.6.11 and Scala 2.10.1.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>Using Scala with JPA 2.0</title>
+      <title>Seamlessly Integrating Scala Classes with JPA: A Master-Detail Persistence Guide</title>
       <link>https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0/</link>
       <pubDate>Tue, 19 Mar 2013 10:54:04 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/03/using-scala-with-jpa-2-0/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Recently i was thinking about persisting Scala classes with JPA. I tried to set up a mixed Java/Scala project as described &lt;a href=&#34;https://www.mirkosertic.de/blog/2013/03/using-scala-in-legacy-applications/&#34;&gt;here&lt;/a&gt; , using Java code to do the JPA stuff and using Scala to create the entities. For a more complex example, i decided to persist a master/detail association to test if the Scala collections can be persisted, too. For the test i am using Scala 2.10.1 and the Hibernate 4.1.10.Final EntityManager as the JPA 2.0 vendor.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>Using Scala in legacy applications</title>
+      <title>Seamlessly Mixing Scala and Java: A Practical Guide for Legacy Applications</title>
       <link>https://www.mirkosertic.de/blog/2013/03/using-scala-in-legacy-applications/</link>
       <pubDate>Mon, 18 Mar 2013 06:09:22 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/03/using-scala-in-legacy-applications/</guid>

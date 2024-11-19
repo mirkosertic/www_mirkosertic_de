@@ -7,10 +7,10 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Mon, 04 Sep 2017 20:20:56 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 19 Nov 2024 12:01:27 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/xml/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>XML Resourcebundles and how to make I18N refactoring safe</title>
+      <title>Simplify I18N: XML-Based Resource Bundles for Safer Java Internationalization</title>
       <link>https://www.mirkosertic.de/blog/2012/07/xml-resourcebundles-and-how-to-make-i18n-refactoring-safe/</link>
       <pubDate>Sat, 28 Jul 2012 02:37:33 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2012/07/xml-resourcebundles-and-how-to-make-i18n-refactoring-safe/</guid>

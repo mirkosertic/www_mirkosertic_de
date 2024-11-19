@@ -7,31 +7,31 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Wed, 04 May 2022 22:44:59 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 19 Nov 2024 12:01:27 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Running Swing Applications with JetBrains Projector in a browser</title>
+      <title>Transform Legacy Swing Apps into Modern Web Applications with JetBrains Projector</title>
       <link>https://www.mirkosertic.de/blog/2021/08/swing-jetbrains-projector/</link>
       <pubDate>Sun, 15 Aug 2021 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2021/08/swing-jetbrains-projector/</guid>
       <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_a_story_of_two_worlds&#34;&gt;A story of two worlds&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Java Swing is part of the Java Runtime since version 1.2. Swing is also part of the Java Foundation Classes, which are the library for creating component bases, modular, portable, and cross-platform graphical user interfaces. Being part of the core runtime, Java Swing is a valid choice for a lot of projects running in a different environment, starting from tiny calculator applications to humongous insurance or tax administration systems.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>Self-Contained-Systems Light &amp; Shadow</title>
+      <title>Self-Contained Systems: A Practical Guide to Independent Software Architecture</title>
       <link>https://www.mirkosertic.de/blog/2021/04/scs-light-and-shadow/</link>
       <pubDate>Wed, 07 Apr 2021 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2021/04/scs-light-and-shadow/</guid>
       <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_self_contained_cystem_what_is_it&#34;&gt;Self-Contained-Cystem, what is it?&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Self-Contained-System, referred to the following short SCS, is an architectural approach. The idea is to map requirements using individual,&#xA;functionally independent systems. These systems include everything for mapping the necessary requirements, starting with data management,&#xA;the actual business logic and finally a complete user interface. This makes these systems self-contained.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Each SCS should be looked after by its own development team. In addition to the technical separation of the systems, this architectural approach&#xA;should also facilitate the organizational separation. By avoiding dependencies, the teams also become more independent and therefore more flexible.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>WebAssembly with vue.js</title>
+      <title>Supercharging Vue.js with WebAssembly and Java</title>
       <link>https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/</link>
       <pubDate>Thu, 20 Dec 2018 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/</guid>
       <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_state_of_the_union&#34;&gt;State of the union&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;WebAssembly for starters is a standard for high-performance, size-optimized executable code for the Web.&#xA;It was released in March 2017 by the &lt;a href=&#34;https://www.w3.org/wasm/&#34;&gt;WebAssembly working group&lt;/a&gt; as version 1.0, which is basically a MVP&#xA;(Minimum Viable Product), but the initial development started in June 2017. WebAssembly is the successor&#xA;&lt;a href=&#34;http://asmjs.org/&#34;&gt;asm.js&lt;/a&gt; and the &lt;a href=&#34;https://developer.chrome.com/native-client&#34;&gt;Google Native Client (NaCL)&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;WebAssembly itself is merely a sandboxed runtime environment. It was designed as a compile target. High&#xA;level languages such as C/C++, Rust, .NET or Java can be compiled to WebAssembly. As a compile target, it&#xA;implements a set of binary opcodes, a module system and a stack machine making the opcodes executable. Modern&#xA;compiler can translate and optimize high level languages to low level WebAssembly modules.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>Object-Oriented WebAssembly</title>
+      <title>Mastering Object-Oriented Programming in WebAssembly: From High-Level to Low-Level</title>
       <link>https://www.mirkosertic.de/blog/2018/01/object-oriented-webassembly/</link>
       <pubDate>Mon, 01 Jan 2018 12:00:00 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2018/01/object-oriented-webassembly/</guid>
@@ -45,77 +45,77 @@
       <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_the_idea&#34;&gt;The Idea&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;JavaScript is everywhere! Almost every device we use today is connected to the Internet and supports JavaScript by its runtime environment. But in the same way new devices arrive on the market, old software written in plain old Java is still alive and useful. The idea is now to bridge the gap between this shiny new JavaScript world and our old but still useful legacy software written in Java.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>Why I switched to static HTML generators</title>
+      <title>From CMS to Static: A Journey to Blazing Fast Blogging</title>
       <link>https://www.mirkosertic.de/blog/2017/01/why-i-switched-to-static-html-generators/</link>
       <pubDate>Mon, 30 Jan 2017 01:43:48 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2017/01/why-i-switched-to-static-html-generators/</guid>
       <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_the_beginning&#34;&gt;The Beginning&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;This Blog started its life a few years ago. At the beginning, I was using &lt;a href=&#34;https://www.dokuwiki.org&#34;&gt;DokuWiki&lt;/a&gt; for writing&#xA;and editing. This was good, but I was very limited by the provided editors and markup. So I came to the point that I needed&#xA;something else. And you will of course ask &amp;#34;what else&amp;#34;? Well, for a Blog, there is a very popular answer: Use &lt;a href=&#34;https://wordpress.org&#34;&gt;Wordpress&lt;/a&gt;!&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;So I installed Wordpress on my web host, and migrated the whole content. The migration task was easy. But I spent a lot of&#xA;time with decisions like &amp;#34;Which theme? Which plugin? What about SEO? I really spent too much time on this.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>Compile Time Speed GWT 2.8.0 vs. TeaVM 0.4.3 vs. TeaVM 1.0.0-SNAPSHOT</title>
+      <title>Java to JavaScript: TeaVM Outperforms GWT in Compilation Speed Race</title>
       <link>https://www.mirkosertic.de/blog/2016/11/compile-time-speed-gwt-2-8-0-vs-teavm-0-4-3/</link>
       <pubDate>Thu, 24 Nov 2016 06:14:41 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2016/11/compile-time-speed-gwt-2-8-0-vs-teavm-0-4-3/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Some years ago I wrote a JavaFX based &lt;a href=&#34;https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/&#34;&gt;Game authoring system&lt;/a&gt;. It was also written to be ported to different run time environments by using transpiler technologies such as GWT or TeaVM. While TeaVM was heavily improved over time, I haven’t seen a new GWT release in the wild. Now, GWT 2.8.0 is released, and the question arises: Is the compiler still as slow as in 2.7? Well, lets take a look!&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>A very simple Polymer Web Component</title>
+      <title>Building a Dynamic Material Design List with Polymer Web Components</title>
       <link>https://www.mirkosertic.de/blog/2016/02/a-very-simple-polymer-web-component/</link>
       <pubDate>Mon, 01 Feb 2016 12:03:15 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2016/02/a-very-simple-polymer-web-component/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Web Components are a very amazing new feature of HTML5. Google released its &lt;a href=&#34;https://www.polymer-project.org/&#34;&gt;Polymer&lt;/a&gt; project which adds Web Components support to modern Web Browsers. Using Web Components, we can create very complex custom HTML Tags which are based on a very powerful templating engine, pretty cool JavaScript bindings, data model abstractions and also JavaScript and CSS encapsulation. Polymer comes with a set of already implemented components based on Googles Material Design which can be easily integrated into custom applications. Finally, Polymer has a &lt;a href=&#34;https://developers.google.com/web/tools/polymer-starter-kit&#34;&gt;Starter Kit&lt;/a&gt; Project, which can bring you up in a minimum amount of time to development speed with Polymer, Web Components and Single Page Web Applications.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>A JavaFX based LUA editor</title>
+      <title>Building a Powerful LUA Script Editor with JavaFX and Ace</title>
       <link>https://www.mirkosertic.de/blog/2015/04/a-javafx-based-lua-editor/</link>
       <pubDate>Fri, 03 Apr 2015 05:32:40 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2015/04/a-javafx-based-lua-editor/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;One of my favorite projects is my JavaFX based &lt;a href=&#34;https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/&#34;&gt;Gameengine&lt;/a&gt;. It has a flexible entity component system, supports WYSIWYG game design and also has multiplayer network support. The entity component system is backed by a LUA based scripting system, the game designer can react freely on game events and script entity behaviors with the wonderful LUA scripting engine.&#xA;Now, the game designer needs a visual tool with syntax highlighting, clipboard support and also some kind of testing mode to write bug free LUA scripts. Luckily I was able to build this with JavaFX, and here is a final screenshot:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>Tuning HTML5 Canvas.fillText()</title>
+      <title>Supercharging HTML5 Canvas Text Performance: A Game-Changing Optimization</title>
       <link>https://www.mirkosertic.de/blog/2015/03/tuning-html5-canvas-filltext/</link>
       <pubDate>Wed, 25 Mar 2015 07:33:48 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2015/03/tuning-html5-canvas-filltext/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Two years ago I wrote a Java based &lt;a href=&#34;https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/&#34;&gt;GameEngine&lt;/a&gt;. I used technologies such as GWT and TeaVM to transpile the Java source code to JavaScript. The Game Engine used the HTML5 Canvas to render the current game state representation to the user. For the past few weeks I had some time to implement new features for this cool engine. I also did some profiling to see if there are bottlenecks in the rendering code. During the profiling sessions already known facts became visible: some browsers perform better than others.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>GWT vs. Dragome vs. TeaVM for Game Programming</title>
+      <title>Java-to-JavaScript Game Development: Battle of the Transpilers</title>
       <link>https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming/</link>
       <pubDate>Thu, 18 Dec 2014 11:43:01 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2014/12/gwt-vs-dragome-vs-teavm-for-game-programming/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Last year I wrote a &lt;a href=&#34;https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/&#34;&gt;cross platform game engine&lt;/a&gt;. It used a JavaFX based Game Authoring System and had a Java based Game Runtime, which was transpiled to different platforms such as Android, JavaScript over GWT and JavaFX.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Here is a screenshot of a simple platform game based on the GameEngine, some physics stuff and a lot of Java code:&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;&lt;span class=&#34;image&#34;&gt;&lt;img src=&#34;https://www.mirkosertic.de/media/dukejumprunchrome.png&#34; alt=&#34;dukejumprunchrome&#34;/&gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Here is also a screenshot of the JavaFX based game authoring system while editing the example game:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>How to set the HTML base Tag in a JSP page</title>
+      <title>Dynamic HTML Base Tag Generation in JSP: A Clean Solution</title>
       <link>https://www.mirkosertic.de/blog/2014/10/how-to-set-the-html-base-tag-in-a-jsp-page/</link>
       <pubDate>Fri, 31 Oct 2014 03:57:50 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2014/10/how-to-set-the-html-base-tag-in-a-jsp-page/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Sometimes we have to set the HTML base Tag from within a JSP page. For this purpose, we have to compute the correct URL, because the JSP API does not fully expose it. The following shipped shows how it can be cone:&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;listingblock&#34;&gt;&#xA;&lt;div class=&#34;content&#34;&gt;&#xA;&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-jsp&#34; data-lang=&#34;jsp&#34;&gt;&amp;lt;%@ page contentType=&amp;#34;text/html;charset=UTF-8&amp;#34; language=&amp;#34;java&amp;#34; %&amp;gt;&#xA;&amp;lt;%@ taglib prefix=&amp;#34;fn&amp;#34; uri=&amp;#34;http://java.sun.com/jsp/jstl/functions&amp;#34; %&amp;gt;&#xA;&amp;lt;c:set var=&amp;#34;req&amp;#34; value=&amp;#34;${pageContext.request}&amp;#34; /&amp;gt;&#xA;&amp;lt;c:set var=&amp;#34;url&amp;#34;&amp;gt;${req.requestURL}&amp;lt;/c:set&amp;gt;&#xA;&amp;lt;c:set var=&amp;#34;uri&amp;#34; value=&amp;#34;${req.requestURI}&amp;#34; /&amp;gt;&#xA;&amp;lt;!doctype html&amp;gt;&#xA;&amp;lt;html&amp;gt;&#xA;    &amp;lt;head&amp;gt;&#xA;        &amp;lt;base href=&amp;#34;${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/&amp;#34;&amp;gt;&#xA;        &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;style.css&amp;#34;&amp;gt;&#xA;    &amp;lt;/head&amp;gt;&#xA;    &amp;lt;body&amp;gt;&#xA;    &amp;lt;/body&amp;gt;&#xA;&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>A JavaFX based Game Authoring System</title>
+      <title>Building Cross-Platform Games with JavaFX: A Modern Game Engine Adventure</title>
       <link>https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/</link>
       <pubDate>Fri, 15 Nov 2013 08:35:32 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;A few weeks ago I decided to enhance my knowledge in game coding, so I bought two very interesting books: “Real-Time Rendering, Third Edition by Thomas Akenine-Möller, Eric Haines and Nety Hoffmann” and “Game Coding Complete, Fourth Edition by Mike McShaffry and David “Rez” Graham”. After some insightful moments, hundreds of pages read and sleepless nights, I wanted to create my own game. So this project was born.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Primary Goals&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>MVC revised or what are the alternatives?</title>
+      <title>Beyond MVC: A Guide to Modern UI Architecture Patterns</title>
       <link>https://www.mirkosertic.de/blog/2013/03/mvc-revised-or-what-are-the-alternatives/</link>
       <pubDate>Sat, 30 Mar 2013 05:27:21 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2013/03/mvc-revised-or-what-are-the-alternatives/</guid>
       <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_pure_mvc&#34;&gt;Pure MVC&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;http://en.wikipedia.org/wiki/Model_view_controller&#34;&gt;Model View Controller&lt;/a&gt; pattern became a de-facto standard for implementing user interfaces or other kind of interaction with complex systems. Basically it separates the user interface into the following components:&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;table class=&#34;tableblock frame-all grid-all stretch&#34;&gt;&#xA;&lt;colgroup&gt;&#xA;&lt;col style=&#34;width: 50%;&#34;/&gt;&#xA;&lt;col style=&#34;width: 50%;&#34;/&gt;&#xA;&lt;/colgroup&gt;&#xA;&lt;tbody&gt;&#xA;&lt;tr&gt;&#xA;&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Component&lt;/p&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Responsibility&lt;/p&gt;&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Model&lt;/p&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;The model contains the data to be presented&lt;/p&gt;&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;View&lt;/p&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;The view renders the data and is the user interface. The view also reacts to model changes and updates on such an event&lt;/p&gt;&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Controller&lt;/p&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;The controller reacts to user commands and invokes business logic, which itself can change the model&lt;/p&gt;&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;See the following diagram taken from Wikipedia to make it clearer:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>How to avoid server round trips by using pretty URLs</title>
+      <title>Streamline Your Web App: Pretty URLs vs Server Round Trips</title>
       <link>https://www.mirkosertic.de/blog/2012/11/how-to-avoid-server-roundtrips-by-using-pretty-urls/</link>
       <pubDate>Mon, 19 Nov 2012 05:51:12 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2012/11/how-to-avoid-server-roundtrips-by-using-pretty-urls/</guid>
       <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_problem&#34;&gt;Problem&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Unnecessary server round trips are a common cause for slow application performance. Unfortunately application frameworks like JSF(Java Server Faces) are forcing developers to do so. For instance given the following URL processed by a JSF Implementation:&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost/myapplication/customer.faces&#34;&gt;http://localhost/myapplication/customer.faces&lt;/a&gt; This shows us a customer edit form. We can navigate to other customers, edit a customer or delete the record. So where are the unnecessary round trips to avoid? Let’s take a closer look what happens in case of a JSF navigation rule to be fired. Given is a h:commandLink on the page causing a HTTP postback:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>How to embed Hystrix into existing Spring applications</title>
+      <title>Building Resilient Spring Applications with Netflix Hystrix: A Simple AOP Approach</title>
       <link>https://www.mirkosertic.de/blog/2012/07/how-to-embed-hystrix-into-existing-spring-applications/</link>
       <pubDate>Tue, 31 Jul 2012 06:01:53 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2012/07/how-to-embed-hystrix-into-existing-spring-applications/</guid>
