@@ -48,7 +48,7 @@ Anthropic's API offers straightforward integration options. The key is managing 
 
 === Example Implementation using Node.js
 The overall optimitation process can be seen in the following Node.js/JavaScript code. Please pay close attention to the `convertToMessage` function, as this is the
-place where the Claude prompt to improve the blog content is crafted. One detail is that we explicitly instruct Claude to return the optimization in a mechine
+place where the Claude prompt to improve the blog content is crafted. One detail is that we explicitly instruct Claude to return the optimization in a machine
 readable JSON notation, as this makes it easy to feedback the optimized content back to the original blog posting. In this example, the optimized front matter
 is written to a separate file, so the results can be reviewed before updating the original content.
 
