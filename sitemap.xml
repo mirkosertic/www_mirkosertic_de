@@ -2,6 +2,61 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.mirkosertic.de/tags/ai/</loc>
+    <lastmod>2024-11-19T16:30:41+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/asciidoc/</loc>
+    <lastmod>2024-11-19T16:30:41+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/cms/</loc>
+    <lastmod>2024-11-19T16:30:41+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/html5/</loc>
+    <lastmod>2024-11-19T16:30:41+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/hugo/</loc>
+    <lastmod>2024-11-19T16:30:41+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/post/</loc>
+    <lastmod>2024-11-19T16:30:41+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/research/</loc>
+    <lastmod>2024-11-19T16:30:41+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/seo/</loc>
+    <lastmod>2024-11-19T16:30:41+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/blog/2024/11/enhance-blog-with-ai/</loc>
+    <lastmod>2024-11-19T16:30:41+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/</loc>
+    <lastmod>2024-11-19T16:30:41+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/</loc>
+    <lastmod>2024-11-19T16:30:41+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://www.mirkosertic.de/global/</loc>
     <lastmod>2024-11-07T12:19:35+01:00</lastmod>
     <changefreq>daily</changefreq>
@@ -9,11 +64,6 @@
   </url><url>
     <loc>https://www.mirkosertic.de/global/interestingbooks/</loc>
     <lastmod>2024-11-07T12:19:35+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://www.mirkosertic.de/</loc>
-    <lastmod>2024-11-19T12:01:27+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -27,22 +77,12 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://www.mirkosertic.de/post/</loc>
-    <lastmod>2024-11-19T12:01:27+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://www.mirkosertic.de/tags/robot/</loc>
     <lastmod>2024-11-19T12:01:27+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://www.mirkosertic.de/tags/roomba/</loc>
-    <lastmod>2024-11-19T12:01:27+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://www.mirkosertic.de/tags/</loc>
     <lastmod>2024-11-19T12:01:27+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -77,11 +117,6 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://www.mirkosertic.de/tags/html5/</loc>
-    <lastmod>2024-11-19T12:01:27+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://www.mirkosertic.de/tags/java/</loc>
     <lastmod>2024-11-19T12:01:27+01:00</lastmod>
     <changefreq>daily</changefreq>
@@ -108,7 +143,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://www.mirkosertic.de/tags/web/</loc>
-    <lastmod>2024-11-19T12:01:27+01:00</lastmod>
+    <lastmod>2024-11-19T16:30:41+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -158,7 +193,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://www.mirkosertic.de/tags/javascript/</loc>
-    <lastmod>2024-11-19T12:01:27+01:00</lastmod>
+    <lastmod>2024-11-19T16:30:41+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -168,7 +203,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://www.mirkosertic.de/tags/performance/</loc>
-    <lastmod>2024-11-19T12:01:27+01:00</lastmod>
+    <lastmod>2024-11-19T16:30:41+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -238,7 +273,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://www.mirkosertic.de/blog/2017/01/why-i-switched-to-static-html-generators/</loc>
-    <lastmod>2024-11-19T12:01:27+01:00</lastmod>
+    <lastmod>2024-11-19T16:30:41+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>

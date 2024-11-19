@@ -1,0 +1,363 @@
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Supercharge Your Hugo Blog with Claude: Automated Content Enhancement using Anthropic&#39;s API &middot; Mirko Sertic</title><meta name="description" content="Transform existing blog content into polished gems using AI-powered optimization. This practical guide demonstrates how to leverage Anthropic&#39;s Claude API to enhance Hugo blog posts automatically, improving titles, descriptions, and readability. Learn how to implement a straightforward workflow that breathes new life into your existing AsciiDoc content while maintaining your authentic voice."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="robots" content="index,follow"><meta property="og:title" content="Supercharge Your Hugo Blog with Claude: Automated Content Enhancement using Anthropic&#39;s API"><meta property="og:description" content="Transform existing blog content into polished gems using AI-powered optimization. This practical guide demonstrates how to leverage Anthropic&#39;s Claude API to enhance Hugo blog posts automatically, improving titles, descriptions, and readability. Learn how to implement a straightforward workflow that breathes new life into your existing AsciiDoc content while maintaining your authentic voice."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2024/11/enhance-blog-with-ai/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><meta name="theme-color" content="#ffffff"></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="Tools &amp; Goodies">Tools &amp; Goodies</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Interesting Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link active" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><div itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"><header class="post-header"><div class="contentbox"><h1 class="post-title" itemprop="name headline">Supercharge Your Hugo Blog with Claude: Automated Content Enhancement using Anthropic&#39;s API</h1><p class="post-date"><span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="2024-11-10" itemprop="datePublished">Sun, Nov 10, 2024</time> <span>by</span> <span itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name"><a href="https://x.com/mirkosertic" itemprop="url" rel="author">Mirko Sertic</a></span></span></p><p class="post-abstract" itemprop="abstract"><span>A practical exploration of using Anthropic&#39;s Claude API to automatically enhance existing Hugo blog posts. The article covers the technical implementation of content parsing and API integration, while focusing on the benefits and limitations of AI-assisted content optimization. Includes workflow descriptions and best practices for maintaining content authenticity.</span></p><p><span class="icon"><i class="fa fa-clock-white"></i></span><span>8 Minutes reading time</span></p><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags-white"></i></span><a href="/tags/ai">AI</a> ,<a href="/tags/research">Research</a> ,<a href="/tags/seo">SEO</a> ,<a href="/tags/html5">HTML5</a> ,<a href="/tags/hugo">Hugo</a> ,<a href="/tags/asciidoc">AsciiDoc</a> ,<a href="/tags/cms">CMS</a></span></p></div></header><article class="post-content clearfix" itemprop="articleBody"><div class="sect1"><h2 id="_introduction">Introduction</h2><div class="sectionbody"><div class="paragraph"><p>Maintaining a technical blog requires constant attention to quality, readability, and SEO optimization. While creating fresh content is important, enhancing existing posts can be equally valuable. This guide explores how to leverage Anthropic’s Claude API to automatically improve your Hugo blog posts while preserving their core message and authenticity. In fact, this blog was target of such an optimization.</p></div></div></div><div class="sect1"><h2 id="_the_power_of_ai_enhanced_content">The Power of AI-Enhanced Content</h2><div class="sectionbody"><div class="paragraph"><p>Traditional content updates are time-consuming and often overlooked. By automating the enhancement process with Claude, you can systematically improve your entire blog archive without manual rewrites. The AI assists in refining titles for better click-through rates, crafting compelling descriptions, and generating comprehensive abstracts that accurately represent your content.</p></div></div></div><div class="sect1"><h2 id="_understanding_the_technical_flow">Understanding the Technical Flow</h2><div class="sectionbody"><div class="paragraph"><p>The enhancement process follows a straightforward path:</p></div><div class="olist arabic"><ol class="arabic"><li><p>Parse existing AsciiDoc files and extract TOML frontmatter</p></li><li><p>Analyze the content structure and key messages</p></li><li><p>Formulate targeted prompts for Claude</p></li><li><p>Process API responses and update frontmatter</p></li><li><p>Preserve original content while enhancing metadata</p></li></ol></div></div></div><div class="sect1"><h2 id="_crafting_effective_prompts">Crafting Effective Prompts</h2><div class="sectionbody"><div class="paragraph"><p>The key to successful enhancement lies in prompt engineering. Your prompts should guide Claude to:</p></div><div class="ulist"><ul><li><p>Maintain your writing style and technical accuracy</p></li><li><p>Focus on clarity and engagement</p></li><li><p>Optimize for search intent</p></li><li><p>Preserve the original message while improving presentation</p></li></ul></div></div></div><div class="sect1"><h2 id="_implementation_considerations">Implementation Considerations</h2><div class="sectionbody"><div class="sect2"><h3 id="_content_parsing">Content Parsing</h3><div class="paragraph"><p>Hugo’s content structure makes it relatively simple to extract both frontmatter and main content. Using standard parsing libraries, we can separate TOML metadata from AsciiDoc content for targeted enhancement. It is also quite easy to use the YAML or JSON notation of the Front Matter in Hugo. All of the formats are machine-readable.</p></div></div><div class="sect2"><h3 id="_api_integration">API Integration</h3><div class="paragraph"><p>Anthropic’s API offers straightforward integration options. The key is managing rate limits and handling responses appropriately to ensure reliable updates across your blog archive.</p></div></div><div class="sect2"><h3 id="_example_implementation_using_node_js">Example Implementation using Node.js</h3><div class="paragraph"><p>The overall optimitation process can be seen in the following Node.js/JavaScript code. Please pay close attention to the <code>convertToMessage</code> function, as this is the place where the Claude prompt to improve the blog content is crafted. One detail is that we explicitly instruct Claude to return the optimization in a mechine readable JSON notation, as this makes it easy to feedback the optimized content back to the original blog posting. In this example, the optimized front matter is written to a separate file, so the results can be reviewed before updating the original content.</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-javascript" data-lang="javascript">import Anthropic from &#39;@anthropic-ai/sdk&#39;;
+import { sleep } from &#39;@anthropic-ai/sdk/core&#39;;
+import { Console } from &#39;console&#39;;
+
+import dotenv from &#39;dotenv&#39;;
+import fs from &#39;fs&#39;;
+import path from &#39;path&#39;;
+
+dotenv.config();
+
+const client = new Anthropic({
+    apiKey: process.env[&#39;ANTHROPIC_API_KEY&#39;], // This is the default and can be omitted
+});
+
+function loadFilesWithExtension(dirPath, extension) {
+    const results = [];
+
+    // Read directory contents
+    function readDirectory(currentPath) {
+        console.info(&#39;Scanning directory &#39; + currentPath);
+        const files = fs.readdirSync(currentPath);
+
+        for (const file of files) {
+            const filePath = path.join(currentPath, file);
+            const stat = fs.statSync(filePath);
+
+            if (stat.isDirectory()) {
+                // Recursively process subdirectories
+                readDirectory(filePath);
+            } else if (path.extname(file).toLowerCase() === extension.toLowerCase()) {
+                // Load file content if extension matches
+                try {
+                    const content = fs.readFileSync(filePath, &#39;utf8&#39;);
+                    results.push({
+                        path: filePath,
+                        content: content
+                    });
+                } catch (error) {
+                    console.error(`Error reading file ${filePath}:`, error);
+                }
+            }
+        }
+    }
+
+    // Start recursive processing
+    readDirectory(dirPath);
+    return results;
+}
+
+/**
+ * Extracts and parses TOML front matter from an AsciiDoctor file
+ * @param {string} content - The content of the AsciiDoctor file
+ * @returns {Object} Object containing parsed frontMatter and remaining content
+ */
+function parseAsciidocFrontMatter(content) {
+    const frontMatterRegex = /^\+\+\+\r?\n([\s\S]*?)\r?\n\+\+\+\r?\n([\s\S]*)$/;
+    const match = content.match(frontMatterRegex);
+
+    if (!match) {
+        return {
+            frontMatter: {},
+            content: content.trim()
+        };
+    }
+
+    const [, frontMatterStr, remainingContent] = match;
+
+    try {
+        const frontMatter = parseTOML(frontMatterStr);
+        return {
+            frontMatter,
+            content: remainingContent.trim()
+        };
+    } catch (error) {
+        throw new Error(`Error parsing TOML front matter: ${error.message}`);
+    }
+}
+
+/**
+ * Parses TOML-formatted string into JavaScript object
+ * @param {string} toml - TOML string to parse
+ * @returns {Object} Parsed TOML as JavaScript object
+ */
+function parseTOML(toml) {
+    const result = {};
+    let currentTable = result;
+    let currentTablePath = [];
+
+    const lines = toml.split(&#39;\n&#39;);
+
+    for (let i = 0; i &lt; lines.length; i++) {
+        const line = lines[i].trim();
+
+        // Skip empty lines and comments
+        if (!line || line.startsWith(&#39;#&#39;)) continue;
+
+        // Handle table headers
+        if (line.startsWith(&#39;[&#39;) &amp;&amp; line.endsWith(&#39;]&#39;)) {
+            const tableName = line.slice(1, -1).trim();
+            currentTablePath = tableName.split(&#39;.&#39;);
+
+            // Create nested objects for the table path
+            let current = result;
+            currentTablePath.forEach((key, index) =&gt; {
+                if (index === currentTablePath.length - 1) {
+                    current[key] = current[key] || {};
+                    currentTable = current[key];
+                } else {
+                    current[key] = current[key] || {};
+                    current = current[key];
+                }
+            });
+            continue;
+        }
+
+        // Handle key-value pairs
+        const equalIndex = line.indexOf(&#39;=&#39;);
+        if (equalIndex === -1) continue;
+
+        const key = line.slice(0, equalIndex).trim();
+        let value = line.slice(equalIndex + 1).trim();
+
+        // Parse the value
+        try {
+            value = parseTOMLValue(value, lines, i);
+            // If parseTOMLValue returns an object with nextIndex, update the line counter
+            if (value &amp;&amp; typeof value === &#39;object&#39; &amp;&amp; &#39;nextIndex&#39; in value) {
+                i = value.nextIndex;
+                value = value.value;
+            }
+        } catch (error) {
+            throw new Error(`Error parsing value at line ${i + 1}: ${error.message}`);
+        }
+
+        currentTable[key] = value;
+    }
+
+    return result;
+}
+
+/**
+ * Parses a TOML value, handling various data types
+ * @param {string} value - The value string to parse
+ * @param {string[]} lines - All lines of the TOML content
+ * @param {number} currentIndex - Current line index
+ * @returns {any} Parsed value
+ */
+function parseTOMLValue(value, lines, currentIndex) {
+    // Handle strings
+    if (value.startsWith(&#39;&#34;&#39;) &amp;&amp; value.endsWith(&#39;&#34;&#39;)) {
+        return value.slice(1, -1).replace(/\\&#34;/g, &#39;&#34;&#39;);
+    }
+
+    // Handle multi-line strings
+    if (value.startsWith(&#39;&#34;&#34;&#34;&#39;)) {
+        return parseMultilineString(lines, currentIndex);
+    }
+
+    // Handle arrays
+    if (value.startsWith(&#39;[&#39;)) {
+        return parseArray(value);
+    }
+
+    // Handle booleans
+    if (value.toLowerCase() === &#39;true&#39;) return true;
+    if (value.toLowerCase() === &#39;false&#39;) return false;
+
+    // Handle dates
+    if (/^\d{4}-\d{2}-\d{2}/.test(value)) {
+        const date = new Date(value);
+        if (!isNaN(date.getTime())) return date;
+    }
+
+    // Handle numbers
+    if (!isNaN(value)) {
+        // Check if it&#39;s an integer or float
+        return value.includes(&#39;.&#39;) ? parseFloat(value) : parseInt(value, 10);
+    }
+
+    return value;
+}
+
+/**
+ * Parses a TOML array
+ * @param {string} arrayStr - The array string to parse
+ * @returns {Array} Parsed array
+ */
+function parseArray(arrayStr) {
+    // Remove brackets and split by commas
+    const items = arrayStr.slice(1, -1).split(&#39;,&#39;);
+    return items.map(item =&gt; {
+        const trimmed = item.trim();
+        if (!trimmed) return undefined;
+        return parseTOMLValue(trimmed);
+    }).filter(item =&gt; item !== undefined);
+}
+
+/**
+ * Parses a multi-line string
+ * @param {string[]} lines - All lines of the TOML content
+ * @param {number} startIndex - Starting line index
+ * @returns {Object} Object containing the parsed value and next index
+ */
+function parseMultilineString(lines, startIndex) {
+    let result = &#39;&#39;;
+    let currentIndex = startIndex;
+    let foundEnd = false;
+
+    // Skip the first line with &#34;&#34;&#34;
+    currentIndex++;
+
+    while (currentIndex &lt; lines.length) {
+        const line = lines[currentIndex].trim();
+        if (line.endsWith(&#39;&#34;&#34;&#34;&#39;)) {
+            foundEnd = true;
+            result += line.slice(0, -3);
+            break;
+        }
+        result += lines[currentIndex] + &#39;\n&#39;;
+        currentIndex++;
+    }
+
+    if (!foundEnd) {
+        throw new Error(&#39;Unterminated multi-line string&#39;);
+    }
+
+    return {
+        value: result.trim(),
+        nextIndex: currentIndex
+    };
+}
+
+function convertToMessage(frontMatter, content) {
+    const prompt = `&lt;instructions&gt;
+Please summarize the following text stored in the content tags taken from a blog in a catchy way.
+The content is formatted as AsciiDoc, so please handle headlines and code formattings accordingly.
+The summary must not contain the phrases &#34;the autor&#34; or &#34;the writer&#34; or something like that and
+must not be longer than three sentences. The summary should be in the witty, but not too technical
+style and will be later used to generate a banner image for the blog entry.
+
+Please format the answer as a machine readable json containing the attributes &#34;title&#34; and &#34;summary&#34;.
+The title attribute of the response should contain an alternative title, based on the title tag of the
+content and the content itself. Please also try to generate keywords for the content and return them as
+the &#34;keywords&#34; attribute so they can be used as HTML meta data.
+
+Finally please try to generate an abstract for the content and return it as the &#34;abstract&#34; attribute
+of the response.
+&lt;/instructions&gt;
+
+&lt;content&gt;
+    &lt;title&gt;${frontMatter.title}&lt;/title&gt;
+    &lt;body&gt;
+        ${content}
+    &lt;/body&gt;
+&lt;/content&gt;`;
+
+    const messageObj = {
+        system: `You are a technical writer with strong computer science background and try to
+                 optimize Blog content in terms of quality, readability, joy and search engine optimization.`,
+        max_tokens: 1024,
+        messages: [
+            { role: &#39;user&#39;, content: prompt }
+        ],
+        model: &#39;claude-3-5-sonnet-latest&#39;
+    };
+    return messageObj;
+}
+
+async function handleSingleFile(entry) {
+    const filename = entry.path;
+
+    const {frontMatter, content} = parseAsciidocFrontMatter(entry.content);
+    const message = convertToMessage(frontMatter, content);
+
+    const response = await client.messages.create(message);
+
+    const aicontent = response.content;
+    for (var i = 0; i &lt; aicontent.length; i++) {
+        const elem = aicontent[i];
+        if (&#39;text&#39; === elem.type) {
+            const js = JSON.parse(elem.text);
+            if (js.title) {
+                frontMatter[&#34;ai_title&#34;] = js.title;
+            }
+            if (js.summary) {
+                frontMatter[&#34;ai_summary&#34;] = js.summary;
+            }
+            if (js.summary) {
+                frontMatter[&#34;ai_abstract&#34;] = js.abstract;
+            }
+        }
+    }
+
+    fs.writeFileSync(filename + &#39;.aifrontmatter.json&#39;, JSON.stringify(frontMatter, null, 2));
+    console.info(&#39;Finished file &#39; + filename);
+}
+
+async function main() {
+    const files = loadFilesWithExtension(&#39;./content/post/&#39;, &#39;.adoc&#39;);
+
+    console.info(&#39;Found &#39; + files.length + &#39; files&#39;);
+    for (var i = 0; i &lt; files.length; i++) {
+        handleSingleFile(files[i]);
+        if (i % 5 == 0) {
+            console.log(&#39;Sleeping due to rate limit!&#39;);
+            await sleep(30000);
+        }
+    }
+    console.log(&#39;Finished!&#39;);
+}
+
+main();</code></pre></div></div></div></div></div><div class="sect1"><h2 id="_benefits_and_opportunities">Benefits and Opportunities</h2><div class="sectionbody"><div class="olist arabic"><ol class="arabic"><li><p>AI-driven enhancement ensures consistent quality across all posts, regardless of when they were written.</p></li><li><p>Automated enhancement frees up time for creating new content while improving existing posts.</p></li><li><p>Claude can help optimize titles and descriptions for better search engine visibility without sacrificing readability.</p></li></ol></div></div></div><div class="sect1"><h2 id="_limitations_and_considerations">Limitations and Considerations</h2><div class="sectionbody"><div class="olist arabic"><ol class="arabic"><li><p>While AI can enhance presentation, it’s crucial to maintain your authentic voice and technical accuracy.</p></li><li><p>API usage costs should be factored into your enhancement strategy, especially for larger blogs. For smaller blogs, it might cost just a few dollars.</p></li><li><p>Regular review of AI-enhanced content is recommended to ensure changes align with your blog’s goals.</p></li></ol></div></div></div><div class="sect1"><h2 id="_best_practices">Best Practices</h2><div class="sectionbody"><div class="olist arabic"><ol class="arabic"><li><p>Start with a small subset of posts to fine-tune your approach</p></li><li><p>Maintain version control of original content</p></li><li><p>Review and adjust enhancement parameters based on results</p></li><li><p>Monitor SEO and engagement metrics to measure impact</p></li></ol></div></div></div><div class="sect1"><h2 id="_conclusion">Conclusion</h2><div class="sectionbody"><div class="paragraph"><p>Leveraging Claude for blog enhancement offers a powerful way to improve content quality while respecting your original work. By automating the enhancement process, you can maintain a fresh, engaging blog without the traditional overhead of manual updates.</p></div><div class="paragraph"><p>Remember that AI enhancement should complement, not replace, your expertise and unique perspective. Used thoughtfully, it’s a valuable tool in your content management arsenal.</p></div></div></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2023/01/magnetometer-calibration-ellipsoid/">Transform Wonky Magnetometer Data into Perfect Circles: A Python Guide</a></span></div><p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/600d6cb4ab6cf7bbba52d17ae8671a8289d9a59b" target="_blank">600d6cb</a></p></article></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://x.com/mirkosertic" itemprop="url"><i class="fa fa-x-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
+        var element = document.querySelector(aSelector);
+        if (element) {
+            return true;
+        }
+        return false;
+    }
+
+    var Loader = function () { };
+    Loader.prototype = {
+        require: function (scripts, callback) {
+            this.loadCount = 0;
+            this.totalRequired = scripts.length;
+            this.callback = callback;
+
+            for (var i=0;i<scripts.length;i++) {
+                this.writeScript(scripts[i]);
+            }
+        },
+        loaded: function (evt) {
+            this.loadCount++;
+
+            if (this.loadCount==this.totalRequired && typeof this.callback=='function') this.callback.call();
+        },
+        writeScript: function (src) {
+            var self = this;
+            var s = document.createElement('script');
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = src;
+            s.addEventListener('load', function (e) { self.loaded(e); }, false);
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(s);
+        }
+    };
+
+    if (existsByCSSSelector("pre.highlight code") > 0) {
+        var loader = new Loader();
+        loader.require(["https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"], function() {
+
+            var additionalStylesheet = document.createElement('link');
+            additionalStylesheet.rel = "stylesheet";
+            additionalStylesheet.type = 'text/css';
+            additionalStylesheet.media = "screen";
+            additionalStylesheet.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css";
+
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(additionalStylesheet);
+
+            hljs.highlightAll();
+        });
+    }</script></body></html>

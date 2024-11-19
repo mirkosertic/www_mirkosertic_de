@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SEO on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/seo/</link>
+    <description>Recent content in SEO on www.mirkosertic.de</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Tue, 19 Nov 2024 16:30:41 +0100</lastBuildDate>
+    <atom:link href="https://www.mirkosertic.de/tags/seo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Supercharge Your Hugo Blog with Claude: Automated Content Enhancement using Anthropic&#39;s API</title>
+      <link>https://www.mirkosertic.de/blog/2024/11/enhance-blog-with-ai/</link>
+      <pubDate>Sun, 10 Nov 2024 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/blog/2024/11/enhance-blog-with-ai/</guid>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Maintaining a technical blog requires constant attention to quality, readability, and SEO optimization. While creating fresh content is important, enhancing existing posts can be equally valuable. This guide explores how to&#xA;leverage Anthropic’s Claude API to automatically improve your Hugo blog posts while preserving their core message and authenticity. In fact, this blog was target of such an optimization.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_the_power_of_ai_enhanced_content&#34;&gt;The Power of AI-Enhanced Content&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Traditional content updates are time-consuming and often overlooked. By automating the enhancement process with Claude, you can systematically improve your entire blog archive without manual rewrites. The AI assists in refining&#xA;titles for better click-through rates, crafting compelling descriptions, and generating comprehensive abstracts that accurately represent your content.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

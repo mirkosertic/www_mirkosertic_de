@@ -7,8 +7,57 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Tue, 19 Nov 2024 12:01:27 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 19 Nov 2024 16:30:41 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI</title>
+      <link>https://www.mirkosertic.de/tags/ai/</link>
+      <pubDate>Sun, 10 Nov 2024 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AsciiDoc</title>
+      <link>https://www.mirkosertic.de/tags/asciidoc/</link>
+      <pubDate>Sun, 10 Nov 2024 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/tags/asciidoc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CMS</title>
+      <link>https://www.mirkosertic.de/tags/cms/</link>
+      <pubDate>Sun, 10 Nov 2024 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/tags/cms/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HTML5</title>
+      <link>https://www.mirkosertic.de/tags/html5/</link>
+      <pubDate>Sun, 10 Nov 2024 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/tags/html5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>https://www.mirkosertic.de/tags/hugo/</link>
+      <pubDate>Sun, 10 Nov 2024 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/tags/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Research</title>
+      <link>https://www.mirkosertic.de/tags/research/</link>
+      <pubDate>Sun, 10 Nov 2024 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/tags/research/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SEO</title>
+      <link>https://www.mirkosertic.de/tags/seo/</link>
+      <pubDate>Sun, 10 Nov 2024 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/tags/seo/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Magnetometer</title>
       <link>https://www.mirkosertic.de/tags/magnetometer/</link>
@@ -49,13 +98,6 @@
       <link>https://www.mirkosertic.de/tags/enterprise/</link>
       <pubDate>Sun, 15 Aug 2021 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/tags/enterprise/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>HTML5</title>
-      <link>https://www.mirkosertic.de/tags/html5/</link>
-      <pubDate>Sun, 15 Aug 2021 00:00:00 +0200</pubDate>
-      <guid>https://www.mirkosertic.de/tags/html5/</guid>
       <description></description>
     </item>
     <item>
