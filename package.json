@@ -3,7 +3,7 @@
   "scripts": {
     "build": "gulp build",
     "summarize": "node aisummarize.js",
-    "develop": "hugo server" 
+    "develop": "hugo server --buildDrafts" 
   },
   "type": "module",
   "devDependencies": {
