@@ -41,7 +41,7 @@ The key to successful enhancement lies in prompt engineering. Your prompts shoul
 
 === Content Parsing
 Hugo's content structure makes it relatively simple to extract both frontmatter and main content. Using standard parsing libraries, we can separate TOML metadata from AsciiDoc content for targeted enhancement.
-It is also quite easy to use the YAML or JSON notation of the Front Matter in Hugo. All of the formats are machine-readable.
+It is also quite easy to use the YAML or JSON notation for the frontmatter in Hugo. All of the formats are machine-readable.
 
 === API Integration
 Anthropic's API offers straightforward integration options. The key is managing rate limits and handling responses appropriately to ensure reliable updates across your blog archive.
@@ -49,7 +49,7 @@ Anthropic's API offers straightforward integration options. The key is managing 
 === Example Implementation using Node.js
 The overall optimitation process can be seen in the following Node.js/JavaScript code. Please pay close attention to the `convertToMessage` function, as this is the
 place where the Claude prompt to improve the blog content is crafted. One detail is that we explicitly instruct Claude to return the optimization in a machine
-readable JSON notation, as this makes it easy to feedback the optimized content back to the original blog posting. In this example, the optimized front matter
+readable JSON notation, as this makes it easy to feedback the optimized content to the original blog posting. In this example, the optimized frontmatter
 is written to a separate file, so the results can be reviewed before updating the original content.
 
 [source,javascript]
