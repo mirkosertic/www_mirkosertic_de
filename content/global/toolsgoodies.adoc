@@ -15,24 +15,24 @@ Tools and frameworks that support the development and testing process
 - http://www.jetbrains.com/idea[IntelliJ IDEA] IntelliJ IDEA, the one and only IDE you will ever need!
 - https://playwright.dev[Playwright] Industry standard for end-to-end testing, offering superior reliability and features compared to alternatives
 - https://www.testcontainers.org/[Testcontainers] Essential for modern integration testing, especially in microservices environments
-- https://storybook.js.org/[Storybook] De facto standard for component development and documentation in modern frontend development
-- https://www.cypress.io/[Cypress] Mature and widely adopted for frontend testing, though consider Playwright for new projects
+- https://storybook.js.org/[Storybook] De facto standard for component development and documentation in modern frontend development. Alternative: Histoire for Vue.js project
 
 *Assess*
 
-- https://insomnia.rest/[Insomnia] Solid API development tool, though consider if your team needs more enterprise features
-- http://pitest.org/[Pitest : Real world mutation testing] PIT is a state of the art mutation testing system, providing gold standard test coverage for Java and the jvm. Its fast, scalable and integrates with modern test and build tooling.
-- http://infinitest.github.io/[infinitest] Useful for continuous testing, but evaluate if it fits your development workflow
+- https://insomnia.rest/[Insomnia] Solid API development tool, though consider if your team needs more enterprise features. Alternative: Postman, Hoppscotch (open source)
+- http://pitest.org/[Pitest : Real world mutation testing] PIT is a state of the art mutation testing system, providing gold standard test coverage for Java and the jvm. Its fast, scalable and integrates with modern test and build tooling. Alternative: Stryker for JavaScript/TypeScript projects
+- http://infinitest.github.io/[infinitest] Useful for continuous testing, but evaluate if it fits your development workflow. Alternative: Modern IDEs' built-in test runners, Jest watch mode
 
 *Hold*
 
-- http://seleniumhq.org/[Selenium] While still used, newer tools like Playwright offer better developer experience
-- https://github.com/powermock/powermock/[PowerMock] Use with caution, prefer proper dependency injection and design patterns
+- http://seleniumhq.org/[Selenium] While still used, newer tools like Playwright offer better developer experience. Alternative: Cypress (though Playwright is generally preferred now) 
+- https://github.com/powermock/powermock/[PowerMock] Use with caution, prefer proper dependency injection and design patterns. Alternative: Mockito, Jest, Vitest
+- https://www.cypress.io/[Cypress] Mature and widely adopted for frontend testing, though consider Playwright for new projects
 
 *Drop*
 
-- http://sqlfiddle.com/[SQL Fiddle] Better alternatives exist for database experimentation
-- http://www.balsamiq.com/[Balsamiq mockups] More modern UI/UX design tools available now
+- http://sqlfiddle.com/[SQL Fiddle] Better alternatives exist for database experimentation. Alternative: DB Fiddle, PostgreSQL Playground
+- http://www.balsamiq.com/[Balsamiq mockups] More modern UI/UX design tools available now. Alternative: Figma, Penpot (open source)
 
 
 == Section 2: Architecture & Design
@@ -40,25 +40,25 @@ Patterns, practices, and tools for software architecture
 
 *Adopt*
 
-- https://docs.dependencytrack.org/[Dependency-Track] Essential for modern software supply chain security
-- https://cyclonedx.org/[OWASP CycloneDX] Critical for software supply chain risk management
+- https://docs.dependencytrack.org/[Dependency-Track] Essential for modern software supply chain security. Alternative: Snyk, Mend (commercial)
+- https://cyclonedx.org/[OWASP CycloneDX] Critical for software supply chain risk management. Alternative: SPDX (though both can be used together)
 - http://scs-architecture.org/[scs-architecture.org] Valuable pattern for microservices organization
 
 *Assess*
 
-- https://backstage.io[Backstage] Leading solution for developer portals and internal developer platforms
+- https://backstage.io[Backstage] Leading solution for developer portals and internal developer platforms. Alternative: Port (commercial)
 - https://architecture-antipatterns.tech/[Architecture Antipatterns] Valuable knowledge base, but verify against current best practices
-- https://roca-style.org/[Resource-Oriented Client Architecture] Solid principles for frontend architecture
+- https://roca-style.org/[Resource-Oriented Client Architecture] Solid principles for frontend architecture. Alternative: Micro-frontends, Module Federation
 
 *Hold*
 
-- http://www.arc42.de/[arc42: Ressourcen für Softwarearchitekten] Good foundation but consider more modern documentation approaches
-- http://modeling-languages.com/[modeling-languages.com] Useful resource but verify current relevance
+- http://www.arc42.de/[arc42: Ressourcen für Softwarearchitekten] Good foundation but consider more modern documentation approaches. Alternative: C4 model, ADR (Architecture Decision Records)
+- http://modeling-languages.com/[modeling-languages.com] Useful resource but verify current relevance. Alternative: Martin Fowler's blog, AWS/Azure architecture centers
 
 *Drop*
 
-- http://caminao.wordpress.com/[caminao.wordpress.com] Outdated content
-- http://www.inf.usi.ch/phd/wettel/codecity.html[CodeCity] Obsolete visualization approach
+- http://caminao.wordpress.com/[caminao.wordpress.com] Outdated content. Alternative: InfoQ, Martin Fowler's blog
+- http://www.inf.usi.ch/phd/wettel/codecity.html[CodeCity] Obsolete visualization approach. Alternative: SonarQube, CodeScene
 
 
 == Section 3: Data & Analytics
@@ -68,8 +68,8 @@ Tools and frameworks for data processing and visualization
 
 - https://grafana.com/[Grafana] Industry standard for monitoring and visualization
 - https://jsoncrack.com/editor[JSON Crack] Modern tool for JSON data visualization and analysis
-- https://www.plotjuggler.io/[PlotJuggler] Powerful tool for time series visualization
-- http://d3js.org/[D3.js] Still the gold standard for custom data visualization
+- https://www.plotjuggler.io/[PlotJuggler] Powerful tool for time series visualization. Alternative: Chronograf, Prometheus+Grafana
+- http://d3js.org/[D3.js] Still the gold standard for custom data visualization. Alternative: Chart.js, Observable Plot
 
 *Assess*
 
@@ -85,8 +85,8 @@ Tools and frameworks for data processing and visualization
 
 *Drop*
 
-- https://www.marmoset.co/hexels/[Hexels] Better alternatives exist for grid-based art
-- http://stephaneginier.com/sculptgl[Sculpt GL] Limited maintenance, better alternatives exist
+- https://www.marmoset.co/hexels/[Hexels] Better alternatives exist for grid-based art. Alternative: Figma, Illustrator
+- http://stephaneginier.com/sculptgl[Sculpt GL] Limited maintenance, better alternatives exist. Alternative: Blender, Three.js editor
 
 
 == Section 4: Infrastructure & Deployment
@@ -94,8 +94,8 @@ Tools for managing and deploying applications
 
 *Adopt*
 
-- https://helm.sh/[Helm] Essential tool for Kubernetes deployments
-- https://kustomize.io/[Kustomize] Important for Kubernetes configuration management
+- https://helm.sh/[Helm] Essential tool for Kubernetes deployments. Alternative: Kustomize (for simpler needs)
+- https://kustomize.io/[Kustomize] Important for Kubernetes configuration management. Alternative: Helm (for complex applications)
 - https://kafka.apache.org/[Apache Kafka] Standard for event streaming platforms
 - https://www.keycloak.org/[Keycloak] Leading open-source IAM solution
 - https://www.varnish-cache.org/[Varnish HTTP Cache] Still relevant for HTTP caching needs
@@ -107,13 +107,13 @@ Tools for managing and deploying applications
 *Hold*
 
 - https://camunda.com/[Camunda BPMN / DMN] Consider cloud-native workflow alternatives
-- http://www.togglz.org/Togglz[Togglz] Evaluate against modern feature flag services
-- http://hazelcast.org/[Hazelcast IMDG] Evaluate against cloud-native alternatives
+- http://www.togglz.org/Togglz[Togglz] Evaluate against modern feature flag services. Alternative: LaunchDarkly, Split.io
+- http://hazelcast.org/[Hazelcast IMDG] Evaluate against cloud-native alternatives. Alternative: Redis, Apache Ignite
 
 *Drop*
 
-- http://en.wikipedia.org/wiki/Edge_Side_Includes[Edge Side Includes] Better alternatives for micro-frontends exist
-- http://windup.jboss.org/index.html[JBoss Windup] Limited relevance in modern cloud environments
+- http://en.wikipedia.org/wiki/Edge_Side_Includes[Edge Side Includes] Better alternatives for micro-frontends exist. Alternative: Micro-frontends, Module Federation
+- http://windup.jboss.org/index.html[JBoss Windup] Limited relevance in modern cloud environments. Alternative: Cloud native migration tools
 
 
 == Section 5: Development Languages & Frameworks
@@ -121,7 +121,7 @@ Programming languages, frameworks, and related tools
 
 *Adopt*
 
-- https://gohugo.io/[Hugo] Leading static site generator
+- https://gohugo.io/[Hugo] Leading static site generator. Alternative: Next.js, Astro
 - http://asciidoctor.org/[Asciidoctor] Toolchain for converting AsciiDoc content to HTML5, DocBook 5 (or 4.5) and other formats.
 - http://www.redblobgames.com/[Red Blob Games] A wonderful resource about computer algorithms involved in game programming
 - https://jakearchibald.com/2014/offline-cookbook[Jake Archibald: The offline cookbook] Jake Archibald writes about offline Web Applications
@@ -130,24 +130,24 @@ Programming languages, frameworks, and related tools
 
 *Assess*
 
-- http://angularjs.org/[Angular] Mature framework with strong enterprise adoption
-- http://www.gradle.org/[Gradle Build Tool] Standard build tool for Java ecosystem
-- https://postcss.org[PostCSS] A tool for transforming CSS with JavaScript.
+- http://angularjs.org/[Angular] Mature framework with strong enterprise adoption. Alternative: React, Vue.js, Svelte
+- http://www.gradle.org/[Gradle Build Tool] Standard build tool for Java ecosystem. Alternative: Maven, Bazel
+- https://postcss.org[PostCSS] A tool for transforming CSS with JavaScript. Alternative: Tailwind CSS, CSS Modules
 - https://lernajs.io[Lerna] Evaluate against newer monorepo tools
-- http://www.eclipse.org/aspectj/[AspectJ] Still relevant for specific use cases
+- http://www.eclipse.org/aspectj/[AspectJ] Still relevant for specific use cases. Alternative: Spring AOP, Decorator pattern
 - https://kaitai.io/[Kaitai Struct] A new way to develop parsers for binary structures.
 - http://cbor.io/[The Concise Binary Object Representation] Consider Avro as an alternative
 
 *Hold*
 
-- http://lesscss.org/[LessCSS] Consider modern CSS features first
+- http://lesscss.org/[LessCSS] Consider modern CSS features first. Alternative: Sass, Tailwind CSS
 - http://www.querydsl.com/[QueryDSL] Evaluate against modern alternatives
-- http://juel.sourceforge.net/[JUEL] Limited use cases in modern development
+- http://juel.sourceforge.net/[JUEL] Limited use cases in modern development. Alternative: Native template literals, Expression parsers
 
 *Drop*
 
-- http://myfaces.apache.org/extensions/cdi/[MyFaces CODI] Outdated JSF extension
-- http://ocpsoft.org/prettyfaces/[PrettyFaces] Outdated URL handling for JSF
+- http://myfaces.apache.org/extensions/cdi/[MyFaces CODI] Outdated JSF extension. Alternative: Modern frontend frameworks (React, Vue.js)
+- http://ocpsoft.org/prettyfaces/[PrettyFaces] Outdated URL handling for JSF. Alternative: Modern routing libraries (React Router, Vue Router)
 - http://arquillian.org/[arquillian.org] Arquillian is framework to write tests for JEE applications.
 - http://mogwai.sourceforge.net/[Project Mogwai] Better alternatives are available, but I still love this project
 
