@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.mirkosertic.de/global/</loc>
+    <lastmod>2024-11-21T15:49:43+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/global/toolsgoodies/</loc>
+    <lastmod>2024-11-21T15:49:43+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/</loc>
+    <lastmod>2024-11-21T15:49:43+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://www.mirkosertic.de/tags/ai/</loc>
     <lastmod>2024-11-20T08:57:42+01:00</lastmod>
     <changefreq>daily</changefreq>
@@ -52,23 +67,8 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://www.mirkosertic.de/</loc>
-    <lastmod>2024-11-20T08:57:42+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://www.mirkosertic.de/global/</loc>
-    <lastmod>2024-11-07T12:19:35+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://www.mirkosertic.de/global/interestingbooks/</loc>
     <lastmod>2024-11-07T12:19:35+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://www.mirkosertic.de/global/toolsgoodies/</loc>
-    <lastmod>2024-10-12T11:18:59+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
