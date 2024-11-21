@@ -1,288 +1,153 @@
 +++
-date = "2024-10-12T00:00:00+02:00"
-title = "Tools & Goodies"
+date = "2024-11-17T00:00:00+02:00"
+title = "My personal Technology Radar"
 tags = []
 draft = false
-description = "A collection of tools and goodies"
+description = "My personal technology radar"
 +++
 include::globals.adoc[]
-== Technical stuff
 
-https://backstage.io[Backstage]
+== Section 1: Developer Tooling & Testing
+Tools and frameworks that support the development and testing process
 
-An open source framework for building developer portals. Powered by a centralized software catalog, Backstage restores order to your infrastructure and enables your product teams to ship high-quality code quickly — without compromising autonomy.
+*Adopt*
 
-https://kaitai.io/[Kaitai Struct]
+- http://www.jetbrains.com/idea[IntelliJ IDEA] IntelliJ IDEA, the one and only IDE you will ever need!
+- https://playwright.dev[Playwright] Industry standard for end-to-end testing, offering superior reliability and features compared to alternatives
+- https://www.testcontainers.org/[Testcontainers] Essential for modern integration testing, especially in microservices environments
+- https://storybook.js.org/[Storybook] De facto standard for component development and documentation in modern frontend development
+- https://www.cypress.io/[Cypress] Mature and widely adopted for frontend testing, though consider Playwright for new projects
 
-A new way to develop parsers for binary structures.
+*Assess*
 
-https://playwright.dev[Playwright]
+- https://insomnia.rest/[Insomnia] Solid API development tool, though consider if your team needs more enterprise features
+- http://pitest.org/[Pitest : Real world mutation testing] PIT is a state of the art mutation testing system, providing gold standard test coverage for Java and the jvm. Its fast, scalable and integrates with modern test and build tooling.
+- http://infinitest.github.io/[infinitest] Useful for continuous testing, but evaluate if it fits your development workflow
 
-Playwright enables reliable end-to-end testing for modern web apps.
+*Hold*
 
-https://jsoncrack.com/editor[JSON Crack]
+- http://seleniumhq.org/[Selenium] While still used, newer tools like Playwright offer better developer experience
+- https://github.com/powermock/powermock/[PowerMock] Use with caution, prefer proper dependency injection and design patterns
 
-Visualize, analyze, and manipulate data with ease, a versatile and powerful tool for data representation and exploration.
+*Drop*
 
-https://www.desmos.com/[Desmos]
+- http://sqlfiddle.com/[SQL Fiddle] Better alternatives exist for database experimentation
+- http://www.balsamiq.com/[Balsamiq mockups] More modern UI/UX design tools available now
 
-Desmos is an advanced graphing calculator implemented as a web application and a mobile application written in TypeScript and JavaScript.
 
-https://architecture-antipatterns.tech/[Architecture Antipatterns]
+== Section 2: Architecture & Design
+Patterns, practices, and tools for software architecture
 
-Discover common architecture antipatterns, learn how to avoid them and overcome design pitfalls! Gain valuable insights, practical advice, and real-world examples to build better software architectures and improve existing ones.
+*Adopt*
 
-https://roca-style.org/[Resource-Oriented Client Architecture]
+- https://docs.dependencytrack.org/[Dependency-Track] Essential for modern software supply chain security
+- https://cyclonedx.org/[OWASP CycloneDX] Critical for software supply chain risk management
+- http://scs-architecture.org/[scs-architecture.org] Valuable pattern for microservices organization
 
-A collection of simple recommendations for decent Web application frontends.
+*Assess*
 
-https://www.plotjuggler.io/[PlotJuggler]
+- https://backstage.io[Backstage] Leading solution for developer portals and internal developer platforms
+- https://architecture-antipatterns.tech/[Architecture Antipatterns] Valuable knowledge base, but verify against current best practices
+- https://roca-style.org/[Resource-Oriented Client Architecture] Solid principles for frontend architecture
 
-PlotJuggler is a tool to visualize time series that is fast, powerful and intuitive.
+*Hold*
 
-https://docs.dependencytrack.org/[Dependency-Track]
+- http://www.arc42.de/[arc42: Ressourcen für Softwarearchitekten] Good foundation but consider more modern documentation approaches
+- http://modeling-languages.com/[modeling-languages.com] Useful resource but verify current relevance
 
-Dependency-Track is an intelligent Component Analysis platform that allows organizations to identify and reduce risk in the software supply chain. Dependency-Track takes a unique and highly beneficial approach by leveraging the capabilities of Software Bill of Materials (SBOM). This approach provides capabilities that traditional Software Composition Analysis (SCA) solutions cannot achieve.
+*Drop*
 
-https://cyclonedx.org/[OWASP CycloneDX]
+- http://caminao.wordpress.com/[caminao.wordpress.com] Outdated content
+- http://www.inf.usi.ch/phd/wettel/codecity.html[CodeCity] Obsolete visualization approach
 
-OWASP CycloneDX is a lightweight Software Bill of Materials (SBOM) standard designed for use in application security contexts and supply chain component analysis.
 
-Strategic direction and maintenance of the specification is managed by the CycloneDX Core working group, with origins in the OWASP community.
+== Section 3: Data & Analytics
+Tools and frameworks for data processing and visualization
 
-https://helm.sh/[Helm]
+*Adopt*
 
-Helm is the best way to find, share, and use software built for Kubernetes.
+- https://grafana.com/[Grafana] Industry standard for monitoring and visualization
+- https://jsoncrack.com/editor[JSON Crack] Modern tool for JSON data visualization and analysis
+- https://www.plotjuggler.io/[PlotJuggler] Powerful tool for time series visualization
+- http://d3js.org/[D3.js] Still the gold standard for custom data visualization
 
-https://kustomize.io/[Kustomize]
+*Assess*
 
-Kustomize introduces a template-free way to customize application configuration that simplifies the use of off-the-shelf applications.
+- https://www.desmos.com/[Desmos] Excellent for mathematical visualization, though evaluate needs
+- https://github.com/marcotcr/lime[Lime] Important for ML model explainability
+- http://flywaydb.org/[FlywayDB] Tool to manage database schema and content
 
-https://www.cypress.io/[Cypress]
+*Hold*
 
-The web has evolved. Finally, testing has too. Fast, easy and reliable testing for anything that runs in a browser.
+- http://www.gnu.org/software/octave[GNU Octave] Consider Python or Julia ecosystem alternatives
+- http://masonry.desandro.com/[Masonry] Still useful but evaluate modern CSS Grid/Flexbox first
+- http://www.liquibase.org/[Liquibase] Consider FlywayDB as an alternative
 
-https://insomnia.rest/[Insomnia]
+*Drop*
 
-Design and debug APIs like a human, not a robot.
+- https://www.marmoset.co/hexels/[Hexels] Better alternatives exist for grid-based art
+- http://stephaneginier.com/sculptgl[Sculpt GL] Limited maintenance, better alternatives exist
 
-https://camunda.com/[Camunda BPMN / DMN]
 
-The Camunda Workflow Engine is the right choice for both (micro-)service orchestration and human task management.
+== Section 4: Infrastructure & Deployment
+Tools for managing and deploying applications
 
-https://github.com/marcotcr/lime[Lime]
+*Adopt*
 
-Lime: Explaining the predictions of any machine learning classifier.
+- https://helm.sh/[Helm] Essential tool for Kubernetes deployments
+- https://kustomize.io/[Kustomize] Important for Kubernetes configuration management
+- https://kafka.apache.org/[Apache Kafka] Standard for event streaming platforms
+- https://www.keycloak.org/[Keycloak] Leading open-source IAM solution
+- https://www.varnish-cache.org/[Varnish HTTP Cache] Still relevant for HTTP caching needs
 
-https://lernajs.io[Lerna]
+*Assess*
 
-A tool for managing JavaScript projects with multiple packages.
+- https://github.com/resilience4j/resilience4j[Resilience4j] Modern fault tolerance library for Java
 
-https://postcss.org[PostCSS]
+*Hold*
 
-A tool for transforming CSS with JavaScript.
+- https://camunda.com/[Camunda BPMN / DMN] Consider cloud-native workflow alternatives
+- http://www.togglz.org/Togglz[Togglz] Evaluate against modern feature flag services
+- http://hazelcast.org/[Hazelcast IMDG] Evaluate against cloud-native alternatives
 
-https://storybook.js.org/[Storybook]
+*Drop*
 
-Storybook is an open source tool for developing UI components in isolation for React, Vue, Angular, and more. It makes building stunning UIs organized and efficient.
+- http://en.wikipedia.org/wiki/Edge_Side_Includes[Edge Side Includes] Better alternatives for micro-frontends exist
+- http://windup.jboss.org/index.html[JBoss Windup] Limited relevance in modern cloud environments
 
-https://www.testcontainers.org/[Testcontainers]
 
-Testcontainers is a Java library that supports JUnit tests, providing lightweight, throwaway instances of common databases, Selenium web browsers, or anything else that can run in a Docker container.
+== Section 5: Development Languages & Frameworks
+Programming languages, frameworks, and related tools
 
-https://grafana.com/[Grafana]
+*Adopt*
 
-The open platform for beautiful analytics and monitoring
+- https://gohugo.io/[Hugo] Leading static site generator
+- http://asciidoctor.org/[Asciidoctor] Toolchain for converting AsciiDoc content to HTML5, DocBook 5 (or 4.5) and other formats.
+- http://www.redblobgames.com/[Red Blob Games] A wonderful resource about computer algorithms involved in game programming
+- https://jakearchibald.com/2014/offline-cookbook[Jake Archibald: The offline cookbook] Jake Archibald writes about offline Web Applications
+- http://addyosmani.com/resources/essentialjsdesignpatterns/book/[Addy Osmani; JavaScript Design Patterns] An eBook about Design Patterns with JavaScript
+- http://pragprog.com/[The Pragmatic Bookshelf] The Pragmatic Bookshelf, the source of knowledge
 
-https://kafka.apache.org/[Apache Kafka]
+*Assess*
 
-Kafka is used for building real-time data pipelines and streaming apps. It is horizontally scalable, fault-tolerant, wicked fast, and runs in production in thousands of companies.
+- http://angularjs.org/[Angular] Mature framework with strong enterprise adoption
+- http://www.gradle.org/[Gradle Build Tool] Standard build tool for Java ecosystem
+- https://postcss.org[PostCSS] A tool for transforming CSS with JavaScript.
+- https://lernajs.io[Lerna] Evaluate against newer monorepo tools
+- http://www.eclipse.org/aspectj/[AspectJ] Still relevant for specific use cases
+- https://kaitai.io/[Kaitai Struct] A new way to develop parsers for binary structures.
+- http://cbor.io/[The Concise Binary Object Representation] Consider Avro as an alternative
 
-https://www.keycloak.org/[Keycloak]
+*Hold*
 
-Keycloak is an open source Identity and Access Management solution aimed at modern applications and services. It makes it easy to secure applications and services with little to no code.
+- http://lesscss.org/[LessCSS] Consider modern CSS features first
+- http://www.querydsl.com/[QueryDSL] Evaluate against modern alternatives
+- http://juel.sourceforge.net/[JUEL] Limited use cases in modern development
 
-https://gohugo.io/[Hugo]
+*Drop*
 
-Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.
+- http://myfaces.apache.org/extensions/cdi/[MyFaces CODI] Outdated JSF extension
+- http://ocpsoft.org/prettyfaces/[PrettyFaces] Outdated URL handling for JSF
+- http://arquillian.org/[arquillian.org] Arquillian is framework to write tests for JEE applications.
+- http://mogwai.sourceforge.net/[Project Mogwai] Better alternatives are available, but I still love this project
 
-http://cbor.io/[The Concise Binary Object Representation ]
-
-The Concise Binary Object Representation (CBOR) is a data format whose design goals include the possibility of extremely small code size, fairly small message size, and extensibility without the need for version negotiation.
-
-http://www.redblobgames.com/[Red Blob Games]
-
-A wonderful resource about computer algorithms involved in game programming.
-
-https://jakearchibald.com/2014/offline-cookbook[Jake Archibald: The offline cookbook]
-
-Jake Archibald writes about offline Web Applications.
-
-http://scs-architecture.org/[scs-architecture.org]
-
-The Self-contained System (SCS) approach is an architecture that focuses on a separation of the functionality into many independent systems, making the complete logical system a collaboration of many smaller software systems. This avoids the problem of large monoliths that grow constantly and eventually become unmaintainable.
-
-https://www.varnish-cache.org/[Varnish HTTP Cache]
-
-Varnish is an HTTP accelerator designed for content-heavy dynamic web sites as well as heavily consumed APIs. In contrast to other web accelerators, such as Squid, which began life as a client-side cache, or Apache and nginx, which are primarily origin servers, Varnish was designed as an HTTP accelerator. Varnish is focused exclusively on HTTP, unlike other proxy servers that often support FTP, SMTP and other network protocols.
-
-http://hazelcast.org/[Hazelcast IMDG]
-
-The Leading Open Source In-Memory Data Grid: Distributed Computing, Simplified.
-
-http://asciidoctor.org/[Asciidoctor]
-
-Asciidoctor is a fast text processor and publishing toolchain for converting AsciiDoc content to HTML5, DocBook 5 (or 4.5) and other formats.
-
-http://sqlfiddle.com/[SQL Fiddle]
-
-SQLFiddle is a tool to quickly test sql statements on different databases such as MySQL, PostgreSQL or MSSQL.
-
-http://pitest.org/[Pitest : Real world mutation testing]
-
-PIT is a state of the art mutation testing system, providing gold standard test coverage for Java and the jvm. Its fast, scalable and integrates with modern test and build tooling.
-
-http://infinitest.github.io/[infinitest]
-
-Infinitest is a Continuous Testing plugin for Eclipse and IntelliJ. Each time a change is made on the source code, Infinitest runs all the tests that might fail because of these changes.
-
-https://www.marmoset.co/hexels/[Hexels]
-
-Hexels is a brand new, grid-based art program for Mac and PC that lets you paint with shapes.
-
-http://www.gnu.org/software/octave[GNU Octave]
-
-GNU Octave is a high-level interpreted language, primarily intended for numerical computations. It provides capabilities for the numerical solution of linear and nonlinear problems, and for performing other numerical experiments. It also provides extensive graphics capabilities for data visualization and manipulation. Octave is normally used through its interactive command line interface, but it can also be used to write non-interactive programs. The Octave language is quite similar to Matlab so that most programs are easily portable.
-
-http://www.togglz.org/Togglz[Togglz]
-
-Togglz is an implementation of the http://martinfowler.com/bliki/FeatureToggle.html[Feature Toggle Pattern] for Java. Feature Toggles are a very common agile development practices in the context of continuous deployment and delivery. The basic idea is to associate a toggle with each new feature you are working on. This allows you to enable or disable these features at application runtime, even for individual users.
-
-http://masonry.desandro.com/[Masonry]
-
-Masonry is a JavaScript grid layout library. It works by placing elements in optimal position based on available vertical space, sort of like a mason fitting stones in a wall. You’ve probably seen it in use all over the Internet.
-
-https://github.com/resilience4j/resilience4j[Resilience4j]
-
-Resilience4j is a lightweight, easy-to-use fault tolerance library inspired by
-Netflix Hystrix, but designed for Java 8 and functional programming. Lightweight, because the library only uses Vavr, which does not have any other external library dependencies. Netflix Hystrix, in contrast, has a compile dependency to Archaius which has many more external library dependencies such as Guava and Apache Commons Configuration.
-
-http://windup.jboss.org/index.html[JBoss Windup]
-
-JBoss Windup is a tool to simplify JEE application migration from one container to another.
-
-http://addyosmani.com/resources/essentialjsdesignpatterns/book/[Addy Osmani; JavaScript Design Patterns]
-
-An eBook about Design Patterns with JavaScript.
-
-http://stephaneginier.com/sculptgl[Sculpt GL]
-
-A browser based WebGL sculpting tool. Cool!
-
-http://www.oracle.com/technetwork/java/javafx/community/3rd-party-1844355.html[JavaFX Third Party Tools and Utilities]
-
-JavaFX 3rd party tools & utilities.
-
-http://msdn.microsoft.com/en-gb/library/fp160953.aspx[Microsoft JavaScript API for Office]
-
-JavaScript API for Microsoft Office.
-
-http://www.jetbrains.com/idea[IntelliJ IDEA]
-
-IntelliJ IDEA, the one and only IDE you will ever need!
-
-http://modeling-languages.com/[modeling-languages.com]
-
-All you wanted to know about software modeling and model-driven engineering
-
-http://www.gradle.org/[Gradle Build Tool]
-
-Gradle is build automation evolved. Gradle can automate the building, testing, publishing and deployment of software packages.
-
-http://caminao.wordpress.com/[caminao.wordpress.com]
-
-Caminao's way. Do systems know how symbolic they are?
-
-http://www.arc42.de/[arc42: Ressourcen für Softwarearchitekten]
-
-Resources for software developers and architects.
-
-http://arquillian.org/[arquillian.org]
-
-Arquillian is framework to write tests for JEE applications.
-
-http://d3js.org/[D3.js]
-
-D3Js is a JavaScript library for visualisation of data driven documents. It provides some very cool layouts and animation effects.
-
-http://pragprog.com/[The Pragmatic Bookshelf]
-
-The Pragmatic Bookshelf, the source of knowledge
-
-http://en.wikipedia.org/wiki/Edge_Side_Includes[Edge Side Includes]
-
-Edge Side Includes(ESI) is a W3C standard for server side web content integration. ESI is a great alternative to the Java JSR168/268 Portlet specification as it is more lightweight and also supports technologies like CDN(content delivery networks) and true SOA in web applications.
-
-http://mogwai.sourceforge.net/[Project Mogwai]
-
-Mogwai ERDesignerNG is a free Java based entity relationship modeling tool. It is my Open Source Project and hosted on SourceForge.net. I am working on it since 2002.
-
-http://www.balsamiq.com/[Balsamiq mockups]
-
-Using Balsamiq we can create nice looking user interface mockups and storyboards.
-
-http://lesscss.org/[LessCSS]
-
-LessCSS is a tool to generate dynamic CSSon server &amp; client side
-
-http://myfaces.apache.org/extensions/cdi/[MyFaces CODI]
-
-Apache MyFaces CODI provides some very cool extensions for CDI(JSR 299). Check out the slides at http://de.slideshare.net/os890/myfaces-codi-conversations[MyFaces CODI Slides] . CODI and JBoss Seam will become the http://incubator.apache.org/deltaspike/[DeltaSpike] project, which is currently in incubation status.
-
-http://www.querydsl.com/[QueryDSL]
-
-QueryDSL is a framework to create domain specific languages for querying data with JPA, Hibernate, SQL or even Lucene.
-
-http://ocpsoft.org/prettyfaces/[PrettyFaces]
-
-PrettyFaces is a JSF extension creating RESTful URLs or page actions for JSF based applications.
-
-http://juel.sourceforge.net/[JUEL]
-
-Project JUEL offers a high performance implementation of the Java Unified Expression Language. It can be a drop-in replacement for JSF applications to tune their performance.
-
-http://flywaydb.org/[FlywayDB]
-
-Flyway is an agile database migration framework for Java
-
-http://www.liquibase.org/[Liquibase]
-
-Liquibase supports database change management and refactorings.
-
-http://www.eclipse.org/aspectj/[AspectJ]
-
-AspectJ is a leading Aspect Oriented Programing framework.
-
-https://github.com/powermock/powermock/[PowerMock]
-
-PowerMock is a framework extending EasyMock functionalities with other features like mocking of static classes
-
-http://angularjs.org/[Angular]
-
-AngularJS is a toolset for building the framework most suited to your application development(taken from project website).
-
-http://seleniumhq.org/[Selenium]
-
-Selenium is a capture-replay testing tool for browser based applications
-
-http://www.guigarage.com/[Guigarage]
-
-A useful JavaFX ressource
-
-http://www.inf.usi.ch/phd/wettel/codecity.html[CodeCity]
-
-CodeCity is an integrated environment for software analysis, in which software systems are visualized as interactive, navigable 3D cities.
-
-http://www.tomjewett.com/dbdesign/dbdesign.php[Database design with UML and SQL]
-
-A cool summary about database design with UML and SQL.

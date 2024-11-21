@@ -44,7 +44,7 @@ enableGitInfo = true
     weight = 10
 
 [[menu.main]]
-    name = "Tools & Goodies"
+    name = "Technology Radar"
     url = "/global/toolsgoodies"
     weight = 5
 
