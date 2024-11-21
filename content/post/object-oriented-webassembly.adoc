@@ -3,6 +3,7 @@ date = "2018-01-01T12:00:00+01:00"
 title = "Mastering Object-Oriented Programming in WebAssembly: From High-Level to Low-Level"
 tags = ["Compiler", "Interesting", "Performance", "JavaScript", "HTML5", "Web", "WebAssembly"]
 draft = false
+booktitle = "How Little Java Met WebAssembly: A Tale of High-Level Dreams and Low-Level Magic"
 description = "Journey through the fascinating world of WebAssembly and discover how high-level object-oriented concepts magically transform into efficient low-level code! From virtual function tables to memory management tricks, this deep dive shows how modern browsers execute your favorite OOP patterns at lightning speed."
 abstract = "This article explores how object-oriented programming concepts are implemented in WebAssembly, a low-level binary instruction format for stack-based virtual machines. It demonstrates the translation of high-level language features like classes, methods, and inheritance into WebAssembly's basic primitive types and functions. Through practical examples, it explains crucial concepts such as virtual function tables, memory management, and object allocation, providing insights into how modern compilers bridge the gap between high-level programming languages and WebAssembly's efficient but limited instruction set."
 +++

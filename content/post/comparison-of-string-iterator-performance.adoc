@@ -3,6 +3,7 @@ date = "2013-09-05T08:35:15+02:00"
 title = "Java String Iteration: The Hidden Performance Trap"
 tags = ["Interesting", "Performance"]
 draft = false
+booktitle = "The Tale of the Sluggish String Loop: A Java Performance Story"
 description = "Discover the surprising performance difference between two common Java string iteration methods where charAt() might be secretly slowing down your code. A simple switch to character array iteration can make your string processing more than twice as fast!"
 abstract = "This technical article compares two common approaches to string iteration in Java: traditional index-based iteration using charAt() versus enhanced for-loop with toCharArray(). Performance testing reveals that the character array method is significantly faster, taking only 91 microseconds compared to 200 microseconds for the charAt() approach. This finding suggests that using toCharArray() with enhanced for-loops is the more efficient choice for string iteration tasks in Java."
 +++

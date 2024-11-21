@@ -3,6 +3,7 @@ date = "2013-09-05T08:46:56+02:00"
 title = "Building a Touch-Responsive OpenGL Triangle on Android"
 tags = ["Android", "Interesting", "OpenGL"]
 draft = false
+booktitle = "The Little Triangle That Could Spin"
 description = "Dive into the world of modern Android graphics with an interactive OpenGL 2.0 implementation that brings a colorful triangle to life! With just a few touches, watch the triangle dance across your screen in a smooth, responsive animation that showcases the power of hardware-accelerated graphics on mobile devices."
 abstract = "This comprehensive guide demonstrates how to implement OpenGL 2.0 graphics on Android, featuring a touch-interactive rotating triangle. The tutorial covers essential components including Activity setup, GLSurfaceView implementation, renderer configuration, shader programming, and touch event handling. Complete with working code examples, it shows how to create a basic yet interactive 3D graphics application using modern OpenGL ES 2.0 features, making it perfect for developers looking to get started with OpenGL on Android."
 +++

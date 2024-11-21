@@ -3,6 +3,7 @@ date = "2013-03-25T10:03:24+01:00"
 title = "Cross-Cutting Concerns: Bridging Scala and AspectJ with Maven"
 tags = ["AOP", "Interesting", "Scala"]
 draft = false
+booktitle = "How Little Maven Helped Scala and AspectJ Become Best Friends"
 description = "Discover how to seamlessly integrate AspectJ's powerful aspect-oriented programming with Scala projects using Maven, despite some IDE challenges! This technical fusion shows how to implement cross-cutting concerns like security and transaction handling in Scala while leveraging AspectJ's bytecode manipulation capabilities."
 abstract = "This article explores the technical integration of AspectJ and Scala within a Maven project environment. While functional programming in Scala addresses many traditional concerns, AspectJ's bytecode manipulation capabilities offer unique advantages for handling cross-cutting concerns. The guide details the setup process, including Maven configuration, compilation order considerations, and working around IDE limitations. Though IDE support is currently limited, especially for .aj syntax, the article demonstrates a practical approach using annotation-style aspects and provides working examples of aspect implementation in both Java and Scala code."
 +++

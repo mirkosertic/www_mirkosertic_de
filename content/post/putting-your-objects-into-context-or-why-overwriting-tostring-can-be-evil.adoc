@@ -3,6 +3,7 @@ date = "2012-08-06T03:32:14+02:00"
 title = "The Hidden Dangers of toString(): Keeping Business and UI Logic Separate"
 tags = ["Interesting"]
 draft = false
+booktitle = "The Little Object That Tried To Do Too Much: A Tale of toString()"
 description = "Discover why blindly overriding toString() in Java can lead you down a dangerous path of mixed responsibilities and unexpected behavior. Learn how mixing business logic with UI presentation through toString() can create maintenance nightmares and surprising runtime exceptions, especially when working with ORM frameworks."
 abstract = "This article explores the common pitfall of overriding toString() in Java business objects for UI display purposes. It discusses how this practice violates the single responsibility principle and can lead to maintenance issues, context-dependent problems, and unexpected behavior with ORM frameworks like Hibernate. The piece emphasizes the importance of keeping business logic separate from presentation concerns and provides insights into better design practices for object representation in different contexts."
 +++

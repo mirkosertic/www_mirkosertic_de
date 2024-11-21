@@ -3,6 +3,7 @@ date = "2012-07-28T02:37:33+02:00"
 title = "Simplify I18N: XML-Based Resource Bundles for Safer Java Internationalization"
 tags = ["I18N", "XML"]
 draft = false
+booktitle = "Little Bundle's Big Adventure: How XML Made Resource Management Fun"
 description = "Say goodbye to messy property files and risky hardcoded resource keys in Java! Transform your I18N workflow with a sleek XML-based approach that generates type-safe constant interfaces and keeps all your translations neatly organized in one place."
 abstract = "This article introduces an XML-based approach to Java internationalization that addresses common challenges with traditional property files. Using the mogwai I18N framework, developers can maintain translations in a single XML file and leverage generated Java constant interfaces for type-safe resource access. The solution includes Maven integration for automatic generation of property files and interfaces, making internationalization maintenance more manageable and refactoring-friendly."
 +++

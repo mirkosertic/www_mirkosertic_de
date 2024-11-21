@@ -3,6 +3,7 @@ date = "2012-07-31T08:01:03+02:00"
 title = "Smart Thread Naming: Your Secret Weapon for Debugging Multi-User Applications"
 tags = ["AOP", "Logging", "Threading"]
 draft = false
+booktitle = "The Little Thread That Could Tell Stories: A Tale of Debugging Made Easy"
 description = "Discover how naming threads intelligently can revolutionize your debugging experience in multi-user environments, without relying on complex logging frameworks. By simply using thread names as meta-information carriers, tracking user-specific issues becomes a breeze, whether you're dealing with stack traces or heap dumps."
 abstract = "This article introduces a practical approach to tracking user activities and errors in multi-user Java applications through strategic thread naming. Instead of relying on complex logging frameworks, this technique leverages the thread name as a carrier for meta-information, making it easier to debug and analyze issues across different execution contexts. The implementation uses standard Java features and can be applied through ServletFilters, EJB Interceptors, or AOP aspects, providing valuable insights during debugging sessions and runtime monitoring through tools like JConsole or JVisualVM."
 +++

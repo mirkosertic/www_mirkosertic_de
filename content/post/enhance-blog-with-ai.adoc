@@ -3,6 +3,7 @@ date = "2024-11-10T00:00:00+02:00"
 title = "Supercharge Your Hugo Blog with Claude: Automated Content Enhancement using Anthropic's API"
 tags = ["AI", "Research", "SEO", "HTML5", "Hugo", "AsciiDoc", "CMS"]
 draft = false
+booktitle = "How Little Hugo's Blog Got Super Powers"
 description = "Transform existing blog content into polished gems using AI-powered optimization. This practical guide demonstrates how to leverage Anthropic's Claude API to enhance Hugo blog posts automatically, improving titles, descriptions, and readability. Learn how to implement a straightforward workflow that breathes new life into your existing AsciiDoc content while maintaining your authentic voice."
 abstract = "A practical exploration of using Anthropic's Claude API to automatically enhance existing Hugo blog posts. The article covers the technical implementation of content parsing and API integration, while focusing on the benefits and limitations of AI-assisted content optimization. Includes workflow descriptions and best practices for maintaining content authenticity."
 +++
@@ -292,7 +293,7 @@ Please summarize the following text stored in the content tags taken from a blog
 The content is formatted as AsciiDoc, so please handle headlines and code formattings accordingly. 
 The summary must not contain the phrases "the autor" or "the writer" or something like that and 
 must not be longer than three sentences. The summary should be in the witty, but not too technical 
-style and will be later used to generate a banner image for the blog entry. 
+style.
 
 Please format the answer as a machine readable json containing the attributes "title" and "summary". 
 The title attribute of the response should contain an alternative title, based on the title tag of the 

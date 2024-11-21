@@ -235,10 +235,14 @@ function convertToMessage(frontMatter, content) {
 Please summarize the following text stored in the content tags taken from a blog in a catchy way. The content is formatted as AsciiDoc, 
 so please handle headlines and code formattings accordingly. 
 The summary must not contain the phrases "the autor" or "the writer" or something like that and must not be longer than three sentences. 
-The summary should be in the witty, but not too technical style and will be later used to generate a banner image for the blog entry. 
+The summary should be in the witty, but not too technical style. 
 Please format the answer as a machine readable json containing the attributes "title" and "summary". 
 The title attribute of the response should contain an alternative title, based on the title tag of the content and the content itself.
 Please also try to generate keywords for the content and return them as the "keywords" attribute so they can be used as HTML meta data. 
+
+Try to find the problem or motivation the content is about, and try to express this in the style of a childrens book title.
+Return this book title as the "booktitle" attribute of the response.
+
 Finally please try to generate an abstract for the content and return it as the "abstract" attribute of the response.
 </instructions>
     
@@ -281,6 +285,9 @@ async function handleSingleFile(entry) {
             }
             if (js.summary) {
                 frontMatter["ai_abstract"] = js.abstract;
+            }
+            if (js.booktitle) {
+                frontMatter["ai_booktitle"] = js.booktitle;
             }
         }
     }

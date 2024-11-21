@@ -3,6 +3,7 @@ date = "2012-09-10T06:48:34+02:00"
 title = "Layered Software Architecture: From Traditional to Onion Pattern"
 tags = ["Domain-driven Design", "Enterprise", "Modernization"]
 draft = false
+booktitle = "The Little Onion That Fixed the Software Mess"
 description = "Turn your software architecture inside out with the Onion pattern - putting business logic at the core instead of infrastructure! This elegant approach ensures clean dependencies and makes your code more maintainable by wrapping core functionality with decorative layers like security and logging."
 abstract = "This article compares traditional layered software architecture with the Onion Architecture pattern, highlighting how the latter addresses common dependency issues in complex business applications. While traditional approaches place infrastructure at the core with business logic dependent on it, the Onion Architecture inverts this relationship by positioning domain logic at the center, surrounded by supporting layers of infrastructure, security, and user interface components. This design pattern aligns well with Domain-Driven Design principles and provides better compile-time dependency validation through clear module boundaries."
 +++

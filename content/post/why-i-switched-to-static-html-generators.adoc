@@ -3,6 +3,7 @@ date = "2017-01-30T01:43:48+02:00"
 title = "From CMS to Static: A Journey to Blazing Fast Blogging"
 tags = ["HTML5", "Performance", "Web", "JavaScript", "Hugo", "AsciiDoc", "CMS"]
 draft = false
+booktitle = "The Little Blog That Could Go Faster"
 description = "Discover how a journey from DokuWiki through WordPress led to a powerful combination of Hugo and Asciidoctor for the perfect blogging setup. This tech evolution story showcases how sometimes less is more, especially when it comes to creating and delivering content at lightning speed."
 abstract = "This article chronicles the evolution of a blog from traditional CMS platforms to a modern static site setup using Hugo and Asciidoctor. It explores the benefits of moving away from dynamic content management systems, highlighting how the combination of Hugo's speed and Asciidoctor's powerful technical documentation features creates an ideal platform for technical blogging. The piece demonstrates practical examples of syntax highlighting, diagram generation, and UML creation, while emphasizing the advantages of simplified content delivery and improved security through static site generation."
 +++

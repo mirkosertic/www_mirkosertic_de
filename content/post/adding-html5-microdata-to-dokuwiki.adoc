@@ -3,6 +3,7 @@ date = "2013-04-13T12:45:14+02:00"
 title = "Supercharge Your DokuWiki with HTML5 Microdata Magic"
 tags = ["HTML5", "Microdata"]
 draft = false
+booktitle = "How Little DokuWiki Learned to Speak Search Engine Language"
 description = "Transform your DokuWiki into a semantic powerhouse by adding HTML5 Microdata - Google's preferred way to make your content machine-readable and SEO-friendly! With just a few tweaks to templates and parsers, your wiki pages will speak the language that search engines love."
 abstract = "This technical guide demonstrates how to enhance DokuWiki with HTML5 Microdata support, improving search engine optimization and semantic web capabilities. The article explains the basics of HTML5 Microdata, its advantages over RDF, and provides practical implementation steps including template modifications and parser customizations. Through concrete code examples, it shows how to integrate schema.org vocabularies into DokuWiki's structure, resulting in more meaningful and SEO-friendly content organization."
 +++

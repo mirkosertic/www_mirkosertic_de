@@ -3,6 +3,7 @@ date = "2012-11-22T03:37:03+01:00"
 title = "NoSQL Database Showdown: A CAP Theorem Perspective"
 tags = ["Database", "Interesting", "NoSQL"]
 draft = false
+booktitle = "The Three Database Wishes: Why You Can't Have Them All"
 description = "Dive into a comprehensive comparison of seven powerful databases, from MongoDB's big data prowess to Neo4J's flexible graph capabilities! Understand how the CAP theorem shapes their design choices, revealing why you can't have consistency, availability, and partition tolerance all at once in distributed systems."
 abstract = "This technical overview compares seven prominent databases across various dimensions including their genres, data types, transaction support, and key differentiators. The analysis extends to how each database adheres to the CAP theorem, which states that distributed databases can only achieve two out of three properties: consistency, availability, and partition tolerance. The comparison highlights how different databases make different trade-offs, with some focusing on consistency and availability (Redis, PostgreSQL, Neo4J), others on consistency and partition tolerance (MongoDB, HBase), and some choosing availability and partition tolerance (CouchDB). This understanding is crucial for selecting the right database for specific use cases in distributed systems."
 +++

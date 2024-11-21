@@ -3,6 +3,7 @@ date = "2013-03-19T10:54:04+01:00"
 title = "Seamlessly Integrating Scala Classes with JPA: A Master-Detail Persistence Guide"
 tags = ["Enterprise", "Interesting", "Scala"]
 draft = false
+booktitle = "How Little Scala Learned to Share Its Toys with Big Java's Database"
 description = "Discover how to persist Scala classes with JPA 2.0 while maintaining clean, boilerplate-free code! This clever integration showcases a master-detail relationship using Hibernate, with just one catch - stick to Java collections instead of Scala's native ones."
 abstract = "A comprehensive guide demonstrating how to effectively persist Scala classes using JPA 2.0 and Hibernate. The tutorial covers setting up a mixed Java/Scala project with Maven, implementing master-detail relationships, and handling entity persistence while leveraging Scala's @BeanProperty annotation to reduce boilerplate code. Special attention is given to collection handling and the necessary adjustments needed to make Scala classes work seamlessly with JPA, including proper constructor setup and field-level annotations."
 +++

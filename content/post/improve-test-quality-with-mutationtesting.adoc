@@ -3,6 +3,7 @@ date = "2017-02-14T00:00:00+01:00"
 title = "Beyond Code Coverage: Supercharging Your Tests with Mutation Testing"
 tags = ["JUnit", "Testing"]
 draft = false
+booktitle = "The Little Test That Could: A Tale of Finding Hidden Bugs"
 description = "Ever wondered if your 80% test coverage actually means anything? Discover how mutation testing introduces deliberate bugs to measure your tests' true effectiveness, turning your test suite from a paper tiger into a real watchdog! PITest makes this powerful technique accessible to Java developers with just a few lines of configuration."
 abstract = "This article explores how mutation testing can significantly improve test quality by going beyond traditional code coverage metrics. It introduces PITest, a powerful Java mutation testing framework that helps developers identify weaknesses in their test suites by introducing controlled defects into the code. The article demonstrates practical examples of how mutation testing can reveal inadequate test cases despite high code coverage, and discusses strategies for integrating mutation testing into code review systems and continuous integration pipelines, while acknowledging its limitations in complex testing scenarios."
 +++

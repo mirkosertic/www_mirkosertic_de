@@ -3,6 +3,7 @@ date = "2013-09-22T06:08:29+02:00"
 title = "Building Modern Enterprise Apps: DDD meets JSF, EJB, and CDI"
 tags = ["Domain-driven Design", "Enterprise"]
 draft = false
+booktitle = "How Little Java Enterprise Found Its Domain-Driven Friends"
 description = "Dive into an elegant Java Enterprise architecture that combines Domain-driven Design with JSF, EJB, and CDI to create maintainable applications. Experience how the CEC pattern (CDI-EJB-CDI) brings structure to your code while keeping domain logic clean and separated."
 abstract = "This article demonstrates a practical implementation of Domain-driven Design principles using Java Enterprise technologies. It details how to structure an application using JSF and PrettyFaces for presentation, EJB for application services, and CDI for domain logic, following the CEC (CDI-EJB-CDI) pattern. The implementation includes concrete examples of presentation layer components, application services, domain services, and infrastructure layers using JPA, providing a complete blueprint for building maintainable enterprise applications."
 +++

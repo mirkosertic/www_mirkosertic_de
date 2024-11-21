@@ -3,6 +3,7 @@ date = "2018-02-01T00:00:00+02:00"
 title = "Finding Love with GPU-Accelerated Matchmaking: A Tech Fairy Tale"
 tags = ["Performance", "Interesting", "OpenCL", "Compiler"]
 draft = false
+booktitle = "When Cupid Learned to Code: A Story of Vectors and Valentine's"
 description = "Four lonely IT professionals discover the power of OpenCL and vector mathematics to find their perfect matches right under their noses. Using cosine similarity and GPU acceleration, they transform their office cubicles into a high-tech matchmaking laboratory, proving that sometimes the best algorithms are powered by both silicon and serendipity."
 abstract = "This entertaining tech fairy tale follows four IT professionals who leverage OpenCL and vector mathematics to create a matchmaking system. By implementing cosine similarity calculations on GPU-accelerated hardware through Bytecoder, a Java-to-OpenCL cross-compiler, they not only solve their own romantic challenges but also demonstrate the practical applications of parallel processing in data-intensive tasks. The story showcases how modern GPU technology can process millions of similarity computations in seconds, while highlighting the accessibility of high-performance computing through familiar programming languages like Java."
 +++

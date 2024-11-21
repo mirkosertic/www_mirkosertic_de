@@ -3,6 +3,7 @@ date = "2012-07-20T02:18:59+02:00"
 title = "Smart Domain-Driven Queries: Leverage Your Domain Objects for Search Specifications"
 tags = ["Database", "Enterprise"]
 draft = false
+booktitle = "How Little Domain Objects Learned to Search: A Tale of Smart Queries"
 description = "Transform your domain objects into powerful query specifications without writing redundant code! Using Mogwai SpecificationBuilder, domain objects become dynamic query builders through clever proxy magic, making database searches both elegant and maintainable - just like creating mocks, but for queries."
 abstract = "This article explores an innovative approach to creating database query specifications by reusing domain objects instead of creating separate query objects or writing raw Hibernate/JPA queries. Using the Mogwai SpecificationBuilder library, developers can leverage existing domain models to construct type-safe, refactoring-friendly query specifications through CGLib proxies. This method reduces code redundancy, maintains clean repository interfaces, and provides a natural way to express search criteria while avoiding the complexity of traditional query specifications or the brittleness of direct HQL/Criteria usage."
 +++

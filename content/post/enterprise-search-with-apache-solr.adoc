@@ -3,6 +3,7 @@ date = "2012-07-30T10:30:07+02:00"
 title = "Building a Enterprise Search Engine in One Day with Apache Solr"
 tags = ["Enterprise", "Search", "User Interface"]
 draft = false
+booktitle = "How Little Solr Found All The Lost Documents"
 description = "Transform your file system into a powerful searchable knowledge base using Apache Solr's magic in just 24 hours! With a simple crawler, content extraction, and a Google-like UI, finding documents becomes as easy as pie - including cool features like similarity search and duplicate detection."
 abstract = "This tutorial demonstrates how to build a complete enterprise search solution using Apache Solr in just one day. It covers the installation of Solr, implementation of a file system crawler using SolrJ, and creation of a search interface with highlighting and similarity search features. The solution includes content extraction from various document formats using Apache Tika and provides a Google-like search experience with advanced features like MoreLikeThis for finding similar documents and detecting duplicates."
 +++

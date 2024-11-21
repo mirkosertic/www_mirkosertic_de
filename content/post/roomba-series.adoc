@@ -3,6 +3,7 @@ date = "2022-02-19T00:00:00+01:00"
 title = "DIY Robot Revolution: Transforming an Old Roomba into a Smart Autonomous System"
 tags = ["Roomba", "Robot", "DIY"]
 draft = false
+booktitle = "The Little Robot That Could: A Story of Second Chances"
 description = "Discover how a forgotten Roomba 581 gets a high-tech makeover with a Raspberry Pi brain, laser scanner, and sophisticated sensors! This exciting transformation project turns outdated cleaning hardware into a modern autonomous robot using ROS and advanced navigation systems."
 abstract = "This blog post introduces an exciting DIY project that transforms an outdated Roomba 581 vacuum robot into a modern autonomous system. The upgrade involves replacing the original control unit with a Raspberry Pi Zero 2 W running Ubuntu Linux, adding sophisticated sensors including a YDLiDAR X4 scanner, MPU6050 IMU, and HMC5883L magnetometer. The project leverages ROS (Robot Operating System) for control and promises to cover various aspects from system architecture to navigation implementation across a series of detailed technical posts."
 +++

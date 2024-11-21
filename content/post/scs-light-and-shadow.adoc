@@ -3,6 +3,7 @@ date = "2021-04-07T00:00:00+02:00"
 title = "Self-Contained Systems: A Practical Guide to Independent Software Architecture"
 tags = ["Database", "Enterprise", "Web", "Domain-driven Design"]
 draft = false
+booktitle = "How Little Software Systems Learned to Stand on Their Own"
 description = "Dive into the world of Self-Contained Systems (SCS), where independent software units reign supreme and synchronous communication is a thing of the past! This comprehensive guide explores how SCS combines technical architecture with team organization, showing practical ways to handle data storage, business logic, and user interfaces while keeping systems truly self-contained and teams autonomous."
 abstract = "This article provides a comprehensive analysis of Self-Contained Systems (SCS) architecture, examining both its technical and organizational aspects. It explores how SCS implements complete functional independence by combining data management, business logic, and user interfaces into cohesive units maintained by dedicated teams. The text covers crucial implementation aspects including data storage solutions, business logic organization, and user interface integration, while highlighting practical challenges and solutions. Special attention is given to team structure, communication patterns, and the integration of Domain-Driven Design principles. The article concludes with valuable lessons learned from real-world implementations, making it a practical guide for organizations considering or implementing SCS architecture."
 +++

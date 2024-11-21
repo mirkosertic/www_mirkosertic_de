@@ -3,6 +3,7 @@ date = "2013-09-21T03:03:19+02:00"
 title = "Simple CDI Magic: Command Line Apps with Weld and Static Producers"
 tags = ["Dependency Injection"]
 draft = false
+booktitle = "How Little Weld Learned to Share His Command Line Toys"
 description = "Unleash the power of CDI in command-line applications with a neat static producer trick! Pass command-line arguments to your Weld container and inject them into managed beans using this elegant solution that keeps your dependencies clean and tidy."
 abstract = "This technical guide demonstrates how to effectively bootstrap a CDI container in a Java SE command-line environment using Weld. It presents a practical solution for passing command-line arguments to managed beans through static producer methods, providing a clean and maintainable approach to dependency injection in standalone Java applications. The implementation showcases a singleton main class that manages the container lifecycle while maintaining proper separation of concerns."
 +++

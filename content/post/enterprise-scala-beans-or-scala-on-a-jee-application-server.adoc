@@ -3,6 +3,7 @@ date = "2013-03-26T08:50:41+01:00"
 title = "Creating Enterprise Scala Beans: When Scala Meets Java EE"
 tags = ["Enterprise", "Interesting", "Scala"]
 draft = false
+booktitle = "How Little Scala Learned to Play Nice with Big Java EE"
 description = "Discover how Scala can seamlessly power Enterprise Java Beans (EJBs) in a Java EE environment! A simple experiment with TomEE and a stateless session bean proves that Scala's Java interoperability makes Enterprise Scala Beans not just possible, but surprisingly straightforward."
 abstract = "This article demonstrates the integration of Scala with Java EE by implementing Enterprise Java Beans (EJBs) using Scala programming language. Using Apache TomEE 1.5.1 as the application server and Scala 2.10, a simple stateless session bean is created and successfully injected into a Java servlet using CDI. The implementation showcases Scala's excellent Java interoperability features and proves that Enterprise Scala Beans are a viable option for enterprise development."
 +++

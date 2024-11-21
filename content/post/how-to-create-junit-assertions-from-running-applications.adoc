@@ -3,6 +3,7 @@ date = "2013-10-01T07:20:37+02:00"
 title = "JUnit Test Assertions Made Easy: Generate Instead of Write"
 tags = ["Interesting", "JUnit", "Testing"]
 draft = false
+booktitle = "The Little Test That Could: How Jimmy JUnit Learned to Write Himself"
 description = "Transform debugging sessions into powerful JUnit assertions with a simple debugger trick! By using AssertGen.generate(), tedious assertion writing becomes a breeze, automatically converting running object states into comprehensive test validations."
 abstract = "This article demonstrates a practical approach to automating JUnit test assertion creation by leveraging runtime object states. Instead of manually writing numerous assertions for complex JavaBeans or entities, developers can use a simple AssertGen utility class during debugging sessions to automatically generate comprehensive assertion statements. The technique significantly reduces the time and effort required for writing thorough unit tests while ensuring proper validation of object properties. The article includes a complete implementation of the AssertGen class, showing how to convert various Java data types into appropriate assertion statements."
 +++

@@ -3,6 +3,7 @@ date = "2021-08-15T00:00:00+02:00"
 title = "Transform Legacy Swing Apps into Modern Web Applications with JetBrains Projector"
 tags = ["Java", "HTML5", "Web", "Swing", "User Interface", "Packaging", "Enterprise"]
 draft = false
+booktitle = "How Old Java Apps Learned to Dance on the Web"
 description = "Experience the magic of running Java Swing applications directly in your web browser without a single line of HTML code! JetBrains Projector breathes new life into legacy Swing applications by rendering them server-side and streaming them to any web browser, making modernization a breeze without the big-bang rewrite."
 abstract = "JetBrains Projector offers a revolutionary approach to modernizing Java Swing applications by enabling them to run in web browsers without significant code changes. This technology serves as a bridge between traditional desktop applications and modern web-based interfaces by implementing a remote rendering pipeline that streams drawing commands to browser-based clients. The solution is particularly valuable for large-scale enterprise applications, offering a practical migration path while maintaining functionality and reducing distribution overhead. Although some limitations exist, such as Java 11 requirement and specific JVM constraints, Projector presents a viable solution for modernizing legacy Swing applications without the risks and costs associated with complete rewrites."
 +++

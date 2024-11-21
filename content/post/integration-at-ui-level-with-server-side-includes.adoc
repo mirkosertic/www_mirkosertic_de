@@ -3,6 +3,7 @@ date = "2017-03-06T00:00:00+01:00"
 title = "Taming Microservices Chaos: Smart UI Integration with Server-Side Includes"
 tags = ["Domain-driven Design", "Integration", "User Interface", "Enterprise"]
 draft = false
+booktitle = "How Little Services Learned to Play Nice Together: A Tale of Self-Contained Systems"
 description = "Discover how Self-Contained Systems (SCS) and server-side includes can rescue you from microservices overload while maintaining clean architecture. Learn to compose user interfaces elegantly using SSI and create a seamless portal experience without the complexity of traditional service integration."
 abstract = "This article explores an alternative approach to microservices architecture using Self-Contained Systems (SCS) and server-side includes (SSI) for UI-level integration. It addresses common challenges in microservices implementations and presents a practical solution for creating maintainable, scalable systems while avoiding the pitfalls of over-fragmentation. The piece covers essential aspects of UI composition patterns, session management, and common implementation challenges, providing a comprehensive guide for architects and developers looking to simplify their distributed systems architecture."
 +++

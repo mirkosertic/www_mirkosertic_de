@@ -3,6 +3,7 @@ date = "2017-10-26T00:00:00+02:00"
 title = "Crafting Smart Search: Building a Custom Query Parser for Apache Solr"
 tags = ["Enterprise", "Interesting", "Search"]
 draft = false
+booktitle = "How Little Query Parser Learned to Understand What Users Really Want"
 description = "Dive into the world of smarter search by creating a custom query parser for Apache Solr that transforms simple phrases into sophisticated search patterns! This clever implementation ranks results from exact matches to loose term associations, making search results more intelligent and user-friendly."
 abstract = "This technical guide demonstrates how to implement a custom query parser plugin for Apache Solr that enhances search capabilities beyond the default functionality. The implementation creates a sophisticated ranking system that prioritizes exact phrase matches while still capturing looser term associations, providing more nuanced search results. The article covers the basic plugin structure, configuration requirements, and integration with Solr, offering practical insights into extending Solr's search capabilities through its plugin API."
 +++

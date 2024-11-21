@@ -3,6 +3,7 @@ date = "2012-07-29T08:42:57+02:00"
 title = "Domain-driven Design Demystified: Essential Building Blocks and Patterns"
 tags = ["Domain-driven Design", "Modernization"]
 draft = false
+booktitle = "How Little Bobby Learned to Speak Software and Business in the Same Language"
 description = "Dive into the fascinating world of Domain-driven Design (DDD), where complex business domains meet elegant software solutions! From strategic patterns like Bounded Contexts to tactical elements like Entities and Value Objects, discover how DDD brings clarity to software architecture and bridges the gap between business experts and developers."
 abstract = "This comprehensive guide introduces Domain-driven Design (DDD), a software development approach that focuses on modeling complex business domains. The article covers core DDD definitions, prerequisites for successful implementation, and essential building blocks divided into strategic and tactical patterns. Strategic patterns include domains, bounded contexts, and context mapping, while tactical patterns encompass entities, value objects, aggregates, domain events, services, repositories, modules, and factories. Clear examples illustrate each concept, making complex DDD principles more accessible to both newcomers and experienced developers."
 +++

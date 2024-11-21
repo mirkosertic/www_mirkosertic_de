@@ -3,6 +3,7 @@ date = "2013-05-07T09:37:10+02:00"
 title = "Supercharging Web Integration: JavaFX Meets HTML5 Microdata Magic"
 tags = ["Enterprise", "HTML5", "Interesting", "User Interface"]
 draft = false
+booktitle = "Little Portal's Big Adventure: How HTML Tags Made Friends Across Different Websites"
 description = "Discover how to build a sleek portal solution without expensive containers by combining JavaFX's WebView with HTML5 Microdata! This clever approach enables seamless application integration through simple metadata annotations, making cross-application navigation a breeze while keeping your codebase clean and maintainable."
 abstract = "This article demonstrates an innovative approach to building application portals using JavaFX and HTML5 Microdata, offering a lightweight alternative to traditional Portlet solutions. By leveraging JavaFX's WebView component and enriching HTML content with semantic Microdata annotations, developers can create flexible, maintainable portal solutions that enable sophisticated cross-application navigation and integration scenarios. This approach works across different technology stacks and can be implemented both client-side and server-side, providing a versatile solution for modern application integration challenges."
 +++

@@ -3,6 +3,7 @@ date = "2016-11-24T06:14:41+01:00"
 title = "Java to JavaScript: TeaVM Outperforms GWT in Compilation Speed Race"
 tags = ["Compiler", "HTML5", "Performance", "Web", "JavaScript"]
 draft = false
+booktitle = "The Little Compiler That Could: How TeaVM Raced Past the Big Old GWT"
 description = "TeaVM proves itself as the speed champion in Java-to-JavaScript compilation, leaving GWT 2.8.0 in the dust with impressive compile times and smaller output sizes! While GWT surprisingly shows slower performance than its predecessor, TeaVM continues to rock the transpiler world with both its stable 0.4.3 and upcoming 1.0.0 versions."
 abstract = "A performance comparison between GWT 2.8.0 and TeaVM versions 0.4.3 and 1.0.0-SNAPSHOT reveals significant differences in compilation speed and output file sizes. TeaVM demonstrates superior performance with compilation times around 10-12 seconds compared to GWT's 43 seconds, while also producing smaller JavaScript output files. The analysis, based on a JavaFX game authoring system, shows TeaVM's continued improvement and stability, making it a preferred choice for Java-to-JavaScript transpilation."
 +++

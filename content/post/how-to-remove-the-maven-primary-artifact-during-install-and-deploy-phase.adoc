@@ -3,6 +3,7 @@ date = "2016-06-17T04:35:13+02:00"
 title = "Maven Magic: Removing Primary Artifacts While Keeping RPMs"
 tags = ["Maven"]
 draft = false
+booktitle = "The Little Package That Stayed: A Tale of Maven Repository Cleanup"
 description = "When building RPMs with Maven, sometimes you want to keep just the RPM and ditch the WAR file during install and deploy phases. A neat Groovy one-liner can make those unwanted artifacts disappear like magic, saving precious repository space!"
 abstract = "This technical guide demonstrates how to efficiently manage Maven artifacts when building both WAR and RPM files, specifically focusing on removing the primary WAR artifact during install and deploy phases while retaining the RPM. Using the rpm-maven-plugin for package creation and a simple Groovy script through gmaven-plugin, developers can optimize their repository space by deploying only the necessary RPM artifacts. This approach provides a cleaner alternative to changing the Maven packaging type while maintaining build flexibility."
 +++

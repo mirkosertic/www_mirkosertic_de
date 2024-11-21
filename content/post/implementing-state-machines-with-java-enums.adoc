@@ -3,6 +3,7 @@ date = "2013-04-08T01:06:42+02:00"
 title = "Elegant State Machines: A Java Enum Approach"
 tags = ["Domain-driven Design"]
 draft = false
+booktitle = "The Little State Machine That Could: How Jimmy The Java Enum Found His Perfect Role"
 description = "Discover how Java Enums can revolutionize your State Machine implementations with less boilerplate and better persistence capabilities! This elegant approach shows how to leverage Enum's built-in behavior capabilities to create clean, maintainable state transitions while saying goodbye to interface complexity."
 abstract = "This article presents an innovative approach to implementing State Machines in Java using Enums instead of traditional interface-based implementations. The technique reduces boilerplate code, simplifies persistence with Hibernate, and maintains better encapsulation of state-dependent behavior. Through practical code examples, it demonstrates how to create a three-state machine with transition logic, while adhering to Command Query Separation (CQS) principles and improving overall testability. The approach offers a more natural fit for state representation compared to conventional interface/implementation patterns."
 +++

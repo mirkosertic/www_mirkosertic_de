@@ -3,6 +3,7 @@ date = "2013-04-22T07:09:11+02:00"
 title = "A Domain-driven Design Example: From Chaos to Clean Architecture"
 tags = ["Domain-driven Design", "Interesting"]
 draft = false
+booktitle = "How Little Excel Grew Up to Become a Real Enterprise System"
 description = "Journey through a real-world transformation from messy Excel sheets to a well-structured domain-driven design solution in body leasing business! See how breaking down a monolithic model into bounded contexts and applying DDD patterns can create magic, while keeping the business logic clean and maintainable."
 abstract = "A comprehensive exploration of Domain-driven Design principles applied to a body leasing business case study. The article demonstrates the evolution from a simple anemic domain model to a sophisticated DDD-based solution, covering crucial concepts like bounded contexts, aggregates, and domain events. It provides practical insights into implementing both synchronous and asynchronous integration patterns, while maintaining clean architecture principles and ensuring business logic integrity. The discussion includes detailed examples of handling complex business scenarios, context integration, and efficient data querying strategies using CQRS."
 +++

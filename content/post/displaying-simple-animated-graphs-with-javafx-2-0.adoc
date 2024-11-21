@@ -3,6 +3,7 @@ date = "2012-10-15T10:03:39+02:00"
 title = "Building Interactive Graph Visualizations with JavaFX: A Simple Guide"
 tags = ["Interesting", "JavaFX", "User Interface"]
 draft = false
+ooktitle = "Little JavaFX and the Magic Circle of Connected Buttons"
 description = "Transform buttons into interactive graph nodes with JavaFX's powerful scene graph concept and create visually appealing network visualizations with just a few lines of code! Watch nodes dance in a circle while maintaining their connections through edges, all while enjoying smooth drag-and-drop functionality and multi-select features."
 abstract = "This article demonstrates how to create custom interactive graph visualizations using JavaFX 2.0. The implementation showcases a practical example of building a graph control that supports node selection, drag-and-drop functionality, and edge connections between nodes. Using JavaFX's scene graph concept and built-in animation capabilities, the tutorial walks through creating a circular arrangement of interactive nodes with connecting edges, demonstrating the framework's power and flexibility in creating sophisticated user interfaces with minimal code."
 +++

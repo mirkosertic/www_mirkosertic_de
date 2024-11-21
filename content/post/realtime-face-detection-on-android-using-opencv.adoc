@@ -3,6 +3,7 @@ date = "2013-07-27T06:20:34+02:00"
 title = "Building a Real-time Face Detection App: OpenCV meets Android"
 tags = ["Android", "Interesting"]
 draft = false
+booktitle = "How Little Android Learned to Find Faces"
 description = "Transform your Android device into a face-detecting powerhouse using OpenCV's computer vision magic! With just a few lines of Java code and OpenCV's pre-trained cascade classifier, your phone's camera can identify faces in real-time and draw cool green rectangles around them."
 abstract = "This tutorial demonstrates how to implement real-time face detection on Android devices using OpenCV, a powerful computer vision library. The guide walks through the implementation of an Android Activity that captures camera input, processes frames using OpenCV's face detection capabilities, and visualizes the results by drawing rectangles around detected faces. The solution utilizes OpenCV's Java bindings and pre-trained cascade classifiers, providing a foundation for more advanced computer vision applications on mobile devices."
 +++

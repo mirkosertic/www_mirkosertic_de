@@ -3,6 +3,7 @@ date = "2013-10-13T04:25:52+02:00"
 title = "The Hidden Cost of Array Iteration: A Java Performance Deep Dive"
 tags = ["Interesting", "Performance"]
 draft = false
+booktitle = "The Tale of the Speedy Row and the Sluggish Column: A Story About Array Adventures"
 description = "Ever wondered why some array iterations are 50 times slower than others? This fascinating deep-dive into Java array performance reveals surprising findings about cache efficiency and iteration patterns, demonstrating how simple changes in array access patterns can lead to dramatic performance differences."
 abstract = "This technical analysis explores performance implications of different array iteration strategies in Java, comparing row-order versus column-order traversal in multi-dimensional arrays. Through practical code examples, it demonstrates how cache-friendly access patterns can result in up to 50x performance improvements. The article also examines alternative approaches using single-dimensional arrays and the Arrays.fill() method, providing valuable insights for optimizing array operations in Java applications. Key findings suggest avoiding multi-dimensional arrays when performance is critical and considering cache-friendly iteration patterns for optimal execution speed."
 +++

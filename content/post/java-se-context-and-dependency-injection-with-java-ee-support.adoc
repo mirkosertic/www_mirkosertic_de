@@ -3,6 +3,7 @@ date = "2013-10-03T06:02:44+02:00"
 title = "Enabling Java EE Features in CDI SE: A Portable Extension Magic Trick"
 tags = ["Modernization"]
 draft = false
+booktitle = "How Little CDI Learned to Do Big Enterprise Things"
 description = "Transform Java EE annotations into CDI-compatible magic using the power of Portable Extensions! Discover how to make @Resource and @RolesAllowed work seamlessly in Java SE environments through clever annotation transformation, without modifying your existing code."
 abstract = "This article demonstrates how to enable Java EE features like security annotations and resource injection in a Java SE environment using CDI Portable Extensions. It explains the technique of transforming Java EE annotations (@Resource, @RolesAllowed) into CDI-compatible alternatives through container meta data manipulation, allowing developers to maintain their existing Java EE code while running in SE environments. The solution involves creating a custom extension that rewrites annotations and implements security checks using interceptors, all without requiring modification of the original code or additional third-party dependencies."
 +++

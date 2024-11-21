@@ -3,6 +3,7 @@ date = "2013-11-05T04:28:08+01:00"
 title = "Type-Safe Property Access in Java: The Owner Library Revolution"
 tags = ["Configuration Management"]
 draft = false
+booktitle = "Little Config's Big Adventure: How Properties Found Their Safe Home"
 description = "Say goodbye to error-prone string-based property access in Java! Using the Owner Library, properties can now be accessed through type-safe interfaces with built-in default values and compile-time checking - making property management in Java both safer and more elegant."
 abstract = "The Owner Library offers a modern approach to handling Java properties by providing an interface-based, type-safe way to access configuration values. Instead of traditional string-based property access, developers can define strongly-typed interfaces with annotation-based configuration, enabling compile-time checking, default values, and enhanced maintainability. This approach eliminates common property-related errors and makes refactoring easier while maintaining the simplicity of property file usage."
 +++
