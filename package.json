@@ -3,7 +3,8 @@
   "scripts": {
     "build": "gulp build",
     "summarize": "node aisummarize.js",
-    "develop": "hugo server --buildDrafts" 
+    "images": "node aiimages.js",
+    "develop": "hugo server --buildDrafts"
   },
   "type": "module",
   "devDependencies": {
@@ -36,6 +37,7 @@
     "@anthropic-ai/sdk": "^0.32.1",
     "asciidoctor": "^3.0.4",
     "asciidoctor-kroki": "^0.18.1",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "openai": "^4.73.0"
   }
 }
