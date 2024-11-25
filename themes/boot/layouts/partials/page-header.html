@@ -6,7 +6,7 @@
             <span>by</span>
             <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
                 <span itemprop="name">
-                    <a href="{{ .Site.Params.Author.profile }}" itemprop="url" rel="author">{{ .Site.Params.Author.name }}</a>
+                    <a href="{{ .Site.Params.Author.profile }}" rel="author">{{ .Site.Params.Author.name }}</a>
                 </span>
             </span>
         </p>
@@ -21,3 +21,15 @@
         {{ partial "taglist-white.html" . }}
     </div>
 </header>
+
+{{ if .Params.Booktitle }}
+<figure class="blogtitleimage">
+    <figcaption>
+        <p>Behold the masterpiece that AI hallucinated while reading this post:</p>
+        <p class="title">"{{ .Params.Booktitle }}"</p>
+        <p>(after I fed it way too many marketing blogs and memes)</p>
+        <p class="aidisclosure">Created using DALL-E 3</p>
+    </figcaption>
+    <img src="/media/welcomeimages/{{ .File }}_selected.png" alt="AI-Generated: {{ .Params.Booktitle }}" itemprop="image"/>
+</figure>
+{{ end }}
