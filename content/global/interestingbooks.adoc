@@ -4,7 +4,7 @@ title = "Essential Books for Modern Software Engineers"
 tags = []
 draft = false
 description = "A list of maybe interesting books related to technology, software engineering and management"
-booktitle = "Mirkos Little Bookshelf"
+booktitle = "Mirko's Little Bookshelf"
 +++
 include::globals.adoc[]
 
