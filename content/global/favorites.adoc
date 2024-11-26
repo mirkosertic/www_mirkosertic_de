@@ -4,6 +4,7 @@ title = "My favorite postings"
 tags = []
 draft = false
 description = "Here is a list of my favorite and evergreen postings so far"
+booktitle = "Tiny Jims Top Secret List of Secrets"
 +++
 include::globals.adoc[]
 

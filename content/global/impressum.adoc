@@ -4,6 +4,7 @@ title = "Impressum"
 tags = []
 draft = false
 description = "Impressum"
+booktitle = "Tiny Tim is scared: The Unavoidable and Necessary Evil"
 +++
 include::globals.adoc[]
 == Impressum

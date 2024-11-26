@@ -4,6 +4,7 @@ title = "My personal Technology Radar"
 tags = []
 draft = false
 description = "My personal technology radar"
+booktitle = "Tiny Tims Little Radar of Mighty Gems"
 +++
 include::globals.adoc[]
 
@@ -25,7 +26,7 @@ Tools and frameworks that support the development and testing process
 
 *Hold*
 
-- http://seleniumhq.org/[Selenium] While still used, newer tools like Playwright offer better developer experience. Alternative: Cypress (though Playwright is generally preferred now) 
+- http://seleniumhq.org/[Selenium] While still used, newer tools like Playwright offer better developer experience. Alternative: Cypress (though Playwright is generally preferred now)
 - https://github.com/powermock/powermock/[PowerMock] Use with caution, prefer proper dependency injection and design patterns. Alternative: Mockito, Jest, Vitest
 - https://www.cypress.io/[Cypress] Mature and widely adopted for frontend testing, though consider Playwright for new projects
 
