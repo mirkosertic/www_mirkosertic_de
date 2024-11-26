@@ -338,6 +338,9 @@ footer a:hover {
   width: min(450px, 95%);
   border: 1px solid gray;
 }
+.blogtitleimage img.noborder {
+  border: none;
+}
 .blogtitleimage p {
   margin: 0.1rem;
 }
