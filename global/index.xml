@@ -7,14 +7,14 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Mon, 25 Nov 2024 21:30:18 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 26 Nov 2024 09:19:15 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/global/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Essential Books for Modern Software Engineers</title>
       <link>https://www.mirkosertic.de/global/interestingbooks/</link>
       <pubDate>Sun, 24 Nov 2024 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/global/interestingbooks/</guid>
-      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_core_software_engineering_fundamentals&#34;&gt;Core Software Engineering Fundamentals&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;These foundational books will help you build a strong base in software engineering principles and practices.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_project_management_process&#34;&gt;Project Management &amp;amp; Process&lt;/h3&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;The Mythical Man-Month. Essays on Software Engineering. Frederick P. Brooks&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;The Deadline: A Novel About Project Management. Tom DeMarco&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;The Goal: A Process of Ongoing Improvement. Eliyahu M. Goldratt, Jeff Cox&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Software Estimation: Demystifying the Black Art. Steve McConnell&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Peopleware: Productive Projects and Teams. Tom DeMarco&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_core_software_engineering_fundamentals&#34;&gt;Core Software Engineering Fundamentals&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;These foundational books will help you build a strong base in software engineering principles and practices.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_project_management_process&#34;&gt;Project Management &amp;amp; Process&lt;/h3&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;The Mythical Man-Month&lt;/strong&gt;. Essays on Software Engineering. Frederick P. Brooks&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;The Deadline&lt;/strong&gt;: A Novel About Project Management. Tom DeMarco&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;The Goal&lt;/strong&gt;: A Process of Ongoing Improvement. Eliyahu M. Goldratt, Jeff Cox&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Software Estimation: Demystifying the Black Art&lt;/strong&gt;. Steve McConnell&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Peopleware: Productive Projects and Teams&lt;/strong&gt;. Tom DeMarco&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>My personal Technology Radar</title>
