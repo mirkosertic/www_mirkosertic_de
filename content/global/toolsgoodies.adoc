@@ -4,7 +4,7 @@ title = "My personal Technology Radar"
 tags = []
 draft = false
 description = "My personal technology radar"
-booktitle = "Tiny Tims Little Radar of Mighty Gems"
+booktitle = "The Little Radar of Mighty Gems"
 +++
 include::globals.adoc[]
 
