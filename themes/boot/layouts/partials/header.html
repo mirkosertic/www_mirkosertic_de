@@ -35,9 +35,6 @@
                     navigator.msDoNotTrack === "1";
             }
 
-            // Consent state management
-            var hasConsent = false;
-
             // Create a simple consent banner
             function createConsentBanner() {
                 // Only show banner if not in DNT mode
@@ -75,7 +72,6 @@
 
                 // Accept cookies
                 document.getElementById('accept-cookies').addEventListener('click', function() {
-                    hasConsent = true;
                     banner.style.display = 'none';
                     localStorage.setItem('matomoConsent', 'accepted');
                     initializeMatomo(true);
@@ -83,7 +79,6 @@
 
                 // Reject cookies
                 document.getElementById('reject-cookies').addEventListener('click', function() {
-                    hasConsent = false;
                     banner.style.display = 'none';
                     localStorage.setItem('matomoConsent', 'rejected');
                     initializeMatomo(false);
@@ -114,11 +109,9 @@
                 var storedConsent = localStorage.getItem('matomoConsent');
                 if (storedConsent === 'accepted') {
                     console.log("Tracking accepted");
-                    hasConsent = true;
                     initializeMatomo(true);
                 } else if (storedConsent === 'rejected') {
                     console.log("Tracking rejected");
-                    hasConsent = false;
                     initializeMatomo(false);
                 } else {
                     // Show consent banner if no previous decision
