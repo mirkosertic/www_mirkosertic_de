@@ -11,12 +11,12 @@ include::globals.adoc[]
 
 == Introduction
 
-Maintaining a technical blog requires constant attention to quality, readability, and SEO optimization. While creating fresh content is important, enhancing existing posts can be equally valuable. This guide explores how to 
+Maintaining a technical blog requires constant attention to quality, readability, and SEO optimization. While creating fresh content is important, enhancing existing posts can be equally valuable. This guide explores how to
 leverage Anthropic's Claude API to automatically improve your Hugo blog posts while preserving their core message and authenticity. In fact, this blog was target of such an optimization.
 
 == The Power of AI-Enhanced Content
 
-Traditional content updates are time-consuming and often overlooked. By automating the enhancement process with Claude, you can systematically improve your entire blog archive without manual rewrites. The AI assists in refining 
+Traditional content updates are time-consuming and often overlooked. By automating the enhancement process with Claude, you can systematically improve your entire blog archive without manual rewrites. The AI assists in refining
 titles for better click-through rates, crafting compelling descriptions, and generating comprehensive abstracts that accurately represent your content.
 
 == Understanding the Technical Flow
@@ -76,11 +76,11 @@ function loadFilesWithExtension(dirPath, extension) {
     function readDirectory(currentPath) {
         console.info('Scanning directory ' + currentPath);
         const files = fs.readdirSync(currentPath);
-        
+
         for (const file of files) {
             const filePath = path.join(currentPath, file);
             const stat = fs.statSync(filePath);
-            
+
             if (stat.isDirectory()) {
                 // Recursively process subdirectories
                 readDirectory(filePath);
@@ -112,16 +112,16 @@ function loadFilesWithExtension(dirPath, extension) {
 function parseAsciidocFrontMatter(content) {
     const frontMatterRegex = /^\+\+\+\r?\n([\s\S]*?)\r?\n\+\+\+\r?\n([\s\S]*)$/;
     const match = content.match(frontMatterRegex);
-    
+
     if (!match) {
         return {
             frontMatter: {},
             content: content.trim()
         };
     }
-    
+
     const [, frontMatterStr, remainingContent] = match;
-    
+
     try {
         const frontMatter = parseTOML(frontMatterStr);
         return {
@@ -142,20 +142,20 @@ function parseTOML(toml) {
     const result = {};
     let currentTable = result;
     let currentTablePath = [];
-    
+
     const lines = toml.split('\n');
-    
+
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i].trim();
-        
+
         // Skip empty lines and comments
         if (!line || line.startsWith('#')) continue;
-        
+
         // Handle table headers
         if (line.startsWith('[') && line.endsWith(']')) {
             const tableName = line.slice(1, -1).trim();
             currentTablePath = tableName.split('.');
-            
+
             // Create nested objects for the table path
             let current = result;
             currentTablePath.forEach((key, index) => {
@@ -169,14 +169,14 @@ function parseTOML(toml) {
             });
             continue;
         }
-        
+
         // Handle key-value pairs
         const equalIndex = line.indexOf('=');
         if (equalIndex === -1) continue;
-        
+
         const key = line.slice(0, equalIndex).trim();
         let value = line.slice(equalIndex + 1).trim();
-        
+
         // Parse the value
         try {
             value = parseTOMLValue(value, lines, i);
@@ -188,10 +188,10 @@ function parseTOML(toml) {
         } catch (error) {
             throw new Error(`Error parsing value at line ${i + 1}: ${error.message}`);
         }
-        
+
         currentTable[key] = value;
     }
-    
+
     return result;
 }
 
@@ -207,33 +207,33 @@ function parseTOMLValue(value, lines, currentIndex) {
     if (value.startsWith('"') && value.endsWith('"')) {
         return value.slice(1, -1).replace(/\\"/g, '"');
     }
-    
+
     // Handle multi-line strings
     if (value.startsWith('"""')) {
         return parseMultilineString(lines, currentIndex);
     }
-    
+
     // Handle arrays
     if (value.startsWith('[')) {
         return parseArray(value);
     }
-    
+
     // Handle booleans
     if (value.toLowerCase() === 'true') return true;
     if (value.toLowerCase() === 'false') return false;
-    
+
     // Handle dates
     if (/^\d{4}-\d{2}-\d{2}/.test(value)) {
         const date = new Date(value);
         if (!isNaN(date.getTime())) return date;
     }
-    
+
     // Handle numbers
     if (!isNaN(value)) {
         // Check if it's an integer or float
         return value.includes('.') ? parseFloat(value) : parseInt(value, 10);
     }
-    
+
     return value;
 }
 
@@ -262,10 +262,10 @@ function parseMultilineString(lines, startIndex) {
     let result = '';
     let currentIndex = startIndex;
     let foundEnd = false;
-    
+
     // Skip the first line with """
     currentIndex++;
-    
+
     while (currentIndex < lines.length) {
         const line = lines[currentIndex].trim();
         if (line.endsWith('"""')) {
@@ -276,11 +276,11 @@ function parseMultilineString(lines, startIndex) {
         result += lines[currentIndex] + '\n';
         currentIndex++;
     }
-    
+
     if (!foundEnd) {
         throw new Error('Unterminated multi-line string');
     }
-    
+
     return {
         value: result.trim(),
         nextIndex: currentIndex
@@ -289,30 +289,30 @@ function parseMultilineString(lines, startIndex) {
 
 function convertToMessage(frontMatter, content) {
     const prompt = `<instructions>
-Please summarize the following text stored in the content tags taken from a blog in a catchy way. 
-The content is formatted as AsciiDoc, so please handle headlines and code formattings accordingly. 
-The summary must not contain the phrases "the autor" or "the writer" or something like that and 
-must not be longer than three sentences. The summary should be in the witty, but not too technical 
-style.
+Please summarize the following text stored in the content tags taken from a blog in a catchy way.
+The content is formatted as AsciiDoc, so please handle headlines and code formattings accordingly.
+The summary must not contain the phrases "the autor" or "the writer" or something like that and
+must not be longer than three sentences. The summary should be in the witty, but not too technical
+style. Try to use and adapt to the original writing style.
 
-Please format the answer as a machine readable json containing the attributes "title" and "summary". 
-The title attribute of the response should contain an alternative title, based on the title tag of the 
-content and the content itself. Please also try to generate keywords for the content and return them as 
-the "keywords" attribute so they can be used as HTML meta data. 
+Please format the answer as a machine readable json containing the attributes "title" and "summary".
+The title attribute of the response should contain an alternative title, based on the title tag of the
+content and the content itself. Please also try to generate keywords for the content and return them as
+the "keywords" attribute so they can be used as HTML meta data.
 
-Finally please try to generate an abstract for the content and return it as the "abstract" attribute 
+Finally please try to generate an abstract for the content and return it as the "abstract" attribute
 of the response.
 </instructions>
-    
+
 <content>
     <title>${frontMatter.title}</title>
     <body>
         ${content}
-    </body>    
+    </body>
 </content>`;
 
     const messageObj = {
-        system: `You are a technical writer with strong computer science background and try to 
+        system: `You are a technical writer with strong computer science background and try to
                  optimize Blog content in terms of quality, readability, joy and search engine optimization.`,
         max_tokens: 1024,
         messages: [
