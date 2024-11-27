@@ -1,13 +1,124 @@
-<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Type-Safe Property Access in Java: The Owner Library Revolution &middot; Mirko Sertic</title><meta name="description" content="Say goodbye to error-prone string-based property access in Java! Using the Owner Library, properties can now be accessed through type-safe interfaces with built-in default values and compile-time checking - making property management in Java both safer and more elegant."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="robots" content="index,follow"><meta property="og:title" content="Type-Safe Property Access in Java: The Owner Library Revolution"><meta property="og:description" content="Say goodbye to error-prone string-based property access in Java! Using the Owner Library, properties can now be accessed through type-safe interfaces with built-in default values and compile-time checking - making property management in Java both safer and more elegant."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2013/11/java-properties-reinvented/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><meta name="theme-color" content="#ffffff"><script>var _paq = window._paq = window._paq || [];
-         
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function() {
-            var u="//analytics.mirkosertic.de/";
-            _paq.push(['setTrackerUrl', u+'matomo.php']);
-            _paq.push(['setSiteId', '2']);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Type-Safe Property Access in Java: The Owner Library Revolution &middot; Mirko Sertic</title><meta name="description" content="Say goodbye to error-prone string-based property access in Java! Using the Owner Library, properties can now be accessed through type-safe interfaces with built-in default values and compile-time checking - making property management in Java both safer and more elegant."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="robots" content="index,follow"><meta property="og:title" content="Type-Safe Property Access in Java: The Owner Library Revolution"><meta property="og:description" content="Say goodbye to error-prone string-based property access in Java! Using the Owner Library, properties can now be accessed through type-safe interfaces with built-in default values and compile-time checking - making property management in Java both safer and more elegant."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2013/11/java-properties-reinvented/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><meta name="theme-color" content="#ffffff"><script>(function() {
+            
+            function isDoNotTrackEnabled() {
+                return navigator.doNotTrack === "1" ||
+                    window.doNotTrack === "1" ||
+                    navigator.msDoNotTrack === "1";
+            }
+
+            
+            var hasConsent = false;
+
+            
+            function createConsentBanner() {
+                
+                if (isDoNotTrackEnabled()) {
+                    initializeMatomo(false);
+                    return;
+                }
+
+                var banner = document.createElement('div');
+                banner.style.cssText = `
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f8f8f8;
+            padding: 15px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            text-align: center;
+        `;
+
+                banner.innerHTML = `
+            <p>We use cookies to improve your browsing experience.
+            Your browser's Do Not Track setting is currently: ${isDoNotTrackEnabled() ? 'Enabled' : 'Disabled'}.
+            Do you consent to our use of cookies?</p>
+            <button id="accept-cookies" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; margin-right: 10px; cursor: pointer;">
+                Accept
+            </button>
+            <button id="reject-cookies" style="background-color: #f44336; color: white; border: none; padding: 10px 20px; cursor: pointer;">
+                Reject
+            </button>
+        `;
+
+                document.body.appendChild(banner);
+
+                
+                document.getElementById('accept-cookies').addEventListener('click', function() {
+                    hasConsent = true;
+                    banner.style.display = 'none';
+                    localStorage.setItem('matomoConsent', 'accepted');
+                    initializeMatomo(true);
+                });
+
+                
+                document.getElementById('reject-cookies').addEventListener('click', function() {
+                    hasConsent = false;
+                    banner.style.display = 'none';
+                    localStorage.setItem('matomoConsent', 'rejected');
+                    initializeMatomo(false);
+                });
+            }
+
+            
+            function initializeMatomo(trackingAllowed) {
+                var _paq = window._paq = window._paq || [];
+
+                
+                if (isDoNotTrackEnabled()) {
+                    trackingAllowed = false;
+                }
+
+                if (trackingAllowed) {
+                    _paq.push(['requireConsent']);
+
+                    _paq.push(['trackPageView']);
+                    _paq.push(['enableLinkTracking']);
+
+                    var u="//analytics.mirkosertic.de/";
+                    _paq.push(['setTrackerUrl', u+'matomo.php']);
+                    _paq.push(['setSiteId', '2']);
+
+                    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+                }
+            }
+
+            
+            function checkPreviousConsent() {
+                
+                if (isDoNotTrackEnabled()) {
+                    initializeMatomo(false);
+                    return;
+                }
+
+                var storedConsent = localStorage.getItem('matomoConsent');
+                if (storedConsent === 'accepted') {
+                    console.log("Tracking accepted");
+                    hasConsent = true;
+                    initializeMatomo(true);
+                } else if (storedConsent === 'rejected') {
+                    console.log("Tracking rejected");
+                    hasConsent = false;
+                    initializeMatomo(false);
+                } else {
+                    
+                    createConsentBanner();
+                }
+            }
+
+            
+            function init() {
+                checkPreviousConsent();
+            }
+
+            
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
         })();</script></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="My personal Technology Radar">Technology Radar</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Essential Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link active" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><div itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"><header class="post-header"><div class="contentbox"><h1 class="post-title" itemprop="name headline">Type-Safe Property Access in Java: The Owner Library Revolution</h1><p class="post-date"><span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="2013-11-05" itemprop="datePublished">Tue, Nov 5, 2013</time> <span>by</span> <span itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name"><a href="https://x.com/mirkosertic" rel="author">Mirko Sertic</a></span></span></p><p class="post-abstract" itemprop="abstract"><span>The Owner Library offers a modern approach to handling Java properties by providing an interface-based, type-safe way to access configuration values. Instead of traditional string-based property access, developers can define strongly-typed interfaces with annotation-based configuration, enabling compile-time checking, default values, and enhanced maintainability. This approach eliminates common property-related errors and makes refactoring easier while maintaining the simplicity of property file usage.</span></p><p><span class="icon"><i class="fa fa-clock-white"></i></span><span>1 Minutes reading time</span></p><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags-white"></i></span><a href="/tags/configuration-management">Configuration Management</a></span></p></div></header><figure class="blogtitleimage"><figcaption><p>Behold the masterpiece that AI hallucinated while reading this post:</p><p class="title">"Little Config&#39;s Big Adventure: How Properties Found Their Safe Home"</p><p>(after I fed it way too many marketing blogs and memes)</p><p class="aidisclosure">Created using DALL-E 3</p></figcaption><img src="/media/welcomeimages/java-properties-reinvented_selected.png" alt="AI-Generated: Little Config&#39;s Big Adventure: How Properties Found Their Safe Home" itemprop="image"></figure><article class="post-content clearfix" itemprop="articleBody"><div class="paragraph"><p>Recently i stumbled across the Owner Library(<a href="http://owner.aeonbits.org">owner.aeonbits.org</a> ). Using this small piece of technology, usage of Java property files can be reinvented! Now we can access properties using a refactoring safe interface the following way:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">public interface ServerConfig extends Config {
     @Key(&#34;server.http.port&#34;)
     int port();

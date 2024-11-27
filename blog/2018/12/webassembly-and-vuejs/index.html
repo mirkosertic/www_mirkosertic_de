@@ -1,13 +1,124 @@
-<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Supercharging Vue.js with WebAssembly and Java &middot; Mirko Sertic</title><meta name="description" content="Discover how to turbocharge Vue.js applications by combining the power of WebAssembly with Java using Bytecoder! This exciting fusion allows developers to write high-performance web applications in Java while leveraging Vue.js&#39;s reactive UI capabilities, all compiled down to lightning-fast WebAssembly code."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="robots" content="index,follow"><meta property="og:title" content="Supercharging Vue.js with WebAssembly and Java"><meta property="og:description" content="Discover how to turbocharge Vue.js applications by combining the power of WebAssembly with Java using Bytecoder! This exciting fusion allows developers to write high-performance web applications in Java while leveraging Vue.js&#39;s reactive UI capabilities, all compiled down to lightning-fast WebAssembly code."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><meta name="theme-color" content="#ffffff"><script>var _paq = window._paq = window._paq || [];
-         
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function() {
-            var u="//analytics.mirkosertic.de/";
-            _paq.push(['setTrackerUrl', u+'matomo.php']);
-            _paq.push(['setSiteId', '2']);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Supercharging Vue.js with WebAssembly and Java &middot; Mirko Sertic</title><meta name="description" content="Discover how to turbocharge Vue.js applications by combining the power of WebAssembly with Java using Bytecoder! This exciting fusion allows developers to write high-performance web applications in Java while leveraging Vue.js&#39;s reactive UI capabilities, all compiled down to lightning-fast WebAssembly code."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="robots" content="index,follow"><meta property="og:title" content="Supercharging Vue.js with WebAssembly and Java"><meta property="og:description" content="Discover how to turbocharge Vue.js applications by combining the power of WebAssembly with Java using Bytecoder! This exciting fusion allows developers to write high-performance web applications in Java while leveraging Vue.js&#39;s reactive UI capabilities, all compiled down to lightning-fast WebAssembly code."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2018/12/webassembly-and-vuejs/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><meta name="theme-color" content="#ffffff"><script>(function() {
+            
+            function isDoNotTrackEnabled() {
+                return navigator.doNotTrack === "1" ||
+                    window.doNotTrack === "1" ||
+                    navigator.msDoNotTrack === "1";
+            }
+
+            
+            var hasConsent = false;
+
+            
+            function createConsentBanner() {
+                
+                if (isDoNotTrackEnabled()) {
+                    initializeMatomo(false);
+                    return;
+                }
+
+                var banner = document.createElement('div');
+                banner.style.cssText = `
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f8f8f8;
+            padding: 15px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            text-align: center;
+        `;
+
+                banner.innerHTML = `
+            <p>We use cookies to improve your browsing experience.
+            Your browser's Do Not Track setting is currently: ${isDoNotTrackEnabled() ? 'Enabled' : 'Disabled'}.
+            Do you consent to our use of cookies?</p>
+            <button id="accept-cookies" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; margin-right: 10px; cursor: pointer;">
+                Accept
+            </button>
+            <button id="reject-cookies" style="background-color: #f44336; color: white; border: none; padding: 10px 20px; cursor: pointer;">
+                Reject
+            </button>
+        `;
+
+                document.body.appendChild(banner);
+
+                
+                document.getElementById('accept-cookies').addEventListener('click', function() {
+                    hasConsent = true;
+                    banner.style.display = 'none';
+                    localStorage.setItem('matomoConsent', 'accepted');
+                    initializeMatomo(true);
+                });
+
+                
+                document.getElementById('reject-cookies').addEventListener('click', function() {
+                    hasConsent = false;
+                    banner.style.display = 'none';
+                    localStorage.setItem('matomoConsent', 'rejected');
+                    initializeMatomo(false);
+                });
+            }
+
+            
+            function initializeMatomo(trackingAllowed) {
+                var _paq = window._paq = window._paq || [];
+
+                
+                if (isDoNotTrackEnabled()) {
+                    trackingAllowed = false;
+                }
+
+                if (trackingAllowed) {
+                    _paq.push(['requireConsent']);
+
+                    _paq.push(['trackPageView']);
+                    _paq.push(['enableLinkTracking']);
+
+                    var u="//analytics.mirkosertic.de/";
+                    _paq.push(['setTrackerUrl', u+'matomo.php']);
+                    _paq.push(['setSiteId', '2']);
+
+                    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+                }
+            }
+
+            
+            function checkPreviousConsent() {
+                
+                if (isDoNotTrackEnabled()) {
+                    initializeMatomo(false);
+                    return;
+                }
+
+                var storedConsent = localStorage.getItem('matomoConsent');
+                if (storedConsent === 'accepted') {
+                    console.log("Tracking accepted");
+                    hasConsent = true;
+                    initializeMatomo(true);
+                } else if (storedConsent === 'rejected') {
+                    console.log("Tracking rejected");
+                    hasConsent = false;
+                    initializeMatomo(false);
+                } else {
+                    
+                    createConsentBanner();
+                }
+            }
+
+            
+            function init() {
+                checkPreviousConsent();
+            }
+
+            
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
         })();</script></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="My personal Technology Radar">Technology Radar</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Essential Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link active" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><div itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"><header class="post-header"><div class="contentbox"><h1 class="post-title" itemprop="name headline">Supercharging Vue.js with WebAssembly and Java</h1><p class="post-date"><span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="2018-12-20" itemprop="datePublished">Thu, Dec 20, 2018</time> <span>by</span> <span itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name"><a href="https://x.com/mirkosertic" rel="author">Mirko Sertic</a></span></span></p><p class="post-abstract" itemprop="abstract"><span>This article explores the integration of WebAssembly with Vue.js using Bytecoder, a powerful Java bytecode transpiler. It demonstrates how to bridge the gap between Java development and modern web frameworks by compiling Java code to WebAssembly while maintaining seamless integration with Vue.js. The article covers the technical aspects of WebAssembly as a compile target, introduces Bytecoder&#39;s capabilities, and provides practical examples of implementing Vue.js components using Java code that compiles to WebAssembly. This approach combines the benefits of Java&#39;s strong typing and development tools with Vue.js&#39;s reactive UI framework, all while achieving the performance benefits of WebAssembly.</span></p><p><span class="icon"><i class="fa fa-clock-white"></i></span><span>5 Minutes reading time</span></p><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags-white"></i></span><a href="/tags/compiler">Compiler</a> ,<a href="/tags/interesting">Interesting</a> ,<a href="/tags/performance">Performance</a> ,<a href="/tags/javascript">JavaScript</a> ,<a href="/tags/html5">HTML5</a> ,<a href="/tags/web">Web</a> ,<a href="/tags/webassembly">WebAssembly</a></span></p></div></header><figure class="blogtitleimage"><figcaption><p>Behold the masterpiece that AI hallucinated while reading this post:</p><p class="title">"How Little Java Learned to Dance with Vue.js in the Web Browser"</p><p>(after I fed it way too many marketing blogs and memes)</p><p class="aidisclosure">Created using DALL-E 3</p></figcaption><img src="/media/welcomeimages/webassembly-and-vuejs_selected.png" alt="AI-Generated: How Little Java Learned to Dance with Vue.js in the Web Browser" itemprop="image"></figure><article class="post-content clearfix" itemprop="articleBody"><div class="sect1"><h2 id="_state_of_the_union">State of the union</h2><div class="sectionbody"><div class="paragraph"><p>WebAssembly for starters is a standard for high-performance, size-optimized executable code for the Web. It was released in March 2017 by the <a href="https://www.w3.org/wasm/">WebAssembly working group</a> as version 1.0, which is basically a MVP (Minimum Viable Product), but the initial development started in June 2017. WebAssembly is the successor <a href="http://asmjs.org/">asm.js</a> and the <a href="https://developer.chrome.com/native-client">Google Native Client (NaCL)</a>.</p></div><div class="paragraph"><p>WebAssembly itself is merely a sandboxed runtime environment. It was designed as a compile target. High level languages such as C/C++, Rust, .NET or Java can be compiled to WebAssembly. As a compile target, it implements a set of binary opcodes, a module system and a stack machine making the opcodes executable. Modern compiler can translate and optimize high level languages to low level WebAssembly modules.</p></div><div class="paragraph"><p>WebAssembly 1.0 is a MVP. As a <a href="https://en.wikipedia.org/wiki/Minimum_viable_product">Minimum viable product</a> it is focused on an extensible core system. The core supports the mentioned instruction set, has support for modules and a virtual, linear memory and a limited set of data types such as integers and floating point numbers. It does not support high level structures such as arrays and objects. It also does not implement memory management. All those things must be implemented by the language emulation layer generated by the compiler. The MVP does also not support direct browser API interaction. This makes it tricky to write applications for the Web, as basically all known applications need some kind of user interaction, which is HTML and JavaScript. A compiler therefore needs to generate runtime linkage code, which emulates or delegates to the browser API and makes them available to the WebAssembly bytecode using the WebAssembly module system. In the following chapters I want to show you a compiler which can compile Java Bytecode to WebAssembly. In this short demo, I will also show you how user interaction can be implemented by WebAssembly based on a modern framework: vue.js. Say hello to <a href="https://github.com/mirkosertic/Bytecoder">Bytecoder</a>!</p></div></div></div><div class="sect1"><h2 id="_bytecoder">Bytecoder</h2><div class="sectionbody"><div class="paragraph"><p>Bytecoder is a rich domain model for Java(JVM) bytecode and framework to interpret and transpile it to other languages such as JavaScript, OpenCL or WebAssembly. Its high level goals are:</p></div><div class="ulist"><ul><li><p>Ability to cross-compile JVM bytecode to JavaScript, WebAssembly, OpenCL and other languages</p></li><li><p>Primary compile targets are JavaScript and WebAssembly</p></li><li><p>Allow integration with other UI-Frameworks such as vue.js</p></li><li><p>Use other tool chains such as Google Closure Compiler to further optimize generated code</p></li><li><p>Backed by OpenJDK 11 as JRE Classlib</p></li></ul></div><div class="paragraph"><p>The JVM bytecode is parsed and transformed into an intermediate representation. This intermediate representation is passed thru optimizer stages and sent to a backend implementation for target code generation.</p></div><div class="paragraph"><p>The JavaScript backend transforms the intermediate representation into JavaScript.</p></div><div class="paragraph"><p>The WebAssembly backend transforms the intermediate representation into WebAssembly text and binary code.</p></div><div class="paragraph"><p>The OpenCL backend is used to compile single algorithms into OpenCL and execute them on the GPU. This backend is designed to enhance existing programs running on the JVM to utilize the vast power of modern GPUs.</p></div><div class="paragraph"><p>Ok, Bytecoder can compile Java/JVM bytecode to WebAssembly. How can I do some user interaction, and can I use my favorite UI framework for this? Yes, you can! For this demo, I will use <a href="https://vuejs.org/">vue.js</a>.</p></div></div></div><div class="sect1"><h2 id="_vue_js_bytecoder_integration">Vue.js Bytecoder integration</h2><div class="sectionbody"><div class="paragraph"><p>Bytecoder comes with a <a href="https://openjdk.java.net/">OpenJDK</a> 11 classlib. Unfortunately there are two parts for successful vue.js and WebAssembly integration missing. We do not have a vue.js Java API, and we do now have a way to instruct the compiler to generate the required WebAssembly runtime linkage code to make vue.js available to the WebAssembly sandbox.</p></div><div class="paragraph"><p>But there is rescue. Bytecoder has a OpaqueReferenceType API. This API is a set of Java interfaces to model the interaction with browser APIs such as the DOM or third party libraries such as vue.js. The OpaqueReferenceType API is based on the WebAssembly <a href="https://github.com/WebAssembly/reference-types">Reference Types Proposal</a>, which might be integrated someday into the next official WebAssembly release. So now, show me the money! How can be write a program that can be compiled to WebAssembly with effective vue.js binding? Well, here it is!</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">import de.mirkosertic.bytecoder.api.OpaqueProperty; <i class="conum" data-value="1"></i><b>(1)</b>
 import de.mirkosertic.bytecoder.api.vue.Vue;
 import de.mirkosertic.bytecoder.api.vue.VueBuilder;

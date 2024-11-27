@@ -1,13 +1,124 @@
-<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>AOP &middot; Mirko Sertic</title><meta name="description" content="The digital Home of Mirko Sertic"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="robots" content="index,follow"><meta property="og:title" content="AOP"><meta property="og:description" content="The digital Home of Mirko Sertic"><meta property="og:type" content="website"><meta property="og:url" content="https://www.mirkosertic.de/tags/aop/"><link href="/tags/aop/index.xml" rel="alternate" type="application/rss+xml"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><meta name="theme-color" content="#ffffff"><script>var _paq = window._paq = window._paq || [];
-         
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function() {
-            var u="//analytics.mirkosertic.de/";
-            _paq.push(['setTrackerUrl', u+'matomo.php']);
-            _paq.push(['setSiteId', '2']);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>AOP &middot; Mirko Sertic</title><meta name="description" content="The digital Home of Mirko Sertic"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="robots" content="index,follow"><meta property="og:title" content="AOP"><meta property="og:description" content="The digital Home of Mirko Sertic"><meta property="og:type" content="website"><meta property="og:url" content="https://www.mirkosertic.de/tags/aop/"><link href="/tags/aop/index.xml" rel="alternate" type="application/rss+xml"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><meta name="theme-color" content="#ffffff"><script>(function() {
+            
+            function isDoNotTrackEnabled() {
+                return navigator.doNotTrack === "1" ||
+                    window.doNotTrack === "1" ||
+                    navigator.msDoNotTrack === "1";
+            }
+
+            
+            var hasConsent = false;
+
+            
+            function createConsentBanner() {
+                
+                if (isDoNotTrackEnabled()) {
+                    initializeMatomo(false);
+                    return;
+                }
+
+                var banner = document.createElement('div');
+                banner.style.cssText = `
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f8f8f8;
+            padding: 15px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            text-align: center;
+        `;
+
+                banner.innerHTML = `
+            <p>We use cookies to improve your browsing experience.
+            Your browser's Do Not Track setting is currently: ${isDoNotTrackEnabled() ? 'Enabled' : 'Disabled'}.
+            Do you consent to our use of cookies?</p>
+            <button id="accept-cookies" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; margin-right: 10px; cursor: pointer;">
+                Accept
+            </button>
+            <button id="reject-cookies" style="background-color: #f44336; color: white; border: none; padding: 10px 20px; cursor: pointer;">
+                Reject
+            </button>
+        `;
+
+                document.body.appendChild(banner);
+
+                
+                document.getElementById('accept-cookies').addEventListener('click', function() {
+                    hasConsent = true;
+                    banner.style.display = 'none';
+                    localStorage.setItem('matomoConsent', 'accepted');
+                    initializeMatomo(true);
+                });
+
+                
+                document.getElementById('reject-cookies').addEventListener('click', function() {
+                    hasConsent = false;
+                    banner.style.display = 'none';
+                    localStorage.setItem('matomoConsent', 'rejected');
+                    initializeMatomo(false);
+                });
+            }
+
+            
+            function initializeMatomo(trackingAllowed) {
+                var _paq = window._paq = window._paq || [];
+
+                
+                if (isDoNotTrackEnabled()) {
+                    trackingAllowed = false;
+                }
+
+                if (trackingAllowed) {
+                    _paq.push(['requireConsent']);
+
+                    _paq.push(['trackPageView']);
+                    _paq.push(['enableLinkTracking']);
+
+                    var u="//analytics.mirkosertic.de/";
+                    _paq.push(['setTrackerUrl', u+'matomo.php']);
+                    _paq.push(['setSiteId', '2']);
+
+                    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+                }
+            }
+
+            
+            function checkPreviousConsent() {
+                
+                if (isDoNotTrackEnabled()) {
+                    initializeMatomo(false);
+                    return;
+                }
+
+                var storedConsent = localStorage.getItem('matomoConsent');
+                if (storedConsent === 'accepted') {
+                    console.log("Tracking accepted");
+                    hasConsent = true;
+                    initializeMatomo(true);
+                } else if (storedConsent === 'rejected') {
+                    console.log("Tracking rejected");
+                    hasConsent = false;
+                    initializeMatomo(false);
+                } else {
+                    
+                    createConsentBanner();
+                }
+            }
+
+            
+            function init() {
+                checkPreviousConsent();
+            }
+
+            
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
         })();</script></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="My personal Technology Radar">Technology Radar</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Essential Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><nav role="postinglist" itemprop="mainEntity" itemscope itemtype="http://schema.org/Blog"><div class="yeargroup">2016</div><ol class="post-list"><li class="post-stub" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" date-is="2016-12-14"><div class="content"><h4 class="post-stub-title" itemprop="name headline">Beyond Null Checks: Smart Validation in Java with Lombok, JSR 303, and JSR 308</h4><meta itemprop="url" content="https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308/"><meta itemprop="mainEntityOfPage" content="https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308/"><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags"></i></span><a href="/tags/aop">AOP</a></span> ,<a href="/tags/domain-driven-design">Domain-driven Design</a> ,<a href="/tags/interesting">Interesting</a> ,<a href="/tags/junit">JUnit</a> ,<a href="/tags/modernization">Modernization</a></p><p class="post-stub-description" itemprop="description">Dive into the world of Java validation where three powerful approaches battle it out: Project Lombok&#39;s compile-time magic, JSR 303&#39;s runtime validation superpowers, and JSR 308&#39;s type system wizardry. Discover how combining compile-time checking with runtime validation creates a bulletproof defense against null pointer nightmares and precondition violations.&nbsp;<a href="https://www.mirkosertic.de/blog/2016/12/preconditions-lombok-jsr-303-and-jsr-308/" class="readmore">Read more...</a></p></div></li></ol><div class="yeargroup">2013</div><ol class="post-list"><li class="post-stub" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" date-is="2013-06-26"><div class="content"><h4 class="post-stub-title" itemprop="name headline">Effortless Method Validation: Combining JSR303 and AspectJ Magic</h4><meta itemprop="url" content="https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj/"><meta itemprop="mainEntityOfPage" content="https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj/"><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags"></i></span><a href="/tags/aop">AOP</a></span> ,<a href="/tags/interesting">Interesting</a></p><p class="post-stub-description" itemprop="description">Discover how to supercharge Java method validation using the dynamic duo of JSR303 and AspectJ! With just a sprinkle of aspect-oriented programming, validate method inputs and outputs automatically without cluttering your business logic.&nbsp;<a href="https://www.mirkosertic.de/blog/2013/06/method-validation-with-jsr303-and-aspectj/" class="readmore">Read more...</a></p></div></li><li class="post-stub" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" date-is="2013-03-25"><div class="content"><h4 class="post-stub-title" itemprop="name headline">Cross-Cutting Concerns: Bridging Scala and AspectJ with Maven</h4><meta itemprop="url" content="https://www.mirkosertic.de/blog/2013/03/maven-scala-and-aspectjaop/"><meta itemprop="mainEntityOfPage" content="https://www.mirkosertic.de/blog/2013/03/maven-scala-and-aspectjaop/"><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags"></i></span><a href="/tags/aop">AOP</a></span> ,<a href="/tags/interesting">Interesting</a> ,<a href="/tags/scala">Scala</a></p><p class="post-stub-description" itemprop="description">Discover how to seamlessly integrate AspectJ&#39;s powerful aspect-oriented programming with Scala projects using Maven, despite some IDE challenges! This technical fusion shows how to implement cross-cutting concerns like security and transaction handling in Scala while leveraging AspectJ&#39;s bytecode manipulation capabilities.&nbsp;<a href="https://www.mirkosertic.de/blog/2013/03/maven-scala-and-aspectjaop/" class="readmore">Read more...</a></p></div></li></ol><div class="yeargroup">2012</div><ol class="post-list"><li class="post-stub" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" date-is="2012-10-01"><div class="content"><h4 class="post-stub-title" itemprop="name headline">Supercharging Java Entities with CDI: An AspectJ Adventure</h4><meta itemprop="url" content="https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj/"><meta itemprop="mainEntityOfPage" content="https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj/"><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags"></i></span><a href="/tags/aop">AOP</a></span> ,<a href="/tags/dependency-injection">Dependency Injection</a> ,<a href="/tags/enterprise">Enterprise</a> ,<a href="/tags/modernization">Modernization</a></p><p class="post-stub-description" itemprop="description">Discover how to break free from CDI container limitations and inject dependencies directly into Java Entities using the power of AspectJ and AOP! This clever hack combines field-access pointcuts with around advice to achieve thread-safe dependency injection, perfect for those tricky legacy code situations.&nbsp;<a href="https://www.mirkosertic.de/blog/2012/10/building-cdi-support-with-aop-and-aspectj/" class="readmore">Read more...</a></p></div></li><li class="post-stub" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" date-is="2012-07-31"><div class="content"><h4 class="post-stub-title" itemprop="name headline">Smart Thread Naming: Your Secret Weapon for Debugging Multi-User Applications</h4><meta itemprop="url" content="https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error/"><meta itemprop="mainEntityOfPage" content="https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error/"><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags"></i></span><a href="/tags/aop">AOP</a></span> ,<a href="/tags/logging">Logging</a> ,<a href="/tags/threading">Threading</a></p><p class="post-stub-description" itemprop="description">Discover how naming threads intelligently can revolutionize your debugging experience in multi-user environments, without relying on complex logging frameworks. By simply using thread names as meta-information carriers, tracking user-specific issues becomes a breeze, whether you&#39;re dealing with stack traces or heap dumps.&nbsp;<a href="https://www.mirkosertic.de/blog/2012/07/thread-tracking-or-how-to-know-who-causes-an-error/" class="readmore">Read more...</a></p></div></li><li class="post-stub" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" date-is="2012-07-30"><div class="content"><h4 class="post-stub-title" itemprop="name headline">Nullpointer-free Java: Combining AOP with Modern Validation Standards</h4><meta itemprop="url" content="https://www.mirkosertic.de/blog/2012/07/software-defect-detection-with-aop-and-jsr-303-jsr-305-jsr-308/"><meta itemprop="mainEntityOfPage" content="https://www.mirkosertic.de/blog/2012/07/software-defect-detection-with-aop-and-jsr-303-jsr-305-jsr-308/"><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags"></i></span><a href="/tags/aop">AOP</a></span> ,<a href="/tags/interesting">Interesting</a></p><p class="post-stub-description" itemprop="description">Stop fighting those pesky NullPointerExceptions with repetitive checks throughout your code! By combining the power of Aspect-Oriented Programming with JSR-303 validation standards, Java applications can become more robust while maintaining clean, DRY code that handles null checks elegantly.&nbsp;<a href="https://www.mirkosertic.de/blog/2012/07/software-defect-detection-with-aop-and-jsr-303-jsr-305-jsr-308/" class="readmore">Read more...</a></p></div></li></ol></nav><div class="post-navigation"></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://x.com/mirkosertic" itemprop="url"><i class="fa fa-x-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
         var element = document.querySelector(aSelector);
         if (element) {

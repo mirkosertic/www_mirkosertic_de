@@ -1,13 +1,124 @@
-<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>AI &middot; Mirko Sertic</title><meta name="description" content="The digital Home of Mirko Sertic"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="robots" content="index,follow"><meta property="og:title" content="AI"><meta property="og:description" content="The digital Home of Mirko Sertic"><meta property="og:type" content="website"><meta property="og:url" content="https://www.mirkosertic.de/tags/ai/"><link href="/tags/ai/index.xml" rel="alternate" type="application/rss+xml"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><meta name="theme-color" content="#ffffff"><script>var _paq = window._paq = window._paq || [];
-         
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function() {
-            var u="//analytics.mirkosertic.de/";
-            _paq.push(['setTrackerUrl', u+'matomo.php']);
-            _paq.push(['setSiteId', '2']);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>AI &middot; Mirko Sertic</title><meta name="description" content="The digital Home of Mirko Sertic"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="robots" content="index,follow"><meta property="og:title" content="AI"><meta property="og:description" content="The digital Home of Mirko Sertic"><meta property="og:type" content="website"><meta property="og:url" content="https://www.mirkosertic.de/tags/ai/"><link href="/tags/ai/index.xml" rel="alternate" type="application/rss+xml"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><meta name="theme-color" content="#ffffff"><script>(function() {
+            
+            function isDoNotTrackEnabled() {
+                return navigator.doNotTrack === "1" ||
+                    window.doNotTrack === "1" ||
+                    navigator.msDoNotTrack === "1";
+            }
+
+            
+            var hasConsent = false;
+
+            
+            function createConsentBanner() {
+                
+                if (isDoNotTrackEnabled()) {
+                    initializeMatomo(false);
+                    return;
+                }
+
+                var banner = document.createElement('div');
+                banner.style.cssText = `
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f8f8f8;
+            padding: 15px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            text-align: center;
+        `;
+
+                banner.innerHTML = `
+            <p>We use cookies to improve your browsing experience.
+            Your browser's Do Not Track setting is currently: ${isDoNotTrackEnabled() ? 'Enabled' : 'Disabled'}.
+            Do you consent to our use of cookies?</p>
+            <button id="accept-cookies" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; margin-right: 10px; cursor: pointer;">
+                Accept
+            </button>
+            <button id="reject-cookies" style="background-color: #f44336; color: white; border: none; padding: 10px 20px; cursor: pointer;">
+                Reject
+            </button>
+        `;
+
+                document.body.appendChild(banner);
+
+                
+                document.getElementById('accept-cookies').addEventListener('click', function() {
+                    hasConsent = true;
+                    banner.style.display = 'none';
+                    localStorage.setItem('matomoConsent', 'accepted');
+                    initializeMatomo(true);
+                });
+
+                
+                document.getElementById('reject-cookies').addEventListener('click', function() {
+                    hasConsent = false;
+                    banner.style.display = 'none';
+                    localStorage.setItem('matomoConsent', 'rejected');
+                    initializeMatomo(false);
+                });
+            }
+
+            
+            function initializeMatomo(trackingAllowed) {
+                var _paq = window._paq = window._paq || [];
+
+                
+                if (isDoNotTrackEnabled()) {
+                    trackingAllowed = false;
+                }
+
+                if (trackingAllowed) {
+                    _paq.push(['requireConsent']);
+
+                    _paq.push(['trackPageView']);
+                    _paq.push(['enableLinkTracking']);
+
+                    var u="//analytics.mirkosertic.de/";
+                    _paq.push(['setTrackerUrl', u+'matomo.php']);
+                    _paq.push(['setSiteId', '2']);
+
+                    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+                }
+            }
+
+            
+            function checkPreviousConsent() {
+                
+                if (isDoNotTrackEnabled()) {
+                    initializeMatomo(false);
+                    return;
+                }
+
+                var storedConsent = localStorage.getItem('matomoConsent');
+                if (storedConsent === 'accepted') {
+                    console.log("Tracking accepted");
+                    hasConsent = true;
+                    initializeMatomo(true);
+                } else if (storedConsent === 'rejected') {
+                    console.log("Tracking rejected");
+                    hasConsent = false;
+                    initializeMatomo(false);
+                } else {
+                    
+                    createConsentBanner();
+                }
+            }
+
+            
+            function init() {
+                checkPreviousConsent();
+            }
+
+            
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
         })();</script></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="My personal Technology Radar">Technology Radar</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Essential Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><nav role="postinglist" itemprop="mainEntity" itemscope itemtype="http://schema.org/Blog"><div class="yeargroup">2024</div><ol class="post-list"><li class="post-stub" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" date-is="2024-11-10"><div class="content"><h4 class="post-stub-title" itemprop="name headline">Supercharge Your Hugo Blog with Claude: Automated Content Enhancement using Anthropic&#39;s API</h4><meta itemprop="url" content="https://www.mirkosertic.de/blog/2024/11/enhance-blog-with-ai/"><meta itemprop="mainEntityOfPage" content="https://www.mirkosertic.de/blog/2024/11/enhance-blog-with-ai/"><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags"></i></span><a href="/tags/ai">AI</a></span> ,<a href="/tags/research">Research</a> ,<a href="/tags/seo">SEO</a> ,<a href="/tags/html5">HTML5</a> ,<a href="/tags/hugo">Hugo</a> ,<a href="/tags/asciidoc">AsciiDoc</a> ,<a href="/tags/cms">CMS</a></p><p class="post-stub-description" itemprop="description">Transform existing blog content into polished gems using AI-powered optimization. This practical guide demonstrates how to leverage Anthropic&#39;s Claude API to enhance Hugo blog posts automatically, improving titles, descriptions, and readability. Learn how to implement a straightforward workflow that breathes new life into your existing AsciiDoc content while maintaining your authentic voice.&nbsp;<a href="https://www.mirkosertic.de/blog/2024/11/enhance-blog-with-ai/" class="readmore">Read more...</a></p></div></li></ol></nav><div class="post-navigation"></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Str. 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://x.com/mirkosertic" itemprop="url"><i class="fa fa-x-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
         var element = document.querySelector(aSelector);
         if (element) {

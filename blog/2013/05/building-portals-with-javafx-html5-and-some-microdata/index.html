@@ -1,13 +1,124 @@
-<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Supercharging Web Integration: JavaFX Meets HTML5 Microdata Magic &middot; Mirko Sertic</title><meta name="description" content="Discover how to build a sleek portal solution without expensive containers by combining JavaFX&#39;s WebView with HTML5 Microdata! This clever approach enables seamless application integration through simple metadata annotations, making cross-application navigation a breeze while keeping your codebase clean and maintainable."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="robots" content="index,follow"><meta property="og:title" content="Supercharging Web Integration: JavaFX Meets HTML5 Microdata Magic"><meta property="og:description" content="Discover how to build a sleek portal solution without expensive containers by combining JavaFX&#39;s WebView with HTML5 Microdata! This clever approach enables seamless application integration through simple metadata annotations, making cross-application navigation a breeze while keeping your codebase clean and maintainable."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2013/05/building-portals-with-javafx-html5-and-some-microdata/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><meta name="theme-color" content="#ffffff"><script>var _paq = window._paq = window._paq || [];
-         
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function() {
-            var u="//analytics.mirkosertic.de/";
-            _paq.push(['setTrackerUrl', u+'matomo.php']);
-            _paq.push(['setSiteId', '2']);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Supercharging Web Integration: JavaFX Meets HTML5 Microdata Magic &middot; Mirko Sertic</title><meta name="description" content="Discover how to build a sleek portal solution without expensive containers by combining JavaFX&#39;s WebView with HTML5 Microdata! This clever approach enables seamless application integration through simple metadata annotations, making cross-application navigation a breeze while keeping your codebase clean and maintainable."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="robots" content="index,follow"><meta property="og:title" content="Supercharging Web Integration: JavaFX Meets HTML5 Microdata Magic"><meta property="og:description" content="Discover how to build a sleek portal solution without expensive containers by combining JavaFX&#39;s WebView with HTML5 Microdata! This clever approach enables seamless application integration through simple metadata annotations, making cross-application navigation a breeze while keeping your codebase clean and maintainable."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2013/05/building-portals-with-javafx-html5-and-some-microdata/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><meta name="theme-color" content="#ffffff"><script>(function() {
+            
+            function isDoNotTrackEnabled() {
+                return navigator.doNotTrack === "1" ||
+                    window.doNotTrack === "1" ||
+                    navigator.msDoNotTrack === "1";
+            }
+
+            
+            var hasConsent = false;
+
+            
+            function createConsentBanner() {
+                
+                if (isDoNotTrackEnabled()) {
+                    initializeMatomo(false);
+                    return;
+                }
+
+                var banner = document.createElement('div');
+                banner.style.cssText = `
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f8f8f8;
+            padding: 15px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            text-align: center;
+        `;
+
+                banner.innerHTML = `
+            <p>We use cookies to improve your browsing experience.
+            Your browser's Do Not Track setting is currently: ${isDoNotTrackEnabled() ? 'Enabled' : 'Disabled'}.
+            Do you consent to our use of cookies?</p>
+            <button id="accept-cookies" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; margin-right: 10px; cursor: pointer;">
+                Accept
+            </button>
+            <button id="reject-cookies" style="background-color: #f44336; color: white; border: none; padding: 10px 20px; cursor: pointer;">
+                Reject
+            </button>
+        `;
+
+                document.body.appendChild(banner);
+
+                
+                document.getElementById('accept-cookies').addEventListener('click', function() {
+                    hasConsent = true;
+                    banner.style.display = 'none';
+                    localStorage.setItem('matomoConsent', 'accepted');
+                    initializeMatomo(true);
+                });
+
+                
+                document.getElementById('reject-cookies').addEventListener('click', function() {
+                    hasConsent = false;
+                    banner.style.display = 'none';
+                    localStorage.setItem('matomoConsent', 'rejected');
+                    initializeMatomo(false);
+                });
+            }
+
+            
+            function initializeMatomo(trackingAllowed) {
+                var _paq = window._paq = window._paq || [];
+
+                
+                if (isDoNotTrackEnabled()) {
+                    trackingAllowed = false;
+                }
+
+                if (trackingAllowed) {
+                    _paq.push(['requireConsent']);
+
+                    _paq.push(['trackPageView']);
+                    _paq.push(['enableLinkTracking']);
+
+                    var u="//analytics.mirkosertic.de/";
+                    _paq.push(['setTrackerUrl', u+'matomo.php']);
+                    _paq.push(['setSiteId', '2']);
+
+                    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+                }
+            }
+
+            
+            function checkPreviousConsent() {
+                
+                if (isDoNotTrackEnabled()) {
+                    initializeMatomo(false);
+                    return;
+                }
+
+                var storedConsent = localStorage.getItem('matomoConsent');
+                if (storedConsent === 'accepted') {
+                    console.log("Tracking accepted");
+                    hasConsent = true;
+                    initializeMatomo(true);
+                } else if (storedConsent === 'rejected') {
+                    console.log("Tracking rejected");
+                    hasConsent = false;
+                    initializeMatomo(false);
+                } else {
+                    
+                    createConsentBanner();
+                }
+            }
+
+            
+            function init() {
+                checkPreviousConsent();
+            }
+
+            
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
         })();</script></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="My personal Technology Radar">Technology Radar</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Essential Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link active" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><div itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"><header class="post-header"><div class="contentbox"><h1 class="post-title" itemprop="name headline">Supercharging Web Integration: JavaFX Meets HTML5 Microdata Magic</h1><p class="post-date"><span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="2013-05-07" itemprop="datePublished">Tue, May 7, 2013</time> <span>by</span> <span itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name"><a href="https://x.com/mirkosertic" rel="author">Mirko Sertic</a></span></span></p><p class="post-abstract" itemprop="abstract"><span>This article demonstrates an innovative approach to building application portals using JavaFX and HTML5 Microdata, offering a lightweight alternative to traditional Portlet solutions. By leveraging JavaFX&#39;s WebView component and enriching HTML content with semantic Microdata annotations, developers can create flexible, maintainable portal solutions that enable sophisticated cross-application navigation and integration scenarios. This approach works across different technology stacks and can be implemented both client-side and server-side, providing a versatile solution for modern application integration challenges.</span></p><p><span class="icon"><i class="fa fa-clock-white"></i></span><span>4 Minutes reading time</span></p><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags-white"></i></span><a href="/tags/enterprise">Enterprise</a> ,<a href="/tags/html5">HTML5</a> ,<a href="/tags/interesting">Interesting</a> ,<a href="/tags/user-interface">User Interface</a></span></p></div></header><figure class="blogtitleimage"><figcaption><p>Behold the masterpiece that AI hallucinated while reading this post:</p><p class="title">"Little Portal&#39;s Big Adventure: How HTML Tags Made Friends Across Different Websites"</p><p>(after I fed it way too many marketing blogs and memes)</p><p class="aidisclosure">Created using DALL-E 3</p></figcaption><img src="/media/welcomeimages/building-portals-with-javafx-html5-and-some-microdata_selected.png" alt="AI-Generated: Little Portal&#39;s Big Adventure: How HTML Tags Made Friends Across Different Websites" itemprop="image"></figure><article class="post-content clearfix" itemprop="articleBody"><div class="paragraph"><p>Often we need to integrate different applications. This can be done at different integration levels, like integration using the database, integration using services and sometimes integration at user interface level.</p></div><div class="paragraph"><p>Different solutions are available for user interface level application integration. The most famous are Portlets. A Portlet requires a Portlet Container to build a Portal. These containers are expensive, difficult to configure and maintain and the worst point is: the Portlet API is very limited to model complex integration scenarios!</p></div><div class="paragraph"><p>Now I want to show another approach. We can build our own Portal run time using JavaFX to integrate different applications. And we can also model complex integration scenarios by adding some HTML5 Microdata to the target application. This integration is sometimes called a <a href="http://en.wikipedia.org/wiki/Composite_application">Composite Application</a>, building new solutions by integrating existing applications.</p></div><div class="paragraph"><p>Here are the results for building a client-side application composition framework.</p></div><div class="sect1"><h2 id="_requirements">Requirements</h2><div class="sectionbody"><div class="ulist"><ul><li><p>We have three different web applications, Product Catalog, Customer Management and Invoice Management.</p></li><li><p>These applications should be gathered by one central Portal</p></li><li><p>We need to navigate from one application to another, for instance by clicking on a product in the Invoice Management application, the record in the Product Catalog must be displayed.</p></li></ul></div></div></div><div class="sect1"><h2 id="_the_javafx_portal_solution">The JavaFX Portal solution</h2><div class="sectionbody"><div class="paragraph"><p>The solution is quite simple. Basically it is a JavaFX web browser on steroids, so a Scene with a WebView and some buttons around it. In my example it looks like this:</p></div><div class="paragraph"><p><span class="image"><img src="/media/fxportalmain.png" alt="fxportalmain"></span></p></div><div class="paragraph"><p>This is the entry screen of FXPortal. It contains some links to navigate into one of the three applications. This is simple, it is just a bookmark screen. But wait: what about the Actions main menu? By clicking on it, we see:</p></div><div class="paragraph"><p><span class="image"><img src="/media/fxportalmainmenu.png" alt="fxportalmainmenu"></span></p></div><div class="paragraph"><p>How is this done? The answer is: HTML5 Microdata! The source code is:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-html" data-lang="html">&lt;div class=&#34;mainmenuItem&#34;&gt;
  &lt;a itemscope itemtype=&#34;http://mirkosertic.de/fxportal/action&#34; href=&#34;products/list&#34;&gt;&lt;img src=&#34;products.png&#34;/&gt;Product Catalog&lt;/a&gt;
 &lt;/div&gt;
