@@ -13,9 +13,6 @@
             }
 
             
-            var hasConsent = false;
-
-            
             function createConsentBanner() {
                 
                 if (isDoNotTrackEnabled()) {
@@ -52,7 +49,6 @@
 
                 
                 document.getElementById('accept-cookies').addEventListener('click', function() {
-                    hasConsent = true;
                     banner.style.display = 'none';
                     localStorage.setItem('matomoConsent', 'accepted');
                     initializeMatomo(true);
@@ -60,7 +56,6 @@
 
                 
                 document.getElementById('reject-cookies').addEventListener('click', function() {
-                    hasConsent = false;
                     banner.style.display = 'none';
                     localStorage.setItem('matomoConsent', 'rejected');
                     initializeMatomo(false);
@@ -91,11 +86,9 @@
                 var storedConsent = localStorage.getItem('matomoConsent');
                 if (storedConsent === 'accepted') {
                     console.log("Tracking accepted");
-                    hasConsent = true;
                     initializeMatomo(true);
                 } else if (storedConsent === 'rejected') {
                     console.log("Tracking rejected");
-                    hasConsent = false;
                     initializeMatomo(false);
                 } else {
                     
