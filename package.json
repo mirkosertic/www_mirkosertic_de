@@ -4,6 +4,7 @@
     "build": "gulp build",
     "summarize": "node aisummarize.js",
     "images": "node aiimages.js",
+    "extract": "node extract.js",
     "develop": "hugo server --buildDrafts"
   },
   "type": "module",

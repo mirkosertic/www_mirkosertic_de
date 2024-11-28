@@ -1,6 +1,6 @@
 +++
-date = "2018-12-20T00:00:00+02:00"
-title = "My favorite postings"
+date = "2024-11-24T00:00:00+02:00"
+title = "Most Relevant Blog Posts for the 2024 Technical Landscape"
 tags = []
 draft = false
 description = "Here is a list of my favorite and evergreen postings so far"
@@ -8,28 +8,71 @@ booktitle = "Tiny Jim's Top Secret List of Secrets"
 +++
 include::globals.adoc[]
 
-Here is a list of my favorite and evergreen postings so far:
+= Most Relevant Blog Posts for 2024 Technical Landscape
+Here's my curated list of the most relevant blog posts considering current technology trends and industry focus in 2024.
+This selection emphasizes practical implementations while covering both established patterns and emerging technologies.
 
-* link:{{< ref "webassembly-and-vuejs.adoc" >}}[WebAssembly with vue.js]
+These posts cover key areas that I think remain crucial in 2024:
 
-* link:{{< ref "alicebobcaroldaveopencl.adoc" >}}[Alice, Bob, Carol and Dave OpenCL Edition]
+* Microservices and distributed systems
+* Application modernization
+* WebAssembly and modern web development
+* Testing and quality assurance
+* AI integration
+* IoT and robotics
+* Domain-driven design
+* Legacy system modernization
 
-* link:{{< ref "object-oriented-webassembly.adoc" >}}[Object-Oriented WebAssembly]
+link:{{< ref "enhance-blog-with-ai.adoc" >}}[#1 {{% pagetitle "enhance-blog-with-ai.adoc" %}}] (2024)
 
-* link:{{< ref "compiling-bytecode-to-javascript.adoc" >}}[Bytecoder : A Low Level Bytecode to JavaScript Transpiler]
+Directly relevant to current AI integration trends, showing practical applications of AI in content management and optimization.
 
-* link:{{< ref "domain-driven-design-example.adoc" >}}[A Domain-driven Design Example]
+Technologies: AI, Claude API, Hugo, Content Management
 
-* link:{{< ref "improve-test-quality-with-mutationtesting.adoc" >}}[Improve Test Quality with Mutation Testing]
+link:{{< ref "domain-driven-design-example.adoc" >}}[#2 {{% pagetitle "domain-driven-design-example.adoc" %}}] (2013)
 
-* link:{{< ref "a-javafx-based-game-authoring-system.adoc" >}}[A JavaFX based Game Authoring System]
+While older, this post remains highly relevant as DDD continues to be a fundamental approach in modern software architecture, especially in microservices contexts.
 
-* link:{{< ref "why-i-switched-to-static-html-generators.adoc" >}}[Why I switched to static HTML generators]
+Technologies: DDD, Software Architecture, Design Patterns
 
-* link:{{< ref "a-javafx-based-desktop-search-engine.adoc" >}}[A JavaFX based Desktop Search Engine]
+link:{{< ref "improve-test-quality-with-mutationtesting.adoc" >}}[#3 {{% pagetitle "improve-test-quality-with-mutationtesting.adoc" %}}] (2017)
 
-* link:{{< ref "gwt-vs-dragome-vs-teavm-for-game-programming.adoc" >}}[GWT vs. Dragome vs. TeaVM for Game Programming]
+Testing remains crucial in 2024, and mutation testing offers advanced quality assurance. This approach is particularly relevant for maintaining high-quality codebases in complex systems.
 
-* link:{{< ref "a-javafx-based-lua-editor.adoc" >}}[A JavaFX based LUA editor]
+Technologies: Mutation Testing, PITest, Continuous Integration
 
-More to come...
+link:{{< ref "scs-light-and-shadow.adoc" >}}[#4 {{% pagetitle "scs-light-and-shadow.adoc" %}}] (2021)
+
+Highly relevant for modern microservices architectures and distributed systems. The focus on team organization, Domain-Driven Design, and system independence aligns perfectly with current trends in software architecture and cloud-native development practices.
+
+Technologies: Microservices, DDD, Team Organization, System Architecture
+
+link:{{< ref "swing-jetbrains-projector.adoc" >}}[#5 {{% pagetitle "swing-jetbrains-projector.adoc" %}}] (2021)
+
+Particularly relevant for organizations looking to modernize legacy applications without complete rewrites. This approach addresses the growing need for web-based solutions while preserving existing investments.
+
+Technologies: Java Swing, Web Technologies, Application Modernization
+
+link:{{< ref "webassembly-and-vuejs.adoc" >}}[#6 {{% pagetitle "webassembly-and-vuejs.adoc" %}}] (2018)
+
+WebAssembly continues to gain importance in 2024, especially for high-performance web applications. The integration with modern frameworks like Vue.js represents a powerful approach for building sophisticated web applications.
+
+Technologies: WebAssembly, Vue.js, Java, Bytecoder
+
+link:{{< ref "integration-at-ui-level-with-server-side-includes.adoc" >}}[#7 {{% pagetitle "integration-at-ui-level-with-server-side-includes.adoc" %}}] (2017)
+
+Microservices complexity management continues to be a critical concern. This practical approach to UI integration remains relevant for organizations dealing with distributed systems.
+
+Technologies: Microservices, UI Integration, Self-Contained Systems
+
+link:{{< ref "roomba-series-1.adoc" >}}[#8 {{% pagetitle "roomba-series-1.adoc" %}}] (2022)
+
+Robotics and IoT integration remain hot topics. This practical implementation using ROS and various sensors represents current trends in smart device development.
+
+Technologies: ROS, Raspberry Pi, Sensors, Robotics
+
+link:{{< ref "magnetometer-calibration-ellipsoid.adoc" >}}[#9 {{% pagetitle "magnetometer-calibration-ellipsoid.adoc" %}}] (2023)
+
+Demonstrates practical application of Python in sensor data processing and calibration, relevant for IoT and embedded systems development.
+
+Technologies: Python, Sensor Calibration, Data Processing
