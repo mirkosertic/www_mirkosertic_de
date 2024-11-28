@@ -12,7 +12,7 @@ include::globals.adoc[]
 Here's my curated list of the most relevant blog posts considering current technology trends and industry focus in 2024.
 This selection emphasizes practical implementations while covering both established patterns and emerging technologies.
 
-These posts cover key areas that I think remain crucial in 2024:
+These posts cover key areas that I think remain crucial in 2024 and the future:
 
 * Microservices and distributed systems
 * Application modernization

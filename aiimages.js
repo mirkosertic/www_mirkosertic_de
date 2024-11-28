@@ -29,6 +29,11 @@ async function handleSingleFile(entry) {
         return;
     }
 
+    if (!frontMatter.optimize) {
+        console.log("Skipping file " + filename + " due to missing optimize flag");
+        return;
+    }
+
     const prompt = `<instructions>
 Please create a Dall-E-3 prompt for the request stored in the content tags taken from a blog in a catchy way. 
 Try to extract the essence from the content.
@@ -71,7 +76,7 @@ Please return the prompt as a JSON document and return the prompt itself as the 
 
     for (var i = 0; i < 6; i++) {
 
-        const imagefilename = "./static/media/welcomeimages/" + path.parse(filename).name + "_" + i + ".png";
+        const imagefilename = "./static/media/temp/" + path.parse(filename).name + "_" + i + ".png";
         if (!fs.existsSync(imagefilename)) {
             console.log("Try #" + i);
             try {
@@ -108,10 +113,6 @@ async function main() {
     console.info('Found ' + files.length + ' files');
     for (var i = 0; i < files.length; i++) {
         handleSingleFile(files[i]);
-        if (i % 5 == 0) {
-            console.log('Sleeping due to rate limit!');
-            await sleep(70000);
-        }
     }
     console.log('Finished!');
 }

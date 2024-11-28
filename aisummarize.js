@@ -49,6 +49,11 @@ async function handleSingleFile(entry) {
     const filename = entry.path;
 
     const {frontMatter, content} = parseAsciidocFrontMatter(entry.content);
+
+    if (!frontMatter.optimize) {
+        return;
+    }
+
     const message = convertToMessage(frontMatter, content);
 
     const response = await client.messages.create(message);
@@ -83,10 +88,6 @@ async function main() {
     console.info('Found ' + files.length + ' files');
     for (var i = 0; i < files.length; i++) {
         handleSingleFile(files[i]);
-        if (i % 5 == 0) {
-            console.log('Sleeping due to rate limit!');
-            await sleep(30000);
-        }
     }
     console.log('Finished!');
 }

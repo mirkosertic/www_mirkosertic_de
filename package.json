@@ -5,7 +5,7 @@
     "summarize": "node aisummarize.js",
     "images": "node aiimages.js",
     "extract": "node extract.js",
-    "develop": "hugo server --buildDrafts"
+    "develop": "hugo server --buildDrafts --buildFuture"
   },
   "type": "module",
   "devDependencies": {
