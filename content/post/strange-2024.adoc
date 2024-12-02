@@ -1,5 +1,5 @@
 +++
-date = "2024-12-31T00:00:00+02:00"
+date = "2024-12-01T00:00:00+02:00"
 title = "Tech Gone Wild 2024: The Most Absurdly Overengineered Solutions of Tomorrow"
 tags = ["Humor", "Programming", "Overengineering", "Techsatire", "Enterprise"]
 draft = false
