@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Thu, 21 Nov 2024 21:46:13 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 02 Dec 2024 10:14:57 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/enterprise/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tech Gone Wild 2024: The Most Absurdly Overengineered Solutions of Tomorrow</title>
+      <link>https://www.mirkosertic.de/blog/2024/12/strange-2024/</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/blog/2024/12/strange-2024/</guid>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;As someone who’s been writing about technology for over two decades, I’ve seen my fair share of both brilliant innovations and spectacular failures. Today, let’s take a tongue-in-cheek look at some absolutely absurd technical ideas that - knowing our industry - are probably already being implemented somewhere in a VC-funded startup. This is meant to be satirical, but with just enough technical depth to make you wonder &amp;#34;wait, could this actually work?&amp;#34;&#xA;&lt;em&gt;Please don’t actually implement these ideas (or if you do, at least invite me to the chaos).&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/div&gt;</description>
+    </item>
     <item>
       <title>Transform Legacy Swing Apps into Modern Web Applications with JetBrains Projector</title>
       <link>https://www.mirkosertic.de/blog/2021/08/swing-jetbrains-projector/</link>

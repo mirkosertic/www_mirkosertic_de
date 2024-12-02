@@ -7,8 +7,43 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Wed, 27 Nov 2024 08:34:02 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 02 Dec 2024 10:14:57 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Enterprise</title>
+      <link>https://www.mirkosertic.de/tags/enterprise/</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/tags/enterprise/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Humor</title>
+      <link>https://www.mirkosertic.de/tags/humor/</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/tags/humor/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Overengineering</title>
+      <link>https://www.mirkosertic.de/tags/overengineering/</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/tags/overengineering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programming</title>
+      <link>https://www.mirkosertic.de/tags/programming/</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/tags/programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Techsatire</title>
+      <link>https://www.mirkosertic.de/tags/techsatire/</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/tags/techsatire/</guid>
+      <description></description>
+    </item>
     <item>
       <title>AI</title>
       <link>https://www.mirkosertic.de/tags/ai/</link>
@@ -91,13 +126,6 @@
       <link>https://www.mirkosertic.de/tags/diy/</link>
       <pubDate>Thu, 13 Oct 2022 00:00:00 +0100</pubDate>
       <guid>https://www.mirkosertic.de/tags/diy/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Enterprise</title>
-      <link>https://www.mirkosertic.de/tags/enterprise/</link>
-      <pubDate>Sun, 15 Aug 2021 00:00:00 +0200</pubDate>
-      <guid>https://www.mirkosertic.de/tags/enterprise/</guid>
       <description></description>
     </item>
     <item>

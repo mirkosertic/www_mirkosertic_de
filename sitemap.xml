@@ -2,13 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.mirkosertic.de/tags/enterprise/</loc>
+    <lastmod>2024-12-02T10:14:57+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/humor/</loc>
+    <lastmod>2024-12-02T10:14:57+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/overengineering/</loc>
+    <lastmod>2024-12-02T10:14:57+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://www.mirkosertic.de/post/</loc>
-    <lastmod>2024-11-28T22:52:52+01:00</lastmod>
+    <lastmod>2024-12-02T10:14:57+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/programming/</loc>
+    <lastmod>2024-12-02T10:14:57+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/</loc>
+    <lastmod>2024-12-02T10:14:57+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/blog/2024/12/strange-2024/</loc>
+    <lastmod>2024-12-02T10:14:57+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/techsatire/</loc>
+    <lastmod>2024-12-02T10:14:57+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://www.mirkosertic.de/</loc>
-    <lastmod>2024-11-28T22:52:52+01:00</lastmod>
+    <lastmod>2024-12-02T10:14:57+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -72,11 +107,6 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://www.mirkosertic.de/tags/</loc>
-    <lastmod>2024-11-27T08:34:02+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://www.mirkosertic.de/tags/magnetometer/</loc>
     <lastmod>2024-11-21T21:46:13+01:00</lastmod>
     <changefreq>daily</changefreq>
@@ -113,11 +143,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://www.mirkosertic.de/blog/2022/02/roomba-series/</loc>
-    <lastmod>2024-11-21T21:46:13+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://www.mirkosertic.de/tags/enterprise/</loc>
     <lastmod>2024-11-21T21:46:13+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
