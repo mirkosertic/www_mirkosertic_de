@@ -43,17 +43,22 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://www.mirkosertic.de/</loc>
-    <lastmod>2024-12-02T10:14:57+01:00</lastmod>
+    <lastmod>2024-12-03T12:02:29+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/global/</loc>
+    <lastmod>2024-12-03T12:02:29+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/global/impressum/</loc>
+    <lastmod>2024-12-03T12:02:29+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://www.mirkosertic.de/global/interestingbooks/</loc>
     <lastmod>2024-11-26T17:57:53+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://www.mirkosertic.de/global/</loc>
-    <lastmod>2024-11-28T22:52:52+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -379,11 +384,6 @@
   </url><url>
     <loc>https://www.mirkosertic.de/blog/2015/03/tuning-html5-canvas-filltext/</loc>
     <lastmod>2024-11-21T21:46:13+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://www.mirkosertic.de/global/impressum/</loc>
-    <lastmod>2024-11-26T09:19:15+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>

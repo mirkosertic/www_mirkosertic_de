@@ -7,7 +7,7 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Mon, 02 Dec 2024 10:14:57 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 03 Dec 2024 12:02:29 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tech Gone Wild 2024: The Most Absurdly Overengineered Solutions of Tomorrow</title>
@@ -15,6 +15,13 @@
       <pubDate>Sun, 01 Dec 2024 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/blog/2024/12/strange-2024/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;As someone who’s been writing about technology for over two decades, I’ve seen my fair share of both brilliant innovations and spectacular failures. Today, let’s take a tongue-in-cheek look at some absolutely absurd technical ideas that - knowing our industry - are probably already being implemented somewhere in a VC-funded startup. This is meant to be satirical, but with just enough technical depth to make you wonder &amp;#34;wait, could this actually work?&amp;#34;&#xA;&lt;em&gt;Please don’t actually implement these ideas (or if you do, at least invite me to the chaos).&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Impressum</title>
+      <link>https://www.mirkosertic.de/global/impressum/</link>
+      <pubDate>Sat, 30 Nov 2024 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/global/impressum/</guid>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_impressum&#34;&gt;Impressum&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;&lt;strong&gt;Angaben gemäß § 5 TMG&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Mirko Sertic&lt;br/&gt;&#xA;Josefine-Mauser-Straße 66&lt;br/&gt;&#xA;48157 Münster&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;&lt;strong&gt;Kontakt&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Telefon: 01575-1337193&lt;br/&gt;&#xA;E-Mail: &lt;a href=&#34;mailto:mirko@mirkosertic.de&#34;&gt;mirko@mirkosertic.de&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_haftungsausschluss&#34;&gt;Haftungsausschluss&lt;/h3&gt;&#xA;&lt;div class=&#34;sect3&#34;&gt;&#xA;&lt;h4 id=&#34;_haftung_für_inhalte&#34;&gt;Haftung für Inhalte&lt;/h4&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Die Inhalte dieser Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der&#xA;Inhalte kann ich jedoch keine Gewähr übernehmen. Als Diensteanbieter bin ich gemäß § 7 Abs.1 TMG für eigene Inhalte auf&#xA;diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG bin ich als Diensteanbieter jedoch nicht&#xA;verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf&#xA;eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach&#xA;den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der&#xA;Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werde ich&#xA;diese Inhalte umgehend entfernen.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Essential Books for Modern Software Engineers</title>
@@ -204,13 +211,6 @@
       <pubDate>Wed, 25 Mar 2015 07:33:48 +0100</pubDate>
       <guid>https://www.mirkosertic.de/blog/2015/03/tuning-html5-canvas-filltext/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Two years ago I wrote a Java based &lt;a href=&#34;https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/&#34;&gt;GameEngine&lt;/a&gt;. I used technologies such as GWT and TeaVM to transpile the Java source code to JavaScript. The Game Engine used the HTML5 Canvas to render the current game state representation to the user. For the past few weeks I had some time to implement new features for this cool engine. I also did some profiling to see if there are bottlenecks in the rendering code. During the profiling sessions already known facts became visible: some browsers perform better than others.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
-    </item>
-    <item>
-      <title>Impressum</title>
-      <link>https://www.mirkosertic.de/global/impressum/</link>
-      <pubDate>Tue, 30 Dec 2014 00:00:00 +0200</pubDate>
-      <guid>https://www.mirkosertic.de/global/impressum/</guid>
-      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_impressum&#34;&gt;Impressum&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;&lt;strong&gt;Angaben gemäß § 5 TMG&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Mirko Sertic&lt;br/&gt;&#xA;Josefine-Mauser-Straße 66&lt;br/&gt;&#xA;48157 Münster&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;&lt;strong&gt;Kontakt&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Telefon: 01575-1337193&lt;br/&gt;&#xA;E-Mail: &lt;a href=&#34;mailto:mirko@mirkosertic.de&#34;&gt;mirko@mirkosertic.de&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_haftungsausschluss&#34;&gt;Haftungsausschluss&lt;/h3&gt;&#xA;&lt;div class=&#34;sect3&#34;&gt;&#xA;&lt;h4 id=&#34;_haftung_für_inhalte&#34;&gt;Haftung für Inhalte&lt;/h4&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Die Inhalte dieser Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der&#xA;Inhalte kann ich jedoch keine Gewähr übernehmen. Als Diensteanbieter bin ich gemäß § 7 Abs.1 TMG für eigene Inhalte auf&#xA;diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG bin ich als Diensteanbieter jedoch nicht&#xA;verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf&#xA;eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach&#xA;den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der&#xA;Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werde ich&#xA;diese Inhalte umgehend entfernen.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Java-to-JavaScript Game Development: Battle of the Transpilers</title>
