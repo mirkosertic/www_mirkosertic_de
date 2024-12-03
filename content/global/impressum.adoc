@@ -1,5 +1,5 @@
 +++
-date = "2014-12-30T00:00:00+02:00"
+date = "2024-11-30T00:00:00+02:00"
 title = "Impressum"
 tags = []
 draft = false
