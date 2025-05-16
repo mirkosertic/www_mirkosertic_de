@@ -4,10 +4,13 @@ theme= "boot"
 baseurl = "https://www.mirkosertic.de/"
 copyright = "Mirko Sertic"
 googleAnalytics = "UA-33614060-2"
-paginate = 40
 enableRobotsTXT = false
 disableHugoGeneratorInject = true
 enableGitInfo = true
+timeout = 60
+
+[pagination]
+    pagerSize = 40
 
 [Taxonomies]
     tag = "tags"
