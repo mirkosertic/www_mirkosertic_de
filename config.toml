@@ -7,7 +7,7 @@ googleAnalytics = "UA-33614060-2"
 enableRobotsTXT = false
 disableHugoGeneratorInject = true
 enableGitInfo = true
-timeout = 60
+timeout = 120
 
 [pagination]
     pagerSize = 40
