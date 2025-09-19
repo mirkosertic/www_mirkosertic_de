@@ -1,5 +1,5 @@
 +++
-date = "2024-11-24T00:00:00+02:00"
+date = "2025-09-19T00:00:00+02:00"
 title = "Essential Books for Modern Software Engineers"
 tags = []
 draft = false
@@ -21,6 +21,25 @@ These foundational books will help you build a strong base in software engineeri
 * *The Goal*: A Process of Ongoing Improvement. Eliyahu M. Goldratt, Jeff Cox
 * *Software Estimation: Demystifying the Black Art*. Steve McConnell
 * *Peopleware: Productive Projects and Teams*. Tom DeMarco
+
+=== Computer science
+
+* *The C++ Programming Language*.  Bjarne Stroustrup
+* *Effective Java* : Third Edition. Joshua Bloch
+* *Seven Databases in Seven Weeks*: A Guide to Modern Databases and the NoSQL Movement. Eric Redmond and Jim R. Wilson
+* *Seven Languages in Seven Weeks*: A Pragmatic Guide to Learning Programming Languages (Pragmatic Programmers). Bruce A. Tate
+* *DSLs (Domain-specific languages) in Action*. Debasish Ghosh
+* *Engineering a Compiler*. Linda Torczon, Keith Cooper
+* *Writing a C Compiler: Build a Real Programming Language from Scratch*. Nora Sandler
+* *Advanced Compiler Design & Implementation*. Steven S. Muchnick
+* *Compilers: Principles, Techniques, and Tools*. Alfred V. Aho, Monica S. Lam, Ravi Sethi, Jeffrey D. Ullman
+
+=== AI & Machine Learning
+
+* *Deep Learning (Adaptive Computation and Machine Learning)*. Ian Goodfellow, Yoshua Bengio, Aaron Courville
+* *Reinforcement Learning: An Introduction* (Adaptive Computation and Machine Learning). Richard S. Sutton, Andrew G. Barto
+* *Genetic Algorithms and Machine Learning for Programmers*. Create AI Models and Evolve Solutions. Frances Buontempo.
+* *Deep Learning for Search*. Tommaso Teofili
 
 === Software Craftsmanship
 
@@ -68,16 +87,8 @@ Specific technologies and programming paradigms for the modern developer.
 
 === Java & JVM Ecosystem
 
-* *Effective Java* : Third Edition. Joshua Bloch
 * *Real World Java EE Patterns*. Rethinking Best Practices. Adam Bien
 * *Functional Programming in Java*: Harnessing the Power of Java 8 Lambda Expressions. Venkat Subramaniam
-
-=== AI & Machine Learning
-
-* *Deep Learning (Adaptive Computation and Machine Learning)*. Ian Goodfellow, Yoshua Bengio, Aaron Courville
-* *Reinforcement Learning: An Introduction* (Adaptive Computation and Machine Learning). Richard S. Sutton, Andrew G. Barto
-* *Genetic Algorithms and Machine Learning for Programmers*. Create AI Models and Evolve Solutions. Frances Buontempo.
-* *Deep Learning for Search*. Tommaso Teofili
 
 === Game Development & Graphics
 
@@ -86,14 +97,6 @@ Specific technologies and programming paradigms for the modern developer.
 * *Real-Time Rendering, Third Edition*. Tomas Akenine-Möller, Eric Haines, Naty Hoffmann
 * *Game Engine Black Book: Wolfenstein 3D*. Fabien Sanglard
 * *Game Engine Black Book: Doom*. Fabien Sanglard
-
-=== Computer science
-
-* *Seven Databases in Seven Weeks*: A Guide to Modern Databases and the NoSQL Movement. Eric Redmond and Jim R. Wilson
-* *Seven Languages in Seven Weeks*: A Pragmatic Guide to Learning Programming Languages (Pragmatic Programmers). Bruce A. Tate
-* *DSLs (Domain-specific languages) in Action*. Debasish Ghosh
-* *Engineering a Compiler*. Linda Torczon, Keith Cooper
-* *Writing a C Compiler: Build a Real Programming Language from Scratch*. Nora Sandler
 
 == Beyond Code
 
