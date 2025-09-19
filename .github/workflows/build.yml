@@ -18,7 +18,7 @@ jobs:
           python-version: '3.9'
       - run: |
           gem install coderay
-          gem install pygments.rb
+          gem install pygments.rb  -v 3.0.0
           which ruby
       - uses: actions/setup-node@v2
         with:
