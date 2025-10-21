@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Fri, 19 Sep 2025 08:17:44 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 21 Oct 2025 20:26:19 +0200</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/global/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My personal Technology Radar</title>
+      <link>https://www.mirkosertic.de/global/toolsgoodies/</link>
+      <pubDate>Tue, 21 Oct 2025 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/global/toolsgoodies/</guid>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_section_1_developer_tooling_testing&#34;&gt;Section 1: Developer Tooling &amp;amp; Testing&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Tools and frameworks that support the development and testing process&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;&lt;strong&gt;Adopt&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.jetbrains.com/idea&#34;&gt;IntelliJ IDEA&lt;/a&gt; IntelliJ IDEA, the one and only IDE you will ever need!&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://playwright.dev&#34;&gt;Playwright&lt;/a&gt; Industry standard for end-to-end testing, offering superior reliability and features compared to alternatives&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.testcontainers.org/&#34;&gt;Testcontainers&lt;/a&gt; Essential for modern integration testing, especially in microservices environments&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://storybook.js.org/&#34;&gt;Storybook&lt;/a&gt; De facto standard for component development and documentation in modern frontend development. Alternative: Histoire for Vue.js project&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
+    </item>
     <item>
       <title>Essential Books for Modern Software Engineers</title>
       <link>https://www.mirkosertic.de/global/interestingbooks/</link>
@@ -29,13 +36,6 @@
       <pubDate>Sun, 24 Nov 2024 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/global/favorites/</guid>
       <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;These posts cover key areas that I think remain crucial in 2024 and the future:&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Microservices and distributed systems&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Application modernization&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;WebAssembly and modern web development&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Testing and quality assurance&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;AI integration&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;IoT and robotics&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Domain-driven design&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Legacy system modernization&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.mirkosertic.de/blog/2024/11/enhance-blog-with-ai/&#34;&gt;#1&#xA;Supercharge Your Hugo Blog with Claude: Automated Content Enhancement using Anthropic&amp;#39;s API&#xA;&lt;/a&gt; (2024)&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Directly relevant to current AI integration trends, showing practical applications of AI in content management and optimization.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
-    </item>
-    <item>
-      <title>My personal Technology Radar</title>
-      <link>https://www.mirkosertic.de/global/toolsgoodies/</link>
-      <pubDate>Sun, 17 Nov 2024 00:00:00 +0200</pubDate>
-      <guid>https://www.mirkosertic.de/global/toolsgoodies/</guid>
-      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_section_1_developer_tooling_testing&#34;&gt;Section 1: Developer Tooling &amp;amp; Testing&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Tools and frameworks that support the development and testing process&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;&lt;strong&gt;Adopt&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.jetbrains.com/idea&#34;&gt;IntelliJ IDEA&lt;/a&gt; IntelliJ IDEA, the one and only IDE you will ever need!&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://playwright.dev&#34;&gt;Playwright&lt;/a&gt; Industry standard for end-to-end testing, offering superior reliability and features compared to alternatives&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.testcontainers.org/&#34;&gt;Testcontainers&lt;/a&gt; Essential for modern integration testing, especially in microservices environments&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://storybook.js.org/&#34;&gt;Storybook&lt;/a&gt; De facto standard for component development and documentation in modern frontend development. Alternative: Histoire for Vue.js project&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>
