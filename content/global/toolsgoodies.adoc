@@ -1,5 +1,5 @@
 +++
-date = "2024-11-17T00:00:00+02:00"
+date = "2025-10-21T00:00:00+02:00"
 title = "My personal Technology Radar"
 tags = []
 draft = false
@@ -67,6 +67,7 @@ Tools and frameworks for data processing and visualization
 
 *Adopt*
 
+- https://duckdb.org/[DuckDB] DuckDB is a fast in-process database system
 - https://grafana.com/[Grafana] Industry standard for monitoring and visualization
 - https://jsoncrack.com/editor[JSON Crack] Modern tool for JSON data visualization and analysis
 - https://www.plotjuggler.io/[PlotJuggler] Powerful tool for time series visualization. Alternative: Chronograf, Prometheus+Grafana
