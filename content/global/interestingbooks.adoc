@@ -1,5 +1,5 @@
 +++
-date = "2025-09-19T00:00:00+02:00"
+date = "2025-11-05T00:00:00+02:00"
 title = "Essential Books for Modern Software Engineers"
 tags = []
 draft = false
@@ -40,6 +40,7 @@ These foundational books will help you build a strong base in software engineeri
 * *Reinforcement Learning: An Introduction* (Adaptive Computation and Machine Learning). Richard S. Sutton, Andrew G. Barto
 * *Genetic Algorithms and Machine Learning for Programmers*. Create AI Models and Evolve Solutions. Frances Buontempo.
 * *Deep Learning for Search*. Tommaso Teofili
+* *Build a Large Language Model (From Scratch)*. Sebastian Raschka
 
 === Software Craftsmanship
 
