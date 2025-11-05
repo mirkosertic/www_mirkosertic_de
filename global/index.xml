@@ -7,21 +7,21 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Tue, 21 Oct 2025 20:26:19 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 05 Nov 2025 14:51:58 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/global/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Essential Books for Modern Software Engineers</title>
+      <link>https://www.mirkosertic.de/global/interestingbooks/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/global/interestingbooks/</guid>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_core_software_engineering_fundamentals&#34;&gt;Core Software Engineering Fundamentals&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;These foundational books will help you build a strong base in software engineering principles and practices.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_project_management_process&#34;&gt;Project Management &amp;amp; Process&lt;/h3&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;The Mythical Man-Month&lt;/strong&gt;. Essays on Software Engineering. Frederick P. Brooks&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;The Deadline&lt;/strong&gt;: A Novel About Project Management. Tom DeMarco&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;The Goal&lt;/strong&gt;: A Process of Ongoing Improvement. Eliyahu M. Goldratt, Jeff Cox&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Software Estimation: Demystifying the Black Art&lt;/strong&gt;. Steve McConnell&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Peopleware: Productive Projects and Teams&lt;/strong&gt;. Tom DeMarco&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
+    </item>
     <item>
       <title>My personal Technology Radar</title>
       <link>https://www.mirkosertic.de/global/toolsgoodies/</link>
       <pubDate>Tue, 21 Oct 2025 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/global/toolsgoodies/</guid>
       <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_section_1_developer_tooling_testing&#34;&gt;Section 1: Developer Tooling &amp;amp; Testing&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Tools and frameworks that support the development and testing process&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;&lt;strong&gt;Adopt&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.jetbrains.com/idea&#34;&gt;IntelliJ IDEA&lt;/a&gt; IntelliJ IDEA, the one and only IDE you will ever need!&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://playwright.dev&#34;&gt;Playwright&lt;/a&gt; Industry standard for end-to-end testing, offering superior reliability and features compared to alternatives&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.testcontainers.org/&#34;&gt;Testcontainers&lt;/a&gt; Essential for modern integration testing, especially in microservices environments&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://storybook.js.org/&#34;&gt;Storybook&lt;/a&gt; De facto standard for component development and documentation in modern frontend development. Alternative: Histoire for Vue.js project&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
-    </item>
-    <item>
-      <title>Essential Books for Modern Software Engineers</title>
-      <link>https://www.mirkosertic.de/global/interestingbooks/</link>
-      <pubDate>Fri, 19 Sep 2025 00:00:00 +0200</pubDate>
-      <guid>https://www.mirkosertic.de/global/interestingbooks/</guid>
-      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_core_software_engineering_fundamentals&#34;&gt;Core Software Engineering Fundamentals&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;These foundational books will help you build a strong base in software engineering principles and practices.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_project_management_process&#34;&gt;Project Management &amp;amp; Process&lt;/h3&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;The Mythical Man-Month&lt;/strong&gt;. Essays on Software Engineering. Frederick P. Brooks&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;The Deadline&lt;/strong&gt;: A Novel About Project Management. Tom DeMarco&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;The Goal&lt;/strong&gt;: A Process of Ongoing Improvement. Eliyahu M. Goldratt, Jeff Cox&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Software Estimation: Demystifying the Black Art&lt;/strong&gt;. Steve McConnell&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Peopleware: Productive Projects and Teams&lt;/strong&gt;. Tom DeMarco&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Impressum</title>
