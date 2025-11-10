@@ -52,10 +52,8 @@ timeout = 120
     weight = 5
 
 [markup.asciidocExt]
-    extensions = ["asciidoctor-kroki"]
-    [markup.asciidocExt.attributes]
-        kroki-fetch-diagram = true
+    extensions = ["asciidoctor-diagram"]
 
 [security]
     [security.exec]
-        allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^asciidoctor$', '^git$']
+        allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^asciidoctor$', '^git$', '^asciidoctor-diagram$']

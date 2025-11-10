@@ -36,8 +36,6 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.1",
-    "asciidoctor": "^3.0.4",
-    "asciidoctor-kroki": "^0.18.1",
     "dotenv": "^16.4.5",
     "openai": "^4.73.0"
   }

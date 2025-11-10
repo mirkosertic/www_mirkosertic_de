@@ -19,6 +19,9 @@ jobs:
       - run: |
           gem install coderay
           gem install pygments.rb  -v 3.0.0
+          gem install asciidoctor-diagram
+          gem install asciidoctor-diagram-ditaamini
+          gem install asciidoctor-diagram-plantuml          
           which ruby
       - uses: actions/setup-node@v2
         with:
