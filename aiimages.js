@@ -54,7 +54,7 @@ Please return the prompt as a JSON document and return the prompt itself as the 
         messages: [
             { role: 'user', content: prompt }
         ],
-        model: 'claude-3-5-sonnet-latest'
+        model: 'claude-sonnet-4-20250514'
     };
 
     console.log("Asking Claude for a Dall-E prompt..")
@@ -65,7 +65,9 @@ Please return the prompt as a JSON document and return the prompt itself as the 
     for (var i = 0; i < aicontent.length; i++) {
         const elem = aicontent[i];
         if ('text' === elem.type) {
-            const js = JSON.parse(elem.text);
+            const jsstripped = elem.text.replace("```json", "").replace("```", "");
+            console.info("Got content: " + jsstripped + "")
+            const js = JSON.parse(jsstripped);
             if (js.prompt) {
                 dalleprompt = js.prompt;
             }

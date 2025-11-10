@@ -1,5 +1,4 @@
 import Anthropic from '@anthropic-ai/sdk';
-import { sleep } from '@anthropic-ai/sdk/core';
 import { loadFilesWithExtension, parseAsciidocFrontMatter } from './aicommon.js';
 
 import dotenv from 'dotenv';
@@ -40,7 +39,7 @@ Finally please try to generate an abstract for the content and return it as the 
         messages: [
             { role: 'user', content: prompt }
         ],
-        model: 'claude-3-5-sonnet-latest'
+        model: 'claude-sonnet-4-20250514'
     };
     return messageObj;
 }
@@ -62,7 +61,9 @@ async function handleSingleFile(entry) {
     for (var i = 0; i < aicontent.length; i++) {
         const elem = aicontent[i];
         if ('text' === elem.type) {
-            const js = JSON.parse(elem.text);
+            const jsstripped = elem.text.replace("```json", "").replace("```", "");
+            console.info("Got content: " + jsstripped + "")
+            const js = JSON.parse(jsstripped);
             if (js.title) {
                 frontMatter["ai_title"] = js.title;
             }

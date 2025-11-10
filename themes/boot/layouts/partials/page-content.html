@@ -8,5 +8,4 @@
         {{if .PrevInSection}}<span>&lt;&lt;Pevious posting: <a href="{{.PrevInSection.Permalink}}">{{.PrevInSection.Title}}</a></span>{{end}}
         {{if .NextInSection}}<span>Next posting: <a href="{{.NextInSection.Permalink}}">{{.NextInSection.Title}}</a>&gt;&gt;</span>{{end}}
     </div>
-    <p><i class="fa fa-github"></i>Git revision: <a href="https://github.com/mirkosertic/www_mirkosertic_de/commit/{{.GitInfo.Hash}}" target="_blank">{{.GitInfo.AbbreviatedHash}}</a></p>
 </article>
