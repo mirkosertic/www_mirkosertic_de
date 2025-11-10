@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security on www.mirkosertic.de</title>
+    <link>https://www.mirkosertic.de/tags/security/</link>
+    <description>Recent content in Security on www.mirkosertic.de</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>Mirko Sertic</copyright>
+    <lastBuildDate>Mon, 10 Nov 2025 16:19:52 +0100</lastBuildDate>
+    <atom:link href="https://www.mirkosertic.de/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Build Your Own Ultra-Private HomeAssistant Voice Assistant Using iOS Devices</title>
+      <link>https://www.mirkosertic.de/blog/2025/11/supersecret-voice-satellite/</link>
+      <pubDate>Sat, 08 Nov 2025 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/blog/2025/11/supersecret-voice-satellite/</guid>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Voice control is becoming increasingly important for smart home systems. However, most available solutions come with significant privacy concerns and hardware requirements. In this post, we’ll explore how to build a private voice satellite for HomeAssistant using iOS devices, focusing on local processing to maximize privacy and security.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_current_challenges_with_voice_control&#34;&gt;Current Challenges with Voice Control&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;When looking at existing HomeAssistant voice pipelines and satellite solutions, several issues become clear:&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;All processing typically happens server-side, from wake word detection to speech-to-text and text-to-speech conversion, requiring constant data transmission and raising privacy concerns&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Significant server computing power and hardware resources are required for acceptable performance and response times, making self-hosting challenging&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Server-based wake word detection requires continuous audio streaming from the satellite to the server, consuming significant bandwidth&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;This creates major privacy and security concerns, especially when cloud services are involved, as sensitive audio data is transmitted and processed remotely&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Limited control over data processing and retention policies when using third-party cloud services&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Network latency can impact responsiveness and user experience&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Potential single point of failure if the server becomes unavailable&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -2,17 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.mirkosertic.de/blog/2025/11/supersecret-voice-satellite/</loc>
+    <lastmod>2025-11-10T16:19:52+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/homeassistant/</loc>
+    <lastmod>2025-11-10T16:19:52+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/llm/</loc>
+    <lastmod>2025-11-10T16:19:52+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/post/</loc>
+    <lastmod>2025-11-10T16:19:52+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/programming/</loc>
+    <lastmod>2025-11-10T16:19:52+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/security/</loc>
+    <lastmod>2025-11-10T16:19:52+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/</loc>
+    <lastmod>2025-11-10T16:19:52+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/voice/</loc>
+    <lastmod>2025-11-10T16:19:52+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/</loc>
+    <lastmod>2025-11-10T16:19:52+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://www.mirkosertic.de/global/interestingbooks/</loc>
     <lastmod>2025-11-05T14:51:58+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://www.mirkosertic.de/global/</loc>
-    <lastmod>2025-11-05T14:51:58+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://www.mirkosertic.de/</loc>
     <lastmod>2025-11-05T14:51:58+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -33,21 +73,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://www.mirkosertic.de/tags/overengineering/</loc>
-    <lastmod>2024-12-02T10:14:57+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://www.mirkosertic.de/post/</loc>
-    <lastmod>2024-12-02T10:14:57+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://www.mirkosertic.de/tags/programming/</loc>
-    <lastmod>2024-12-02T10:14:57+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://www.mirkosertic.de/tags/</loc>
     <lastmod>2024-12-02T10:14:57+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

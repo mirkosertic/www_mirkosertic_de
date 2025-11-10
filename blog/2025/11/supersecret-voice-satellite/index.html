@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Build Your Own Ultra-Private HomeAssistant Voice Assistant Using iOS Devices &middot; Mirko Sertic</title><meta name="description" content="Transform an iPad into a privacy-first voice satellite that keeps all audio processing local while connecting to HomeAssistant for smart home control. Using offline wake word detection, iOS&#39;s built-in speech engines, and encrypted text-only communication, this solution eliminates the need for cloud services or constant audio streaming. The result is a responsive, secure voice assistant that works even when your internet is spotty."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="robots" content="index,follow"><meta property="og:title" content="Build Your Own Ultra-Private HomeAssistant Voice Assistant Using iOS Devices"><meta property="og:description" content="Transform an iPad into a privacy-first voice satellite that keeps all audio processing local while connecting to HomeAssistant for smart home control. Using offline wake word detection, iOS&#39;s built-in speech engines, and encrypted text-only communication, this solution eliminates the need for cloud services or constant audio streaming. The result is a responsive, secure voice assistant that works even when your internet is spotty."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2025/11/supersecret-voice-satellite/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><meta name="theme-color" content="#ffffff"><script>var _paq = window._paq = window._paq || [];
+
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        _paq.push(['requireConsent']);
+
+        (function() {
+            
+            function isDoNotTrackEnabled() {
+                return navigator.doNotTrack === "1" ||
+                    window.doNotTrack === "1" ||
+                    navigator.msDoNotTrack === "1";
+            }
+
+            
+            function createConsentBanner() {
+                
+                if (isDoNotTrackEnabled()) {
+                    initializeMatomo(false);
+                    return;
+                }
+
+                var banner = document.createElement('div');
+                banner.style.cssText = `
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f8f8f8;
+            padding: 15px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            text-align: center;
+        `;
+
+                banner.innerHTML = `
+            <p>We use cookies to improve your browsing experience.
+            Your browser's Do Not Track setting is currently: ${isDoNotTrackEnabled() ? 'Enabled' : 'Disabled'}.
+            Do you consent to our use of cookies?</p>
+            <button id="accept-cookies" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; margin-right: 10px; cursor: pointer;">
+                Accept
+            </button>
+            <button id="reject-cookies" style="background-color: #f44336; color: white; border: none; padding: 10px 20px; cursor: pointer;">
+                Reject
+            </button>
+        `;
+
+                document.body.appendChild(banner);
+
+                
+                document.getElementById('accept-cookies').addEventListener('click', function() {
+                    banner.style.display = 'none';
+                    localStorage.setItem('matomoConsent', 'accepted');
+                    initializeMatomo(true);
+                });
+
+                
+                document.getElementById('reject-cookies').addEventListener('click', function() {
+                    banner.style.display = 'none';
+                    localStorage.setItem('matomoConsent', 'rejected');
+                    initializeMatomo(false);
+                });
+            }
+
+            
+            function initializeMatomo(trackingAllowed) {
+                
+                if (isDoNotTrackEnabled()) {
+                    trackingAllowed = false;
+                }
+
+                if (trackingAllowed) {
+                    
+                    _paq.push(['setConsentGiven']);
+                }
+            }
+
+            
+            function checkPreviousConsent() {
+                
+                if (isDoNotTrackEnabled()) {
+                    initializeMatomo(false);
+                    return;
+                }
+
+                var storedConsent = localStorage.getItem('matomoConsent');
+                if (storedConsent === 'accepted') {
+                    console.log("Tracking accepted");
+                    initializeMatomo(true);
+                } else if (storedConsent === 'rejected') {
+                    console.log("Tracking rejected");
+                    initializeMatomo(false);
+                } else {
+                    
+                    createConsentBanner();
+                }
+            }
+
+            
+            function init() {
+                checkPreviousConsent();
+            }
+
+            
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+
+            var u="//analytics.mirkosertic.de/";
+            _paq.push(['setTrackerUrl', u+'matomo.php']);
+            _paq.push(['setSiteId', '2']);
+
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();</script></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="My personal Technology Radar">Technology Radar</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Essential Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link active" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><div itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"><header class="post-header"><div class="contentbox"><h1 class="post-title" itemprop="name headline">Build Your Own Ultra-Private HomeAssistant Voice Assistant Using iOS Devices</h1><p class="post-date"><span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="2025-11-08" itemprop="datePublished">Sat, Nov 8, 2025</time> <span>by</span> <span itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name"><a href="https://x.com/mirkosertic" rel="author">Mirko Sertic</a></span></span></p><p class="post-abstract" itemprop="abstract"><span>This technical guide presents a comprehensive approach to building a privacy-focused voice satellite for HomeAssistant using iOS devices. The solution addresses common privacy and performance concerns of traditional cloud-based voice systems by implementing local wake word detection with Picovoice Porcupine, leveraging iOS&#39;s native speech processing capabilities, and maintaining encrypted communication channels. The architecture eliminates raw audio transmission by processing all voice data locally on the device, sending only processed text commands to HomeAssistant over secure connections. Key implementation details include proper audio format configuration for wake word detection, chunked audio processing with ring buffers, partial speech recognition results for responsiveness, and conversation context management for enhanced LLM interactions. Real-world testing demonstrates reliable performance with minimal false positives and acceptable response times, even on older iPad hardware. The guide concludes with practical considerations for future enhancements including security improvements through voice biometric authentication, usability features like offline operation modes, and maintainability improvements through modular architecture design.</span></p><p><span class="icon"><i class="fa fa-clock-white"></i></span><span>7 Minutes reading time</span></p><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags-white"></i></span><a href="/tags/homeassistant">HomeAssistant</a> ,<a href="/tags/programming">Programming</a> ,<a href="/tags/security">Security</a> ,<a href="/tags/voice">Voice</a> ,<a href="/tags/llm">LLM</a></span></p></div></header><figure class="blogtitleimage"><figcaption><p>Behold the masterpiece that AI hallucinated while reading this post:</p><p class="title">"The Little iPad That Could Keep Secrets: A Tale of Private Voice Magic"</p><p>(after I fed it way too many marketing blogs and memes)</p><p class="aidisclosure">Created using DALL-E 3</p></figcaption><img src="/media/welcomeimages/supersecret-voice-satellite_selected.png" alt="AI-Generated: The Little iPad That Could Keep Secrets: A Tale of Private Voice Magic" itemprop="image"></figure><article class="post-content clearfix" itemprop="articleBody"><div class="paragraph"><p>Voice control is becoming increasingly important for smart home systems. However, most available solutions come with significant privacy concerns and hardware requirements. In this post, we’ll explore how to build a private voice satellite for HomeAssistant using iOS devices, focusing on local processing to maximize privacy and security.</p></div><div class="sect1"><h2 id="_current_challenges_with_voice_control">Current Challenges with Voice Control</h2><div class="sectionbody"><div class="paragraph"><p>When looking at existing HomeAssistant voice pipelines and satellite solutions, several issues become clear:</p></div><div class="ulist"><ul><li><p>All processing typically happens server-side, from wake word detection to speech-to-text and text-to-speech conversion, requiring constant data transmission and raising privacy concerns</p></li><li><p>Significant server computing power and hardware resources are required for acceptable performance and response times, making self-hosting challenging</p></li><li><p>Server-based wake word detection requires continuous audio streaming from the satellite to the server, consuming significant bandwidth</p></li><li><p>This creates major privacy and security concerns, especially when cloud services are involved, as sensitive audio data is transmitted and processed remotely</p></li><li><p>Limited control over data processing and retention policies when using third-party cloud services</p></li><li><p>Network latency can impact responsiveness and user experience</p></li><li><p>Potential single point of failure if the server becomes unavailable</p></li></ul></div></div></div><div class="sect1"><h2 id="_a_privacy_focused_approach">A Privacy-Focused Approach</h2><div class="sectionbody"><div class="paragraph"><p>To address these challenges, I propose a solution based on the following key principles:</p></div><div class="ulist"><ul><li><p>An iPad (Gen 6 or newer) serves as the voice satellite. Gen 6 does not have a Neural Engine, but it is still cheap and sufficient</p></li><li><p>Local wake word detection using offline models to identify activation phrases without cloud dependencies. Picovoice Porcupine is very well suited for this task</p></li><li><p>Local speech processing (both speech-to-text and text-to-speech) leveraging iOS’s built-in speech engines and neural processing capabilities</p></li><li><p>Minimal data transfer, only sending detected text commands to HomeAssistant over an encrypted connection, with no raw audio transmission</p></li><li><p>HomeAssistant uses a LLM-based conversation agent to handle the detected text command and generate responses. A small quantized LLM can run on the HomeAssisant Server using ollama.cpp</p></li></ul></div><div class="paragraph"><p>This approach significantly reduces privacy concerns since audio never leaves the device. All voice processing happens directly on the iOS device hardware, eliminating the need for continuous audio streaming or cloud-based processing services. The system maintains full functionality even when internet connectivity is limited, with only the final processed text commands requiring network access.</p></div></div></div><div class="sect1"><h2 id="_technical_implementation">Technical Implementation</h2><div class="sectionbody"><div class="paragraph"><p>On a technical level, we need the following components to perform the task.</p></div><div class="paragraph"><p>I don’t want to add the full source code here, as I just want to focus on the technical implementation details and things we have to take care of.</p></div><div class="paragraph"><p><strong>Wake word detection</strong></p></div><div class="paragraph"><p>Picovoice Porcupine can be added as a Swift package dependency, as a Swift IOS SDK is already provided. We just need to have an API key, which can be obtained from Picovoice. Please note that a free license is only provided for private, non-commercial projects, so we have to take care of that.</p></div><div class="paragraph"><p>One important implementation detail is the audio format. We need to send Porcupine the same audio format for which it has been trained, so it is a 16kHz, 16bit, and 1 channel mono audio stream. This is critical since wake word detection models are highly sensitive to audio format mismatches which can severely impact detection accuracy. We have to set up our iOS AudioSession accordingly by configuring the correct audio format parameters. Porcupine only accepts 16bit integer values, which is different to the default float datapoints from the iOS AudioSession, so we have to add some conversation logic here using AudioConverters. Porcupine also expects chunked data, with a fixed chunk size (typically 512 samples), so we have to chop our AVSession audio data into chunks using ring buffers and send them to Porcupine. The chunking needs to be sample-accurate to avoid detection issues.</p></div><div class="paragraph"><p>For every processed chunk, we get the wake word detection status back along with confidence scores. Once a wake word is detected with sufficient confidence (typically &gt;0.5), we continue with the Speech to text phase.</p></div><div class="paragraph"><p><strong>Speech to text</strong></p></div><div class="paragraph"><p>The Speech to text phase instantiates a <code>SFSpeechAudioBufferRecognitionRequest</code>. All recorded audio data is sent to the request, which will parse the data and report the parsed text back. The speech recognition engine uses on-device neural networks optimized for the iOS Neural Engine to perform real-time transcription with high accuracy.</p></div><div class="paragraph"><p>The important part here is that we enable <code>shouldReportPartialResults</code> for this request. This way we get a notification for every detected spoken word, even if the full parsing is not completed yet, allowing for a more responsive user experience. The partial results also help detect speech boundaries more accurately. Once we get a notification, we start a voice inactivity timer, let’s say for 2 seconds. If we do not get the next parse result from the RecognitionRequest, we assume that the speaker has finished his request, and we can continue with the next phase. Using this timer combined with (optional) audio power level detection, we can implement a basic but effective voice activity detection system that reliably detects speech endpoints.</p></div><div class="paragraph"><p><strong>HomeAssistant conversation agent integration</strong></p></div><div class="paragraph"><p>The HomeAssistant conversation agent integration is very straightforward. We send a request to the <code>/api/conversation/process</code> endpoint over REST, and wait for the textual response. The conversation agent handles all LLM interaction. The LLM configuration and everything else is done within HomeAssistant, so we can use Home-LLM or the Anthropic integration here. The agent processes the text using intent detection and entity extraction to understand the user’s request.</p></div><div class="paragraph"><p>The interesting part is the <code>conversation_id</code>. We can use the same conversation id for different agent requests and different wake word activations. This gives the LLM an enhanced context, a kind of memory, to build responses on. So we can use voice commands to train the LLM with knowledge which it can use to generate responses. The conversation history allows for more natural dialogue flow and contextual understanding. This knowledge is not limited to home automation requests, it can be used for almost everything, like family members&#39; names, birthdays, habits, and so on. The context retention also enables follow-up questions and corrections. This hidden gem is really mighty! The textual response of the HomeAssistant API invocation is passed to the text to speech stage.</p></div><div class="paragraph"><p><strong>Text to speech</strong></p></div><div class="paragraph"><p>Text to speech generation can be done using the <code>AVSpeechSynthesizer</code> API. The important thing here is to select the right voice to make the generated speech natural. iOS provides multiple voice options with different characteristics like gender, age, and accent. We can install additional high-quality neural voices using the iPad settings. These voices use advanced deep learning models to generate more natural prosody and intonation. The quality models need more RAM and processing power, but they are definitely worth it as they significantly improve the naturalness of speech. We can also fine-tune parameters like speaking rate, pitch and volume. Once the generated speech is finished playing through the audio system with proper audio session handling, we start over with the wake word detection stage while maintaining conversation context.</p></div><div class="paragraph"><p>This approach demonstrates that private, efficient voice control is achievable using existing and affordable hardware.</p></div></div></div><div class="sect1"><h2 id="_real_world_performance">Real-World Performance</h2><div class="sectionbody"><div class="paragraph"><p>Testing this setup in practice revealed:</p></div><div class="ulist"><ul><li><p>Porcupine provides reliable wake word detection with minimal false positives and negligible processing delays</p></li><li><p>Speech-to-text works well even on older iPads without neural engines, though slower speech input may be needed</p></li><li><p>Timer-based voice activity detection is very effective to detect speech boundaries</p></li><li><p>Text-to-speech produces natural-sounding output when using extended language models, though some artificial qualities remain noticeable</p></li></ul></div></div></div><div class="sect1"><h2 id="_future_improvements">Future Improvements</h2><div class="sectionbody"><div class="paragraph"><p>Several enhancements could further improve the system across multiple dimensions:</p></div><div class="paragraph"><p><strong>Security</strong>:</p></div><div class="ulist"><ul><li><p>Replacing Porcupine with OpenWakeWord for a fully open-source solution with auditable code</p></li><li><p>Implementing input validation and sanitization for voice commands</p></li><li><p>Adding voice biometric authentication to prevent unauthorized access and allow personalized responses</p></li><li><p>Encrypting all cached voice data and command history</p></li></ul></div><div class="paragraph"><p><strong>Usability</strong>:</p></div><div class="ulist"><ul><li><p>Supporting offline operation mode with local command caching</p></li><li><p>Adding customizable wake word options and voice profiles</p></li><li><p>Improving accessibility with visual feedback and alternative input methods</p></li></ul></div><div class="paragraph"><p><strong>Maintainability</strong>:</p></div><div class="ulist"><ul><li><p>Moving to a modular architecture to easily swap components</p></li><li><p>Adding comprehensive logging and monitoring</p></li><li><p>Implementing automated testing for voice recognition accuracy</p></li><li><p>Creating tools for easy model updates and configuration management</p></li></ul></div></div></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2024/12/strange-2024/">Tech Gone Wild 2024: The Most Absurdly Overengineered Solutions of Tomorrow</a></span></div></article></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Straße 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://bsky.app/profile/mirkosertic.de" itemprop="url"><i class="fa fa-bluesky-white"></i></a> <a class="icon" target="_blank" href="https://x.com/mirkosertic" itemprop="url"><i class="fa fa-x-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
+        var element = document.querySelector(aSelector);
+        if (element) {
+            return true;
+        }
+        return false;
+    }
+
+    var Loader = function () { };
+    Loader.prototype = {
+        require: function (scripts, callback) {
+            this.loadCount = 0;
+            this.totalRequired = scripts.length;
+            this.callback = callback;
+
+            for (var i=0;i<scripts.length;i++) {
+                this.writeScript(scripts[i]);
+            }
+        },
+        loaded: function (evt) {
+            this.loadCount++;
+
+            if (this.loadCount==this.totalRequired && typeof this.callback=='function') this.callback.call();
+        },
+        writeScript: function (src) {
+            var self = this;
+            var s = document.createElement('script');
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = src;
+            s.addEventListener('load', function (e) { self.loaded(e); }, false);
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(s);
+        }
+    };
+
+    if (existsByCSSSelector("pre.highlight code") > 0) {
+        var loader = new Loader();
+        loader.require(["https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"], function() {
+
+            var additionalStylesheet = document.createElement('link');
+            additionalStylesheet.rel = "stylesheet";
+            additionalStylesheet.type = 'text/css';
+            additionalStylesheet.media = "screen";
+            additionalStylesheet.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css";
+
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(additionalStylesheet);
+
+            hljs.highlightAll();
+        });
+    }</script></body></html>

@@ -7,8 +7,43 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Mon, 02 Dec 2024 10:14:57 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 10 Nov 2025 16:19:52 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HomeAssistant</title>
+      <link>https://www.mirkosertic.de/tags/homeassistant/</link>
+      <pubDate>Sat, 08 Nov 2025 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/tags/homeassistant/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LLM</title>
+      <link>https://www.mirkosertic.de/tags/llm/</link>
+      <pubDate>Sat, 08 Nov 2025 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/tags/llm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programming</title>
+      <link>https://www.mirkosertic.de/tags/programming/</link>
+      <pubDate>Sat, 08 Nov 2025 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/tags/programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>https://www.mirkosertic.de/tags/security/</link>
+      <pubDate>Sat, 08 Nov 2025 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/tags/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Voice</title>
+      <link>https://www.mirkosertic.de/tags/voice/</link>
+      <pubDate>Sat, 08 Nov 2025 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/tags/voice/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Enterprise</title>
       <link>https://www.mirkosertic.de/tags/enterprise/</link>
@@ -28,13 +63,6 @@
       <link>https://www.mirkosertic.de/tags/overengineering/</link>
       <pubDate>Sun, 01 Dec 2024 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/tags/overengineering/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Programming</title>
-      <link>https://www.mirkosertic.de/tags/programming/</link>
-      <pubDate>Sun, 01 Dec 2024 00:00:00 +0200</pubDate>
-      <guid>https://www.mirkosertic.de/tags/programming/</guid>
       <description></description>
     </item>
     <item>
