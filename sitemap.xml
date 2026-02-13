@@ -2,7 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.mirkosertic.de/tags/conversational-ai/</loc>
+    <lastmod>2026-02-13T14:06:22+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/enterprise/</loc>
+    <lastmod>2026-02-13T14:06:22+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/mcp/</loc>
+    <lastmod>2026-02-13T14:06:22+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://www.mirkosertic.de/post/</loc>
+    <lastmod>2026-02-13T14:06:22+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/search/</loc>
+    <lastmod>2026-02-13T14:06:22+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/tags/</loc>
+    <lastmod>2026-02-13T14:06:22+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.mirkosertic.de/blog/2026/02/lucene-mcp-server/</loc>
     <lastmod>2026-02-13T14:06:22+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -37,11 +67,6 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://www.mirkosertic.de/tags/</loc>
-    <lastmod>2025-11-10T16:19:52+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://www.mirkosertic.de/tags/voice/</loc>
     <lastmod>2025-11-10T16:19:52+01:00</lastmod>
     <changefreq>daily</changefreq>
@@ -59,11 +84,6 @@
   </url><url>
     <loc>https://www.mirkosertic.de/global/toolsgoodies/</loc>
     <lastmod>2025-10-21T20:26:19+02:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://www.mirkosertic.de/tags/enterprise/</loc>
-    <lastmod>2024-12-02T10:14:57+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -288,11 +308,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://www.mirkosertic.de/blog/2017/10/custom-query-parser-for-solr/</loc>
-    <lastmod>2024-11-21T21:46:13+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://www.mirkosertic.de/tags/search/</loc>
     <lastmod>2024-11-21T21:46:13+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

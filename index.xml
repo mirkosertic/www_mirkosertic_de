@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Mon, 10 Nov 2025 16:19:52 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 13 Feb 2026 14:06:22 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>When Your AI Learns to Search: Building a Lucene Server for the Model Context Protocol</title>
+      <link>https://www.mirkosertic.de/blog/2026/02/lucene-mcp-server/</link>
+      <pubDate>Sat, 14 Feb 2026 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/blog/2026/02/lucene-mcp-server/</guid>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_the_problem_nobody_talks_about&#34;&gt;The Problem Nobody Talks About&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;AI assistants are remarkably good at understanding what you mean. Ask Claude to &amp;#34;find that contract we discussed last quarter,&amp;#34; and it knows you want a document search. But then what? The assistant has no documents. It has no index. It has a language model and your conversation history — and that’s it.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;The typical answer is RAG: Retrieval-Augmented Generation. Chunk your documents, compute embeddings, throw them into a vector database, and wire up a retrieval pipeline. There’s an entire industry around this now, with dozens of vector databases competing for attention.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
+    </item>
     <item>
       <title>Build Your Own Ultra-Private HomeAssistant Voice Assistant Using iOS Devices</title>
       <link>https://www.mirkosertic.de/blog/2025/11/supersecret-voice-satellite/</link>

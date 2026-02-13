@@ -1,0 +1,285 @@
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>When Your AI Learns to Search: Building a Lucene Server for the Model Context Protocol &middot; Mirko Sertic</title><meta name="description" content="Forget vector databases and complex RAG pipelines - I&#39;ve built a lightning-fast Apache Lucene search server that lets AI assistants find your documents through conversation. By flipping the traditional architecture on its head, the AI becomes the smart layer while the search engine stays blazingly fast and simple. The result is a system where you can chat with Claude to find that contract from last quarter, filter by author with natural language, and even debug why certain results appear - all through the Model Context Protocol."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="robots" content="index,follow"><meta property="og:title" content="When Your AI Learns to Search: Building a Lucene Server for the Model Context Protocol"><meta property="og:description" content="Forget vector databases and complex RAG pipelines - I&#39;ve built a lightning-fast Apache Lucene search server that lets AI assistants find your documents through conversation. By flipping the traditional architecture on its head, the AI becomes the smart layer while the search engine stays blazingly fast and simple. The result is a system where you can chat with Claude to find that contract from last quarter, filter by author with natural language, and even debug why certain results appear - all through the Model Context Protocol."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2026/02/lucene-mcp-server/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><meta name="theme-color" content="#ffffff"><script>var _paq = window._paq = window._paq || [];
+
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        _paq.push(['requireConsent']);
+
+        (function() {
+            
+            function isDoNotTrackEnabled() {
+                return navigator.doNotTrack === "1" ||
+                    window.doNotTrack === "1" ||
+                    navigator.msDoNotTrack === "1";
+            }
+
+            
+            function createConsentBanner() {
+                
+                if (isDoNotTrackEnabled()) {
+                    initializeMatomo(false);
+                    return;
+                }
+
+                var banner = document.createElement('div');
+                banner.style.cssText = `
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f8f8f8;
+            padding: 15px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            text-align: center;
+        `;
+
+                banner.innerHTML = `
+            <p>We use cookies to improve your browsing experience.
+            Your browser's Do Not Track setting is currently: ${isDoNotTrackEnabled() ? 'Enabled' : 'Disabled'}.
+            Do you consent to our use of cookies?</p>
+            <button id="accept-cookies" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; margin-right: 10px; cursor: pointer;">
+                Accept
+            </button>
+            <button id="reject-cookies" style="background-color: #f44336; color: white; border: none; padding: 10px 20px; cursor: pointer;">
+                Reject
+            </button>
+        `;
+
+                document.body.appendChild(banner);
+
+                
+                document.getElementById('accept-cookies').addEventListener('click', function() {
+                    banner.style.display = 'none';
+                    localStorage.setItem('matomoConsent', 'accepted');
+                    initializeMatomo(true);
+                });
+
+                
+                document.getElementById('reject-cookies').addEventListener('click', function() {
+                    banner.style.display = 'none';
+                    localStorage.setItem('matomoConsent', 'rejected');
+                    initializeMatomo(false);
+                });
+            }
+
+            
+            function initializeMatomo(trackingAllowed) {
+                
+                if (isDoNotTrackEnabled()) {
+                    trackingAllowed = false;
+                }
+
+                if (trackingAllowed) {
+                    
+                    _paq.push(['setConsentGiven']);
+                }
+            }
+
+            
+            function checkPreviousConsent() {
+                
+                if (isDoNotTrackEnabled()) {
+                    initializeMatomo(false);
+                    return;
+                }
+
+                var storedConsent = localStorage.getItem('matomoConsent');
+                if (storedConsent === 'accepted') {
+                    console.log("Tracking accepted");
+                    initializeMatomo(true);
+                } else if (storedConsent === 'rejected') {
+                    console.log("Tracking rejected");
+                    initializeMatomo(false);
+                } else {
+                    
+                    createConsentBanner();
+                }
+            }
+
+            
+            function init() {
+                checkPreviousConsent();
+            }
+
+            
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+
+            var u="//analytics.mirkosertic.de/";
+            _paq.push(['setTrackerUrl', u+'matomo.php']);
+            _paq.push(['setSiteId', '2']);
+
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();</script></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="My personal Technology Radar">Technology Radar</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Essential Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link active" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><div itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"><header class="post-header"><div class="contentbox"><h1 class="post-title" itemprop="name headline">When Your AI Learns to Search: Building a Lucene Server for the Model Context Protocol</h1><p class="post-date"><span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="2026-02-14" itemprop="datePublished">Sat, Feb 14, 2026</time> <span>by</span> <span itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name"><a href="https://x.com/mirkosertic" rel="author">Mirko Sertic</a></span></span></p><p class="post-abstract" itemprop="abstract"><span>This article presents a novel approach to document search for AI assistants by building MCPLuceneServer, a specialized Apache Lucene server designed for the Model Context Protocol (MCP). Rather than following the conventional Retrieval-Augmented Generation (RAG) pattern with vector embeddings, the architecture deliberately keeps the search engine simple and fast while leveraging the AI assistant as the semantic layer. The system demonstrates how conversational interfaces can transform document discovery through features like AI-powered query expansion, faceted search navigation, and real-time query profiling. Key innovations include efficient leading wildcard support through field reversal, structured passage extraction optimized for machine reasoning, and MCP Apps integration for visual administration interfaces. The design prioritizes sub-second startup times, precise lexical matching, and transparent debugging capabilities, showing that search engines built specifically for AI assistants should emphasize speed and precision over built-in intelligence. The project illustrates how MCP enables new patterns of human-AI-tool interaction that combine the strengths of conversational and graphical user interfaces.</span></p><p><span class="icon"><i class="fa fa-clock-white"></i></span><span>15 Minutes reading time</span></p><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags-white"></i></span><a href="/tags/enterprise">Enterprise</a> ,<a href="/tags/search">Search</a> ,<a href="/tags/conversational-ai">Conversational-AI</a> ,<a href="/tags/mcp">MCP</a></span></p></div></header><figure class="blogtitleimage"><figcaption><p>Behold the masterpiece that AI hallucinated while reading this post:</p><p class="title">"The Little Search Engine That Could Talk to Robots"</p><p>(after I fed it way too many marketing blogs and memes)</p><p class="aidisclosure">Created using DALL-E 3</p></figcaption><img src="/media/welcomeimages/lucene-mcp-server_selected.png" alt="AI-Generated: The Little Search Engine That Could Talk to Robots" itemprop="image"></figure><article class="post-content clearfix" itemprop="articleBody"><div class="sect1"><h2 id="_the_problem_nobody_talks_about">The Problem Nobody Talks About</h2><div class="sectionbody"><div class="paragraph"><p>AI assistants are remarkably good at understanding what you mean. Ask Claude to &#34;find that contract we discussed last quarter,&#34; and it knows you want a document search. But then what? The assistant has no documents. It has no index. It has a language model and your conversation history — and that’s it.</p></div><div class="paragraph"><p>The typical answer is RAG: Retrieval-Augmented Generation. Chunk your documents, compute embeddings, throw them into a vector database, and wire up a retrieval pipeline. There’s an entire industry around this now, with dozens of vector databases competing for attention.</p></div><div class="paragraph"><p>I went a different direction. I built a plain Apache Lucene fulltext search server and exposed it through the <a href="https://modelcontextprotocol.io/">Model Context Protocol (MCP)</a>. No embeddings. No vector search. No neural retrieval models. Just good old lexical search — with a twist.</p></div><div class="paragraph"><p>The twist is that the AI assistant <em>is</em> the semantic layer.</p></div></div></div><div class="sect1"><h2 id="_flipping_the_architecture">Flipping the Architecture</h2><div class="sectionbody"><div class="paragraph"><p>Traditional search engines try to be smart. They add synonym expansion, stemming, query understanding, learning-to-rank models, and increasingly, embedding-based retrieval. The search engine does the heavy lifting; the user types a query and hopes for the best.</p></div><div class="paragraph"><p>With an AI assistant in the loop, this architecture is backwards. The AI already understands language. It knows that &#34;car&#34; relates to &#34;automobile&#34; and &#34;vehicle.&#34; It can figure out that a German user searching for &#34;Verträge&#34; probably also wants results for &#34;Vertrag,&#34; &#34;Arbeitsvertrag,&#34; and &#34;Kaufvertrag.&#34; It can reformulate queries, inspect results, and try again — all within a single conversation.</p></div><div class="paragraph"><p>So the core design principle of MCPLuceneServer is deliberately simple:</p></div><div class="quoteblock"><blockquote><div class="paragraph"><p>The server is a fast, precise, lexical retrieval engine. The AI compensates for what the server doesn’t do.</p></div></blockquote></div><div class="paragraph"><p>This means:</p></div><div class="ulist"><ul><li><p>No synonym files to maintain — the AI generates OR queries on the fly</p></li><li><p>No per-language analyzers — the AI handles multilingual query formulation</p></li><li><p>No &#34;smart&#34; ranking models — the AI iterates on results, reads documents, and refines</p></li><li><p>No embedding computation — the server stays fast, lightweight, and debuggable</p></li></ul></div><div class="paragraph"><p>What the server <em>does</em> provide is the infrastructure that makes lexical search actually work well: Unicode normalization, diacritic folding, ligature expansion (critical for PDFs where Tika extracts invisible Unicode ligature characters), efficient leading wildcard queries, faceted navigation, and structured passage extraction with quality metadata designed for LLM consumption.</p></div></div></div><div class="sect1"><h2 id="_what_mcp_brings_to_the_table">What MCP Brings to the Table</h2><div class="sectionbody"><div class="paragraph"><p>The <a href="https://modelcontextprotocol.io/">Model Context Protocol</a> is the glue that makes this work. MCP defines a standard way for AI assistants to discover and call tools. The server exposes its capabilities — <code>search</code>, <code>profileQuery</code>, <code>getIndexStats</code>, <code>startCrawl</code>, and a dozen more — as MCP tool endpoints. The AI assistant sees these tools in its context and decides when and how to use them.</p></div><div class="paragraph"><p>This is fundamentally different from a REST API that a human developer integrates. The &#34;developer&#34; here is the AI itself. And that changes how you design everything.</p></div><div class="paragraph"><p>For example, search results include a <code>passages</code> array with individually scored excerpts, each containing:</p></div><div class="ulist"><ul><li><p><code>text</code> — the highlighted snippet with <code>&lt;em&gt;</code> tags around matched terms</p></li><li><p><code>score</code> — normalized relevance (0.0 to 1.0, best passage = 1.0)</p></li><li><p><code>matchedTerms</code> — which query terms appear in this passage</p></li><li><p><code>termCoverage</code> — fraction of query terms present (1.0 = all terms matched)</p></li><li><p><code>position</code> — location within the source document (0.0 = start, 1.0 = end)</p></li></ul></div><div class="paragraph"><p>A human user needs a highlighted snippet. An AI needs structured metadata <em>about</em> the snippet so it can make decisions: &#34;This passage covers only half my query terms and comes from the end of the document — let me check the other results first.&#34; The API is optimized for machine reasoning, not just human readability.</p></div></div></div><div class="sect1"><h2 id="_seeing_it_in_action">Seeing It in Action</h2><div class="sectionbody"><div class="paragraph"><p>Enough theory. Here’s what it looks like when you actually use it. These are conversations with Claude Desktop, with the MCP Lucene Server running in the background.</p></div><div class="sect2"><h3 id="_simple_search">Simple Search</h3><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-markdown" data-lang="markdown">User: I&#39;m looking for documents about machine learning in my collection.
+
+Claude: I&#39;ll search your document index for machine learning content.
+
+[Claude calls: search(query: &#34;(machine learning OR deep learning OR neural network*)&#34;,
+  filters: [], pageSize: 10)]
+
+I found 23 documents mentioning machine learning topics. Here are the
+most relevant:
+
+1. **ML-Pipeline-Architecture.pdf** (score: 0.92)
+   &#34;...the proposed &lt;em&gt;machine learning&lt;/em&gt; pipeline processes
+   incoming data streams in three stages...&#34;
+
+2. **Research-Notes-2024.docx** (score: 0.85)
+   &#34;...&lt;em&gt;deep learning&lt;/em&gt; approaches have shown significant
+   improvements over traditional feature engineering...&#34;
+
+3. **Team-Meeting-Notes-Q3.pdf** (score: 0.71)
+   &#34;...discussed adoption of &lt;em&gt;neural network&lt;/em&gt; models for
+   the anomaly detection use case...&#34;
+
+The results span PDFs and Word documents. Want me to narrow these down
+by author, date range, or file type? I can see from the facets that
+the authors include Dr. Sarah Chen (8 docs), the ML Team (6 docs),
+and James Wright (4 docs).</code></pre></div></div><div class="paragraph"><p>Notice what happened. Claude didn’t just search for &#34;machine learning&#34; — it expanded the query to include related terms using OR syntax. Nobody configured a synonym file. Nobody trained a model. The AI simply knows these terms are related and constructs the appropriate Lucene query.</p></div><div class="paragraph"><p>Also notice how Claude uses the facet data from the response to offer meaningful follow-up options. The facets tell it which authors, languages, and file types exist in the result set — without requiring a separate API call.</p></div></div><div class="sect2"><h3 id="_drill_down_with_faceted_search">Drill-Down with Faceted Search</h3><div class="paragraph"><p>This is where conversational search gets interesting. The back-and-forth lets you progressively narrow results in a way that feels natural.</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-markdown" data-lang="markdown">User: Show me only the ones by Dr. Sarah Chen, and only PDFs.
+
+Claude: Let me filter the results.
+
+[Claude calls: search(query: &#34;(machine learning OR deep learning OR neural network*)&#34;,
+  filters: [
+    { field: &#34;author&#34;, value: &#34;Dr. Sarah Chen&#34; },
+    { field: &#34;file_extension&#34;, value: &#34;pdf&#34; }
+  ])]
+
+Filtered to 5 PDF documents by Dr. Sarah Chen:
+
+1. **ML-Pipeline-Architecture.pdf** — Pipeline design document
+   from March 2024, covers data preprocessing and model training stages
+2. **Evaluation-Report-ModelV2.pdf** — Performance evaluation
+   of the v2 model, includes benchmark results
+3. ...
+
+The results were narrowed from 23 to 5 documents. I can see these
+were all created between January and June 2024. Want me to look at
+any of these in detail?</code></pre></div></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-markdown" data-lang="markdown">User: What about documents from 2024 only? And exclude anything
+      in German.
+
+Claude: I&#39;ll add a date range filter and exclude German documents.
+
+[Claude calls: search(query: &#34;(machine learning OR deep learning OR neural network*)&#34;,
+  filters: [
+    { field: &#34;author&#34;, value: &#34;Dr. Sarah Chen&#34; },
+    { field: &#34;file_extension&#34;, value: &#34;pdf&#34; },
+    { field: &#34;modified_date&#34;, operator: &#34;range&#34;,
+      from: &#34;2024-01-01&#34;, to: &#34;2024-12-31&#34; },
+    { field: &#34;language&#34;, operator: &#34;not&#34;, value: &#34;de&#34; }
+  ])]
+
+4 documents match all criteria. All English PDFs by Dr. Sarah Chen
+from 2024...</code></pre></div></div><div class="paragraph"><p>Under the hood, the server uses Lucene’s DrillSideways for faceted fields (author, language, file extension) and LongPoint range queries for dates. The <code>filters</code> array supports <code>eq</code>, <code>in</code>, <code>not</code>, <code>not_in</code>, and <code>range</code> operators. Filters on different fields are combined with AND; multiple values on the same faceted field use OR (so you can filter for &#34;pdf OR docx&#34; in a single filter).</p></div><div class="paragraph"><p>What matters from a UX perspective: the user never writes a filter expression. They say &#34;only PDFs&#34; and the AI translates that into the structured filter syntax. The server provides the vocabulary (via facets), the AI provides the intent (from conversation), and together they navigate the document space.</p></div></div><div class="sect2"><h3 id="_the_german_compound_word_problem">The German Compound Word Problem</h3><div class="paragraph"><p>This is a real-world challenge that illustrates why the architecture matters. German forms compound words by joining them together: &#34;Arbeitsvertrag&#34; (employment contract), &#34;Kaufvertrag&#34; (purchase contract), &#34;Mietvertrag&#34; (rental contract). A user searching for &#34;Vertrag&#34; (contract) expects to find all of these.</p></div><div class="paragraph"><p>In traditional search, you’d need a decompounding filter or language-specific analysis. In MCPLuceneServer, the approach is different. The server provides efficient wildcard queries, and the AI knows how to use them.</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-markdown" data-lang="markdown">User: Finde alle Dokumente über Verträge.
+
+Claude: Ich suche nach Dokumenten über Verträge. Da es sich um
+einen deutschen Begriff handelt, verwende ich Wildcards, um auch
+zusammengesetzte Wörter zu finden.
+
+[Claude calls: search(query: &#34;(*vertrag* OR vertrag* OR *vertrage*)&#34;,
+  filters: [{ field: &#34;language&#34;, value: &#34;de&#34; }])]
+
+Ich habe 34 deutsche Dokumente gefunden, die sich mit Verträgen
+befassen:
+
+1. **Arbeitsvertrag-Muster-2024.pdf** — Enthält einen
+   Standard-&lt;em&gt;Arbeitsvertrag&lt;/em&gt; mit aktuellen Klauseln...
+2. **Kaufvertrag-Immobilie.docx** — &lt;em&gt;Kaufvertrag&lt;/em&gt; für die
+   Immobilie in der Hauptstraße...
+3. **Vertragsbedingungen-AGB.pdf** — Allgemeine
+   &lt;em&gt;Vertragsbedingungen&lt;/em&gt; und Geschäftsbedingungen...</code></pre></div></div><div class="paragraph"><p>The query <code><strong>vertrag</strong></code> is an infix wildcard — it finds &#34;vertrag&#34; anywhere within a word. Leading wildcards like <code><strong>vertrag</strong></code><strong> are notoriously expensive in search engines because they can’t use the normal term index. MCPLuceneServer solves this with a <code>content_reversed</code> field that stores every token in reverse. The query <code>*vertrag</code> is transparently rewritten to a trailing wildcard on the reversed field (<code>gartrev</code></strong>), which executes just as fast as any normal wildcard query.</p></div><div class="paragraph"><p>This is invisible to the user and even to the AI. The rewriting happens inside the server, and the highlighting still works on the original terms because the server uses the non-rewritten query for passage extraction.</p></div></div><div class="sect2"><h3 id="_debugging_queries_with_profilequery">Debugging Queries with profileQuery</h3><div class="paragraph"><p>Sometimes search results are surprising. The <code>profileQuery</code> tool gives the AI (and through it, the user) deep insight into what’s happening inside the search engine.</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-markdown" data-lang="markdown">User: My search for &#34;contract signed&#34; returns weird results.
+      The top result doesn&#39;t seem relevant at all. Can you figure
+      out why?
+
+Claude: Let me profile that query to understand the scoring.
+
+[Claude calls: profileQuery(query: &#34;contract signed&#34;,
+  analyzeDocumentScoring: true, maxDocExplanations: 3)]
+
+Here&#39;s what I found:
+
+**Query Structure:** Boolean AND query with two terms: &#34;contract&#34;
+and &#34;signed&#34;
+
+**Term Statistics:**
+- &#34;contract&#34; appears in 450 of 2,300 documents (19.6%) — common term
+- &#34;signed&#34; appears in 89 documents (3.9%) — uncommon term
+
+**Top Document Scoring:**
+1. **Minutes-Board-Meeting.pdf** (score: 8.34)
+   - &#34;signed&#34; contributes 72% of the score (high IDF, appears 6 times)
+   - &#34;contract&#34; contributes 28% (lower IDF, appears twice)
+   - Summary: Score dominated by the rare term &#34;signed&#34;
+
+2. **Service-Agreement-Final.pdf** (score: 7.12)
+   - &#34;contract&#34; contributes 55% (appears 12 times)
+   - &#34;signed&#34; contributes 45% (appears 3 times)
+
+**Why the board meeting minutes rank first:** The term &#34;signed&#34;
+is much rarer in your index than &#34;contract,&#34; so BM25 gives it
+higher weight. The minutes document mentions &#34;signed&#34; 6 times
+(committee members signing various resolutions), which inflates
+its score.
+
+**Recommendations from the profiler:**
+- Consider using a phrase query &#34;contract signed&#34; (with quotes)
+  to find documents where these words appear near each other
+- Or use proximity search: &#34;contract signed&#34;~3 to require them
+  within 3 words
+
+Want me to try the phrase query instead?</code></pre></div></div><div class="paragraph"><p>The profiler provides four levels of analysis:</p></div><div class="olist arabic"><ol class="arabic"><li><p><strong>Fast analysis</strong> (always included, ~5ms): Query structure, term statistics, cost estimates</p></li><li><p><strong>Filter impact</strong> (opt-in): How much each filter reduces the result set, with selectivity classification</p></li><li><p><strong>Document scoring</strong> (opt-in): Full BM25 breakdown per document — which terms contribute how much, TF-IDF details</p></li><li><p><strong>Facet cost</strong> (opt-in): Whether faceting computation is a bottleneck</p></li></ol></div><div class="paragraph"><p>The expensive levels are opt-in because profiling is a debugging tool, not a production feature. The AI decides when to enable deeper analysis based on the conversation context. A user saying &#34;results look fine&#34; doesn’t trigger scoring analysis; &#34;why is this result ranked first?&#34; does.</p></div><div class="paragraph"><p>An important design decision here: Lucene’s internal <code>Explanation</code> API returns deeply nested, version-dependent text trees. The server parses these into structured, version-independent DTOs with fields like <code>contributionPercent</code> and human-readable summaries. This makes the data usable by the AI (structured JSON) without coupling the API to Lucene’s internal representation, which tends to change between major versions.</p></div></div></div></div><div class="sect1"><h2 id="_design_decisions_and_their_trade_offs">Design Decisions and Their Trade-Offs</h2><div class="sectionbody"><div class="paragraph"><p>Every architecture involves trade-offs. Here are the ones that matter most, and why I made the choices I did.</p></div><div class="sect2"><h3 id="_no_stemming">No Stemming</h3><div class="paragraph"><p>Stemming reduces words to their root form: &#34;running&#34; and &#34;runs&#34; both become &#34;run.&#34; It’s standard in most search engines. MCPLuceneServer doesn’t use it.</p></div><div class="paragraph"><p><strong>Why not?</strong> Stemming is a lossy operation that can hurt precision. Aggressive stemmers conflate unrelated terms (&#34;organization&#34; and &#34;organ&#34; stem to the same root in some algorithms). And the AI can do it better — it uses trailing wildcards (<code>contract*</code> matches &#34;contracts,&#34; &#34;contracting,&#34; &#34;contracted&#34;) with full control over what gets expanded. The wildcard approach is more precise and doesn’t require choosing between Porter, Snowball, or language-specific stemmers.</p></div><div class="paragraph"><p><strong>The cost:</strong> Users who interact with the Lucene API directly (bypassing the AI) need to manually add wildcards. This is an acceptable trade-off because the primary interface <em>is</em> the AI.</p></div></div><div class="sect2"><h3 id="_no_vector_search">No Vector Search</h3><div class="paragraph"><p>This is the decision I get asked about most. Everyone expects vector search these days. Here’s the reasoning.</p></div><div class="paragraph"><p>Vector search fills a specific gap: finding documents where the <em>concept</em> matches but zero terms overlap. Searching for &#34;reducing energy costs&#34; when the relevant document discusses &#34;HVAC retrofit&#34; and &#34;LED conversion&#34; without ever mentioning &#34;energy&#34; or &#34;cost.&#34;</p></div><div class="paragraph"><p>This gap is narrower than it sounds in practice:</p></div><div class="ulist"><ul><li><p>The AI iterates — it reads results, discovers vocabulary in the documents, and refines its queries</p></li><li><p>Facets help narrow the search space without semantic matching</p></li><li><p><code>getDocumentDetails</code> lets the AI read individual documents and learn their terminology</p></li><li><p>Personal and corporate document collections have bounded vocabulary — they’re not the open web</p></li></ul></div><div class="paragraph"><p>Adding embeddings would mean hosting an embedding model (or calling an external API), computing embeddings for every document chunk, maintaining a parallel retrieval path (lexical + vector), and significantly increasing index size and memory requirements. For a desktop tool that starts in one second and runs as a subprocess of your AI client, that’s a heavy toll.</p></div><div class="paragraph"><p>The door isn’t closed. If users report frequent &#34;can’t find it&#34; scenarios despite AI-powered query expansion, or if the corpus grows beyond tens of thousands of documents, vector search becomes worth revisiting. But the architecture makes it easy to add later as an <em>additional</em> retrieval path — not a replacement for lexical search.</p></div></div><div class="sect2"><h3 id="_plain_java_no_framework">Plain Java, No Framework</h3><div class="paragraph"><p>The server starts in about one second. This matters because MCP servers run as subprocesses of the AI client — when you open Claude Desktop, it launches the server. Fast startup means the tools are available almost instantly.</p></div><div class="paragraph"><p>Using plain Java (no Spring, no Quarkus, no Micronaut) keeps the JAR small (~45 MB) and startup fast. The trade-off is manual dependency wiring in the application’s main class. For a server with fewer than 10 services, this is a reasonable price.</p></div></div><div class="sect2"><h3 id="_stdio_transport">STDIO Transport</h3><div class="paragraph"><p>MCP supports multiple transports. MCPLuceneServer uses STDIO — the server reads JSON-RPC messages from stdin and writes responses to stdout. This is the transport that Claude Desktop uses.</p></div><div class="paragraph"><p>The consequence is strict: <em>nothing</em> else can write to stdout. No logging, no startup banners, no debug output. The server uses a &#34;deployed&#34; profile that redirects all logging to files. This caught me off guard during development more than once — a stray <code>System.out.println</code> breaks the entire protocol.</p></div></div></div></div><div class="sect1"><h2 id="_mcp_apps_visual_uis_inside_conversations">MCP Apps: Visual UIs Inside Conversations</h2><div class="sectionbody"><div class="paragraph"><p>MCP recently introduced a new extension called <a href="https://github.com/modelcontextprotocol/ext-apps">MCP Apps</a>. This allows MCP servers to deliver interactive HTML/CSS/JS applications that render <em>inside</em> the AI client’s conversation view. The app can call server tools directly, without going through the AI.</p></div><div class="paragraph"><p>MCPLuceneServer uses this for index administration. The <code>indexAdmin</code> tool returns an MCP App that renders three buttons — Unlock Index, Optimize Index, Purge Index — directly in the Claude Desktop conversation. Each button calls the corresponding server tool and shows the result inline.</p></div><div class="paragraph"><p>Why is this interesting? Because it bridges the gap between conversational interfaces and traditional GUIs. Some operations benefit from a button with a confirmation dialog rather than a natural language command. &#34;Purge the entire index&#34; is something you want behind a deliberate click, not buried in a paragraph of conversation text.</p></div><div class="paragraph"><p>The MCP Apps SDK provides theme integration (the app inherits the host’s dark/light mode, fonts, and spacing), safe area handling, and bidirectional communication with the MCP server. The app is essentially a sandboxed web application that speaks the MCP protocol.</p></div><div class="paragraph"><p>This pattern opens up possibilities that go beyond admin UIs:</p></div><div class="ulist"><ul><li><p><strong>Search result visualization</strong> — display results as a sortable, filterable table within the conversation</p></li><li><p><strong>Document preview</strong> — render a document preview inline instead of describing it in text</p></li><li><p><strong>Crawl progress dashboard</strong> — show real-time progress bars during indexing</p></li><li><p><strong>Query builder</strong> — a visual query construction interface for users who don’t want to learn Lucene syntax</p></li></ul></div><div class="paragraph"><p>The important insight is that conversational UIs and graphical UIs aren’t mutually exclusive. MCP Apps lets you mix both in the same interaction. Ask a question in natural language, get a visual result. Click a button in the visual result, continue the conversation about what happened.</p></div></div></div><div class="sect1"><h2 id="_whats_next">What’s Next</h2><div class="sectionbody"><div class="paragraph"><p>The project is in active development. Here’s what’s on the horizon, roughly in priority order:</p></div><div class="paragraph"><p><strong>Index observability tools</strong> — giving the AI better visibility into what’s actually in the index. A <code>suggestTerms</code> tool that returns frequent terms for a given prefix would let the AI discover vocabulary it wouldn’t have guessed. &#34;There are 340 documents containing &#39;Vertragsklausel&#39; — should I include that in the search?&#34;</p></div><div class="paragraph"><p><strong>Document chunking</strong> — currently, each file is one Lucene document. The highlighter reads only the first 10,000 characters, so passages from the second half of a long PDF are never found. Splitting documents into overlapping chunks would solve this and lay the groundwork for future embedding support.</p></div><div class="paragraph"><p><strong>Duplicate detection</strong> — the index already stores content hashes, but there’s no tool to find duplicates. When you crawl multiple overlapping directories, duplicates are inevitable.</p></div><div class="paragraph"><p><strong>&#34;Why didn’t this match?&#34; analysis</strong> — the profileQuery tool explains why documents <em>did</em> match, but can’t yet explain why an expected document is missing from results. This requires testing each query component against the specific document — checking whether it failed on a filter, a missing term, or something else.</p></div><div class="paragraph"><p>And a few things that are explicitly <em>not</em> planned: server-side stemming (the AI handles it), geographic search (out of scope for document search), collaborative filtering (contradicts the stateless architecture), and full HTTP/SSE transport (no immediate benefit given the STDIO requirement).</p></div></div></div><div class="sect1"><h2 id="_wrapping_up">Wrapping Up</h2><div class="sectionbody"><div class="paragraph"><p>The central bet of this project is that search engines designed for AI assistants should be different from search engines designed for humans. They should be precise rather than forgiving, fast rather than smart, and transparent rather than magical. The intelligence belongs in the AI client, where it can adapt to context, language, and user intent in ways that no static configuration file ever will.</p></div><div class="paragraph"><p>MCP makes this practical by providing a standard protocol for tool discovery and invocation. And MCP Apps are starting to show that the &#34;conversational AI vs. graphical UI&#34; dichotomy is a false one — the best interfaces will combine both.</p></div><div class="paragraph"><p>If you want to try it yourself, the project is on GitHub: <a href="https://github.com/mirkosertic/MCPLuceneServer">MCPLuceneServer</a>. It works with Claude Desktop (or any MCP-compatible client), indexes your local documents, and lets you search them through conversation. Setup takes about five minutes.</p></div><div class="paragraph"><p>The search engine doesn’t understand your question. But your AI assistant does — and it knows exactly how to translate that understanding into the right queries.</p></div></div></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2025/11/supersecret-voice-satellite/">Build Your Own Ultra-Private HomeAssistant Voice Assistant Using iOS Devices</a></span></div></article></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Straße 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://bsky.app/profile/mirkosertic.de" itemprop="url"><i class="fa fa-bluesky-white"></i></a> <a class="icon" target="_blank" href="https://x.com/mirkosertic" itemprop="url"><i class="fa fa-x-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
+        var element = document.querySelector(aSelector);
+        if (element) {
+            return true;
+        }
+        return false;
+    }
+
+    var Loader = function () { };
+    Loader.prototype = {
+        require: function (scripts, callback) {
+            this.loadCount = 0;
+            this.totalRequired = scripts.length;
+            this.callback = callback;
+
+            for (var i=0;i<scripts.length;i++) {
+                this.writeScript(scripts[i]);
+            }
+        },
+        loaded: function (evt) {
+            this.loadCount++;
+
+            if (this.loadCount==this.totalRequired && typeof this.callback=='function') this.callback.call();
+        },
+        writeScript: function (src) {
+            var self = this;
+            var s = document.createElement('script');
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = src;
+            s.addEventListener('load', function (e) { self.loaded(e); }, false);
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(s);
+        }
+    };
+
+    if (existsByCSSSelector("pre.highlight code") > 0) {
+        var loader = new Loader();
+        loader.require(["https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"], function() {
+
+            var additionalStylesheet = document.createElement('link');
+            additionalStylesheet.rel = "stylesheet";
+            additionalStylesheet.type = 'text/css';
+            additionalStylesheet.media = "screen";
+            additionalStylesheet.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css";
+
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(additionalStylesheet);
+
+            hljs.highlightAll();
+        });
+    }</script></body></html>

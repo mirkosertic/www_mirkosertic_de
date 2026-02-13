@@ -7,8 +7,36 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Mon, 10 Nov 2025 16:19:52 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 13 Feb 2026 14:06:22 +0100</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Conversational-AI</title>
+      <link>https://www.mirkosertic.de/tags/conversational-ai/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.mirkosertic.de/tags/conversational-ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Enterprise</title>
+      <link>https://www.mirkosertic.de/tags/enterprise/</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/tags/enterprise/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MCP</title>
+      <link>https://www.mirkosertic.de/tags/mcp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.mirkosertic.de/tags/mcp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Search</title>
+      <link>https://www.mirkosertic.de/tags/search/</link>
+      <pubDate>Thu, 26 Oct 2017 00:00:00 +0200</pubDate>
+      <guid>https://www.mirkosertic.de/tags/search/</guid>
+      <description></description>
+    </item>
     <item>
       <title>HomeAssistant</title>
       <link>https://www.mirkosertic.de/tags/homeassistant/</link>
@@ -42,13 +70,6 @@
       <link>https://www.mirkosertic.de/tags/voice/</link>
       <pubDate>Sat, 08 Nov 2025 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/tags/voice/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Enterprise</title>
-      <link>https://www.mirkosertic.de/tags/enterprise/</link>
-      <pubDate>Sun, 01 Dec 2024 00:00:00 +0200</pubDate>
-      <guid>https://www.mirkosertic.de/tags/enterprise/</guid>
       <description></description>
     </item>
     <item>
@@ -266,13 +287,6 @@
       <link>https://www.mirkosertic.de/tags/opencl/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0200</pubDate>
       <guid>https://www.mirkosertic.de/tags/opencl/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Search</title>
-      <link>https://www.mirkosertic.de/tags/search/</link>
-      <pubDate>Thu, 26 Oct 2017 00:00:00 +0200</pubDate>
-      <guid>https://www.mirkosertic.de/tags/search/</guid>
       <description></description>
     </item>
     <item>
