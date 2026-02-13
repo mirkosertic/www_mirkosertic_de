@@ -8,6 +8,7 @@ enableRobotsTXT = false
 disableHugoGeneratorInject = true
 enableGitInfo = true
 timeout = 120
+buildFuture = true
 
 [pagination]
     pagerSize = 40
