@@ -1,0 +1,326 @@
++++
+date = "2026-02-14T00:00:00+02:00"
+title = "When Your AI Learns to Search: Building a Lucene Server for the Model Context Protocol"
+tags = ["Enterprise", "Search", "Conversational-AI", "MCP"]
+draft = false
+booktitle = "The Little Search Engine That Could Talk to Robots"
+description = "Forget vector databases and complex RAG pipelines - I've built a lightning-fast Apache Lucene search server that lets AI assistants find your documents through conversation. By flipping the traditional architecture on its head, the AI becomes the smart layer while the search engine stays blazingly fast and simple. The result is a system where you can chat with Claude to find that contract from last quarter, filter by author with natural language, and even debug why certain results appear - all through the Model Context Protocol."
+abstract = "This article presents a novel approach to document search for AI assistants by building MCPLuceneServer, a specialized Apache Lucene server designed for the Model Context Protocol (MCP). Rather than following the conventional Retrieval-Augmented Generation (RAG) pattern with vector embeddings, the architecture deliberately keeps the search engine simple and fast while leveraging the AI assistant as the semantic layer. The system demonstrates how conversational interfaces can transform document discovery through features like AI-powered query expansion, faceted search navigation, and real-time query profiling. Key innovations include efficient leading wildcard support through field reversal, structured passage extraction optimized for machine reasoning, and MCP Apps integration for visual administration interfaces. The design prioritizes sub-second startup times, precise lexical matching, and transparent debugging capabilities, showing that search engines built specifically for AI assistants should emphasize speed and precision over built-in intelligence. The project illustrates how MCP enables new patterns of human-AI-tool interaction that combine the strengths of conversational and graphical user interfaces."
++++
+include::globals.adoc[]
+
+== The Problem Nobody Talks About
+
+AI assistants are remarkably good at understanding what you mean. Ask Claude to "find that contract we discussed last quarter," and it knows you want a document search. But then what? The assistant has no documents. It has no index. It has a language model and your conversation history — and that's it.
+
+The typical answer is RAG: Retrieval-Augmented Generation. Chunk your documents, compute embeddings, throw them into a vector database, and wire up a retrieval pipeline. There's an entire industry around this now, with dozens of vector databases competing for attention.
+
+I went a different direction. I built a plain Apache Lucene fulltext search server and exposed it through the https://modelcontextprotocol.io/[Model Context Protocol (MCP)]. No embeddings. No vector search. No neural retrieval models. Just good old lexical search — with a twist.
+
+The twist is that the AI assistant _is_ the semantic layer.
+
+== Flipping the Architecture
+
+Traditional search engines try to be smart. They add synonym expansion, stemming, query understanding, learning-to-rank models, and increasingly, embedding-based retrieval. The search engine does the heavy lifting; the user types a query and hopes for the best.
+
+With an AI assistant in the loop, this architecture is backwards. The AI already understands language. It knows that "car" relates to "automobile" and "vehicle." It can figure out that a German user searching for "Verträge" probably also wants results for "Vertrag," "Arbeitsvertrag," and "Kaufvertrag." It can reformulate queries, inspect results, and try again — all within a single conversation.
+
+So the core design principle of MCPLuceneServer is deliberately simple:
+
+____
+The server is a fast, precise, lexical retrieval engine. The AI compensates for what the server doesn't do.
+____
+
+This means:
+
+* No synonym files to maintain — the AI generates OR queries on the fly
+* No per-language analyzers — the AI handles multilingual query formulation
+* No "smart" ranking models — the AI iterates on results, reads documents, and refines
+* No embedding computation — the server stays fast, lightweight, and debuggable
+
+What the server _does_ provide is the infrastructure that makes lexical search actually work well: Unicode normalization, diacritic folding, ligature expansion (critical for PDFs where Tika extracts invisible Unicode ligature characters), efficient leading wildcard queries, faceted navigation, and structured passage extraction with quality metadata designed for LLM consumption.
+
+== What MCP Brings to the Table
+
+The https://modelcontextprotocol.io/[Model Context Protocol] is the glue that makes this work. MCP defines a standard way for AI assistants to discover and call tools. The server exposes its capabilities — `search`, `profileQuery`, `getIndexStats`, `startCrawl`, and a dozen more — as MCP tool endpoints. The AI assistant sees these tools in its context and decides when and how to use them.
+
+This is fundamentally different from a REST API that a human developer integrates. The "developer" here is the AI itself. And that changes how you design everything.
+
+For example, search results include a `passages` array with individually scored excerpts, each containing:
+
+* `text` — the highlighted snippet with `<em>` tags around matched terms
+* `score` — normalized relevance (0.0 to 1.0, best passage = 1.0)
+* `matchedTerms` — which query terms appear in this passage
+* `termCoverage` — fraction of query terms present (1.0 = all terms matched)
+* `position` — location within the source document (0.0 = start, 1.0 = end)
+
+A human user needs a highlighted snippet. An AI needs structured metadata _about_ the snippet so it can make decisions: "This passage covers only half my query terms and comes from the end of the document — let me check the other results first." The API is optimized for machine reasoning, not just human readability.
+
+== Seeing It in Action
+
+Enough theory. Here's what it looks like when you actually use it. These are conversations with Claude Desktop, with the MCP Lucene Server running in the background.
+
+=== Simple Search
+
+[source,markdown]
+----
+User: I'm looking for documents about machine learning in my collection.
+
+Claude: I'll search your document index for machine learning content.
+
+[Claude calls: search(query: "(machine learning OR deep learning OR neural network*)",
+  filters: [], pageSize: 10)]
+
+I found 23 documents mentioning machine learning topics. Here are the
+most relevant:
+
+1. **ML-Pipeline-Architecture.pdf** (score: 0.92)
+   "...the proposed <em>machine learning</em> pipeline processes
+   incoming data streams in three stages..."
+
+2. **Research-Notes-2024.docx** (score: 0.85)
+   "...<em>deep learning</em> approaches have shown significant
+   improvements over traditional feature engineering..."
+
+3. **Team-Meeting-Notes-Q3.pdf** (score: 0.71)
+   "...discussed adoption of <em>neural network</em> models for
+   the anomaly detection use case..."
+
+The results span PDFs and Word documents. Want me to narrow these down
+by author, date range, or file type? I can see from the facets that
+the authors include Dr. Sarah Chen (8 docs), the ML Team (6 docs),
+and James Wright (4 docs).
+----
+
+Notice what happened. Claude didn't just search for "machine learning" — it expanded the query to include related terms using OR syntax. Nobody configured a synonym file. Nobody trained a model. The AI simply knows these terms are related and constructs the appropriate Lucene query.
+
+Also notice how Claude uses the facet data from the response to offer meaningful follow-up options. The facets tell it which authors, languages, and file types exist in the result set — without requiring a separate API call.
+
+=== Drill-Down with Faceted Search
+
+This is where conversational search gets interesting. The back-and-forth lets you progressively narrow results in a way that feels natural.
+
+[source,markdown]
+----
+User: Show me only the ones by Dr. Sarah Chen, and only PDFs.
+
+Claude: Let me filter the results.
+
+[Claude calls: search(query: "(machine learning OR deep learning OR neural network*)",
+  filters: [
+    { field: "author", value: "Dr. Sarah Chen" },
+    { field: "file_extension", value: "pdf" }
+  ])]
+
+Filtered to 5 PDF documents by Dr. Sarah Chen:
+
+1. **ML-Pipeline-Architecture.pdf** — Pipeline design document
+   from March 2024, covers data preprocessing and model training stages
+2. **Evaluation-Report-ModelV2.pdf** — Performance evaluation
+   of the v2 model, includes benchmark results
+3. ...
+
+The results were narrowed from 23 to 5 documents. I can see these
+were all created between January and June 2024. Want me to look at
+any of these in detail?
+----
+
+[source,markdown]
+----
+User: What about documents from 2024 only? And exclude anything
+      in German.
+
+Claude: I'll add a date range filter and exclude German documents.
+
+[Claude calls: search(query: "(machine learning OR deep learning OR neural network*)",
+  filters: [
+    { field: "author", value: "Dr. Sarah Chen" },
+    { field: "file_extension", value: "pdf" },
+    { field: "modified_date", operator: "range",
+      from: "2024-01-01", to: "2024-12-31" },
+    { field: "language", operator: "not", value: "de" }
+  ])]
+
+4 documents match all criteria. All English PDFs by Dr. Sarah Chen
+from 2024...
+----
+
+Under the hood, the server uses Lucene's DrillSideways for faceted fields (author, language, file extension) and LongPoint range queries for dates. The `filters` array supports `eq`, `in`, `not`, `not_in`, and `range` operators. Filters on different fields are combined with AND; multiple values on the same faceted field use OR (so you can filter for "pdf OR docx" in a single filter).
+
+What matters from a UX perspective: the user never writes a filter expression. They say "only PDFs" and the AI translates that into the structured filter syntax. The server provides the vocabulary (via facets), the AI provides the intent (from conversation), and together they navigate the document space.
+
+=== The German Compound Word Problem
+
+This is a real-world challenge that illustrates why the architecture matters. German forms compound words by joining them together: "Arbeitsvertrag" (employment contract), "Kaufvertrag" (purchase contract), "Mietvertrag" (rental contract). A user searching for "Vertrag" (contract) expects to find all of these.
+
+In traditional search, you'd need a decompounding filter or language-specific analysis. In MCPLuceneServer, the approach is different. The server provides efficient wildcard queries, and the AI knows how to use them.
+
+[source,markdown]
+----
+User: Finde alle Dokumente über Verträge.
+
+Claude: Ich suche nach Dokumenten über Verträge. Da es sich um
+einen deutschen Begriff handelt, verwende ich Wildcards, um auch
+zusammengesetzte Wörter zu finden.
+
+[Claude calls: search(query: "(*vertrag* OR vertrag* OR *vertrage*)",
+  filters: [{ field: "language", value: "de" }])]
+
+Ich habe 34 deutsche Dokumente gefunden, die sich mit Verträgen
+befassen:
+
+1. **Arbeitsvertrag-Muster-2024.pdf** — Enthält einen
+   Standard-<em>Arbeitsvertrag</em> mit aktuellen Klauseln...
+2. **Kaufvertrag-Immobilie.docx** — <em>Kaufvertrag</em> für die
+   Immobilie in der Hauptstraße...
+3. **Vertragsbedingungen-AGB.pdf** — Allgemeine
+   <em>Vertragsbedingungen</em> und Geschäftsbedingungen...
+----
+
+The query `*vertrag*` is an infix wildcard — it finds "vertrag" anywhere within a word. Leading wildcards like `*vertrag` are notoriously expensive in search engines because they can't use the normal term index. MCPLuceneServer solves this with a `content_reversed` field that stores every token in reverse. The query `*vertrag` is transparently rewritten to a trailing wildcard on the reversed field (`gartrev*`), which executes just as fast as any normal wildcard query.
+
+This is invisible to the user and even to the AI. The rewriting happens inside the server, and the highlighting still works on the original terms because the server uses the non-rewritten query for passage extraction.
+
+=== Debugging Queries with profileQuery
+
+Sometimes search results are surprising. The `profileQuery` tool gives the AI (and through it, the user) deep insight into what's happening inside the search engine.
+
+[source,markdown]
+----
+User: My search for "contract signed" returns weird results.
+      The top result doesn't seem relevant at all. Can you figure
+      out why?
+
+Claude: Let me profile that query to understand the scoring.
+
+[Claude calls: profileQuery(query: "contract signed",
+  analyzeDocumentScoring: true, maxDocExplanations: 3)]
+
+Here's what I found:
+
+**Query Structure:** Boolean AND query with two terms: "contract"
+and "signed"
+
+**Term Statistics:**
+- "contract" appears in 450 of 2,300 documents (19.6%) — common term
+- "signed" appears in 89 documents (3.9%) — uncommon term
+
+**Top Document Scoring:**
+1. **Minutes-Board-Meeting.pdf** (score: 8.34)
+   - "signed" contributes 72% of the score (high IDF, appears 6 times)
+   - "contract" contributes 28% (lower IDF, appears twice)
+   - Summary: Score dominated by the rare term "signed"
+
+2. **Service-Agreement-Final.pdf** (score: 7.12)
+   - "contract" contributes 55% (appears 12 times)
+   - "signed" contributes 45% (appears 3 times)
+
+**Why the board meeting minutes rank first:** The term "signed"
+is much rarer in your index than "contract," so BM25 gives it
+higher weight. The minutes document mentions "signed" 6 times
+(committee members signing various resolutions), which inflates
+its score.
+
+**Recommendations from the profiler:**
+- Consider using a phrase query "contract signed" (with quotes)
+  to find documents where these words appear near each other
+- Or use proximity search: "contract signed"~3 to require them
+  within 3 words
+
+Want me to try the phrase query instead?
+----
+
+The profiler provides four levels of analysis:
+
+1. **Fast analysis** (always included, ~5ms): Query structure, term statistics, cost estimates
+2. **Filter impact** (opt-in): How much each filter reduces the result set, with selectivity classification
+3. **Document scoring** (opt-in): Full BM25 breakdown per document — which terms contribute how much, TF-IDF details
+4. **Facet cost** (opt-in): Whether faceting computation is a bottleneck
+
+The expensive levels are opt-in because profiling is a debugging tool, not a production feature. The AI decides when to enable deeper analysis based on the conversation context. A user saying "results look fine" doesn't trigger scoring analysis; "why is this result ranked first?" does.
+
+An important design decision here: Lucene's internal `Explanation` API returns deeply nested, version-dependent text trees. The server parses these into structured, version-independent DTOs with fields like `contributionPercent` and human-readable summaries. This makes the data usable by the AI (structured JSON) without coupling the API to Lucene's internal representation, which tends to change between major versions.
+
+== Design Decisions and Their Trade-Offs
+
+Every architecture involves trade-offs. Here are the ones that matter most, and why I made the choices I did.
+
+=== No Stemming
+
+Stemming reduces words to their root form: "running" and "runs" both become "run." It's standard in most search engines. MCPLuceneServer doesn't use it.
+
+**Why not?** Stemming is a lossy operation that can hurt precision. Aggressive stemmers conflate unrelated terms ("organization" and "organ" stem to the same root in some algorithms). And the AI can do it better — it uses trailing wildcards (`contract*` matches "contracts," "contracting," "contracted") with full control over what gets expanded. The wildcard approach is more precise and doesn't require choosing between Porter, Snowball, or language-specific stemmers.
+
+**The cost:** Users who interact with the Lucene API directly (bypassing the AI) need to manually add wildcards. This is an acceptable trade-off because the primary interface _is_ the AI.
+
+=== No Vector Search
+
+This is the decision I get asked about most. Everyone expects vector search these days. Here's the reasoning.
+
+Vector search fills a specific gap: finding documents where the _concept_ matches but zero terms overlap. Searching for "reducing energy costs" when the relevant document discusses "HVAC retrofit" and "LED conversion" without ever mentioning "energy" or "cost."
+
+This gap is narrower than it sounds in practice:
+
+* The AI iterates — it reads results, discovers vocabulary in the documents, and refines its queries
+* Facets help narrow the search space without semantic matching
+* `getDocumentDetails` lets the AI read individual documents and learn their terminology
+* Personal and corporate document collections have bounded vocabulary — they're not the open web
+
+Adding embeddings would mean hosting an embedding model (or calling an external API), computing embeddings for every document chunk, maintaining a parallel retrieval path (lexical + vector), and significantly increasing index size and memory requirements. For a desktop tool that starts in one second and runs as a subprocess of your AI client, that's a heavy toll.
+
+The door isn't closed. If users report frequent "can't find it" scenarios despite AI-powered query expansion, or if the corpus grows beyond tens of thousands of documents, vector search becomes worth revisiting. But the architecture makes it easy to add later as an _additional_ retrieval path — not a replacement for lexical search.
+
+=== Plain Java, No Framework
+
+The server starts in about one second. This matters because MCP servers run as subprocesses of the AI client — when you open Claude Desktop, it launches the server. Fast startup means the tools are available almost instantly.
+
+Using plain Java (no Spring, no Quarkus, no Micronaut) keeps the JAR small (~45 MB) and startup fast. The trade-off is manual dependency wiring in the application's main class. For a server with fewer than 10 services, this is a reasonable price.
+
+=== STDIO Transport
+
+MCP supports multiple transports. MCPLuceneServer uses STDIO — the server reads JSON-RPC messages from stdin and writes responses to stdout. This is the transport that Claude Desktop uses.
+
+The consequence is strict: _nothing_ else can write to stdout. No logging, no startup banners, no debug output. The server uses a "deployed" profile that redirects all logging to files. This caught me off guard during development more than once — a stray `System.out.println` breaks the entire protocol.
+
+== MCP Apps: Visual UIs Inside Conversations
+
+MCP recently introduced a new extension called https://github.com/modelcontextprotocol/ext-apps[MCP Apps]. This allows MCP servers to deliver interactive HTML/CSS/JS applications that render _inside_ the AI client's conversation view. The app can call server tools directly, without going through the AI.
+
+MCPLuceneServer uses this for index administration. The `indexAdmin` tool returns an MCP App that renders three buttons — Unlock Index, Optimize Index, Purge Index — directly in the Claude Desktop conversation. Each button calls the corresponding server tool and shows the result inline.
+
+Why is this interesting? Because it bridges the gap between conversational interfaces and traditional GUIs. Some operations benefit from a button with a confirmation dialog rather than a natural language command. "Purge the entire index" is something you want behind a deliberate click, not buried in a paragraph of conversation text.
+
+The MCP Apps SDK provides theme integration (the app inherits the host's dark/light mode, fonts, and spacing), safe area handling, and bidirectional communication with the MCP server. The app is essentially a sandboxed web application that speaks the MCP protocol.
+
+This pattern opens up possibilities that go beyond admin UIs:
+
+* **Search result visualization** — display results as a sortable, filterable table within the conversation
+* **Document preview** — render a document preview inline instead of describing it in text
+* **Crawl progress dashboard** — show real-time progress bars during indexing
+* **Query builder** — a visual query construction interface for users who don't want to learn Lucene syntax
+
+The important insight is that conversational UIs and graphical UIs aren't mutually exclusive. MCP Apps lets you mix both in the same interaction. Ask a question in natural language, get a visual result. Click a button in the visual result, continue the conversation about what happened.
+
+== What's Next
+
+The project is in active development. Here's what's on the horizon, roughly in priority order:
+
+**Index observability tools** — giving the AI better visibility into what's actually in the index. A `suggestTerms` tool that returns frequent terms for a given prefix would let the AI discover vocabulary it wouldn't have guessed. "There are 340 documents containing 'Vertragsklausel' — should I include that in the search?"
+
+**Document chunking** — currently, each file is one Lucene document. The highlighter reads only the first 10,000 characters, so passages from the second half of a long PDF are never found. Splitting documents into overlapping chunks would solve this and lay the groundwork for future embedding support.
+
+**Duplicate detection** — the index already stores content hashes, but there's no tool to find duplicates. When you crawl multiple overlapping directories, duplicates are inevitable.
+
+**"Why didn't this match?" analysis** — the profileQuery tool explains why documents _did_ match, but can't yet explain why an expected document is missing from results. This requires testing each query component against the specific document — checking whether it failed on a filter, a missing term, or something else.
+
+And a few things that are explicitly _not_ planned: server-side stemming (the AI handles it), geographic search (out of scope for document search), collaborative filtering (contradicts the stateless architecture), and full HTTP/SSE transport (no immediate benefit given the STDIO requirement).
+
+== Wrapping Up
+
+The central bet of this project is that search engines designed for AI assistants should be different from search engines designed for humans. They should be precise rather than forgiving, fast rather than smart, and transparent rather than magical. The intelligence belongs in the AI client, where it can adapt to context, language, and user intent in ways that no static configuration file ever will.
+
+MCP makes this practical by providing a standard protocol for tool discovery and invocation. And MCP Apps are starting to show that the "conversational AI vs. graphical UI" dichotomy is a false one — the best interfaces will combine both.
+
+If you want to try it yourself, the project is on GitHub: https://github.com/mirkosertic/MCPLuceneServer[MCPLuceneServer]. It works with Claude Desktop (or any MCP-compatible client), indexes your local documents, and lets you search them through conversation. Setup takes about five minutes.
+
+The search engine doesn't understand your question. But your AI assistant does — and it knows exactly how to translate that understanding into the right queries.
