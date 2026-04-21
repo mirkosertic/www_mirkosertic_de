@@ -7,7 +7,7 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Tue, 21 Apr 2026 20:38:55 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Apr 2026 20:44:34 +0000</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/modernization/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Beyond Null Checks: Smart Validation in Java with Lombok, JSR 303, and JSR 308</title>
