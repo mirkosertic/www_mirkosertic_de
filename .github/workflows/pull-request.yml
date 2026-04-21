@@ -1,0 +1,33 @@
+name: Pull Request Build
+on:
+  pull_request:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.160.1'
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          gem install coderay
+          gem install pygments.rb  -v 3.0.0
+          gem install asciidoctor-diagram
+          gem install asciidoctor-diagram-ditaamini
+          gem install asciidoctor-diagram-plantuml
+          which ruby
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          check-latest: true
+      - run: |
+          npm ci
+          unset "_JAVA_OPTIONS"
+          npm run build
