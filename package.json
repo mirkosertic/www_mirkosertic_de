@@ -14,8 +14,9 @@
     "@babel/register": "^7.28.6",
     "gulp": "^5.0.1",
     "gulp-cli": "^3.1.0",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^5.0.3",
+    "@minify-html/node": "^0.18.1",
+    "sharp": "^0.33.5",
+    "svgo": "^3.3.3",
     "gulp-shell": "^0.7.1"
   },
   "babel": {
