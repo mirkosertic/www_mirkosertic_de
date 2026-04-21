@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>JUnit Test Assertions Made Easy: Generate Instead of Write &middot; Mirko Sertic</title><meta name="description" content="Transform debugging sessions into powerful JUnit assertions with a simple debugger trick! By using AssertGen.generate(), tedious assertion writing becomes a breeze, automatically converting running object states into comprehensive test validations."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="robots" content="index,follow"><meta property="og:title" content="JUnit Test Assertions Made Easy: Generate Instead of Write"><meta property="og:description" content="Transform debugging sessions into powerful JUnit assertions with a simple debugger trick! By using AssertGen.generate(), tedious assertion writing becomes a breeze, automatically converting running object states into comprehensive test validations."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><meta name="theme-color" content="#ffffff"><script>var _paq = window._paq = window._paq || [];
+<!doctype html><html prefix="og: http://ogp.me/ns#" lang=en><meta charset=utf-8><meta content="IE=edge,chrome=1" http-equiv=X-UA-Compatible><title>JUnit Test Assertions Made Easy: Generate Instead of Write · Mirko Sertic</title><meta content="Transform debugging sessions into powerful JUnit assertions with a simple debugger trick! By using AssertGen.generate(), tedious assertion writing becomes a breeze, automatically converting running object states into comprehensive test validations." name=description><meta content=True name=HandheldFriendly><meta content=320 name=MobileOptimized><meta content=index,follow name=robots><meta content="JUnit Test Assertions Made Easy: Generate Instead of Write" property=og:title><meta content="Transform debugging sessions into powerful JUnit assertions with a simple debugger trick! By using AssertGen.generate(), tedious assertion writing becomes a breeze, automatically converting running object states into comprehensive test validations." property=og:description><meta content=article property=og:type><meta content=https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications/ property=og:url><meta content="width=device-width,initial-scale=1.0" name=viewport><link href=https://www.mirkosertic.de/css/site.css media=screen rel=stylesheet><link rel="shortcut icon" href=https://www.mirkosertic.de/favicon.ico type=image/x-icon><link href=https://www.mirkosertic.de/apple-touch-icon.png rel=apple-touch-icon sizes=180x180><link href=https://www.mirkosertic.de/favicon-32x32.png rel=icon sizes=32x32 type=image/png><link href=https://www.mirkosertic.de/favicon-16x16.png rel=icon sizes=16x16 type=image/png><link href=https://www.mirkosertic.de/manifest.json rel=manifest><link color=#5bbad5 href=https://www.mirkosertic.de/safari-pinned-tab.svg rel=mask-icon><meta content=#ffffff name=theme-color><script>var _paq = window._paq = window._paq || [];
 
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
@@ -114,7 +114,7 @@
 
             var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
             g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-        })();</script></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="My personal Technology Radar">Technology Radar</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Essential Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link active" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><div itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"><header class="post-header"><div class="contentbox"><h1 class="post-title" itemprop="name headline">JUnit Test Assertions Made Easy: Generate Instead of Write</h1><p class="post-date"><span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="2013-10-01" itemprop="datePublished">Tue, Oct 1, 2013</time> <span>by</span> <span itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name"><a href="https://x.com/mirkosertic" rel="author">Mirko Sertic</a></span></span></p><p class="post-abstract" itemprop="abstract"><span>This article demonstrates a practical approach to automating JUnit test assertion creation by leveraging runtime object states. Instead of manually writing numerous assertions for complex JavaBeans or entities, developers can use a simple AssertGen utility class during debugging sessions to automatically generate comprehensive assertion statements. The technique significantly reduces the time and effort required for writing thorough unit tests while ensuring proper validation of object properties. The article includes a complete implementation of the AssertGen class, showing how to convert various Java data types into appropriate assertion statements.</span></p><p><span class="icon"><i class="fa fa-clock-white"></i></span><span>3 Minutes reading time</span></p><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags-white"></i></span><a href="/tags/interesting">Interesting</a> ,<a href="/tags/junit">JUnit</a> ,<a href="/tags/testing">Testing</a></span></p></div></header><figure class="blogtitleimage"><figcaption><p>Behold the masterpiece that AI hallucinated while reading this post:</p><p class="title">"The Little Test That Could: How Jimmy JUnit Learned to Write Himself"</p><p>(after I fed it way too many marketing blogs and memes)</p><p class="aidisclosure">Created using DALL-E 3</p></figcaption><img src="/media/welcomeimages/how-to-create-junit-assertions-from-running-applications_selected.png" alt="AI-Generated: The Little Test That Could: How Jimmy JUnit Learned to Write Himself" itemprop="image"></figure><article class="post-content clearfix" itemprop="articleBody"><div class="paragraph"><p>JUnit is a cool and powerful framework for unit test creation. But there is a drawback: we need to create a lot of assertions! Without assertions, we can create a very good path coverage, but it is not guaranteed that the code works correctly. This can be really cumbersome while we are working with big JavaBeans or Entities. Check for instance the following piece of code:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">public class BeanTest {
+        })();</script><body itemscope itemtype=http://schema.org/WebPage><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype=http://www.schema.org/SiteNavigationElement><div class=container><a class=navbar-brand href=https://www.mirkosertic.de/>www.mirkosertic.de</a><button aria-label="Toggle navigation" aria-controls=navbarCollapse aria-expanded=false class=navbar-toggler data-target=#navbarCollapse data-toggle=collapse type=button><span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbarCollapse><ul class="navbar-nav mr-auto"><li class=nav-item><a title="My personal Technology Radar" class=nav-link href=/global/toolsgoodies itemprop=url>Technology Radar</a><li class=nav-item><a title="Interesting Books" class=nav-link href=/global/interestingbooks itemprop=url>Essential Books</a><li class=nav-item><a title="My favorite postings" class=nav-link href=/global/favorites itemprop=url>My favorite postings</a><li class=nav-item><a class="nav-link active" href=/post/ itemprop=url title=Blog>Blog</a></ul></div></div></nav></header><main role=main><div itemprop=mainEntity itemscope itemtype=http://schema.org/BlogPosting><header class=post-header><div class=contentbox><h1 itemprop="name headline" class=post-title>JUnit Test Assertions Made Easy: Generate Instead of Write</h1><p class=post-date><span class=icon><i class="fa fa-calendar-check-o-white"></i></span><time datetime=2013-10-01 itemprop=datePublished>Tue, Oct 1, 2013</time> <span>by</span> <span itemprop=author itemscope itemtype=https://schema.org/Person> <span itemprop=name> <a href=https://x.com/mirkosertic rel=author>Mirko Sertic</a> </span> </span><p class=post-abstract itemprop=abstract><span>This article demonstrates a practical approach to automating JUnit test assertion creation by leveraging runtime object states. Instead of manually writing numerous assertions for complex JavaBeans or entities, developers can use a simple AssertGen utility class during debugging sessions to automatically generate comprehensive assertion statements. The technique significantly reduces the time and effort required for writing thorough unit tests while ensuring proper validation of object properties. The article includes a complete implementation of the AssertGen class, showing how to convert various Java data types into appropriate assertion statements.</span><p><span class=icon><i class="fa fa-clock-white"></i></span><span>3 Minutes reading time</span><p class=post-tags><span class=tag><span class=icon><i class="fa fa-tags-white"></i></span><a href=/tags/interesting>Interesting</a> ,<a href=/tags/junit>JUnit</a> ,<a href=/tags/testing>Testing</a> </span></div></header><figure class=blogtitleimage><figcaption><p>Behold the masterpiece that AI hallucinated while reading this post:</p> <p class=title>"The Little Test That Could: How Jimmy JUnit Learned to Write Himself"</p> <p>(after I fed it way too many marketing blogs and memes)</p> <p class=aidisclosure>Created using DALL-E 3</p></figcaption><img alt="AI-Generated: The Little Test That Could: How Jimmy JUnit Learned to Write Himself" itemprop=image src=/media/welcomeimages/how-to-create-junit-assertions-from-running-applications_selected.png></figure><article class="post-content clearfix" itemprop=articleBody><div class=paragraph><p>JUnit is a cool and powerful framework for unit test creation. But there is a drawback: we need to create a lot of assertions! Without assertions, we can create a very good path coverage, but it is not guaranteed that the code works correctly. This can be really cumbersome while we are working with big JavaBeans or Entities. Check for instance the following piece of code:</div><div class=listingblock><div class=content><pre class=highlight><code class=language-java data-lang=java>public class BeanTest {
 
     @Test
     public void testCreate() {
@@ -124,7 +124,7 @@
         // Here we need to generate assertions?
         System.out.println(theTestBean);
     }
-}</code></pre></div></div><div class="paragraph"><p>Wouldn’t it be cool to just execute it and generate the unit test assertions from a running application instance, so we can get the following?</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">public class BeanTest {
+}</code></pre></div></div><div class=paragraph><p>Wouldn’t it be cool to just execute it and generate the unit test assertions from a running application instance, so we can get the following?</div><div class=listingblock><div class=content><pre class=highlight><code class=language-java data-lang=java>public class BeanTest {
 
     @Test
     public void testCreate() {
@@ -134,27 +134,27 @@
         // Here we need to generate assertions?
         System.out.println(theTestBean);
 
-        Assert.assertEquals(&#34;Name1&#34;, theTestBean.getName1());
+        Assert.assertEquals("Name1", theTestBean.getName1());
         Assert.assertNull(theTestBean.getName2());
         Assert.assertEquals(Integer.valueOf(1), theTestBean.getValue1());
         Assert.assertEquals(Boolean.valueOf(true), theTestBean.getValue2());
         Assert.assertEquals(Double.valueOf(3.0d), theTestBean.getValue3());
     }
-}</code></pre></div></div><div class="paragraph"><p>So how do we create the missing unit test assertions? Just step into the unit test using a debugger and evaluate the following expression in the shell:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">AssertGen.generate(theTestBean)</code></pre></div></div><div class="paragraph"><p>And you will get the missing assertion statements. Now we can copy them to the original unit test source and rerun it again. Pretty cool, this can save a lot of time while writing unit test. But how does it work under the hood? The AssertGen class is quite simple, just check the source:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">public class AssertGen {
+}</code></pre></div></div><div class=paragraph><p>So how do we create the missing unit test assertions? Just step into the unit test using a debugger and evaluate the following expression in the shell:</div><div class=listingblock><div class=content><pre class=highlight><code class=language-java data-lang=java>AssertGen.generate(theTestBean)</code></pre></div></div><div class=paragraph><p>And you will get the missing assertion statements. Now we can copy them to the original unit test source and rerun it again. Pretty cool, this can save a lot of time while writing unit test. But how does it work under the hood? The AssertGen class is quite simple, just check the source:</div><div class=listingblock><div class=content><pre class=highlight><code class=language-java data-lang=java>public class AssertGen {
 
     public static String generate(Object aObject) throws InvocationTargetException, IllegalAccessException {
         StringWriter theStringWriter = new StringWriter();
         PrintWriter thePW = new PrintWriter(theStringWriter);
         if (aObject instanceof List) {
             List theList = (List) aObject;
-            thePW.println(&#34;Assert.assertEquals(&#34; + theList.size() + &#34;, ob.size());&#34;);
+            thePW.println("Assert.assertEquals(" + theList.size() + ", ob.size());");
             int row = 0;
             for (Object theObject : theList) {
-                generate(thePW, &#34;ob.get(&#34; + row + &#34;).&#34;, theObject);
+                generate(thePW, "ob.get(" + row + ").", theObject);
                 row++;
             }
         } else {
-            generate(thePW, &#34;ob.&#34;, aObject);
+            generate(thePW, "ob.", aObject);
         }
         thePW.flush();
         return theStringWriter.toString();
@@ -165,13 +165,13 @@
         for (Method theMethod : aObject.getClass().getMethods()) {
             if (Modifier.isPublic(theMethod.getModifiers()) &amp;amp;&amp;amp; theMethod.getParameterTypes().length == 0) {
                 String theMethodName = theMethod.getName();
-                if (!theMethodName.equals(&#34;getClass&#34;) &amp;amp;&amp;amp; theMethodName.startsWith(&#34;get&#34;) || (theMethodName.startsWith(&#34;is&#34;))) {
+                if (!theMethodName.equals("getClass") &amp;amp;&amp;amp; theMethodName.startsWith("get") || (theMethodName.startsWith("is"))) {
                     Object theValue = theMethod.invoke(aObject);
                     if (theValue == null) {
-                        aPW.println(&#34;Assert.assertNull(&#34; + aPrefix + theMethod.getName() + &#34;());&#34;);
+                        aPW.println("Assert.assertNull(" + aPrefix + theMethod.getName() + "());");
                     } else {
-                        aPW.println(&#34;Assert.assertEquals(&#34; + toAssertionText(theValue) + &#34;,&#34; + aPrefix
-                                + theMethod.getName() + &#34;());&#34;);
+                        aPW.println("Assert.assertEquals(" + toAssertionText(theValue) + "," + aPrefix
+                                + theMethod.getName() + "());");
                     }
                 }
             }
@@ -180,28 +180,28 @@
 
     private static String toAssertionText(Object aValue) {
         if (aValue instanceof String) {
-            return &#34;\&#34;&#34; + aValue + &#34;\&#34;&#34;;
+            return "\"" + aValue + "\"";
         }
         if (aValue instanceof Integer) {
-            return &#34;Integer.valueOf(&#34; + aValue + &#34;)&#34;;
+            return "Integer.valueOf(" + aValue + ")";
         }
         if (aValue instanceof Long) {
-            return &#34;Long.valueOf(&#34; + aValue + &#34;L)&#34;;
+            return "Long.valueOf(" + aValue + "L)";
         }
         if (aValue instanceof Boolean) {
-            return &#34;Boolean.valueOf(&#34; + aValue + &#34;)&#34;;
+            return "Boolean.valueOf(" + aValue + ")";
         }
         if (aValue instanceof Double) {
-            return &#34;Double.valueOf(&#34; + aValue + &#34;d)&#34;;
+            return "Double.valueOf(" + aValue + "d)";
         }
         if (aValue instanceof Timestamp) {
             Timestamp theTS = (Timestamp) aValue;
-            return &#34;new Timestamp(&#34; + theTS.getTime() + &#34;L)&#34;;
+            return "new Timestamp(" + theTS.getTime() + "L)";
         }
 
-        return &#34;don&#39;t know to convert : &#34; + aValue;
+        return "don't know to convert : " + aValue;
     }
-}</code></pre></div></div><div class="paragraph"><p>Nice, i really love JUnit!</p></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2013/09/domain-driven-design-with-jsf-ejb-and-cdi/">Building Modern Enterprise Apps: DDD meets JSF, EJB, and CDI</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2013/10/java-se-context-and-dependency-injection-with-java-ee-support/">Enabling Java EE Features in CDI SE: A Portable Extension Magic Trick</a>&gt;&gt;</span></div></article></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Straße 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://bsky.app/profile/mirkosertic.de" itemprop="url"><i class="fa fa-bluesky-white"></i></a> <a class="icon" target="_blank" href="https://x.com/mirkosertic" itemprop="url"><i class="fa fa-x-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
+}</code></pre></div></div><div class=paragraph><p>Nice, i really love JUnit!</div><div class=metainfo><span>&lt;&lt;Pevious posting: <a href=https://www.mirkosertic.de/blog/2013/09/domain-driven-design-with-jsf-ejb-and-cdi/>Building Modern Enterprise Apps: DDD meets JSF, EJB, and CDI</a></span><span>Next posting: <a href=https://www.mirkosertic.de/blog/2013/10/java-se-context-and-dependency-injection-with-java-ee-support/>Enabling Java EE Features in CDI SE: A Portable Extension Magic Trick</a>>></span></div></article></div></main><footer><p>© Mirko Sertic · <a href=https://www.mirkosertic.de/global/impressum/index.html>Imprint / Impressum</a><address><strong itemprop=name>Mirko Sertic</strong> <div itemprop=address itemscope itemtype=http://schema.org/PostalAddress><div itemprop=streetAddress>Josefine-Mauser-Straße 66</div><div itemprop=postalCode>48157 Münster</div><div itemprop=addressCountry>Germany</div></div> <a class=icon href=mailto:mirko@mirkosertic.de target=_top><i class="fa fa-envelope-white"></i></a> <a class=icon href=https://www.xing.com/profile/Mirko_Sertic itemprop=url target=_blank><i class="fa fa-xing-white"></i></a> <a class=icon href=https://bsky.app/profile/mirkosertic.de itemprop=url target=_blank><i class="fa fa-bluesky-white"></i></a> <a class=icon href=https://x.com/mirkosertic itemprop=url target=_blank><i class="fa fa-x-twitter-white"></i></a> <a class=icon href=https://github.com/mirkosertic itemprop=url target=_blank><i class="fa fa-github-white"></i></a> <a class=icon href=https://de.linkedin.com/in/mirko-sertic-98882397 itemprop=url target=_blank><i class="fa fa-linkedin-white"></i></a></address><p class=float-right><a href=#>Back to top</a></footer><script src=https://www.mirkosertic.de/js/bootstrap-native-v4.min.js></script><script>function existsByCSSSelector(aSelector) {
         var element = document.querySelector(aSelector);
         if (element) {
             return true;
@@ -252,4 +252,4 @@
 
             hljs.highlightAll();
         });
-    }</script></body></html>
+    }</script>

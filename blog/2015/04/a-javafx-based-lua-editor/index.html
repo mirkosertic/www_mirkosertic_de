@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Building a Powerful LUA Script Editor with JavaFX and Ace &middot; Mirko Sertic</title><meta name="description" content="Discover how JavaFX and the Ace editor join forces to create a feature-rich LUA script editor with syntax highlighting and clipboard support! This clever integration showcases the perfect marriage between JavaFX&#39;s WebView and JavaScript-based technologies, making game script editing a breeze."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="robots" content="index,follow"><meta property="og:title" content="Building a Powerful LUA Script Editor with JavaFX and Ace"><meta property="og:description" content="Discover how JavaFX and the Ace editor join forces to create a feature-rich LUA script editor with syntax highlighting and clipboard support! This clever integration showcases the perfect marriage between JavaFX&#39;s WebView and JavaScript-based technologies, making game script editing a breeze."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2015/04/a-javafx-based-lua-editor/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><meta name="theme-color" content="#ffffff"><script>var _paq = window._paq = window._paq || [];
+<!doctype html><html prefix="og: http://ogp.me/ns#" lang=en><meta charset=utf-8><meta content="IE=edge,chrome=1" http-equiv=X-UA-Compatible><title>Building a Powerful LUA Script Editor with JavaFX and Ace · Mirko Sertic</title><meta content="Discover how JavaFX and the Ace editor join forces to create a feature-rich LUA script editor with syntax highlighting and clipboard support! This clever integration showcases the perfect marriage between JavaFX's WebView and JavaScript-based technologies, making game script editing a breeze." name=description><meta content=True name=HandheldFriendly><meta content=320 name=MobileOptimized><meta content=index,follow name=robots><meta content="Building a Powerful LUA Script Editor with JavaFX and Ace" property=og:title><meta content="Discover how JavaFX and the Ace editor join forces to create a feature-rich LUA script editor with syntax highlighting and clipboard support! This clever integration showcases the perfect marriage between JavaFX's WebView and JavaScript-based technologies, making game script editing a breeze." property=og:description><meta content=article property=og:type><meta content=https://www.mirkosertic.de/blog/2015/04/a-javafx-based-lua-editor/ property=og:url><meta content="width=device-width,initial-scale=1.0" name=viewport><link href=https://www.mirkosertic.de/css/site.css media=screen rel=stylesheet><link rel="shortcut icon" href=https://www.mirkosertic.de/favicon.ico type=image/x-icon><link href=https://www.mirkosertic.de/apple-touch-icon.png rel=apple-touch-icon sizes=180x180><link href=https://www.mirkosertic.de/favicon-32x32.png rel=icon sizes=32x32 type=image/png><link href=https://www.mirkosertic.de/favicon-16x16.png rel=icon sizes=16x16 type=image/png><link href=https://www.mirkosertic.de/manifest.json rel=manifest><link color=#5bbad5 href=https://www.mirkosertic.de/safari-pinned-tab.svg rel=mask-icon><meta content=#ffffff name=theme-color><script>var _paq = window._paq = window._paq || [];
 
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
@@ -114,10 +114,10 @@
 
             var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
             g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-        })();</script></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="My personal Technology Radar">Technology Radar</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Essential Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link active" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><div itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"><header class="post-header"><div class="contentbox"><h1 class="post-title" itemprop="name headline">Building a Powerful LUA Script Editor with JavaFX and Ace</h1><p class="post-date"><span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="2015-04-03" itemprop="datePublished">Fri, Apr 3, 2015</time> <span>by</span> <span itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name"><a href="https://x.com/mirkosertic" rel="author">Mirko Sertic</a></span></span></p><p class="post-abstract" itemprop="abstract"><span>This article demonstrates the implementation of a sophisticated LUA script editor using JavaFX and the Ace editor. The integration leverages JavaFX&#39;s WebView component to incorporate the JavaScript-based Ace editor, providing features like syntax highlighting and custom clipboard handling. The editor serves as a crucial component in a larger game authoring system, enabling game designers to write and test LUA scripts for entity behaviors and event handling. The solution exemplifies how modern web technologies can be effectively combined with JavaFX to create powerful development tools.</span></p><p><span class="icon"><i class="fa fa-clock-white"></i></span><span>5 Minutes reading time</span></p><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags-white"></i></span><a href="/tags/html5">HTML5</a> ,<a href="/tags/interesting">Interesting</a> ,<a href="/tags/lua">LUA</a> ,<a href="/tags/user-interface">User Interface</a> ,<a href="/tags/web">Web</a></span></p></div></header><figure class="blogtitleimage"><figcaption><p>Behold the masterpiece that AI hallucinated while reading this post:</p><p class="title">"How Little JavaFX Made Friends with Ace Editor to Help Game Designers Write Better Scripts"</p><p>(after I fed it way too many marketing blogs and memes)</p><p class="aidisclosure">Created using DALL-E 3</p></figcaption><img src="/media/welcomeimages/a-javafx-based-lua-editor_selected.png" alt="AI-Generated: How Little JavaFX Made Friends with Ace Editor to Help Game Designers Write Better Scripts" itemprop="image"></figure><article class="post-content clearfix" itemprop="articleBody"><div class="paragraph"><p>One of my favorite projects is my JavaFX based <a href="https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/">Gameengine</a>. It has a flexible entity component system, supports WYSIWYG game design and also has multiplayer network support. The entity component system is backed by a LUA based scripting system, the game designer can react freely on game events and script entity behaviors with the wonderful LUA scripting engine. Now, the game designer needs a visual tool with syntax highlighting, clipboard support and also some kind of testing mode to write bug free LUA scripts. Luckily I was able to build this with JavaFX, and here is a final screenshot:</p></div><div class="paragraph"><p><span class="image"><img src="/media/luascripteditor.png" alt="luascripteditor"></span></p></div><div class="paragraph"><p>Now, how did I achieve this? Well, luckily I didn’t have to reinvent everything by myself. There are a lot of cool scripting editors available today. One of them is the Ace editor. The Ace editor is HTML/ JavaScript based. And because of the wonderful JavaFX WebView I am able to integrate the rich text script editor with a JavaFX based user interface. For starters, we need to a editor.html page to the classpath. The whole Ace editor bootstrapping is done by this simple page:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-html" data-lang="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&#34;en&#34;&gt;
-&lt;head&gt;
-    &lt;style type=&#34;text/css&#34; media=&#34;screen&#34;&gt;
+        })();</script><body itemscope itemtype=http://schema.org/WebPage><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype=http://www.schema.org/SiteNavigationElement><div class=container><a class=navbar-brand href=https://www.mirkosertic.de/>www.mirkosertic.de</a><button aria-label="Toggle navigation" aria-controls=navbarCollapse aria-expanded=false class=navbar-toggler data-target=#navbarCollapse data-toggle=collapse type=button><span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbarCollapse><ul class="navbar-nav mr-auto"><li class=nav-item><a title="My personal Technology Radar" class=nav-link href=/global/toolsgoodies itemprop=url>Technology Radar</a><li class=nav-item><a title="Interesting Books" class=nav-link href=/global/interestingbooks itemprop=url>Essential Books</a><li class=nav-item><a title="My favorite postings" class=nav-link href=/global/favorites itemprop=url>My favorite postings</a><li class=nav-item><a class="nav-link active" href=/post/ itemprop=url title=Blog>Blog</a></ul></div></div></nav></header><main role=main><div itemprop=mainEntity itemscope itemtype=http://schema.org/BlogPosting><header class=post-header><div class=contentbox><h1 itemprop="name headline" class=post-title>Building a Powerful LUA Script Editor with JavaFX and Ace</h1><p class=post-date><span class=icon><i class="fa fa-calendar-check-o-white"></i></span><time datetime=2015-04-03 itemprop=datePublished>Fri, Apr 3, 2015</time> <span>by</span> <span itemprop=author itemscope itemtype=https://schema.org/Person> <span itemprop=name> <a href=https://x.com/mirkosertic rel=author>Mirko Sertic</a> </span> </span><p class=post-abstract itemprop=abstract><span>This article demonstrates the implementation of a sophisticated LUA script editor using JavaFX and the Ace editor. The integration leverages JavaFX's WebView component to incorporate the JavaScript-based Ace editor, providing features like syntax highlighting and custom clipboard handling. The editor serves as a crucial component in a larger game authoring system, enabling game designers to write and test LUA scripts for entity behaviors and event handling. The solution exemplifies how modern web technologies can be effectively combined with JavaFX to create powerful development tools.</span><p><span class=icon><i class="fa fa-clock-white"></i></span><span>5 Minutes reading time</span><p class=post-tags><span class=tag><span class=icon><i class="fa fa-tags-white"></i></span><a href=/tags/html5>HTML5</a> ,<a href=/tags/interesting>Interesting</a> ,<a href=/tags/lua>LUA</a> ,<a href=/tags/user-interface>User Interface</a> ,<a href=/tags/web>Web</a> </span></div></header><figure class=blogtitleimage><figcaption><p>Behold the masterpiece that AI hallucinated while reading this post:</p> <p class=title>"How Little JavaFX Made Friends with Ace Editor to Help Game Designers Write Better Scripts"</p> <p>(after I fed it way too many marketing blogs and memes)</p> <p class=aidisclosure>Created using DALL-E 3</p></figcaption><img alt="AI-Generated: How Little JavaFX Made Friends with Ace Editor to Help Game Designers Write Better Scripts" itemprop=image src=/media/welcomeimages/a-javafx-based-lua-editor_selected.png></figure><article class="post-content clearfix" itemprop=articleBody><div class=paragraph><p>One of my favorite projects is my JavaFX based <a href=https://www.mirkosertic.de/blog/2013/11/a-javafx-based-game-authoring-system/>Gameengine</a>. It has a flexible entity component system, supports WYSIWYG game design and also has multiplayer network support. The entity component system is backed by a LUA based scripting system, the game designer can react freely on game events and script entity behaviors with the wonderful LUA scripting engine. Now, the game designer needs a visual tool with syntax highlighting, clipboard support and also some kind of testing mode to write bug free LUA scripts. Luckily I was able to build this with JavaFX, and here is a final screenshot:</div><div class=paragraph><p><span class=image><img alt=luascripteditor src=/media/luascripteditor.png></span></div><div class=paragraph><p>Now, how did I achieve this? Well, luckily I didn’t have to reinvent everything by myself. There are a lot of cool scripting editors available today. One of them is the Ace editor. The Ace editor is HTML/ JavaScript based. And because of the wonderful JavaFX WebView I am able to integrate the rich text script editor with a JavaFX based user interface. For starters, we need to a editor.html page to the classpath. The whole Ace editor bootstrapping is done by this simple page:</div><div class=listingblock><div class=content><pre class=highlight><code class=language-html data-lang=html>&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;style type="text/css" media="screen">
         #editor {
             position: absolute;
             top: 0;
@@ -125,28 +125,28 @@
             bottom: 0;
             left: 0;
         }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
+    &lt;/style>
+&lt;/head>
+&lt;body>
 
-&lt;div id=&#34;editor&#34;&gt;&lt;/div&gt;
+&lt;div id="editor">&lt;/div>
 
-&lt;script src=&#34;ace.js&#34; type=&#34;text/javascript&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;ext-language_tools.js&#34; type=&#34;text/javascript&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-&lt;script&gt;
+&lt;script src="ace.js" type="text/javascript" charset="utf-8">&lt;/script>
+&lt;script src="ext-language_tools.js" type="text/javascript" charset="utf-8">&lt;/script>
+&lt;script>
 
     var editor;
 
     function initeditor() {
-        ace.require(&#34;ace/ext/language_tools&#34;)
-        editor = ace.edit(&#34;editor&#34;);
+        ace.require("ace/ext/language_tools")
+        editor = ace.edit("editor");
         editor.setOptions({
             enableBasicAutocompletion: true,
             enableSnippets: true,
             enableLiveAutocompletion: false
         });
-        editor.setTheme(&#34;ace/theme/monokai&#34;);
-        editor.getSession().setMode(&#34;ace/mode/lua&#34;);
+        editor.setTheme("ace/theme/monokai");
+        editor.getSession().setMode("ace/mode/lua");
     }
 
     function getvalue() {
@@ -160,9 +160,9 @@
     function pastevalue(aValue) {
         editor.insert(aValue);
     }
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre></div></div><div class="paragraph"><p>We also need a controller for the JavaFX part. The initialization is a bit tricky, because we have to bootstrap the Ace editor by some Java/JavaScript down calls, but you will get the point while looking at the code:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">package de.mirkosertic.gamecomposer.contentarea.eventsheet.runscript;
+&lt;/script>
+&lt;/body>
+&lt;/html></code></pre></div></div><div class=paragraph><p>We also need a controller for the JavaFX part. The initialization is a bit tricky, because we have to bootstrap the Ace editor by some Java/JavaScript down calls, but you will get the point while looking at the code:</div><div class=listingblock><div class=content><pre class=highlight><code class=language-java data-lang=java>package de.mirkosertic.gamecomposer.contentarea.eventsheet.runscript;
 
 import de.mirkosertic.gamecomposer.PersistenceManager;
 import de.mirkosertic.gameengine.core.GameObject;
@@ -218,7 +218,7 @@ public class EditScriptDialog {
 
         // We need JavaScript support
         editorView.getEngine().setJavaScriptEnabled(true);
-        editorView.getEngine().getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -&gt; {
+        editorView.getEngine().getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue == Worker.State.SUCCEEDED) {
                 initializeHTML();
             }
@@ -231,12 +231,12 @@ public class EditScriptDialog {
         // Load the bootstrap html
         // It will trigger the initializeHTML() method by the above registered state change listener
         // after the everything was loaded
-        editorView.getEngine().load(EditScriptDialog.class.getResource(&#34;/ace/editor.html&#34;).toExternalForm());
+        editorView.getEngine().load(EditScriptDialog.class.getResource("/ace/editor.html").toExternalForm());
 
         // Copy &amp;amp; Paste Clipboard support
         final KeyCombination theCombinationCopy = new KeyCodeCombination(KeyCode.C, KeyCombination.CONTROL_DOWN);
         final KeyCombination theCombinationPaste = new KeyCodeCombination(KeyCode.V, KeyCombination.CONTROL_DOWN);
-        aModalStage.getScene().addEventFilter(KeyEvent.KEY_PRESSED, aEvent -&gt; {
+        aModalStage.getScene().addEventFilter(KeyEvent.KEY_PRESSED, aEvent -> {
             if (theCombinationCopy.match(aEvent)) {
                 onCopy();
             }
@@ -251,7 +251,7 @@ public class EditScriptDialog {
         // Get the selected content from the editor
         // We to a Java2JavaScript downcall here
         // For details, take a look at the function declaration in editor.html
-        String theContentAsText = (String) editorView.getEngine().executeScript(&#34;copyselection()&#34;);
+        String theContentAsText = (String) editorView.getEngine().executeScript("copyselection()");
 
         // And put it to the clipboard
         Clipboard theClipboard = Clipboard.getSystemClipboard();
@@ -269,8 +269,8 @@ public class EditScriptDialog {
             // And put it in the editor
             // We do a Java2JavaScript downcall here
             // For details, take a look at the function declaration in editor.html
-            JSObject theWindow = (JSObject) editorView.getEngine().executeScript(&#34;window&#34;);
-            theWindow.call(&#34;pastevalue&#34;, theContent);
+            JSObject theWindow = (JSObject) editorView.getEngine().executeScript("window");
+            theWindow.call("pastevalue", theContent);
         }
     }
 
@@ -278,11 +278,11 @@ public class EditScriptDialog {
         // Initialize the editor
         // and fill it with the LUA script taken from our editing action
         Document theDocument = editorView.getEngine().getDocument();
-        Element theEditorElement = theDocument.getElementById(&#34;editor&#34;);
+        Element theEditorElement = theDocument.getElementById("editor");
 
         theEditorElement.setTextContent(action.scriptProperty().get().script);
 
-        editorView.getEngine().executeScript(&#34;initeditor()&#34;);
+        editorView.getEngine().executeScript("initeditor()");
     }
 
     private boolean test(Script aScript) {
@@ -294,23 +294,23 @@ public class EditScriptDialog {
             GameScene theClone = persistenceManager.cloneSceneForPreview(gameScene);
 
             // Execute a single run for verification
-            GameObject theObject = new GameObject(theClone, &#34;dummy&#34;);
+            GameObject theObject = new GameObject(theClone, "dummy");
             GameObjectInstance theInstance = theClone.createFrom(theObject);
             theEngine = theClone.getRuntime().getScriptEngineFactory().createNewEngine(theClone, aScript);
-            theEngine.registerObject(&#34;instance&#34;, theInstance);
-            theEngine.registerObject(&#34;scene&#34;, theClone);
-            theEngine.registerObject(&#34;game&#34;, theClone.getGame());
+            theEngine.registerObject("instance", theInstance);
+            theEngine.registerObject("scene", theClone);
+            theEngine.registerObject("game", theClone.getGame());
 
             Object theResult = theEngine.proceedGame(100, 16);
             if (theResult == null) {
-                throw new RuntimeException(&#34;Got NULL as a response, expected &#34; + GameProcess.ProceedResult.STOPPED+&#34; or &#34; + GameProcess.ProceedResult.CONTINUE_RUNNING);
+                throw new RuntimeException("Got NULL as a response, expected " + GameProcess.ProceedResult.STOPPED+" or " + GameProcess.ProceedResult.CONTINUE_RUNNING);
             }
 
             GameProcess.ProceedResult theResultAsEnum = GameProcess.ProceedResult.valueOf(theResult.toString());
 
             theEngine.shutdown();
 
-            compileErrors.setText(&#34;Got response : &#34; + theResultAsEnum);
+            compileErrors.setText("Got response : " + theResultAsEnum);
 
             return true;
         } catch (Exception e) {
@@ -318,7 +318,7 @@ public class EditScriptDialog {
             StringWriter theWriter = new StringWriter();
             e.printStackTrace(new PrintWriter(theWriter));
 
-            compileErrors.setText(&#34;Exception : &#34; + theWriter);
+            compileErrors.setText("Exception : " + theWriter);
         } finally {
             if (theEngine != null) {
                 theEngine.shutdown();
@@ -330,7 +330,7 @@ public class EditScriptDialog {
     @FXML
     public void onOk() {
         // We need to sace the edited script to the game model.
-        String theContent = (String) editorView.getEngine().executeScript(&#34;getvalue()&#34;);
+        String theContent = (String) editorView.getEngine().executeScript("getvalue()");
         Script theNewScript = new Script(theContent);
 
         action.scriptProperty().set(theNewScript);
@@ -339,7 +339,7 @@ public class EditScriptDialog {
 
     @FXML
     public void onTest() {
-        String theContent = (String) editorView.getEngine().executeScript(&#34;getvalue()&#34;);
+        String theContent = (String) editorView.getEngine().executeScript("getvalue()");
         Script theNewScript = new Script(theContent);
         test(theNewScript);
     }
@@ -352,7 +352,7 @@ public class EditScriptDialog {
     public void performEditing() {
         modalStage.show();
     }
-}</code></pre></div></div><div class="paragraph"><p>The last thing we have to consider is clipboard interaction. Because the Ace editor is backed by JavaScript, which runs in a WebView, the editor is limited by the default JavaScript security limitations while interacting with the clipboard. To get around this limitation, we have to disable the default Ace context menu by just disabling the WebView context menu, and add the copy / paste actions by registering custom key listeners. The interaction between the key listener and the Ace editor can be done by Java / JavaScript down calls.</p></div><div class="paragraph"><p>Well, after some research and tweaking the clipboard problem, everything runs smooth and I was able to create a powerful LUA editor backed by Ace and JavaFX with a minimum amount of time. JavaFX definitely rocks!</p></div><div class="paragraph"><p>Links:</p></div><div class="paragraph"><p>The LUA language: <a href="http://www.lua.org/">www.lua.org</a></p></div><div class="paragraph"><p>Ace editor, the high performance code editor for the web: <a href="http://ace.c9.io/">ace.c9.io</a></p></div><div class="paragraph"><p>The source code for the Game Engine is available for free on GitHub: <a href="https://github.com/mirkosertic/GameComposer">github.com/mirkosertic/GameComposer</a></p></div><div class="paragraph"><p>Example Game backed by the TeaVM Renderer: <a href="http://mirkosertic.github.io/GameComposer/games/teavm/platformer/index.html">TeaVM Example</a></p></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2015/03/tuning-html5-canvas-filltext/">Supercharging HTML5 Canvas Text Performance: A Game-Changing Optimization</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2015/12/how-to-download-maven-artifacts-with-maven-3-1-and-eclipse-aether/">Mastering Maven Artifact Downloads with Eclipse Aether: A Developer&#39;s Guide</a>&gt;&gt;</span></div></article></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Straße 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://bsky.app/profile/mirkosertic.de" itemprop="url"><i class="fa fa-bluesky-white"></i></a> <a class="icon" target="_blank" href="https://x.com/mirkosertic" itemprop="url"><i class="fa fa-x-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
+}</code></pre></div></div><div class=paragraph><p>The last thing we have to consider is clipboard interaction. Because the Ace editor is backed by JavaScript, which runs in a WebView, the editor is limited by the default JavaScript security limitations while interacting with the clipboard. To get around this limitation, we have to disable the default Ace context menu by just disabling the WebView context menu, and add the copy / paste actions by registering custom key listeners. The interaction between the key listener and the Ace editor can be done by Java / JavaScript down calls.</div><div class=paragraph><p>Well, after some research and tweaking the clipboard problem, everything runs smooth and I was able to create a powerful LUA editor backed by Ace and JavaFX with a minimum amount of time. JavaFX definitely rocks!</div><div class=paragraph><p>Links:</div><div class=paragraph><p>The LUA language: <a href=http://www.lua.org/>www.lua.org</a></div><div class=paragraph><p>Ace editor, the high performance code editor for the web: <a href=http://ace.c9.io/>ace.c9.io</a></div><div class=paragraph><p>The source code for the Game Engine is available for free on GitHub: <a href=https://github.com/mirkosertic/GameComposer>github.com/mirkosertic/GameComposer</a></div><div class=paragraph><p>Example Game backed by the TeaVM Renderer: <a href=http://mirkosertic.github.io/GameComposer/games/teavm/platformer/index.html>TeaVM Example</a></div><div class=metainfo><span>&lt;&lt;Pevious posting: <a href=https://www.mirkosertic.de/blog/2015/03/tuning-html5-canvas-filltext/>Supercharging HTML5 Canvas Text Performance: A Game-Changing Optimization</a></span><span>Next posting: <a href=https://www.mirkosertic.de/blog/2015/12/how-to-download-maven-artifacts-with-maven-3-1-and-eclipse-aether/>Mastering Maven Artifact Downloads with Eclipse Aether: A Developer's Guide</a>>></span></div></article></div></main><footer><p>© Mirko Sertic · <a href=https://www.mirkosertic.de/global/impressum/index.html>Imprint / Impressum</a><address><strong itemprop=name>Mirko Sertic</strong> <div itemprop=address itemscope itemtype=http://schema.org/PostalAddress><div itemprop=streetAddress>Josefine-Mauser-Straße 66</div><div itemprop=postalCode>48157 Münster</div><div itemprop=addressCountry>Germany</div></div> <a class=icon href=mailto:mirko@mirkosertic.de target=_top><i class="fa fa-envelope-white"></i></a> <a class=icon href=https://www.xing.com/profile/Mirko_Sertic itemprop=url target=_blank><i class="fa fa-xing-white"></i></a> <a class=icon href=https://bsky.app/profile/mirkosertic.de itemprop=url target=_blank><i class="fa fa-bluesky-white"></i></a> <a class=icon href=https://x.com/mirkosertic itemprop=url target=_blank><i class="fa fa-x-twitter-white"></i></a> <a class=icon href=https://github.com/mirkosertic itemprop=url target=_blank><i class="fa fa-github-white"></i></a> <a class=icon href=https://de.linkedin.com/in/mirko-sertic-98882397 itemprop=url target=_blank><i class="fa fa-linkedin-white"></i></a></address><p class=float-right><a href=#>Back to top</a></footer><script src=https://www.mirkosertic.de/js/bootstrap-native-v4.min.js></script><script>function existsByCSSSelector(aSelector) {
         var element = document.querySelector(aSelector);
         if (element) {
             return true;
@@ -403,4 +403,4 @@ public class EditScriptDialog {
 
             hljs.highlightAll();
         });
-    }</script></body></html>
+    }</script>

@@ -1,6 +1,6 @@
-<html><head><title>Bytecoder Vue-to-WebAssembly Test</title></head><body><style>[v-cloak] {
+<title>Bytecoder Vue-to-WebAssembly Test</title><body><style>[v-cloak] {
         display: none;
-    }</style><div v-cloak id="vuetemplate"><h1>Hello, this is a vue.js instance running with WebAssembly</h1><span>Current message : {{welcomemessage}}</span> <button v-on:click="clicked">Click me to change the message!</button></div><h2>And here is my Java code:-)</h2><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/styles/default.min.css"><script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/highlight.min.js"></script><pre><code class="java">
+    }</style><div id=vuetemplate v-cloak><h1>Hello, this is a vue.js instance running with WebAssembly</h1><span>Current message : {{welcomemessage}}</span><button v-on:click=clicked>Click me to change the message!</button></div><h2>And here is my Java code:-)</h2><link href=//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/styles/default.min.css rel=stylesheet><script src=//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/highlight.min.js></script><pre><code class=java>
 public class VueDemo {
 
     public interface MyVueInstance extends VueInstance {
@@ -22,7 +22,12 @@ public class VueDemo {
         MyVueInstance instance = theBuilder.build();
     }
 }
-    </myvueinstance></myvueinstance></code></pre><script>hljs.initHighlightingOnLoad();</script><a href="https://github.com/mirkosertic/Bytecoder">Go to Bytecoder @ Github</a><script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script><script src="vuedemo_wasmbindings.js"></script><script type="text/javascript">bytecoder.imports.vue = {
+    
+<script>hljs.initHighlightingOnLoad();</script>
+<a href=https://github.com/mirkosertic/Bytecoder>Go to Bytecoder @ Github</a>
+<script src=https://cdn.jsdelivr.net/npm/vue/dist/vue.js></script>
+<script src=vuedemo_wasmbindings.js></script>
+<script>bytecoder.imports.vue = {
         builder : function() {
             var builder = {
                 config : {
@@ -84,4 +89,5 @@ public class VueDemo {
                 var bytes = request.response;
                 WebAssembly.instantiate(bytes, bytecoder.imports).then(instantiated);
             };
-        });</script></body><body></body></html>
+        });</script>
+

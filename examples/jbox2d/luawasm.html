@@ -1,15 +1,15 @@
-<html><head><title>Bytecoder Lua Scripting Test</title></head><body><h1>Bytecoder Lua Demo</h1><p>See Lua4J compiled to WebAssembly in action!</p><div class="codingarea"><h2>Lua Code</h2><textarea id="luainput" rows="10" cols="10">function add(a,b)
+<title>Bytecoder Lua Scripting Test</title><body><h1>Bytecoder Lua Demo</h1><p>See Lua4J compiled to WebAssembly in action!<div class=codingarea><h2>Lua Code</h2><textarea cols=10 id=luainput rows=10>function add(a,b)
     return a+b
 end
 
-return add(1,2)</textarea><h2>Response</h2><pre id="luaoutput">
+return add(1,2)</textarea><h2>Response</h2><pre id=luaoutput>
 Run Lua to see the output!
             </pre></div><style>.codingarea {
                 display: flex;
                 flex-direction: column;
                 flex-grow: 1;
                 padding-bottom: 2rem;
-            }</style><button id="runlua" value="Run Lua!" style="display: none">Run Lua!</button><script type="text/javascript" src="bytecoder-luademowasm_wasmbindings.js"></script><script type="text/javascript">// dynamic linking
+            }</style><button style="display: none" value="Run Lua!" id=runlua>Run Lua!</button><script src=bytecoder-luademowasm_wasmbindings.js></script><script>// dynamic linking
 
             var instantiated = function(result) {
                 bytecoder.init(result.instance);
@@ -38,4 +38,4 @@ Run Lua to see the output!
                         var bytes = request.response;
                         WebAssembly.instantiate(bytes, bytecoder.imports).then(instantiated);
                     };
-                });</script><a href="https://github.com/mirkosertic/Bytecoder">Go to Bytecoder @ Github</a></body></html>
+                });</script><a href=https://github.com/mirkosertic/Bytecoder>Go to Bytecoder @ Github</a>

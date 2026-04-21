@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Enabling Java EE Features in CDI SE: A Portable Extension Magic Trick &middot; Mirko Sertic</title><meta name="description" content="Transform Java EE annotations into CDI-compatible magic using the power of Portable Extensions! Discover how to make @Resource and @RolesAllowed work seamlessly in Java SE environments through clever annotation transformation, without modifying your existing code."><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="robots" content="index,follow"><meta property="og:title" content="Enabling Java EE Features in CDI SE: A Portable Extension Magic Trick"><meta property="og:description" content="Transform Java EE annotations into CDI-compatible magic using the power of Portable Extensions! Discover how to make @Resource and @RolesAllowed work seamlessly in Java SE environments through clever annotation transformation, without modifying your existing code."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mirkosertic.de/blog/2013/10/java-se-context-and-dependency-injection-with-java-ee-support/"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://www.mirkosertic.de/css/site.css" rel="stylesheet" media="screen"><link rel="shortcut icon" type="image/x-icon" href="https://www.mirkosertic.de/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://www.mirkosertic.de/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://www.mirkosertic.de/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://www.mirkosertic.de/favicon-16x16.png"><link rel="manifest" href="https://www.mirkosertic.de/manifest.json"><link rel="mask-icon" href="https://www.mirkosertic.de/safari-pinned-tab.svg" color="#5bbad5"><meta name="theme-color" content="#ffffff"><script>var _paq = window._paq = window._paq || [];
+<!doctype html><html prefix="og: http://ogp.me/ns#" lang=en><meta charset=utf-8><meta content="IE=edge,chrome=1" http-equiv=X-UA-Compatible><title>Enabling Java EE Features in CDI SE: A Portable Extension Magic Trick · Mirko Sertic</title><meta content="Transform Java EE annotations into CDI-compatible magic using the power of Portable Extensions! Discover how to make @Resource and @RolesAllowed work seamlessly in Java SE environments through clever annotation transformation, without modifying your existing code." name=description><meta content=True name=HandheldFriendly><meta content=320 name=MobileOptimized><meta content=index,follow name=robots><meta content="Enabling Java EE Features in CDI SE: A Portable Extension Magic Trick" property=og:title><meta content="Transform Java EE annotations into CDI-compatible magic using the power of Portable Extensions! Discover how to make @Resource and @RolesAllowed work seamlessly in Java SE environments through clever annotation transformation, without modifying your existing code." property=og:description><meta content=article property=og:type><meta content=https://www.mirkosertic.de/blog/2013/10/java-se-context-and-dependency-injection-with-java-ee-support/ property=og:url><meta content="width=device-width,initial-scale=1.0" name=viewport><link href=https://www.mirkosertic.de/css/site.css media=screen rel=stylesheet><link rel="shortcut icon" href=https://www.mirkosertic.de/favicon.ico type=image/x-icon><link href=https://www.mirkosertic.de/apple-touch-icon.png rel=apple-touch-icon sizes=180x180><link href=https://www.mirkosertic.de/favicon-32x32.png rel=icon sizes=32x32 type=image/png><link href=https://www.mirkosertic.de/favicon-16x16.png rel=icon sizes=16x16 type=image/png><link href=https://www.mirkosertic.de/manifest.json rel=manifest><link color=#5bbad5 href=https://www.mirkosertic.de/safari-pinned-tab.svg rel=mask-icon><meta content=#ffffff name=theme-color><script>var _paq = window._paq = window._paq || [];
 
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
@@ -114,30 +114,30 @@
 
             var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
             g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-        })();</script></head><body itemscope itemtype="http://schema.org/WebPage"><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><div class="container"><a class="navbar-brand" href="https://www.mirkosertic.de/">www.mirkosertic.de</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav mr-auto"><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/toolsgoodies" title="My personal Technology Radar">Technology Radar</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/interestingbooks" title="Interesting Books">Essential Books</a></li><li class="nav-item"><a itemprop="url" class="nav-link" href="/global/favorites" title="My favorite postings">My favorite postings</a></li><li class="nav-item"><a itemprop="url" class="nav-link active" href="/post/" title="Blog">Blog</a></li></ul></div></div></nav></header><main role="main"><div itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"><header class="post-header"><div class="contentbox"><h1 class="post-title" itemprop="name headline">Enabling Java EE Features in CDI SE: A Portable Extension Magic Trick</h1><p class="post-date"><span class="icon"><i class="fa fa-calendar-check-o-white"></i></span><time datetime="2013-10-03" itemprop="datePublished">Thu, Oct 3, 2013</time> <span>by</span> <span itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name"><a href="https://x.com/mirkosertic" rel="author">Mirko Sertic</a></span></span></p><p class="post-abstract" itemprop="abstract"><span>This article demonstrates how to enable Java EE features like security annotations and resource injection in a Java SE environment using CDI Portable Extensions. It explains the technique of transforming Java EE annotations (@Resource, @RolesAllowed) into CDI-compatible alternatives through container meta data manipulation, allowing developers to maintain their existing Java EE code while running in SE environments. The solution involves creating a custom extension that rewrites annotations and implements security checks using interceptors, all without requiring modification of the original code or additional third-party dependencies.</span></p><p><span class="icon"><i class="fa fa-clock-white"></i></span><span>5 Minutes reading time</span></p><p class="post-tags"><span class="tag"><span class="icon"><i class="fa fa-tags-white"></i></span><a href="/tags/modernization">Modernization</a></span></p></div></header><figure class="blogtitleimage"><figcaption><p>Behold the masterpiece that AI hallucinated while reading this post:</p><p class="title">"How Little CDI Learned to Do Big Enterprise Things"</p><p>(after I fed it way too many marketing blogs and memes)</p><p class="aidisclosure">Created using DALL-E 3</p></figcaption><img src="/media/welcomeimages/java-se-context-and-dependency-injection-with-java-ee-support_selected.png" alt="AI-Generated: How Little CDI Learned to Do Big Enterprise Things" itemprop="image"></figure><article class="post-content clearfix" itemprop="articleBody"><div class="paragraph"><p>Java CDI(Context and Dependency Injection) JSR-299 is available on Java EE application servers, but CDI(Weld is the reference implementation) is also embeddable in Java SE standard edition. Unfortunately Java EE functionalities like security or transaction support are not available here, for instance the following code just does not work as expected when running on CDI SE:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">@Singleton
+        })();</script><body itemscope itemtype=http://schema.org/WebPage><header><nav class="navbar navbar-expand-md navbar-dark fixed-top" itemscope itemtype=http://www.schema.org/SiteNavigationElement><div class=container><a class=navbar-brand href=https://www.mirkosertic.de/>www.mirkosertic.de</a><button aria-label="Toggle navigation" aria-controls=navbarCollapse aria-expanded=false class=navbar-toggler data-target=#navbarCollapse data-toggle=collapse type=button><span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbarCollapse><ul class="navbar-nav mr-auto"><li class=nav-item><a title="My personal Technology Radar" class=nav-link href=/global/toolsgoodies itemprop=url>Technology Radar</a><li class=nav-item><a title="Interesting Books" class=nav-link href=/global/interestingbooks itemprop=url>Essential Books</a><li class=nav-item><a title="My favorite postings" class=nav-link href=/global/favorites itemprop=url>My favorite postings</a><li class=nav-item><a class="nav-link active" href=/post/ itemprop=url title=Blog>Blog</a></ul></div></div></nav></header><main role=main><div itemprop=mainEntity itemscope itemtype=http://schema.org/BlogPosting><header class=post-header><div class=contentbox><h1 itemprop="name headline" class=post-title>Enabling Java EE Features in CDI SE: A Portable Extension Magic Trick</h1><p class=post-date><span class=icon><i class="fa fa-calendar-check-o-white"></i></span><time datetime=2013-10-03 itemprop=datePublished>Thu, Oct 3, 2013</time> <span>by</span> <span itemprop=author itemscope itemtype=https://schema.org/Person> <span itemprop=name> <a href=https://x.com/mirkosertic rel=author>Mirko Sertic</a> </span> </span><p class=post-abstract itemprop=abstract><span>This article demonstrates how to enable Java EE features like security annotations and resource injection in a Java SE environment using CDI Portable Extensions. It explains the technique of transforming Java EE annotations (@Resource, @RolesAllowed) into CDI-compatible alternatives through container meta data manipulation, allowing developers to maintain their existing Java EE code while running in SE environments. The solution involves creating a custom extension that rewrites annotations and implements security checks using interceptors, all without requiring modification of the original code or additional third-party dependencies.</span><p><span class=icon><i class="fa fa-clock-white"></i></span><span>5 Minutes reading time</span><p class=post-tags><span class=tag><span class=icon><i class="fa fa-tags-white"></i></span><a href=/tags/modernization>Modernization</a> </span></div></header><figure class=blogtitleimage><figcaption><p>Behold the masterpiece that AI hallucinated while reading this post:</p> <p class=title>"How Little CDI Learned to Do Big Enterprise Things"</p> <p>(after I fed it way too many marketing blogs and memes)</p> <p class=aidisclosure>Created using DALL-E 3</p></figcaption><img alt="AI-Generated: How Little CDI Learned to Do Big Enterprise Things" itemprop=image src=/media/welcomeimages/java-se-context-and-dependency-injection-with-java-ee-support_selected.png></figure><article class="post-content clearfix" itemprop=articleBody><div class=paragraph><p>Java CDI(Context and Dependency Injection) JSR-299 is available on Java EE application servers, but CDI(Weld is the reference implementation) is also embeddable in Java SE standard edition. Unfortunately Java EE functionalities like security or transaction support are not available here, for instance the following code just does not work as expected when running on CDI SE:</div><div class=listingblock><div class=content><pre class=highlight><code class=language-java data-lang=java>@Singleton
 public class WeldBean {
 
     @Resource
     Principal principal;
 
-    @RolesAllowed(&#34;securedrole&#34;)
+    @RolesAllowed("securedrole")
     public void run() {
-        System.out.println(&#34;Hello World : &#34;+principal);
+        System.out.println("Hello World : "+principal);
     }
-}</code></pre></div></div><div class="paragraph"><p>The @Resource and @RolesAllowed annotations are not evaluated on Weld SE by default. Now, how can we enable these Java EE features?</p></div><div class="paragraph"><p>The @Resource annotation is a problem, but the biggest problem is the @RolesAllowed annotation. This security check can by done by using an CDI interceptor, but the @RolesAllowed annotation does not support @InterceptorBinding. How can be enable security check without introducing new annotations in our code?</p></div><div class="paragraph"><p>The answer is quite simple. We use the CDI Portable Extension API. This API allows us to manipulate the CDI container meta data before it is processed by the CDI runtime. But how does this help?</p></div><div class="paragraph"><p>Well, with a CDI extension we can rewrite the given annotations from out code, and change it, for instance replace the @Resource annotation with @Inject, and this can be processed by the CDI SE runtime and will inject managed beans created from classes or producer methods for instance.</p></div><div class="paragraph"><p>The tricky part is the @RolesAllowed annotation. A custom annotation is added to such annotated methods, with @InterceptorBinding. Now, a security interceptor checks for permissions and will continue with execution. In our case, the @MySecurityAnnotation is added to the method, and the following interceptor will check the permissions:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">@Interceptor
+}</code></pre></div></div><div class=paragraph><p>The @Resource and @RolesAllowed annotations are not evaluated on Weld SE by default. Now, how can we enable these Java EE features?</div><div class=paragraph><p>The @Resource annotation is a problem, but the biggest problem is the @RolesAllowed annotation. This security check can by done by using an CDI interceptor, but the @RolesAllowed annotation does not support @InterceptorBinding. How can be enable security check without introducing new annotations in our code?</div><div class=paragraph><p>The answer is quite simple. We use the CDI Portable Extension API. This API allows us to manipulate the CDI container meta data before it is processed by the CDI runtime. But how does this help?</div><div class=paragraph><p>Well, with a CDI extension we can rewrite the given annotations from out code, and change it, for instance replace the @Resource annotation with @Inject, and this can be processed by the CDI SE runtime and will inject managed beans created from classes or producer methods for instance.</div><div class=paragraph><p>The tricky part is the @RolesAllowed annotation. A custom annotation is added to such annotated methods, with @InterceptorBinding. Now, a security interceptor checks for permissions and will continue with execution. In our case, the @MySecurityAnnotation is added to the method, and the following interceptor will check the permissions:</div><div class=listingblock><div class=content><pre class=highlight><code class=language-java data-lang=java>@Interceptor
 @MySecurityAnnotation
 public class MySecurityInterceptor {
 
     @AroundInvoke
     public Object aroundCheck(InvocationContext aContext) throws Exception {
         RolesAllowed theRolesAllowed = aContext.getMethod().getAnnotation(RolesAllowed.class);
-        System.out.println(&#34;Secured Method check : Allowed roles : &#34; + theRolesAllowed.value()[0]);
+        System.out.println("Secured Method check : Allowed roles : " + theRolesAllowed.value()[0]);
         return aContext.proceed();
     }
-}</code></pre></div></div><div class="paragraph"><p>The tricky thing is we have to extract the original @RolesAllowed annotation from the method signature. It is still there as we use the Java reflection API to extract it. We just modified the CDI container meta data, not the Bytecode.</p></div><div class="paragraph"><p>Simple but efficient. Using the same pattern, we can also implement transaction support with CDI running on Java SE. But how does the CDI extension work? The following code should show how this can be done. It can also be simplified using Weld Extensions API or Seam Solder, but here is everything without third party dependencies:</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="language-java" data-lang="java">public class MyExtension implements Extension {
+}</code></pre></div></div><div class=paragraph><p>The tricky thing is we have to extract the original @RolesAllowed annotation from the method signature. It is still there as we use the Java reflection API to extract it. We just modified the CDI container meta data, not the Bytecode.</div><div class=paragraph><p>Simple but efficient. Using the same pattern, we can also implement transaction support with CDI running on Java SE. But how does the CDI extension work? The following code should show how this can be done. It can also be simplified using Weld Extensions API or Seam Solder, but here is everything without third party dependencies:</div><div class=listingblock><div class=content><pre class=highlight><code class=language-java data-lang=java>public class MyExtension implements Extension {
 
     static class ResourceInjectAlias implements Annotation, Inject {
-        public Class&lt;? extends Annotation&gt; annotationType() {
+        public Class&lt;? extends Annotation> annotationType() {
             return Inject.class;
         }
     }
@@ -146,38 +146,38 @@ public class MySecurityInterceptor {
 
     static class SecurityAlias implements Annotation, MySecurityAnnotation {
 
-        public Class&lt;? extends Annotation&gt; annotationType() {
+        public Class&lt;? extends Annotation> annotationType() {
             return MySecurityAnnotation.class;
         }
     }
 
     static final SecurityAlias SECURITY_ALIAS = new SecurityAlias();
 
-    &lt;X&gt; void processBean(@Observes ProcessAnnotatedType&lt;X&gt; aEvent, BeanManager aBeanManager) {
+    &lt;X> void processBean(@Observes ProcessAnnotatedType&lt;X> aEvent, BeanManager aBeanManager) {
 
-        final AnnotatedType&lt;X&gt; theType = aEvent.getAnnotatedType();
+        final AnnotatedType&lt;X> theType = aEvent.getAnnotatedType();
 
-        AnnotatedType&lt;X&gt; theWrapped = new AnnotatedType&lt;X&gt;() {
-            public Class&lt;X&gt; getJavaClass() {
+        AnnotatedType&lt;X> theWrapped = new AnnotatedType&lt;X>() {
+            public Class&lt;X> getJavaClass() {
                 return theType.getJavaClass();
             }
 
-            public Set&lt;AnnotatedConstructor&lt;X&gt;&gt; getConstructors() {
+            public Set&lt;AnnotatedConstructor&lt;X>> getConstructors() {
                 return theType.getConstructors();
             }
 
-            public Set&lt;AnnotatedMethod&lt;? super X&gt;&gt; getMethods() {
-                Set&lt;AnnotatedMethod&lt;? super X&gt;&gt; theResult = new HashSet&lt;AnnotatedMethod&lt;? super X&gt;&gt;();
+            public Set&lt;AnnotatedMethod&lt;? super X>> getMethods() {
+                Set&lt;AnnotatedMethod&lt;? super X>> theResult = new HashSet&lt;AnnotatedMethod&lt;? super X>>();
                 for (AnnotatedMethod theMethod : theType.getMethods()) {
                     if (theMethod.isAnnotationPresent(RolesAllowed.class)) {
                         final AnnotatedMethod theOriginal = theMethod;
 
-                        theResult.add(new AnnotatedMethod&lt;X&gt;() {
+                        theResult.add(new AnnotatedMethod&lt;X>() {
                             public Method getJavaMember() {
                                 return theOriginal.getJavaMember();
                             }
 
-                            public List&lt;AnnotatedParameter&lt;X&gt;&gt; getParameters() {
+                            public List&lt;AnnotatedParameter&lt;X>> getParameters() {
                                 return theOriginal.getParameters();
                             }
 
@@ -185,7 +185,7 @@ public class MySecurityInterceptor {
                                 return theOriginal.isStatic();
                             }
 
-                            public AnnotatedType&lt;X&gt; getDeclaringType() {
+                            public AnnotatedType&lt;X> getDeclaringType() {
                                 return theOriginal.getDeclaringType();
                             }
 
@@ -193,22 +193,22 @@ public class MySecurityInterceptor {
                                 return theOriginal.getBaseType();
                             }
 
-                            public Set&lt;Type&gt; getTypeClosure() {
+                            public Set&lt;Type> getTypeClosure() {
                                 return theOriginal.getTypeClosure();
                             }
 
-                            public &lt;T extends Annotation&gt; T getAnnotation(Clas&lt;T&gt; annotationType) {
+                            public &lt;T extends Annotation> T getAnnotation(Clas&lt;T> annotationType) {
                                 return theOriginal.getAnnotation(annotationType);
                             }
 
-                            public Set&lt;Annotation&gt; getAnnotations() {
-                                Set&lt;Annotation&gt; theResult = new HashSet&lt;Annotation&gt;();
+                            public Set&lt;Annotation> getAnnotations() {
+                                Set&lt;Annotation> theResult = new HashSet&lt;Annotation>();
                                 theResult.addAll(theOriginal.getAnnotations());
                                 theResult.add(SECURITY_ALIAS);
                                 return theResult;
                             }
 
-                            public boolean isAnnotationPresent(Class&lt;? extends Annotation&gt; annotationType) {
+                            public boolean isAnnotationPresent(Class&lt;? extends Annotation> annotationType) {
                                 return theOriginal.isAnnotationPresent(annotationType);
                             }
                         });
@@ -219,14 +219,14 @@ public class MySecurityInterceptor {
                 return theResult;
             }
 
-            public Set&lt;AnnotatedField&lt;? super X&gt;&gt; getFields() {
-                Set&lt;AnnotatedField&lt;? super X&gt;&gt; theResult = new HashSet&lt;AnnotatedField&lt;? super X&gt;&gt;();
+            public Set&lt;AnnotatedField&lt;? super X>> getFields() {
+                Set&lt;AnnotatedField&lt;? super X>> theResult = new HashSet&lt;AnnotatedField&lt;? super X>>();
                 for (AnnotatedField theField : theType.getFields()) {
                     if (theField.isAnnotationPresent(Resource.class)) {
 
                         final AnnotatedField theOriginal = theField;
 
-                        theResult.add(new AnnotatedField&lt;X&gt;() {
+                        theResult.add(new AnnotatedField&lt;X>() {
                             public Field getJavaMember() {
                                 return theOriginal.getJavaMember();
                             }
@@ -235,7 +235,7 @@ public class MySecurityInterceptor {
                                 return theOriginal.isStatic();
                             }
 
-                            public AnnotatedType&lt;X&gt; getDeclaringType() {
+                            public AnnotatedType&lt;X> getDeclaringType() {
                                 return theOriginal.getDeclaringType();
                             }
 
@@ -243,22 +243,22 @@ public class MySecurityInterceptor {
                                 return theOriginal.getBaseType();
                             }
 
-                            public Set&lt;Type&gt; getTypeClosure() {
+                            public Set&lt;Type> getTypeClosure() {
                                 return theOriginal.getTypeClosure();
                             }
 
-                            public &lt;T extends Annotation&gt; T getAnnotation(Class&lt;T&gt; annotationType) {
+                            public &lt;T extends Annotation> T getAnnotation(Class&lt;T> annotationType) {
                                 return theOriginal.getAnnotation(annotationType);
                             }
 
-                            public Set&lt;Annotation&gt; getAnnotations() {
-                                Set&lt;Annotation&gt; theResult = new HashSet&lt;Annotation&gt;();
+                            public Set&lt;Annotation> getAnnotations() {
+                                Set&lt;Annotation> theResult = new HashSet&lt;Annotation>();
                                 theResult.addAll(theOriginal.getAnnotations());
                                 theResult.add(INJECT_ALIAS);
                                 return theResult;
                             }
 
-                            public boolean isAnnotationPresent(Class&lt;? extends Annotation&gt; annotationType) {
+                            public boolean isAnnotationPresent(Class&lt;? extends Annotation> annotationType) {
                                 return theOriginal.isAnnotationPresent(annotationType);
                             }
                         });
@@ -273,25 +273,25 @@ public class MySecurityInterceptor {
                 return theType.getBaseType();
             }
 
-            public Set&lt;Type&gt; getTypeClosure() {
+            public Set&lt;Type> getTypeClosure() {
                 return theType.getTypeClosure();
             }
 
-            public &lt;T extends Annotation&gt; T getAnnotation(Class&lt;T&gt; annotationType) {
+            public &lt;T extends Annotation> T getAnnotation(Class&lt;T> annotationType) {
                 return theType.getAnnotation(annotationType);
             }
 
-            public Set&lt;Annotation&gt; getAnnotations() {
+            public Set&lt;Annotation> getAnnotations() {
                 return theType.getAnnotations();
             }
 
-            public boolean isAnnotationPresent(Class&lt;? extends Annotation&gt; annotationType) {
+            public boolean isAnnotationPresent(Class&lt;? extends Annotation> annotationType) {
                 return theType.isAnnotationPresent(annotationType);
             }
         };
         aEvent.setAnnotatedType(theWrapped);
     }
-}</code></pre></div></div><div class="paragraph"><p>This does all the job, replace @Resource with @Inject and add the @MySecurityAnnotation to @RolesAllowed annotated method so their execution is intercepted by the security interceptor. Here we just rewrite the field or method level annotations, but to get full CDI support, we would also have to rewrite constructor annotations. But i hope you get how this can be done by looking at the code. If you want to read more about Weld, CDI and the Portable Extension API, i suggest to read the <a href="http://docs.jboss.org/weld/extensions/reference/latest/en-US/html_single/">Weld Portable Extension Documentation</a>.</p></div><div class="paragraph"><p>Weld offers of course a SPI which can do the same thing. But the CDI Extension API is a container independent way to implement Java EE security and transaction support with Weld CDI running on Java SE standard edition. I really love it :-)</p></div><div class="metainfo"><span>&lt;&lt;Pevious posting: <a href="https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications/">JUnit Test Assertions Made Easy: Generate Instead of Write</a></span> <span>Next posting: <a href="https://www.mirkosertic.de/blog/2013/10/java-array-iterator-performance/">The Hidden Cost of Array Iteration: A Java Performance Deep Dive</a>&gt;&gt;</span></div></article></div></main><footer><p>&copy; Mirko Sertic &middot; <a href="https://www.mirkosertic.de/global/impressum/index.html">Imprint / Impressum</a></p><address><strong itemprop="name">Mirko Sertic</strong><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div itemprop="streetAddress">Josefine-Mauser-Straße 66</div><div itemprop="postalCode">48157 Münster</div><div itemprop="addressCountry">Germany</div></div><a class="icon" target="_top" href="mailto:mirko@mirkosertic.de"><i class="fa fa-envelope-white"></i></a> <a class="icon" target="_blank" href="https://www.xing.com/profile/Mirko_Sertic" itemprop="url"><i class="fa fa-xing-white"></i></a> <a class="icon" target="_blank" href="https://bsky.app/profile/mirkosertic.de" itemprop="url"><i class="fa fa-bluesky-white"></i></a> <a class="icon" target="_blank" href="https://x.com/mirkosertic" itemprop="url"><i class="fa fa-x-twitter-white"></i></a> <a class="icon" target="_blank" href="https://github.com/mirkosertic" itemprop="url"><i class="fa fa-github-white"></i></a> <a class="icon" target="_blank" href="https://de.linkedin.com/in/mirko-sertic-98882397" itemprop="url"><i class="fa fa-linkedin-white"></i></a></address><p class="float-right"><a href="#">Back to top</a></p></footer><script src="https://www.mirkosertic.de/js/bootstrap-native-v4.min.js"></script><script>function existsByCSSSelector(aSelector) {
+}</code></pre></div></div><div class=paragraph><p>This does all the job, replace @Resource with @Inject and add the @MySecurityAnnotation to @RolesAllowed annotated method so their execution is intercepted by the security interceptor. Here we just rewrite the field or method level annotations, but to get full CDI support, we would also have to rewrite constructor annotations. But i hope you get how this can be done by looking at the code. If you want to read more about Weld, CDI and the Portable Extension API, i suggest to read the <a href=http://docs.jboss.org/weld/extensions/reference/latest/en-US/html_single/>Weld Portable Extension Documentation</a>.</div><div class=paragraph><p>Weld offers of course a SPI which can do the same thing. But the CDI Extension API is a container independent way to implement Java EE security and transaction support with Weld CDI running on Java SE standard edition. I really love it :-)</div><div class=metainfo><span>&lt;&lt;Pevious posting: <a href=https://www.mirkosertic.de/blog/2013/10/how-to-create-junit-assertions-from-running-applications/>JUnit Test Assertions Made Easy: Generate Instead of Write</a></span><span>Next posting: <a href=https://www.mirkosertic.de/blog/2013/10/java-array-iterator-performance/>The Hidden Cost of Array Iteration: A Java Performance Deep Dive</a>>></span></div></article></div></main><footer><p>© Mirko Sertic · <a href=https://www.mirkosertic.de/global/impressum/index.html>Imprint / Impressum</a><address><strong itemprop=name>Mirko Sertic</strong> <div itemprop=address itemscope itemtype=http://schema.org/PostalAddress><div itemprop=streetAddress>Josefine-Mauser-Straße 66</div><div itemprop=postalCode>48157 Münster</div><div itemprop=addressCountry>Germany</div></div> <a class=icon href=mailto:mirko@mirkosertic.de target=_top><i class="fa fa-envelope-white"></i></a> <a class=icon href=https://www.xing.com/profile/Mirko_Sertic itemprop=url target=_blank><i class="fa fa-xing-white"></i></a> <a class=icon href=https://bsky.app/profile/mirkosertic.de itemprop=url target=_blank><i class="fa fa-bluesky-white"></i></a> <a class=icon href=https://x.com/mirkosertic itemprop=url target=_blank><i class="fa fa-x-twitter-white"></i></a> <a class=icon href=https://github.com/mirkosertic itemprop=url target=_blank><i class="fa fa-github-white"></i></a> <a class=icon href=https://de.linkedin.com/in/mirko-sertic-98882397 itemprop=url target=_blank><i class="fa fa-linkedin-white"></i></a></address><p class=float-right><a href=#>Back to top</a></footer><script src=https://www.mirkosertic.de/js/bootstrap-native-v4.min.js></script><script>function existsByCSSSelector(aSelector) {
         var element = document.querySelector(aSelector);
         if (element) {
             return true;
@@ -342,4 +342,4 @@ public class MySecurityInterceptor {
 
             hljs.highlightAll();
         });
-    }</script></body></html>
+    }</script>
