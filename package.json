@@ -9,23 +9,19 @@
   },
   "type": "module",
   "devDependencies": {
-    "babel-preset-env": "^1.7.0",
-    "babel-register": "^6.5.2",
+    "@babel/core": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
+    "@babel/register": "^7.23.0",
     "gulp": "^4.0.2",
-    "gulp-cli": "^2.0.1",
+    "gulp-cli": "^3.0.0",
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^5.0.3",
-    "gulp-postcss": "^8.0.0",
-    "gulp-shell": "^0.7.0",
-    "gulp-uncss": "^1.0.6",
-    "minimist": "^1.2.0",
-    "postcss-uncss": "^0.16.1",
-    "uncss": "^0.16.2"
+    "gulp-shell": "^0.7.0"
   },
   "babel": {
     "presets": [
       [
-        "env",
+        "@babel/preset-env",
         {
           "targets": {
             "node": "current"

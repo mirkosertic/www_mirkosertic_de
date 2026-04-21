@@ -6,16 +6,16 @@ jobs:
   build:
     runs-on: 'ubuntu-latest'
     steps:
-      - uses: actions/checkout@v1
-      - uses: peaceiris/actions-hugo@v2
+      - uses: actions/checkout@v4
+      - uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.142.0'
+          hugo-version: '0.160.1'
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.6'
-      - uses: actions/setup-python@v4
+          ruby-version: '3.3'
+      - uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.12'
       - run: |
           gem install coderay
           gem install pygments.rb  -v 3.0.0
@@ -23,21 +23,20 @@ jobs:
           gem install asciidoctor-diagram-ditaamini
           gem install asciidoctor-diagram-plantuml          
           which ruby
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v4
         with:
             node-version: '20'
             check-latest: true
       - run: |
-          npm install
-          npm update
+          npm ci
           unset "_JAVA_OPTIONS"
           npm run build
-      - uses: JamesIves/github-pages-deploy-action@3.7.1
+      - uses: JamesIves/github-pages-deploy-action@v4
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: ./public
-          CLEAN: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: ./public
+          clean: true
       - run: |
           curl http://www.google.com/webmasters/sitemaps/ping?sitemap=https://www.mirkosertic.de/sitemap.xml
           curl http://www.bing.com/ping?sitemap=https://www.mirkosertic.de/sitemap.xml

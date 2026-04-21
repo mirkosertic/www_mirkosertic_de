@@ -30,7 +30,7 @@ buildFuture = true
     filename = "sitemap.xml"
 
 [Permalinks]
-    post = "blog/:year/:month/:filename/"
+    post = "blog/:year/:month/:contentbasename/"
 
 [[menu.main]]
     name = "My favorite postings"
