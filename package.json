@@ -9,14 +9,14 @@
   },
   "type": "module",
   "devDependencies": {
-    "@babel/core": "^7.24.0",
-    "@babel/preset-env": "^7.24.0",
-    "@babel/register": "^7.23.0",
-    "gulp": "^4.0.2",
-    "gulp-cli": "^3.0.0",
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.2",
+    "@babel/register": "^7.28.6",
+    "gulp": "^5.0.1",
+    "gulp-cli": "^3.1.0",
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^5.0.3",
-    "gulp-shell": "^0.7.0"
+    "gulp-shell": "^0.7.1"
   },
   "babel": {
     "presets": [
@@ -33,6 +33,6 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.1",
     "dotenv": "^16.4.5",
-    "openai": "^4.73.0"
+    "openai": "^4.104.0"
   }
 }
