@@ -7,7 +7,7 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Sun, 26 Apr 2026 18:43:32 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 26 Apr 2026 18:43:35 +0000</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/logging/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Log4J Magic: Creating Human-Friendly, Scannable Log Files</title>
