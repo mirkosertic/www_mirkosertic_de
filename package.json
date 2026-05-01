@@ -10,7 +10,7 @@
   "type": "module",
   "devDependencies": {
     "@babel/core": "^7.29.0",
-    "@babel/preset-env": "^7.29.2",
+    "@babel/preset-env": "^7.29.3",
     "@babel/register": "^7.28.6",
     "gulp": "^5.0.1",
     "gulp-cli": "^3.1.0",
