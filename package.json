@@ -32,7 +32,7 @@
     ]
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.95.1",
+    "@anthropic-ai/sdk": "^0.96.0",
     "dotenv": "^17.4.2",
     "openai": "^6.37.0"
   }
