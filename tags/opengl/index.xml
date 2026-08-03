@@ -7,7 +7,7 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Mon, 03 Aug 2026 09:44:38 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Aug 2026 09:44:45 +0000</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/opengl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building a Touch-Responsive OpenGL Triangle on Android</title>
