@@ -7,7 +7,7 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Mirko Sertic</copyright>
-    <lastBuildDate>Sat, 08 Aug 2026 20:30:28 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 17 Aug 2026 09:45:01 +0000</lastBuildDate>
     <atom:link href="https://www.mirkosertic.de/tags/i18n/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Simplify I18N: XML-Based Resource Bundles for Safer Java Internationalization</title>
