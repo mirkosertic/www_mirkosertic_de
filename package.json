@@ -15,7 +15,7 @@
     "gulp": "^5.0.1",
     "gulp-cli": "^3.1.0",
     "@minify-html/node": "^0.18.1",
-    "sharp": "^0.35.3",
+    "sharp": "^0.35.4",
     "svgo": "^4.1.0",
     "gulp-shell": "^0.7.1"
   },
